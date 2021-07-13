@@ -10,44 +10,33 @@ body {
   background-color: rgb(248, 246, 253);
 }
 
-.container {
-  background: linear-gradient(135deg, #e4dfb5, #f1d885);
-  /* width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
+.LoginSignup {
+  background: linear-gradient(135deg, #242423, #f3bf12);
+}
+
+.class-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
 }
 
 body,
 input,
-textarea,
 button {
   font-family: "Inter", sans-serif;
 }
 
-.orders,
-.firebasedata,
-.contact {
-  width: 500px;
-  margin: 0 auto;
-  height: 100vh;
-}
 
 /* Contact.js */
-.form {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 .form > h1 {
   margin-bottom: 30px;
 }
 
-.form > input,
-textarea {
+.form > input,{
   padding: 20px;
   border-radius: 3px;
   /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137); */
