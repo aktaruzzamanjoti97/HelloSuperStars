@@ -1,6 +1,6 @@
 import React from 'react';
-import SideNavbar from "./SideNavbar/SideNavbar";
-import "../../CSS/SideNavbar.css";
+import SideNavbar from "./Home/SideNavbar/SideNavbar";
+import "../CSS/SideNavbar.css";
 const HomePages = () => {
           return (
                     <>
