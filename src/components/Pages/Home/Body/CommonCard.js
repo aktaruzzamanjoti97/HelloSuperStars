@@ -14,13 +14,13 @@ const Card = (props) =>{
             <h5 className="card-title font-weight-bold">{props.title}</h5>
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <NavLink to="#" className="btn" style={{ padding: '5px', margin:"5px", background:"#f2f1ed"}}>
-                <FavoriteBorderIcon /> Like
+                  <FavoriteBorderIcon /> Like
             </NavLink>
             <NavLink to="#" className="btn" style={{ padding: '5px', margin:"5px", background:"#f2f1ed"}}>
-            <ChatBubbleOutlineIcon /> Comment
+                  <ChatBubbleOutlineIcon /> Comment
             </NavLink>
             <NavLink to="#" className="btn" style={{ padding: '5px', margin:"5px", background:"#f2f1ed"}}>
-            <ShareIcon /> Share
+                  <ShareIcon /> Share
             </NavLink>
             </div>
         </div>

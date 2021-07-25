@@ -9,7 +9,7 @@ class Navigation extends Component{
     constructor(props){
         super(props);
         this.state={
-            isNavOpen: false
+            isNavOpen: false,
         }
     }
     navToggle=()=>{
@@ -23,20 +23,20 @@ class Navigation extends Component{
                 <Navbar dark color="dark" expand="sm">
                     <div className="container">
                         <NavbarToggler onClick={this.navToggle}/>
-                        <NavbarBrand href="/">HelloSuperStar</NavbarBrand>
+                        <NavbarBrand to="/">HelloSuperStar</NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <Link to="/" className="nav-link active"><HomeIcon/></Link>
+                                    <Link to="/" className="nav-link"><HomeIcon/></Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link to="/chat" className="nav-link active"><ChatIcon/></Link>
+                                    <Link to="/chat" className="nav-link "><ChatIcon/></Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link to="/" className="nav-link active"><NotificationsActiveIcon/></Link>
+                                    <Link to="/notification" className="nav-link "><NotificationsActiveIcon/></Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link to="/" className="nav-link active"><ShoppingCartIcon/></Link>
+                                    <Link to="/shopping" className="nav-link"><ShoppingCartIcon/></Link>
                                 </NavItem>
                                 <NavItem>
                                     <Link to="/signup" className="nav-link">Sign Up</Link>

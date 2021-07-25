@@ -10,7 +10,7 @@ export const SidebarData = [
           {
                     title: 'Categories',
                     icon: <CategoryIcon/>,
-                    link: "/home"
+                    link: "/categories"
           },
           {
                     title: 'Following',
