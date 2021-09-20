@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   return (
     <>
-    {/* <BrowserRouter>
+    <BrowserRouter>
     <Navigation />
       <Switch>
         <PrivateRoute exact path='/' component={Home} />
@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/signup' component={Signup} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
-    </BrowserRouter> */}
+    </BrowserRouter>
     </>
   );
 }
