@@ -1,0 +1,13 @@
+.form-card-bg{
+    background-color: #343434;
+}
+.border-title{
+    border: 1px solid #F0E25E;
+    font-size: 15px;
+    padding: 10px;
+    width: 60%;
+    border-radius: 5px;
+}
+.gradient-color{
+    background-image: linear-gradient(to top, #454545, #6e6e6e, #999999, #c7c7c7, #f7f7f7);
+}
