@@ -4,6 +4,17 @@
    background-position:top;
   background-size: cover;
 }
+.logIm img{
+    width: 350px;
+    height: 337px;
+}
+@media only screen and (max-width: 768px) {
+  .logIm img{
+      width: 100%;
+      height: 100%;
+  }
+
+  }
 
 .logIn-bg {
     background-color: #343434;
