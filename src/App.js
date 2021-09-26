@@ -4,6 +4,7 @@ import {Route, Switch, BrowserRouter} from "react-router-dom";
 import Home from "./components/Pages/Home/Body/HomePages";
 import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
+import Otp from "./components/UserAuthentication/Otp";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
@@ -19,6 +20,7 @@ function App() {
         <PrivateRoute exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
+        <Route exact path='/otp' component={Otp} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
     </BrowserRouter>

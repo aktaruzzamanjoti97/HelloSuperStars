@@ -52,7 +52,7 @@ const Login = () => {
 
                                     <div className="col-lg-6 order-2 order-lg-2 header-img">
                                         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-                                            <div className="w-100" style={{ maxWidth: "400px" }}>
+                                            <div className="w-100" style={{ maxWidth: "480px" }}>
                                                 <Card className='logIn-bg'>
                                                     <Card.Body>
 
