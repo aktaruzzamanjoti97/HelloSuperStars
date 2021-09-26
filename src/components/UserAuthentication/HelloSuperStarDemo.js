@@ -14,7 +14,7 @@ const HelloSuperStarDemo = () => {
                                      <button className='btn mt-3 text-light px-4 btn-warning'>
                                         
                                         <PlayArrow />
-                                          <span className='mx-2'>Virtual Tour hello</span>
+                                          <span className='mx-2'>Virtual Tour</span>
                                      </button>  
                               </div>
 
