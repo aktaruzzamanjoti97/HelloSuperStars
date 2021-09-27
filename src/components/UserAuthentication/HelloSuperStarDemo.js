@@ -11,13 +11,14 @@ const HelloSuperStarDemo = () => {
                                         <img src={HelloSuperStarLogo} alt="Hello Super Star Logo" />
                               </div>
                               <div>
-                                     <button className='btn mt-3 text-light px-4 btn-warning'>
+                                  <a href="/tutorial"><button className='btn mt-3 text-light px-4 btn-warning'>
                                         
                                         <PlayArrow />
                                           <span className='mx-2'>Virtual Tour</span>
                                      </button>  
+                                     
+                                   </a>
                               </div>
-
                     </div>
           )
 }

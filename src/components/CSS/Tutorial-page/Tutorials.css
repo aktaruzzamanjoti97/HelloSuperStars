@@ -1,0 +1,28 @@
+.CarouselBg{
+  background-image: url('../../../images/carouselbg.jpeg');
+  background-repeat: no-repeat;
+  background-position:top;
+ background-size: cover;
+ height: 100%;
+ width: 100%;
+}
+
+.CarouselT1{
+  border-radius: 5px;
+  opacity: 1;
+  padding: 65px;
+  width: auto;
+  
+}
+.CarouselT1 img{
+  width: 100%;
+  
+  
+}
+.btnCar {
+  background-color:#f1c121;
+  width: 80px;
+  float: right;
+  
+}
+
