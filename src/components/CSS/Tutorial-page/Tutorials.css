@@ -1,0 +1,48 @@
+ body{
+  background-color: black;
+} 
+.CarouselBg{
+  background-image: url('../../../images/carouselbg.jpeg');
+  background-repeat: no-repeat;
+  background-position:top;
+ background-size: cover;
+ height: 100%;
+ width: 100%;
+}
+
+.CarouselT1{
+  border-radius: 5px;
+  opacity: 1;
+  padding: 65px;
+  width: 75%;
+  margin-left: 194px;
+  
+}
+.Carousel{
+  margin-top: 50px;
+}
+.CarouselT1 img{
+  width: 100%;
+  
+  
+}
+.btnCar {
+  background-color:#f1c121;
+  width: 80px;
+  float: right;
+  
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .CarouselBg{
+    background-size: cover;
+  }
+  .CarouselT1{
+    width: 100% !important;
+    margin-left: 0px !important;
+  }
+}
+
+
