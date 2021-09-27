@@ -7,14 +7,13 @@ import TutorialCarousel3 from '../../../../images/Tutorial-Graphic_Web-04.png'
 
 const Tutorials = () => {
 return (
-<>
-
-  
-    <div className="CarouselBg">
+    <>
+        <body className="bodyBG">
+        <div className="CarouselBg">
         <div className="CarouselTutorial align-items-center">
-            <div className="CarouselHead">
-                <div className="CarouselT1 ">
-                    <Carousel fade>
+            <div className="CarouselHead ">
+                <div className="CarouselT1 d-block  align-items-center">
+                    <Carousel>
                         <Carousel.Item>
                             <img className="d-block " src={TutorialCarousel1 } alt="First slide" />
                         </Carousel.Item>
@@ -30,7 +29,8 @@ return (
             </div>
         </div>
     </div>
-
+        
+        </body>
 </>
 )
 }
