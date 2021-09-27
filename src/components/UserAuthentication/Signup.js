@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons'
 import '../CSS/SignUpPage/SignUp.css'
+import DropDownLanguage from './DropDownLanguage';
 const Signup = () => {
     const nameRef = useRef();
     const emailRef = useRef();
@@ -145,6 +146,10 @@ const Signup = () => {
                         </div>
                     </div>
                 </section>
+                <div className="topright text-light">
+<DropDownLanguage />
+
+                </div>
             </div>
         </>
 
