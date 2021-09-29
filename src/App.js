@@ -12,6 +12,7 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import './components/CSS/SideNavbar.css';
 import './App.css';
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
+import { SliderTutroial } from "./components/Pages/User/TutorialSPage/SliderTutroial";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
          {/* Routing added later after full ui--> alamin */}
          <Route path='/accountCreate' exact component={AccountCreate} />
               {/* Routing added later after full ui--> alamin */}
-        <Route exact path='/tutorial' component={Tutorials} />
+        <Route exact path='/tutorial' component={SliderTutroial} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
        
