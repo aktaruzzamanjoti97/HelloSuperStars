@@ -10,9 +10,38 @@
     margin-bottom: 30px;
 
 }
+.stIn-bg{
+    background-color: black;
+    border: 1px solid rgb(253, 187, 6);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.d-block{
+    width: 100%;
+    padding: 30px;
+}
+.skip{
+    width: 60px;
+    float: right;
+    margin-top: -20px;
+    margin-right: 40px;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgb(240, 224, 11);
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    z-index: -1px;
+}
 
-
-  
+/*   
   .CarouselHead {
     width: 60% ;
     background-color: black;
@@ -56,4 +85,4 @@
   }
   
   
-  
+   */

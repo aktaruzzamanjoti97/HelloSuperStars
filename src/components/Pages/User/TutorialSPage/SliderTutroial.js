@@ -1,10 +1,8 @@
 import { Card, Container } from "react-bootstrap";
 
 import TutorialCarousel3 from "../../../../images/Tutorial-Graphic_Web-04.png";
+import TutorialCarousel2 from "../../../../images/Ayman_Sadiq.jpg";
 import Carousel from "react-bootstrap/Carousel";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import "../../../CSS/Tutorial-page/Tutorial.css";
 export const SliderTutroial = () => {
   return (
@@ -24,32 +22,33 @@ export const SliderTutroial = () => {
                       className="d-flex align-items-center justify-content-center"
                       style={{ minHeight: "100vh" }}
                     >
-                      <div className="w-100" style={{ maxWidth: "480px" }}>
-                        <Card className="logIn-bg">
+                      <div className="st w-100" style={{ maxWidth: "750px", backgroundColor:"black" }}>
+                        <Card className="stIn-bg">
                           <Card.Body>
-                            <Carousel>
+                            <Carousel bg-black>
                               <Carousel.Item>
                                 <img
-                                  className="d-block w-75"
+                                  className="d-block"
                                   src={TutorialCarousel3}
                                   alt="First slide"
                                 />
                               </Carousel.Item>
                               <Carousel.Item>
                                 <img
-                                  className="d-block w-75 "
-                                  src={TutorialCarousel3}
+                                  className="d-block "
+                                  src={TutorialCarousel2}
                                   alt="Second slide"
                                 />
                               </Carousel.Item>
                               <Carousel.Item>
                                 <img
-                                  className="d-block w-75 "
+                                  className="d-block "
                                   src={TutorialCarousel3}
                                   alt="Third slide"
                                 />
                               </Carousel.Item>
                             </Carousel>
+                            <a href="/"><button className="skip">Skip</button></a>
                           </Card.Body>
                         </Card>
                       </div>
