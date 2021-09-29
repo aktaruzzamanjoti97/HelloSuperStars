@@ -15,7 +15,7 @@ return (
                 <div className="CarouselT1 d-block  align-items-center">
                     <Carousel>
                         <Carousel.Item>
-                            <img className="d-block " src={TutorialCarousel1 } alt="First slide" />
+                            <img className="d-block" src={TutorialCarousel1 } alt="First slide" />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img className="d-block " src={TutorialCarousel2} alt="Second slide" />
