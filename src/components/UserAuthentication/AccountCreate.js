@@ -8,7 +8,7 @@ const AccountCreate = () => {
         setFile(URL.createObjectURL(e.target.files[0]))
       }
     return (
-       <div className='bg-dark'>
+       <div className='full-container'>
        <div className="container">
            <div className="row">
 
@@ -26,24 +26,16 @@ const AccountCreate = () => {
 
 {/* Form style start */}
 
-<form >
+<form  className='p-3'>
   <div class="form-group row my-3">
-    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-light">Name</label>
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm text-light">Name</label>
     <div class="col-sm-9">
       <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" />
     </div>
   </div>
 
   <div class="form-group row my-3">
-    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-light">Phone</label>
-    <div class="col-sm-9">
-      <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" />
-    </div>
-  </div>
-
-
-  <div class="form-group row my-3">
-    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-light">Email</label>
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm text-light">Phone</label>
     <div class="col-sm-9">
       <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" />
     </div>
@@ -51,7 +43,7 @@ const AccountCreate = () => {
 
 
   <div class="form-group row my-3">
-    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-light">Birthday</label>
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm text-light">Email</label>
     <div class="col-sm-9">
       <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" />
     </div>
@@ -59,14 +51,22 @@ const AccountCreate = () => {
 
 
   <div class="form-group row my-3">
-    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm text-light">Country</label>
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm text-light">Birthday</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm" />
+    </div>
+  </div>
+
+
+  <div class="form-group row my-3">
+    <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm text-light">Country</label>
     <div class="col-sm-9">
       <input type="email" class="form-control form-control-sm " id="colFormLabelSm" placeholder="col-form-label-sm" />
     </div>
   </div>
 
-<div className="text-center my-3">
-<button className='btn btn-warning px-5 text-light'>Save</button>
+<div className="text-center my-3 ">
+<button className='btn btn-warning px-4 mb-3 text-light'>Save</button>
 </div>
   
 </form>
@@ -81,8 +81,41 @@ const AccountCreate = () => {
 
 
                </div>
-               <div className="col-md-8 col-lg-8 mt-3">
-                   other information here
+               <div className="col-md-8 col-lg-8 mt-5 ">
+        <div className="container">
+        <div className="row">
+<div className="col-md-8 account-create-bg">
+<h5 className='text-warning other-info-title mt-2'>Other Information</h5>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div className="col-md-4 bg-primary">
+  field of interest
+</div>
+        </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                
                </div>
            </div>
        </div>
