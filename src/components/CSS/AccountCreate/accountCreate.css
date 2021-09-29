@@ -1,5 +1,6 @@
 .full-container{
   background-color: #000000;
+  height: 100%;
 }
 
 .account-create-bg{
@@ -32,4 +33,7 @@ border-radius: 50%;
 }
 .other-info-title{
   font-size: 14px !important;
+}
+.checkbox-input-size{
+  font-size: 12px;
 }
