@@ -23,4 +23,6 @@ border-radius: 50%;
     position: absolute;
     font-size: 90px;
   }
- 
+.col-form-label{
+    font-size: 12px !important;
+}
