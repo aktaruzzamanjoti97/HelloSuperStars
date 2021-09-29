@@ -1,5 +1,10 @@
+.full-container{
+  background-color: #000000;
+}
+
 .account-create-bg{
     background-color: #343434;
+   
 }
 .avater-img-src{
 height: 100px;
@@ -16,7 +21,6 @@ border-radius: 50%;
     overflow: hidden;
   }
   .parent-div input[type=file] {
-
     left: 0;
     top: 0;
     opacity: 0;
@@ -25,4 +29,7 @@ border-radius: 50%;
   }
 .col-form-label{
     font-size: 12px !important;
+}
+.other-info-title{
+  font-size: 14px !important;
 }
