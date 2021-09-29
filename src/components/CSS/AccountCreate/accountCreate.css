@@ -1,8 +1,9 @@
 .full-container{
   background-color: #000000;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
 }
-
+/*................ Left and right side container design .....................*/
 .account-create-bg{
     background-color: #343434;
    
@@ -36,4 +37,27 @@ border-radius: 50%;
 }
 .checkbox-input-size{
   font-size: 12px;
+}
+/* ................input field style................. */
+.account-input-style{
+  background-color: #343434;
+  border-color: yellow;
+  
+}
+.account-input-style:focus{
+  box-shadow: none;
+  color: white;
+  background-color: #343434 !important;
+}
+/*................ left line style ................................*/
+.vl {
+  border-left: 1px solid #000000;
+  height: 300px;
+ 
+}
+@media only screen and (max-width: 600px) {
+  .vl {
+    display: none;
+   
+  }
 }
