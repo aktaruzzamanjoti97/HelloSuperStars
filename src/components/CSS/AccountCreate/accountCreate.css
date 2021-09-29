@@ -1,0 +1,35 @@
+.full-container{
+  background-color: #000000;
+}
+
+.account-create-bg{
+    background-color: #343434;
+   
+}
+.avater-img-src{
+height: 100px;
+width: 100px;
+border-radius: 50%;
+}
+.upload-input button{
+    font-size: 12px !important;
+}
+.parent-div {
+ 
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  .parent-div input[type=file] {
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+    font-size: 90px;
+  }
+.col-form-label{
+    font-size: 12px !important;
+}
+.other-info-title{
+  font-size: 14px !important;
+}

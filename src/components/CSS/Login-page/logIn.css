@@ -55,6 +55,12 @@
 .userBtn-font{
     font-size: 14px;
 }
+.topright {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    font-size: 15px;
+  }
 ::placeholder{
     color: white;
     opacity: 0.8;
