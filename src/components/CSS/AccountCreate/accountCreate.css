@@ -42,6 +42,7 @@ border-radius: 50%;
 .account-input-style{
   background-color: #343434;
   border-color: yellow;
+  color: white;
   
 }
 .account-input-style:focus{
