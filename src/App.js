@@ -8,11 +8,11 @@ import Otp from "./components/UserAuthentication/Otp";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
-import './components/CSS/SideNavbar.css';
-import './App.css';
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import { SliderTutroial } from "./components/Pages/User/TutorialSPage/SliderTutroial";
 import { Packages } from "./components/Pages/User/Packages/Packages";
+import './components/CSS/SideNavbar.css';
+import './App.css';
 
 function App() {
   return (
@@ -24,9 +24,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
-         {/* Routing added later after full ui--> alamin */}
-         <Route path='/accountCreate' exact component={AccountCreate} />
-              {/* Routing added later after full ui--> alamin */}
+        <Route path='/accountCreate' exact component={AccountCreate} />
         <Route exact path='/tutorial' component={SliderTutroial} />
         <Route exact path='/packages' component={Packages} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
