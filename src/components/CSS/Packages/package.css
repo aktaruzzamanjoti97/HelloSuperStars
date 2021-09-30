@@ -86,7 +86,7 @@
       }
   }
 
-  @media only screen and (min-width: 900px) {
+  @media only screen and (min-width: 770px) {
     .pak-header {
       background-size: 50% 85% !important;
     }
