@@ -3,10 +3,20 @@
     width: 100%;
     min-height: 100vh;
   }
-
+.pak-header{
+    background-image: url('../../../images/Normal-User/Single-frame.png');
+    background-size: 380px;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+}
+.pak-header p{
+    padding: 10px;
+    color: #F0E25E;
+    font-size: 15px;
+}
 .pak-b{
     background-color: rgb(56, 52, 52);
-    width: 90%;
+    width: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -14,7 +24,7 @@
     -o-border-radius: 10px;
 }
 .pa-header{
-    background-color:rgb(235, 190, 10);
+    background-color:#FFAD00;
     height: 50px;
     margin-bottom: 20px;
 }
@@ -28,8 +38,8 @@
 .package p{
     color: white;
     margin-left: 35px;
-    font-size: 14px;
-    padding: 5px;
+    font-size: 12px;
+    padding: 3px;
 }
 .star{
     width: 12px;
@@ -41,11 +51,11 @@
 }
 
 .dollar{
-    color: yellow;
-    font-size: 35px;
+    color: #F0E25E;
+    font-size: 30px;
 }
 .dollar-s{
-    color: yellow;
+    color: #F0E25E;
 }
 
 .package-btn{
@@ -53,7 +63,7 @@
     height: 30px;
     font-size: 15px;
     color: white;
-    background-color: rgb(235, 190, 10);
+    background-color: #FFAD00;
     margin-bottom: 15px;
     border: none;
     text-align: center;

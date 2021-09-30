@@ -1,13 +1,16 @@
 import React from "react";
-import Star from '../../../../images/Normal User/star.png'
+import Star from '../../../../images/Normal-User/star.png'
 import "../../../CSS/Packages/package.css";
 
 export const Packages = () => {
   return (
     <>
-      <div className="Package-container ">
-        <div className="container">
-          <div className="row">
+      <div className="Package-container mx-auto ">
+        <div className="container mx-auto ">
+          <div className="row mx-auto  ">
+              <div className="pak-header text-center col-md-12">
+                   <p text-center>Select the perfect package for you</p>
+              </div>
             <div className="col-md-3 col-sm-6 package-bg my-5 ">
               <div className="pak-b">
                 <div className="pa-header">
