@@ -21,6 +21,7 @@ export const Packages = () => {
                   <p><img src={Star} className="star" alt="star" /> </p>
                 </div>
                 <div className="but-c">
+                <p ><span className="dollar-s">$</span> <b className="dollar">0.00</b></p>
                   <button className="package-btn">Free User</button>
                 </div>
               </div>
@@ -39,6 +40,7 @@ export const Packages = () => {
                   <p><img src={Star} className="star" alt="star" /> Free E-commerce Surfing</p>
                 </div>
                 <div className="but-c">
+                <p><span className="dollar-s">$</span> <b className="dollar">5.00</b></p>
                   <button className="package-btn">Buy Now</button>
                 </div>
               </div>
@@ -54,8 +56,10 @@ export const Packages = () => {
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
+                  <p><img src={Star} className="star" alt="star" /> Free E-commerce Surfing</p>
                 </div>
                 <div className="but-c">
+                <p><span className="dollar-s">$</span> <b className="dollar">10.00</b> </p>
                   <button className="package-btn">Buy Now</button>
                 </div>
               </div>
@@ -71,8 +75,10 @@ export const Packages = () => {
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
                   <p><img src={Star} className="star" alt="star" /> One Free Voice Record</p>
+                  <p><img src={Star} className="star" alt="star" /> Free E-commerce Surfing</p>
                 </div>
                 <div className="but-c">
+                    <p><span className="dollar-s">$</span> <b className="dollar">20.00</b></p>
                   <button className="package-btn">Buy Now</button>
                 </div>
               </div>

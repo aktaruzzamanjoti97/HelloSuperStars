@@ -29,15 +29,25 @@
     color: white;
     margin-left: 35px;
     font-size: 14px;
+    padding: 5px;
 }
 .star{
     width: 12px;
 }
+
+
 .but-c{
     text-align: center;
-   
-    
 }
+
+.dollar{
+    color: yellow;
+    font-size: 35px;
+}
+.dollar-s{
+    color: yellow;
+}
+
 .package-btn{
     width: 100px;
     height: 30px;
