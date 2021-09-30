@@ -3,13 +3,22 @@ import '../CSS/AccountCreate/accountCreate.css'
 import avaterImage from '../../images/CreateAccount-page/Avater.png'
 const AccountCreate = () => {
   const [file, setFile] = useState('');
-  
-  console.log('file=' + file);
+  const [modal,setModal] =useState(false);
+ 
   const handleChange = (e) => {
     setFile(URL.createObjectURL(e.target.files[0]))
   }
+  function ModalClick(event){
+    event.preventDefault();
+   setModal(!modal);
+   console.log(modal);
+  }
+ 
   return (
-    <div className="full-container">
+
+    <>
+    <div className='full-container'>
+
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-sm-12  account-create-bg my-5 ">
@@ -389,9 +398,9 @@ right div and info field start */}
                         </label>
                       </div>
 
-                      <button className="btn btn-warning text-light w-75  my-4">
-                        Save
-                      </button>
+                      <button onClick={ModalClick} className='btn btn-warning text-light w-75  my-4'>Save</button>
+                     
+
                     </form>
                   </div>
                 </div>
@@ -402,8 +411,30 @@ right div and info field start */}
           </div>
         </div>
       </div>
+
+{/* Modal start */}
+ 
     </div>
-  );
+    {modal && ( 
+<div className="modal-container">
+          <div onClick={ModalClick}  className="overlay-color"></div>
+          <div className="modal-content">
+            <p className='text-light'>
+              Would you like to get our newsletter and promotional offers through email?
+            </p>
+<div className="choose-btn">
+<button className='btn btn-warning text-light w-25'>Yes</button>
+            <button className="btn text-warning w-25" onClick={ModalClick}>
+            No
+            </button>
+</div>
+
+          </div>
+        </div>
+ )}
+    </>
+  )
+
 }
 
 export default AccountCreate
