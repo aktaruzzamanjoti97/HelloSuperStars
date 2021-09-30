@@ -77,9 +77,18 @@
     -o-border-radius: 5px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
     .pak-header {
-      background-size: 100% 80% !important;
+      background-size: 100% 85% !important;
+    }
+    .pak-header p {
+        font-size: 15px !important;
+      }
+  }
+
+  @media only screen and (min-width: 900px) {
+    .pak-header {
+      background-size: 50% 85% !important;
     }
     .pak-header p {
         font-size: 15px !important;
