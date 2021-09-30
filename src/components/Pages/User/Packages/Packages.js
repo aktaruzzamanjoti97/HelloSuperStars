@@ -7,7 +7,7 @@ export const Packages = () => {
     <>
       <div className="Package-container mx-auto ">
         <div className="container mx-auto ">
-          <div className="row mx-auto  ">
+          <div className="row mx-auto  "> 
               <div className="pak-header text-center col-md-12">
                    <p text-center>Select the perfect package for you</p>
               </div>
