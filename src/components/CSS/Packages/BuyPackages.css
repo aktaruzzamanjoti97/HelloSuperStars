@@ -39,6 +39,7 @@
   height: 80px;
   background-color: white;
   padding: 10px;
+  margin-bottom: 35px;
   border: 2px solid #f0e25e;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -48,6 +49,7 @@
 }
 .car-pak-li img:hover {
   width: 12%;
+  margin-bottom: 35px;
   height: 80px;
   background-color: rgb(233, 226, 10);
   padding: 10px;
@@ -121,6 +123,7 @@
     height: 80px;
     background-color: white;
     padding: 10px;
+    margin-bottom: 40px;
     border: 2px solid #f0e25e;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -131,6 +134,7 @@
   .car-pak-li img:hover {
     width: 12%;
     height: 80px;
+    margin-bottom: 40px;
     background-color: rgb(233, 226, 10);
     padding: 10px;
     border: 2px solid #f0e25e;
@@ -163,7 +167,7 @@
   .car-pak-li img {
     width: 40%;
     height: 80px;
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
     background-color: white;
     padding: 10px;
     border: 2px solid #f0e25e;
@@ -176,6 +180,7 @@
   .car-pak-li img:hover {
     width: 40%;
     height: 80px;
+    margin-bottom: 40px !important;
     background-color: rgb(233, 226, 10);
     padding: 10px;
     border: 2px solid #f0e25e;
