@@ -21,6 +21,47 @@
   font-weight: 600;
 }
 
+.payment-pak{
+ min-height: 10px;
+ margin-bottom: 50px;
+}
+
+.car-pak{
+  list-style: none;
+}
+.car-pak-li{
+  display: inline;
+  padding: 10px;
+}
+
+.car-pak-li img{
+  width: 12%;
+  height: 80px;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #f0e25e;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.car-pak-li img:hover{
+  width: 12%;
+  height: 80px;
+  background-color: rgb(240, 232, 14);
+  padding: 10px;
+  border: 2px solid #f0e25e;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+
+
+
 .buy-package-bg {
   width: 100%;
   display: flex;

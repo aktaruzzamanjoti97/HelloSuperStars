@@ -1,5 +1,10 @@
 import React from "react";
+import HorizontalScroll from 'react-scroll-horizontal'
 import "../../../CSS/Packages/BuyPackages.css";
+import Visa from '../../../../images/Payment-img/Visa_Inc._logo.svg.png'
+import Bkash from '../../../../images/Payment-img/BKash-bKash-Logo.wine.png'
+import Payoneer from '../../../../images/Payment-img/Payoneer-Logo.wine.png'
+import PayPal from '../../../../images/Payment-img/PayPal-Logo.wine.png'
 
 export const BuyPackages = () => {
   return (
@@ -12,14 +17,15 @@ export const BuyPackages = () => {
               <p className="text-center col-md-12">Payment Method</p>
             </div>
 
-            <div className="payment-pak">
-              <ul className="car-pak">
-                <li className="car-pak-li">i</li>
-                <li className="car-pak-li">i</li>
-                <li className="car-pak-li">i</li>
-                <li className="car-pak-li">i</li>
-                <li className="car-pak-li">i</li>
-                <li className="car-pak-li">i</li>
+            <div className="row payment-pak col-md-12 ">
+              <ul className="car-pak col-ms-12">
+              <li className="car-pak-li"><img src={Bkash} alt="Bkash" /></li>
+                <li className="car-pak-li"><img src={Payoneer} alt="Payoneer" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
+                <li className="car-pak-li"><img src={Bkash} alt="bkash" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
+                <li className="car-pak-li"><img src={Payoneer} alt="Payoneer" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
               </ul>
             </div>
 
