@@ -10,8 +10,12 @@ padding: 10px;
 }
 @media only screen and (max-width: 600px) {
    .form-width-change{
-       width: 200px;
+       width: 40%;
    }
+   .language-select{
+    margin-left:0;
+   
+}
 
   }
 .circle-icon:hover{
@@ -54,7 +58,7 @@ padding: 10px;
    border: 3px solid #FFCA2C;
 }
 .language-select{
-    margin-left: 10px;
+ 
     background-color: #FFCA2C;
     color: white;
     padding: 3px;
