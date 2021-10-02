@@ -1,7 +1,5 @@
 import React from "react";
-import HorizontalScroll from 'react-scroll-horizontal'
 import "../../../CSS/Packages/BuyPackages.css";
-import Visa from '../../../../images/Payment-img/Visa_Inc._logo.svg.png'
 import Bkash from '../../../../images/Payment-img/BKash-bKash-Logo.wine.png'
 import Payoneer from '../../../../images/Payment-img/Payoneer-Logo.wine.png'
 import PayPal from '../../../../images/Payment-img/PayPal-Logo.wine.png'
