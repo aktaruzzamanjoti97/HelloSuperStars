@@ -12,6 +12,17 @@ export const BuyPackages = () => {
               <p className="text-center col-md-12">Payment Method</p>
             </div>
 
+            <div className="payment-pak">
+              <ul className="car-pak">
+                <li className="car-pak-li">i</li>
+                <li className="car-pak-li">i</li>
+                <li className="car-pak-li">i</li>
+                <li className="car-pak-li">i</li>
+                <li className="car-pak-li">i</li>
+                <li className="car-pak-li">i</li>
+              </ul>
+            </div>
+
             <form>
               <div class="row col-md-4">
                 <div class="col">
