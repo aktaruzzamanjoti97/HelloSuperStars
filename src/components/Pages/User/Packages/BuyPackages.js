@@ -1,11 +1,9 @@
 import React from "react";
-import Packages from "../../../Pages/User/Packages/Packages";
 import "../../../CSS/Packages/BuyPackages.css";
 
 export const BuyPackages = () => {
   return (
     <>
-      <Packages />
 
       <div className="BuyPackages">
         <div className="container max-auto">
@@ -38,7 +36,7 @@ export const BuyPackages = () => {
               </div>
 
               <div className=" mt-4">
-              <button to='/' className='btn btn-outline-warning  px-4 mx-2 btn-pak'>Confirm Password</button>
+              <a href="/"><button  className='btn btn-outline-warning  px-4 mx-2 btn-pak'>Confirm Password</button></a>
               </div>
             </form>
           </div>
@@ -47,3 +45,5 @@ export const BuyPackages = () => {
     </>
   );
 };
+
+export default BuyPackages;

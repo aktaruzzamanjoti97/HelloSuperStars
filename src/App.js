@@ -9,9 +9,9 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
-import { SliderTutroial } from "./components/Pages/User/TutorialSPage/SliderTutroial";
-import { Packages } from "./components/Pages/User/Packages/Packages";
-import { BuyPackages } from "./components/Pages/User/Packages/BuyPackages";
+import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
+import Packages from "./components/Pages/User/Packages/Packages";
+import BuyPackages from "./components/Pages/User/Packages/BuyPackages";
 import './components/CSS/SideNavbar.css';
 import './App.css';
 
@@ -26,7 +26,7 @@ function App() {
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
         <Route path='/accountCreate' exact component={AccountCreate} />
-        <Route exact path='/tutorial' component={SliderTutroial} />
+        <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
         <Route exact path='/buy-packages' component={BuyPackages} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />

@@ -1,53 +1,54 @@
-.BuyPackages{
-    background-color: #000000;
-    width: 100%;
-    min-height: 100vh;
-    border: none;
-    outline: none;
-  }
-.buy-packages-header{
-    background-image: url('../../../images/Normal-User/Single-frame.png');
-    background-size: 20% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+.BuyPackages {
+  background-color: #000000;
+  width: 100%;
+  min-height: 100vh;
+  border: none;
+  outline: none;
 }
-.buy-packages-header p{
-    padding: 10px;
-    margin-top: 10px;
-    color: #F0E25E;
-    font-size: 18px;
-    font-weight: 600;
+.buy-packages-header {
+  background-image: url("../../../images/Normal-User/Single-frame.png");
+  background-size: 20% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.buy-packages-header p {
+  padding: 10px;
+  margin-top: 12px;
+  color: #f0e25e;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.buy-package-bg{
+.buy-package-bg {
   width: 100%;
   display: flex;
 }
 
-.pak-s{
-  color: #F0E25E;
+.pak-s {
+  color: #f0e25e;
   padding-bottom: 10px;
 }
 
-.pak-style{
+.pak-style {
   border-width: 0 0 2px;
-  border: 2px solid #F0E25E;
+  border: 2px solid #f0e25e;
   background-color: #343434;
-  color: #F0E25E;
+  color: #f0e25e;
   font: 15px;
   border-radius: 0;
   margin-bottom: 25px;
 }
 
-.pak-style:focus{
+.pak-style:focus {
   box-shadow: none;
   font: 15px;
-  border: 2px solid #F0E25E;
+  border: 2px solid #f0e25e;
   background-color: #343434 !important;
-  color: #F0E25E;
-
+  color: #f0e25e;
 }
-.btn-pak{
+.btn-pak {
   font: 15px;
   padding: 5px;
   color: white;
@@ -61,15 +62,12 @@
   -o-border-radius: 5px;
 }
 
-
-
 @media only screen and (max-width: 768px) {
-    .buy-packages-header {
-      background-size: 100% 85% !important;
-    }
-    .buy-packages-header p {
-        font-size: 15px !important;
-      }
+  .buy-packages-header {
+    background-size: 100% 85% !important;
   }
-
-
+  .buy-packages-header p {
+    font-size: 15px !important;
+    padding: 13px;
+  }
+}
