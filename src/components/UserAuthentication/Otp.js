@@ -54,7 +54,7 @@ const Otp = () => {
                                                             </div>
                                                            
                                                         </div>
-                                                        <h6>Already have an account ? <a href="/login">Log In</a></h6>
+                                                        <h6 className="log-otp">Already have an account ? <a href="/login">Log In</a></h6>
 
                                                     </Card.Body>
                                                 </Card>

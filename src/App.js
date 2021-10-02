@@ -5,13 +5,14 @@ import Home from "./components/Pages/Home/Body/HomePages";
 import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
 import Otp from "./components/UserAuthentication/Otp";
-import Tutorials from "./components/Pages/User/TutorialPage/Tutorials";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
+import AccountCreate from "./components/UserAuthentication/AccountCreate";
+import { SliderTutroial } from "./components/Pages/User/TutorialSPage/SliderTutroial";
+import { Packages } from "./components/Pages/User/Packages/Packages";
 import './components/CSS/SideNavbar.css';
 import './App.css';
-import AccountCreate from "./components/UserAuthentication/AccountCreate";
 
 function App() {
   return (
@@ -23,10 +24,9 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
-         {/* Routing added later after full ui--> alamin */}
-         <Route path='/accountCreate' exact component={AccountCreate} />
-              {/* Routing added later after full ui--> alamin */}
-        <Route exact path='/tutorial' component={Tutorials} />
+        <Route path='/accountCreate' exact component={AccountCreate} />
+        <Route exact path='/tutorial' component={SliderTutroial} />
+        <Route exact path='/packages' component={Packages} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
        
