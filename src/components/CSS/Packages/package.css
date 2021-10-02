@@ -2,6 +2,8 @@
     background-color: #000000;
     width: 100%;
     min-height: 100vh;
+    border: none;
+    outline: none;
   }
 .pak-header{
     background-image: url('../../../images/Normal-User/Single-frame.png');

@@ -11,6 +11,7 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import { SliderTutroial } from "./components/Pages/User/TutorialSPage/SliderTutroial";
 import { Packages } from "./components/Pages/User/Packages/Packages";
+import { BuyPackages } from "./components/Pages/User/Packages/BuyPackages";
 import './components/CSS/SideNavbar.css';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/accountCreate' exact component={AccountCreate} />
         <Route exact path='/tutorial' component={SliderTutroial} />
         <Route exact path='/packages' component={Packages} />
+        <Route exact path='/buy-packages' component={BuyPackages} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
        
