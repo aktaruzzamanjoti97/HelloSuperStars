@@ -21,20 +21,20 @@
   font-weight: 600;
 }
 
-.payment-pak{
- min-height: 10px;
- margin-bottom: 50px;
+.payment-pak {
+  min-height: 10px;
+  margin-bottom: 50px;
 }
 
-.car-pak{
+.car-pak {
   list-style: none;
 }
-.car-pak-li{
+.car-pak-li {
   display: inline;
   padding: 10px;
 }
 
-.car-pak-li img{
+.car-pak-li img {
   width: 12%;
   height: 80px;
   background-color: white;
@@ -46,7 +46,7 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.car-pak-li img:hover{
+.car-pak-li img:hover {
   width: 12%;
   height: 80px;
   background-color: rgb(233, 226, 10);
@@ -58,9 +58,6 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-
-
-
 
 .buy-package-bg {
   width: 100%;
@@ -110,5 +107,82 @@
   .buy-packages-header p {
     font-size: 15px !important;
     padding: 13px;
+  }
+  .btn-pak{
+    margin-bottom: 30px;
+  }
+
+  .car-pak-li {
+    padding: 10px;
+  }
+
+  .car-pak-li img {
+    width: 40%;
+    height: 80px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #f0e25e;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .car-pak-li img:hover {
+    width: 12%;
+    height: 80px;
+    background-color: rgb(233, 226, 10);
+    padding: 10px;
+    border: 2px solid #f0e25e;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .buy-packages-header {
+    background-size: 100% 85% !important;
+  }
+  .buy-packages-header p {
+    font-size: 15px !important;
+    padding: 13px;
+  }
+  .btn-pak{
+    margin-bottom: 30px;
+  }
+
+  .car-pak-li {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .car-pak-li img {
+    width: 40%;
+    height: 80px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #f0e25e;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .car-pak-li img:hover {
+    width: 40%;
+    height: 80px;
+    background-color: rgb(233, 226, 10);
+    padding: 10px;
+    border: 2px solid #f0e25e;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
   }
 }

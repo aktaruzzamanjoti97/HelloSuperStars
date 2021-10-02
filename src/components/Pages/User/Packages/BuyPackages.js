@@ -17,7 +17,7 @@ export const BuyPackages = () => {
 
             <div className="row payment-pak col-md-12 ">
               <ul className="car-pak col-ms-12">
-              <li className="car-pak-li"><img src={Bkash} alt="Bkash" /></li>
+              <li className="car-pak-li"><img src={Bkash} alt="Bkash"/></li>
                 <li className="car-pak-li"><img src={Payoneer} alt="Payoneer" /></li>
                 <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
                 <li className="car-pak-li"><img src={Bkash} alt="bkash" /></li>
@@ -51,7 +51,7 @@ export const BuyPackages = () => {
               </div>
 
               <div className=" mt-4">
-              <a href="/"><button  className='btn btn-outline-warning  px-4 mx-2 btn-pak'>Confirm Password</button></a>
+              <a href="/"><button  className='btn btn-outline-warning  px-4 btn-pak'>Confirm Password</button></a>
               </div>
             </form>
           </div>
