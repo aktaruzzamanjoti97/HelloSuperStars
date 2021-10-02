@@ -25,7 +25,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p ><span className="dollar-s">$</span> <b className="dollar">0.00</b></p>
-                  <button className="package-btn">Free User</button>
+                 <a href="/buy-packages"><button className="package-btn">Free User</button></a>
                 </div>
               </div>
             </div>
@@ -44,7 +44,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">5.00</b></p>
-                  <button className="package-btn">Buy Now</button>
+                <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">10.00</b> </p>
-                  <button className="package-btn">Buy Now</button>
+                <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                     <p><span className="dollar-s">$</span> <b className="dollar">20.00</b></p>
-                  <button className="package-btn">Buy Now</button>
+                    <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
                 </div>
               </div>
             </div>

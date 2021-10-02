@@ -4,7 +4,7 @@ import TutorialCarousel3 from "../../../../images/Tutorial-Graphic_Web-04.png";
 import TutorialCarousel2 from "../../../../images/Ayman_Sadiq.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import "../../../CSS/Tutorial-page/Tutorial.css";
-export const SliderTutroial = () => {
+export const SliderTutorial = () => {
   return (
     <>
       <div className="tbg-img">
@@ -48,7 +48,7 @@ export const SliderTutroial = () => {
                                 />
                               </Carousel.Item>
                             </Carousel>
-                            <a href="/"><button className="skip">Skip</button></a>
+                            <a href="/packages"><button className="skip">Skip</button></a>
                           </Card.Body>
                         </Card>
                       </div>
@@ -63,3 +63,4 @@ export const SliderTutroial = () => {
     </>
   );
 };
+export default SliderTutorial;

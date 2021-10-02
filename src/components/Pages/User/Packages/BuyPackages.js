@@ -1,17 +1,32 @@
 import React from "react";
-import Packages from "../../../Pages/User/Packages/Packages";
+import HorizontalScroll from 'react-scroll-horizontal'
 import "../../../CSS/Packages/BuyPackages.css";
+import Visa from '../../../../images/Payment-img/Visa_Inc._logo.svg.png'
+import Bkash from '../../../../images/Payment-img/BKash-bKash-Logo.wine.png'
+import Payoneer from '../../../../images/Payment-img/Payoneer-Logo.wine.png'
+import PayPal from '../../../../images/Payment-img/PayPal-Logo.wine.png'
 
 export const BuyPackages = () => {
   return (
     <>
-      <Packages />
 
       <div className="BuyPackages">
         <div className="container max-auto">
           <div className="row max-auto">
             <div className="buy-packages-header">
               <p className="text-center col-md-12">Payment Method</p>
+            </div>
+
+            <div className="row payment-pak col-md-12 ">
+              <ul className="car-pak col-ms-12">
+              <li className="car-pak-li"><img src={Bkash} alt="Bkash" /></li>
+                <li className="car-pak-li"><img src={Payoneer} alt="Payoneer" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
+                <li className="car-pak-li"><img src={Bkash} alt="bkash" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
+                <li className="car-pak-li"><img src={Payoneer} alt="Payoneer" /></li>
+                <li className="car-pak-li"><img src={PayPal} alt="PayPal" /></li>
+              </ul>
             </div>
 
             <form>
@@ -38,7 +53,7 @@ export const BuyPackages = () => {
               </div>
 
               <div className=" mt-4">
-              <button to='/' className='btn btn-outline-warning  px-4 mx-2 btn-pak'>Confirm Password</button>
+              <a href="/"><button  className='btn btn-outline-warning  px-4 mx-2 btn-pak'>Confirm Password</button></a>
               </div>
             </form>
           </div>
@@ -47,3 +62,5 @@ export const BuyPackages = () => {
     </>
   );
 };
+
+export default BuyPackages;
