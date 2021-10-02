@@ -26,14 +26,14 @@ class Navigation extends Component {
         return (
             <>
                 <Navbar className='navbar-bg' expand="lg" sticky="top">
-                    <div className="container-fluid mx-4">
-                        <Navbar.Brand href="#">
-                            <img src={helloSuperstarLogo} alt="hello superstar logo" height='45px' />
+                    <div className="container">
+                        <Navbar.Brand href="#" >
+                            <img  src={helloSuperstarLogo} alt="hello superstar logo" height='60px' />
                         </Navbar.Brand>
                         <Form className='form-width-change'>
                                 <div className="form-group has-search">
                                     <span className="fa fa-search form-control-feedback"></span>
-                                    <input type="text" className="form-control search-design w-75" placeholder="Search Superstar" />
+                                    <input type="text" className="form-control search-design" placeholder="Search Superstar" />
                                 </div>
                             </Form>
                         <Navbar.Toggle aria-controls="navbarScroll" />
