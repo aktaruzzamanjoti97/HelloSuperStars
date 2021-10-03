@@ -26,7 +26,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p ><span className="dollar-s">$</span> <b className="dollar">0.00</b></p>
-                 <Link to="/buy-packages"><button className="package-btn">Free User</button></Link>
+                 <Link to="/"><button className="package-btn">Free User</button></Link>
                 </div>
               </div>
             </div>

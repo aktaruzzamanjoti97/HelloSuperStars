@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../CSS/AccountCreate/accountCreate.css'
 import avaterImage from '../../images/CreateAccount-page/Avater.png'
+import { Link } from 'react-router-dom'
 const AccountCreate = () => {
   const [file, setFile] = useState('');
   const [modal,setModal] =useState(false);
@@ -423,7 +424,7 @@ right div and info field start */}
               Would you like to get our newsletter and promotional offers through email?
             </p>
 <div className="choose-btn">
-<button className='btn btn-warning text-light w-25'>Yes</button>
+<Link to='/packages' className='btn btn-warning text-light w-25'>Yes</Link>
             <button className="btn text-warning w-25" onClick={ModalClick}>
             No
             </button>

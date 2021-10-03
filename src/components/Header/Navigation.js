@@ -9,6 +9,7 @@ import { Navbar, Nav, Form } from 'react-bootstrap'
 import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
 import accountImg from '../../images/navbar/account.jpg'
 import '../CSS/Navbar/navbar.css';
+import {Link} from 'react-router-dom'
 
 class Navigation extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Navigation extends Component {
                 <Navbar className='navbar-bg' expand="lg" sticky="top">
                     <div className="container">
                         <Navbar.Brand href="#" >
-                            <img  src={helloSuperstarLogo} alt="hello superstar logo" height='60px' />
+                           <Link to='/'> <img  src={helloSuperstarLogo} alt="hello superstar logo" height='60px' /></Link>
                         </Navbar.Brand>
                         <Form className='form-width-change'>
                                 <div className="form-group has-search">
