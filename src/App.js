@@ -12,8 +12,10 @@ import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
 import Packages from "./components/Pages/User/Packages/Packages";
 import BuyPackages from "./components/Pages/User/Packages/BuyPackages";
+
 import './components/CSS/SideNavbar.css';
 import './App.css';
+import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
         <Route exact path='/buy-packages' component={BuyPackages} />
+        <Route path='/guestUser' exact component={GuestUserPage} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
        

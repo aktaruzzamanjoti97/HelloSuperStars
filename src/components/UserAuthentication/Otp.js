@@ -4,6 +4,7 @@ import HelloSuperStarDemo from "./HelloSuperStarDemo";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 import '../CSS/Login-page/logIn.css';
 import '../CSS/Otp-page/OtpPage.css';
 
@@ -46,7 +47,7 @@ const Otp = () => {
 
                                                             <div className="btnO col-lg-12">
                                                                 <div className="btnS col-sm-6">
-                                                                    <button>Verify</button>
+                                                                   <Link to="/accountCreate"> <button>Verify</button></Link>
                                                                 </div>
                                                                 <div className="btnA col-sm-6 mt-2">
                                                                     <a href="/">Resend</a>
@@ -54,7 +55,7 @@ const Otp = () => {
                                                             </div>
                                                            
                                                         </div>
-                                                        <h6 className="log-otp">Already have an account ? <a href="/login">Log In</a></h6>
+                                                        <h6 className="log-otp">Already have an account ? <Link to="/login">Log In</Link></h6>
 
                                                     </Card.Body>
                                                 </Card>
