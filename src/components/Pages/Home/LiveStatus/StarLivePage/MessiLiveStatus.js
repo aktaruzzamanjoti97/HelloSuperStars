@@ -1,6 +1,6 @@
 import React from "react";
 import LiveCard from "../CommonCardLive";
-import Pdata from "../../Body/MadeData/Messi";
+import Pdata from "../../Body/MadeData/Post";
 
 const MessiLiveStatus = () =>{
   return(

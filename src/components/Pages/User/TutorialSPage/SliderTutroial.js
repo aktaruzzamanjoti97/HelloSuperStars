@@ -27,8 +27,7 @@ export const SliderTutorial = () => {
                           <Card.Body>
                             <Carousel bg-black>
                               <Carousel.Item>
-                                <img
-                                  className="d-block"
+                                <img className="d-block"
                                   src={TutorialCarousel3}
                                   alt="First slide"
                                 />
