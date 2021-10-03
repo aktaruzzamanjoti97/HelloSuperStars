@@ -1,7 +1,8 @@
 import React from "react";
 import Star from '../../../../images/Normal-User/star.png'
 import "../../../CSS/Packages/package.css";
-
+import {Link} from 'react-router-dom'
+ 
 export const Packages = () => {
   return (
     <>
@@ -25,7 +26,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p ><span className="dollar-s">$</span> <b className="dollar">0.00</b></p>
-                 <a href="/buy-packages"><button className="package-btn">Free User</button></a>
+                 <Link to="/buy-packages"><button className="package-btn">Free User</button></Link>
                 </div>
               </div>
             </div>
@@ -44,7 +45,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">5.00</b></p>
-                <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
+                <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
                 </div>
               </div>
             </div>
@@ -63,7 +64,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">10.00</b> </p>
-                <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
+                <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
                 </div>
               </div>
             </div>
@@ -82,7 +83,7 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                     <p><span className="dollar-s">$</span> <b className="dollar">20.00</b></p>
-                    <a href="/buy-packages"><button className="package-btn">Buy Now</button></a>
+                    <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
                 </div>
               </div>
             </div>
