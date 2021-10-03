@@ -19,12 +19,12 @@ export default class HomePages extends Component {
               <div className="col-sm-3 justify-content-center">
                 <SideNavbar />
               </div>
-              <div className="col-sm-6 justify-content-center">
+              <div className="col-sm-6 justify-content-center" >
                 <Post/>
                 <MashrafeMortazaPost />
                 <MizanurRahmanAzhariPost />
               </div>
-              <div className="col-sm-3 justify-content-center">
+              <div className="col-sm-3 justify-content-center" >
                 <MessiLiveStatus />
                 <MashrafeMortazaLiveStatus />
                 <MizanurRahmanAzhariLiveStatus />

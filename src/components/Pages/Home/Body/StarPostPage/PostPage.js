@@ -8,8 +8,8 @@ const MessiPage = () =>{
     <>
      <div className="container-fluid mb-5">
        <div className="row">
-         <div className="col-10  post">
-           <div className="">
+         <div className="col-10 mx-auto">
+           <div className="row gy-4" >
              <div className="post-title">
                <p>Coming live at 9:00PM tonight. See you there</p>
              </div>
