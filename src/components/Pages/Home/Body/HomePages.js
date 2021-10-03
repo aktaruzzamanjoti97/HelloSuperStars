@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SideNavbar from "../../Home/SideNavbar/SideNavbar";
 
-import MessiPost from "./StarPostPage/MessiPage";
+import Post from "./StarPostPage/PostPage";
 import MashrafeMortazaPost from "./StarPostPage/MashrafeMortazaPage";
 import MizanurRahmanAzhariPost from "./StarPostPage/MizanurRahmanAzhariPage";
 
@@ -14,18 +14,17 @@ export default class HomePages extends Component {
     return (
       <React.Fragment>
         <div className="homebody"  style={{ background: "#000000"}}>
-          <div
-            className="container">
+          <div className="container">
             <div className="row">
               <div className="col-sm-3 justify-content-center">
                 <SideNavbar />
               </div>
-              <div className="col-sm-6 justify-content-center">
-                <MessiPost />
+              <div className="col-sm-6 justify-content-center" >
+                <Post/>
                 <MashrafeMortazaPost />
                 <MizanurRahmanAzhariPost />
               </div>
-              <div className="col-sm-3 justify-content-center">
+              <div className="col-sm-3 justify-content-center" >
                 <MessiLiveStatus />
                 <MashrafeMortazaLiveStatus />
                 <MizanurRahmanAzhariLiveStatus />
