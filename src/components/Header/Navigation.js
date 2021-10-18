@@ -29,7 +29,7 @@ class Navigation extends Component {
                 <Navbar className='navbar-bg' expand="lg" sticky="top">
                     <div className="container">
                         <Navbar.Brand href="#" >
-                           <Link to='/'> <img  src={helloSuperstarLogo} alt="hello superstar logo" height='60px' /></Link>
+                           <Link to='/'> <img  src={helloSuperstarLogo} alt="hello superstar logo" height='40px' /></Link>
                         </Navbar.Brand>
                         <Form className='form-width-change'>
                                 <div className="form-group has-search">
