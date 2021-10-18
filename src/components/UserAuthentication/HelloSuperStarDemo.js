@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 const HelloSuperStarDemo = () => {
           return (
-                    <div className="class-col col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                              <div className="logIm">
+                    <div className="class-col col-md-6 pt-5 pt-lg-0 d-flex justify-content-center align-items-center flex-column">
+                              <div>
                                         <img src={HelloSuperStarLogo} alt="Hello Super Star Logo" />
                               </div>
                               <div>
