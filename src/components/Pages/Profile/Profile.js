@@ -7,18 +7,24 @@ import LeftCard from './profile-components/LeftCard';
 
 const Profile = () => {
     return (
-        <div className='full-container py-3'>
+        <div className='full-container py-3 '>
             {/* cover photo work start   */}
             <div className="container mb-2">
                 <div className="profile-img-cover ">
-                    <img src={coverImg} alt="bg-img" className='img-fluid profile-cover' />
+                  <div className="profile-container">
+                  <img src={coverImg} alt="bg-img" className='img-fluid profile-cover' />
+                  
+                  </div>
+                   
 
                 </div>
                 <div className="profile-div" >
-                    <img src={profileImg} alt="profile-img" className='img-fluid profile-img' />
+                  
+                   <img src={profileImg} alt="profile-img" className='img-fluid profile-img' />
+                 
                     <div className="prodile-pic-info text-center">
-                        <h5 className='text-warning'>Atif Hossain</h5>
-                        <h6 className='text-warning'>Student</h6>
+                        <h5 className='profile-font-color'>Atif Hossain</h5>
+                        <h6 className='profile-font-color'>Student</h6>
                     </div>
                 </div>
             </div>
@@ -35,11 +41,13 @@ const Profile = () => {
 </div>
 
 <div className="container left-col-box p-3 mt-3">
+
+
 <div className="accordion" id="accordionExample">
   <div className="accordion-item left-bottom">
     <h2 className="accordion-header " id="headingOne">
       <button className="accordion-button profile-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-      <span><i className="fas fa-layer-group mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Category <br></br>
+      <span><i className="fas fa-layer-group mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Category <br></br>
      <small className='category-size'> 5 selectd</small>
       
       </span>
@@ -47,14 +55,16 @@ const Profile = () => {
     </h2>
     <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-    <p className='text-warning'>Category loop start here</p>
+    <p className='profile-font-color'>Category loop start here</p>
       </div>
     </div>
   </div>
+
+  
   <div className="accordion-item mt-1 left-bottom">
     <h2 className="accordion-header" id="headingTwo">
       <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      <span><i className="fas fa-star mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Following <br></br>
+      <span><i className="fas fa-star mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Following <br></br>
      <small className='category-size'> 25 star</small>
       
       </span>
@@ -66,7 +76,7 @@ const Profile = () => {
   <div className="accordion-item mt-1 left-bottom">
     <h2 className="accordion-header" id="headingTwo">
       <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      <span><i className="fas fa-wallet mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Wallet <br></br>
+      <span><i className="fas fa-wallet mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Wallet <br></br>
      <small className='category-size'> 200 star</small>
       
       </span>
@@ -78,7 +88,7 @@ const Profile = () => {
   <div className="accordion-item mt-1 left-bottom">
     <h2 className="accordion-header" id="headingTwo">
       <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      <span><i className="fas fa-id-card mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Enrolled audition <br></br>
+      <span><i className="fas fa-id-card mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Enrolled audition <br></br>
      <small className='category-size'> 1 pending</small>
       
       </span>
@@ -90,7 +100,7 @@ const Profile = () => {
   <div className="accordion-item mt-1 left-bottom">
     <h2 className="accordion-header" id="headingTwo">
       <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      <span><i className="fas fa-cog mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Setting 
+      <span><i className="fas fa-cog mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Setting 
       </span>
       </button>
     </h2>
@@ -100,19 +110,40 @@ const Profile = () => {
   <div className="accordion-item mt-1 left-bottom">
     <h2 className="accordion-header" id="headingTwo">
       <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-      <span><i className="fas fa-sign-out-alt mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Logout 
+      <span><i className="fas fa-sign-out-alt mx-2 profile-font-color fa-2x"></i></span> <span className='mx-2 profile-font-color'>Logout 
       </span>
       </button>
     </h2>
   </div>
 
 </div>
-</div>
+
+
+
 
 </div>
 
-<div className="col-md-7 bg-warning">
-    here celebrity photos
+</div>
+
+<div className="col-md-7 bg-info">
+  
+
+<h4>Right side card start</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 

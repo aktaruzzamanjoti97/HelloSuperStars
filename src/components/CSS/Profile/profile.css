@@ -34,7 +34,7 @@
   } */
 
 .main-div {
-    margin-top: 90px;
+    margin-top: 100px;
     margin-bottom: 90px;
 }
 
@@ -66,4 +66,15 @@
 .category-size {
     font-size: 12px;
     color: #FFAD00 !;
+}
+
+.profile-font-color {
+    color: #F0E25E;
+}
+
+.change-cover {
+    position: absolute;
+    bottom: 55%;
+    right: 20%;
+    font-size: 18px;
 }
