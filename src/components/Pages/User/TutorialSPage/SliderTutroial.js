@@ -4,6 +4,7 @@ import TutorialCarousel3 from "../../../../images/Tutorial-Graphic_Web-04.png";
 import TutorialCarousel2 from "../../../../images/Ayman_Sadiq.jpg";
 import Carousel from "react-bootstrap/Carousel";
 import "../../../CSS/Tutorial-page/Tutorial.css";
+import { Link } from "react-router-dom";
 export const SliderTutorial = () => {
   return (
     <>
@@ -27,8 +28,7 @@ export const SliderTutorial = () => {
                           <Card.Body>
                             <Carousel bg-black>
                               <Carousel.Item>
-                                <img
-                                  className="d-block"
+                                <img className="d-block"
                                   src={TutorialCarousel3}
                                   alt="First slide"
                                 />
@@ -48,11 +48,15 @@ export const SliderTutorial = () => {
                                 />
                               </Carousel.Item>
                             </Carousel>
-                            <a href="/packages"><button className="skip">Skip</button></a>
+                            
                           </Card.Body>
+                          <Link to="/login"><button className="skip mb-3">Skip</button></Link>
                         </Card>
+                       
                       </div>
+                      
                     </Container>
+                   
                   </div>
                 </div>
               </div>

@@ -40,7 +40,7 @@ const Signup = () => {
             setLoading(true);
             setError("");
             await signup(emailRef.current.value, passwordRef.current.value);
-            history.push('/login');
+            history.push('/otp');
         } catch (error) {
             setError(error);
         }
@@ -104,11 +104,11 @@ const Signup = () => {
                                                                 </div>
                                                             </div>
                                                             <div className="text-center mt-4">
-                                                                <Button disabled={loading} className="w-50 btn btn-warning" type="submit">Sign Up</Button>
+                                                                <Button to='/otp' disabled={loading} className="w-50 btn btn-warning" type="submit">Signup</Button>
                                                             </div>
                                                             <div className="d-flex  justify-content-around mt-4 ">
-                                                                <Link to='/login' className='btn btn-outline-warning  px-4 mx-2 userBtn-font'>login</Link>
-                                                                <button className='btn btn-outline-warning  mx-2 userBtn-font'>Guest user</button>
+                                                                <Link to='/login' className='btn btn-outline-warning  px-4 mx-2 userBtn-font'>Login</Link>
+                                                                <Link to='/guestUser' className='btn btn-outline-warning  mx-2 userBtn-font'>Guest user</Link>
                                                             </div>
                                                         </form>
 

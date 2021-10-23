@@ -3,6 +3,7 @@ import "../../../CSS/Packages/BuyPackages.css";
 import Bkash from '../../../../images/Payment-img/BKash-bKash-Logo.wine.png'
 import Payoneer from '../../../../images/Payment-img/Payoneer-Logo.wine.png'
 import PayPal from '../../../../images/Payment-img/PayPal-Logo.wine.png'
+import { Link } from "react-router-dom";
 
 export const BuyPackages = () => {
   return (
@@ -51,7 +52,7 @@ export const BuyPackages = () => {
               </div>
 
               <div className=" mt-4">
-              <a href="/"><button  className='btn btn-outline-warning  px-4 btn-pak'>Confirm Password</button></a>
+   <Link to='/' className='btn btn-outline-warning  px-4 btn-pak'>Confirm Password</Link>
               </div>
             </form>
           </div>
