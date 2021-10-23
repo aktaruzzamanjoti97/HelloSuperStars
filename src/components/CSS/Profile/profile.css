@@ -1,25 +1,29 @@
-.profile-cover{
+.profile-cover {
     height: 350px;
     width: 100%;
     border-radius: 5px;
 }
-.profile-div{
+
+.profile-div {
     position: absolute;
-    
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.profile-img{
+
+.profile-img {
     cursor: pointer;
     height: 120px;
     width: 120px;
     border-radius: 50%;
     color: #818181;
-
 }
+
+
 /* .prodile-pic-info{
     color: yellow;
 } */
+
+
 /* @media only screen and (max-width: 600px) {
     .profile-div{
         position: absolute;
@@ -28,17 +32,38 @@
         transform: translate(-50%,-50%);
     }
   } */
-  .main-div{
-      margin-top: 90px;
-      margin-bottom: 90px;
-  }
-  .profile-photos{
-      cursor: pointer;
-     padding: 5px 0 40px 0;
-  }
-  .left-col-box{
-      background-color:#343434;
-  }
-  .see-all-text{
-      text-align: right;
-  }
+
+.main-div {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.profile-photos {
+    cursor: pointer;
+    padding: 5px 0 40px 0;
+}
+
+.left-col-box {
+    background-color: #343434;
+}
+
+.see-all-text {
+    text-align: right;
+}
+
+.profile-accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F0E25E'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.profile1-accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#000000'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.left-bottom {
+    background-color: #000000 !important;
+}
+
+.category-size {
+    font-size: 12px;
+    color: #FFAD00 !;
+}

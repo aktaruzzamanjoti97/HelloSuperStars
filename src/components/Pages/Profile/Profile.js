@@ -7,7 +7,7 @@ import LeftCard from './profile-components/LeftCard';
 
 const Profile = () => {
     return (
-        <div className='full-container'>
+        <div className='full-container py-3'>
             {/* cover photo work start   */}
             <div className="container mb-2">
                 <div className="profile-img-cover ">
@@ -25,7 +25,7 @@ const Profile = () => {
 
             {/* cover photo work end   */}
             {/* main body container start */}
-<div className="container main-div ">
+<div className="container main-div">
 <div className="row">
 <div className="col-md-5 ">
     
@@ -35,43 +35,77 @@ const Profile = () => {
 </div>
 
 <div className="container left-col-box p-3 mt-3">
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        Accordion Item #1
+<div className="accordion" id="accordionExample">
+  <div className="accordion-item left-bottom">
+    <h2 className="accordion-header " id="headingOne">
+      <button className="accordion-button profile-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      <span><i className="fas fa-layer-group mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Category <br></br>
+     <small className='category-size'> 5 selectd</small>
+      
+      </span>
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-       simple text here
+    <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+    <p className='text-warning'>Category loop start here</p>
       </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+  <div className="accordion-item mt-1 left-bottom">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span><i className="fas fa-star mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Following <br></br>
+     <small className='category-size'> 25 star</small>
+      
+      </span>
       </button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
+
+
+  <div className="accordion-item mt-1 left-bottom">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span><i className="fas fa-wallet mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Wallet <br></br>
+     <small className='category-size'> 200 star</small>
+      
+      </span>
       </button>
     </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
   </div>
+
+
+  <div className="accordion-item mt-1 left-bottom">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span><i className="fas fa-id-card mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Enrolled audition <br></br>
+     <small className='category-size'> 1 pending</small>
+      
+      </span>
+      </button>
+    </h2>
+  </div>
+
+
+  <div className="accordion-item mt-1 left-bottom">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span><i className="fas fa-cog mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Setting 
+      </span>
+      </button>
+    </h2>
+  </div>
+
+
+  <div className="accordion-item mt-1 left-bottom">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button profile1-accordion-button left-bottom collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <span><i className="fas fa-sign-out-alt mx-2 text-warning fa-2x"></i></span> <span className='mx-2 text-warning'>Logout 
+      </span>
+      </button>
+    </h2>
+  </div>
+
 </div>
 </div>
 

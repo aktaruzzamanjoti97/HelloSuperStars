@@ -157,12 +157,14 @@ right div and info field start */}
                         Selected your Occupation
                       </label>
                       <div className="col-sm-6">
-                        <input
-                          type="text"
-                          className="form-control form-control-sm account-input-style"
-                          id="colFormLabelSm"
-                          placeholder="Student"
-                        />
+                      <select class="form-control form-control-sm account-input-style">
+  <option>Student</option>
+  <option>Businessman</option>
+  <option>Engineer</option>
+  <option>Doctor</option>
+</select>
+
+
                       </div>
                     </div>
                     <h5 className="text-warning other-info-title mt-2">
