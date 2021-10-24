@@ -1,13 +1,11 @@
 import React from 'react'
-import "../../../CSS/SideNavbar.css";
 
-import imgq from "../../../../images/navbar/account.jpg";
-import { SidebarData} from './SidebarData';
+import ChatImage from "../../../../../images/navbar/account.jpg";
 
-function SideNavbar () {
-          return ( 
-            <>
-                <div className="container left-col-box-home p-3 mt-3">
+export const Sidebar = () => {
+    return (
+        <>
+             <div className="container left-col-box-home p-3 mt-3">
                         <div className="accordion" id="accordionExample" >
                             <div className="accordion-item left-bottom" >
                                 <h2 className="accordion-header  " id="headingOne">
@@ -95,42 +93,42 @@ function SideNavbar () {
                                 <div class="ScrollStyle">
                                     <div className="left-bottom-chat">
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
                                         <ul className="accordion-header chatListname" id="headingTwo">
-                                                <span> <img src={imgq} alt="" className="SidebarStarListImage"/></span> 
+                                                <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
                                                 <span className='chatName'>Apurbo Kumar </span>
                                                 
                                         </ul>
@@ -142,23 +140,7 @@ function SideNavbar () {
                         </div>
                     </div>
 
-                    {/* <div className="Sidebar" style={{ background: "#343434",marginTop:"50px",borderRadius:"5px"}}>
-                              <ul className="SidebarList">
-                              {SidebarData.map((val, key) => {
-                                        return(
-                                                  <li key={key} className="row"
-                                                  // id={window.location.pathname=val.link ? 'active' : ''}
-                                                  onClick={() => {window.location.pathname = val.link;}} >
-                                                  {""}
-                                                  <div id="icon" style={{ color:"#F0E25E" }}>{val.icon}</div> <div id="title" style={{ color:"#F0E25E" }}>{val.title}</div>
-                                                  </li>
-                                        );
-                              })}
-                              </ul>
-                    </div> */}
-
-            </>
-          )
+        </>
+    )
 }
-
-export default SideNavbar;
+export default Sidebar;
