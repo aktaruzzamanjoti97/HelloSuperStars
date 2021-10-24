@@ -4,6 +4,8 @@ import coverImg from '../../../images/Profile/cover.jpg';
 import profileImg from '../../../images/Profile/profile.jpg';
 import LeftCard from './profile-components/LeftCard';
 
+import Azhari from '../../../images/Profile/Shakib.jpg';
+
 
 const Profile = () => {
     return (
@@ -34,7 +36,7 @@ const Profile = () => {
 <div className="container main-div">
 <div className="row">
 <div className="col-md-5 ">
-    
+    {/* phototos and videos components added */}
 <LeftCard  title='Photos'/>
 <div className="mt-3">
 <LeftCard title='Videos'/>
@@ -125,10 +127,102 @@ const Profile = () => {
 
 </div>
 
-<div className="col-md-7 bg-info">
+<div className="col-md-6 bg-success">
   
 
-<h4>Right side card start</h4>
+<div className="cards-start">
+
+<div className="card w-lg-75 w-sm-100 mx-auto mt-1">
+
+  <img src={Azhari} className="card-img-top profile-card-img img-fluid mx-auto" alt="..." />
+  <div className="card-body">
+    <div className="container">
+<div className="row">
+<div className="col-6">
+ 
+<i className="fas fa-heart heart mx-1"></i>
+<small className='profile-card-text'>240</small>
+
+</div>
+
+<div className="col-3">
+ <i className="fas fa-comment d-inline mx-1"></i>
+<small className='d-inline profile-card-text'>Comment</small>
+</div>
+
+
+<div className="col-3">
+<i className="fas fa-share d-inline mx-1"></i>
+<small className='d-inline profile-card-text'>Share</small>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+    </div>
+
+<hr />
+
+<div className="text-center">
+
+  <button className='btn btn-warning '>
+  <i className="fas fa-heart text-danger  mx-1"></i>
+  <small className='text-light'> Like</small>
+  
+  </button>
+  <button className='btn btn-warning mx-2 '>
+
+  <i className="fas fa-comment  mx-1 "></i>
+ <small>  Comment</small>
+  </button>
+  <button className='btn btn-warning'>
+  <i className="fas fa-share  mx-1"></i>
+ <small> Share</small>
+
+  </button>
+
+
+
+
+
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 
 
 

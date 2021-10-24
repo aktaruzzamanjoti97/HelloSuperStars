@@ -72,9 +72,26 @@
     color: #F0E25E;
 }
 
-.change-cover {
-    position: absolute;
-    bottom: 55%;
-    right: 20%;
-    font-size: 18px;
+.profile-card-img{
+  height: 342px;
+  /* width: 85%;
+  margin-top: 5px; */
 }
+.heart{
+    color: red;
+}
+.profile-card-text{
+    font-size: 14px;
+}
+
+.card-btn-profile{
+    background-color: #FFB926;
+    border: none;
+ padding: 5px 30px 5px 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.superstar-card{
+    width: 90%;
+}
+
