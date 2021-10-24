@@ -13,7 +13,9 @@ import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial
 import Packages from "./components/Pages/User/Packages/Packages";
 import BuyPackages from "./components/Pages/User/Packages/BuyPackages";
 import Profile from './components/Pages/Profile/Profile';
-import './components/CSS/SideNavbar.css';
+
+import './components/CSS/Navbar/LeftSideNavbar.css';
+import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 
