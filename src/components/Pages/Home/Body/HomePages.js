@@ -4,9 +4,6 @@ import LeftSideNavbar from "../../Home/SideNavbar/LeftSidebar/Sidebar";
 import RightSideNavbar from "../../Home/SideNavbar/RightSidebar/Sidebar";
 
 import Post from "./StarPostPage/PostPage";
-import MashrafeMortazaPost from "./StarPostPage/MashrafeMortazaPage";
-import MizanurRahmanAzhariPost from "./StarPostPage/MizanurRahmanAzhariPage";
-
 export default class HomePages extends Component {
   render() {
     return (
@@ -21,8 +18,6 @@ export default class HomePages extends Component {
 
               <div className="col-sm-6 justify-content-center" >
                 <Post/>
-                <MashrafeMortazaPost />
-                <MizanurRahmanAzhariPost />
               </div>
 
               <div className="col-md-3 justify-content-center" >
