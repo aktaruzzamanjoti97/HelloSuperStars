@@ -1,3 +1,51 @@
+.profile-container{
+    position: relative;
+}
+.profile-photo{
+    position: relative;
+}
+.bottomright {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    background-color: #6B6B6B;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  .bottomright-profile{
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+
+   
+  }
+  .profile-pic-button{
+      border-radius: 50%;
+      background-color: #6B6B6B;
+      opacity: 0.8;
+      border:none;
+      color: white;
+      
+  }
+ 
+  @media only screen and (max-width: 600px) {
+    .bottomright {
+        position: absolute;
+        bottom: 8px;
+        right: 12px;
+        background-color: #6B6B6B;
+        border: none;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 8px;
+        opacity: 0.8;
+      }
+  }
 .profile-cover {
     height: 350px;
     width: 100%;
@@ -51,15 +99,15 @@
     text-align: right;
 }
 
-.profile-accordion-button::after {
+.profile-accordion-button-icon::after {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F0E25E'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
 
-.profile1-accordion-button::after {
+.profile-accordion-button::after {
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#000000'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
 }
 
-.left-bottom {
+.left-bottom-accorion {
     background-color: #000000 !important;
 }
 
@@ -67,14 +115,17 @@
     font-size: 12px;
     color: #FFAD00 !;
 }
-
+hr.hr-line {
+    border: 1px solid black;
+    
+  }
 .profile-font-color {
     color: #F0E25E;
 }
 
 .profile-card-img{
   height: 342px;
-width: 90%;
+/* width: 90%; */
 }
 .heart{
     color: red;
@@ -98,9 +149,14 @@ width: 90%;
 .time-color{
     color: #FFFFFF;
 }
-hr.new5 {
-    border: 1px solid black;
-    
+
+
+  .profile-time-text{
+      color: rgb(216, 212, 212);
+      font-size: 12px;
+  }
+  .left-col-box{
+      border-radius: 10px;
   }
 /* .cards-start{
     

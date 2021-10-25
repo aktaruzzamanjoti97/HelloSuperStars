@@ -16,9 +16,9 @@ const RightSideCard = (props) => {
                 width="50px"
               />
             </div>
-            <div className="col-10 text-light mt-2">
-              <h6>{props.Name}</h6>
-              <small>5:31pm</small> <small>2nd july</small>
+            <div className="col-10 mt-2">
+              <h6 className='text-light'>{props.Name}</h6>
+              <small className='profile-time-text'>5:31pm</small> <small className='profile-time-text'>2nd july</small>
             </div>
           </div>
         </div>
@@ -37,6 +37,26 @@ const RightSideCard = (props) => {
         <div className="card-body">
           <div className="container">
             <div className="row">
+              <div className="col-4">
+              <i className="fas fa-heart heart mx-1 "></i>
+                <small className="profile-card-text">240</small>
+              </div>
+              <div className="col-8 d-flex justify-content-around">
+                <div className="right-text">
+                {/* <i className="fas fa-comment  text-light mx-1"></i> */}
+                
+                <small className=" profile-card-text">160 Comment</small>
+                </div>
+                <div className="left-text">
+                {/* <i className="fas fa-share d-inline text-light mx-1"></i> */}
+                
+                <small className="d-inline profile-card-text">260 Share</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="container">
+            <div className="row">
               <div className="col-6">
                 <i className="fas fa-heart heart mx-1 "></i>
                 <small className="profile-card-text">240</small>
@@ -52,20 +72,20 @@ const RightSideCard = (props) => {
                 <small className="d-inline profile-card-text">Share</small>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <hr class="new5" />
+          <hr className="hr-line" />
 
           <div className="text-center">
-            <button className="btn btn-warning ">
+            <button className="btn btn-warning mt-1">
               <i className="fas fa-heart text-danger  mx-1"></i>
               <small className="text-light"> Like</small>
             </button>
-            <button className="btn btn-warning mx-2 ">
+            <button className="btn btn-warning mx-2 mt-1">
               <i className="fas fa-comment  mx-1 "></i>
               <small> Comment</small>
             </button>
-            <button className="btn btn-warning">
+            <button className="btn btn-warning mt-1">
               <i className="fas fa-share  mx-1"></i>
               <small> Share</small>
             </button>

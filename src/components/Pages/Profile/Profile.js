@@ -23,14 +23,25 @@ const Profile = () => {
               alt="bg-img"
               className="img-fluid profile-cover"
             />
+            <button className="bottomright">
+              <i className="far fa-edit mx-1"></i>
+              Edit Cover photo
+            </button>
           </div>
         </div>
         <div className="profile-div">
-          <img
+         <div className="profile-photo">
+         <img
             src={profileImg}
             alt="profile-img"
             className="img-fluid profile-img"
           />
+          <div className="bottomright-profile">
+          <button className='profile-pic-button'>
+          <i className="fas fa-pen"></i>
+          </button>
+          </div>
+         </div>
 
           <div className="prodile-pic-info text-center">
             <h5 className="profile-font-color">Atif Hossain</h5>
@@ -52,10 +63,10 @@ const Profile = () => {
 
             <div className="container left-col-box p-3 mt-3">
               <div className="accordion" id="accordionExample">
-                <div className="accordion-item left-bottom">
+                <div className="accordion-item left-bottom-accorion">
                   <h2 className="accordion-header " id="headingOne">
                     <button
-                      className="accordion-button profile-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button-icon left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
@@ -85,10 +96,10 @@ const Profile = () => {
                   </div>
                 </div>
 
-                <div className="accordion-item mt-1 left-bottom">
+                <div className="accordion-item mt-1 left-bottom-accorion">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button profile1-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -106,10 +117,10 @@ const Profile = () => {
                   </h2>
                 </div>
 
-                <div className="accordion-item mt-1 left-bottom">
+                <div className="accordion-item mt-1 left-bottom-accorion">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button profile1-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -127,10 +138,10 @@ const Profile = () => {
                   </h2>
                 </div>
 
-                <div className="accordion-item mt-1 left-bottom">
+                <div className="accordion-item mt-1 left-bottom-accorion">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button profile1-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -148,10 +159,10 @@ const Profile = () => {
                   </h2>
                 </div>
 
-                <div className="accordion-item mt-1 left-bottom">
+                <div className="accordion-item mt-1 left-bottom-accorion">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button profile1-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -166,10 +177,10 @@ const Profile = () => {
                   </h2>
                 </div>
 
-                <div className="accordion-item mt-1 left-bottom">
+                <div className="accordion-item mt-1 left-bottom-accorion">
                   <h2 className="accordion-header" id="headingTwo">
                     <button
-                      className="accordion-button profile1-accordion-button left-bottom collapsed"
+                      className="accordion-button profile-accordion-button left-bottom-accorion collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo"
@@ -186,35 +197,32 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className="col-1">
-
-          </div>
+          <div className="col-1"></div>
 
           <div className="col-md-5 right-card-profile">
             <div className="cards-start">
               <div className="card-scroll">
-{/* right side card start here */}
-<RightSideCard
-                Name="Shakib Al Hasan"
-                Msg="Coming live at 9.00 pm tonight. See you there!"
-                profileImg={Shakib}
-                profileLogo={ShakibProfile}
-              />
-              <RightSideCard
-                Name="Mizanur Rahman Azharee"
-                Msg="Assalamu Walaikum Brothers, Take greetings"
-                profileImg={Azhari}
-                profileLogo={AzhariProfile}
-              />
-              <RightSideCard
-                Name="Ayman Sadiq"
-                Msg="When i come to live ? This friday? let me know"
-                profileImg={Ayman}
-                profileLogo={AymanProfile}
-              />
-              {/* Right side card end */}
+                {/* right side card start here */}
+                <RightSideCard
+                  Name="Shakib Al Hasan"
+                  Msg="Coming live at 9.00 pm tonight. See you there!"
+                  profileImg={Shakib}
+                  profileLogo={ShakibProfile}
+                />
+                <RightSideCard
+                  Name="Mizanur Rahman Azharee"
+                  Msg="Assalamu Walaikum Brothers, Take greetings"
+                  profileImg={Azhari}
+                  profileLogo={AzhariProfile}
+                />
+                <RightSideCard
+                  Name="Ayman Sadiq"
+                  Msg="When i come to live ? This friday? let me know"
+                  profileImg={Ayman}
+                  profileLogo={AymanProfile}
+                />
+                {/* Right side card end */}
               </div>
-              
             </div>
           </div>
         </div>
