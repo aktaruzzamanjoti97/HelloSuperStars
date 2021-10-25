@@ -1,15 +1,9 @@
-.pro-p{
-    width: 500px;
-}
-
 
 .Post-Scroll
 {
     max-height: 1000px;
     overflow-y: scroll;
     margin-left: 48px;
-
-
 }
 
 .Post-Scroll::-webkit-scrollbar {
@@ -23,8 +17,73 @@
   background: #F0E25E; 
 }
 
+.PostCard{
+    height: 470px;
+}
+.PostImgHe{
+    height: 255px;
+    width: 90%;
+}
+.PostImgHome{
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+.Post-small-text{
+    color: white;
+}
+.Post-small-text-r{
+    color: white;
+    margin-left: 5px;
+}
+.PostBack{
+    background-color: #343434;
+    border: none;
+    margin-bottom: -2px;
+    height: 50px;
+    margin-top: 5px;
+}
+.PostHoUl{
+    list-style: none;
+}
+
+ .like-post  {
+    display: inline;
+    margin-left: -40px;
+}
+.comment-post {
+    display: inline;
+    float: right;
+    margin-right: 20px;
+}
+.share-post {
+    display: inline;
+    float: right;
+}
+
 @media only screen and (max-width: 760px) {
     .Post-Scroll {
         margin-left: 1px;
     }
+    .PostCard{
+        height: 450px;
+    }
+    .PostImgHe{
+        height: 200px;
+        width: 90%;
+    }
+        
+    .card {
+        word-wrap: none;
+    }
+    .like-post  {
+        margin-left: -45px;
+    }
+  
   }
