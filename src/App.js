@@ -14,10 +14,16 @@ import Packages from "./components/Pages/User/Packages/Packages";
 import BuyPackages from "./components/Pages/User/Packages/BuyPackages";
 import Profile from './components/Pages/Profile/Profile';
 
+
+// Market Place Page
+import MarketPlace from "./components/Pages/Home/Body/MarketPalcePage/MarketPlace";
+
+
 import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
+
 
 function App() {
   return (
@@ -26,18 +32,20 @@ function App() {
     <PrivateRoute component={Navigation} />
       <Switch>
         <PrivateRoute exact path='/' component={Home} />
+        <PrivateRoute exact path='/marketplace' component={MarketPlace} />
+
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
         <Route path='/accountCreate' exact component={AccountCreate} />
+
         <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
         <Route exact path='/buy-packages' component={BuyPackages} />
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
-        <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
-       
+        <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
     </BrowserRouter>
     </>
