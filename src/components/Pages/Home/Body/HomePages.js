@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-import SideNavbar from "../../Home/SideNavbar/SideNavbar";
+
+import LeftSideNavbar from "../../Home/SideNavbar/LeftSidebar/Sidebar";
+import RightSideNavbar from "../../Home/SideNavbar/RightSidebar/Sidebar";
 
 import Post from "./StarPostPage/PostPage";
-import MashrafeMortazaPost from "./StarPostPage/MashrafeMortazaPage";
-import MizanurRahmanAzhariPost from "./StarPostPage/MizanurRahmanAzhariPage";
-
-import MessiLiveStatus from "../LiveStatus/StarLivePage/MessiLiveStatus";
-import MashrafeMortazaLiveStatus from "../LiveStatus/StarLivePage/MessiLiveStatus";
-import MizanurRahmanAzhariLiveStatus from "../LiveStatus/StarLivePage/MessiLiveStatus";
-
 export default class HomePages extends Component {
   render() {
     return (
@@ -16,19 +11,19 @@ export default class HomePages extends Component {
         <div className="homebody"  style={{ background: "#000000"}}>
           <div className="container">
             <div className="row">
+
               <div className="col-sm-3 justify-content-center">
-                <SideNavbar />
+                <LeftSideNavbar/>
               </div>
+
               <div className="col-sm-6 justify-content-center" >
                 <Post/>
-                <MashrafeMortazaPost />
-                <MizanurRahmanAzhariPost />
               </div>
-              <div className="col-sm-3 justify-content-center" >
-                <MessiLiveStatus />
-                <MashrafeMortazaLiveStatus />
-                <MizanurRahmanAzhariLiveStatus />
+
+              <div className="col-md-3 justify-content-center" >
+              <RightSideNavbar/>
               </div>
+
             </div>
           </div>
         </div>

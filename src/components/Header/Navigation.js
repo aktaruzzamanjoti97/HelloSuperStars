@@ -47,22 +47,22 @@ class Navigation extends Component {
                             >
                                 <Nav.Link href="#action1" className='navbar-link-hover'>
 
-                                    <i class="fa fa-home circle-icon" />
+                                    <i className="fa fa-home circle-icon" />
                                 </Nav.Link>
                                 <Nav.Link href="#action2">
-                                    <i class="fa fa-comment circle-icon" />
+                                    <i className="fa fa-comment circle-icon" />
 
                                 </Nav.Link>
                                 <Nav.Link href="#action1">
 
-                                    <i class="fa fa-bell circle-icon" />
+                                    <i className="fa fa-bell circle-icon" />
                                 </Nav.Link>
                                 <Nav.Link href="#action2">
-                                    <i class="fa fa-store circle-icon" />
+                                    <i className="fa fa-store circle-icon" />
                                 </Nav.Link>
 
                                 <Nav.Link href="#action2">
-                                    <img src={accountImg} className='img-fluid account-create' alt='account create ' />
+                                    <img src={accountImg} className='img-fluid account-create' alt='account create '  />
                                 </Nav.Link>
 
                                 <Nav.Link href="#action2">

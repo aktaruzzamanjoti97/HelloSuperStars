@@ -4,7 +4,7 @@ const LeftCard = (props) => {
     return (
         <>
             <div className="container left-col-box py-4">
-<h6 className='text-warning'>{props.title}</h6>
+<h6 className='profile-font-color'>{props.title}</h6>
 <div className="row">
 <div className="col-4">
  <img src={blackBox} alt="" className='img-fluid profile-photos' />
@@ -32,7 +32,7 @@ const LeftCard = (props) => {
 </div>
 
 <div className="see-all-text  ">
-<a href="/" className='text-decoration-none text-warning'>See all</a>
+<a href="/" className='text-decoration-none profile-font-color'>See all</a>
 </div>
 
 

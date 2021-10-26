@@ -1,8 +1,97 @@
-.post{
-    background-color: rgb(181, 44, 44);
-    width: 100%;
-    border: 2px solid rgb(235, 200, 1);
+.mt-Scroll{
+    margin-left: 48px;
 }
-.post-title p{
-color: rgb(255, 255, 255);
+.Post-Scroll
+{
+    max-height: 1000px;
+    overflow-y: scroll;
+    margin-left: 48px;
 }
+
+.Post-Scroll::-webkit-scrollbar {
+  width: 3px;
+  background: none;
+}
+.Post-Scroll::-webkit-scrollbar-thumb {
+  background: none; 
+}
+.Post-Scroll::-webkit-scrollbar-thumb:hover {
+  background: #F0E25E; 
+}
+
+.PostCard{
+    height: 470px;
+}
+.PostImgHe{
+    height: 255px;
+    width: 90%;
+}
+.PostImgHome{
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+.Post-small-text{
+    color: white;
+}
+.Post-small-text-r{
+    color: white;
+    margin-left: 5px;
+}
+
+.Post-Title-home{
+    color: white;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.PostBack{
+    background-color: #343434;
+    border: none;
+    margin-bottom: 2px;
+    height: 50px;
+    margin-top: 5px;
+}
+.PostHoUl{
+    list-style: none;
+}
+
+ .like-post  {
+    display: inline;
+    margin-left: -40px;
+}
+.comment-post {
+    display: inline;
+    float: right;
+    margin-right: 20px;
+}
+.share-post {
+    display: inline;
+    float: right;
+}
+
+@media only screen and (max-width: 760px) {
+    .Post-Scroll {
+        margin-left: 1px;
+    }
+    .PostCard{
+        height: 450px;
+    }
+    .PostImgHe{
+        height: 230px;
+        width: 90%;
+    }
+        
+    .card {
+        word-wrap: none;
+    }
+    .like-post  {
+        margin-left: -45px;
+    }
+  
+  }

@@ -1,5 +1,6 @@
 .navbar-bg{
     background-color: #2C2C2C;
+
 }
 .circle-icon {
     background: #FFFFFF;
@@ -22,12 +23,12 @@
     border-radius: 50%;
 }
 
-.right-inner-addon i {
+/* .right-inner-addon i {
     position: absolute;
     right: 0px;
     padding: 10px 12px;
     pointer-events: none;
-}
+} */
 .has-search .form-control {
     padding-left: 2.375rem;
 }
