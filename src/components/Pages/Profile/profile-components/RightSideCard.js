@@ -13,7 +13,7 @@ const RightSideCard = (props) => {
                 src={props.profileLogo}
                 alt=""
                 className="img-fluid rounded-circle"
-                width="50px"
+                width="60px"
               />
             </div>
             <div className="col-10 mt-2">
