@@ -27,7 +27,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
@@ -49,7 +49,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
@@ -71,7 +71,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
@@ -93,7 +93,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
@@ -115,7 +115,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
@@ -137,7 +137,7 @@ const Marketplace = () => {
                             <div className="mtx-pro">
                                 <div className="accordion-item PostBack ">
                                     <h2 className="accordion-header PostBack" >
-                                        <div className="accordion-button profile1-accordion-button PostBack  collapsed">
+                                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                             <img src={Picture} className="PostImgHome" alt="..." />
                                             <span
                                                 className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
