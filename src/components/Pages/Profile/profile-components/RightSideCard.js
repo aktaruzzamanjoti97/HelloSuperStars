@@ -13,7 +13,7 @@ const RightSideCard = (props) => {
                 src={props.profileLogo}
                 alt=""
                 className="img-fluid rounded-circle"
-                width="50px"
+                width="70px"
               />
             </div>
             <div className="col-10 mt-2">
@@ -50,7 +50,7 @@ const RightSideCard = (props) => {
                 <div className="left-text">
                 {/* <i className="fas fa-share d-inline text-light mx-1"></i> */}
                 
-                <small className="d-inline profile-card-text">260 Share</small>
+                <small className="d-inline profile-card-text">250 Share</small>
                 </div>
               </div>
             </div>
