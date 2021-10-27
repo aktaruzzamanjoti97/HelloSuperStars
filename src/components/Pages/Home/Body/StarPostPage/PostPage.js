@@ -1,164 +1,443 @@
 import React from "react";
+import StartPostContent from "../StarPostPage/StartProfilePost/StartPostContent";
 import '../../../../../components/CSS/Home/Post.css';
-import Shakib from "../../../../../images/Profile/Shakib.jpg"
-import Azhari from "../../../../../images/Profile/Azhari.jpg"
-import Ayman from "../../../../../images/Profile/ayman.jpg"
+import { FaBeer } from 'react-icons/fa';
+import ShakibPro from "../../../../../images/Profile/Shakibpro.png";
+import ShakibPost from "../../../../../images/Profile/ShakibPost.jpg";
+import AymanPro from "../../../../../images/Profile/ayman-profile.jpg";
+import AymanPost from "../../../../../images/Profile/ayman.jpg";
+import AzhariPro from "../../../../../images/Profile/azhari-profile.jpg";
+import AzhariPost from "../../../../../images/Profile/Azhari.jpg";
 
 const Post = () =>{
   return(
     <>
-        <div className="Post-Scroll col-md-10 align-items-center ml-2">
-            <div className="card left-col-box PostCard mb-3 mt-3">
-                <div className="accordion-item PostBack ">
-                    <h2 className="accordion-header PostBack" >
-                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                            <img src={Shakib} className="PostImgHome" alt="..." />
-                            <span className="mx-2 text-warning text-light">Shakib All Hasan <br></br>
-                                <small className="category-size-chat "> <span className="Post-small-text">5:31pm</span></small>
-                                <small className="category-size-chat "> <span className="Post-small-text-r">2nd July</span></small>
-                            </span>
-                        </div>
-                    </h2>
-                </div>
-                <div className="container my-2 Post-Title-home">
-                    Coming live at 9:00 PM tonight . See you there 🏏
-                </div>
-                <img src={Shakib} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
-                <div className="card-body">
-                    <div className="container">
-                        <ul className="PostHoUl">
-                            <li className="like-post"> 
-                                <i className="fas fa-heart heart mx-1 "></i>
-                                <small className="profile-card-text">240</small>
-                            </li>
-                            <li className="share-post">
-                                <small className="profile-card-text">100 Share</small>
-                            </li>
-                            <li className="comment-post">
-                                <small className=" profile-card-text">16 Comment</small>
-                            </li>
-                          
-                        </ul>
-                    </div>
-                    <hr class="new5" />
+        
+        <div className="Post-Scroll">
+            
+            <StartPostContent
 
-                    <div className="text-center">
-                        <button className="btn-warning-post ">
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Like</small>
-                        </button>
-                        <button className="btn-warning-post mx-2 ">
-                            <i className="fas fa-comment  mx-1 "></i>
-                            <small> Comment</small>
-                        </button>
-                        <button className="btn-warning-post">
-                            <i className="fas fa-share  mx-1"></i>
-                            <small> Share</small>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="card left-col-box PostCard mb-3 mt-3">
-                <div className="accordion-item PostBack ">
-                    <h2 className="accordion-header PostBack" >
-                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                            <img src={Azhari} className="PostImgHome" alt="..." />
-                            <span className="mx-2 text-warning text-light">Mizanur Rahman Azhari <br></br>
-                                <small className="category-size-chat "> <span className="Post-small-text">5:31pm</span></small>
-                                <small className="category-size-chat "> <span className="Post-small-text-r">2nd July</span></small>
-                            </span>
-                        </div>
-                    </h2>
-                </div>
-                <div className="container my-2 Post-Title-home">
-                    Coming live at 9:00 PM tonight . See you there 🏏
-                </div>
-                <img src={Azhari} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
-                <div className="card-body">
-                    <div className="container">
-                        <ul className="PostHoUl">
-                            <li className="like-post"> 
-                                <i className="fas fa-heart heart mx-1 "></i>
-                                <small className="profile-card-text">240</small>
-                            </li>
-                            <li className="share-post">
-                                <small className="profile-card-text">100 Share</small>
-                            </li>
-                            <li className="comment-post">
-                                <small className=" profile-card-text">16 Comment</small>
-                            </li>
-                          
-                        </ul>
-                    </div>
-                    <hr class="new5" />
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
 
-                    <div className="text-center">
-                        <button className="btn-warning-post ">
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Like</small>
-                        </button>
-                        <button className="btn-warning-post mx-2 ">
-                            <i className="fas fa-comment  mx-1 "></i>
-                            <small> Comment</small>
-                        </button>
-                        <button className="btn-warning-post">
-                            <i className="fas fa-share  mx-1"></i>
-                            <small> Share</small>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="card left-col-box PostCard mb-3 mt-3">
-                <div className="accordion-item PostBack ">
-                    <h2 className="accordion-header PostBack" >
-                        <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                            <img src={Ayman} className="PostImgHome" alt="..." />
-                            <span className="mx-2 text-warning text-light">Ayman Sadiq <br></br>
-                                <small className="category-size-chat "> <span className="Post-small-text">5:31pm</span></small>
-                                <small className="category-size-chat "> <span className="Post-small-text-r">2nd July</span></small>
-                            </span>
-                        </div>
-                    </h2>
-                </div>
-                <div className="container my-2 Post-Title-home">
-                    Coming live at 9:00 PM tonight . See you there 🏏
-                </div>
-                <img src={Ayman} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
-                <div className="card-body">
-                    <div className="container">
-                        <ul className="PostHoUl">
-                            <li className="like-post"> 
-                                <i className="fas fa-heart heart mx-1 "></i>
-                                <small className="profile-card-text">240</small>
-                            </li>
-                            <li className="share-post">
-                                <small className="profile-card-text">100 Share</small>
-                            </li>
-                            <li className="comment-post">
-                                <small className=" profile-card-text">16 Comment</small>
-                            </li>
-                          
-                        </ul>
-                    </div>
-                    <hr class="new5" />
+            />
+            <StartPostContent
+            
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+            
+            />
+            <StartPostContent               
+            
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+            
+            />
+            <StartPostContent
 
-                    <div className="text-center">
-                        <button className="btn-warning-post ">
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Like</small>
-                        </button>
-                        <button className="btn-warning-post mx-2 ">
-                            <i className="fas fa-comment  mx-1 "></i>
-                            <small> Comment</small>
-                        </button>
-                        <button className="btn-warning-post">
-                            <i className="fas fa-share  mx-1"></i>
-                            <small> Share</small>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+  
+            />
+            <StartPostContent
+
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+
+            />
+            <StartPostContent               
+
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+                
+            />
+            <StartPostContent
+                
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+                
+                />
+                <StartPostContent               
+                
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+                
+            />
+            <StartPostContent
+                
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+                
+            />
+            <StartPostContent
+                
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+                
+            />
+            <StartPostContent               
+                
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+                
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            <StartPostContent
+            
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+            
+            />
+            <StartPostContent               
+            
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+            
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+  
+            />
+            <StartPostContent
+
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+
+            />
+            <StartPostContent               
+
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            /><StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            <StartPostContent
+            
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+            
+            />
+            <StartPostContent               
+            
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+            
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+  
+            />
+            <StartPostContent
+
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+
+            />
+            <StartPostContent               
+
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            <StartPostContent
+            
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+            
+            />
+            <StartPostContent               
+            
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+            
+            />
+            <StartPostContent
+
+                ProfileImg={ShakibPro}
+                Name="Shakib Al Hasan"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="Coming live at 9.00 pm tonight. See you there!"
+                PostImg={ShakibPost} 
+                Icon={FaBeer} 
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+  
+            />
+            <StartPostContent
+
+                ProfileImg={AymanPro}
+                Name="Ayman Sadiq"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
+                কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
+                PostImg={AymanPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"            
+
+            />
+            <StartPostContent               
+
+                ProfileImg={AzhariPro}
+                Name="Mizanur Rahman Azhari"
+                Time="5:30 PM"
+                Date="2nd October"
+                Msg="“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।”
+                [সূরা আল-মা’ইদাহ, আয়াত: ২]"
+                PostImg={AzhariPost}    
+                LikeCount="240"
+                ShareCount="100"
+                CommentCount="30"
+
+            />
+            
+
         </div>
+        
     </>
   );
 };
