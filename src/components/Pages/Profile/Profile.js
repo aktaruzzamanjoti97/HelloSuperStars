@@ -64,7 +64,7 @@ const Profile = () => {
             <div className="container left-col-box p-3 mt-3">
               <div className="accordion" id="accordionExample">
                 <div className="accordion-item left-bottom-accorion">
-                  <h2 className="accordion-header " id="headingOne">
+                  <h2 className="accordion-header" id="headingOne">
                     <button
                       className="accordion-button profile-accordion-button-icon left-bottom-accorion collapsed"
                       type="button"

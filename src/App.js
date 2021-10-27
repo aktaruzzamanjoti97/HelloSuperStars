@@ -6,7 +6,7 @@ import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
 import Otp from "./components/UserAuthentication/Otp";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import Navigation from './components/Header/Navigation';
+// import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
@@ -23,13 +23,14 @@ import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
+import CoreCategory from "./components/Pages/Category/CoreCategory";
 
 
 function App() {
   return (
     <>
     <BrowserRouter>
-    <PrivateRoute component={Navigation} />
+    {/* <PrivateRoute component={Navigation} /> */}
       <Switch>
         <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute exact path='/marketplace' component={MarketPlace} />
@@ -44,7 +45,7 @@ function App() {
         <Route exact path='/buy-packages' component={BuyPackages} />
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
-
+        <Route path='/coreCategory' exact component={CoreCategory} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
     </BrowserRouter>
