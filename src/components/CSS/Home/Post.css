@@ -18,7 +18,15 @@
 .Post-Scroll::-webkit-scrollbar-thumb:hover {
   background: #F0E25E; 
 }
-
+.PostImgHome{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 .PostCard{
     height: 478px;
 }
@@ -74,6 +82,19 @@
     display: inline;
     float: right;
 }
+.btn-warning-post{
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 110px ;
+    height: 30px;
+    border:none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
 
 @media only screen and (max-width: 760px) {
     .Post-Scroll {
@@ -92,6 +113,20 @@
     }
     .like-post  {
         margin-left: -45px;
+    }
+    .btn-warning-post{
+        color: #000;
+        font-size: 13px;
+        background-color: #ffc107;
+        border-color: #ffc107;
+        width: 90px ;
+        height: 30px;
+        border:none;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
     }
   
   }
