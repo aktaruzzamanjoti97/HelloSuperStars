@@ -6,7 +6,7 @@ import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
 import Otp from "./components/UserAuthentication/Otp";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-// import Navigation from './components/Header/Navigation';
+import Navigation from './components/Header/Navigation';
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
@@ -30,7 +30,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    {/* <PrivateRoute component={Navigation} /> */}
+    <PrivateRoute component={Navigation} />
       <Switch>
         <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute exact path='/marketplace' component={MarketPlace} />
