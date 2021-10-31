@@ -111,7 +111,7 @@ const Profile = () => {
                       </span>{" "}
                       <span className="mx-2 profile-font-color">
                         Following <br></br>
-                        <small className="category-size"> 25 star</small>
+                        <small className="category-size"> 15 star</small>
                       </span>
                     </button>
                   </h2>
