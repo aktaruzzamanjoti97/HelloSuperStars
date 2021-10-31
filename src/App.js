@@ -24,6 +24,7 @@ import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
+import SubCategory from "./components/Pages/Category/SubCategory";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
         <Route path='/coreCategory' exact component={CoreCategory} />
+        <Route path='/subCategory' exact component={SubCategory} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
     </BrowserRouter>
