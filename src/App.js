@@ -16,7 +16,7 @@ import Profile from './components/Pages/Profile/Profile';
 
 
 // Market Place Page
-import MarketPlace from "./components/Pages/Home/Body/MarketPalcePage/MarketPlace";
+import MarketPlace from "./components/Pages/Market/MarketPlace";
 
 
 import './components/CSS/Navbar/LeftSideNavbar.css';
