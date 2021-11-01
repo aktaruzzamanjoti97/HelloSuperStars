@@ -1,0 +1,82 @@
+.Post-mp-bg{
+    background-color: #343434;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.ProMain{
+    padding-left: 35px;
+
+}
+.Post-div{
+    width: 100%;
+    margin-left: 9px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.Post-mp{
+    width: 100%;
+    height: 120px;
+    padding-top: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+
+.Post-text{
+    font-size: 15px;
+    color: white;
+    margin-left: 5px;
+}
+
+
+.ProPic-ul{
+    list-style: none;
+    width: 100%;
+    background-color: #2C2C2C;
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.ProPic-li{
+    display: inline;
+
+    margin-left: 10px;
+}
+.ProPic-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.ProPic-text{
+    font-size: 12px;
+    margin-left: 10px;
+    color: white;
+}
+.ProPic-text-s{
+    font-size: 10px;
+    margin-left: 10px;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .ProMain{
+        padding-left: 0px;
+    
+    }
+    .Post-div{
+        width: 80%;
+        margin-left: 0px;
+    }
+    .Post-mp{
+        height: 100px;
+    }
+
+    .ProPic-ul{
+        width: 80%;
+        margin-left: 0px;
+    }
+
+  }
