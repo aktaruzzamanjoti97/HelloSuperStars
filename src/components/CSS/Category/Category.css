@@ -23,6 +23,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +32,10 @@
 
 .frame {
     width: 310px;
+    height: 53px;
+}
+.frame2 {
+    width: 80%;
     height: 53px;
 }
 
@@ -49,6 +54,19 @@
     transform: translate(-50%, -50%);
 
 
+}
+.star-container{
+    width: 80%;
+}
+
+.carousel-bg{
+    height: 100px;
+}
+.star-btn{
+    width: 170px;
+    height: 47px;
+   
+    font-weight: bolder;
 }
 .owl-item > div {
     cursor: pointer;
