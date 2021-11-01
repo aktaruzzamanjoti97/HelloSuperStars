@@ -25,6 +25,7 @@ import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
+import StarSelection from "./components/Pages/Category/StarSelection";
 
 
 function App() {
@@ -35,12 +36,10 @@ function App() {
       <Switch>
         <PrivateRoute exact path='/' component={Home} />
         <PrivateRoute exact path='/marketplace' component={MarketPlace} />
-
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
         <Route path='/accountCreate' exact component={AccountCreate} />
-
         <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
         <Route exact path='/buy-packages' component={BuyPackages} />
@@ -48,6 +47,7 @@ function App() {
         <Route path='/profile' exact component={Profile} />
         <Route path='/coreCategory' exact component={CoreCategory} />
         <Route path='/subCategory' exact component={SubCategory} />
+        <Route path='/starSelection' exact component={StarSelection} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
       </Switch>
     </BrowserRouter>
