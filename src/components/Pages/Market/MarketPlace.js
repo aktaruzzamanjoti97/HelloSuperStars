@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Content from "../../../Home/Body/MarketPalcePage/Content/Marketplace";
-import LeftSideNavbar from "../../../Home/SideNavbar/LeftSidebar/Sidebar";
-import RightSideNavbar from "../../../Home/SideNavbar/RightSidebar/Sidebar";
-
+import LeftSideNavbar from "../Home/SideNavbar/LeftSidebar/Sidebar";
+import RightSideNavbar from "../Home/SideNavbar/RightSidebar/Sidebar";
+import Contents from "../Market/Content/Content";
 
 export default class MarketPlace extends Component {
     render() {
@@ -17,7 +16,7 @@ export default class MarketPlace extends Component {
                 </div>
   
                 <div className="col-sm-6 justify-content-center" >
-                  <Content/>
+                  <Contents/>
                 </div>
   
                 <div className="col-md-3 justify-content-center" >
@@ -26,6 +25,7 @@ export default class MarketPlace extends Component {
   
               </div>
             </div>
+
           </div>
         </React.Fragment>
       );
