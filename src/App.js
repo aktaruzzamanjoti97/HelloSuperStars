@@ -18,7 +18,7 @@ import Profile from './components/Pages/Profile/Profile';
 import Navigation from './components/Header/Navigation';
 
 // Home Page
-import Home from "./components/Pages/Home/Body/HomePages";
+import Home from "./components/Pages/Home/HomePages";
 import Live from "./components/Pages/Home/Body/LiveNow/LiveBody";
 import Learn from "./components/Pages/Home/Body/LeraningSessions/LearnBody";
 import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
