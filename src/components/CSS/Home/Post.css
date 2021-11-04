@@ -19,9 +19,6 @@
 .Post-Scroll::-webkit-scrollbar-thumb {
   background: none; 
 }
-.Post-Scroll::-webkit-scrollbar-thumb:hover {
-  background: #F0E25E; 
-}
 .PostImgHome{
     width: 40px !important;
     height: 40px !important;

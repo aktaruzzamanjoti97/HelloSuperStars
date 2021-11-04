@@ -13,7 +13,7 @@ const LiveData = props => {
     return (
         <>
         <div className="Post-Scroll">
-            
+        Live Now
         <LiveContent
 
             ProfileImg={ShakibPro}

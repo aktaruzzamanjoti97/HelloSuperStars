@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 import LeftSideNavbar from "../../SideNavbar/LeftSidebar/Sidebar";
 import RightSideNavbar from "../../SideNavbar/RightSidebar/Sidebar";
-import LearnSession from "../LeraningSessions/LearnData"
-
+import Learn from "../LearningSessions/LearnData"
 export default class LearnBody extends Component {
   render() {
     return (
@@ -17,7 +16,7 @@ export default class LearnBody extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <LearnSession/>truyrturttt
+                <Learn/>
               </div>
 
               <div className="col-md-3 justify-content-center" >

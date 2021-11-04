@@ -47,7 +47,7 @@
     margin-top: 6px;
     padding: 5px;
     margin-right: 10px;
-    width: 65px;
+    width: 46px;
     height: 69px;
     padding: 5px;
     background-color: #494949;
@@ -79,6 +79,13 @@
 }
 
 .dabutton:focus {
+    background-color:#FFAD00;
+}
+
+.dabutton:hover {
+    background-color:#FFAD00;
+}
+.dabutton:active {
     background-color:#FFAD00;
 }
 
