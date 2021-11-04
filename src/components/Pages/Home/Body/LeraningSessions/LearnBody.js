@@ -17,7 +17,7 @@ export default class LearnBody extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <LearnSession/>
+                <LearnSession/>truyrturttt
               </div>
 
               <div className="col-md-3 justify-content-center" >
