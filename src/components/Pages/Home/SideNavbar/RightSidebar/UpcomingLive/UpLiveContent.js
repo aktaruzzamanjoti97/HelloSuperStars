@@ -1,5 +1,5 @@
 import React from 'react'
-const LearnContent = props => {
+const UpLiveContent = props => {
     return (
         <>
             <div class="column">
@@ -13,4 +13,4 @@ const LearnContent = props => {
 }
 
 
-export default LearnContent
+export default UpLiveContent

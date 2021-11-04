@@ -1,5 +1,5 @@
 import React from 'react'
-import LearnS from "../LeraningSessions/LearnContent";
+import LearnS from "./LearnContent";
 
 import { FaBeer } from 'react-icons/fa';
 import ShakibPro from "../../../../../images/Profile/Shakibpro.png";
@@ -9,7 +9,7 @@ import AymanPost from "../../../../../images/Profile/ayman.jpg";
 import AzhariPro from "../../../../../images/Profile/azhari-profile.jpg";
 import AzhariPost from "../../../../../images/Profile/Azhari.jpg";
 
-const LiveData = props => {
+const LearnData = props => {
     return (
         <>
         <div className="Post-Scroll">
@@ -441,4 +441,4 @@ const LiveData = props => {
     )
 }
 
-export default LiveData
+export default LearnData

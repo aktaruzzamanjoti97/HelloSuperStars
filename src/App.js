@@ -20,7 +20,7 @@ import Navigation from './components/Header/Navigation';
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
 import Live from "./components/Pages/Home/Body/LiveNow/LiveBody";
-import Learn from "./components/Pages/Home/Body/LeraningSessions/LearnBody";
+
 import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
 import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsBody";
 
@@ -34,6 +34,7 @@ import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
+import Learn from "./components/Pages/Home/Body/LearningSessions/LearnBody";
 
 
 function App() {
@@ -44,13 +45,15 @@ function App() {
       <Switch>
 
         <PrivateRoute exact path='/' component={Home} />
-        <PrivateRoute exact path='/live-now' component={Live} />
-        <PrivateRoute exact path='/learn-sessions' component={Learn} />
-        <PrivateRoute exact path='/upcoming-live' component={UpLive} />
-        <PrivateRoute exact path='/upcoming-auditions' component={Auditions} />
 
-        <PrivateRoute exact path='/marketplace' component={Market} />
+        <Route exact path='/live-now' component={Live} />
+        <Route exact path='/learning-sessions' component={Learn}/>
+        <Route exact path='/upcoming-live' component={UpLive} />
+        <Route exact path='/upcoming-auditions' component={Auditions} />
 
+        <Route exact path='/marketplace' component={Market} />
+
+  
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />

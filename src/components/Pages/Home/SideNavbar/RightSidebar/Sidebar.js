@@ -1,70 +1,98 @@
-import React from 'react'
-import ChatImage from "../../../../../images/navbar/account.jpg";
+import React  from 'react'
+import LiveData from './LiveNow/LiveData';
 import LearnData from './LearningSessions/LearnData';
-export const Sidebar = () => {
+import UpLiveData from './UpcomingLive/UpLiveData';
+import AuditionsData from './UpcomingAuditions/AuditionsData';
+import {Link, withRouter} from 'react-router-dom'
+
+
+export const Sidebar = ({history}) => {
+    
+    console.log(history)
+    const getColor=(curr)=>
+    {
+      if (history.location.pathname===curr)
+      return "#FFAD00"
+    }
+
     return (
         <>
-            <div className="accordion right-col-box-home-r mt-3">
-                <div className="live-text-sln">Live now</div> 
-                
-                <div className="{props.name} Live-S-Nav d-flex" id="headingTwo">
-                    <LearnData/>
-                    <button className="Live-RS-btn"><small className="see-all-live">See All</small>
-                        <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                    </button>
+            <div className="LinkBtn">
+                <div className="accordion right-col-box-home-r mt-3">
 
-                </div>   
-                
-            </div>
+                    <div className="live-text-sln">Live now</div> 
 
-            <div className="right-col-box-home-r mt-3">
-                <div className="live-text-sln">Learning sessions</div> 
+                    <div className="Live-S-Nav d-flex" id="headingTwo">
+                        <LiveData/>
+                       <Link to='/live-now'>
+                            <button className="Live-RS-btn" style={{backgroundColor:getColor('/live-now')}}>
+                                <small className="see-all-live">See All</small>
+                                <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
+                            </button>
+                        </Link>
 
-                <div className="Live-S-Nav d-flex" id="headingTwo">
+                    </div>   
 
-                   <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-l">
-                            <p>Shakib All Hasan </p>
-                        </div>
-                    <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-r">
-                        <p >Shahaukh Khan </p>
-                        </div>
-                   <button className="Live-RS-btn"><small className="see-all-live">See All</small><i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i></button>
                 </div>
-            </div>
 
-            <div className="right-col-box-home-r mt-3">
-                <div className="live-text-sln">Upcoming live</div> 
-                <div className="Live-S-Nav d-flex" id="headingTwo">
-                   <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-l">
-                            <p>Shakib All Hasan </p>
-                        </div>
-                    <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-r">
-                        <p >Shahaukh Khan </p>
-                        </div>
-                   <button className="Live-RS-btn"><small className="see-all-live">See All</small><i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i></button>
-                </div>
-            </div>
+                <div className="accordion right-col-box-home-r mt-3">
 
-            <div className="right-col-box-home-r mt-3">
-                <div className="live-text-sln">Upcoming auditions</div> 
-                <div className="Live-S-Nav d-flex" id="headingTwo">
-                   <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-l">
-                            <p>Shakib All Hasan </p>
-                        </div>
-                    <img src={ChatImage} alt="" className="Live-RS-img"/>
-                        <div className="live-text-block-r">
-                        <p >Shahaukh Khan </p>
-                        </div>
-                   <button className="Live-RS-btn"><small className="see-all-live">See All</small><i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i></button>
+                    <div className="live-text-sln">Learning Sessions</div> 
+
+                    <div className="Live-S-Nav d-flex" id="headingTwo">
+                        <LearnData/>
+                       <Link to='/learning-sessions'>
+                            <button className="Live-RS-btn" style={{backgroundColor:getColor('/learning-sessions')}}>
+                                <small className="see-all-live">See All</small>
+                                <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
+                            </button>
+                        </Link>
+
+                    </div>   
+
                 </div>
+
+                <div className="accordion right-col-box-home-r mt-3">
+
+                    <div className="live-text-sln">Upcoming Live</div> 
+
+                    <div className="Live-S-Nav d-flex" id="headingTwo">
+
+                        <UpLiveData/>
+
+                        <Link to='/upcoming-live'>
+                            <button className="Live-RS-btn" style={{backgroundColor:getColor('/upcoming-live')}}>
+                                <small className="see-all-live">See All</small>
+                                <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
+                            </button>
+                        </Link>
+
+                    </div>   
+
+                </div>
+
+                <div className="accordion right-col-box-home-r mt-3">
+
+                    <div className="live-text-sln">Upcoming Auditions</div> 
+
+                    <div className="Live-S-Nav d-flex" id="headingTwo">
+
+                        <AuditionsData/>
+
+                       <Link to='/upcoming-auditions'>
+                            <button className="Live-RS-btn "style={{backgroundColor:getColor('/upcoming-auditions')}}>
+                                <small className="see-all-live">See All</small>
+                                <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
+                            </button>
+                        </Link>
+
+                    </div>   
+
+                </div>
+
             </div>
 
         </>
     )
 }
-export default Sidebar;
+export default withRouter(Sidebar);
