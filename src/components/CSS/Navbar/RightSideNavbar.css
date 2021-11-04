@@ -45,6 +45,7 @@
 .Live-RS-btn{
     border: none;
     margin-top: 6px;
+    cursor: pointer;
     padding: 5px;
     margin-right: 10px;
     width: 46px;
@@ -78,16 +79,6 @@
     -o-border-radius: 15px;
 }
 
-.dabutton:focus {
-    background-color:#FFAD00;
-}
-
-.dabutton:hover {
-    background-color:#FFAD00;
-}
-.dabutton:active {
-    background-color:#FFAD00;
-}
 
   
   /* Bottom right text */
