@@ -1,6 +1,6 @@
 import React from 'react'
+import OnlineData from './StarsOnline/OnlineData';
 
-import ChatImage from "../../../../../images/navbar/account.jpg";
 
 export const Sidebar = () => {
     return (
@@ -112,7 +112,7 @@ export const Sidebar = () => {
 
             </div>
             
-
+            { /* Stars Online */}
             <div className="container left-col-box-home-chat chat01 p-3 mt-3">
                 <div className="accordion " >
                     <ul class="accordion-header input-group">
@@ -124,53 +124,15 @@ export const Sidebar = () => {
 
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
-                            <ul className="accordion-header chatListname" id="headingTwo">
-                                    <span> <img src={ChatImage} alt="" className="SidebarStarListImage"/></span> 
-                                    <span className='chatName'>Apurbo Kumar </span>
-                                    
-                            </ul>
+                           
+                            <OnlineData/>
                             
-
                         </div>
                     </div>
 
                 </div>
             </div>
+            { /* Stars Online End*/}
 
         </>
     )

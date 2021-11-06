@@ -23,7 +23,9 @@ export const Sidebar = ({history}) => {
                     <div className="live-text-sln">Live now</div> 
 
                     <div className="Live-S-Nav d-flex" id="headingTwo">
+
                         <LiveData/>
+
                        <Link to='/live-now'>
                             <button className="Live-RS-btn" style={{backgroundColor:getColor('/live-now')}}>
                                 <small className="see-all-live">See All</small>
@@ -40,7 +42,9 @@ export const Sidebar = ({history}) => {
                     <div className="live-text-sln">Learning Sessions</div> 
 
                     <div className="Live-S-Nav d-flex" id="headingTwo">
+
                         <LearnData/>
+                        
                        <Link to='/learning-sessions'>
                             <button className="Live-RS-btn" style={{backgroundColor:getColor('/learning-sessions')}}>
                                 <small className="see-all-live">See All</small>
@@ -80,7 +84,7 @@ export const Sidebar = ({history}) => {
                         <AuditionsData/>
 
                        <Link to='/upcoming-auditions'>
-                            <button className="Live-RS-btn "style={{backgroundColor:getColor('/upcoming-auditions')}}>
+                            <button className="Live-RS-btn" style={{backgroundColor:getColor('/upcoming-auditions')}}>
                                 <small className="see-all-live">See All</small>
                                 <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
                             </button>
