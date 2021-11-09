@@ -5,10 +5,7 @@ const SubCatContent = props => {
             <div className="Select-home-category">
                 <div className="Select-text-home">{props.Title}</div>
             </div>
-            
         </>
     )
 }
-
-
 export default SubCatContent

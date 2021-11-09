@@ -1,5 +1,6 @@
 import React from 'react'
 import OnlineData from './StarsOnline/OnlineData';
+import SubCatData from './SubCategory/SubCatData';
 
 
 export const Sidebar = () => {
@@ -25,22 +26,8 @@ export const Sidebar = () => {
                             </h2>
                             <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
-                                <div className="accordion-body">
-                                    <div className="Select-home-category">
-                                        <div className="Select-text-home">Learning sessions</div>
-                                    </div>
-                                    <div className="Select-home-category">
-                                        <div className="Select-text-home">Live now</div>
-                                    </div>
-                                    <div className="Select-home-category">
-                                        <div className="Select-text-home">Upcoming auditions</div>
-                                    </div>
-                                    <div className="Select-home-category">
-                                        <div className="Select-text-home">Nothing to Hide </div>
-                                    </div>
-                                    <div className="Select-home-category">
-                                        <div className="Select-text-home">Upcoming live</div>
-                                    </div>
+                                <div className="accordion-body accordion-body-im Select-home-category-scroll ">
+                                    <SubCatData/>
                                 </div>
                             </div>
                         </div>
