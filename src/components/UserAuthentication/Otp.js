@@ -1,15 +1,15 @@
-import { Card,  Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 
 import HelloSuperStarDemo from "./HelloSuperStarDemo";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import '../CSS/Login-page/logIn.css';
 import '../CSS/Otp-page/OtpPage.css';
 
 const Otp = () => {
-   
+
     return (
         <>
             <div className="bg-img">
@@ -36,24 +36,24 @@ const Otp = () => {
                                                         <div className="otp">
                                                             <FontAwesomeIcon className="ino mb-2" icon={faEnvelopeOpenText} />
                                                             <p>We have sent an OTP number to your phone. Enter the OTP below to verify your identity</p>
-                                                            <b>00:52</b> <br/>
+                                                            <b>00:52</b> <br />
 
-                                                           <div className="otpS">
+                                                            <div className="otpS">
                                                                 <input type="text" />
                                                                 <input type="text" />
                                                                 <input type="text" />
                                                                 <input type="text" />
-                                                           </div>
+                                                            </div>
 
                                                             <div className="btnO col-lg-12">
                                                                 <div className="btnS col-sm-6">
-                                                                   <Link to="/accountCreate"> <button>Verify</button></Link>
+                                                                    <Link to="/accountCreate"> <button>Verify</button></Link>
                                                                 </div>
                                                                 <div className="btnA col-sm-6 mt-2">
                                                                     <a href="/">Resend</a>
                                                                 </div>
                                                             </div>
-                                                           
+
                                                         </div>
                                                         <h6 className="log-otp">Already have an account ? <Link to="/login">Log In</Link></h6>
 

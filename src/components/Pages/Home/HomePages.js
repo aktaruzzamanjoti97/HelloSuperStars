@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
-import LeftSideNavbar from "../Home/SideNavbar/LeftSidebar/Sidebar";
-import RightSideNavbar from "../Home/SideNavbar/RightSidebar/Sidebar";
-
+import LeftSidebar from '../../Sidebar/LeftSidebar'
+import RightSidebar from '../../Sidebar/RightSidebar'
 import Post from "../Home/HomePost/PostData";
 export default class HomePages extends Component {
   render() {
@@ -13,7 +12,7 @@ export default class HomePages extends Component {
             <div className="row">
 
               <div className="col-sm-3 justify-content-center">
-                <LeftSideNavbar/>
+                <LeftSidebar/>
               </div>
               
               <div className="col-sm-6 justify-content-center" >
@@ -21,7 +20,7 @@ export default class HomePages extends Component {
               </div>
 
               <div className="col-md-3 justify-content-center" >
-                <RightSideNavbar/>
+                <RightSidebar/>
               </div>
               
             </div>

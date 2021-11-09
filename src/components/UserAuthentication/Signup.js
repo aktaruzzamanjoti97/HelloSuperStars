@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Button, Card,  Alert, Container } from 'react-bootstrap';
+import { Button, Card, Alert, Container } from 'react-bootstrap';
 import { useAuth } from "./AuthContext";
 import HelloSuperStarDemo from './HelloSuperStarDemo';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEyeSlash, faEye} from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
 import '../CSS/SignUpPage/SignUp.css'
 import DropDownLanguage from './DropDownLanguage';
 const Signup = () => {
@@ -18,18 +18,18 @@ const Signup = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [changeIcon, setChange] = useState(false);
-    const [changIcon1,setChangeIcon1]=useState(false);
- 
+    const [changIcon1, setChangeIcon1] = useState(false);
+
     function handleChangeIcon() {
         setChange(!(changeIcon));
 
     }
 
-    function handleChangeIcon1(){
+    function handleChangeIcon1() {
         setChangeIcon1(!(changIcon1));
     }
-    
-  
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -75,7 +75,7 @@ const Signup = () => {
                                                         <form onSubmit={handleSubmit}>
                                                             <div class="row">
                                                                 <div class="col">
-                                                                    <input type="text" ref={nameRef} class="form-control sign-up-style" placeholder='First name' required/>
+                                                                    <input type="text" ref={nameRef} class="form-control sign-up-style" placeholder='First name' required />
                                                                 </div>
                                                                 <div class="col">
                                                                     <input type="text" class="form-control sign-up-style" placeholder="Last name" />
@@ -91,15 +91,15 @@ const Signup = () => {
                                                             </div>
                                                             <div class="row mt-3">
                                                                 <div class="col">
-                                                                    <input type={changeIcon?`text`:`password`} ref={passwordRef} class="form-control sign-up-style" placeholder="Create password" required />
+                                                                    <input type={changeIcon ? `text` : `password`} ref={passwordRef} class="form-control sign-up-style" placeholder="Create password" required />
                                                                     <span className='sign-up-eye-icon-1' >
-                                                                    <FontAwesomeIcon onClick={handleChangeIcon} icon={changeIcon? faEye:faEyeSlash} />
+                                                                        <FontAwesomeIcon onClick={handleChangeIcon} icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>
                                                                 </div>
                                                                 <div class="col">
-                                                                    <input type={changIcon1?`text`:`password`} ref={ConfirmPasswordRef} class="form-control sign-up-style" placeholder="Confirm password" required/>
+                                                                    <input type={changIcon1 ? `text` : `password`} ref={ConfirmPasswordRef} class="form-control sign-up-style" placeholder="Confirm password" required />
                                                                     <span className='sign-up-eye-icon-2' onClick={handleChangeIcon1} >
-                                                                    <FontAwesomeIcon icon={changIcon1? faEye:faEyeSlash} />
+                                                                        <FontAwesomeIcon icon={changIcon1 ? faEye : faEyeSlash} />
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -147,8 +147,7 @@ const Signup = () => {
                     </div>
                 </section>
                 <div className="topright text-light">
-<DropDownLanguage />
-
+                    <DropDownLanguage />
                 </div>
             </div>
         </>
