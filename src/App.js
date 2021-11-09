@@ -27,6 +27,8 @@ import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsB
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
 
+import Error from "./components/Pages/Home/Error";
+
 
 import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
@@ -67,6 +69,7 @@ function App() {
         <Route path='/coreCategory' exact component={CoreCategory} />
         <Route path='/subCategory' exact component={SubCategory} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
+        <Route component={Error} />
       </Switch>
     </BrowserRouter>
     </>

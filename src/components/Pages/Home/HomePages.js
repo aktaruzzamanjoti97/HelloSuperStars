@@ -23,6 +23,7 @@ export default class HomePages extends Component {
               <div className="col-md-3 justify-content-center" >
                 <RightSideNavbar/>
               </div>
+              
             </div>
           </div>
         </div>
