@@ -43,15 +43,15 @@ const Login = () => {
                 <section id="header" className="d-flex align-items-center">
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="col-10 mx-auto">
+                            <div className="col-md-10  mx-auto">
                                 <div className="row">
-                                    <div className="col-md-6 pt-5 pt-lg-0 order-1 order-lg-1 d-flex justify-content-center flex-column">
-                                        <div className="mt-3">
+                                    <div className="col-md-6  pt-5 pt-lg-0  d-flex justify-content-center  flex-column">
+                                        <div className="mt-3 ">
                                             <HelloSuperStarDemo />
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-6 order-2 order-lg-2 header-img">
+                                    <div className="col-lg-6 header-img">
                                         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
                                             <div className="w-100" style={{ maxWidth: "480px" }}>
                                                 <Card className='logIn-bg'>
