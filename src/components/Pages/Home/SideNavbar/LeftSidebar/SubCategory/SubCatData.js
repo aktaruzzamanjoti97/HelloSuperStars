@@ -4,19 +4,34 @@ const SubCatData = props => {
     return (
         <>
             <SubCatContent
-                Title="Live Session"
+                Title="Hollywood"
             />
             <SubCatContent
-                Title="Upcoming Auditions"
+                Title="Bollywood"
             />
             <SubCatContent
-                Title="Live Now"
+                Title="Tollywood"
             />
             <SubCatContent
-                Title="Audition Play"
+                Title="Religious"
             />
             <SubCatContent
-                Title="Free Show"
+                Title="Funny"
+            />
+            <SubCatContent
+                Title="Hollywood"
+            />
+            <SubCatContent
+                Title="Bollywood"
+            />
+            <SubCatContent
+                Title="Tollywood"
+            />
+            <SubCatContent
+                Title="Religious"
+            />
+            <SubCatContent
+                Title="Funny"
             />
         </>
     )

@@ -20,12 +20,14 @@ import Navigation from './components/Header/Navigation';
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
 import Live from "./components/Pages/Home/Body/LiveNow/LiveBody";
-
+import Learn from "./components/Pages/Home/Body/LearningSessions/LearnBody";
 import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
 import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsBody";
 
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
+
+import Error from "./components/Pages/Home/Error";
 
 
 import './components/CSS/Navbar/LeftSideNavbar.css';
@@ -34,7 +36,6 @@ import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
-import Learn from "./components/Pages/Home/Body/LearningSessions/LearnBody";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
         <Route path='/coreCategory' exact component={CoreCategory} />
         <Route path='/subCategory' exact component={SubCategory} />
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
+        <Route component={Error} />
       </Switch>
     </BrowserRouter>
     </>

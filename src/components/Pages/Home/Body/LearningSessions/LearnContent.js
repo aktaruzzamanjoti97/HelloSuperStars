@@ -19,7 +19,9 @@ const LearnContent = (props) => {
                   <div className="container my-2 Post-Title-home">
                       {props.Msg}
                   </div>
+
                   <img src={props.PostImg} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
+
                   <div className="card-body">
                       <div className="container">
                           <ul className="PostHoUl">

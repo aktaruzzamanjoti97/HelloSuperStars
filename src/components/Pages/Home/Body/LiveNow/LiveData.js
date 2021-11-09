@@ -13,35 +13,6 @@ const LiveData = props => {
     return (
         <>
         <div className="Post-Scroll">
-        Live Now
-        <LiveContent
-
-            ProfileImg={ShakibPro}
-            Name="Shakib Al Hasan"
-            Time="5:30 PM"
-            Date="2nd October"
-            Msg="Coming live at 9.00 pm tonight. See you there!"
-            PostImg={ShakibPost} 
-            Icon={FaBeer} 
-            LikeCount="240"
-            ShareCount="100"
-            CommentCount="30"
-
-        />
-        <LiveContent
-        
-            ProfileImg={AymanPro}
-            Name="Ayman Sadiq"
-            Time="5:30 PM"
-            Date="2nd October"
-            Msg="নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? 
-            কীভাবে গঠন করবো নতুন কোনো অভ্যাস?"
-            PostImg={AymanPost}    
-            LikeCount="240"
-            ShareCount="100"
-            CommentCount="30"            
-        
-        />
         <LiveContent               
         
             ProfileImg={AzhariPro}

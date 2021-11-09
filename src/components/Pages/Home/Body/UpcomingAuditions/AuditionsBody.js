@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
-import LeftSideNavbar from "../../SideNavbar/LeftSidebar/Sidebar";
-import RightSideNavbar from "../../SideNavbar/RightSidebar/Sidebar";
+import LeftSidebar from '../../../../Sidebar/LeftSidebar'
+import RightSidebar from '../../../../Sidebar/RightSidebar'
 import Auditions from "../UpcomingAuditions/AuditionsData"
 
 export default class AuditionsBody extends Component {
@@ -13,7 +12,7 @@ export default class AuditionsBody extends Component {
             <div className="row">
 
               <div className="col-sm-3 justify-content-center">
-                <LeftSideNavbar/>
+                <LeftSidebar/>
               </div>
 
               <div className="col-sm-6 justify-content-center" >
@@ -21,7 +20,7 @@ export default class AuditionsBody extends Component {
               </div>
 
               <div className="col-md-3 justify-content-center" >
-                <RightSideNavbar/>
+                <RightSidebar/>
               </div>
 
             </div>
