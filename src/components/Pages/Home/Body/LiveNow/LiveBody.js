@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import LeftSideNavbar from "../../Home/SideNavbar/LeftSidebar/Sidebar";
-import RightSideNavbar from "../../Home/SideNavbar/RightSidebar/Sidebar";
+import LeftSideNavbar from "../../../Home/SideNavbar/LeftSidebar/Sidebar";
+import RightSideNavbar from "../../../Home/SideNavbar/RightSidebar/Sidebar";
+import LiveNow from "../LiveNow/LiveData"
 
-import Post from "./StarPostPage/PostPage";
-export default class HomePages extends Component {
+export default class LiveBody extends Component {
   render() {
     return (
       <React.Fragment>
@@ -17,11 +17,11 @@ export default class HomePages extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <Post/>
+                <LiveNow/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
-              <RightSideNavbar/>
+                <RightSideNavbar/>
               </div>
 
             </div>
