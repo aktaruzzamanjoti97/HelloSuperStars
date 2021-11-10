@@ -46,8 +46,11 @@
   color: #f3a81c;
   font-size: 14px;
   margin-left: 20px;
-
+  text-decoration: none;
   padding-bottom: 10px;
+}
+.teop-s{
+  text-decoration: none;
 }
 .Select-text-home:hover{
   color: #343434;

@@ -1,6 +1,7 @@
 import React from 'react'
-import PlayArrow from '@material-ui/icons/PlayArrow';
+import '../../../../CSS/Home/video.less'
 const LiveNContent = (props) => {
+
     return (
         <>
         <div className="Post-Scroll-S col-md-10 align-items-center ml-2">
@@ -20,8 +21,11 @@ const LiveNContent = (props) => {
                       {props.Msg}
                   </div>
 
-                  <img src={props.PostImg} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
-                  
+                    <video id="my_video_1" className="video-js vjs-default-skin card-img-top img-fluid mx-auto PostImgHe" 
+                        controls preload="none" poster={props.posterImg} data-setup='{}'>
+                        <source src={props.PostVideo} type='video/mp4' />
+                    </video>
+
                   <div className="card-body">
                       <div className="container">
                           <ul className="PostHoUl">

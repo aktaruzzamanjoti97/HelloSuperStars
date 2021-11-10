@@ -1,6 +1,6 @@
 import React from 'react'
-import SubCatData from '../Pages/Home/SideNavbar/LeftSidebar/SubCategory/SubCatData';
 import OnlineData from '../Pages/Home/SideNavbar/LeftSidebar/StarsOnline/OnlineData';
+import SubCatContent from '../Pages/Home/SideNavbar/LeftSidebar/SubCategory/SubCatContent';
 
 export const Sidebar = () => {
     return (
@@ -26,7 +26,7 @@ export const Sidebar = () => {
                             <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
                                 <div className="accordion-body accordion-body-im Select-home-category-scroll ">
-                                    <SubCatData/>
+                                    <SubCatContent/>
                                 </div>
                             </div>
                         </div>
