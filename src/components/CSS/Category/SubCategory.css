@@ -65,20 +65,22 @@
 
 @media only screen and (max-width: 768px) {
 
-    .Follow-Category{
-        width: 100%;
-    }
-    .ProMain{
-        padding-left: 0px;
-    
-    }
+   
     .Follow-Category-div{
-        width: 90%;
-        margin-left: 35px;
+        width: 100%;
+        margin-left: 0px;
     }
+    
     .Follow-Category-Img{
         height: 150px;
     }
+    .bt-cat-fol{
+       
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+
 
   }
 
