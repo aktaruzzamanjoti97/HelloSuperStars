@@ -4,7 +4,7 @@
   border-radius:5px;
 }
 .left-bottom-ap{
-  background-color: #000000 !important;
+  background-color: #000000;
 }
 .accordion-button-fx {
   position: relative;
@@ -46,8 +46,11 @@
   color: #f3a81c;
   font-size: 14px;
   margin-left: 20px;
-
+  text-decoration: none;
   padding-bottom: 10px;
+}
+.teop-s{
+  text-decoration: none;
 }
 .Select-text-home:hover{
   color: #343434;
@@ -57,7 +60,7 @@
 }
 .category-size-chat {
   font-size: 12px;
-  color: #FFAD00 !important;
+  color: #FFAD00;
 }
 
 

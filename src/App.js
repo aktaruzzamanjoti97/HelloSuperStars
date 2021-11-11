@@ -34,8 +34,17 @@ import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
+
+
+// Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
+
+import Category from './components/Sidebar/Category/ChooseCategory'
+
+// Choose Category
+import Hollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body";
+import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
 
 
 function App() {
@@ -54,7 +63,7 @@ function App() {
 
         <Route exact path='/marketplace' component={Market} />
 
-  
+       
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
@@ -65,14 +74,30 @@ function App() {
         <Route exact path='/buy-packages' component={BuyPackages} />
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
-        <Route path='/coreCategory' exact component={CoreCategory} />
-        <Route path='/subCategory' exact component={SubCategory} />
+
+         {/* Category */}
+          <Route path='/coreCategory' exact component={CoreCategory} />
+          <Route path='/subCategory' exact component={SubCategory} />
+
+        
+        {/* Left Sidebar*/}
+
+          <Route path='/category' component={Category} />
+
+          {/* Follow Category */}
+          <Route path='/category/Hollywood' component={Hollywood} />
+          <Route path='/category/Bollywood' component={Bollywood} />
+
+        {/* Left Sidebar End*/}
+
+
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
         <Route component={Error} />
+        
       </Switch>
     </BrowserRouter>
     </>
   );
-}
+} 
 
 export default App;

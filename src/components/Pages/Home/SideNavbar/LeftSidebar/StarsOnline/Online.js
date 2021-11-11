@@ -6,8 +6,8 @@ const Online = props => {
                 
                 <span> 
                     <img src={props.image} alt="" className="SidebarStarListImage"/>
-                    
                 </span>
+                
                 <span className="OnlineGreen"><i class="fas fa-circle"></i></span>
                 <span className='chatName'>{props.name}</span>
                

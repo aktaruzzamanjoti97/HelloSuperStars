@@ -2,22 +2,22 @@
     margin-left: 50px;
 }
 .Post-Scroll-S{
-    
     margin-left: 50px;
-
 }
+
 .Post-Scroll
 {
-    max-height: 1400px;
-    overflow-y: scroll;
+    max-height: 1400px !important;
+    overflow-y: scroll !important;
 }
 
 .Post-Scroll::-webkit-scrollbar {
-  width: 0px;
-  background: none;
+  width: 0px !important;
+  background: none !important;
 }
+
 .Post-Scroll::-webkit-scrollbar-thumb {
-  background: none; 
+  background: none !important; 
 }
 .PostImgHome{
     width: 40px !important;
@@ -144,3 +144,5 @@
     }
   
   }
+
+

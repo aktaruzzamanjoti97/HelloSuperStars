@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LeftSideNavbar from "../Home/SideNavbar/LeftSidebar/Sidebar";
-import RightSideNavbar from "../Home/SideNavbar/RightSidebar/Sidebar";
+import LeftSidebar from "../../Sidebar/LeftSidebar";
+import RightSidebar from "../../Sidebar/RightSidebar";
 import Contents from "../Market/Content/Content";
 
 export default class MarketPlace extends Component {
@@ -12,7 +12,7 @@ export default class MarketPlace extends Component {
               <div className="row">
   
                 <div className="col-sm-3 justify-content-center">
-                  <LeftSideNavbar/>
+                  <LeftSidebar/>
                 </div>
   
                 <div className="col-sm-6 justify-content-center" >
@@ -20,7 +20,7 @@ export default class MarketPlace extends Component {
                 </div>
   
                 <div className="col-md-3 justify-content-center" >
-                <RightSideNavbar/>
+                <RightSidebar/>
                 </div>
   
               </div>
