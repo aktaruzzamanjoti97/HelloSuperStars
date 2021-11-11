@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import LeftSidebar from '../../../../Sidebar/LeftSidebar'
-import RightSidebar from '../../../../Sidebar/RightSidebar'
+import LeftSidebar from '../../../../../Sidebar/LeftSidebar'
+import RightSidebar from '../../../../../Sidebar/RightSidebar'
 import Content from "./Content";
-
-
 
 export default class Body extends Component {
   render() {

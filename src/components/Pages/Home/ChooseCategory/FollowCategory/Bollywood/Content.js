@@ -1,6 +1,6 @@
 import React from 'react'
-import Football from "../../../../../images/Market/Football.jpg"
-import '../../../../CSS/Category/SubCategory.css';
+import Football from "../../../../../../images/Market/Football.jpg"
+import '../../../../../CSS/Category/SubCategory.css';
 
 const Content = () => {
     return (

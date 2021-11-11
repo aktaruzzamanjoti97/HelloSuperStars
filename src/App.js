@@ -40,8 +40,9 @@ import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
 
-import Hollywood from "./components/Pages/Home/SideCategory/Hollywood/Body";
-import Bollywood from "./components/Pages/Home/SideCategory/Bollywood/Body";
+// Choose Category
+import Hollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body";
+import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
 
 
 function App() {
