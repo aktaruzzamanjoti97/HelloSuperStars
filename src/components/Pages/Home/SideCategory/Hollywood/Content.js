@@ -4,6 +4,7 @@ import '../../../../CSS/Category/SubCategory.css';
 
 const Content = () => {
     return (
+
         <>
             <div className=" Follow-Category">
 
@@ -228,5 +229,4 @@ const Content = () => {
         </>
     )
 }
-
 export default Content

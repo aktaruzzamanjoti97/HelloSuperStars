@@ -99,7 +99,7 @@ export const Sidebar = () => {
             </div>
             
             { /* Stars Online */}
-            <div className="container left-col-box-home-chat chat01 p-3 mt-3">
+            <div className=" container left-col-box-home-chat chat01 p-3 mt-3">
                 <div className="accordion " >
                     <ul class="accordion-header input-group">
                         <span class="form-outline Stars-search">Stars Online</span>
