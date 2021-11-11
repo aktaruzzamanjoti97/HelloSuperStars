@@ -4,7 +4,7 @@
   border-radius:5px;
 }
 .left-bottom-ap{
-  background-color: #000000 !important;
+  background-color: #000000;
 }
 .accordion-button-fx {
   position: relative;
@@ -60,7 +60,7 @@
 }
 .category-size-chat {
   font-size: 12px;
-  color: #FFAD00 !important;
+  color: #FFAD00;
 }
 
 

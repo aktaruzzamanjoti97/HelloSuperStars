@@ -40,6 +40,8 @@ import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
 
+import Category from './components/Sidebar/Category/ChooseCategory'
+
 // Choose Category
 import Hollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body";
 import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
@@ -74,12 +76,20 @@ function App() {
         <Route path='/profile' exact component={Profile} />
 
          {/* Category */}
-        <Route path='/coreCategory' exact component={CoreCategory} />
-        <Route path='/subCategory' exact component={SubCategory} />
+          <Route path='/coreCategory' exact component={CoreCategory} />
+          <Route path='/subCategory' exact component={SubCategory} />
 
-        {/* Follow Category */}
-        <Route path='/category/Hollywood' component={Hollywood} />
-        <Route path='/category/Bollywood' component={Bollywood} />
+        
+        {/* Left Sidebar*/}
+
+          <Route path='/category' component={Category} />
+
+          {/* Follow Category */}
+          <Route path='/category/Hollywood' component={Hollywood} />
+          <Route path='/category/Bollywood' component={Bollywood} />
+
+        {/* Left Sidebar End*/}
+
 
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
         <Route component={Error} />
