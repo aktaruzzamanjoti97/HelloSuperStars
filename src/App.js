@@ -77,13 +77,13 @@ function App() {
         <Route path='/coreCategory' exact component={CoreCategory} />
         <Route path='/subCategory' exact component={SubCategory} />
 
+        {/* Follow Category */}
         <Route path='/category/Hollywood' component={Hollywood} />
         <Route path='/category/Bollywood' component={Bollywood} />
 
-
-
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
         <Route component={Error} />
+        
       </Switch>
     </BrowserRouter>
     </>
