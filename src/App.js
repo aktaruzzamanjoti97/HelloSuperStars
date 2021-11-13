@@ -43,8 +43,11 @@ import SubCategory from "./components/Pages/Category/SubCategory";
 import Category from './components/Sidebar/Category/ChooseCategory'
 
 // Choose Category
-import Hollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body";
+import Hollywood from './components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body'
 import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
+
+import Following from "./components/Sidebar/Following/Body";
+import Body from "./components/Sidebar/Settings/Body";
 
 
 function App() {
@@ -83,6 +86,8 @@ function App() {
         {/* Left Sidebar*/}
 
           <Route path='/category' component={Category} />
+          <Route path='/following' component={Following} />
+          <Route path='/settings' component={Body} />
 
           {/* Follow Category */}
           <Route path='/category/Hollywood' component={Hollywood} />

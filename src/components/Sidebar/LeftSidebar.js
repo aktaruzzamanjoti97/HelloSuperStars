@@ -25,29 +25,32 @@ export const LeftSidebar = ({history}) => {
                 <div class="accordion " id="accordionExample">
                     <div className="accordion" id="accordionExample">
                         
-                        <Link className="teop-s" to='/category'>
-                            <div className="accordion-item left-bottom-ap">
-                                <h2 className="accordion-header " id="headingOne">
+                       
+                        <div className="accordion-item left-bottom-ap">
+                            <Link className="teop-s" to='/category'>
+                            <h2 className="accordion-header " id="headingOne">
                                     <button className="accordion-button profile-accordion-button-icon left-bottom-ap collapsed"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
                                         aria-controls="collapseOne" style={{backgroundColor:getColor('/category')}}>
                                         <span>
-                                      <i className="fas fa-layer-group mx-2 profile-font-color fa-2x" style={{color:getColors('/category')}}></i>
+                                      <i className="fas fa-layer-group mx-2 profile-font-color fa-2x"style={{color:getColors('/category')}} ></i>
                                         </span>
                                         <span className="mx-2 profile-font-color" style={{color:getColors('/category')}}>
                                             Category <br></br>
                                             <small className="category-size-chat" style={{color:getColors('/category')}} > 5 selectd</small>
                                         </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
-                                    data-bs-parent="#accordionExample">
-                                    <div className="accordion-body accordion-body-im Select-home-category-scroll ">
-                                        <SubCatData/>
-                                    </div>
+                                    </button>                     
+                            </h2>
+                            </Link>
+
+                            <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                                <div className="accordion-body accordion-body-im Select-home-category-scroll ">
+                                    <SubCatData/>
                                 </div>
                             </div>
-                        </Link>
+
+                        </div>
 
                         <Link className="teop-s" to='/following'>
                             <div className="accordion-item mt-1 left-bottom-ap">
@@ -73,13 +76,13 @@ export const LeftSidebar = ({history}) => {
                                 <h2 className="accordion-header" id="headingTwo">
                                     <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo" style={{backgroundColor:getColor('/upcoming-auditions')}}>
+                                        aria-controls="collapseTwo" style={{backgroundColor:getColor('/wallet')}}>
                                         <span>
-                                            <i className="fas fa-wallet mx-2 profile-font-color fa-2x" style={{color:getColors('/upcoming-auditions')}}></i>
+                                            <i className="fas fa-wallet mx-2 profile-font-color fa-2x" style={{color:getColors('/wallet')}}></i>
                                         </span>
-                                        <span className="mx-2 profile-font-color" style={{color:getColors('/upcoming-auditions')}}>
+                                        <span className="mx-2 profile-font-color" style={{color:getColors('/wallet')}}>
                                             Wallet <br></br>
-                                            <small className="category-size-chat" style={{color:getColors('/upcoming-auditions')}}> 200 star</small>
+                                            <small className="category-size-chat" style={{color:getColors('/wallet')}}> 200 star</small>
                                         </span>
                                     </button>
                                 </h2>

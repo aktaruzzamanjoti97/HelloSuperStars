@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import LeftSidebar from '../../../../../Sidebar/LeftSidebar'
-import RightSidebar from '../../../../../Sidebar/RightSidebar'
+import LeftSidebar from '../LeftSidebar'
 import Content from "./Content";
-
 
 export default class Body extends Component {
   render() {
@@ -16,12 +14,8 @@ export default class Body extends Component {
                 <LeftSidebar/>
               </div>
               
-              <div className="col-sm-6 justify-content-center" >
+              <div className="col-sm-9 justify-content-center" >
                   <Content/>
-              </div>
-
-              <div className="col-md-3 justify-content-center" >
-                <RightSidebar/>
               </div>
               
             </div>
