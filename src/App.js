@@ -48,6 +48,7 @@ import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bol
 
 import Following from "./components/Sidebar/Following/Body";
 import Body from "./components/Sidebar/Settings/Body";
+import StarSelection from "./components/Pages/Category/StarSelection";
 
 
 function App() {
@@ -82,7 +83,7 @@ function App() {
           <Route path='/coreCategory' exact component={CoreCategory} />
           <Route path='/subCategory' exact component={SubCategory} />
 
-        
+          <Route path='/starselection' exact component={StarSelection} />
         {/* Left Sidebar*/}
 
           <Route path='/category' component={Category} />

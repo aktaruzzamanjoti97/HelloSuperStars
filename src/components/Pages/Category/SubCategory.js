@@ -4,7 +4,7 @@ import frame from "../../../images/Normal-User/Single-frame.png";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-
+import { Link } from 'react-router-dom';
 const SubCategory = () => {
     return (
         <div className="main-container">
@@ -23,7 +23,7 @@ const SubCategory = () => {
 
   </div>
   <div class='item'>
-  <img src="https://www.sify.com/uploads/khan-tcek1Wgagaaab.jpg" alt="" />
+  <img src="https://p.imgci.com/db/PICTURES/CMS/290000/290089.jpg" alt="" />
   </div>
   <div class='item'>
   <img src="https://wallpapertag.com/wallpaper/middle/9/3/b/851331-download-messi-and-neymar-wallpapers-1920x1080-for-4k-monitor.jpg" alt="" />
@@ -46,7 +46,7 @@ const SubCategory = () => {
           </h6>
 
           <div className="ct-btn text-center">
-            <button className="btn mt-3 cg-done">Done</button>
+            <Link to='/Starselection'><button className="btn mt-3 cg-done">Done</button></Link>
           </div>
         </div>
       </div>
