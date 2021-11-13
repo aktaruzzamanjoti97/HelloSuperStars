@@ -40,12 +40,12 @@ import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
 
-import Category from './components/Sidebar/Category/ChooseCategory'
 
 // Choose Category
 import Hollywood from './components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body'
 import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
 
+import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
 import Following from "./components/Sidebar/Following/Body";
 import Body from "./components/Sidebar/Settings/Body";
 
@@ -85,7 +85,7 @@ function App() {
         
         {/* Left Sidebar*/}
 
-          <Route path='/category' component={Category} />
+          <Route path='/category' component={CategoryBody} />
           <Route path='/following' component={Following} />
           <Route path='/settings' component={Body} />
 
