@@ -46,8 +46,9 @@ import Hollywood from './components/Pages/Home/ChooseCategory/FollowCategory/Hol
 import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
 
 import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
-import Following from "./components/Sidebar/Following/Body";
+
 import Body from "./components/Sidebar/Settings/Body";
+import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
         {/* Left Sidebar*/}
 
           <Route path='/category' component={CategoryBody} />
-          <Route path='/following' component={Following} />
+          <Route path='/enrolled-auditions' component={EnrollBody} />
           <Route path='/settings' component={Body} />
 
           {/* Follow Category */}

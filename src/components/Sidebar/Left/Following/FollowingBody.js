@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import LeftSidebar from '../LeftSidebar'
-import RightSidebar from '../RightSidebar'
+import LeftSidebar from '../../LeftSidebar'
+import RightSidebar from '../../RightSidebar'
 import Content from "./Content";
 
 
-export default class Body extends Component {
+export default class FollowingBody extends Component {
   render() {
     return (
       <React.Fragment>

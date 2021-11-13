@@ -1,5 +1,5 @@
 import React from 'react'
-import Football from "../../../images/Market/Football.jpg"
+import Football from "../../../../images/Market/Football.jpg"
 
 const Content = () => {
     return (
