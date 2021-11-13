@@ -7,6 +7,7 @@ import '../../App.css';
 import { Link } from 'react-router-dom';
 
 const HelloSuperStarDemo = () => {
+
           return (
                     <div className=" col-md-6 pt-5 d-flex justify-content-center align-items-center flex-column">
                               <div>
@@ -24,6 +25,7 @@ const HelloSuperStarDemo = () => {
                               </div>
                     </div>
           )
+
 }
 
 export default HelloSuperStarDemo;

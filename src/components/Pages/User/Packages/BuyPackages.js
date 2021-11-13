@@ -52,7 +52,7 @@ export const BuyPackages = () => {
               </div>
 
               <div className=" mt-4">
-   <Link to='/' className='btn btn-outline-warning  px-4 btn-pak'>Confirm Password</Link>
+                <Link to='/' className='btn btn-outline-warning  px-4 btn-pak'>Confirm payment</Link>
               </div>
             </form>
           </div>

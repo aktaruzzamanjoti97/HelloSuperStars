@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 import HelloSuperStarDemo from "./HelloSuperStarDemo";
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEyeSlash,faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
 import '../CSS/Login-page/logIn.css';
 import DropDownLanguage from './DropDownLanguage';
 
@@ -31,10 +31,10 @@ const Login = () => {
         setLoading(false);
     }
 
-    const [changeIcon,setChange]=useState(false);
-    function handleChangeIcon(){
-       setChange(!(changeIcon));
-     
+    const [changeIcon, setChange] = useState(false);
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
+
     }
 
     return (
@@ -64,25 +64,25 @@ const Login = () => {
                                                         {error ? <Alert variant="danger">{JSON.stringify(error)}</Alert> : ""}
                                                         <Form onSubmit={handleSubmit} className='text-center'>
                                                             <Form.Group id="email" className='mb-4'>
-                                                               
+
                                                                 <input className='input-style w-50' ref={emailRef} type="email" placeholder='Email or Phone' required />
                                                             </Form.Group>
                                                             <p>
-                                                            <Form.Group id="password">
-                                                                <input className='input-style w-50' ref={passwordRef} type={changeIcon?'text':'password'}placeholder='Password' required />
-                                                              <span onClick={handleChangeIcon} className='eye-icons'>
-                                                              <FontAwesomeIcon icon={changeIcon?faEye:faEyeSlash} />
-                                                              </span>
-                                                               
-                                                            </Form.Group>
+                                                                <Form.Group id="password">
+                                                                    <input className='input-style w-50' ref={passwordRef} type={changeIcon ? 'text' : 'password'} placeholder='Password' required />
+                                                                    <span onClick={handleChangeIcon} className='eye-icons'>
+                                                                        <FontAwesomeIcon icon={changeIcon ? faEye : faEyeSlash} />
+                                                                    </span>
+
+                                                                </Form.Group>
                                                             </p>
-                                                            
+
                                                             <br />
-                                                            <Button  disabled={loading} className="btn btn-warning w-50" type="submit">Log In</Button>
+                                                            <Button disabled={loading} className="btn btn-warning w-50" type="submit">Log In</Button>
                                                         </Form>
                                                         <div className="d-flex  justify-content-around mt-4 ">
-                                                        <Link to='/signup' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Sign Up</Link>
-                                                        <Link to='/guestUser' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Guest user</Link>
+                                                            <Link to='/signup' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Sign Up</Link>
+                                                            <Link to='/guestUser' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Guest user</Link>
                                                         </div>
                                                     </Card.Body>
                                                 </Card>
@@ -98,7 +98,7 @@ const Login = () => {
                     </div>
                 </section>
                 <div className="topright text-light">
-<DropDownLanguage />
+                    <DropDownLanguage />
 
                 </div>
             </div>

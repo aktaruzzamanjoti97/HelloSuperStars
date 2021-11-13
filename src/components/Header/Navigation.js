@@ -9,7 +9,7 @@ import { Navbar, Nav, Form } from 'react-bootstrap'
 import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
 import accountImg from '../../images/navbar/account.jpg'
 import '../CSS/Navbar/navbar.css';
-import {Link} from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 
 class Navigation extends Component {
     constructor(props) {
@@ -29,71 +29,53 @@ class Navigation extends Component {
                 <Navbar className='navbar-bg' expand="lg" sticky="top">
                     <div className="container">
                         <Navbar.Brand href="#" >
-                           <Link to='/'> <img  src={helloSuperstarLogo} alt="hello superstar logo" height='40px' /></Link>
+                            <Link to='/'> <img src={helloSuperstarLogo} alt="hello superstar logo" height='40px' /></Link>
                         </Navbar.Brand>
                         <Form className='form-width-change'>
-                                <div className="form-group has-search">
-                                    <span className="fa fa-search form-control-feedback"></span>
-                                    <input type="text" className="form-control search-design" placeholder="Search Superstar" />
-                                </div>
-                            </Form>
+                            <div className="form-group has-search">
+                                <span className="fa fa-search form-control-feedback"></span>
+                                <input type="text" className="form-control search-design" placeholder="Search Superstar" />
+                            </div>
+                        </Form>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
 
-                           
-                            <Nav
-                                className="ms-auto my-2 my-lg-0"
-                                navbarScroll
-                            >
+
+                            <Nav className="ms-auto my-2 my-lg-0"navbarScroll>
+
                                 <Nav.Link href="#action1" className='navbar-link-hover'>
-
-                                    <i className="fa fa-home circle-icon" />
+                                    <NavLink className="active-link" to='/'><i className="fa fa-home circle-icon" /></NavLink>
                                 </Nav.Link>
-                                <Nav.Link href="#action2">
+
+                                <Nav.Link>
                                     <i className="fa fa-comment circle-icon" />
-
                                 </Nav.Link>
-                                <Nav.Link href="#action1">
 
+                                <Nav.Link href="#action1">
                                     <i className="fa fa-bell circle-icon" />
                                 </Nav.Link>
-                                <Nav.Link href="#action2">
-                                    <i className="fa fa-store circle-icon" />
+
+                                <Nav.Link>
+                                    <NavLink className="active-link" to='/marketplace'> <i className="fa fa-store circle-icon" /></NavLink>
                                 </Nav.Link>
 
-                                <Nav.Link href="#action2">
-                                    <img src={accountImg} className='img-fluid account-create' alt='account create '  />
+                                <Nav.Link>
+                                    <NavLink className="active-link" to='/profile'><img src={accountImg} className='img-fluid account-create' alt='account create ' /></NavLink>
                                 </Nav.Link>
 
-                                <Nav.Link href="#action2">
-                                   <select name="" id="" className='language-select'>
-                                       <option value="0" className='bg-dark'>EN</option>
-                                       <option value="0" className='bg-dark'>BN</option>
-                                       <option value="0" className='bg-dark'>HN</option>
-                                   </select>
+                                <Nav.Link>
+                                    <select name="" id="" className='language-select'>
+                                        <option value="0" className='bg-dark'>EN</option>
+                                        <option value="0" className='bg-dark'>BN</option>
+                                        <option value="0" className='bg-dark'>HN</option>
+                                    </select>
                                 </Nav.Link>
+
                             </Nav>
 
                         </Navbar.Collapse>
                     </div>
                 </Navbar>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 {/* <Navbar  className='navbar-bg' expand="sm">
                     <div className="container">

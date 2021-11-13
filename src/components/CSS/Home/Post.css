@@ -1,22 +1,23 @@
 .mt-Scroll{
-    margin-left: 48px;
+    margin-left: 50px;
 }
+.Post-Scroll-S{
+    margin-left: 50px;
+}
+
 .Post-Scroll
 {
-    max-height: 1000px;
-    overflow-y: scroll;
-    margin-left: 48px;
+    max-height: 1400px !important;
+    overflow-y: scroll !important;
 }
 
 .Post-Scroll::-webkit-scrollbar {
-  width: 3px;
-  background: none;
+  width: 0px !important;
+  background: none !important;
 }
+
 .Post-Scroll::-webkit-scrollbar-thumb {
-  background: none; 
-}
-.Post-Scroll::-webkit-scrollbar-thumb:hover {
-  background: #F0E25E; 
+  background: none !important; 
 }
 .PostImgHome{
     width: 40px !important;
@@ -28,7 +29,7 @@
     -o-border-radius: 50%;
 }
 .PostCard{
-    height: 478px;
+    height: 0 auto;
 }
 .PostImgHe{
     height: 255px;
@@ -96,12 +97,17 @@
     -o-border-radius: 5px;
 }
 
-@media only screen and (max-width: 760px) {
-    .Post-Scroll {
+@media only screen and (max-width: 510px) {
+    .Post-Scroll-S{
+        margin-left: 0px;
+    }
+    .Post-Scroll
+    {   
         margin-left: 1px;
+        
     }
     .PostCard{
-        height: 450px;
+        height: 0 auto;
     }
     .PostImgHe{
         height: 230px;
@@ -130,3 +136,13 @@
     }
   
   }
+
+  @media only screen and (max-width: 510px) {
+    .PostImgHe{
+        height: 185px;
+        width: 90%;
+    }
+  
+  }
+
+
