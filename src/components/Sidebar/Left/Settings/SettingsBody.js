@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import LeftSidebar from '../LeftSidebar'
-import RightSidebar from '../RightSidebar'
+import LeftSidebar from '../../LeftSidebar'
 import Content from "./Content";
 
-
-export default class Body extends Component {
+export default class SettingsBody extends Component {
   render() {
     return (
       <React.Fragment>
@@ -16,12 +14,8 @@ export default class Body extends Component {
                 <LeftSidebar/>
               </div>
               
-              <div className="col-sm-6 justify-content-center" >
+              <div className="col-sm-9 justify-content-center" >
                   <Content/>
-              </div>
-
-              <div className="col-md-3 justify-content-center" >
-                <RightSidebar/>
               </div>
               
             </div>

@@ -2,12 +2,14 @@ import React from "react";
 import Star from '../../../../images/Normal-User/star.png'
 import "../../../CSS/Packages/package.css";
 import {Link} from 'react-router-dom'
+import Payment from "./Payment";
+
  
 export const Packages = () => {
   return (
     <>
       <div className="Package-container mx-auto ">
-        <div className="container mx-auto ">
+        <div className="container  mx-auto ">
           <div className="row mx-auto  "> 
               <div className="pak-header text-center col-md-12">
                    <p text-center>Select the perfect package for you</p>
@@ -45,7 +47,10 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">5.00</b></p>
-                <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
+                <button className="package-btn" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" 
+                      aria-controls="panelsStayOpen-collapseThree">Buy Now
+                    </button>
                 </div>
               </div>
             </div>
@@ -64,7 +69,10 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                 <p><span className="dollar-s">$</span> <b className="dollar">10.00</b> </p>
-                <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
+                <button className="package-btn" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" 
+                      aria-controls="panelsStayOpen-collapseThree">Buy Now
+                    </button>
                 </div>
               </div>
             </div>
@@ -83,13 +91,29 @@ export const Packages = () => {
                 </div>
                 <div className="but-c">
                     <p><span className="dollar-s">$</span> <b className="dollar">20.00</b></p>
-                    <Link to="/buy-packages"><button className="package-btn">Buy Now</button></Link>
+                    <button className="package-btn" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" 
+                      aria-controls="panelsStayOpen-collapseThree">Buy Now
+                    </button>
                 </div>
               </div>
             </div>
           </div>
+
+         
+          {/* Payment */}
+
+          <Payment/>
+            
+          {/* Payment*/}
+
         </div>
+
       </div>
+
+      
+
+      
     </>
   );
 };
