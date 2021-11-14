@@ -60,58 +60,6 @@ const Content = () => {
           </div>
         </div>
       </div>
-      {/* <div className="Payment-Container mx-auto ">
-        <div className="container  mx-auto ">
-          {" "}
-          <br />
-          <div className="row mx-auto Payment-Border">
-            <b className="Payment-text">
-              Hello, Dear
-              <span className="Payment-star">gold</span>
-              customer. Currently, your wallet contains...
-            </b>
-
-            <div className="col-12 Payment-col d-flex">
-              <div className="container Payment-col-body container col-md-2">
-                <div className="Payment-Content text-center">
-                  <b className="Payment-text-col">250</b>
-                <br />
-                </div>
-                <div className="Payment-span-col text-center">Club points</div>
-              </div>
-
-              <div className="container Payment-col-body container col-md-2">
-                <div className="Payment-Content text-center">
-                  <b className="Payment-text-col">250</b>
-                </div>
-                <div className="Payment-span-col text-center">Club points</div>
-              </div>
-
-              <div className="container Payment-col-body container col-md-2">
-                <div className="Payment-Content text-center">
-                  <b className="Payment-text-col">250</b>
-                </div>
-                <div className="Payment-span-col text-center">Club points</div>
-              </div>
-
-              <div className="container Payment-col-body container col-md-2">
-                <div className="Payment-Content text-center">
-                  <b className="Payment-text-col">250</b>
-                </div>
-                <div className="Payment-span-col text-center">Club points</div>
-              </div>
-
-              <div className="container Payment-col-body container col-md-2">
-                <div className="Payment-Content text-center">
-                  <b className="Payment-text-col">250</b>
-                </div>
-                <div className="Payment-span-col text-center">Club points</div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };
