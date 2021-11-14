@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
-import SubCatData from '../Pages/Home/SideNavbar/LeftSidebar/SubCategory/SubCatData';
-import OnlineData from '../Pages/Home/SideNavbar/LeftSidebar/StarsOnline/OnlineData';
+import SubCatdata from './Left/Category/SubCategory/SubCatData'
+import OnlineData from './Left/StarsOnline/OnlineData'
 
 export const LeftSidebar = ({history}) => {
 
@@ -46,7 +46,7 @@ export const LeftSidebar = ({history}) => {
                             <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                                 <div className="accordion-body accordion-body-im Select-home-category-scroll ">
-                                    <SubCatData/>
+                                    <SubCatdata/>
                                 </div>
                             </div>
 

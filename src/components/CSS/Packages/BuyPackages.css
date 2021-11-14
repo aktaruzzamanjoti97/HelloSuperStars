@@ -34,7 +34,14 @@
 
 .car-pak {
   list-style: none;
+  overflow: auto;
+  white-space: nowrap;
+  list-style: none;
 }
+.car-pak::-webkit-scrollbar-thumb {
+  background: #000000; 
+}
+
 .car-pak-li {
   display: inline;
   padding: 10px;

@@ -41,6 +41,13 @@ export const Payment = () => {
                           <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
                           <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
                           <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
+                          <li className="car-pak-li"> <img src={Bkash} alt="Bkash" /> </li>
+                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
+                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
+                          <li className="car-pak-li"> <img src={Bkash} alt="bkash" /> </li>
+                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
+                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
+                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
                         </ul>
                       </div>
 

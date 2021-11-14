@@ -1,6 +1,6 @@
 import React from 'react'
 import Online from './Online'
-import ChatImage from "../../../../../../images/navbar/account.jpg";
+import ChatImage from "../../../../images/navbar/account.jpg";
 const OnlineData = () => {
     return (
         <>
