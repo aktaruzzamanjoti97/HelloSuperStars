@@ -110,9 +110,6 @@ export const Packages = () => {
         </div>
 
       </div>
-
-      
-
       
     </>
   );

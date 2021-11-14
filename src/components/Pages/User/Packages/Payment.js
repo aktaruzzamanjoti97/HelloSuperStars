@@ -14,7 +14,7 @@ export const Payment = () => {
           <h2 class="accordion-header " id="panelsStayOpen-headingThree">
             <button class="accordion-button collapsed Payment" type="button" data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" 
-              aria-controls="panelsStayOpen-collapseThree" >
+              aria-controls="panelsStayOpen-collapseThree" disabled>
             </button>
           </h2>
 
@@ -32,7 +32,7 @@ export const Payment = () => {
                     </div>
 
                     <form>
-                      <div className="row payment-pak col-md-12 ">
+                      <div className="row payment-pak payment-scroll col-md-12 ">
                         <ul className="car-pak col-ms-12">
                           <li className="car-pak-li"> <img src={Bkash} alt="Bkash" /> </li>
                           <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>

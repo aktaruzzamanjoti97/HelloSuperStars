@@ -109,6 +109,13 @@
 }
 
 
+/* .payment-scroll
+{
+    max-width: 100px;
+    overflow-x: scroll;
+} */
+
+
 .Payment-Con {
   margin-bottom: 100px;
 }
@@ -131,7 +138,7 @@
 
   .car-pak-li img {
     width: 40%;
-    height: 80px;
+    height: 50px;
     background-color: white;
     padding: 10px;
     margin-bottom: 40px;
