@@ -48,8 +48,8 @@ import Error from "./components/Pages/Home/Error";
 import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 
 
-import Following from "./components/Sidebar/Following/Body";
-import Body from "./components/Sidebar/Settings/Body";
+// import Following from "./components/Sidebar/Following/Body";
+// import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
 
 
@@ -107,13 +107,13 @@ function App() {
           <Route path='/starselection' exact component={StarSelection} />
         {/* Left Sidebar*/}
 
-          <Route path='/category' component={Category} />
-          <Route path='/following' component={Following} />
-          <Route path='/settings' component={Body} />
+          {/* <Route path='/category' component={Category} /> */}
+          {/* <Route path='/following' component={Following} /> */}
+          {/* <Route path='/settings' component={Body} /> */}
 
           {/* Follow Category */}
-          <Route path='/category/Hollywood' component={Hollywood} />
-          <Route path='/category/Bollywood' component={Bollywood} />
+          {/* <Route path='/category/Hollywood' component={Hollywood} />
+          <Route path='/category/Bollywood' component={Bollywood} /> */}
 
         {/* Left Sidebar End*/}
 
