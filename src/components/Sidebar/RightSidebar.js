@@ -1,9 +1,10 @@
 import React  from 'react'
-import LiveData from '../Pages/Home/SideNavbar/RightSidebar/LiveNow/LiveData'
-import LearnData from '../Pages/Home/SideNavbar/RightSidebar/LearningSessions/LearnData'
-import UpLiveData from '../Pages/Home/SideNavbar/RightSidebar/UpcomingLive/UpLiveData'
-import AuditionsData from '../Pages/Home/SideNavbar/RightSidebar/UpcomingAuditions/AuditionsData'
 import {Link, withRouter} from 'react-router-dom'
+import LearnData from './Right/LearningSessions/LearnData'
+import LiveData from './Right/LiveNow/LiveData'
+import AuditionsData from './Right/UpcomingAuditions/AuditionsData'
+import UpLiveData from './Right/UpcomingLive/UpLiveData'
+
 
 export const RightSidebar = ({history}) => {
     
