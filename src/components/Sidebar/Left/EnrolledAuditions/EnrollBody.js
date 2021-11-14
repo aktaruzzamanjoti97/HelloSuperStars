@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import LeftSidebar from '../LeftSidebar'
-import RightSidebar from '../RightSidebar'
-import Content from "./Content";
+import LeftSidebar from '../../LeftSidebar'
+import RightSidebar from '../../RightSidebar'
 
 
-export default class ChooseCategory extends Component {
+export default class EnrollBody extends Component {
   render() {
     return (
       <React.Fragment>
@@ -17,7 +16,7 @@ export default class ChooseCategory extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center" >
-                  <Content/>
+                
               </div>
 
               <div className="col-md-3 justify-content-center" >
