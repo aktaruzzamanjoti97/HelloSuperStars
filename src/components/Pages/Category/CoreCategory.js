@@ -2,7 +2,7 @@ import React from "react";
 import "../../CSS/Category/Category.css";
 import CategoryBtn from "./components/CategoryBtn";
 import frame from "../../../images/Normal-User/Single-frame.png";
-
+import { Link } from "react-router-dom";
 const CoreCategory = () => {
   return (
     <div className="main-container">
@@ -69,7 +69,7 @@ const CoreCategory = () => {
           </h6>
 
           <div className="ct-btn text-center">
-            <button className="btn mt-3 cg-done">Done</button>
+            <Link to='/subCategory'><button className="btn mt-3 cg-done">Done</button></Link>
           </div>
         </div>
       </div>
