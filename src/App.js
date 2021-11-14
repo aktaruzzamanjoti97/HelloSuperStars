@@ -11,7 +11,6 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
 import Packages from "./components/Pages/User/Packages/Packages";
-import BuyPackages from "./components/Pages/User/Packages/BuyPackages";
 import Profile from './components/Pages/Profile/Profile';
 
 // Navigation
@@ -27,8 +26,6 @@ import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsB
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
 
-import Error from "./components/Pages/Home/Error";
-
 
 import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
@@ -40,15 +37,21 @@ import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
 
-import Category from './components/Sidebar/Category/ChooseCategory'
+// Left Sidebar 
+import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
+import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
+import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
 
-// Choose Category
-import Hollywood from './components/Pages/Home/ChooseCategory/FollowCategory/Hollywood/Body'
-import Bollywood from "./components/Pages/Home/ChooseCategory/FollowCategory/Bollywood/Body";
+// Error
+import Error from "./components/Pages/Home/Error";
+import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
+
 
 import Following from "./components/Sidebar/Following/Body";
 import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
+
 
 
 function App() {
@@ -58,15 +61,33 @@ function App() {
     <PrivateRoute component={Navigation} />
       <Switch>
 
-        <PrivateRoute exact path='/' component={Home} />
 
+
+        {/* Navbar */}
+        <PrivateRoute exact path='/' component={Home} />
+        <Route path='/marketplace' component={Market} />
+
+        {/* Left Sidebar*/}
+        <Route path='/category' component={CategoryBody} />
+        <Route path='/following' component={FollowingBody} />
+        <Route path='/wallet' component={WalletBody} />
+        <Route path='/enrolled-auditions' component={EnrollBody} />
+        <Route path='/settings' component={SettingsBody} />
+         
+          {/* Sub Category*/}
+          {/* <Route path='/category/Hollywood' component={Hollywood} />
+          <Route path='/category/Bollywood' component={Bollywood} /> */}
+          {/* Sub Category End*/}
+
+        {/* Left Sidebar End*/}
+
+
+        {/* Right Sidebar   */}
         <Route exact path='/live-now' component={Live} />
         <Route exact path='/learning-sessions' component={Learn}/>
         <Route exact path='/upcoming-live' component={UpLive} />
         <Route exact path='/upcoming-auditions' component={Auditions} />
-
-        <Route exact path='/marketplace' component={Market} />
-
+        {/* Right Sidebar End */}
        
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
@@ -75,10 +96,10 @@ function App() {
 
         <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
-        <Route exact path='/buy-packages' component={BuyPackages} />
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
 
+          
          {/* Category */}
           <Route path='/coreCategory' exact component={CoreCategory} />
           <Route path='/subCategory' exact component={SubCategory} />
@@ -97,7 +118,10 @@ function App() {
         {/* Left Sidebar End*/}
 
 
+
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
+
+        {/* Error */}
         <Route component={Error} />
         
       </Switch>

@@ -1,7 +1,5 @@
 import React from 'react'
-import Football from "../../../images/Market/Football.jpg"
-import '../../CSS/Category/SubCategory.css';
-import Plus from '../../../images/Normal-User/add.png'
+import Football from "../../../../images/Market/Football.jpg"
 
 const Content = () => {
     return (
@@ -15,7 +13,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Dwane Johnson</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -23,7 +21,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Thor</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -32,7 +30,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Tom cruise</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -40,7 +38,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">DiCaprio</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -48,7 +46,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Captain america</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -57,7 +55,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Damn son</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -66,7 +64,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Johnson</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -74,7 +72,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Ant man</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -82,7 +80,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Superman</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -91,7 +89,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Greek</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -99,7 +97,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Football</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -107,7 +105,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Josef</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -115,7 +113,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Dwane Johnson</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -124,7 +122,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Thor</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -133,7 +131,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Tom cruise</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -141,7 +139,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">DiCaprio</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -149,7 +147,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Captain america</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -158,7 +156,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Damn son</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -167,7 +165,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Johnson</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -175,7 +173,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Ant man</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -183,7 +181,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Superman</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -192,7 +190,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Greek</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
@@ -201,7 +199,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Ben Johnson</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -209,7 +207,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Football</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
                 <div className="ProMain row col-md-4">
@@ -217,7 +215,7 @@ const Content = () => {
                         <img src={Football} className="Follow-Category-Img" alt="" />
                         <span className="Follow-Category-text">Josef</span>
                     </div>
-                    <button className="Follow-Category-text bt-cat-fol"> <img src={Plus} className="plus-cat" alt="" /> Choose</button>
+                    <button className="Follow-Category-text bt-cat-fol">+Follow</button>
 
                 </div>
 
