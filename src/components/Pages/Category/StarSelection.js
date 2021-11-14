@@ -5,7 +5,7 @@ import Cricketer from '../../../images/Cricket.png';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-
+import { Link } from 'react-router-dom';
 
 const StarSelection = () => {
     return (
@@ -58,7 +58,7 @@ const StarSelection = () => {
             </h6>
   
             <div className="ct-btn text-center">
-              <button className="btn mt-3 cg-done">Done</button>
+             <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link>
             </div>
           </div>
         </div>

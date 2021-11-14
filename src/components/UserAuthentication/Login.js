@@ -82,7 +82,7 @@ const Login = () => {
                                                         </Form>
                                                         <div className="d-flex  justify-content-around mt-4 ">
                                                             <Link to='/signup' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Sign Up</Link>
-                                                            <Link to='/guestUser' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Guest user</Link>
+                                                            <Link to='/coreCategory' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Guest user</Link>
                                                         </div>
                                                     </Card.Body>
                                                 </Card>

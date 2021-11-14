@@ -1,15 +1,15 @@
 import React from 'react'
-import LiveContent from './LiveContent'
-import Shakib from "../../../../../../images/Profile/Shakibpro.png"
+import AuditionsContent from './AuditionsContent'
+import Shakib from "../../../../images/Profile/Shakibpro.png"
 
-const LiveData = props => {
+const AuditionsData = props => {
     return (
         <>
-            <LiveContent
+            <AuditionsContent
                 image={Shakib}
                 name="Shakib All Hasan"
             /> 
-            <LiveContent
+            <AuditionsContent
                 image={Shakib}
                 name="Ayman Saddiq"
             />
@@ -17,4 +17,4 @@ const LiveData = props => {
     )
 }
 
-export default LiveData
+export default AuditionsData
