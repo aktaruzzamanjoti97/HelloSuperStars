@@ -28,7 +28,7 @@
     background-color:black;
     height: 100px;
     padding: 20px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(51, 48, 48);
     border-radius: 10px 10px 0px 0px;
     -webkit-border-radius: 10px 10px 0px 0px;
     -moz-border-radius: 10px 10px 0px 0px;
