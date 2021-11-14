@@ -1,15 +1,15 @@
 import React from 'react'
-import AuditionsContent from './AuditionsContent'
-import Shakib from "../../../../../../images/Profile/Shakibpro.png"
+import LearnContent from './LearnContent'
+import Shakib from "../../../../images/Profile/Shakibpro.png"
 
-const AuditionsData = props => {
+const LearnData = props => {
     return (
         <>
-            <AuditionsContent
+            <LearnContent
                 image={Shakib}
                 name="Shakib All Hasan"
             /> 
-            <AuditionsContent
+            <LearnContent
                 image={Shakib}
                 name="Ayman Saddiq"
             />
@@ -17,4 +17,4 @@ const AuditionsData = props => {
     )
 }
 
-export default AuditionsData
+export default LearnData
