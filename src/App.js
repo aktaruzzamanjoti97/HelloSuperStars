@@ -71,10 +71,7 @@ function App() {
         <Route path='/enrolled-auditions' component={EnrollBody} />
         <Route path='/settings' component={SettingsBody} />
          
-          {/* Sub Category*/}
-          {/* <Route path='/category/Hollywood' component={Hollywood} />
-          <Route path='/category/Bollywood' component={Bollywood} /> */}
-          {/* Sub Category End*/}
+         
 
         {/* Left Sidebar End*/}
 
