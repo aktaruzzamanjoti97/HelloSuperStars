@@ -1,6 +1,7 @@
 import React from "react";
 import StartPostContent from "../StarPostPage/StartProfilePost/StartPostContent";
 import '../../../../../components/CSS/Home/Post.css';
+
 import { FaBeer } from 'react-icons/fa';
 import ShakibPro from "../../../../../images/Profile/Shakibpro.png";
 import ShakibPost from "../../../../../images/Profile/ShakibPost.jpg";

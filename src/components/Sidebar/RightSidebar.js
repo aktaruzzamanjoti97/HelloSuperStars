@@ -1,4 +1,7 @@
 import React  from 'react'
+
+import '../CSS/Sidebar/Right/Right.css'
+
 import {Link, withRouter} from 'react-router-dom'
 import LearnData from './Right/LearningSessions/LearnData'
 import LiveData from './Right/LiveNow/LiveData'

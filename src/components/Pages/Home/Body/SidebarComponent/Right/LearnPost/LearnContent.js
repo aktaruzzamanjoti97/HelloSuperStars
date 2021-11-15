@@ -1,6 +1,6 @@
 import React from 'react'
-const LiveNContent = (props) => {
 
+const LearnContent = (props) => {
     return (
         <>
         <div className="Post-Scroll-S col-md-10 align-items-center ml-2">
@@ -20,10 +20,7 @@ const LiveNContent = (props) => {
                       {props.Msg}
                   </div>
 
-                    <video id="my_video_1" className="video-js vjs-default-skin card-img-top img-fluid mx-auto PostImgHe" 
-                        controls preload="none" poster={props.posterImg} data-setup='{}'>
-                        <source src={props.PostVideo} type='video/mp4' />
-                    </video>
+                  <img src={props.PostImg} className="card-img-top img-fluid mx-auto PostImgHe" alt="..." />
 
                   <div className="card-body">
                       <div className="container">
@@ -64,4 +61,4 @@ const LiveNContent = (props) => {
     )
 }
 
-export default LiveNContent
+export default LearnContent

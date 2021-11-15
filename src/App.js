@@ -18,8 +18,10 @@ import Navigation from './components/Header/Navigation';
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
-import Live from "./components/Pages/Home/Body/LiveNow/LiveBody";
-import Learn from "./components/Pages/Home/Body/LearningSessions/LearnBody";
+
+
+import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
+import LearnPost from "./components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost";
 import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
 import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsBody";
 
@@ -27,8 +29,6 @@ import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsB
 import Market from "./components/Pages/Market/MarketPlace";
 
 
-import './components/CSS/Navbar/LeftSideNavbar.css';
-import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
 
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
@@ -52,8 +52,6 @@ import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 // import Following from "./components/Sidebar/Following/Body";
 // import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
-
-
 
 function App() {
   return (
@@ -84,10 +82,10 @@ function App() {
 
 
         {/* Right Sidebar   */}
-        <Route exact path='/live-now' component={Live} />
-        <Route exact path='/learning-sessions' component={Learn}/>
-        <Route exact path='/upcoming-live' component={UpLive} />
-        <Route exact path='/upcoming-auditions' component={Auditions} />
+        <Route path='/live-now' component={LivePost} />
+        <Route path='/learning-sessions' component={LearnPost}/>
+        <Route path='/upcoming-live' component={UpLive} />
+        <Route path='/upcoming-auditions' component={Auditions} />
         {/* Right Sidebar End */}
        
         <Route exact path='/login' component={Login} />
@@ -95,8 +93,9 @@ function App() {
         <Route exact path='/otp' component={Otp} />
         <Route path='/accountCreate' exact component={AccountCreate} />
 
-        <Route exact path='/tutorial' component={SliderTutorial} />
-        <Route exact path='/packages' component={Packages} />
+        <Route path='/tutorial' component={SliderTutorial} />
+        <Route path='/packages' component={Packages} />
+
         <Route path='/guestUser' exact component={GuestUserPage} />
         <Route path='/profile' exact component={Profile} />
 

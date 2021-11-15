@@ -1,15 +1,15 @@
 import React from 'react'
-import LiveContent from "../LiveNow/LiveNContent";
+import LiveContent from "./LiveContent";
 
 import { FaBeer } from 'react-icons/fa';
-import ShakibPro from "../../../../../images/Profile/Shakibpro.png";
-import ShakibPost from "../../../../../images/Profile/ShakibPost.jpg";
-import AymanPro from "../../../../../images/Profile/ayman-profile.jpg";
-import AymanPost from "../../../../../images/Profile/ayman.jpg";
-import AzhariPro from "../../../../../images/Profile/azhari-profile.jpg";
-import AzhariPost from "../../../../../images/Profile/Azhari.jpg";
+import ShakibPro from "../../../../../../../images/Profile/Shakibpro.png";
+import ShakibPost from "../../../../../../../images/Profile/ShakibPost.jpg";
+import AymanPro from "../../../../../../../images/Profile/ayman-profile.jpg";
+import AymanPost from "../../../../../../../images/Profile/ayman.jpg";
+import AzhariPro from "../../../../../../../images/Profile/azhari-profile.jpg";
+import AzhariPost from "../../../../../../../images/Profile/Azhari.jpg";
 
-import ShakibV from '../../../../../video/Shakib Al Hasan angry on onfield umpire In Dhaka premier league Match.mp4'
+import ShakibV from '../../../../../../../video/Shakib Al Hasan angry on onfield umpire In Dhaka premier league Match.mp4'
 
 
 
