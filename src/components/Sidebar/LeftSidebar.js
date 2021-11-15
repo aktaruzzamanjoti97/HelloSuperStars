@@ -1,4 +1,9 @@
 import React from 'react'
+
+import '../CSS/Sidebar/Left/Left.css'
+import '../CSS/Sidebar/Left/Category.css'
+import '../CSS/Sidebar/Left/Following.css'
+
 import {Link, withRouter} from 'react-router-dom'
 import SubCatdata from './Left/Category/SubCategory/SubCatData'
 import OnlineData from './Left/StarsOnline/OnlineData'
@@ -29,7 +34,7 @@ export const LeftSidebar = ({history}) => {
                         <div className="accordion-item left-bottom-ap">
                             <Link className="teop-s" to='/category'>
                             <h2 className="accordion-header " id="headingOne">
-                                    <button className="accordion-button profile-accordion-button-icon left-bottom-ap collapsed"
+                                    <button className="accordion-button npm-bnt profile-accordion-button-icon left-bottom-ap collapsed"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
                                         aria-controls="collapseOne" style={{backgroundColor:getColor('/category')}}>
                                         <span>

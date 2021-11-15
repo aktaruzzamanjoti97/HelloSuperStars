@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../CSS/Sidebar/Left/Following/Following.css";
 import Football from "../../../../images/Market/Football.jpg";
 
 const Content = () => {

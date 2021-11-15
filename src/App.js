@@ -18,18 +18,18 @@ import Navigation from './components/Header/Navigation';
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
-import Live from "./components/Pages/Home/Body/LiveNow/LiveBody";
-import Learn from "./components/Pages/Home/Body/LearningSessions/LearnBody";
-import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
-import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsBody";
+
+import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
+import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
+import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
+import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
 
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
 
 
-import './components/CSS/Navbar/LeftSideNavbar.css';
-import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
+
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 
 
@@ -59,9 +59,6 @@ function App() {
     <BrowserRouter>
     <PrivateRoute component={Navigation} />
       <Switch>
-
-
-
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />
         <Route path='/marketplace' component={Market} />
@@ -73,19 +70,19 @@ function App() {
         <Route path='/enrolled-auditions' component={EnrollBody} />
         <Route path='/settings' component={SettingsBody} />
          
-          {/* Sub Category*/}
-          {/* <Route path='/category/Hollywood' component={Hollywood} />
-          <Route path='/category/Bollywood' component={Bollywood} /> */}
-          {/* Sub Category End*/}
+         
 
         {/* Left Sidebar End*/}
 
 
         {/* Right Sidebar   */}
-        <Route exact path='/live-now' component={Live} />
-        <Route exact path='/learning-sessions' component={Learn}/>
-        <Route exact path='/upcoming-live' component={UpLive} />
-        <Route exact path='/upcoming-auditions' component={Auditions} />
+        <Route path='/live-now' component={LivePost} />
+        <Route path='/learning-sessions' component={LearnPost}/>
+        <Route path='/upcoming-live' component={UpLivePost} />
+        <Route path='/upcoming-auditions' component={AuditionsPost}/>
+
+        
+
         {/* Right Sidebar End */}
        
         <Route exact path='/login' component={Login} />
@@ -93,8 +90,9 @@ function App() {
         <Route exact path='/otp' component={Otp} />
         <Route path='/accountCreate' exact component={AccountCreate} />
 
-        <Route exact path='/tutorial' component={SliderTutorial} />
-        <Route exact path='/packages' component={Packages} />
+        <Route path='/tutorial' component={SliderTutorial} />
+        <Route path='/packages' component={Packages} />
+
         <Route path='/guestUser' exact component={GuestUserPage} />
 
         {/* profile page */}
@@ -106,6 +104,7 @@ function App() {
           <Route path='/subCategory' exact component={SubCategory} />
 
           <Route path='/starselection' exact component={StarSelection} />
+          
         {/* Left Sidebar*/}
 
           {/* <Route path='/category' component={Category} /> */}

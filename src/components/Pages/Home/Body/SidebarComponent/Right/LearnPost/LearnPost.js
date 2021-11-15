@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import LeftSidebar from '../../../../Sidebar/LeftSidebar'
-import RightSidebar from '../../../../Sidebar/RightSidebar'
-import Auditions from "../UpcomingAuditions/AuditionsData"
-
-export default class AuditionsBody extends Component {
+import LeftSidebar from '../../../../../../Sidebar/LeftSidebar'
+import RightSidebar from '../../../../../../Sidebar/RightSidebar'
+import Learn from "./LearnData"
+export default class LearnPost extends Component {
   render() {
     return (
       <React.Fragment>
@@ -16,7 +15,7 @@ export default class AuditionsBody extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <Auditions/>
+                <Learn/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
