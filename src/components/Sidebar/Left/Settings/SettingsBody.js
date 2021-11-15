@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import LeftSidebar from '../../LeftSidebar'
+import LeftSidebar from '../../LeftSidebar';
 import Content from "./Content";
 
-export default class SettingsBody extends Component {
+export default class Body extends Component {
   render() {
     return (
       <React.Fragment>
