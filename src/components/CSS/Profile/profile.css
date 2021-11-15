@@ -158,9 +158,9 @@ hr.hr-line {
   .left-col-box{
       border-radius: 10px;
   }
-/* .cards-start{
+.cards-start{
     
-    height:82%;
+    height:1420px;
     overflow: hidden;
 }
 .card-scroll{
@@ -171,4 +171,4 @@ width: 100%;
     overflow-y: scroll;
     padding-right: 17px; 
     box-sizing: content-box; 
-} */
+}
