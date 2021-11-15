@@ -19,11 +19,10 @@ import Navigation from './components/Header/Navigation';
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
 
-
 import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
-import LearnPost from "./components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost";
-import UpLive from "./components/Pages/Home/Body/UpcomingLive/UpliveBody";
-import Auditions from "./components/Pages/Home/Body/UpcomingAuditions/AuditionsBody";
+import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
+import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
+import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
 
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
@@ -53,15 +52,14 @@ import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 // import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
 
+
+
 function App() {
   return (
     <>
     <BrowserRouter>
     <PrivateRoute component={Navigation} />
       <Switch>
-
-
-
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />
         <Route path='/marketplace' component={Market} />
@@ -84,8 +82,11 @@ function App() {
         {/* Right Sidebar   */}
         <Route path='/live-now' component={LivePost} />
         <Route path='/learning-sessions' component={LearnPost}/>
-        <Route path='/upcoming-live' component={UpLive} />
-        <Route path='/upcoming-auditions' component={Auditions} />
+        <Route path='/upcoming-live' component={UpLivePost} />
+        <Route path='/upcoming-auditions' component={AuditionsPost}/>
+
+        
+
         {/* Right Sidebar End */}
        
         <Route exact path='/login' component={Login} />
