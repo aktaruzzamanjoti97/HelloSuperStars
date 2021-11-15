@@ -30,6 +30,7 @@ import Market from "./components/Pages/Market/MarketPlace";
 import './components/CSS/Navbar/LeftSideNavbar.css';
 import './components/CSS/Navbar/RightSideNavbar.css';
 import './App.css';
+
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 
 
@@ -105,6 +106,7 @@ function App() {
           <Route path='/subCategory' exact component={SubCategory} />
 
           <Route path='/starselection' exact component={StarSelection} />
+          
         {/* Left Sidebar*/}
 
           {/* <Route path='/category' component={Category} /> */}

@@ -1,6 +1,5 @@
 import React from 'react'
 import Football from "../../../../images/Market/Football.jpg"
-import '../../../CSS/Category/SubCategory.css';
 import Plus from '../../../../images/Normal-User/add.png'
 
 const Content = () => {
