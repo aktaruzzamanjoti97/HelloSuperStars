@@ -48,8 +48,6 @@ import Error from "./components/Pages/Home/Error";
 import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 
 
-// import Following from "./components/Sidebar/Following/Body";
-// import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
 import StarProfile from "./components/Pages/Profile/StarProfile";
 
