@@ -51,6 +51,7 @@ import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 // import Following from "./components/Sidebar/Following/Body";
 // import Body from "./components/Sidebar/Settings/Body";
 import StarSelection from "./components/Pages/Category/StarSelection";
+import StarProfile from "./components/Pages/Profile/StarProfile";
 
 
 
@@ -97,8 +98,10 @@ function App() {
         <Route exact path='/tutorial' component={SliderTutorial} />
         <Route exact path='/packages' component={Packages} />
         <Route path='/guestUser' exact component={GuestUserPage} />
-        <Route path='/profile' exact component={Profile} />
 
+        {/* profile page */}
+        <Route path='/profile' exact component={Profile} />
+<Route path='/starprofile' exact component={StarProfile} />
           
          {/* Category */}
           <Route path='/coreCategory' exact component={CoreCategory} />
