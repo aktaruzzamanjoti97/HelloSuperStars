@@ -221,6 +221,13 @@ const Profile = () => {
                   profileImg={Ayman}
                   profileLogo={AymanProfile}
                 />
+  <RightSideCard
+                  Name="Ayman Sadiq"
+                  Msg="When i come to live ? This friday? let me know"
+                  profileImg={Ayman}
+                  profileLogo={AymanProfile}
+                />
+
                 {/* Right side card end */}
               </div>
             </div>
