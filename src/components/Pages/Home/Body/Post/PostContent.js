@@ -1,6 +1,6 @@
 import React from "react";
 
-const StartPostContent = (props) => {
+const PostContent = (props) => {
     return (
       <>
            <div className="Post-Scroll-S col-md-10 align-items-center ml-2">
@@ -59,5 +59,5 @@ const StartPostContent = (props) => {
     );
   };
   
-  export default StartPostContent;
+  export default PostContent;
  
