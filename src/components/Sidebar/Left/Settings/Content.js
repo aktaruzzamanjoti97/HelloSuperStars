@@ -2,8 +2,8 @@ import React from 'react'
 import { Nav } from 'react-bootstrap';
 import "../../../CSS/userSettings/settings.css"
 
-import Personal from './SettingComponents/Personal';
-import Educational from './SettingComponents/Educational';
+// import Personal from './SettingComponents/Personal';
+// import Educational from './SettingComponents/Educational';
 import Employment from './SettingComponents/Employment';
 
 const Content = () => {

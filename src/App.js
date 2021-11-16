@@ -53,6 +53,7 @@ import StarProfile from "./components/Pages/Profile/StarProfile";
 
 
 
+
 function App() {
   return (
     <>
@@ -98,6 +99,10 @@ function App() {
         {/* profile page */}
         <Route path='/profile' exact component={Profile} />
 <Route path='/starprofile' exact component={StarProfile} />
+
+
+
+
           
          {/* Category */}
           <Route path='/coreCategory' exact component={CoreCategory} />
