@@ -1,0 +1,25 @@
+.post-card{
+    background-color: #343434;
+}
+.star-profile-card{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+  
+}
+.star-button-1{
+    background-color: #FFEEEE;
+}
+.star-button-2{
+    background-color: #E3F4F6;
+}
+
+.star-btutton-3{
+    background-color: #E7F9E8;
+}  
+
+.star-post-img{
+    width: 95%;
+   
+}
