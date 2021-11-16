@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import PostData from "./Body/Post/PostData";
 
 import LeftSidebar from '../../Sidebar/LeftSidebar'
 import RightSidebar from '../../Sidebar/RightSidebar'
-import Post from "../Home/HomePost/PostData";
+
 export default class HomePages extends Component {
   render() {
     return (
@@ -16,7 +17,7 @@ export default class HomePages extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center" >
-                <Post/>
+                <PostData/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
