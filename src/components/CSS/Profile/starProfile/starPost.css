@@ -23,3 +23,22 @@
     width: 95%;
    
 }
+
+@media only screen and (max-width: 600px) {
+    .star-button-1{
+        background-color: #FFEEEE;
+        /* width: 80px !important;
+        height: 30px !important; */
+        padding: 2px;
+     
+    }
+    .star-button-2{
+        background-color: #E3F4F6;
+        padding: 2px;
+    }
+    .star-btutton-3{
+        background-color: #E7F9E8;
+        padding: 2px;
+    }  
+    
+  }

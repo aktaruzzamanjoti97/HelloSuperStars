@@ -27,8 +27,9 @@ class Navigation extends Component {
         return (
             <>
                 <Navbar className='navbar-bg' expand="lg" sticky="top">
-                    <div className="container">
-                        <Navbar.Brand href="#" >
+                   
+                      <div className="container-fluid  custom-container">
+                      <Navbar.Brand href="#" >
                             <Link to='/'> <img src={helloSuperstarLogo} alt="hello superstar logo" height='40px' /></Link>
                         </Navbar.Brand>
                         <Form className='form-width-change'>
@@ -74,7 +75,8 @@ class Navigation extends Component {
                             </Nav>
 
                         </Navbar.Collapse>
-                    </div>
+                      </div>
+                    
                 </Navbar>
 
                 {/* <Navbar  className='navbar-bg' expand="sm">
