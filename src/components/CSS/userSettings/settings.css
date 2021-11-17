@@ -64,7 +64,7 @@
 }
 .educationalButtonSave{
     border-radius: 10px;
-    height: 48px;
+    height: 45px;
     text-align: center;
     font-size: 20px;
     width: 200px;
@@ -72,3 +72,134 @@
     margin-top: -3px;
 }
 
+/* Interest Paqge CSS */
+.mobileSecurityMainDiv{
+    margin-top: 40px;
+}
+.emailSecurityMainDiv{
+    margin-top: 40px;
+}
+.passwordSecurityMainDiv{
+    margin-top: 40px;
+}
+.interestMainForm{
+    color: white;
+    margin: 50px;
+    font-size: 20px;
+}
+
+
+
+/* Security Page CSS */
+.securityInnerHeading{
+    color: white;
+    margin-top: 20px;
+}
+.SecurityPurpose{
+    margin: 15px;
+}
+.Security2Step{
+    border-radius: 10px;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    width: 300px;
+    color: black;
+    margin-left: 8px;
+}
+
+.SecurityPlaceholder{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+}
+.SecurityPlaceholder::placeholder{
+    color: black !important;
+    font-size: 30px;
+    text-align: center;
+}
+.securitySubmitBtn{
+    border-radius: 10px;
+    max-height: 40px;
+    margin-right: -100px;
+}
+.securitySaveDiv{
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.securityButtonSave{
+    border-radius: 10px;
+    height: 43px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    color: white;
+    margin-top: -3px;
+}
+
+
+/* Report Page CSS */
+.reportMainForm{
+    margin-top: 20px;
+}
+.reportTitle{
+    color: white;
+
+}
+.QuerySelects{
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+}
+.reportComments{
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+}
+.reportComments::placeholder{
+    color: black !important;
+    font-size: 30px;
+    text-align: center;
+}
+.queryFromGroup{
+    padding: 10px;
+    margin: 15px;
+}
+.commentsFromGroup{
+    padding: 10px;
+    margin: 15px;
+}
+.reportFileAttatched{
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+    background-color: #fafafa;
+}
+.reportButtonSave{
+    border-radius: 10px;
+    height: 45px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    color: white;
+    margin-top: 3px;
+}

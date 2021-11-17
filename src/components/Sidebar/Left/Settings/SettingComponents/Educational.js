@@ -36,7 +36,6 @@ function Educational() {
                 <Button variant="outline-warning"  style={{width: "300px", marginLeft: "70px", marginTop: "40px"}} className="educationalButtonSave"> ➕ Add Another</Button>
             </Form>
 
-            
 
            <div className="flex-row">
                 <input type="password" className="PasswordField border-warning" />
