@@ -5,13 +5,21 @@ import "../../../../CSS/Profile/starProfile/starPost.css";
 import ReactPlayer from "react-player";
 import CardComponent from "./StarCardComponent/CardComponent";
 import WazContent from "../../../../../images/starProfile/waz-content.jpg";
+import Children from "../../../../../images/starProfile/starPostLeftContent/children.jpg";
+import Jainamaj from "../../../../../images/starProfile/starPostLeftContent/jainamaz.jpg";
+import Topi from "../../../../../images/starProfile/starPostLeftContent/Cap.jpg";
+import Habibi from "../../../../../images/starProfile/starPostLeftContent/Habibi.jpg";
+import Vector1 from '../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg'
+
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 export default function StarPost() {
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-8">
-
           <CardComponent
             name="Mizanur Rahman Azhari"
             time="5.31 pm"
@@ -92,11 +100,87 @@ export default function StarPost() {
           />
         </div>
 
+        <div className="col-md-4">
+          <div class="card mx-auto my-3 w-75 left-star-card">
+            <div class="card-body">
+              <h6 class="card-title text-warning">Audition Announcement</h6>
 
-        <div className="col-md-4 bg-dark">
-<div className="text-danger">
-  hello
-</div>
+              <div className="container star-content">
+                <img
+                  src={Children}
+                  class="card-img-top img-fluid star-left-photo"
+                  alt="..."
+                />
+                <div className="other-content">
+                  <h6 className="text-bold">Quran Recetiong Audition</h6>
+                  <small>Form july 22 to july 25</small>
+                </div>
+              </div>
+
+              <div className="text-center my-2">
+                <button className="w-100 enroll-btn">Enroll now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mx-auto my-3 w-75 left-star-card">
+            <div class="card-body">
+              <h6 class="card-title text-warning">Souvenir</h6>
+
+              <div className="container">
+                <OwlCarousel className="owl-theme" loop margin={5} nav>
+                  <div class="item">
+                    <img
+                      src={Jainamaj}
+                      alt=""
+                      className="img-fluid"
+                      class="souviner-product-img"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src={Topi}
+                      alt=""
+                      className="img-fluid"
+                      class="souviner-product-img"
+                    />
+                  </div>
+                  <div class="item">
+                    <img
+                      src={Habibi}
+                      alt=""
+                      className="img-fluid"
+                      class="souviner-product-img"
+                    />
+                  </div>
+                </OwlCarousel>
+                ;
+              </div>
+
+              <div className="text-center my-2">
+                <button className="w-100 enroll-btn">
+                  Browse Mizanur Rahman Souvenir
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card mx-auto my-3 w-75 left-star-card">
+            <div class="card-body">
+              <h6 class="card-title text-warning">Requested for</h6>
+
+              <div className="container d-flex justify-content-around">
+              <img src={Vector1} class='img-fluid souviner-request-img' alt="" />
+              <img src={Vector1} class='img-fluid souviner-request-img' alt="" />
+              </div>
+
+             <div className="d-flex mt-2">
+               <button className='enroll-btn'>Greeting/Birthday wish</button>
+               <button className='enroll-btn mx-2'>Live Chat</button>
+             </div>
+            </div>
+          </div>
 
         </div>
       </div>
