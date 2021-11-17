@@ -143,3 +143,63 @@
     color: white;
     margin-top: -3px;
 }
+
+
+/* Report Page CSS */
+.reportMainForm{
+    margin-top: 20px;
+}
+.reportTitle{
+    color: white;
+
+}
+.QuerySelects{
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+}
+.reportComments{
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+}
+.reportComments::placeholder{
+    color: black !important;
+    font-size: 30px;
+    text-align: center;
+}
+.queryFromGroup{
+    padding: 10px;
+    margin: 15px;
+}
+.commentsFromGroup{
+    padding: 10px;
+    margin: 15px;
+}
+.reportFileAttatched{
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #FFAD00;
+    border-width: 3px;
+    padding: 10px;
+    margin-left: 40px;
+    background-color: #fafafa;
+}
+.reportButtonSave{
+    border-radius: 10px;
+    height: 45px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    color: white;
+    margin-top: 3px;
+}
