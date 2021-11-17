@@ -4,7 +4,8 @@ import "../../../CSS/userSettings/settings.css"
 
 // import Personal from './SettingComponents/Personal';
 // import Educational from './SettingComponents/Educational';
-import Employment from './SettingComponents/Employment';
+// import Employment from './SettingComponents/Employment';
+import Interest from './SettingComponents/Interest';
 
 const Content = () => {
     return (
@@ -24,7 +25,7 @@ const Content = () => {
                             </Nav>
                         </div>
                         <div className="col-sm-8 bg-dark">
-                           <Employment/>
+                           <Interest/>
                         </div>
                     </div>   
                 </div>
