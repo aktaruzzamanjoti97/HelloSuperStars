@@ -34,8 +34,8 @@ const StarProfile = () => {
                 className="img-fluid profile-star "
               />
               <div className="profile-name-contents mt-5 mx-2">
-                <h3 className="text-light mt-5">Mizanur Rahman Azhari</h3>
-                <p className="text-warning">Public Figure Religious</p>
+                <h3 className="text-light mt-5 star-profile-name">Mizanur Rahman Azhari</h3>
+                <p className="text-warning star-profile-type">Public Figure Religious</p>
               </div>
             </div>
           </div>
