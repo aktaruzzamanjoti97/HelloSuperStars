@@ -43,7 +43,13 @@
     .star-btutton-3{
         background-color: #E7F9E8;
         padding: 2px;
-    }  
+    } 
+    .left-card-star{
+        width: 100%;
+    } 
+    .star-last-btn{
+font-size: 9px !important;
+    }
     
   }
 .left-star-card{
@@ -97,4 +103,19 @@
    width: 45%;
     border-radius: 20px;
 }
-  
+
+.star-last-btn{
+    font-size: 13px;
+    background-color: #FFAD00;
+    border: none;
+    color: white;
+    border-radius: 0 0 7px 7px;
+}
+
+.star-last-btn:hover{
+    background-color: #F0E25E;
+}
+.left-card-star{
+    width: 90%;
+}
+

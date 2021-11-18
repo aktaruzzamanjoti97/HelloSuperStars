@@ -9,7 +9,8 @@ import Children from "../../../../../images/starProfile/starPostLeftContent/chil
 import Jainamaj from "../../../../../images/starProfile/starPostLeftContent/jainamaz.jpg";
 import Topi from "../../../../../images/starProfile/starPostLeftContent/Cap.jpg";
 import Habibi from "../../../../../images/starProfile/starPostLeftContent/Habibi.jpg";
-import Vector1 from '../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg'
+import Vector1 from "../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg";
+import Vector2 from "../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg";
 
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -101,7 +102,7 @@ export default function StarPost() {
         </div>
 
         <div className="col-md-4">
-          <div class="card mx-auto my-3 w-75 left-star-card">
+          <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning">Audition Announcement</h6>
 
@@ -117,13 +118,13 @@ export default function StarPost() {
                 </div>
               </div>
 
-              <div className="text-center my-2">
-                <button className="w-100 enroll-btn">Enroll now</button>
+              <div className="text-center ">
+                <button className="w-100 enroll-btn mt-3">Enroll now</button>
               </div>
             </div>
           </div>
 
-          <div class="card mx-auto my-3 w-75 left-star-card">
+          <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning">Souvenir</h6>
 
@@ -157,7 +158,7 @@ export default function StarPost() {
                 ;
               </div>
 
-              <div className="text-center my-2">
+              <div className="text-center">
                 <button className="w-100 enroll-btn">
                   Browse Mizanur Rahman Souvenir
                 </button>
@@ -165,23 +166,37 @@ export default function StarPost() {
             </div>
           </div>
 
-
-          <div class="card mx-auto my-3 w-75 left-star-card">
+          <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning">Requested for</h6>
 
-              <div className="container d-flex justify-content-around">
-              <img src={Vector1} class='img-fluid souviner-request-img' alt="" />
-              <img src={Vector1} class='img-fluid souviner-request-img' alt="" />
+              <div className=" d-flex justify-content-around">
+                <img
+                  src={Vector1}
+                  class="img-fluid souviner-request-img"
+                  alt=""
+                />
+                <img
+                  src={Vector2}
+                  class="img-fluid souviner-request-img"
+                  alt=""
+                />
               </div>
+            </div>
 
-             <div className="d-flex mt-2">
-               <button className='enroll-btn'>Greeting/Birthday wish</button>
-               <button className='enroll-btn mx-2'>Live Chat</button>
-             </div>
+            <div className="container mb-2">
+              <div className="row">
+                <div className="col-6 ">
+                  <button className="w-100 star-last-btn p-1">
+                    Greeting/Birthday/wish
+                  </button>
+                </div>
+                <div className="col-6">
+                  <button className="w-100 star-last-btn p-1">Live Chat</button>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

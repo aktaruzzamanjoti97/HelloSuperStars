@@ -5,7 +5,7 @@ import profilePhoto from "../../../../../../images/Profile/azhari-profile.jpg";
 const CardComponent = (props) => {
     return (
         <>
-            <div className="card left-col-box PostCard mb-3 mt-3 w-75 mx-auto">
+            <div className="card left-col-box PostCard mb-3 mt-3 left-card-star mx-auto">
             <div className="accordion-item PostBack ">
               <h2 className="accordion-header PostBack">
                 <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
