@@ -2,7 +2,7 @@ import React from 'react'
 const Online = props => {
     return (
         <>
-            <ul className="accordion-header chatListname" id="headingTwo">
+            <div className="accordion-header chatListname" id="headingTwo">
                 
                 <span> 
                     <img src={props.image} alt="" className="SidebarStarListImage"/>
@@ -11,7 +11,7 @@ const Online = props => {
                 <span className="OnlineGreen"><i class="fas fa-circle"></i></span>
                 <span className='chatName'>{props.name}</span>
                
-            </ul>  
+            </div>  
         </>
     )
 }
