@@ -5,7 +5,8 @@ import "../../../../CSS/userSettings/settings.css";
 
 const Personal = () => {
     return (
-        <Form >
+       <div className="container">
+          <Form >
         <Form.Group as={Row} className="mb-1 p-3" controlId="formHorizontalText">
           <Form.Label column sm={1}>
             <p className="settingPersonalText">Name</p>
@@ -61,11 +62,12 @@ const Personal = () => {
         </Form.Group>
         
         <Form.Group as={Row} className="mb-3">
-          <Col sm={20, { span: 0, offset: 4 }}>
-            <Button type="submit" className="bg-warning p-10">Save</Button>
+          <Col sm={{ span: 0 }}>
+                <Button variant="outline-warning" className="personalButtonSave">Save</Button>
           </Col>
         </Form.Group>
       </Form>
+       </div>
     )
 }
 

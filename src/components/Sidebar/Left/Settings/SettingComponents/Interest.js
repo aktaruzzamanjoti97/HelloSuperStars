@@ -33,8 +33,8 @@ const Interest = () => {
                 </Form.Group>
             </Form>
             <div className="flex-row">
-                <input type="password" className="PasswordField border-warning" />
-                <Button variant="outline-warning"  style={{width: "200px", marginLeft: "10px"}} className="educationalButtonSave">Save</Button>
+                <input type="password" className="interestPasswordField border-warning" />
+                <Button variant="outline-warning"  style={{width: "45%", marginLeft: "10px"}} className="educationalButtonSave">Save</Button>
            </div>
         </div>
     )

@@ -41,7 +41,14 @@ import SubCategory from "./components/Pages/Category/SubCategory";
 import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
 import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+
 import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
+import Personal from "./components/Sidebar/Left/Settings/SettingComponents/Personal";
+import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
+import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
+import Interest from "./components/Sidebar/Left/Settings/SettingComponents/Interest";
+import Security from "./components/Sidebar/Left/Settings/SettingComponents/Security";
+import Report from "./components/Sidebar/Left/Settings/SettingComponents/Report";
 
 // Error
 import Error from "./components/Pages/Home/Error";
@@ -62,25 +69,32 @@ function App() {
       <Switch>
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />
-        <Route path='/marketplace' component={Market} />
+        <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}
-        <Route path='/category' component={CategoryBody} />
-        <Route path='/following' component={FollowingBody} />
-        <Route path='/wallet' component={WalletBody} />
-        <Route path='/enrolled-auditions' component={EnrollBody} />
-        <Route path='/settings' component={SettingsBody} />
-         
+        <Route exact path='/category' component={CategoryBody} />
+        <Route exact path='/following' component={FollowingBody} />
+        <Route exact path='/wallet' component={WalletBody} />
+        <Route exact path='/enrolled-auditions' component={EnrollBody} />
+
+        <Route exact path='/settings' component={SettingsBody} />
+        <Route exact path="/seeting/personal" component={Personal}/>
+        <Route exact path="/seeting/educational" component={Educational}/>
+        <Route exact path="/seeting/employment" component={Employment}/>
+        <Route exact path="/seeting/interest" component={Interest}/>
+        <Route exact path="/seeting/security" component={Security}/>
+        <Route exact path="/seeting/report" component={Report}/>
+
          
 
         {/* Left Sidebar End*/}
 
 
         {/* Right Sidebar   */}
-        <Route path='/live-now' component={LivePost} />
-        <Route path='/learning-sessions' component={LearnPost}/>
-        <Route path='/upcoming-live' component={UpLivePost} />
-        <Route path='/upcoming-auditions' component={AuditionsPost}/>
+        <Route exact path='/live-now' component={LivePost} />
+        <Route exact path='/learning-sessions' component={LearnPost}/>
+        <Route exact path='/upcoming-live' component={UpLivePost} />
+        <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
 
         
 
@@ -98,7 +112,7 @@ function App() {
 
         {/* profile page */}
         <Route path='/profile' exact component={Profile} />
-<Route path='/starprofile' exact component={StarProfile} />
+        <Route path='/starprofile' exact component={StarProfile} />
 
 
 
