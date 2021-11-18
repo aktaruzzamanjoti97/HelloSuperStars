@@ -139,13 +139,13 @@ export const LeftSidebar = ({history}) => {
             
             { /* Stars Online */}
             <div className="container left-col-box-home-chat chat01 p-3 mt-3">
-                <div className="accordion " >
-                    <ul class="accordion-header input-group">
+                <div className="accordion left-c">
+                    <div class="accordion-header input-group ">
                         <span class="form-outline Stars-search">Stars Online</span>
                         <span class="form-outline Stars-search">
-                            <input type="search" className="Stars-searchid"/>
+                            <input type="text" className="Stars-searchid"/>
                         </span>
-                    </ul>
+                    </div>
 
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">

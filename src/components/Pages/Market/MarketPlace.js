@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import LeftSidebar from "../../Sidebar/LeftSidebar";
 import RightSidebar from "../../Sidebar/RightSidebar";
 import Contents from "../Market/Content/Content";
+import '../../CSS/Navbar/navbar.css'
 
 export default class MarketPlace extends Component {
     render() {
       return (
         <React.Fragment>
           <div className="homebody"  style={{ background: "#000000"}}>
-            <div className="container">
+            <div className="container-fluid custom-container">
               <div className="row">
   
                 <div className="col-sm-3 justify-content-center">
