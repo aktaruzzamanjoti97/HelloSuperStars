@@ -9,7 +9,7 @@ export default class ChooseCategory extends Component {
     return (
       <React.Fragment>
         <div className="homebody"  style={{ background: "#000000"}}>
-          <div className="container">
+          <div className="container-fluid  custom-container">
             <div className="row">
 
               <div className="col-sm-3 justify-content-center">
