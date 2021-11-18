@@ -4,7 +4,7 @@ import "../../../../CSS/userSettings/settings.css"
 const Security = () => {
     return (
         <>
-        <div>
+        <div className='container'>
             <div className="mobileSecurityMainDiv">
                 <h5 className="primary securityInnerHeading">Two Step Verification</h5> <hr style={{color: "white", height:"2px"}} />
                 <Form className="SecurityPurpose">
