@@ -8,7 +8,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 const Content = () => {
   return (
     <>
-      <div className=" Follow-Category">
+      <div className=" Follow-Category fl2">
 
         <div className="col-10">
 
