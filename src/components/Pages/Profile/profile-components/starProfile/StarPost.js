@@ -21,7 +21,11 @@ export default function StarPost() {
     <div className="container">
       <div className="row">
         <div className="col-md-8">
-          <CardComponent
+
+<div className="cards-start">
+<div className="card-scroll">
+
+<CardComponent
             name="Mizanur Rahman Azhari"
             time="5.31 pm"
             date="2nd july"
@@ -99,9 +103,52 @@ export default function StarPost() {
             share="16 Share"
             comment="105 Comments"
           />
+
+<CardComponent
+            name="Mizanur Rahman Azhari"
+            time="5.31 pm"
+            date="2nd july"
+            msg="As-salamu alaykum take greeting brothers"
+            content={
+              <div className="d-flex justify-content-center align-items-center text-light">
+                {
+                  <small className="container mt-2">
+                    "যে ব্যাক্তি আল্লাহ ও আখিরাতে বিশ্বাস রাখে, 
+সে যেন তার মেহমানকে সম্মান করে। ....."
+"আল্লাহ তোমাদের চেহারা সুরত ও ধনসম্মদ  দেখবেন না, 
+তিনি দেখবেন তোমাদের অন্তর ও কাজ। ....."
+                    <br />
+                    <br />
+                    <br />
+                    ১। আল্লাহ্ ছাড়া ইলাহ্ নেই এবং নিশ্চয় মুহাম্মদ আল্লাহ্‌র
+                    রাসূল-এ কথার সাক্ষ্য দান। ২। সালাত (নামায/নামাজ) কায়েম করা
+                    ৩। যাকাত দেওয়া ৪। হাজ্জ (হজ্জ) করা এবং ৫। রামাদান এর সিয়াম
+                    পালন করা।
+                  </small>
+                }
+              </div>
+            }
+            love="240"
+            share="16 Share"
+            comment="105 Comments"
+          />
+</div>
+
+
+</div>
+          
+          
         </div>
 
+{/* left side bar start */}
+
+
+
+
         <div className="col-md-4">
+
+
+          
           <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning">Audition Announcement</h6>
@@ -197,6 +244,9 @@ export default function StarPost() {
             </div>
           </div>
         </div>
+
+
+        {/* left sidebar end */}
       </div>
     </div>
   );
