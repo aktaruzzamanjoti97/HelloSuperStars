@@ -155,7 +155,6 @@ export default function StarPost() {
                     />
                   </div>
                 </OwlCarousel>
-                ;
               </div>
 
               <div className="text-center">

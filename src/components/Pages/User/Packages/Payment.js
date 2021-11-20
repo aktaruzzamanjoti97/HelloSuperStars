@@ -5,6 +5,10 @@ import Payoneer from "../../../../images/Payment-img/Payoneer-Logo.wine.png";
 import PayPal from "../../../../images/Payment-img/PayPal-Logo.wine.png";
 import { Link } from "react-router-dom";
 
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
 export const Payment = () => {
   return (
     <>
@@ -23,33 +27,33 @@ export const Payment = () => {
             class="accordion-collapse collapse"
             aria-labelledby="panelsStayOpen-headingThree"
           >
-            <div class="accordion-body">
+            <div class="accordion-body ">
               <div className="BuyPackages">
                 <div className="container max-auto">
                   <div className="row max-auto">
                     <div className="buy-packages-header">
-                      <p className="text-center col-md-12">Payment Method</p>
+                      <p className="text-center col-md-12 ">Payment Method</p>
                     </div>
 
-                    <form>
-                      <div className="row payment-pak payment-scroll col-md-12 ">
-                        <ul className="car-pak col-ms-12">
-                          <li className="car-pak-li"> <img src={Bkash} alt="Bkash" /> </li>
-                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                          <li className="car-pak-li"> <img src={Bkash} alt="bkash" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                          <li className="car-pak-li"> <img src={Bkash} alt="Bkash" /> </li>
-                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                          <li className="car-pak-li"> <img src={Bkash} alt="bkash" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                          <li className="car-pak-li"> <img src={Payoneer} alt="Payoneer" /> </li>
-                          <li className="car-pak-li"> <img src={PayPal} alt="PayPal" /> </li>
-                        </ul>
-                      </div>
+                    <form >
+
+                        <OwlCarousel  loop margin={0} items={5}>
+
+                            <div className="Payment-pa" ><img className="Payment-pak" src={Bkash} alt="Bkash" /> </div>
+                            <div className="Payment-pa"><img className="Payment-pak" src={Payoneer} alt="Payoneer" /> </div>
+                            <div className="Payment-pa"><img className="Payment-pak" src={PayPal} alt="PayPal" /> </div>
+                            <div className="Payment-pa"><img className="Payment-pak" src={Bkash} alt="Bkash" /> </div>
+                            <div className="Payment-pa"><img className="Payment-pak" src={Payoneer} alt="Payoneer" /> </div>
+                            <div className="Payment-pa"><img className="Payment-pak" src={PayPal} alt="PayPal" /> </div>
+
+                            {/* <div className="Payment-pak"><img src={PayPal} alt="PayPal" /></div>
+                            <div class="Payment-pak"><img src={Payoneer} alt="Payoneer" /></div>
+                            <div class="Payment-pak"><img src={Bkash} alt="Bkash" /> </div>
+                            <div class="Payment-pak"><img src={PayPal} alt="PayPal" /></div>
+                            <div class="Payment-pak"><img src={Payoneer} alt="Payoneer" /></div>
+                            <div class="Payment-pak"><img src={Bkash} alt="Bkash" /> </div> */}
+
+                        </OwlCarousel>
 
                       <div class="row col-md-4">
                         <div class="col">
@@ -93,6 +97,7 @@ export const Payment = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
