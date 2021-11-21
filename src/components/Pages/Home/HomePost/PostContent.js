@@ -38,17 +38,17 @@ const PostContent = (props) => {
                       </div>
                       <hr class="new5" />
   
-                      <div className="text-center">
+                      <div className="">
                           <button className="btn-warning-post ">
-                              <i className="fas fa-heart text-danger  mx-1"></i>
+                              <i className="fas fa-heart text-danger  "></i>
                               <small className="Post-Title-home"> Like</small>
                           </button>
-                          <button className="btn-warning-post mx-2 ">
-                              <i className="fas fa-comment  mx-1 "></i>
+                          <button className="btn-warning-post ">
+                              <i className="fas fa-comment   "></i>
                               <small> Comment</small>
                           </button>
                           <button className="btn-warning-post">
-                              <i className="fas fa-share  mx-1"></i>
+                              <i className="fas fa-share "></i>
                               <small> Share</small>
                           </button>
                       </div>
