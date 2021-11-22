@@ -36,8 +36,9 @@ export const Payment = () => {
                     </div>
 
                     <form >
+                      
 
-                        <OwlCarousel  loop margin={0} items={5}>
+                        <OwlCarousel  loop margin={0} >
 
                             <div className="Payment-pa" ><img className="Payment-pak" src={Bkash} alt="Bkash" /> </div>
                             <div className="Payment-pa"><img className="Payment-pak" src={Payoneer} alt="Payoneer" /> </div>

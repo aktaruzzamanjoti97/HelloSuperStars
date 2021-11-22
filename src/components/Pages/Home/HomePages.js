@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import PostData from "./Body/Post/PostData";
-
+import Navigation from "../../Header/Navigation";
 import LeftSidebar from '../../Sidebar/LeftSidebar'
 import RightSidebar from '../../Sidebar/RightSidebar'
+import Post from "./Body/Post/Post";
 
 export default class HomePages extends Component {
   render() {
     return (
       <React.Fragment>
+        <Navigation/>
         <div className="homebody"  style={{ background: "#000000"}}>
           <div className="container-fluid custom-container">
             <div className="row">
@@ -17,7 +18,7 @@ export default class HomePages extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center" >
-                <PostData/>
+                <Post/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
