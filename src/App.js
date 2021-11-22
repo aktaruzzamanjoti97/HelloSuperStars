@@ -14,7 +14,7 @@ import Packages from "./components/Pages/User/Packages/Packages";
 import Profile from './components/Pages/Profile/Profile';
 
 // Navigation
-import Navigation from './components/Header/Navigation';
+// import Navigation from './components/Header/Navigation';
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
@@ -66,7 +66,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <PrivateRoute component={Navigation} />
+    {/* <PrivateRoute component={Navigation} /> */}
       <Switch>
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />

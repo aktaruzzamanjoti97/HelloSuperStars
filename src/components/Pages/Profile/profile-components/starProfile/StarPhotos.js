@@ -16,7 +16,7 @@ export default function StarPhotos() {
     <div className="container">
       <div className="row">
         <div className="col-md-8 mt-3">
-          <div class="card m-2 star-photos-card mx-auto">
+          <div class="card m-2 star-photos-card mx-auto pb-3">
             <div class="card-body">
               <h5 class="card-title text-warning">Photos</h5>
             </div>
@@ -98,6 +98,7 @@ export default function StarPhotos() {
                 </div>
               </div>
             </div>
+           
           </div>
         </div>
 
