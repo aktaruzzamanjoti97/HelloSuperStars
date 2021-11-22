@@ -5,8 +5,11 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
+import Navigation from '../../Header/Navigation';
 const SubCategory = () => {
     return (
+      <>
+      <Navigation />
         <div className="main-container">
       <div className="container category-contaienr p-5 bg-dark  bg-img">
         <div className="d-flex justify-content-center align-items-center">
@@ -51,6 +54,7 @@ const SubCategory = () => {
         </div>
       </div>
     </div>
+    </>
     );
 };
 

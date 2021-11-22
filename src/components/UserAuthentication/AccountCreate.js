@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../CSS/AccountCreate/accountCreate.css'
 import avaterImage from '../../images/CreateAccount-page/Avater.png'
 import { Link } from 'react-router-dom'
+import Navigation from '../Header/Navigation'
 const AccountCreate = () => {
   const [file, setFile] = useState('');
   const [modal, setModal] = useState(false);
@@ -18,6 +19,7 @@ const AccountCreate = () => {
   return (
 
     <>
+    <Navigation />
       <div className='full-container'>
 
         <div className="container">

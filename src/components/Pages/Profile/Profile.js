@@ -10,9 +10,12 @@ import Ayman from "../../../images/Profile/ayman.jpg";
 import AzhariProfile from "../../../images/Profile/azhari-profile.jpg";
 import ShakibProfile from "../../../images/Profile/Shakib-profile.jpg";
 import AymanProfile from "../../../images/Profile/ayman-profile.jpg";
+import Navigation from "../../Header/Navigation";
 
 const Profile = () => {
   return (
+    <>
+    <Navigation />
     <div className="full-container py-3 ">
       {/* cover photo work start   */}
       <div className="container mb-2">
@@ -237,6 +240,7 @@ const Profile = () => {
 
       {/* main body container end */}
     </div>
+    </>
   );
 };
 

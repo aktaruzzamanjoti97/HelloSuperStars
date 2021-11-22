@@ -6,9 +6,15 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
+import Navigation from '../../Header/Navigation';
 
 const StarSelection = () => {
     return (
+      <>
+      <Navigation />
+
+
+      
         <div className="main-container">
         <div className="star-container category-contaienr py-5 bg-dark  bg-img">
           <div className="d-flex justify-content-center align-items-center">
@@ -64,6 +70,7 @@ const StarSelection = () => {
         </div>
       
       </div>
+      </>
     );
 };
 
