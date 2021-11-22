@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import "../../CSS/Error/Error.css"
-
+import Navigation from '../../Header/Navigation'
 export default class Error extends Component {
 render() {
 return (
 <React.Fragment>
+    <Navigation/>
     <div className="homebody" >
         <div className="container">
             <div className="row">

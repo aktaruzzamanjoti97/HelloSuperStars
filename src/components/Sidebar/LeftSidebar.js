@@ -7,7 +7,6 @@ import '../CSS/Sidebar/Left/Following.css'
 import {Link, withRouter} from 'react-router-dom'
 import SubCatdata from './Left/Category/SubCategory/SubCatData'
 import OnlineData from './Left/StarsOnline/OnlineData'
-
 export const LeftSidebar = ({history}) => {
 
     console.log(history)
@@ -25,6 +24,7 @@ export const LeftSidebar = ({history}) => {
 
     return (
         <>
+        
             <div className="container left-col-box p-3 mt-3">
                 
                 <div class="accordion " id="accordionExample">

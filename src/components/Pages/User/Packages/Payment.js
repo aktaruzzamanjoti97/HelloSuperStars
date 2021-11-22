@@ -36,6 +36,7 @@ export const Payment = () => {
                     </div>
 
                     <form >
+                      
 
                         <OwlCarousel  loop margin={0} >
 
