@@ -6,7 +6,9 @@ import '../CSS/Sidebar/Left/Following.css'
 
 import {Link, withRouter} from 'react-router-dom'
 import SubCatdata from './Left/Category/SubCategory/SubCatData'
-import OnlineData from './Left/StarsOnline/OnlineData'
+import { Users } from '../../DummyData'
+import Online from '../Sidebar/Left/StarsOnline/Online'
+
 export const LeftSidebar = ({history}) => {
 
     console.log(history)
@@ -149,7 +151,9 @@ export const LeftSidebar = ({history}) => {
 
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">
-                          <OnlineData/>
+                            {Users.map((u) => (
+                              <Online key={u.id} user={u} />
+                            ))}
                         </div>
                     </div>
 

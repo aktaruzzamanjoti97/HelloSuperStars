@@ -1,20 +1,19 @@
 import React from 'react'
-const Online = props => {
+
+export default function Online({user}) {
     return (
         <>
             <div className="accordion-header chatListname" id="headingTwo">
-                
+            
                 <span> 
-                    <img src={props.image} alt="" className="SidebarStarListImage"/>
+                    <img src={user.profilePicture} alt="" className="SidebarStarListImage"/>
                 </span>
                 
                 <span className="OnlineGreen"><i class="fas fa-circle"></i></span>
-                <span className='chatName'>{props.name}</span>
+                <span className='chatName'>{user.username}</span>
                
             </div>  
         </>
     )
 }
-
-export default Online
 
