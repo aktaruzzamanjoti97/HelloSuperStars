@@ -33,18 +33,18 @@
 .otpS{
     text-align: center;
     display: flex; 
-    margin-left: 90px;
     margin-top: 10px;
 }
 
 .otpS input{
-    width: 20px;
+    width: 35px;
     margin: 5px;
-    height: 20px;
+    height: 35px;
+    text-align: center;
     border: 1px solid #ffc107;
     background-color: #343434;
     color:#ffc107;
-    font-size: 14px;
+    font-size: 20px;
     padding-left: 5px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -99,25 +99,25 @@
     color: white;
 }
 
+@media only screen and (max-width:768px) {
+  .otp-body{
+      width: 150% !important;
+  }
+
+  }
+
 @media only screen and (max-width:978px) {
     .w-100{
         width: 100%;
     }
     .otpS {
-        margin-left: -30px;
+        margin-left: 0px;
     }
     .text-center{
         width: 100%;
     }
     .btnA  a{
         margin-bottom: 15px;
-    }
-
-  }
-  @media only screen and (max-width:1400px) and (min-width:1000px) {
-    
-    .otpS {
-        margin-left: 30px;
     }
 
   }

@@ -1,5 +1,5 @@
 import { Card, Container } from 'react-bootstrap';
-
+import $ from 'jquery'
 import HelloSuperStarDemo from "./HelloSuperStarDemo";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,7 +9,11 @@ import '../CSS/Login-page/logIn.css';
 import '../CSS/Otp-page/OtpPage.css';
 
 const Otp = () => {
-
+    $(".inputs").keyup(function () {
+        if (this.value.length == this.maxLength) {
+          $(this).next('.inputs').focus();
+        }
+    });
     return (
         <>
             <div className="bg-img">
@@ -26,9 +30,9 @@ const Otp = () => {
 
                                     <div className="col-lg-6 order-2 order-lg-2 header-img">
                                         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-                                            <div className="w-100" style={{ maxWidth: "480px" }}>
-                                                <Card className='logIn-bg'>
-                                                    <Card.Body>
+                                            <div className="w-100 otp-body" style={{ maxWidth: "480px" }}>
+                                                <Card className='logIn-bg '>
+                                                    <Card.Body >
 
                                                         <div className="d-flex justify-content-center parent-border">
                                                             <h5 className="text-center mb-4 logIn-header">OTP Verification</h5>
@@ -38,16 +42,16 @@ const Otp = () => {
                                                             <p>We have sent an OTP number to your phone. Enter the OTP below to verify your identity</p>
                                                             <b>00:52</b> <br />
 
-                                                            <div className="otpS">
-                                                                <input type="text" />
-                                                                <input type="text" />
-                                                                <input type="text" />
-                                                                <input type="text" />
-                                                                <input type="text" />
-                                                                <input type="text" />
+                                                            <div className="otpS align-items-center justify-content-center">
+                                                                <input type="text" className="inputs"  maxLength="1"/>
+                                                                <input type="text" className="inputs"  maxLength="1"/>
+                                                                <input type="text" className="inputs" maxLength="1"/>
+                                                                <input type="text" className="inputs" maxLength="1"/>
+                                                                <input type="text" className="inputs" maxLength="1"/>
+                                                                <input type="text" className="inputs" maxLength="1"/>
                                                             </div>
 
-                                                            <div className="btnO col-lg-12">
+                                                            <div className="btnO col-lg-12 align-items-center justify-content-center">
                                                                 <div className="btnS col-sm-6">
                                                                     <Link to="/accountCreate"> <button>Verify</button></Link>
                                                                 </div>
