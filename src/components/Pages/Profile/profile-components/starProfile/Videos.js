@@ -1,5 +1,5 @@
-import React from 'react'
-import '../../../../CSS/Profile/starProfile/starVideos.css';
+import React from "react";
+import "../../../../CSS/Profile/starProfile/starVideos.css";
 import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
 import azhari2 from "../../../../../images/starProfile/StarPhotos/2.jpg";
 import azhari3 from "../../../../../images/starProfile/StarPhotos/3.jpg";
@@ -11,10 +11,9 @@ import azhari8 from "../../../../../images/starProfile/StarPhotos/8.jpg";
 import azhari9 from "../../../../../images/starProfile/StarPhotos/9.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 function Videos() {
-    return (
-
-        // This full page mainly comes from star photos page
-        <div className="container">
+  return (
+    // This full page mainly comes from star photos page
+    <div className="container">
       <div className="row">
         <div className="col-md-8 mt-3">
           <div class="card m-2 star-photos-card mx-auto pb-3">
@@ -31,8 +30,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-  <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
-
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
 
                 <div className="col-4 play-button-container">
@@ -41,7 +41,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
                 <div className="col-4 play-button-container">
                   <img
@@ -49,7 +51,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
               </div>
 
@@ -60,7 +64,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
 
                 <div className="col-4 play-button-container ">
@@ -69,7 +75,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
                 <div className="col-4 play-button-container ">
                   <img
@@ -77,7 +85,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
               </div>
 
@@ -88,7 +98,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
 
                 <div className="col-4  play-button-container">
@@ -97,7 +109,9 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
                 <div className="col-4 play-button-container">
                   <img
@@ -105,20 +119,21 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
-                    <div class="play-center"><i class="fas fa-play fa-3x"></i></div>
+                  <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                  </div>
                 </div>
               </div>
             </div>
-           
           </div>
         </div>
 
         <div className="col-md-4">
-   <StarProfileRightContent />
+          <StarProfileRightContent />
         </div>
       </div>
     </div>
-    )
+  );
 }
 
-export default Videos  
+export default Videos;
