@@ -10,9 +10,37 @@ import Ayman from "../../../images/Profile/ayman.jpg";
 import AzhariProfile from "../../../images/Profile/azhari-profile.jpg";
 import ShakibProfile from "../../../images/Profile/Shakib-profile.jpg";
 import AymanProfile from "../../../images/Profile/ayman-profile.jpg";
+import axios from "axios";
+import swal from 'sweetalert';
+import { useHistory } from "react-router-dom";
+import Navigation from "../../Header/Navigation";
 
 const Profile = () => {
+
+  const history = useHistory();
+
+  const logoutSubmit = (e) => {
+    e.preventDefault();
+    
+    axios.post(`/api/logout`).then(res => {
+      if(res.data.status === 200)
+      {
+        localStorage.removeItem('auth_token');
+        localStorage.removeItem('auth_name');
+        swal("Success",res.data.message,"success");
+        history.push('/');
+      }
+      else
+      {
+        swal("Success",res.data.message,"success");
+        history.push('/');
+      }
+    });
+  }
+
   return (
+    <>
+    <Navigation/>
     <div className="full-container py-3 ">
       {/* cover photo work start   */}
       <div className="container mb-2">
@@ -190,7 +218,7 @@ const Profile = () => {
                       <span>
                         <i className="fas fa-sign-out-alt mx-2 profile-font-color fa-2x"></i>
                       </span>{" "}
-                      <span className="mx-2 profile-font-color">Logout</span>
+                      <span onClick={logoutSubmit} className="mx-2 profile-font-color">Logout</span>
                     </button>
                   </h2>
                 </div>
@@ -237,6 +265,7 @@ const Profile = () => {
 
       {/* main body container end */}
     </div>
+    </>
   );
 };
 
