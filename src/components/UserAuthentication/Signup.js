@@ -1,6 +1,6 @@
 
 import React, { useRef, useState } from 'react';
-import { Button, Card, Alert, Container } from 'react-bootstrap';
+import { Button, Card, Container } from 'react-bootstrap';
 //import { useAuth } from "./AuthContext";
 import HelloSuperStarDemo from './HelloSuperStarDemo';
 import { Link, useHistory } from 'react-router-dom';
@@ -17,7 +17,8 @@ const Signup = () => {
     const ConfirmPasswordRef = useRef();
     //const { signup } = useAuth();
 
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
+    const loading=false;
     const [changeIcon, setChange] = useState(false);
     const [changIcon1, setChangeIcon1] = useState(false);
 
