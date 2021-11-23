@@ -2,8 +2,8 @@
 export const Lives = [
   {
     id:1,
-    username: "Mizanur Rahman Azhari",
-    profilePicture: "images/Profile/azhari-profile.jpg",
+      username: "Shakib All Hasan",
+      profilePicture: "images/Profile/Shakibpro.png",
   },
   {
     id:2,

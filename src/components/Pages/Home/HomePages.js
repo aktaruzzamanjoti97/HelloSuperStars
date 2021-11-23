@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navigation from "../../Header/Navigation";
 import LeftSidebar from '../../Sidebar/LeftSidebar'
 import RightSidebar from '../../Sidebar/RightSidebar';
-import Navigation from '../../Header/Navigation';
 import Post from "./Body/Post/Post";
 
 export default class HomePages extends Component {
