@@ -43,6 +43,8 @@ const Otp = () => {
                                                                 <input type="text" />
                                                                 <input type="text" />
                                                                 <input type="text" />
+                                                                <input type="text" />
+                                                                <input type="text" />
                                                             </div>
 
                                                             <div className="btnO col-lg-12">
