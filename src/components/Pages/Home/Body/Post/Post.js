@@ -3,6 +3,7 @@ import { Users } from '../../../../../DummyData'
 import PostContent from './PostContent'
 
 const Post = () => {
+    console.log(Users);
     return (
         <>
             {Users.map((u) => (

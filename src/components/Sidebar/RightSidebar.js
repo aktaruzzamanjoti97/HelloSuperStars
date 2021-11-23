@@ -1,12 +1,12 @@
 import React  from 'react'
+import {Link, withRouter} from 'react-router-dom'
 
 import '../CSS/Sidebar/Right/Right.css'
 
-import {Link, withRouter} from 'react-router-dom'
-import LearnData from './Right/LearningSessions/LearnData'
-import LiveData from './Right/LiveNow/LiveData'
 import AuditionsData from './Right/UpcomingAuditions/AuditionsData'
 import UpLiveData from './Right/UpcomingLive/UpLiveData'
+import Learn from './Right/LearningSessions/Learn'
+import Live from './Right/LiveNow/Live'
 
 
 export const RightSidebar = ({history}) => {
@@ -27,7 +27,7 @@ export const RightSidebar = ({history}) => {
 
                     <div className="Live-S-Nav d-flex" id="headingTwo">
 
-                       <LiveData/>
+                       <Live/>
 
                        <Link to='/live-now'>
                             <button className="Live-RS-btn" style={{backgroundColor:getColor('/live-now')}}>
@@ -46,7 +46,7 @@ export const RightSidebar = ({history}) => {
 
                     <div className="Live-S-Nav d-flex" id="headingTwo">
 
-                        <LearnData/>
+                        <Learn/>
                         
                        <Link to='/learning-sessions'>
                             <button className="Live-RS-btn" style={{backgroundColor:getColor('/learning-sessions')}}>
