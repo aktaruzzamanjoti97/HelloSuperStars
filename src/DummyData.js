@@ -37,6 +37,26 @@ export const Learns = [
 ];
 
 
+// Upcoming Auditions
+export const Auditions = [
+  {
+    id:1,
+    username: "Shakib All Hasan",
+    profilePicture: "images/Profile/Shakibpro.png",
+  },
+  {
+    id:2,
+    username: "Ayman Sadiq",
+    profilePicture: "images/Profile/ayman-profile.jpg",
+  },
+  {
+    id:3,
+    username: "Mizanur Rahman Azhari",
+    profilePicture: "images/Profile/azhari-profile.jpg",
+  },
+];
+
+
 
 
 

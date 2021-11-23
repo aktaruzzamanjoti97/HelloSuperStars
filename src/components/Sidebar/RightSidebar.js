@@ -3,10 +3,11 @@ import {Link, withRouter} from 'react-router-dom'
 
 import '../CSS/Sidebar/Right/Right.css'
 
-import AuditionsData from './Right/UpcomingAuditions/AuditionsData'
 import UpLiveData from './Right/UpcomingLive/UpLiveData'
 import Learn from './Right/LearningSessions/Learn'
 import Live from './Right/LiveNow/Live'
+import UpAuditions from './Right/UpcomingAuditions/UpAudions'
+
 
 
 export const RightSidebar = ({history}) => {
@@ -84,7 +85,7 @@ export const RightSidebar = ({history}) => {
 
                     <div className="Live-S-Nav d-flex" id="headingTwo">
 
-                        <AuditionsData/>
+                        <UpAuditions/>
 
                        <Link to='/upcoming-auditions'>
                             <button className="Live-RS-btn" style={{backgroundColor:getColor('/upcoming-auditions')}}>
