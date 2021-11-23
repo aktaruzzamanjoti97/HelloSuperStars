@@ -126,7 +126,7 @@
         font-size: 13px;
         background-color: #ffc107;
         border-color: #ffc107;
-        width: 90px ;
+        width: 50px ;
         height: 30px;
         border:none;
         border-radius: 5px;
@@ -138,10 +138,19 @@
   
   }
 
-  @media only screen and (max-width: 510px) {
+  @media only screen and (width: 600px) {
     .PostImgHe{
         height: 185px;
         width: 90%;
+    }
+    .btn-warning-post {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 70px ;
+    height: 30px;
+    border: none;
+    text-align: left;
     }
   
   }
@@ -153,13 +162,13 @@
         color: #000;
     background-color: #ffc107;
     border-color: #ffc107;
-    width: 87px !important;
+    width: 87px;
     height: 30px;
     border: none;
     }
   
   }
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (width:1400px) {
     .Postbtn-t {
         width:100%;
     }

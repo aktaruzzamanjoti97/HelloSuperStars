@@ -1,30 +1,34 @@
 import React from "react";
 import Football from "../../../../images/Market/Football.jpg";
 
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
 const Content = () => {
   return (
     <>
-      <div className=" Follow-Category">
+      <div className=" Follow-Category fl2">
 
-        <div className="col-11">
-            <div className="Follow-nav">
-                <ul className="Follow-nav-content">
-                    <li class="Follow-nav-item active"><button className="Follow-nav-item-btn">Hollywood</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Bollywood</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Football</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Cricket</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Islamic</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Singer</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Dhallywood</button></li>
-                    <li class="Follow-nav-item active"><button className="Follow-nav-item-btn">Hollywood</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Bollywood</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Football</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Cricket</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Islamic</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Singer</button></li>
-                    <li class="Follow-nav-item"><button className="Follow-nav-item-btn"> Dhallywood</button></li>
-                </ul>
-            </div>
+        <div className="col-10">
+
+          <OwlCarousel className="Follow-nav" margin={-200}>
+
+            <div className="Payment-pa" ><button className="Follow-nav-item-btn">Hollywood</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Bollywood</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Football</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Islamic</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Cricket</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Singer</button></div>
+            <div className="Payment-pa" ><button className="Follow-nav-item-btn">Hollywood</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Bollywood</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Football</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Islamic</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Cricket</button></div>
+            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Singer</button></div>
+
+          </OwlCarousel>
+        
         </div>
 
         <div className="col-12 row d-flex mainCat-follow ">

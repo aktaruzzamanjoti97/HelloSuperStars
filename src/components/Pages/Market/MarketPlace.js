@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import Navigation from "../../Header/Navigation";
 import LeftSidebar from "../../Sidebar/LeftSidebar";
 import RightSidebar from "../../Sidebar/RightSidebar";
 import Contents from "../Market/Content/Content";
@@ -8,6 +10,7 @@ export default class MarketPlace extends Component {
     render() {
       return (
         <React.Fragment>
+          <Navigation/>
           <div className="homebody"  style={{ background: "#000000"}}>
             <div className="container-fluid custom-container">
               <div className="row">

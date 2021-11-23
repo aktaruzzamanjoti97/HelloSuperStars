@@ -15,8 +15,11 @@ import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
 import Souviner from "../../Pages/Profile/profile-components/starProfile/Souviner";
 import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
 import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
+import Navigation from "../../Header/Navigation";
 const StarProfile = () => {
   return (
+    <>
+    <Navigation />
     <div className="full-container py-3">
       <div className="container star-cover mb-2">
         <div className="profile-img-cover ">
@@ -70,6 +73,7 @@ const StarProfile = () => {
         </Router>
       </div>
     </div>
+    </>
   );
 };
 

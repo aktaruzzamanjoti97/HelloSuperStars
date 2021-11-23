@@ -40,7 +40,8 @@ const Profile = () => {
 
   return (
     <>
-    <Navigation/>
+
+    <Navigation />
     <div className="full-container py-3 ">
       {/* cover photo work start   */}
       <div className="container mb-2">
