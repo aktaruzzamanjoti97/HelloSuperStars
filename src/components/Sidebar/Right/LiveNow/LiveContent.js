@@ -1,11 +1,11 @@
 import React from 'react'
-const LiveContent = props => {
+export default function LiveContent ({Live}) {
     return (
         <>
             <div class="column">
                 <div className="column-bg">
-                    <img src={props.image} className="Live-RS-img" alt="Jane" />
-                    <span className="Live-RS-Name">{props.name}</span>
+                    <img src={Live.profilePicture} className="Live-RS-img" alt={Live.profilePicture} />
+                    <span className="Live-RS-Name">{Live.username}</span>
 
                     <div class="ContentLight">
                         .
@@ -16,6 +16,3 @@ const LiveContent = props => {
         </>
     )
 }
-
-
-export default LiveContent

@@ -1,11 +1,12 @@
 import React from 'react'
-const LearnContent = props => {
+
+export default function LearnContent({leran})  {
     return (
         <>
             <div class="column">
                 <div className="column-bg">
-                    <img src={props.image} className="Live-RS-img" alt="Jane" />
-                    <span className="Live-RS-Name">{props.name}</span>
+                    <img src={leran.profilePicture} className="Live-RS-img" alt={leran.profilePicture} />
+                    <span className="Live-RS-Name">{leran.username}</span>
 
                     <div class="ContentLight">
                         .
@@ -17,5 +18,3 @@ const LearnContent = props => {
     )
 }
 
-
-export default LearnContent
