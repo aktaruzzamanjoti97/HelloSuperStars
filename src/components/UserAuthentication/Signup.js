@@ -1,24 +1,27 @@
+
 import React, { useRef, useState } from 'react';
 import { Button, Card, Alert, Container } from 'react-bootstrap';
-import { useAuth } from "./AuthContext";
+//import { useAuth } from "./AuthContext";
 import HelloSuperStarDemo from './HelloSuperStarDemo';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
 import '../CSS/SignUpPage/SignUp.css'
 import DropDownLanguage from './DropDownLanguage';
-const Signup = () => {
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const ConfirmPasswordRef = useRef();
-    const { signup } = useAuth();
-    const history = useHistory();
+import axios from "axios";
+import swal from 'sweetalert';
 
-    const [error, setError] = useState("");
+
+
+const Signup = () => {
+    const ConfirmPasswordRef = useRef();
+    //const { signup } = useAuth();
+
     const [loading, setLoading] = useState(false);
     const [changeIcon, setChange] = useState(false);
     const [changIcon1, setChangeIcon1] = useState(false);
+
+
 
     function handleChangeIcon() {
         setChange(!(changeIcon));
@@ -30,22 +33,53 @@ const Signup = () => {
     }
 
 
-    const handleSubmit = async (e) => {
+    const history = useHistory();
+    const [registerInput, setRegister] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        password: '',
+        error_list: []
+    });
+    //const [regvalue,setRegValue]=useState('');
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setRegister((prev)=>{
+            return({...prev,[name]:value});
+        })
+        // e.persist();
+        // setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const registerSubmit = (e) => {
         e.preventDefault();
 
-        if (passwordRef.current.value !== ConfirmPasswordRef.current.value) {
-            return setError("Password does not match!");
+        const data = {
+            name: registerInput.name,
+            email: registerInput.email,
+            phone: registerInput.phone,
+            password: registerInput.password,
         }
-        try {
-            setLoading(true);
-            setError("");
-            await signup(emailRef.current.value, passwordRef.current.value);
-            history.push('/otp');
-        } catch (error) {
-            setError(error);
-        }
-        setLoading(false);
+
+        alert(data.phone + data.name);
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/register`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    localStorage.setItem('auth_token', res.data.token);
+                    localStorage.setItem('auth_name', res.data.username);
+                    swal("Success",res.data.message,"success");
+                    history.push('/otp');
+                }
+                else{
+                    setRegister({ ...registerInput,error_list: res.data.validation_errors });
+                }
+            });
+        });
     }
+
 
     return (
 
@@ -70,34 +104,40 @@ const Signup = () => {
                                                         <div className="d-flex justify-content-center">
                                                             <h5 className="text-center mb-4 sign-up-header">Create an Account</h5>
                                                         </div>
-                                                        {error ? <Alert variant="danger">{JSON.stringify(error)}</Alert> : ""}
+                                                        {/* {error ? <Alert variant="danger">{JSON.stringify(error)}</Alert> : ""} */}
 
-                                                        <form onSubmit={handleSubmit}>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <input type="text" ref={nameRef} class="form-control sign-up-style" placeholder='First name' required />
+                                                        <form onSubmit={registerSubmit}>
+                                                           
+                                                            <div className="row">
+                                                                <div className="col">
+                                                                    <input type="text" onChange={handleInput} name='name' value={registerInput.name} className="form-control sign-up-style" placeholder='First name' required />
+                                                                    <span>{registerInput.error_list.name}</span>
                                                                 </div>
-                                                                <div class="col">
-                                                                    <input type="text" class="form-control sign-up-style" placeholder="Last name" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="row mt-3">
-                                                                <div class="col">
-                                                                    <input type="email" class="form-control sign-up-style" placeholder="Email or phone" ref={emailRef} required />
-                                                                </div>
-                                                                <div class="col">
-                                                                    <input type="text" class="form-control sign-up-style" placeholder="NID or password" />
+                                                                <div className="col">
+                                                                    <input type="text" className="form-control sign-up-style" placeholder="Last name" />
                                                                 </div>
                                                             </div>
-                                                            <div class="row mt-3">
-                                                                <div class="col">
-                                                                    <input type={changeIcon ? `text` : `password`} ref={passwordRef} class="form-control sign-up-style" placeholder="Create password" required />
+                                                            <div className="row mt-3">
+                                                                <div className="col">
+                                                                    <input type="email" name='email' className="form-control sign-up-style" placeholder="Email" onChange={handleInput} value={registerInput.email} required />
+                                                                    <span>{registerInput.error_list.email}</span>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
+                                                                    <span>{registerInput.error_list.phone}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="row mt-3">
+                                                                <div className="col">
+                                                                    <input type={changeIcon ? `text` : `password`} onChange={handleInput}  name='password' value={registerInput.password} className="form-control sign-up-style" placeholder="Create password" required />
                                                                     <span className='sign-up-eye-icon-1' >
                                                                         <FontAwesomeIcon onClick={handleChangeIcon} icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>
+                                                                    <span>{registerInput.error_list.password}</span>
                                                                 </div>
-                                                                <div class="col">
-                                                                    <input type={changIcon1 ? `text` : `password`} ref={ConfirmPasswordRef} class="form-control sign-up-style" placeholder="Confirm password" required />
+                                                                
+                                                                <div className="col">
+                                                                    <input type={changIcon1 ? `text` : `password`} ref={ConfirmPasswordRef} className="form-control sign-up-style" placeholder="Confirm password" required />
                                                                     <span className='sign-up-eye-icon-2' onClick={handleChangeIcon1} >
                                                                         <FontAwesomeIcon icon={changIcon1 ? faEye : faEyeSlash} />
                                                                     </span>
@@ -158,5 +198,8 @@ const Signup = () => {
 }
 
 export default Signup;
+
+
+
 
 

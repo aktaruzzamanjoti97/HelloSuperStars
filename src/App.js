@@ -58,7 +58,19 @@ import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 import StarSelection from "./components/Pages/Category/StarSelection";
 import StarProfile from "./components/Pages/Profile/StarProfile";
 
+import axios from "axios";
 
+axios.defaults.withCredentials = true;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Accept'] = 'application/json';
+axios.defaults.baseURL = "http://localhost:8000/";
+
+axios.interceptors.request.use(function (config)
+{
+  const token = localStorage.getItem('auth_token');
+  config.headers.Authorization = token ? `Bearer ${token}` : '' ;
+  return config;
+});
 
 
 
@@ -66,10 +78,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
+
+        {/* <PrivateRoute component={Navigation} /> */}
+
     {/* <PrivateRoute component={Navigation} /> */}
       <Switch>
         {/* Navbar */}
-        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/' component={Home} />
         <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}

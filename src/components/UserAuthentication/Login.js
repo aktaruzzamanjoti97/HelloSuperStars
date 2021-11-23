@@ -1,34 +1,54 @@
-import React, { useRef, useState } from 'react';
-import { Button, Card, Form, Alert, Container } from 'react-bootstrap';
-import { useAuth } from "./AuthContext";
+import React, { useState } from 'react';
+import { Button, Card, Form, Container } from 'react-bootstrap';
+//import { useAuth } from "./AuthContext";
 import HelloSuperStarDemo from "./HelloSuperStarDemo";
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
 import '../CSS/Login-page/logIn.css';
 import DropDownLanguage from './DropDownLanguage';
+import axios from "axios";
+import swal from 'sweetalert';
 
 const Login = () => {
-    const emailRef = useRef();
-    const passwordRef = useRef();
-    const { login } = useAuth();
     const history = useHistory();
+    const [loginInput, setLogin] = useState({
+        email: '',
+        password: '',
+        error_list: []
+    });
 
-    const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
+    const handleInput = (e) => {
+        e.persist();
+        setLogin({...loginInput, [e.target.name]: e.target.value});
+    }
 
-    const handleSubmit = async (e) => {
+    const loginSubmit = (e) => {
         e.preventDefault();
-
-        try {
-            setLoading(true);
-            setError("");
-            await login(emailRef.current.value, passwordRef.current.value);
-            history.push('/');
-        } catch (error) {
-            setError(error);
+        const data = {
+            email: loginInput.email,
+            password: loginInput.password,
         }
-        setLoading(false);
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/login`, data).then(res => {
+                if(res.data.status === 200)
+                    {
+                        localStorage.setItem('auth_token', res.data.token);
+                        localStorage.setItem('auth_name', res.data.username);
+                        swal("Success",res.data.message,"success");
+                        history.push('/');
+                    }
+                    else if(res.data.status === 401)
+                    {
+                        swal("Warning",res.data.message,"warning");
+                    }
+                    else{
+                        setLogin({ ...loginInput,error_list: res.data.validation_errors });
+                    }
+            });
+        });
+        
     }
 
     const [changeIcon, setChange] = useState(false);
@@ -61,24 +81,26 @@ const Login = () => {
                                                             <h5 className="text-center mb-4 logIn-header"> Log in</h5>
 
                                                         </div>
-                                                        {error ? <Alert variant="danger">{JSON.stringify(error)}</Alert> : ""}
-                                                        <Form onSubmit={handleSubmit} className='text-center'>
+                                                        
+                                                        <Form onSubmit={loginSubmit} className='text-center'>
                                                             <Form.Group id="email" className='mb-4'>
 
-                                                                <input className='input-style w-50' ref={emailRef} type="email" placeholder='Email or Phone' required />
+                                                                <input className='input-style w-50' name="email" onChange={handleInput} value={loginInput.email} type="email" placeholder='Email or Phone' required />
+                                                                <span>{loginInput.error_list.email}</span>
                                                             </Form.Group>
                                                             <p>
                                                                 <Form.Group id="password">
-                                                                    <input className='input-style w-50' ref={passwordRef} type={changeIcon ? 'text' : 'password'} placeholder='Password' required />
+                                                                    <input className='input-style w-50' name="password" onChange={handleInput} value={loginInput.password} placeholder='Password' required />
                                                                     <span onClick={handleChangeIcon} className='eye-icons'>
                                                                         <FontAwesomeIcon icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>
+                                                                    <span>{loginInput.error_list.password}</span>
 
                                                                 </Form.Group>
                                                             </p>
 
                                                             <br />
-                                                            <Button disabled={loading} className="btn btn-warning w-50" type="submit">Log In</Button>
+                                                            <Button className="btn btn-warning w-50" type="submit">Log In</Button>
                                                         </Form>
                                                         <div className="d-flex  justify-content-around mt-4 ">
                                                             <Link to='/signup' className='btn btn-outline-warning px-3 mx-2 userBtn-font'>Sign Up</Link>
