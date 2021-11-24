@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import UpLiveData from "./UpLiveData";
 
 import Navigation from "../../../../../../Header/Navigation";
 import LeftSidebar from '../../../../../../Sidebar/LeftSidebar'
 import RightSidebar from '../../../../../../Sidebar/RightSidebar'
+import UpcomingLive from "./UpcomingLive";
 
 
 export default class UpLivePost extends Component {
@@ -21,7 +21,7 @@ export default class UpLivePost extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <UpLiveData/>
+                <UpcomingLive/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
