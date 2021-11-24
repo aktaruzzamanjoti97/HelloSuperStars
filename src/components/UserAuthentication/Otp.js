@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import $ from 'jquery'
 import HelloSuperStarDemo from "./HelloSuperStarDemo";
@@ -72,6 +72,17 @@ const Otp = () => {
     }
 
 
+    // otp countdown start
+    const [counter, setCounter] =useState(60);
+  useEffect(() => {
+      const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+      return () => clearInterval(timer);
+  }, [counter]);
+// function handleResend(){
+
+//     alert('resend data')
+// }
 
     return (
         <>
@@ -99,7 +110,7 @@ const Otp = () => {
                                                         <div className="otp">
                                                             <FontAwesomeIcon className="ino mb-2" icon={faEnvelopeOpenText} />
                                                             <p>We have sent an OTP number to your phone. Enter the OTP below to verify your identity</p>
-                                                            <b>00:52</b> <br />
+                                                            <b>Time left {counter}s</b> <br />
 
                                                             
                                                             <div className="otpS align-items-center justify-content-center">
@@ -116,7 +127,9 @@ const Otp = () => {
                                                                     <Link to="/accountCreate" onClick={loginSubmit}> <button>Verify</button></Link>
                                                                 </div>
                                                                 <div className="btnA col-sm-6 mt-2">
-                                                                    <a href="/">Resend</a>
+                                                                    
+                                                                   {counter===0?   <button className='resend-btn'>Resend</button>:null}
+                                                                 
                                                                 </div>
                                                             </div>
                                                             
