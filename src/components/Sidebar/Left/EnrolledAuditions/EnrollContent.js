@@ -28,11 +28,11 @@ export default function EnrollContent({user}){
                            </div>
                            <div className="Enroll-row">
                                <label className="Enroll-row-t">Candidates</label>
-                               <p className="Enroll-row-t pxs">{user.date}</p>
+                               <p className="Enroll-row-t pxs">{user.candidate}</p>
                            </div>
                            <div className="Enroll-row">
                                <label className="Enroll-row-t">Date</label>
-                               <p className="Enroll-row-t pxs">{user.date}</p>
+                               <p className="Enroll-row-t pxs">{user.pdate}</p>
                            </div>
                         </div>
                         
