@@ -24,15 +24,15 @@ export default function EnrollContent({user}){
                         <div className="col-md-5 " >
                            <div className="Enroll-row">
                                <label className="Enroll-row-t">Host</label>
-                               <p className="Enroll-row-t">{user.username}</p>
+                               <p className="Enroll-row-t pxs">{user.username}</p>
                            </div>
                            <div className="Enroll-row">
                                <label className="Enroll-row-t">Candidates</label>
-                               <p className="Enroll-row-t">{user.date}</p>
+                               <p className="Enroll-row-t pxs">{user.date}</p>
                            </div>
                            <div className="Enroll-row">
                                <label className="Enroll-row-t">Date</label>
-                               <p className="Enroll-row-t">{user.date}</p>
+                               <p className="Enroll-row-t pxs">{user.date}</p>
                            </div>
                         </div>
                         
