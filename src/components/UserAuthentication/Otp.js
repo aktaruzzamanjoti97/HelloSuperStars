@@ -38,7 +38,7 @@ const Otp = () => {
     const loginSubmit = (e) => {
         e.preventDefault();
         const data = {
-            otp: loginInput.otp1 + loginInput.otp2 + loginInput.otp3 + loginInput.otp4 + loginInput.otp5 + loginInput.otp5
+            otp: loginInput.otp1 + loginInput.otp2 + loginInput.otp3 + loginInput.otp4 + loginInput.otp5 + loginInput.otp6
         }
 
     let otp = data.otp;
@@ -142,108 +142,3 @@ const Otp = () => {
 export default Otp;
 
 
-
-
-// import { Card, Container } from 'react-bootstrap';
-// import HelloSuperStarDemo from "./HelloSuperStarDemo";
-// import React, { useState } from "react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
-// import { Link } from 'react-router-dom';
-// import '../CSS/Login-page/logIn.css';
-// import '../CSS/Otp-page/OtpPage.css';
-
-// const Otp = () => {
-
-//     const [otp, setOtp] = useState(new Array(6).fill(""));
-
-//     const handleChange = (element, index) => {
-//         if (isNaN(element.value)) return false;
-
-//         setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-
-//         //Focus next input
-//         if (element.nextSibling) {
-//             element.nextSibling.focus();
-//         }
-//     }
-
-//     return (
-//         <>
-//             <div className="bg-img">
-//                 <section id="header" className="d-flex align-items-center">
-//                     <div className="container-fluid">
-//                         <div className="row">
-//                             <div className="col-10 mx-auto">
-//                                 <div className="row">
-//                                     <div className="col-md-6 pt-5 pt-lg-0 order-1 order-lg-1 d-flex justify-content-center flex-column">
-//                                         <div className="mt-3">
-//                                             <HelloSuperStarDemo />
-//                                         </div>
-//                                     </div>
-
-//                                     <div className="col-lg-6 order-2 order-lg-2 header-img">
-//                                         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-//                                             <div className="w-100 otp-body" style={{ maxWidth: "480px" }}>
-//                                                 <Card className='logIn-bg '>
-//                                                     <Card.Body >
-
-//                                                         <div className="d-flex justify-content-center parent-border">
-//                                                             <h5 className="text-center mb-4 logIn-header">OTP Verification</h5>
-//                                                         </div>
-
-//                                                         <div className="otp">
-//                                                             <FontAwesomeIcon className="ino mb-2" icon={faEnvelopeOpenText} />
-//                                                             <p>We have sent an OTP number to your phone. Enter the OTP below to verify your identity</p>
-//                                                             <b>00:52</b> <br />
-
-                                                            
-                                                             
-//                                                              <p>
-                                                                
-                                                                
-//                                                             </p>
-
-//                                                             <div className="otpS align-items-center justify-content-center">
-//                                                                 {otp.map((data, index) => {
-//                                                                     return (
-//                                                                         <input className="otp-field" type="text" name="otp" maxLength="1" key={index}
-//                                                                             value={data} onChange={e => handleChange(e.target, index)} onFocus={e => e.target.select()}
-//                                                                         />
-//                                                                     );
-//                                                                 })}
-//                                                             </div>
-
-//                                                             <p>OTP Entered - {otp.join("")}</p>
-
-//                                                             <div className="btnO col-lg-12 align-items-center justify-content-center">
-
-//                                                                 <div className="btnA col-sm-6 mt-2">
-//                                                                     <button className="btn btn-primary mr-2" onClick={e =>
-//                                                                     alert("Entered OTP is " + otp.join("")) } > Verify </button>
-//                                                                 </div>
-
-//                                                                 <div className="btnA col-sm-6 mt-2">
-//                                                                     <button className="btn-secondary mr-2" onClick={e => setOtp([...otp.map(v => "")])}> Resend </button>
-//                                                                 </div>
-//                                                             </div>
-
-//                                                         </div>
-//                                                         <h6 className="log-otp">Already have an account ? <Link to="/login">Log In</Link></h6>
-
-//                                                     </Card.Body>
-//                                                 </Card>
-//                                             </div>
-//                                         </Container>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </section>
-//             </div>
-//         </>
-//     )
-// }
-
-// export default Otp;
