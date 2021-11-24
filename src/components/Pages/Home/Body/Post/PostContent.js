@@ -4,8 +4,8 @@ import '../../../../CSS/Home/Post.css'
 export default function PostContent({user}){
     return (
       <>
-           <div className="Post-Scroll-S col-md-10 align-items-center ml-2">
-              <div className="card left-col-box PostCard mb-3 mt-3">
+           <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
+              <div className="card Enroll-AuditionsB left-col-box PostCard mb-3 mt-3">
                   <div className="accordion-item PostBack ">
                       <h2 className="accordion-header PostBack" >
                           <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">

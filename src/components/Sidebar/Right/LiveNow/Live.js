@@ -9,7 +9,6 @@ const Live = () => {
 
     return (
         <>
-      
             {first2.map((l) => (
             <LiveContent key={l.id} Live={l} name='check' />
             ))}
