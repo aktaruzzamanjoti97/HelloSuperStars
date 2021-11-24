@@ -17,6 +17,8 @@ export const Lives = [
   },
 ];
 
+
+
 // Learning Sessions
 export const Learns = [
     {
@@ -34,6 +36,25 @@ export const Learns = [
       username: "Mizanur Rahman Azhari",
       profilePicture: "images/Profile/azhari-profile.jpg",
     },
+];
+
+// Upcoming Live 
+export const UpLives = [
+  {
+    id:1,
+      username: "Shakib All Hasan",
+      profilePicture: "images/Profile/Shakibpro.png",
+  },
+  {
+    id:2,
+    username: "Sunny Leone",
+    profilePicture: "images/Profile/sunny-leone.png",
+  },
+  {
+    id:3,
+    username: "Mizanur Rahman Azhari",
+    profilePicture: "images/Profile/azhari-profile.jpg",
+  },
 ];
 
 

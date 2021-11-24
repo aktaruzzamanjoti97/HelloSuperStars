@@ -1,16 +1,13 @@
 import React from 'react'
-const UpLiveContent = props => {
+export default function UpLiveContent ({UpcLive}) {
     return (
         <>
             <div class="column">
                 <div className="column-bg">
-                <img src={props.image} className="Live-RS-img" alt="Jane" />
-                <span className="Live-RS-Name">{props.name}</span>
+                    <img src={UpcLive.profilePicture} className="Live-RS-img" alt={UpcLive.profilePicture} />
+                    <span className="Live-RS-Name">{UpcLive.username}</span>
                 </div>
             </div>
         </>
     )
 }
-
-
-export default UpLiveContent
