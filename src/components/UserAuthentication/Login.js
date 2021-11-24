@@ -97,7 +97,7 @@ const Login = () => {
                                                         <Form onSubmit={loginSubmit} className='text-center'>
                                                             <Form.Group id="email" className='mb-4'>
 
-                                                                <input className='input-style w-50' name="email" onChange={handleInput} value={loginInput.email} type="email" placeholder='Email or Phone' required />
+                                                                <input className='input-style w-50' name="email" onChange={handleInput} value={loginInput.email} type="text" placeholder='Email or Phone' required />
                                                                 <span>{loginInput.error_list.email}</span>
                                                             </Form.Group>
                                                             <p>
