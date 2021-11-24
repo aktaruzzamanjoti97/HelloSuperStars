@@ -8,10 +8,15 @@
     opacity: 1;
 }
 
+.xyz-auditions{
+    width: 105.1%;
+    margin-left: -12.5px;
+    height: 250px;
+    background-color: #000000a9;
+}
 
 .xyz-audition{
     background-color: #000000a9;
-    margin-top: 20px;
     width: 50%;
     padding: auto;
     border-radius: 10px;
@@ -70,9 +75,52 @@
 
 
 @media only screen and (max-width: 768px) {
+    
+    .xyz-auditions{
+        width: 108.8%  !important;
+        margin-left: -12.5px;
+    }
+    .xyz-audition{
+        width: 70%  ;
+    }
+    .xyz-audition-btn{
+        width: 70% ;
+        text-align: center;
+        padding-left: 25px;
+    }
+}
+
+
+@media only screen and (min-width: 770px) and(max-width: 1100px) {
+    
+    .xyz-auditions{
+        width: 110.8%  !important;
+        margin-left: -12.5px;
+    }
+    .xyz-audition{
+        background-color: #000000a9;
+        width: 80%;
+    }
     .xyz-audition-btn{
         width: 70% !important;
         text-align: center;
         padding-left: 25px;
+    }
+    .xyz-auditions{
+        width: 10.1%;
+        margin-left: -12.5px;
+        height: 250px;
+        background-color: #000000a9;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .xyz-audition-btn{
+        width: 40% !important;
+        text-align: center;
+        padding-left: 25px;
+    }
+    .xyz-auditions{
+        width: 105.8%;
     }
 }

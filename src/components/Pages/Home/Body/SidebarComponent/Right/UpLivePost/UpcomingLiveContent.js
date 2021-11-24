@@ -1,6 +1,7 @@
 import React from "react";
-import '../../../../../../CSS/Home/UpcomingAuditions.css'
-    export default function UpcomingAuditionsContent({user}){
+import '../../../../../../CSS/Home/Upcominglive.css'
+
+export default function UpcomingLiveContent({user}){
         return (
           <>
                <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -12,23 +13,19 @@ import '../../../../../../CSS/Home/UpcomingAuditions.css'
 
                       <div className="row align-items-center justify-content-center ">
                         
-                            <div className="container align-items-center justify-content-center UpcomingAuditions col-md-6">
+                            <div className="container align-items-center justify-content-center UpcomingLive col-md-6">
                                 <div className="container xyz-auditions"> <br />
-                                    <div className="container d-flex xyz-audition align-items-center justify-content-center">
+                                
 
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                        </div> <br /> <br />
-
-                                        <div className="container d-flex align-items-center justify-content-center">
-                                        <p className="Pa-btn-text">FROM JUNE 25 - july 30</p>
+                                    <div className="container d-flex  align-items-center justify-content-center">
+                                        <b className="Upc-live">COMING SOON</b>
+                                    </div>
+                                    <div className="container d-flex  align-items-center justify-content-center">
+                                        <b className="Upc-live-s">12<span className="Upc-live-h">H</span> 35<span className="Upc-live-h">M</span></b>
                                     </div>
 
                                     <div className="container d-flex  align-items-center justify-content-center">
-
-                                        <button className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
-
+                                        <button className="container d-flex  Upc-live-h-btn align-items-center justify-content-center">Remind me</button>
                                     </div>
 
                                 </div>
