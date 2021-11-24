@@ -13,7 +13,7 @@ import swal from 'sweetalert';
 
 const Otp = () => {
     $(".inputs").keyup(function () {
-        if (this.value.length == this.maxLength) {
+        if (this.value.length === this.maxLength) {
           $(this).next('.inputs').focus();
         }
     });
@@ -45,7 +45,7 @@ const Otp = () => {
 
        
 
-        if(otp.length == 6)
+        if(otp.length === 6)
         {
             axios.post(`/api/otp_verify`, data).then(res => {
                 if(res.data.status === 200)

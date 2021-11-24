@@ -10,10 +10,24 @@ import '../CSS/SignUpPage/SignUp.css'
 import DropDownLanguage from './DropDownLanguage';
 import axios from "axios";
 import swal from 'sweetalert';
-
-
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+const inputStyle = {
+    width: "160px",
+    fontSize: "12px",
+    borderBottom: "2px solid #E7DA5D",
+    borderTop: 0,
+    borderLeft: 0,
+    borderRight: 0,
+    borderRadius: "0px",
+  background:'#343434',
+  color:'white'
+    //   background:'black',
+    //   color:'white'
+  };
 
 const Signup = () => {
+    
     const ConfirmPasswordRef = useRef();
     //const { signup } = useAuth();
 
@@ -124,8 +138,9 @@ const Signup = () => {
                                                                     <span>{registerInput.error_list.email}</span>
                                                                 </div>
                                                                 <div className="col">
-                                                                    <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
-                                                                    <span>{registerInput.error_list.phone}</span>
+                                                                <PhoneInput country={'bd'} inputStyle={inputStyle}  buttonStyle={{ background:'none',border:'0' }}/>
+                                                                    {/* <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
+                                                                    <span>{registerInput.error_list.phone}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="row mt-3">
