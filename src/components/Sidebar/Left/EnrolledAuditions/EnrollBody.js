@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LeftSidebar from '../../LeftSidebar'
 import RightSidebar from '../../RightSidebar'
 import Navigation from '../../../Header/Navigation'
+import Enroll from "./Enroll";
 
 export default class EnrollBody extends Component {
   render() {
@@ -17,7 +18,7 @@ export default class EnrollBody extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center" >
-                
+                <Enroll/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
