@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import LeftSidebar from '../../../../../../Sidebar/LeftSidebar'
 import RightSidebar from '../../../../../../Sidebar/RightSidebar'
 import Navigation from "../../../../../../Header/Navigation";
-import AuditionsData from "./AuditionsData";
+import UpcomingAuditions from "./UpcomingAuditions";
 
 export default class AuditionsPost extends Component {
   render() {
@@ -18,7 +18,7 @@ export default class AuditionsPost extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <AuditionsData/>
+                <UpcomingAuditions/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
