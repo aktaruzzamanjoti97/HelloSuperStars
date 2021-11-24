@@ -13,26 +13,25 @@ import '../../../../../../CSS/Home/UpcomingAuditions.css'
                       <div className="row align-items-center justify-content-center ">
                         
                             <div className="container align-items-center justify-content-center UpcomingAuditions col-md-6">
-                             
+                                <div className="container xyz-auditions"> <br />
                                     <div className="container d-flex xyz-audition align-items-center justify-content-center">
 
                                         <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
                                         <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
                                         <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                    </div> <br /> <br />
+                                        </div> <br /> <br />
 
-                                    <div className="container d-flex align-items-center justify-content-center">
+                                        <div className="container d-flex align-items-center justify-content-center">
                                         <p className="Pa-btn-text">FROM JUNE 25 - july 30</p>
                                     </div>
 
                                     <div className="container d-flex  align-items-center justify-content-center">
 
                                         <button className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
-                                    
+
                                     </div>
 
-                                    
-                              
+                                </div>
                             </div>
 
                             
