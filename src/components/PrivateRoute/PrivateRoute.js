@@ -42,7 +42,7 @@ const PrivateRoute = ({ component: Component, ...rest })=> {
         if(error.response.status === 403)
         {
             swal("Forbidden",error.response.data.message,"warning");
-            history.push('/403');
+            history.push('/otp');
         }
         else if(error.response.status === 404)
         {

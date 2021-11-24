@@ -11,6 +11,13 @@ import axios from "axios";
 import swal from 'sweetalert';
 
 const Login = () => {
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
+
+    }
+
+    
+
     const history = useHistory();
     const [loginInput, setLogin] = useState({
         email: '',
@@ -38,6 +45,11 @@ const Login = () => {
                         localStorage.setItem('auth_name', res.data.username);
                         swal("Success",res.data.message,"success");
                         history.push('/');
+                    }
+                    else if(res.data.status === 403)
+                    {
+                        swal("Success",res.data.message,"success");
+                        history.push('/otp');
                     }
                     else if(res.data.status === 401)
                     {
@@ -90,7 +102,7 @@ const Login = () => {
                                                             </Form.Group>
                                                             <p>
                                                                 <Form.Group id="password">
-                                                                    <input className='input-style w-50' name="password" onChange={handleInput} value={loginInput.password} placeholder='Password' required />
+                                                                    <input type={changeIcon ? `text` : `password`} className='input-style w-50' name="password" onChange={handleInput} value={loginInput.password} placeholder='Password' required />
                                                                     <span onClick={handleChangeIcon} className='eye-icons'>
                                                                         <FontAwesomeIcon icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>
