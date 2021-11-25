@@ -1,0 +1,38 @@
+.live-card-bg{
+    background-color: #343434;
+    width: 90%;
+    border-radius: 10px;
+}
+.instruct p{
+    font-size: 15px;
+}
+.left-slot, .Right-slot{
+    border-radius: 5px;
+    background-color: #707070;
+}
+.left-slot span, .Right-slot span{
+font-size: 18px;
+font-weight: bold;
+color: white;
+
+}
+.Right-check-slot-btn{
+    border-radius: 5px;
+    font-weight: bold;
+}
+.slot-btn{
+    cursor: pointer;
+    background: transparent linear-gradient(180deg, #E9D306 0%, #FFAD00 100%) 0% 0% no-repeat padding-box;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .instruct p{
+        font-size: 13px;
+    }
+    .left-slot span, .Right-slot span{
+        font-size: 15px;
+    
+        
+        }
+  }

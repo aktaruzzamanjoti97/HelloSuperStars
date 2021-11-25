@@ -6,11 +6,29 @@ import Children from '../../../../../../../images/starProfile/starPostLeftConten
 import Jainamaj from '../../../../../../../images/starProfile/starPostLeftContent/jainamaz.jpg';
 import Topi from '../../../../../../../images/starProfile/starPostLeftContent/Cap.jpg';
 import Habibi from '../../../../../../../images/starProfile/starPostLeftContent/Habibi.jpg';
-import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
-import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
+// import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
+// import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
+import { Link } from 'react-router-dom';
+import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
+// css design comes from star post page
 const StarProfileRightContent = () => {
     return (
         <>
+ <div class="card mx-auto my-4 left-card-star left-star-card">
+            <div class="card-body">
+              <h6 class="card-title text-warning"> Live chat</h6>
+              {/* <button class="pulse-button"></button> */}
+             <div className="container d-flex justify-content-center align-items-center">
+               <img src={LiveChatpic} alt="" className='pulse-button  img-fluid liveChatpic'/>
+             </div>
+   <div className="text-center mt-3 ">
+   <Link to='/liveChat'><button className='w-100 enroll-btn '>Live chat</button></Link>
+   </div>
+
+            </div>
+          </div>
+
+
             <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning">Audition Announcement</h6>
@@ -75,7 +93,8 @@ const StarProfileRightContent = () => {
             </div>
           </div>
 
-          <div class="card mx-auto my-4 left-card-star left-star-card">
+          {/* <div class="card mx-auto my-4 left-card-star left-star-card">
+            
             <div class="card-body">
               <h6 class="card-title text-warning">Requested for</h6>
 
@@ -105,7 +124,7 @@ const StarProfileRightContent = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </>
     );
 };
