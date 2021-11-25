@@ -16,6 +16,7 @@ import Souviner from "../../Pages/Profile/profile-components/starProfile/Souvine
 import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
 import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
 import Navigation from "../../Header/Navigation";
+import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 const StarProfile = () => {
   return (
     <>
@@ -67,8 +68,8 @@ const StarProfile = () => {
             <Route path="/videos" exact component={Videos} />
             <Route path="/souviner" exact component={Souviner} />
             <Route path="/audition" exact component={Audition} />
+            <Route path='/liveChat' exact component={LiveChat} />
             <Route path="/" component={StarPost} />
-          
           </Switch>
         </Router>
       </div>
