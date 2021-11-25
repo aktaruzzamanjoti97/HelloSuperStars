@@ -1,7 +1,7 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-import {Route, Switch, BrowserRouter} from "react-router-dom";
 
+import {Route, Switch, BrowserRouter} from "react-router-dom";
 
 import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
@@ -13,8 +13,8 @@ import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial
 import Packages from "./components/Pages/User/Packages/Packages";
 import Profile from './components/Pages/Profile/Profile';
 
-// Navigation
-// import Navigation from './components/Header/Navigation';
+// Admin
+import AdminRoute from "./AdminRoute";
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
@@ -83,8 +83,13 @@ function App() {
 
     {/* <PrivateRoute component={Navigation} /> */}
       <Switch>
+
+        {/* Admin */}
+        <Route exact path='/Admin' component={AdminRoute} />
+
         {/* Navbar */}
         <Route exact path='/' component={Home} />
+        
         <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}
@@ -100,9 +105,6 @@ function App() {
         <Route exact path="/seeting/interest" component={Interest}/>
         <Route exact path="/seeting/security" component={Security}/>
         <Route exact path="/seeting/report" component={Report}/>
-
-         
-
         {/* Left Sidebar End*/}
 
 
