@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navigation from "../../../../../../Header/Navigation";
 import LeftSidebar from '../../../../../../Sidebar/LeftSidebar'
 import RightSidebar from '../../../../../../Sidebar/RightSidebar'
-import LiveData from "./LiveData";
+import Live from "./Live";
 
 export default class LivePost extends Component {
   render() {
@@ -18,7 +18,7 @@ export default class LivePost extends Component {
               </div>
 
               <div className="col-sm-6 justify-content-center" >
-                <LiveData/>
+                <Live/>
               </div>
 
               <div className="col-md-3 justify-content-center" >
