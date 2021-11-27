@@ -1,7 +1,9 @@
 import React from 'react'
 import '../../../../../CSS/Profile/LiveChat/liveChat.css'
 import StarProfileRightContent from '../StarCardComponent/StarProfileRightContent/StarProfileRightContent'
+import LiveChatModal from './LiveChatModal';
 const LiveChat = () => {
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <div className='container'>
 <div className="row">
@@ -50,13 +52,17 @@ const LiveChat = () => {
 <div className="row mt-3">
     <div className="col-6 ">
        <div className="left-slot  w-75 text-center p-1">
-           <span>5</span> <span className='mx-2'>00</span> <span>Minute</span>
+           <input type='number' placeholder='Maximum 5 minute' className='form-control time'></input>
        </div>
     </div>
     <div className="col-6 ">
-    <div className="Right-slot slot-btn bg-warning  w-75 text-center p-1">
+    <div className="Right-slot slot-btn bg-warning  w-75 text-center p-1" onClick={() => setModalShow(true)}>
     <span className='text-dark'>Check Slot</span>
        </div>
+       <LiveChatModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </div>
 </div>
 
