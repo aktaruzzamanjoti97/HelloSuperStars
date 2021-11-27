@@ -29,6 +29,7 @@ import Market from "./components/Pages/Market/MarketPlace";
 
 
 import './App.css';
+import './components/CSS/BodyColor.css'
 
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 

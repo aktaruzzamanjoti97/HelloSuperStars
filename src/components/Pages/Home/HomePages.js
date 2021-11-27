@@ -9,7 +9,7 @@ export default class HomePages extends Component {
     return (
       <React.Fragment>
         <Navigation/>
-        <div className="homebody"  style={{ background: "#000000"}}>
+        <div className="homebody"  >
           <div className="container-fluid custom-container">
             <div className="row">
 
