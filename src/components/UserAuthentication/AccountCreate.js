@@ -421,13 +421,13 @@ right div and info field start */}
 
       </div>
       {modal && (
-        <div className="modal-container">
-          <div onClick={ModalClick} className="overlay-color"></div>
-          <div className="modal-content">
+        <div className="modal-container1">
+          <div onClick={ModalClick} className="overlay-color1"></div>
+          <div className="modal-content1">
             <p className='text-light'>
               Would you like to get our newsletter and promotional offers through email?
             </p>
-            <div className="choose-btn">
+            <div className="choose-btn1">
               <Link to='/packages' className='btn btn-warning text-light w-25'>Yes</Link>
               <button className="btn text-warning w-25" onClick={ModalClick}>
                 No
