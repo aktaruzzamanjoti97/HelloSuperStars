@@ -1,23 +1,30 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import OwlCarousel from 'react-owl-carousel';
+import singleFrame from '../../../../../../images/Normal-User/Single-frame.png';
+import applePayLogo from '../../../../../../images/Payment-img/Apple_Pay_logo.png';
+import bKashLogo from '../../../../../../images/Payment-img/BKash-bKash-Logo.wine.png';
+import payoneerLogo from '../../../../../../images/Payment-img/Payoneer-Logo.wine.png';
+import payPalLogo from '../../../../../../images/Payment-img/PayPal-Logo.wine.png';
+import visaLogo from '../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 
-// const bull = (
-//     <Box
-//         component="span"
-//         sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-//     >
-//         •
-//     </Box>
-// );
+
+
 
 const StarChat = () => {
+
+    const [showCard, setShowCard] = React.useState(false)
+
+    function handleClick(e) {
+        e.preventDefault();
+        setShowCard(true)
+        console.log(showCard)
+            ;
+    }
+
     return (
         <>
             <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
@@ -30,8 +37,8 @@ const StarChat = () => {
                                     alt=""
                                     className="img-fluid star-card-chat-demo-video"
                                 />
-                                <div class="play-center">
-                                    <i class="fas fa-play fa-3x"></i>
+                                <div className="play-center">
+                                    <i className="fas fa-play fa-3x"></i>
                                 </div>
                             </div>
                         </div>
@@ -113,14 +120,117 @@ const StarChat = () => {
                                 </div>
                             </div>
 
-                            <button type="submit" className="my-3 btn btn-gold">Register</button>
+                            <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
+                            {/* <CustomToggle eventKey="0">
+                               
+                            </CustomToggle> */}
                         </form>
                     </div>
-
                 </CardContent>
 
                 {/* This is me */}
             </Card>
+
+            {showCard ? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <div className="text-center image-middle">
+                        <img className="singleFrame-style" src={singleFrame} alt="" />
+                        <h3 className="centered">Payment Method</h3>
+                    </div>
+
+                    <div>
+                        <OwlCarousel className="owl-theme" loop margin={0} nav>
+                            <div className="item">
+                                <img
+                                    src={applePayLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={bKashLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={payoneerLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={payPalLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={visaLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+
+                                />
+                            </div>
+                        </OwlCarousel>
+                    </div>
+
+                    <div>
+                        <form>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Cardholder Name</big>
+                                        <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Password</big>
+                                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+                                    </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <div className="form-group my-3">
+                                                <big className="text-white">Date</big>
+                                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-group my-3">
+                                                <big className="text-white">CCV</big>
+                                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="submit" className="my-3 btn btn-gold">Confirm Payment</button>
+                        </form>
+                    </div>
+                </CardContent>
+            </Card> : null}
         </>
     );
 };
