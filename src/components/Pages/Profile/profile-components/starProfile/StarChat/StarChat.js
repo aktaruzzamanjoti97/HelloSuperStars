@@ -118,6 +118,8 @@ const StarChat = () => {
                     </div>
 
                 </CardContent>
+
+                {/* This is me */}
             </Card>
         </>
     );
