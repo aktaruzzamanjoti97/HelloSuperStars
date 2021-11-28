@@ -146,13 +146,13 @@ const RegisterUser = () => {
 <div class="card right-live-card-bg my-2 w-75 mx-auto">
   <div className="content">
     <img src={enjoy} alt="" className='img-fluid icons-videos' />
-    <button className='btn'> <i class="fas fa-clock mx-1"></i>4:40</button>
+    <button className='btn'> <i className="fas fa-clock mx-1"></i>4:40</button>
   </div>
 <div class="card-body">
  <div className="container text-center bg-dark p-2 icons-videos">
-   <button className='btn btn-warning text-light btn-rounded'><i class="fas fa-microphone fa-2x"></i></button>
-   <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i class="fas fa-video fa-2x"></i></button>
-   <button className='btn btn-warning text-light btn-rounded'><i class="fas fa-times fa-2x"></i></button>
+   <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-microphone fa-2x"></i></button>
+   <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i className="fas fa-video fa-2x"></i></button>
+   <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-times fa-2x"></i></button>
  </div>
 </div>
 </div>
