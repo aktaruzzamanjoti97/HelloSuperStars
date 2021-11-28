@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RegisterUser.css";
 import fatema from "../../../../images/admin-panel/fatema.jpg";
 // import sakib from '../../../../images/LiveChat/Shakib-Al-Hasan.jpg'
+import enjoy from '../../../../images/LiveChat/enjoy.png'
 
-import ReactPlayer from "react-player";
-
+import RegisterLeftCard from "./component/RegisterLeftCard";
 
 const RegisterUser = () => {
+  const [showItem, setShowItem] = useState(false);
+  function handleClick() {
+    setShowItem(true);
+  }
   return (
     <div className="row ">
       <div className="col-md-8 ">
@@ -22,7 +26,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn" >
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -39,7 +43,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -56,7 +60,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -73,7 +77,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -90,7 +94,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -106,7 +110,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -123,7 +127,7 @@ const RegisterUser = () => {
                 <th>11:50 pm</th>
                 <th>5 minute</th>
                 <th>
-                  <button className="btn call-btn">
+                  <button className="btn call-btn" onClick={handleClick}>
                     <span>
                       <i className="fas fa-video mx-1"></i>
                     </span>
@@ -137,61 +141,24 @@ const RegisterUser = () => {
       </div>
 
       <div className="col-md-4 ">
-        <div className="card right-card-live mx-auto my-2">
-          {/* <img className="card-img-top" src={sakib} alt="sakib img"  />
-           */}
-          <ReactPlayer
-            url="https://youtu.be/dgfTiONcnTc"
-            playing={false}
-            volume={1}
-            width="100%"
-          
-            style={{ margin: "0 auto" }}
-            onReady={() => console.log("ready now")}
-          />
-
-          <div className="card-body">
-            <h5 className="card-title text-light">Instruction</h5>
-            <p className="card-text text-light">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,
-              minus inventore? Libero asperiores aliquid dolorum?
-            </p>
-            <p className="text-light">Lorem ipsum dolor sit amet.</p>
-
-            <div className="time-table d-flex  ">
-              <span className="clock">
-                <i className="fas fa-calendar-week fa-3x p-2"></i>
-              </span>
-              <div className="other mx-1 p-2">
-                <span className="text-light">Date</span>
-                <br></br>
-                <span className="text-warning date-font">21th November</span>
-              </div>
-            </div>
-
-            <div className="time-table2 d-flex  my-3">
-              <span className="clock">
-                <i className="fas fa-clock  fa-3x p-2"></i>
-              </span>
-              <div className="other mx-1 p-2">
-                <span className="text-light">Time</span>
-                <br></br>
-                <span className="text-warning date-font">10pm-11pm</span>
-              </div>
-            </div>
-
-            <div className="time-table3 d-flex  my-3">
-              <span className="clock">
-                <i className="fas fa-dollar-sign fa-3x p-2"></i>
-              </span>
-              <div className="other mx-1 p-2">
-                <span className="text-light">Cost per minute</span>
-                <br></br>
-                <span className="text-warning date-font">1200 BDT</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {showItem ? (
+// video work start here
+<div class="card right-live-card-bg my-2 w-75 mx-auto">
+  <div className="content">
+    <img src={enjoy} alt="" className='img-fluid icons-videos' />
+    <button className='btn'> <i class="fas fa-clock mx-1"></i>4:40</button>
+  </div>
+<div class="card-body">
+ <div className="container text-center bg-dark p-2 icons-videos">
+   <button className='btn btn-warning text-light btn-rounded'><i class="fas fa-microphone fa-2x"></i></button>
+   <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i class="fas fa-video fa-2x"></i></button>
+   <button className='btn btn-warning text-light btn-rounded'><i class="fas fa-times fa-2x"></i></button>
+ </div>
+</div>
+</div>
+        ) : (
+          <RegisterLeftCard />
+        )}
       </div>
     </div>
   );

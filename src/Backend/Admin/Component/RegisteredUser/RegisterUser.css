@@ -40,7 +40,7 @@
 }
 .time-table3{
     background: #252525;
-    width: 60%;
+    width: 65%;
     border-radius: 25px;
 }
 @media only screen and (max-width: 600px) {
@@ -52,6 +52,7 @@
   }
 .fa-clock,.fa-dollar-sign{
   color: #D56D57 !important;
+
 }
 
 .fa-calendar-week{
@@ -64,3 +65,28 @@
 .date-font{
     font-weight: bold;
 }
+/* .enjoy-video{
+    border-radius: 5px;
+} */
+.content{
+    position: relative;
+}
+.content .btn {
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    opacity: 0.8;
+    background-color: #555;
+    color: white;
+    
+  }
+  .right-live-card-bg{
+   background-color: black;
+  }
+  .icons-videos{
+      border-radius: 15px;
+  }
+  .btn-rounded{
+      border-radius: 50%;
+  }
