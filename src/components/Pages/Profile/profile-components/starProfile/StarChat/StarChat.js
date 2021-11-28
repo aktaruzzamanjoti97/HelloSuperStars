@@ -99,7 +99,7 @@ const StarChat = () => {
                                 </div>
                             </div>
 
-                            <div className="form-group my-3">
+                            <div className="form-group my-1">
                                 <big className="text-white">Additional Message</big>
                                 <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
                             </div>
@@ -117,7 +117,7 @@ const StarChat = () => {
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div> */}
-                            <button type="submit" className="btn btn-gold">Register</button>
+                            <button type="submit" className="my-3 btn btn-gold">Register</button>
                         </form>
                     </div>
                     {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
