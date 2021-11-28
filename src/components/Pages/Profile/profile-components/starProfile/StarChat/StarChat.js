@@ -8,14 +8,14 @@ import Typography from '@mui/material/Typography';
 import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
+// const bull = (
+//     <Box
+//         component="span"
+//         sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+//     >
+//         •
+//     </Box>
+// );
 
 const StarChat = () => {
     return (
@@ -51,7 +51,7 @@ const StarChat = () => {
                                         <h6>Fee</h6>
                                     </div>
 
-                                    <div style={{color: "#c2c2c2"}} className="mx-5 starChat-child-style">
+                                    <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
                                         <h6>Mizanur Rahman Azhari</h6>
                                         <h6>12 / 08 / 2021</h6>
                                         <h6>11.59 PM</h6>
@@ -64,7 +64,7 @@ const StarChat = () => {
                                 <div className="col-md-6">
                                     <div className="mx-2 starChat-child-style">
                                         <h5 className="text-white">Instructions</h5>
-                                        <p style={{color: '#c2c2c2'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis rerum, ex recusandae facere dolorem quia cumque sapiente natus cum nulla quas possimus corrupti minus tempora officia dolor earum sunt sit vel. Architecto, accusamus neque non minima doloribus culpa itaque!</p>
+                                        <p style={{ color: '#c2c2c2' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis rerum, ex recusandae facere dolorem quia cumque sapiente natus cum nulla quas possimus corrupti minus tempora officia dolor earum sunt sit vel. Architecto, accusamus neque non minima doloribus culpa itaque!</p>
                                     </div>
                                 </div>
                             </div>
@@ -113,31 +113,11 @@ const StarChat = () => {
                                 </div>
                             </div>
 
-                            {/* <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div> */}
                             <button type="submit" className="my-3 btn btn-gold">Register</button>
                         </form>
                     </div>
-                    {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Word of the Day
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                        be{bull}nev{bull}o{bull}lent
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        adjective
-                    </Typography>
-                    <Typography variant="body2">
-                        well meaning and kindly.
-                        <br />
-                        {'"a benevolent smile"'}
-                    </Typography> */}
+
                 </CardContent>
-                {/* <CardActions>
-                    <Button size="small">Learn More</Button>
-                </CardActions> */}
             </Card>
         </>
     );

@@ -71,9 +71,9 @@ const StarProfile = () => {
                     <NavLink to="/audition" className='mx-2 text-decoration-none' style={isActive => ({
                       color: isActive ? "#ffad00" : "white"
                     })}>Audition</NavLink>
-                    <NavLink to="/starChat" className='mx-2 text-decoration-none' style={isActive => ({
+                    {/* <NavLink to="/starChat" className='mx-2 text-decoration-none' style={isActive => ({
                       color: isActive ? "#ffad00" : "white"
-                    })}>Star Chat</NavLink>
+                    })}>Star Chat</NavLink> */}
                   </Nav>
                 </Navbar.Collapse>
               </Container>
