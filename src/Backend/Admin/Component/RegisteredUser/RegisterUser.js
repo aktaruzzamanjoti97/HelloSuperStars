@@ -14,13 +14,13 @@ const RegisterUser = () => {
   return (
     <div className="row ">
       <div className="col-md-8 ">
-        <div className="table-info my-2">
-          <h5 className="text-warning mx-2 p-2">Registered Users</h5>
+        <div className="table-info ">
+          <h5 className="text-warning ">Registered Users</h5>
           <table className="table text-light">
             <tbody>
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -28,7 +28,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -37,7 +37,7 @@ const RegisterUser = () => {
 
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -45,7 +45,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -54,7 +54,7 @@ const RegisterUser = () => {
 
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -62,7 +62,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -71,7 +71,7 @@ const RegisterUser = () => {
 
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -79,7 +79,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -88,7 +88,7 @@ const RegisterUser = () => {
 
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -96,7 +96,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -104,7 +104,7 @@ const RegisterUser = () => {
               </tr>
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -112,7 +112,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -121,7 +121,7 @@ const RegisterUser = () => {
 
               <tr>
                 <th scope="row">
-                  <img src={fatema} alt="" className="rounded-circle mx-1" />
+                  <img src={fatema} alt="" className="rounded-circle" />
                   <span> Fatema Akter</span>
                 </th>
                 <th>11:50 pm</th>
@@ -129,7 +129,7 @@ const RegisterUser = () => {
                 <th>
                   <button className="btn call-btn" onClick={handleClick}>
                     <span>
-                      <i className="fas fa-video mx-1"></i>
+                      <i className="fas fa-video"></i>
                     </span>
                     Call
                   </button>
@@ -140,13 +140,13 @@ const RegisterUser = () => {
         </div>
       </div>
 
-      <div className="col-md-4 ">
+      <div className="col-md-3 ">
         {showItem ? (
 // video work start here
 <div class="card right-live-card-bg my-2 w-75 mx-auto">
   <div className="content">
     <img src={enjoy} alt="" className='img-fluid icons-videos' />
-    <button className='btn'> <i className="fas fa-clock mx-1"></i>4:40</button>
+    <button className='btn'> <i className="fas fa-clock"></i>4:40</button>
   </div>
 <div class="card-body">
  <div className="container text-center bg-dark p-2 icons-videos">

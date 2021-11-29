@@ -20,6 +20,7 @@ import ProgressbarBody from "./Backend/Admin/Component/Home/Progressbar/Progress
 import LiveChatBody from "./Backend/Admin/Component/Home/LiveChat/LiveChatBody";
 
 
+
 //Amin Manager
 import { AdminManagerHome } from "./Backend/Admin Manager/Component/Home/AdminMangerHome";
 import AMEventsBody from "./Backend/Admin Manager/Component/Home/Events/AMEventsBody";
@@ -71,8 +72,10 @@ import StarProfile from "./components/Pages/Profile/StarProfile";
 
 import axios from "axios";
 import RegisterUser from "./Backend/Admin/Component/RegisteredUser/RegisterUser";
+import LiveChatScheduleListBody from "./Backend/Admin/Component/Home/LiveChat/LiveChatScheduleList/LiveChatScheduleListBody";
 import LiveChatProfile from "./Backend/Admin/Component/LiveChatProfile/LiveChatProfile";
 import ManagerLiveChat from "./Backend/Admin/Component/ManagerAdminLiveChat/ManagerLiveChat";
+
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -102,6 +105,7 @@ function App() {
         <Route exact path='/admin' component={AdminHome} />
         <Route exact path='/admin/progressbar' component ={ProgressbarBody}/>
         <Route exact path='/admin/live-chat' component={LiveChatBody} />
+        <Route exact path='/admin/live-chat/schedule' component={LiveChatScheduleListBody} />
 
 
         {/* Admin Manager*/}

@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactPlayer from "react-player";
 import LVModal from '../Modal';
+import UpComingLiveModal from '../UpComingLiveModal';
 
 const LiveNow = () => {
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalShowl, setModalShowl] = React.useState(false);
     return (
         <>
             <div className="card ad-card">
@@ -35,8 +37,22 @@ const LiveNow = () => {
 
                 </div>
 
+                <p className="live-vi-ad-text">
+                    <br />
+                    <center>
+                        <button className="live-ad-btn-s-d " variant="primary" onClick={()=>
+                            setModalShowl(true)}>
+                            Upcoming Live
+                        </button>
+                        <UpComingLiveModal show={modalShowl} onHide={()=> setModalShowl(false)} />
+                    </center>
+                </p>
+
+
             </div>
+            
         </div>
+        
     </div>
         </>
     )
