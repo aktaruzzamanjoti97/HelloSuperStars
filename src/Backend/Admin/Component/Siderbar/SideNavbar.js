@@ -1,63 +1,75 @@
-// import React from 'react'
-// import '../../CSS/Navbar.css'
-// import $ from 'jquery'
-// const SideNavbar = () => {
+import React from 'react'
+import '../../CSS/Navbar.css'
+import $ from 'jquery'
+import {Link, withRouter} from 'react-router-dom'
 
-//     $(document).ready(function(){
-//         $('.nav_btn').click(function(){
-//           $('.mobile_nav_items').toggleClass('active');
-//         });
-//       });
+const SideNavbar = ({history}) => {
 
-//     return (
-//     <>
-    
-//    <header>
-//       <label for="check">
-//         <i class="fas fa-bars" id="sidebar_btn"></i>
-//       </label>
-//       <div class="left_area">
-//         {/* <h3>Coding <span>Snow</span></h3> */}
-//       </div>
-//       <div class="right_area">
-//         {/* <a href="#" class="logout_btn">Logout</a> */}
-//       </div>
-//     </header>
+console.log(history)
+const getColor=(curr)=>
+{
+if (history.location.pathname===curr)
+return "#FFAD00"
+}
 
-//     <div class="mobile_nav">
-//       <div class="nav_bar">
-//         {/* <img src="1.png" class="mobile_profile_image" alt=""/> */}
-//         <i class="fa fa-bars nav_btn"></i>
-//       </div>
-//       <div class="mobile_nav_items">
-//         <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-//         <a href="#"><i class="fas fa-cogs"></i><span>Progress bar</span></a>
-//         <a href="#"><i class="fas fa-table"></i><span>Audition</span></a>
-//         <a href="#"><i class="fas fa-th"></i><span>Live Video</span></a>
-//         <a href="#"><i class="fas fa-info-circle"></i><span>Meetup Events</span></a>
-//         <a href="#"><i class="fas fa-info-circle"></i><span>Greetings</span></a>
-//         <a href="#"><i class="fas fa-info-circle"></i><span>Souvenir</span></a>
-//         <a href="#"> <i class="fas fa-info-circle"></i><span>Wallet</span></a>
-//         <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
-//       </div>
-//     </div>
 
-//     <div class="sidebar">
-      
-//       <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-//       <a href="#"><i class="fas fa-cogs"></i><span>Progress bar</span></a>
-//       <a href="#"><i class="fas fa-table"></i><span>Audition</span></a>
-//       <a href="#"><i class="fas fa-th"></i><span>Live Video</span></a>
-//       <a href="#"><i class="fas fa-info-circle"></i><span>Meetup Events</span></a>
-//       <a href="#"><i class="fas fa-info-circle"></i><span>Greetings</span></a>
-//       <a href="#"><i class="fas fa-info-circle"></i><span>Souvenir</span></a>
-//       <a href="#"> <i class="fas fa-info-circle"></i><span>Wallet</span></a>
-//       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+$(document).ready(function(){
+$('.nav_btn').click(function(){
+$('.mobile_nav_items').toggleClassNclassName('active');
+});
+});
 
-//     </div>
+return (
+    <>
 
-//     </>
-//     )
-// }
+      <header>
+        <label for="check">
+          <i className="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div className="left_area">
+          {/* <h3>Coding <span>Snow</span></h3> */}
+        </div>
+        <div className="right_area">
+          {/* <Link className="logout_btn">Logout</Link> */}
+        </div>
+      </header>
 
-// export default SideNavbar
+      <div className="mobile_nav">
+        <div className="nav_bar">
+          {/* <img src="1.png" className="mobile_profile_image" alt="" /> */}
+          <i className="fa fa-bars nav_btn"></i>
+        </div>
+        <div className="mobile_nav_items">
+          <Link to='/admin/'style={{backgroundColor:getColor('/admin')}}><i className="fas fa-desktop"></i><span>Dashboard</span></Link>
+          <Link to='/admin/progressbar' style={{backgroundColor:getColor('/admin/progressbar')}}><i className="fas fa-cogs"></i><span>Progress bar</span></Link>
+          <Link to='/admin/'><i className="fas fa-table"></i><span>Audition</span></Link>
+          <Link to='/admin/live-video'  style={{backgroundColor:getColor('/admin/live-video')}}><i className="fas fa-th "></i><span>Live Video</span></Link>
+          <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Meetup Events</span></Link>
+          <Link to='/admin/live-chat' style={{backgroundColor:getColor('/admin/live-chat')}}><i className="fas fa-info-circle"></i><span>Live Chat</span></Link>
+          <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Greetings</span></Link>
+          <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Souvenir</span></Link>
+          <Link to='/admin/'> <i className="fas fa-info-circle"></i><span>Wallet</span></Link>
+          <Link to='/admin/'><i className="fas fa-sliders-h"></i><span>Settings</span></Link>
+        </div>
+      </div>
+
+      <div className="sidebar">
+
+        <Link to='/admin/'style={{backgroundColor:getColor('/admin')}}><i className="fas fa-desktop"></i><span>Dashboard</span></Link>
+        <Link to='/admin/progressbar' style={{backgroundColor:getColor('/admin/progressbar')}}><i className="fas fa-cogs"></i><span>Progress bar</span></Link>
+        <Link to='/admin/'><i className="fas fa-table"></i><span>Audition</span></Link>
+        <Link to='/admin/live-video'  style={{backgroundColor:getColor('/admin/live-video')}}><i className="fas fa-th"></i><span>Live Video</span></Link>
+        <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Meetup Events</span></Link>
+        <Link to='/admin/live-chat' style={{backgroundColor:getColor('/admin/live-chat')}}><i className="fas fa-info-circle"></i><span>Live Chat</span></Link>
+        <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Greetings</span></Link>
+        <Link to='/admin/'><i className="fas fa-info-circle"></i><span>Souvenir</span></Link>
+        <Link to='/admin/'> <i className="fas fa-info-circle"></i><span>Wallet</span></Link>
+        <Link to='/admin/'><i className="fas fa-sliders-h"></i><span>Settings</span></Link>
+
+      </div>
+
+    </>
+  )
+}
+
+export default withRouter(SideNavbar)
