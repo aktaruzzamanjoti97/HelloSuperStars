@@ -27,10 +27,10 @@ const LiveChatProfile = () => {
               </div>
             </div>
             <div className="col-7">
-              <h5 className="text-light">Instructions</h5>
+              <h4 className="text-light">Instructions</h4>
               <p className="text-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, quo.
+                Recusandae, quo. Lorem, ipsum dolor.
               </p>
 
               <p className="text-light">

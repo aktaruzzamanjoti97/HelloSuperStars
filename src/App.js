@@ -62,6 +62,7 @@ import StarProfile from "./components/Pages/Profile/StarProfile";
 import axios from "axios";
 import RegisterUser from "./Backend/Admin/Component/RegisteredUser/RegisterUser";
 import LiveChatProfile from "./Backend/Admin/Component/LiveChatProfile/LiveChatProfile";
+import ManagerLiveChat from "./Backend/Admin/Component/ManagerAdminLiveChat/ManagerLiveChat";
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -160,6 +161,7 @@ function App() {
 {/* checking purpose */}
 <Route path='/registeruser' component={RegisterUser} exact />
 <Route path='/livechatprofile' component={LiveChatProfile} exact />
+<Route path='/managerlivechat' component={ManagerLiveChat} exact />
 {/* checking purpose end*/}
 
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
