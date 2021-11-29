@@ -12,8 +12,6 @@ import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 
 
-
-
 const StarChat = () => {
 
     const [showCard, setShowCard] = React.useState(false)
