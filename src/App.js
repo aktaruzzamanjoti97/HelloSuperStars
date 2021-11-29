@@ -60,6 +60,7 @@ import StarSelection from "./components/Pages/Category/StarSelection";
 import StarProfile from "./components/Pages/Profile/StarProfile";
 
 import axios from "axios";
+import RegisterUser from "./Backend/Admin/Component/RegisteredUser/RegisterUser";
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -155,7 +156,9 @@ function App() {
 
         {/* Left Sidebar End*/}
 
-
+{/* checking purpose */}
+<Route path='/registeruser' component={RegisterUser} exact />
+{/* checking purpose end*/}
 
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
