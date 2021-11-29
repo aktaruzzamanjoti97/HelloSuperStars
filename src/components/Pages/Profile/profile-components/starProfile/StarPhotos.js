@@ -10,6 +10,7 @@ import azhari7 from "../../../../../images/starProfile/StarPhotos/7.jpg";
 import azhari8 from "../../../../../images/starProfile/StarPhotos/8.jpg";
 import azhari9 from "../../../../../images/starProfile/StarPhotos/9.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
+import StarPhotosDetails from "./StarPhotosDetails";
 
 export default function StarPhotos() {
   return (
@@ -25,11 +26,13 @@ export default function StarPhotos() {
             <div className="card-body mb-2">
               <div className="row text-center">
                 <div className="col-4  ">
-                  <img
+
+                  <StarPhotosDetails />
+                  {/* <img
                     src={azhari}
                     alt=""
                     className="img-fluid star-card-left-photos"
-                  />
+                  /> */}
                 </div>
 
                 <div className="col-4 ">

@@ -1,8 +1,16 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import Congrass from '../../../../../../images/LiveChat/Congress.png'
+import { useHistory } from "react-router-dom"
 
 const LiveChatModal = (props) => {
+
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/starChat");
+  }
+
     return (
         <div>
             <Modal
@@ -27,7 +35,7 @@ const LiveChatModal = (props) => {
     <h5 className='text-center '>Apply for live chat as soon as possible !</h5>
 </div>
 <div className="text-center py-3">
-    <button className='btn btn-warning text-light'>Apply now !</button>
+    <button className='btn btn-warning text-light' onClick={handleClick}>Apply now !</button>
 </div>
 
 
