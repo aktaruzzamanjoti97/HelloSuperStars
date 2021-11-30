@@ -22,8 +22,8 @@ const AddSession = () => {
                     <div className="accordion-body">
                         <div className="p-2 m-2">
                             <div className="text-center image-middle">
-                                <img className="singleFrame-style" src={frame} alt="" />
-                                <h3 className="centered">Add Session</h3>
+                                <img className="frame-style" src={frame} alt="" />
+                                <h3 className="centered-addSession">Add Session</h3>
                             </div>
 
                             <div>
