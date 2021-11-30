@@ -33,7 +33,7 @@ const AddSession = () => {
                             <form>
                                 <div className="row my-5">
                                     {/* <div> */}
-                                    <div className="form-group my-3">
+                                    <div className="form-group mb-3">
                                         <big className="text-white">Live Banner</big>
                                         <input type="file" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}

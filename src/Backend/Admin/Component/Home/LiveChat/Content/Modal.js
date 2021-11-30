@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal} from 'react-bootstrap';
 import '../../../../CSS/LVModal.css'
 export default function LVModal(props) {
 return (

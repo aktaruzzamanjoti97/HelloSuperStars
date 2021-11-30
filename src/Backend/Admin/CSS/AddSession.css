@@ -1,5 +1,3 @@
-
-
 .btn-gold-primary{
     background-color: #ffad00;
     width: 50%;
@@ -14,4 +12,3 @@
 .quick-reg-datepicker .MuiInput-underline:after{
    content: none !important;
 }
-
