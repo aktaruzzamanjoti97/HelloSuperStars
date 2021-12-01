@@ -82,7 +82,6 @@ export const Auditions = [
 
 
 // User Post
-
 export const Users = [
     {
       id:1,
@@ -214,4 +213,19 @@ export const Users = [
       CommentCount: "30",
     },
   ];
+
+  export const youtubeLink = [
+    {
+      link: "https://youtu.be/3jtqM_EsUCQ"
+    },
+    {
+      link: "https://youtu.be/3jtqM_EsUCQ"
+    },
+    {
+      link: "https://youtu.be/3jtqM_EsUCQ"
+    },
+    {
+      link: "https://youtu.be/3jtqM_EsUCQ"
+    }
+  ]
   
