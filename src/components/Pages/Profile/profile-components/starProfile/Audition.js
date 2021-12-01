@@ -36,47 +36,7 @@ export default function Audition() {
                 </div>
 
 
-                {/* <div className="row">
-                    <div className="col-md-6">
-
-                    </div>
-
-                    <div className="col-md-6">
-                        <Card className="audition-card-style">
-                            <Card.Body>
-                                <ReactPlayer url="https://youtu.be/3jtqM_EsUCQ" className="img-fluid" playing={false}
-                                    volume={1} onReady={() => console.log("ready now")}
-                                />
-
-
-                            </Card.Body>
-
-                            <Card.Footer style={{ border: 'none' }}>
-                                <div className="row audition-belowDiv">
-                                    <div className="col-md-5">
-                                        <button className="d-flex justify-content-center icon-style" style={{ backgroundColor: '#ffad00', width: '100%', height: '100%', border: 'none' }}>
-                                            <div className="mt-2">
-                                                <i style={{ color: '#fff' }} class="fas fa-heart mx-1"></i>
-                                                <span className="text-white">Like</span>
-                                            </div>
-                                        </button>
-                                    </div>
-
-                                    <div className="col-md-7">
-                                        <div className="love-count">
-                                            <div className="d-flex justify-content-end">
-                                                <div className="mt-2 me-2">
-                                                    <i style={{ color: 'red' }} className="fas fa-heart mx-1"></i>
-                                                    <span>120</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Card.Footer>
-                        </Card>
-                    </div>
-                </div> */}
+               
             </div>
         </div>
     )
