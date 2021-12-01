@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tabs,Tab,} from 'react-bootstrap'
 import './../../CSS/LiveVideo.css'
+import LiveNow from './Content/LiveNow'
 const LiveChatContent = () => {
 return (
 <>
@@ -30,6 +31,7 @@ return (
                     </div>
                 </div>
                 <br />
+                <LiveNow/>
             </Tab>
 
             <Tab eventKey="profile" title="Add
