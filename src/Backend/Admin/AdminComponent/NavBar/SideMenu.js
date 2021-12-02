@@ -74,9 +74,9 @@ const SideMenu = (props) => {
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
-            <i class="bi bi-arrow-right-square-fill"></i>
+            <i class="fas fa-bars"></i>
           ) : (
-            <i class="bi bi-arrow-left-square-fill"></i>
+            <i class="fas fa-bars"></i>
           )}
         </div>
       </div>

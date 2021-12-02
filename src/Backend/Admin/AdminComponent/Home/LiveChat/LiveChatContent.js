@@ -1,7 +1,9 @@
 import React from 'react'
 import { Tabs,Tab,} from 'react-bootstrap'
 import './../../CSS/LiveVideo.css'
+import AddSession from './Content/AddSession'
 import LiveNow from './Content/LiveNow'
+
 const LiveChatContent = () => {
 return (
 <>
@@ -58,6 +60,7 @@ return (
                     </div>
                 </div>
                 <br />
+                <AddSession/>
 
             </Tab>
 

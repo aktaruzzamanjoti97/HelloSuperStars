@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactPlayer from "react-player";
-// import LVModal from '../Modal';
-// import UpComingLiveModal from '../UpComingLiveModal';
+import Edit from './Modal/Edit';
+import UpComingLiveModal from './Modal/UpComingModal';
+
+
 
 const LiveNow = () => {
-// const [modalShow, setModalShow] = React.useState(false);
-// const [modalShowl, setModalShowl] = React.useState(false);
+const [modalShow, setModalShow] = React.useState(false);
+const [modalShowl, setModalShowl] = React.useState(false);
 return (
 <>
     <div className="card ad-card">
@@ -29,22 +31,22 @@ return (
                         <br></br> Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the industry's</p>
 
-                    {/* <p className="live-vi-ad-text"><button className="live-ad-btn-s " variant="primary" onClick={()=>
+                    <p className="live-vi-ad-text"><button className="live-ad-btn-s " variant="primary" onClick={()=>
                             setModalShow(true)}>Edit</button>
-                    </p> */}
+                    </p>
 
-                    {/* <LVModal show={modalShow} onHide={()=> setModalShow(false)} /> */}
+                    <Edit show={modalShow} onHide={()=> setModalShow(false)} />
 
                 </div>
 
                 <p className="live-vi-ad-text">
                     <br />
                     <center>
-                        {/* <button className="live-ad-btn-s-d " variant="primary" onClick={()=>
+                        <button className="live-ad-btn-s-d " variant="primary" onClick={()=>
                             setModalShowl(true)}>
                             Upcoming Live
                         </button>
-                        <UpComingLiveModal show={modalShowl} onHide={()=> setModalShowl(false)} /> */}
+                        <UpComingLiveModal show={modalShowl} onHide={()=> setModalShowl(false)} />
                     </center>
                 </p>
 
