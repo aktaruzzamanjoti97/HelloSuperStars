@@ -1,0 +1,45 @@
+.audition-card-style {
+  background-color: #343434;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 15px;
+}
+
+.reactPlayer-style {
+  border-radius: 100px !important;
+}
+
+.audition-belowDiv {
+  height: 40px;
+}
+
+.love-count {
+  /* background-color: #343434; */
+  width: 100%;
+  height: 100%;
+}
+
+.icon-style{
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px){
+    .icon-style{
+        width: 50%;      
+    }
+    .love-count{
+        margin-top: -30px
+    }
+}
+
+
+/* .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  } */

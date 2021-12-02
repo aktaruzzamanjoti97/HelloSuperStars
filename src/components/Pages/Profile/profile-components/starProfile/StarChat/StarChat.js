@@ -12,8 +12,6 @@ import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 
 
-
-
 const StarChat = () => {
 
     const [showCard, setShowCard] = React.useState(false)
@@ -127,6 +125,8 @@ const StarChat = () => {
                         </form>
                     </div>
                 </CardContent>
+
+                {/* This is me */}
             </Card>
 
             {showCard ? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
