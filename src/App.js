@@ -141,7 +141,7 @@ function App() {
 
         {/* profile page */}
         <Route path='/profile' exact component={Profile} />
-        <Route path='/starprofile' exact component={StarProfile} />
+        <Route path='/starprofile'  component={StarProfile} />
 
 
 

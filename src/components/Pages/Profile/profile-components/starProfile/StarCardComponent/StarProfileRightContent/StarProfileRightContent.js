@@ -8,10 +8,11 @@ import Topi from '../../../../../../../images/starProfile/starPostLeftContent/Ca
 import Habibi from '../../../../../../../images/starProfile/starPostLeftContent/Habibi.jpg';
 // import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
 // import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
-import { Link } from 'react-router-dom';
+import { Link,useRouteMatch } from 'react-router-dom';
 import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
 // css design comes from star post page
 const StarProfileRightContent = () => {
+  const {url}=useRouteMatch();
     return (
         <>
  <div class="card mx-auto my-4 left-card-star left-star-card">
@@ -22,7 +23,7 @@ const StarProfileRightContent = () => {
                <img src={LiveChatpic} alt="" className='pulse-button  img-fluid liveChatpic'/>
              </div>
    <div className="text-center mt-3 ">
-   <Link to='/liveChat'><button className='w-100 enroll-btn '>Live chat</button></Link>
+   <Link to={`${url}/livechat`}><button className='w-100 enroll-btn '>Live chat</button></Link>
    </div>
 
             </div>
