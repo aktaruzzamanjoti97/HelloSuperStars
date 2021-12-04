@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../../CSS/Profile/starProfile/starPhotos.css";
-import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
+// import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
 import azhari2 from "../../../../../images/starProfile/StarPhotos/2.jpg";
 import azhari3 from "../../../../../images/starProfile/StarPhotos/3.jpg";
 import azhari4 from "../../../../../images/starProfile/StarPhotos/4.jpg";

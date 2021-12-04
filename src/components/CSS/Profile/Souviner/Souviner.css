@@ -1,0 +1,36 @@
+.souviner-img{
+    width: 95%;
+    height: 300px;
+    border-radius: 5px;
+
+}
+.left-card-souviner{
+    width: 75%;
+    background-color: #343434;
+}
+.seemore{
+   cursor: pointer;
+   text-decoration: underline;
+}
+.loopCard{
+    width: 100%;
+    cursor: pointer;
+}
+.souviner-form{
+    background-color: #343434;
+    border: 1px solid yellow;
+    color: white;
+}
+.souviner-form:focus{
+    background-color: #343434 !important;
+    color: white;
+}
+@media only screen and (max-width: 600px) {
+    .loopCard{
+       width: 100%;
+        font-size: 10px;
+    }
+    .simleName{
+        font-size: 15px !important;
+    }
+  }

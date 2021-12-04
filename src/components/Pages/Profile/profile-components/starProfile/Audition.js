@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import quranLight from '../../../../../images/Audition-images/quranLight-removebg-preview.png'
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 import '../../../../CSS/Audition/Audition.css'
 import AuditionCard from './AuditionCard';
 import { youtubeLink } from '../../../../../DummyData'

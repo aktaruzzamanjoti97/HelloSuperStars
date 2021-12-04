@@ -1,14 +1,15 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import Congrass from '../../../../../../images/LiveChat/Congress.png'
-import { useHistory } from "react-router-dom"
+import { useHistory,useRouteMatch } from "react-router-dom"
 
 const LiveChatModal = (props) => {
+  const {url}=useRouteMatch()
 
   let history = useHistory();
 
   function handleClick() {
-    history.push("/starChat");
+    history.push(`${url}/starChat`);
   }
 
     return (
