@@ -14,18 +14,11 @@ import Packages from "./components/Pages/User/Packages/Packages";
 import Profile from './components/Pages/Profile/Profile';
 
 // Admin
-
-import AdminHome from "./Backend/Admin/Component/Home/AdminHome";
-import ProgressbarBody from "./Backend/Admin/Component/Home/Progressbar/ProgressbarBody";
-import LiveChatBody from "./Backend/Admin/Component/Home/LiveChat/LiveChatBody";
-
+import AdminRoute from "./Backend/Admin/AdminComponent/AdminRoute";
 
 
 //Amin Manager
-import { AdminManagerHome } from "./Backend/Admin Manager/Component/Home/AdminMangerHome";
-import AMEventsBody from "./Backend/Admin Manager/Component/Home/Events/AMEventsBody";
-import AMProgressbarBody from "./Backend/Admin Manager/Component/Home/Progressbar/AMProgressbarBody";
-import AMESidenave4Body from "./Backend/Admin Manager/Component/Home/Sidenav4/AMSidenav4Body";
+
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
@@ -72,7 +65,6 @@ import StarProfile from "./components/Pages/Profile/StarProfile";
 
 import axios from "axios";
 import RegisterUser from "./Backend/Admin/Component/RegisteredUser/RegisterUser";
-import LiveChatScheduleListBody from "./Backend/Admin/Component/Home/LiveChat/LiveChatScheduleList/LiveChatScheduleListBody";
 import LiveChatProfile from "./Backend/Admin/Component/LiveChatProfile/LiveChatProfile";
 import ManagerLiveChat from "./Backend/Admin/Component/ManagerAdminLiveChat/ManagerLiveChat";
 
@@ -102,17 +94,8 @@ function App() {
       <Switch>
 
         {/* Admin */}
-        <Route exact path='/admin' component={AdminHome} />
-        <Route exact path='/admin/progressbar' component ={ProgressbarBody}/>
-        <Route exact path='/admin/live-chat' component={LiveChatBody} />
-        <Route exact path='/admin/live-chat/schedule' component={LiveChatScheduleListBody} />
+        <Route exact path='/admin' component={AdminRoute} />
 
-
-        {/* Admin Manager*/}
-        <Route exact path='/admin-manager' component={AdminManagerHome} />
-        <Route exact path='/admin-manager/events' component={AMEventsBody} />
-        <Route exact path='/admin-manager/progressbar' component={AMProgressbarBody} />
-        <Route exact path='/admin-manager/sidenav4' component={AMESidenave4Body} />
 
 
         {/* Navbar */}
