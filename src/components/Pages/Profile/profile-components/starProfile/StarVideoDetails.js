@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 import Modal from 'react-bootstrap/Modal';
-// import Modal from 'react-modal';
+import ReactPlayer from 'react-player';
 import profileAzhari from '../../../../../images/Profile/azhari-profile.jpg';
 import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
-import azhari2 from "../../../../../images/starProfile/StarPhotos/2.jpg";
-import azhari3 from "../../../../../images/starProfile/StarPhotos/3.jpg";
 import "../../../../CSS/Profile/starProfile/starPhotos.css";
 import '../../../../CSS/Profile/starProfile/starPhotosDetails.css';
+import '../../../../CSS/Profile/starProfile/starVideoDetails.css';
 
-const StarPhotosDetails = () => {
+
+const StarVideoDetails = () => {
 
     const [show, setShow] = useState(false)
 
-    // Modal.setAppElement('#root')
     return (
         <div>
             <img
@@ -36,39 +34,18 @@ const StarPhotosDetails = () => {
                             <button onClick={() => setShow(false)} className="btn btn-warning">X</button>
                         </div>
                         <div className="col-md-8">
-                            <div className="container">
-                                <Carousel variant="dark">
-                                    <Carousel.Item>
-                                        <div className="d-flex justify-content-center">
-                                            <img
-                                                className="d-block w-75"
-                                                src={azhari}
-                                                alt="First slide"
-                                            />
-                                        </div>
+                            <div className="p-5">
+                                <ReactPlayer url="https://www.youtube.com/watch?v=3jtqM_EsUCQ&t=2s" className="img-fluid reactPlayer-style" playing={false}
+                                    volume={1} onReady={() => console.log("ready now")} 
+                                />
+                            </div>
+                            <div className="container-fluid">
 
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <div className="d-flex justify-content-center">
-                                            <img
-                                                className="d-block w-75"
-                                                src={azhari2}
-                                                alt="Second slide"
-                                            />
-                                        </div>
 
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <div className="d-flex justify-content-center">
-                                            <img
-                                                className="d-block w-75"
-                                                src={azhari3}
-                                                alt="Third slide"
-                                            />
-                                        </div>
+                                {/* <ReactPlayer url="https://www.youtube.com/watch?v=3jtqM_EsUCQ&t=2s" className="img-fluid"  playing={false}
+                                        volume={1} onReady={() => console.log("ready now")}
+                                    /> */}
 
-                                    </Carousel.Item>
-                                </Carousel>
 
                                 <div className="d-flex justify-content-end me-5">
 
@@ -195,4 +172,4 @@ const StarPhotosDetails = () => {
     );
 };
 
-export default StarPhotosDetails;
+export default StarVideoDetails;

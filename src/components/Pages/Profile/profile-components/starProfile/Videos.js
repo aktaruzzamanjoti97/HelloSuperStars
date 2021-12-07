@@ -10,6 +10,7 @@ import azhari7 from "../../../../../images/starProfile/StarPhotos/7.jpg";
 import azhari8 from "../../../../../images/starProfile/StarPhotos/8.jpg";
 import azhari9 from "../../../../../images/starProfile/StarPhotos/9.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
+import StarVideoDetails from "./StarVideoDetails";
 function Videos() {
   return (
     // This full page mainly comes from star photos page
@@ -25,11 +26,12 @@ function Videos() {
             <div className="card-body mb-2">
               <div className="row text-center">
                 <div className="col-4 play-button-container ">
-                  <img
+                  <StarVideoDetails />
+                  {/* <img
                     src={azhari}
                     alt=""
                     className="img-fluid star-card-left-photos"
-                  />
+                  /> */}
                   <div class="play-center">
                     <i class="fas fa-play fa-3x"></i>
                   </div>
