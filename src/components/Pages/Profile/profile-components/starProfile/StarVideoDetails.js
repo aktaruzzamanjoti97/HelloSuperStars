@@ -3,8 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player';
 import profileAzhari from '../../../../../images/Profile/azhari-profile.jpg';
 import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
-import "../../../../CSS/Profile/starProfile/starPhotos.css";
-import '../../../../CSS/Profile/starProfile/starPhotosDetails.css';
+// import "../../../../CSS/Profile/starProfile/starPhotos.css";
+// import '../../../../CSS/Profile/starProfile/starPhotosDetails.css';
 import '../../../../CSS/Profile/starProfile/starVideoDetails.css';
 
 
@@ -34,9 +34,9 @@ const StarVideoDetails = () => {
                             <button onClick={() => setShow(false)} className="btn btn-warning">X</button>
                         </div>
                         <div className="col-md-8">
-                            <div className="p-5">
+                            <div className="p-2">
                                 <ReactPlayer url="https://www.youtube.com/watch?v=3jtqM_EsUCQ&t=2s" className="img-fluid reactPlayer-style" playing={false}
-                                    volume={1} onReady={() => console.log("ready now")} 
+                                    volume={1} onReady={() => console.log("ready now")} width="60" height="70vh"
                                 />
                             </div>
                             <div className="container-fluid">

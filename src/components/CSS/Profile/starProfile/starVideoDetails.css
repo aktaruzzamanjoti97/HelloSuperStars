@@ -3,14 +3,13 @@
 }
 
 .reactPlayer-style{
-    height: '678px',
-    /* width: '', */
+    height: '678px';
+    width: '678px'
 }
 
 @media only screen and (max-width: 768px){
     .reactPlayer-style{
-        height: '300px';
-        /* width: '500px' */
+        height: '200px';
     }
 }
 
