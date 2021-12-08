@@ -1,8 +1,10 @@
 import React from "react";
 import "../../../CSS/Packages/BuyPackages.css";
-import Bkash from "../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
-import Payoneer from "../../../../images/Payment-img/Payoneer-Logo.wine.png";
-import PayPal from "../../../../images/Payment-img/PayPal-Logo.wine.png";
+import bKashLogo from "../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
+import payoneerLogo from "../../../../images/Payment-img/Payoneer-Logo.wine.png";
+import payPalLogo from "../../../../images/Payment-img/PayPal-Logo.wine.png";
+import visaLogo from '../../../../images/Payment-img/Visa_Inc._logo.svg.png';
+import applePayLogo from '../../../../images/Payment-img/Apple_Pay_logo.png';
 import { Link } from "react-router-dom";
 
 import OwlCarousel from "react-owl-carousel";
@@ -12,12 +14,12 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 export const Payment = () => {
   return (
     <>
-      <div class="accordion payment-container "  id="accordionPanelsStayOpenExample">
+      <div class="accordion payment-container " id="accordionPanelsStayOpenExample">
         <div class="accordion-item left-bottom-ap payment-bot">
 
           <h2 class="accordion-header " id="panelsStayOpen-headingThree">
             <button class="accordion-button collapsed Payment" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" 
+              data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
               aria-controls="panelsStayOpen-collapseThree" disabled>
             </button>
           </h2>
@@ -36,25 +38,46 @@ export const Payment = () => {
                     </div>
 
                     <form >
-                      
+                      <OwlCarousel className="owl-theme" loop margin={0} nav>
+                        <div className="item">
+                          <img
+                            src={applePayLogo}
+                            alt=""
+                            className="img-fluid payment-img"
+                          />
+                        </div>
+                        <div className="item">
+                          <img
+                            src={bKashLogo}
+                            alt=""
+                            className="img-fluid payment-img"
+                          />
+                        </div>
+                        <div className="item">
+                          <img
+                            src={payoneerLogo}
+                            alt=""
+                            className="img-fluid payment-img"
 
-                        <OwlCarousel  loop margin={0} >
+                          />
+                        </div>
+                        <div className="item">
+                          <img
+                            src={payPalLogo}
+                            alt=""
+                            className="img-fluid payment-img"
+                          />
+                        </div>
+                        <div className="item">
+                          <img
+                            src={visaLogo}
+                            alt=""
+                            className="img-fluid payment-img"
+                          />
+                        </div>
+                      </OwlCarousel>
 
-                            <div className="Payment-pa" ><img className="Payment-pak" src={Bkash} alt="Bkash" /> </div>
-                            <div className="Payment-pa"><img className="Payment-pak" src={Payoneer} alt="Payoneer" /> </div>
-                            <div className="Payment-pa"><img className="Payment-pak" src={PayPal} alt="PayPal" /> </div>
-                            <div className="Payment-pa"><img className="Payment-pak" src={Bkash} alt="Bkash" /> </div>
-                            <div className="Payment-pa"><img className="Payment-pak" src={Payoneer} alt="Payoneer" /> </div>
-                            <div className="Payment-pa"><img className="Payment-pak" src={PayPal} alt="PayPal" /> </div>
 
-                            {/* <div className="Payment-pak"><img src={PayPal} alt="PayPal" /></div>
-                            <div class="Payment-pak"><img src={Payoneer} alt="Payoneer" /></div>
-                            <div class="Payment-pak"><img src={Bkash} alt="Bkash" /> </div>
-                            <div class="Payment-pak"><img src={PayPal} alt="PayPal" /></div>
-                            <div class="Payment-pak"><img src={Payoneer} alt="Payoneer" /></div>
-                            <div class="Payment-pak"><img src={Bkash} alt="Bkash" /> </div> */}
-
-                        </OwlCarousel>
 
                       <div class="row col-md-4">
                         <div class="col">
@@ -83,11 +106,11 @@ export const Payment = () => {
                             CCV
                           </label>
                           <input type="text" class="form-control pak-style" />
-                        </div>                        
+                        </div>
                       </div>
 
                       <div className=" Payment-Con mt-4">
-                        <Link to="/"  className="btn btn-outline-warning  px-4 btn-pak">
+                        <Link to="/" className="btn btn-outline-warning  px-4 btn-pak">
                           Confirm payment
                         </Link>
                       </div>
