@@ -1,9 +1,9 @@
-import React from "react";
-import Football from "../../../../images/Market/Football.jpg";
-
-import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import React from "react";
+import OwlCarousel from "react-owl-carousel";
+import Football from "../../../../images/Market/Football.jpg";
+
 
 const Content = () => {
   return (
@@ -12,23 +12,46 @@ const Content = () => {
 
         <div className="col-10">
 
-          <OwlCarousel className="Follow-nav" margin={-200}>
-
-            <div className="Payment-pa" ><button className="Follow-nav-item-btn">Hollywood</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Bollywood</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Football</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Islamic</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Cricket</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Singer</button></div>
-            <div className="Payment-pa" ><button className="Follow-nav-item-btn">Hollywood</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Bollywood</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Football</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Islamic</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Cricket</button></div>
-            <div className="Payment-pa"><button className="Follow-nav-item-btn"> Singer</button></div>
-
+          <OwlCarousel className="owl-theme mt-4" loop margin={0} nav>
+            <div className="item">
+              <div className="Payment-pa" ><button className="Follow-nav-item-btn w-100">Hollywood</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Bollywood</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Islamic</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Singer</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa" ><button className="Follow-nav-item-btn w-100">Hollywood</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Bollywood</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Islamic</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Cricket</button></div>
+            </div>
+            <div className="item">
+              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Singer</button></div>
+            </div>
           </OwlCarousel>
-        
+
+
         </div>
 
         <div className="col-12 row d-flex mainCat-follow ">
