@@ -8,43 +8,42 @@ import Football from "../../../../images/Market/Football.jpg";
 const Content = () => {
   return (
     <>
-      <div className=" Follow-Category fl2">
+      <div className="fl2">
 
-        <div className="col-10">
-
-          <OwlCarousel className="owl-theme mt-4" loop margin={0} nav>
+        <div className="owlCarousel-sticky">
+          <OwlCarousel className="owl-theme mt-2 btn-flo fowl-carousel" loop margin={0} nav>
             <div className="item">
-              <div className="Payment-pa" ><button className="Follow-nav-item-btn w-100">Hollywood</button></div>
+              <div className="Payment-pa" ><button className="Follow-nav-item-btn left-follow-width">Hollywood</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Bollywood</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Bollywood</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Football</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Islamic</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Islamic</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Singer</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Singer</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa" ><button className="Follow-nav-item-btn w-100">Hollywood</button></div>
+              <div className="Payment-pa" ><button className="Follow-nav-item-btn left-follow-width">Hollywood</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Bollywood</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Bollywood</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Football</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Football</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Football</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Islamic</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Islamic</button></div>
             </div>
             <div className="item">
-              <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Cricket</button></div>
+              <div className="Payment-pa"><button className="Follow-nav-item-btn left-follow-width"> Cricket</button></div>
             </div>
             <div className="item">
               <div className="Payment-pa"><button className="Follow-nav-item-btn w-100"> Singer</button></div>

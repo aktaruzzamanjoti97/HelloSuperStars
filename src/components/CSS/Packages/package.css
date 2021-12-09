@@ -81,6 +81,17 @@
     -o-border-radius: 5px;
 }
 
+.payment-img-xa {
+    background-color: white;
+    object-fit: contain;
+    height: 100px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
 @media only screen and (max-width: 768px) {
     .pak-header {
       background-size: 100% 85% !important;
@@ -88,6 +99,9 @@
     .pak-header p {
         font-size: 15px !important;
       }
+      .payment-img-xa {
+        height: 70px;
+    }
   }
 
   @media only screen and (min-width: 770px) {
