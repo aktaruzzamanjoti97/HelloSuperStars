@@ -26,7 +26,6 @@ export default function StarPhotos() {
             <div className="card-body mb-2">
               <div className="row text-center">
                 <div className="col-4  ">
-
                   <StarPhotosDetails />
                   {/* <img
                     src={azhari}

@@ -14,12 +14,16 @@ const StarVideoDetails = () => {
 
     return (
         <div>
-            <img
-                onClick={() => setShow(true)}
-                src={azhari}
-                alt=""
-                className="img-fluid star-card-left-photos"
-            />
+            <div onClick={() => setShow(true)}>
+                <img  
+                    src={azhari}
+                    alt=""
+                    className="img-fluid star-card-left-photos"
+                />
+                <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                </div>
+            </div>
 
             <Modal
                 show={show}
