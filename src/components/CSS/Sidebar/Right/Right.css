@@ -1,5 +1,6 @@
 
 .right-col-box-home-r{
+   
     background-color: #343434;
     padding-bottom: 5px;
     margin-top: 10px;
@@ -15,6 +16,11 @@
     color: #F0E25E;
     padding: 5px;
     padding-top: 8px;
+}
+
+.LinkBtn{
+    position: sticky;
+    top: 100px;
 }
 
 .Live-S-Nav{

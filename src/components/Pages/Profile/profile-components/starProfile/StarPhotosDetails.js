@@ -29,7 +29,6 @@ const StarPhotosDetails = () => {
                 dialogClassName="modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
-
                 <Modal.Body className="bg-color">
                     <div className="row">
                         <div className="d-flex flex-row-reverse font-weight-bold mt-3">

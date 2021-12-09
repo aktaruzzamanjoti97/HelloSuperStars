@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LeftSidebar from '../../../../../Sidebar/LeftSidebar'
 import RightSidebar from '../../../../../Sidebar/RightSidebar'
 import Content from "./Content";
+import '../../../../../CSS/RightBody/body.css'
 
 
 export default class Body extends Component {
@@ -15,12 +16,12 @@ export default class Body extends Component {
               <div className="col-sm-3 justify-content-center">
                 <LeftSidebar/>
               </div>
-              
+             
               <div className="col-sm-6 justify-content-center" >
                   <Content/>
               </div>
 
-              <div className="col-md-3 justify-content-center" >
+              <div className="col-md-3 justify-content-center right-body-sticky" >
                 <RightSidebar/>
               </div>
               

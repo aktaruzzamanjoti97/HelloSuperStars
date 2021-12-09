@@ -14,12 +14,16 @@ const StarVideoDetails = () => {
 
     return (
         <div>
-            <img
-                onClick={() => setShow(true)}
-                src={azhari}
-                alt=""
-                className="img-fluid star-card-left-photos"
-            />
+            <div onClick={() => setShow(true)}>
+                <img  
+                    src={azhari}
+                    alt=""
+                    className="img-fluid star-card-left-photos"
+                />
+                <div class="play-center">
+                    <i class="fas fa-play fa-3x"></i>
+                </div>
+            </div>
 
             <Modal
                 show={show}
@@ -40,12 +44,9 @@ const StarVideoDetails = () => {
                                 />
                             </div>
                             <div className="container-fluid">
-
-
                                 {/* <ReactPlayer url="https://www.youtube.com/watch?v=3jtqM_EsUCQ&t=2s" className="img-fluid"  playing={false}
                                         volume={1} onReady={() => console.log("ready now")}
                                     /> */}
-
 
                                 <div className="d-flex justify-content-end me-5">
 

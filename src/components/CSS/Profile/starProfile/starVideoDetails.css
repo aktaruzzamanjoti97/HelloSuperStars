@@ -1,15 +1,6 @@
-.minimum-height{
-    min-height: 90vh;
+@media only screen and (max-width: 600px) {
+  .reactPlayer-style {
+  }
 }
 
-.reactPlayer-style{
-    height: '678px';
-    width: '678px'
-}
-
-@media only screen and (max-width: 768px){
-    .reactPlayer-style{
-        height: '200px';
-    }
-}
 
