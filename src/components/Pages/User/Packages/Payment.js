@@ -38,26 +38,26 @@ export const Payment = () => {
                     </div>
 
                     <form >
-                      <OwlCarousel className="owl-theme" loop margin={0} nav>
+                      <OwlCarousel className="owl-theme pay-carousel-xa fowl-carousel" loop margin={0} nav>
                         <div className="item">
                           <img
                             src={applePayLogo}
                             alt=""
-                            className="img-fluid payment-img"
+                            className="img-fluid payment-img-xa"
                           />
                         </div>
                         <div className="item">
                           <img
                             src={bKashLogo}
                             alt=""
-                            className="img-fluid payment-img"
+                            className="img-fluid payment-img-xa"
                           />
                         </div>
                         <div className="item">
                           <img
                             src={payoneerLogo}
                             alt=""
-                            className="img-fluid payment-img"
+                            className="img-fluid payment-img-xa"
 
                           />
                         </div>
@@ -65,14 +65,14 @@ export const Payment = () => {
                           <img
                             src={payPalLogo}
                             alt=""
-                            className="img-fluid payment-img"
+                            className="img-fluid payment-img-xa"
                           />
                         </div>
                         <div className="item">
                           <img
                             src={visaLogo}
                             alt=""
-                            className="img-fluid payment-img"
+                            className="img-fluid payment-img-xa"
                           />
                         </div>
                       </OwlCarousel>

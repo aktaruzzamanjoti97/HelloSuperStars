@@ -13,13 +13,6 @@ import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial
 import Packages from "./components/Pages/User/Packages/Packages";
 import Profile from './components/Pages/Profile/Profile';
 
-// Admin
-import AdminRoute from "./Backend/Admin/AdminComponent/AdminRoute";
-
-
-//Amin Manager
-
-
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
 
@@ -64,10 +57,6 @@ import StarSelection from "./components/Pages/Category/StarSelection";
 import StarProfile from "./components/Pages/Profile/StarProfile";
 
 import axios from "axios";
-import RegisterUser from "./Backend/Admin/Component/RegisteredUser/RegisterUser";
-import LiveChatProfile from "./Backend/Admin/Component/LiveChatProfile/LiveChatProfile";
-import ManagerLiveChat from "./Backend/Admin/Component/ManagerAdminLiveChat/ManagerLiveChat";
-
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -88,16 +77,7 @@ function App() {
     <>
     <BrowserRouter>
 
-        {/* <PrivateRoute component={Navigation} /> */}
-
-    {/* <PrivateRoute component={Navigation} /> */}
       <Switch>
-
-        {/* Admin */}
-        <Route exact path='/admin' component={AdminRoute} />
-
-
-
         {/* Navbar */}
         <Route exact path='/' component={Home} />
         
@@ -143,9 +123,6 @@ function App() {
         <Route path='/profile' exact component={Profile} />
         <Route path='/starprofile'  component={StarProfile} />
 
-
-
-
           
          {/* Category */}
           <Route path='/coreCategory' exact component={CoreCategory} />
@@ -153,24 +130,7 @@ function App() {
 
           <Route path='/starselection' exact component={StarSelection} />
           
-        {/* Left Sidebar*/}
-
-          {/* <Route path='/category' component={Category} /> */}
-          {/* <Route path='/following' component={Following} /> */}
-          {/* <Route path='/settings' component={Body} /> */}
-
-          {/* Follow Category */}
-          {/* <Route path='/category/Hollywood' component={Hollywood} />
-          <Route path='/category/Bollywood' component={Bollywood} /> */}
-
-        {/* Left Sidebar End*/}
-
-{/* checking purpose */}
-<Route path='/registeruser' component={RegisterUser} exact />
-<Route path='/livechatprofile' component={LiveChatProfile} exact />
-<Route path='/managerlivechat' component={ManagerLiveChat} exact />
-{/* checking purpose end*/}
-
+      
         <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
 
         {/* Error */}
