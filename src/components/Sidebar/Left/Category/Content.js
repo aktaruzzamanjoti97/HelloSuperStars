@@ -5,9 +5,9 @@ import Plus from '../../../../images/Normal-User/add.png'
 const Content = () => {
     return (
         <>
-            <div className="container align-items-center justify-content-center col-12 Follow-Category">
+            <div className="fl2-sc">
 
-                <div className="col-12 row d-flex mainCat-follow ">
+                <div className="col-12 row d-flex mainCat-follow">
 
                 <div className="ProMain row col-md-4">
                     <div className="Follow-Category-div">
