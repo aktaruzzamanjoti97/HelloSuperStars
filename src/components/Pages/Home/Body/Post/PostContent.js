@@ -65,7 +65,7 @@ import '../../../../CSS/Home/Post.css'
 
                       
                   </div>
-              </div>
+              </div> 
           </>
         );
       };

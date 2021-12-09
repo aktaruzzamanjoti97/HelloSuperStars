@@ -28,6 +28,7 @@ export default class LivePost extends Component {
             </div>
           </div>
         </div>
+        <br/>
       </React.Fragment>
     );
   }

@@ -70,9 +70,10 @@ display: none !important;
 
 .owlCarousel-sticky{
     position: sticky;
-    top: 70px;
+    top: 65px;
     background: #000000;
-    height: 70px !important;
+    height:52px !important;
+    margin-bottom: 20px;
 }
 
   

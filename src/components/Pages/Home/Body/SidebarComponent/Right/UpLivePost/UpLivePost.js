@@ -31,6 +31,7 @@ export default class UpLivePost extends Component {
             </div>
           </div>
         </div>
+        <br/>
       </React.Fragment>
     );
   }
