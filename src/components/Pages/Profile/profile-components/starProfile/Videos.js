@@ -32,9 +32,7 @@ function Videos() {
                     alt=""
                     className="img-fluid star-card-left-photos"
                   /> */}
-                  <div class="play-center">
-                    <i class="fas fa-play fa-3x"></i>
-                  </div>
+                  
                 </div>
 
                 <div className="col-4 play-button-container">
