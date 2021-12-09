@@ -72,11 +72,14 @@
   }
   
   
+  
   .left-col-box-home-chat{
     background-color: #343434;
-    border-radius:10px;
-   
+    border-radius:10px; 
+    position: sticky;
+    top: 100px;
   }
+
   .Stars-search{
     color:#F0E25E;
   }
@@ -87,8 +90,6 @@
     border:none;
     margin-left:20px;
   }
-  
-
 
 @media only screen and (max-width: 1400px) {
   .Stars-searchid{
