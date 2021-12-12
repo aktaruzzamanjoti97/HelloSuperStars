@@ -90,12 +90,12 @@ function App() {
         <Route exact path='/enrolled-auditions' component={EnrollBody} />
 
         <Route exact path='/settings' component={SettingsBody} />
-        <Route exact path="/seeting/personal" component={Personal}/>
-        <Route exact path="/seeting/educational" component={Educational}/>
-        <Route exact path="/seeting/employment" component={Employment}/>
-        <Route exact path="/seeting/interest" component={Interest}/>
-        <Route exact path="/seeting/security" component={Security}/>
-        <Route exact path="/seeting/report" component={Report}/>
+        <Route exact path="/setting/personal" component={Personal}/>
+        <Route exact path="/setting/educational" component={Educational}/>
+        <Route exact path="/setting/employment" component={Employment}/>
+        <Route exact path="/setting/interest" component={Interest}/>
+        <Route exact path="/setting/security" component={Security}/>
+        <Route exact path="/setting/report" component={Report}/>
         {/* Left Sidebar End*/}
 
 
