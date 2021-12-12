@@ -1,5 +1,6 @@
 import React from "react";
 import '../../../../CSS/Home/Post.css'
+import { Link } from "react-router-dom";
     export default function UpcomingAuditionsContent({user}){
         return (
           <>
@@ -11,7 +12,7 @@ import '../../../../CSS/Home/Post.css'
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
 
                                   <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
-                                  <span className="mx-2 text-warning text-light">{user.username}<br></br>
+                                  <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username}</Link><br></br>
                                       <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
                                       <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
                                   </span>
@@ -65,7 +66,7 @@ import '../../../../CSS/Home/Post.css'
 
                       
                   </div>
-              </div>
+              </div> 
           </>
         );
       };

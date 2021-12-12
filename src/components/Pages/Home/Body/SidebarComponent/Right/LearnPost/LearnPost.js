@@ -29,6 +29,7 @@ export default class LearnPost extends Component {
             </div>
           </div>
         </div>
+        <br/>
       </React.Fragment>
     );
   }

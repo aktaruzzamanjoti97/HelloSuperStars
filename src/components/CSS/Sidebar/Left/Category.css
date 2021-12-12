@@ -1,20 +1,13 @@
 .Follow-Category
 {
-    max-height: 1500px;
-    overflow-y: scroll;
-    margin-top:20px;
-    margin-bottom: 20rem;
+    margin-top:15px;
 }
-
-.Follow-Category::-webkit-scrollbar {
-  width: 0px;
-  background: #5f5f5f; 
+.fl2-sc{
+    margin-top:16px;
 }
-
 
 .mainCat-follow{
     margin-left: 0px;
-    margin-bottom: 396px;
 }
 
 

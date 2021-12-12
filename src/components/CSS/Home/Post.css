@@ -12,7 +12,7 @@
     border: none;
 }
 .PostCard img{
-    height:250px;
+    height: 0 auto;
 }
 
 .Post-small-text{
@@ -31,6 +31,16 @@
     font-size: 13px;
 }
 
+.link-starPorfile{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+.link-starPorfile:hover{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(243, 161, 9);
+}
 
 .PostBack{
     background-color: #343434;

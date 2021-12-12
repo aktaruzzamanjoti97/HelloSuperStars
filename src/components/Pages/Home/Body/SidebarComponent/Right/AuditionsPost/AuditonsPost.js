@@ -28,6 +28,7 @@ export default class AuditionsPost extends Component {
             </div>
           </div>
         </div>
+        <br/>
       </React.Fragment>
     );
   }
