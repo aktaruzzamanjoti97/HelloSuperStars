@@ -89,7 +89,7 @@ function App() {
         <Route exact path='/Admin' component={AdminRoute} />
 
         {/* Navbar */}
-        <Route exact path='/' component={Home} />
+        <PrivateRoute exact path='/' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 

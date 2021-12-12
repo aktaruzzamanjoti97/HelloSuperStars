@@ -215,7 +215,8 @@ const Profile = () => {
                       data-bs-target="#collapseTwo"
                       aria-expanded="false"
                       aria-controls="collapseTwo"
-                      onClick={logoutSubmit}
+                      // onClick={logoutSubmit}
+                      onClick={alert("hi")}
                     >
                       <span>
                         <i className="fas fa-sign-out-alt mx-2 profile-font-color fa-2x"></i>
