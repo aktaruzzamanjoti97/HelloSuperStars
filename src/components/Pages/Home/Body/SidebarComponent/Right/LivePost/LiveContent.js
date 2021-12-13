@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom";
 
     export default function LiveContent({user}){
         return (
@@ -12,7 +13,7 @@ import ReactPlayer from "react-player";
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
 
                                   <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
-                                  <span className="mx-2 text-warning text-light">{user.username}<br></br>
+                                  <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username} </Link><br></br>
                                       <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
                                       <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
                                   </span>
@@ -25,7 +26,7 @@ import ReactPlayer from "react-player";
                         </div>
   
                         <div className="card PostCard">
-                            <ReactPlayer url="https://youtu.be/3jtqM_EsUCQ" className="Enroll-Video" playing={false} 
+                            <ReactPlayer url="https://youtu.be/3jtqM_EsUCQ" className="Live-Video-x" playing={false} 
                                 volume={1}  onReady={() => console.log("ready now")}
                             />
                         </div>

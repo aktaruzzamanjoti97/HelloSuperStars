@@ -20,6 +20,17 @@
     -o-border-radius: 7px !important;
 }
 
+.Live-Video-x{
+    width: 100% !important;
+    height: 0 auto !important;
+    margin: "0 auto";
+    border-radius: 7px !important;
+    -webkit-border-radius: 7px !important;
+    -moz-border-radius: 7px !important;
+    -ms-border-radius: 7px !important;
+    -o-border-radius: 7px !important;
+}
+
 .Enroll-a{
     margin-left: 22px;
 }
