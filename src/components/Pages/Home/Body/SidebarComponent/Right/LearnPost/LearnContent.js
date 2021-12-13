@@ -19,7 +19,7 @@ export default function LearnContent({ user }) {
                                     <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
                                 </span>
                             </div>
-                            <div className="dropdown me-2">
+                            <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                   
                                     <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>

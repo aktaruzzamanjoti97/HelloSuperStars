@@ -20,10 +20,7 @@
   }
 }
 
-/* .modal-90w {
-  width: 40%;
-  max-width: none !important;
-} */
+
 
 .dropdown-menu.show {
   display: block;
@@ -36,9 +33,6 @@
   border-bottom: 1px solid #1f1f1f;
 }
 
-/* .turnNotification:hover{
-  background-color: lightcoral;
-} */
 
 .hoverColor:hover {
   background-color: #e4d759;
@@ -72,12 +66,4 @@
   border: none;
 }
 
-/* .buttonBorderNone {
-  color: #fff;
-  background: none !important;
-  border: none !important;
-} */
 
-/* *, ::after, ::before {
-  box-sizing: border-box;
-} */
