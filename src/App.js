@@ -79,7 +79,7 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 
@@ -131,7 +131,7 @@ function App() {
           <Route path='/starselection' exact component={StarSelection} />
           
       
-        <PrivateRoute exact path='/logo' component={HelloSuperStarDemo} />
+        <Route exact path='/logo' component={HelloSuperStarDemo} />
 
         {/* Error */}
         <Route component={Error} />
