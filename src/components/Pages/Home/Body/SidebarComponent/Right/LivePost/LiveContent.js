@@ -1,5 +1,5 @@
-import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import React from "react";
+import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import ReactPlayer from "react-player";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,6 @@ export default function LiveContent({ user }) {
                 <div className="card Enroll-AuditionsB">
 
                     <h2 className="accordion-header PostBack" >
-
                         <div className="d-flex justify-content-between">
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
 
@@ -20,8 +19,8 @@ export default function LiveContent({ user }) {
                                     <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
                                     <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
                                 </span>
-                            </div>
 
+                            </div>
                             <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
@@ -32,7 +31,6 @@ export default function LiveContent({ user }) {
                                 </ul>
                             </div>
                         </div>
-
 
                     </h2>
 

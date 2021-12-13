@@ -1,8 +1,8 @@
-import { DotsHorizontalIcon } from '@heroicons/react/solid';
-import React from "react";
-import { Link } from "react-router-dom";
-import '../../../../CSS/Home/Post.css';
 
+import React from "react";
+import { DotsHorizontalIcon } from '@heroicons/react/solid';
+import '../../../../CSS/Home/Post.css'
+import { Link } from "react-router-dom";
 export default function UpcomingAuditionsContent({ user }) {
     return (
         <>
@@ -27,7 +27,7 @@ export default function UpcomingAuditionsContent({ user }) {
 
                             <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
                                 <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification hoverColor text-white px-3">Turn on notification</li>

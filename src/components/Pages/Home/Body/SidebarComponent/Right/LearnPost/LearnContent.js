@@ -1,11 +1,12 @@
-import { DotsHorizontalIcon } from '@heroicons/react/solid';
-import React from "react";
+
 import { Link } from "react-router-dom";
+import React from "react";
+import { DotsHorizontalIcon } from '@heroicons/react/solid';
+import { RiBarChartHorizontalFill } from "react-icons/ri";
 import learningLockPremium from '../../../../../../../images/lockScreen.png';
 import '../../../../../../CSS/LearnContent/LearnContent.css';
 
 export default function LearnContent({ user }) {
-
     return (
         <>
             <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -21,8 +22,8 @@ export default function LearnContent({ user }) {
                             </div>
                             <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  
-                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
+
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
                                 <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification text-white px-3">Turn on notification</li>
@@ -86,15 +87,16 @@ export default function LearnContent({ user }) {
                     <h2 className="accordion-header PostBack" >
                         <div className="d-flex justify-content-between">
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                                  <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
-                                  <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username}</Link><br></br>
-                                      <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
-                                      <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
-                                  </span>
+                                <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
+                                <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username}</Link><br></br>
+                                    <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
+                                    <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
+                                </span>
                             </div>
-                            <div className="dropdown me-2">
+                            <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
+
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
                                 <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification text-white px-3">Turn on notification</li>
