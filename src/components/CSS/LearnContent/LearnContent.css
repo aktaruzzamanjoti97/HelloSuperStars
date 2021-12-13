@@ -1,0 +1,37 @@
+.learningImg {
+  filter: blur(3px);
+}
+
+.learningLockPremiumImg {
+  margin-top: -285px;
+  z-index: 1;
+  /* width: 80px; */
+  min-height: 285px;
+}
+
+.img-resize-LearnContent {
+  width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  .img-resize-LearnContent {
+    width: 120px;
+    margin-top: 80px;
+  }
+}
+
+/* .modal-90w {
+  width: 40%;
+  max-width: none !important;
+} */
+
+.dropdown-menu.show {
+  display: block;
+  background: #000000;
+  border: 2px solid #e4d759;
+  border-radius: 10px;
+}
+
+.turnNotification {
+  border-bottom: 1px solid #1f1f1f;
+}
