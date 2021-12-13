@@ -381,6 +381,82 @@ li.post-comment .comet-avatar {
 
 }
 
+.learningImg {
+    filter: blur(3px);
+  }
+  
+  .learningLockPremiumImg {
+    margin-top: -285px;
+    z-index: 1;
+    /* width: 80px; */
+    min-height: 285px;
+  }
+  
+  .img-resize-LearnContent {
+    width: 200px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .img-resize-LearnContent {
+      width: 120px;
+      margin-top: 80px;
+    }
+  }
+  
+  
+  
+  .leftSideNotification.dropdown-menu.show {
+    display: block;
+    background: #000000;
+    border: 1px solid #e4d759;
+    border-radius: 10px;
+  }
+
+  .leftSideNotification.dropdown-menu.show li {
+    color: white ;
+    background-color: black;
+    font-size: 15px;
+  }
+
+  .leftSideNotification.dropdown-menu.show li:hover {
+    color: gold;
+    background-color: black;
+  }
+  
+  .turnNotification {
+    border-bottom: 1px solid #1f1f1f;
+  }
+  
+  
+
+  
+  .leftSideNotification {
+    left: -150px !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .leftSideNotification {
+      left: -10px !important;
+      
+    }
+  }
+  
+  .buttonBorderNone .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0em solid !important;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+  
+  .buttonBorderNone .btn-secondary {
+    color: #fff;
+    background: none;
+    border: none;
+  }
 @media only screen and (max-width: 510px) {
  
     .PostImgHe{
