@@ -23,10 +23,10 @@ export default function LiveContent({ user }) {
                             </div>
 
                             <div className="dropdown me-2 buttonBorderNone">
-                                <button className="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
+                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification hoverColor text-white px-3">Turn on notification</li>
                                     <li className="dropdown-item hoverColor text-white px-3">Unfollow Shakib</li>
                                 </ul>

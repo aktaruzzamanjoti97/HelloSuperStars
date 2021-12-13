@@ -21,7 +21,7 @@ export default function LearnContent({ user }) {
                             </div>
                             <div className="dropdown me-2">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {/* <RiBarChartHorizontalFill className="mx-2 text-light" /> */}
+                                  
                                     <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
                                 </button>
                                 <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
