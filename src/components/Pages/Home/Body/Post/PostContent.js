@@ -1,7 +1,8 @@
+import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import React from "react";
-import '../../../../CSS/Home/Post.css'
 import { Link } from "react-router-dom";
-import { RiBarChartHorizontalFill } from "react-icons/ri";
+import '../../../../CSS/Home/Post.css';
+
 export default function UpcomingAuditionsContent({ user }) {
     return (
         <>
@@ -26,11 +27,11 @@ export default function UpcomingAuditionsContent({ user }) {
 
                             <div className="dropdown me-2">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <RiBarChartHorizontalFill className="mx-2 text-light" />
+                                <DotsHorizontalIcon className="h-5 w-5 text-blue-500"/>
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li className="dropdown-item turnNotification text-white px-3">Turn on notification</li>
-                                    <li className="dropdown-item text-white px-3">Unfollow Shakib</li>
+                                <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
+                                    <li className="dropdown-item turnNotification hoverColor text-white px-3">Turn on notification</li>
+                                    <li className="dropdown-item hoverColor text-white px-3">Unfollow Shakib</li>
                                 </ul>
                             </div>
                         </div>
