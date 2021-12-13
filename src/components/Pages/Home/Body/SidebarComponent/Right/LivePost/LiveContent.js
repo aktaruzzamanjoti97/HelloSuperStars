@@ -1,5 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 
     export default function LiveContent({user}){
@@ -10,15 +11,51 @@ import { Link } from "react-router-dom";
                   <div className="card Enroll-AuditionsB">
 
                         <h2 className="accordion-header PostBack" >
+                        <div className="d-flex justify-content-between">
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
+                                <img
+                                    src={user.profilePicture}
+                                    className="PostImgHome"
+                                    alt={user.profilePicture}
+                                />
+                                <span className="mx-2 text-warning text-light">
+                                    <Link to="/starprofile" className="link-starPorfile">
+                                        {user.username}
+                                    </Link>
+                                    <br></br>
+                                    <small className="category-size-chat">
+                                        {" "}
+                                        <span className="Post-small-text">{user.time}</span>
+                                    </small>
+                                    <small className="category-size-chat">
+                                        <span className="Post-small-text-r">{user.date}</span>
+                                    </small>
+                                </span>
+                            </div>
 
-                                  <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
-                                  <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username} </Link><br></br>
-                                      <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
-                                      <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
-                                  </span>
-
-                             </div>
+                            <div className="dropdown me-2 buttonBorderNone">
+                                <button
+                                    className="btn btn-secondary dropdown-toggle"
+                                    type="button"
+                                    id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
+                                </button>
+                                <ul
+                                    className="dropdown-menu leftSideNotification"
+                                    aria-labelledby="dropdownMenuButton1"
+                                >
+                                    <li className="dropdown-item turnNotification">
+                                        Turn on notification
+                                    </li>
+                                    <li className="dropdown-item">
+                                        Unfollow Shakib
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         </h2>
 
                         <div className="my-2 Enroll-a Enroll-text">
