@@ -1,8 +1,8 @@
 import {React, useState } from 'react'
-import Star from '../../../../../images/Profile/Shakibpro.png'
+import Star from '../../../../../../../images/Profile/ayman-profile.jpg'
 
 import { Collapse } from "react-bootstrap";
-const PostComment = () => {
+const LiveComment = () => {
 const [open, setOpen] = useState(false);
 return (
 <>
@@ -88,4 +88,4 @@ return (
 )
 }
 
-export default PostComment
+export default LiveComment

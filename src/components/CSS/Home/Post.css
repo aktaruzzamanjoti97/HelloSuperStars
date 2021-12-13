@@ -159,19 +159,23 @@
 }
 
 .we-comment {
-    border: 1px solid #ede9e9;
     display: table-cell;
     margin-left: 20px;
     padding: 10px;
     vertical-align: top;
+    background-color: rgb(65, 65, 65);
     position: relative;
+    border-radius: 20px;
     width: 65%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .we-comment::before,
 .peoples-mesg-box > ul > li p:before {
     border-bottom: 10px solid transparent;
-    border-right: 11px solid #ede9e9;
     border-top: 10px solid transparent;
     left: -11px;
     top: 10px;
@@ -182,7 +186,6 @@
 .we-comment::after,
 .peoples-mesg-box > ul > li p:after {
     border-bottom: 8px solid transparent;
-    border-right: 9px solid #fff;
     border-top: 8px solid transparent;
     left: -9px;
     top: 12px;
@@ -214,6 +217,7 @@
 }
 .com-name-po{
     color: white;
+    z-index: -1;
 }
 .com-post-img-head{
     width: 35px !important;
@@ -234,15 +238,16 @@
 .coment-head {
     display: inline-block;
     width: 100%;
+
 }
 
-.coment-head > h5 {
+.coment-head > p {
     font-size: 13.5px;
     font-weight: 500;
-    padding-bottom: 5px;
+    padding-bottom: -15px;
     text-transform: capitalize;
+    margin-bottom: -10px;
     display: inline-block;
-    margin-bottom: 0;
     color: #2a2a2a;
 }
 
@@ -259,6 +264,24 @@
     font-size: 13px;
     display: inline-block;
     margin-left: 10px;
+     font-size: 13px;
+}
+
+.we-reply-button-x{
+    background: none;
+    margin-left: 50px;
+    border: none;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.541);
+
+}
+
+.we-reply-button{
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.541);
+
 }
 
 .coment-head > span {
@@ -349,7 +372,91 @@ li.post-comment .comet-avatar {
     right: 0;
     background: none;
 }
+.comment-text-post{
+    width: 23.5vw;
 
+}
+.comment-text-post{
+    width: 22vw;
+
+}
+
+.learningImg {
+    filter: blur(3px);
+  }
+  
+  .learningLockPremiumImg {
+    margin-top: -285px;
+    z-index: 1;
+    /* width: 80px; */
+    min-height: 285px;
+  }
+  
+  .img-resize-LearnContent {
+    width: 200px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .img-resize-LearnContent {
+      width: 120px;
+      margin-top: 80px;
+    }
+  }
+  
+  
+  
+  .leftSideNotification.dropdown-menu.show {
+    display: block;
+    background: #000000;
+    border: 1px solid #e4d759;
+    border-radius: 10px;
+  }
+
+  .leftSideNotification.dropdown-menu.show li {
+    color: white ;
+    background-color: black;
+    font-size: 15px;
+  }
+
+  .leftSideNotification.dropdown-menu.show li:hover {
+    color: gold;
+    background-color: black;
+  }
+  
+  .turnNotification {
+    border-bottom: 1px solid #1f1f1f;
+  }
+  
+  
+
+  
+  .leftSideNotification {
+    left: -150px !important;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .leftSideNotification {
+      left: -10px !important;
+      
+    }
+  }
+  
+  .buttonBorderNone .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0em solid !important;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+  
+  .buttonBorderNone .btn-secondary {
+    color: #fff;
+    background: none;
+    border: none;
+  }
 @media only screen and (max-width: 510px) {
  
     .PostImgHe{
@@ -378,7 +485,7 @@ li.post-comment .comet-avatar {
         -o-border-radius: 5px;
     }
     .comment-text-post{
-        width: 47.3vw;
+        width: 65vw;
     
     }
   
