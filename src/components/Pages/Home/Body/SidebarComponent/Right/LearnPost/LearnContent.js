@@ -1,13 +1,12 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import { Modal, NavDropdown } from "react-bootstrap";
+import React from "react";
+import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { RiBarChartHorizontalFill } from "react-icons/ri";
 import learningLockPremium from '../../../../../../../images/lockScreen.png';
 import '../../../../../../CSS/LearnContent/LearnContent.css';
 
 export default function LearnContent({ user }) {
-    const [show, setShow] = useState(false);
     return (
         <>
             <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -21,11 +20,12 @@ export default function LearnContent({ user }) {
                                     <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
                                 </span>
                             </div>
-                            <div className="dropdown me-2">
+                            <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <RiBarChartHorizontalFill className="mx-2 text-light" />
+
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification text-white px-3">Turn on notification</li>
                                     <li className="dropdown-item text-white px-3">Unfollow Shakib</li>
                                 </ul>
@@ -87,17 +87,18 @@ export default function LearnContent({ user }) {
                     <h2 className="accordion-header PostBack" >
                         <div className="d-flex justify-content-between">
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                                  <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
-                                  <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username}</Link><br></br>
-                                      <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
-                                      <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
-                                  </span>
+                                <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
+                                <span className="mx-2 text-warning text-light"><Link to='/starprofile' className="link-starPorfile">{user.username}</Link><br></br>
+                                    <small className="category-size-chat"> <span className="Post-small-text">{user.time}</span></small>
+                                    <small className="category-size-chat"> <span className="Post-small-text-r">{user.date}</span></small>
+                                </span>
                             </div>
-                            <div className="dropdown me-2">
+                            <div className="dropdown me-2 buttonBorderNone">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <RiBarChartHorizontalFill className="mx-2 text-light" />
+
+                                    <DotsHorizontalIcon className="h-5 w-5 text-blue-500" />
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul className="dropdown-menu leftSideNotification" aria-labelledby="dropdownMenuButton1">
                                     <li className="dropdown-item turnNotification text-white px-3">Turn on notification</li>
                                     <li className="dropdown-item text-white px-3">Unfollow Shakib</li>
                                 </ul>
