@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import { Modal, NavDropdown } from "react-bootstrap";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
 import learningLockPremium from '../../../../../../../images/lockScreen.png';
 import '../../../../../../CSS/LearnContent/LearnContent.css';
 
 export default function LearnContent({ user }) {
-    const [show, setShow] = useState(false);
+
     return (
         <>
             <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
