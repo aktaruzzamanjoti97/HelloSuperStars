@@ -76,7 +76,6 @@ const Signup = () => {
             password: registerInput.password,
         }
 
-        alert(data.phone + data.name);
 
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.post(`/api/register`, data).then(res => {
@@ -137,9 +136,9 @@ const Signup = () => {
                                                                     <span>{registerInput.error_list.email}</span>
                                                                 </div>
                                                                 <div className="col">
-                                                                <PhoneInput country={'bd'} inputStyle={inputStyle}  buttonStyle={{ background:'none',border:'0' }}/>
-                                                                    {/* <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
-                                                                    <span>{registerInput.error_list.phone}</span> */}
+                                                                {/* <PhoneInput country={'bd'} inputStyle={inputStyle}  buttonStyle={{ background:'none',border:'0' }}/> */}
+                                                                     <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
+                                                                    <span>{registerInput.error_list.phone}</span> 
                                                                 </div>
                                                             </div>
                                                             <div className="row mt-3">
