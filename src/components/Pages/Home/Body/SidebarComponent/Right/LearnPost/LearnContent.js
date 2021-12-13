@@ -1,11 +1,14 @@
-import React from "react";
+import {React,useState} from "react";
 import { Link } from "react-router-dom";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
+import { Collapse } from "react-bootstrap";
 import learningLockPremium from '../../../../../../../images/lockScreen.png';
 import '../../../../../../CSS/LearnContent/LearnContent.css';
+import LearnComment from "./LearnComment";
 
 export default function LearnContent({ user }) {
+const [open, setOpen] = useState(false);
 return (
 <>
     <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -75,7 +78,13 @@ return (
                         <i className="fas fa-heart text-danger  mx-1"></i>
                         <small className="Post-Title-home"> Like</small>
                     </button>
-                    <button className="btn-warning-post mx-2 ">
+                    <button className="btn-warning-post mx-2 " onClick={()=> setOpen(!open)}
+                        aria-controls="example-collapse-text"
+                        aria-expanded={open}
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        >
                         <i className="fas fa-comment  mx-1 "></i>
                         <small> Comment</small>
                     </button>
@@ -85,8 +94,19 @@ return (
                     </button>
                 </div>
 
+                {/* Comment Section */}
+                <Collapse in={open}>
+                    <div id="example-collapse-text">
+                        <div className=" accordion-flush ">
+                            <div className=" comment-bg-post">
+                                <div id="flush-collapseOne" className="accordion-collapse collapse">
+                                    <LearnComment />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Collapse>
             </div>
-
         </div>
     </div>
 
@@ -137,7 +157,7 @@ return (
                 <div className="learningLockPremiumImg d-flex align-items-center justify-content-center">
                     <img src={learningLockPremium} className="img-fluid img-resize-LearnContent" alt="" />
                 </div>
-            </div>
+            </div> 
             <div className="row align-items-center justify-content-center ">
                 <div className="container ">
                     <ul className="PostHoUl Co-Auditions">
@@ -153,24 +173,42 @@ return (
                         </li>
 
                     </ul>
-                </div>
-
-                <div className="text-center hr-Auditions">
-                    <button className="btn-warning-post ">
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button>
-                    <button className="btn-warning-post mx-2 ">
-                        <i className="fas fa-comment  mx-1 "></i>
-                        <small> Comment</small>
-                    </button>
-                    <button className="btn-warning-post">
-                        <i className="fas fa-share  mx-1"></i>
-                        <small> Share</small>
-                    </button>
-                </div>
+                </div><br/>
+            <div className="text-center hr-Auditions">
+                <button className="btn-warning-post ">
+                    <i className="fas fa-heart text-danger  mx-1"></i>
+                    <small className="Post-Title-home"> Like</small>
+                </button>
+                <button className="btn-warning-post mx-2 " onClick={()=> setOpen(!open)}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    >
+                    <i className="fas fa-comment  mx-1 "></i>
+                    <small> Comment</small>
+                </button>
+                <button className="btn-warning-post">
+                    <i className="fas fa-share  mx-1"></i>
+                    <small> Share</small>
+                </button>
             </div>
+
+            {/* Comment Section */}
+            <Collapse in={open}>
+                <div id="example-collapse-text">
+                    <div className=" accordion-flush ">
+                        <div className=" comment-bg-post">
+                            <div id="flush-collapseOne" className="accordion-collapse collapse">
+                                <LearnComment />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Collapse>
         </div>
+    </div>
     </div>
 </>
 );
