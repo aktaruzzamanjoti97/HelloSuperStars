@@ -13,7 +13,7 @@ export const Content = () => {
               <Carousel/>
             </div>
 
-            <div className="Carosuel-mp Post-mp-bg row col-10 d-flex">
+            <div className="Carosuel-mp Post-mp-bg row col-10 d-flex  mb-3">
               <Profile/>
             </div>
 
