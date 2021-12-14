@@ -8,10 +8,7 @@ export default function LearnContent({leran})  {
                     <img src={leran.profilePicture} className="Live-RS-img" alt={leran.profilePicture} />
                     <span className="Live-RS-Name">{leran.username}</span>
 
-                    <div class="ContentLight">
-                        .
-                    </div>
-
+                    
                 </div>
             </div>
         </>
