@@ -403,19 +403,31 @@ right div and info field start */}
                           </label>
                         </div>
 
-                        <button onClick={ModalClick} className='btn btn-warning text-light w-75  my-4'>Save</button>
+                        <button onClick={ModalClick} className='btn btn-warning text-light sav-btn-ca  my-4'>Save</button>
+                        
 
 
                       </form>
-                    </div>
+                      <div className=''>
+                     <Link to='/coreCategory'> <button className='Skip-bt-ac mb-3'>Skip</button></Link>
+                      </div>
+                    
                   </div>
+                    
+                      
+                    </div>
+                    
 
                   {/* left div end */}
+                  
                 </div>
+               
               </div>
             </div>
           </div>
+          
         </div>
+        
 
         {/* Modal start */}
 
@@ -428,7 +440,7 @@ right div and info field start */}
               Would you like to get our newsletter and promotional offers through email?
             </p>
             <div className="choose-btn1">
-              <Link to='/packages' className='btn btn-warning text-light w-25'>Yes</Link>
+              <Link to='/coreCategory' className='btn btn-warning text-light w-25'>Yes</Link>
               <button className="btn text-warning w-25" onClick={ModalClick}>
                 No
               </button>
