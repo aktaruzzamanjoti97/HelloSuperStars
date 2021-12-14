@@ -12,7 +12,8 @@ import '../../../../../../CSS/Home/UpcomingAuditions.css'
 
                       <div className="row align-items-center justify-content-center ">
                         
-                            <div className="container align-items-center justify-content-center UpcomingAuditions col-md-6">
+                            <div className="container align-items-center justify-content-center UpcomingAuditions col-md-6"
+                                style={{ backgroundImage:'url("../../../../../../../images/messi.jpg")' }}>
                                 <div className="container xyz-auditions"> <br />
                                     <div className="container d-flex xyz-audition align-items-center justify-content-center">
 

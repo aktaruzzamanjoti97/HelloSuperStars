@@ -13,6 +13,7 @@ export default function UpcomingAuditionsContent({ user }) {
                 <div className="card Enroll-AuditionsB">
                     <h2 className="accordion-header PostBack">
                         <div className="d-flex justify-content-between">
+                            
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                 <img
                                     src={user.profilePicture}

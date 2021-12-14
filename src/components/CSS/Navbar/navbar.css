@@ -25,13 +25,28 @@
     background-color: #2C2C2C;
 
 }
+
+
 .circle-icon {
-    background: #FFFFFF;
-    padding: 10px;
+    background: #a19e9ef8;
+    padding: 12px;
     border-radius: 50%;
     color: #2C2C2C;
+    width: 40px;
+    height: 40px;
+    color: rgb(61, 63, 65);
+
 
 }
+.circle-icon-x{
+    color: #FFCA2C;
+    background-color: rgba(245, 245, 245, 0.993);
+}
+
+.navPadpd{
+    margin-right: 15px !important;
+}
+
 @media only screen and (max-width: 600px) {
    .form-width-change{
        width: 45%;
@@ -39,7 +54,10 @@
 
   }
 
-  
+
+.log-navbar{
+    width: 70px;
+  }
 .circle-icon:hover{
     color: #FFCA2C;
 }
@@ -77,7 +95,7 @@
 }
 .search-design{
     border-radius: 25px;
-   border: 3px solid #FFCA2C;
+   border: 2px solid #FFCA2C;
 }
 .language-select{
     margin-left: 10px;
@@ -91,4 +109,11 @@
 
 .active-link{
     color: #FFCA2C;
+}
+
+
+.search-design:focus {
+    outline: none;
+
+    
 }

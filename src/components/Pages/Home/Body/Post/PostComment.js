@@ -67,7 +67,7 @@ return (
                         <div className="accordion-button-fx  ">
                             <img src={Star} className="com-post-img-head" alt={Star} />
                             <form action="">
-                                <input type="text" className="comment-text-post comment-text-post-x"
+                                <input type="text" className=" comment-text-post-x"
                                     placeholder="Write a comment...." />
                             </form>
                         </div>

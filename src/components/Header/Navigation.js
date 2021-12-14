@@ -30,7 +30,7 @@ class Navigation extends Component {
                    
                       <div className="container-fluid  custom-container">
                       <Navbar.Brand href="#" >
-                            <Link to='/'> <img src={helloSuperstarLogo} alt="hello superstar logo" height='40px' /></Link>
+                            <Link to='/'> <img src={helloSuperstarLogo} alt="hello superstar logo" className='log-navbar' /></Link>
                         </Navbar.Brand>
                         <Form className='form-width-change'>
                             <div className="form-group has-search">
@@ -42,29 +42,29 @@ class Navigation extends Component {
                         <Navbar.Collapse id="navbarScroll">
 
 
-                            <Nav className="ms-auto my-2 my-lg-0"navbarScroll>
+                            <Nav className="ms-auto my-2 my-lg-0 " navbarScroll>
 
-                                <Nav.Link href="#action1" className='navbar-link-hover'>
-                                    <NavLink className="active-link" to='/'><i className="fa fa-home circle-icon" /></NavLink>
-                                </Nav.Link>
+                                <Nav.Link className="navPadpd">
+                                    <NavLink className="active-link" to='/'><i className="fa fa-home circle-icon circle-icon-x" /></NavLink>
+                                </Nav.Link >
 
-                                <Nav.Link>
+                                <Nav.Link className="navPadpd">
                                     <i className="fa fa-comment circle-icon" />
                                 </Nav.Link>
 
-                                <Nav.Link href="#action1">
+                                <Nav.Link className="navPadpd">
                                     <i className="fa fa-bell circle-icon" />
                                 </Nav.Link>
 
-                                <Nav.Link>
-                                    <NavLink className="active-link" to='/marketplace'> <i className="fa fa-store circle-icon" /></NavLink>
+                                <Nav.Link className="navPadpd">
+                                    <NavLink to='/marketplace'> <i className="fa fa-store circle-icon" /></NavLink>
                                 </Nav.Link>
 
-                                <Nav.Link>
-                                    <NavLink className="active-link" to='/profile'><img src={accountImg} className='img-fluid account-create' alt='account create ' /></NavLink>
+                                <Nav.Link className="navPadpd">
+                                    <NavLink  to='/profile'><img src={accountImg} className='img-fluid account-create' alt='account create ' /></NavLink>
                                 </Nav.Link>
 
-                                <Nav.Link>
+                                <Nav.Link >
                                     <select name="" id="" className='language-select'>
                                         <option value="0" className='bg-dark'>EN</option>
                                         <option value="0" className='bg-dark'>BN</option>
