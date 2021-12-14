@@ -409,20 +409,27 @@ li.post-comment .comet-avatar {
   }
   
   .learningLockPremiumImg {
-    margin-top: -285px;
-    z-index: 1;
-    /* width: 80px; */
-    min-height: 285px;
+      position: absolute;
+      margin-top: 80px  !important;
   }
   
   .img-resize-LearnContent {
-    width: 200px;
+    width: 50% !important ;
   }
   
   @media only screen and (max-width: 768px) {
     .img-resize-LearnContent {
       width: 120px;
       margin-top: 80px;
+    }
+
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -100px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
     }
   }
   
@@ -527,7 +534,30 @@ li.post-comment .comet-avatar {
         width:23.5vw ;
     }
 
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -50px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
+    }
+
 }
+@media only screen and (max-width:800px) {
+   
+
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -100px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
+    }
+
+}
+
 
 
   @media only screen and (width: 600px) {
