@@ -5,7 +5,9 @@ export default function UpLiveContent ({UpcLive}) {
             <div class="column">
                 <div className="column-bg">
                     <img src={UpcLive.profilePicture} className="Live-RS-img" alt={UpcLive.profilePicture} />
-                    <span className="Live-RS-Name">{UpcLive.username}</span>
+                    <div className="Live-rs-text-parent">
+                        <p className="text-center"><small>{UpcLive.username}</small></p>
+                    </div>
                 </div>
             </div>
         </>

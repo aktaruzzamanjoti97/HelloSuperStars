@@ -2,7 +2,7 @@
 .right-col-box-home-r{
    
     background-color: #343434;
-    padding-bottom: 5px;
+    padding-bottom: 25px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 20px;
@@ -27,8 +27,9 @@
     position: relative;
 }
 .Live-RS-img{
-    width: 100px;
-    height: auto;
+    width: 155px !important;
+    height: 200px;
+    margin-left: 10px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -80,11 +81,14 @@
   } */
 
 .Live-RS-Name{
-    font-size: 12px;
+    font-size: 15px;
+    display: inline-block;
     color: white;
-    margin-left: 5px;
+    margin-left: 2.5rem;
     margin-top: 5px;
     padding: 0px;
+    background-color: red;
+    opacity: .5;
 }
 
 
@@ -92,9 +96,9 @@
     position: absolute; /* Position the background text */
     bottom: 0; /* At the bottom. Use top:0 to append it to the top */
     color: #c70d0d; 
-    font-size: 80px;
-    margin-left: 60px;
-    margin-bottom: 35px;
+    font-size: 15px;
+    margin-left: 112px;
+    margin-bottom: 90px;
     padding: 20px; /* Some padding */
   }
 @media only screen and (max-width: 768px) {
@@ -121,6 +125,7 @@
     cursor: pointer;
     padding: 5px;
     margin-right: 10px;
+    margin-left: 1rem;
     width: 46px;
     height: 69px;
     padding: 5px;

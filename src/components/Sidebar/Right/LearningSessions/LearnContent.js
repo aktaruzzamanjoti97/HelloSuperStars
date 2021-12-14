@@ -6,7 +6,9 @@ export default function LearnContent({leran})  {
             <div class="column">
                 <div className="column-bg">
                     <img src={leran.profilePicture} className="Live-RS-img" alt={leran.profilePicture} />
-                    <span className="Live-RS-Name">{leran.username}</span>
+                    <div className="Live-rs-text-parent">
+                        <p className="text-center"><small>{leran.username}</small></p>
+                    </div>
 
                     
                 </div>
