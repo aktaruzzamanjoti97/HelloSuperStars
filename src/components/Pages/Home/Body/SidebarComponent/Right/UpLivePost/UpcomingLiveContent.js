@@ -13,7 +13,8 @@ export default function UpcomingLiveContent({user}){
 
                       <div className="row align-items-center justify-content-center ">
                         
-                            <div className="container align-items-center justify-content-center UpcomingLive col-md-6">
+                            <div className="container align-items-center justify-content-center UpcomingLive col-md-6"
+                                style={{ backgroundImage:'url("../../../../../../../images/MashrafeMortaza_Tension.jpg")' }}>
                                 <div className="container xyz-auditions"> <br />
                                 
 
