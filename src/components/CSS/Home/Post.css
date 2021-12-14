@@ -10,9 +10,14 @@
 
 .PostCard{
     border: none;
+    background-color: #343434 !important;
 }
 .PostCard img{
     height: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    padding-bottom: 8px;
 }
 
 .Post-small-text{
