@@ -5,7 +5,9 @@ export default function AuditionsContent ({Audition}) {
             <div class="column">
                 <div className="column-bg">
                 <img src={Audition.profilePicture} className="Live-RS-img" alt={Audition.profilePicture} />
-                <span className="Live-RS-Name">{Audition.username}</span>
+                <div className="Live-rs-text-parent">
+                        <p className="text-center"><small>{Audition.username}</small></p>
+                    </div>
                 </div>
             </div>
         </>
