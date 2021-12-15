@@ -9,7 +9,10 @@ const {url}=useRouteMatch()
 let history = useHistory();
 
 function handleClick() {
-history.push(`${url}/starChat`);
+  history.push({
+    pathname: `${url}/starChat`,
+    state: { data: props.data }
+  });
 }
 
 return (
@@ -24,12 +27,12 @@ return (
 
       <div className="info-message px-5">
         <img src={Congrass} alt="" className='img-fluid' />
-        <h1 className='text-center congress'>Congratulation !</h1>
+          <h1 className='text-center congress'>Congratulation !</h1>
         <h4 className='text-center my-3'>Slot is Availabe !</h4>
         <h5 className='text-center '>Apply for live chat as soon as possible !</h5>
       </div>
       <div className="text-center py-3">
-        <button className='btn btn-warning text-light' onClick={handleClick}>Apply now !</button>
+        <button className='btn btn-warning text-light'  onClick={handleClick}>Apply now !</button>
       </div>
 
     </Modal.Body>

@@ -1,7 +1,8 @@
+import React, { useState, useEffect, useRef } from 'react';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { useHistory } from 'react-router-dom';
-import * as React from 'react';
+
 import OwlCarousel from 'react-owl-carousel';
 import singleFrame from '../../../../../../images/Normal-User/Single-frame.png';
 import applePayLogo from '../../../../../../images/Payment-img/Apple_Pay_logo.png';
@@ -11,34 +12,88 @@ import payPalLogo from '../../../../../../images/Payment-img/PayPal-Logo.wine.pn
 import visaLogo from '../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../../../images/Shakib/13.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
+import axios from "axios";
+import swal from 'sweetalert';
 
-const StarChat = () => {
+import { Link, Route,useLocation,  Redirect, useHistory} from 'react-router-dom';
 
-const [showCard, setShowCard] = React.useState(false)
 
-function handleClick(e) {
-e.preventDefault();
-setShowCard(true)
-console.log(showCard)
-;
-}
+const StarChat = (props) => {
+    const [oldData, setOldData] = useState([]);
+    const [formdata, setFormdata] = useState({
+        name: '',
+        date_b: '',
+        phone: '',
+        location: '',
+        comment: '',
+        error_list: []
+    })
+    console.log(formdata);
+    const [showCard, setShowCard] = React.useState(false)
+    const history = useHistory();
+    const location = useLocation();
 
-const history = useHistory()
+    useEffect(() => {
 
-function handleHomePage(e){
-e.preventDefault();
-history.push('/');
-}
-return (
-<>
-    <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
-        <CardContent>
-            <div className="row whole-m-p">
-                <div className="col-md-3">
-                    <div className="play-button-container">
-                        <img src={azhari} alt="" className="img-fluid star-card-chat-demo-video" />
-                        <div className="play-center">
-                            <i className="fas fa-play fa-3x"></i>
+        setOldData(location.state.data);
+  
+    }, [location]);
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setFormdata((prev)=>{
+              return({...prev,[name]:value});
+          })
+    
+    }
+    function handleClick(e) {
+        e.preventDefault();
+        setShowCard(true)
+        console.log(showCard)
+            ;
+    }
+
+    const formSubmit = (e) => {
+        e.preventDefault()
+        const data = {
+            name: formdata.name,
+            date_b: formdata.date_b,
+            phone: formdata.phone,
+            location: formdata.location,
+            comment: formdata.comment,
+            event_id: oldData.id,
+            minute: oldData.minute,
+        }
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`api/user/liveChatRigister/`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    // setShowCard(true)
+                    swal("Success",res.data.message,"success");
+                    history.push('/');
+                }
+                
+            });
+        });
+    }
+
+    return (
+        <>
+            <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <div className="row whole-m-p">
+                        <div className="col-md-3">
+                            <div className="play-button-container">
+                                <img
+                                    src={azhari}
+                                    alt=""
+                                    className="img-fluid star-card-chat-demo-video"
+                                />
+                                <div className="play-center">
+                                    <i className="fas fa-play fa-3x"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,45 +137,58 @@ return (
                         </div>
                     </div>
 
-                </div>
-            </div>
+                    <div className="whole-m-p">
+                        <form>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Name</big>
+                                        <input type="hidden" onChange={handleInput} name="event_id" value={oldData.id} />
+                                        <input type="hidden" onChange={handleInput} name="minute" value={oldData.minute} />
+                                        <input type="text"   onChange={handleInput} className="form-control input-overlay" name="name"/>
+                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                    </div>
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Date of Birth</big>
+                                        <input type="date"  onChange={handleInput} className="form-control input-overlay"  name="date_b" />
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Phone Number</big>
+                                        <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="phone" />
+                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                    </div>
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Location</big>
+                                        <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="location" />
+                                    </div>
+                                </div>
+                            </div>
 
-            <div className="whole-m-p">
-                <form>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <div className="form-group my-3">
-                                <big className="text-white">Name</big>
-                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" />
-                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small> */}
+                            <div className="form-group my-1">
+                                <big className="text-white">Additional Message</big>
+                                <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="comment" />
                             </div>
-                            <div className="form-group my-3">
-                                <big className="text-white">Date of Birth</big>
-                                <input type="password" className="form-control input-overlay"
-                                    id="exampleInputPassword1" />
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-group my-3">
-                                <big className="text-white">Phone Number</big>
-                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" />
-                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small> */}
-                            </div>
-                            <div className="form-group my-3">
-                                <big className="text-white">Location</big>
-                                <input type="password" className="form-control input-overlay"
-                                    id="exampleInputPassword1" />
-                            </div>
-                        </div>
+
+              
+
+                            {/* <button onClick={formSubmit} type="submit" className="my-3 btn btn-gold">Register</button> */}
+                            {/* <CustomToggle eventKey="0">
+                               
+                            </CustomToggle> */}
+                        </form>
                     </div>
 
-                    <div className="form-group my-1">
-                        <big className="text-white">Additional Message</big>
-                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+
+                {/* This is me */}
+            </Card>
+
+            <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <div className="text-center image-middle">
+                        <img className="singleFrame-style" src={singleFrame} alt="" />
+                        <h3 className="centered">Payment Method</h3>
                     </div>
 
                     {/* <div className="row">
@@ -199,11 +267,8 @@ return (
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
-                                        <big className="text-white">Date</big>
-                                        <input type="email" className="form-control input-overlay"
-                                            id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                            email with anyone else.</small> */}
+                                        <big className="text-white">Password</big>
+                                        <input type="password" className="form-control input-overlay" />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -216,18 +281,15 @@ return (
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
+                            {/* <button  onClick={formSubmit}  className="my-3 btn btn-gold">Confirm Payment</button> */}
+                                <button onClick={formSubmit} type="submit" className="my-3 btn btn-gold">Register</button>
+                        </form>
                     </div>
+                </CardContent>
+            </Card>
+        </>
+    );
 
-                    <button type="submit" onClick={handleHomePage} className="my-3 btn btn-gold">Confirm
-                        Payment</button>
-                </form>
-            </div>
-        </CardContent>
-    </Card> : null}
-</>
-);
 };
 
 export default StarChat;
