@@ -84,9 +84,10 @@
     color:#F0E25E;
   }
   .Stars-searchid{
-    width:140px;
+    width:8vw;
     height:22px;
     border-radius:20px;
+    background-color: #F7F7F7 !important;
     border:none;
     margin-left:20px;
   }
