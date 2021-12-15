@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import profilePhoto from "../../../../../images/Shakib/13.jpg";
-import Jainamaz from "../../../../../images/LiveChat/Jainamaz.jpg";
+import Jainamaz from "../../../../../images/unnamed.jpg";
 import "../../../../CSS/Profile/Souviner/Souviner.css";
 import smileImg from "../../../../../images/LiveChat/smileImg.jpg";
 import { Carousel } from "react-bootstrap";
@@ -62,9 +62,7 @@ return (
           <h6 className="mt-3 mx-1  text-light">Details</h6>
           <div className="souviner-details">
             <p className="text-light">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Adipisci nulla tempora asperiores iusto dicta iure rerum
-              recusandae enim accusamus tenetur.{" "}
+            The 33-year-old, whose two-year ban from the ICC coincided with the suspension from international cricket, followed...
               <span className="seemore text-warning" onClick={()=> {
                 setmore(!more);
                 }}
@@ -75,13 +73,7 @@ return (
 
             {more ? (
             <p className="text-light">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates voluptatibus dolorum magni, iure vel repellendus
-              alias itaque voluptatem provident harum. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Veritatis dolorum
-              quis laboriosam modi, perferendis culpa minima, nemo atque
-              sint ipsam temporibus omnis sit. A tenetur vel similique
-              blanditiis corporis eius.
+             teammate Mushfiqur Rahim, who auctioned the bat in 2013 after winning the first double ODI in Bangladesh has been restored. Four times the base amount before the end of the auction on a Facebook page on Wednesday night. The funds raised from Shakib's bat will be donated to his foundation to fight the epidemic.
             </p>
             ) : (
             ""

@@ -50,11 +50,11 @@ return (
             </h2>
 
             <div className="my-2 Enroll-a Enroll-text">
-                {user.postTitel}
+                {/* {user.postTitel} */}
             </div>
 
             <div className="card PostCard">
-                <ReactPlayer url="https://youtu.be/3jtqM_EsUCQ" className="Live-Video-x" playing={false} volume={1}
+                <ReactPlayer url={user.video} className="Live-Video-x" playing={false} volume={1}
                     onReady={()=> console.log("ready now")}
                     />
             </div>
