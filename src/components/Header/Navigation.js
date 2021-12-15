@@ -79,7 +79,7 @@ const Navigation = () => {
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "50%" }}
+                                                        style={{ width: "60px", borderRadius: "48%" }}
                                                         src={Shakib}
                                                         alt=""
                                                     />
@@ -102,7 +102,7 @@ const Navigation = () => {
                                                         <div className="timeStamp-text-icon">
                                                             <i className="mt-1 me-2 far fa-clock"></i>
                                                         </div>
-                                                        <p className="mt-1">27h 32m</p>
+                                                        <p className="mt-1">1m 20s</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@ const Navigation = () => {
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "50%" }}
+                                                        style={{ width: "60px", borderRadius: "48%" }}
                                                         src={Momotaz}
                                                         alt=""
                                                     />
@@ -139,7 +139,7 @@ const Navigation = () => {
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "50%" }}
+                                                        style={{ width: "60px", borderRadius: "48%" }}
                                                         src={Srabanti}
                                                         alt=""
                                                     />
