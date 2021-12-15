@@ -27,7 +27,7 @@ export const LeftSidebar = ({history}) => {
     return (
         <>
         
-            <div className="container left-col-box p-3 mt-3">
+            <div className=" left-col-box p-3 mt-3">
                 
                 <div class="accordion " id="accordionExample">
                     <div className="accordion" id="accordionExample">

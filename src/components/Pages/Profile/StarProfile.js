@@ -124,7 +124,18 @@ const StarProfile = () => {
               component={StarChat}
             />
 
+
+<Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+
+
+
+
             <Route path={`${path}/livechat/starChat`} exact component={StarChat}/>
+
             <Route exact path={path}>
               <StarPost />
             </Route>
