@@ -1,18 +1,18 @@
 import React from "react";
-import "../../CSS/Profile/starProfile/starProfile.css";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
 import AzhariProfile from "../../../images/starProfile/azhariCover.jpg";
 import ProfileAzhari from "../../../images/starProfile/profile-azhari.png";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
-import StarPhotos from "../../Pages/Profile/profile-components/starProfile/StarPhotos";
-
-import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
-import Souviner from "../../Pages/Profile/profile-components/starProfile/Souviner";
-import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
-import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
+import "../../CSS/Profile/starProfile/starProfile.css";
 import Navigation from "../../Header/Navigation";
+import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
+import Souviner from "../../Pages/Profile/profile-components/starProfile/Souviner";
+import StarPhotos from "../../Pages/Profile/profile-components/starProfile/StarPhotos";
+import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
+import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
 import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
+
 
 const StarProfile = () => {
   let { path, url } = useRouteMatch();
@@ -124,6 +124,7 @@ const StarProfile = () => {
               component={StarChat}
             />
 
+
 <Route
               path={`${path}/livechat/starChat`}
               exact
@@ -131,6 +132,9 @@ const StarProfile = () => {
             />
 
 
+
+
+            <Route path={`${path}/livechat/starChat`} exact component={StarChat}/>
 
             <Route exact path={path}>
               <StarPost />
