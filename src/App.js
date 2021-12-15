@@ -79,7 +79,7 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 

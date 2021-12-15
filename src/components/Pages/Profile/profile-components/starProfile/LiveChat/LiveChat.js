@@ -101,18 +101,12 @@ return (
           <h5 class="card-title text-warning">Live Chat Instructions</h5>
           <div className="star-line"></div>
           <div className="instruct">
-            <p class=" my-3 text-light">1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque sunt,
-              voluptatum excepturi minima facilis quisquam.</p>
-            <p class=" my-3 text-light">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, perferendis.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, repellat perspiciatis sit ut
-              excepturi minus aperiam consectetur eaque nostrum ex ab porro corporis quidem deleniti, vel quae corrupti
-              natus. Id.</p>
-            <p class=" my-3 text-light">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, perferendis.
-              Lorem ipsum dolor sit amet. </p>
-
-            <p class=" my-3 text-light">4. Lorem ipsum dolor sit amet consectetur adipisicing elit..</p>
-
-            <p class=" my-3 text-light">5. Lorem ipsum dolor sit amet .</p>
+            <p class=" my-3 text-light">1.	User can only chat with the superstar for minimum 1 minute to maximum 5 minutes.</p>
+            <p class=" my-3 text-light">2.	User should not insult superstar or speak about their personal topics. There should be no insults or blasphemy with a superstar.</p>
+            <p class=" my-3 text-light">3.	User should proofread the chat to superstar before sending it to superstar </p>
+            <p class=" my-3 text-light">4.	User should be friendly and cheerful with the star to maintain the conversation positive.</p>
+            <p class=" my-3 text-light">5.	User should maintain the basic Grammar, Spelling, and Use of Language with the superstar.</p>
+            <p class=" my-3 text-light">6.	User should be proactive but not intrusive.</p>
           </div>
 
         </div>
