@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-
 import OwlCarousel from 'react-owl-carousel';
 import singleFrame from '../../../../../../images/Normal-User/Single-frame.png';
 import applePayLogo from '../../../../../../images/Payment-img/Apple_Pay_logo.png';
@@ -10,7 +9,7 @@ import bKashLogo from '../../../../../../images/Payment-img/BKash-bKash-Logo.win
 import payoneerLogo from '../../../../../../images/Payment-img/Payoneer-Logo.wine.png';
 import payPalLogo from '../../../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
-import azhari from '../../../../../../images/Shakib/13.jpg';
+import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 import axios from "axios";
 import swal from 'sweetalert';
@@ -95,45 +94,40 @@ const StarChat = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div className="col-md-9">
-                    <h4 className="starChat-heading">Live Chat</h4>
-                    <div className="vb"></div>
 
-                    <div className="mt-3 row">
+                        <div className="col-md-9">
+                            <h4 className="starChat-heading">Live Chat</h4>
+                            <div className="vb"></div>
 
-                        <div className="col-md-6 display-style-starChat">
-                            <div className="me-5 starChat-child-style text-white">
-                                <h6>Star</h6>
-                                <h6>Date</h6>
-                                <h6>Time</h6>
-                                <h6>Fee</h6>
+                            <div className="mt-3 row">
+
+                                <div className="col-md-6 display-style-starChat">
+                                    <div className="me-5 starChat-child-style text-white">
+                                        <h6>Star</h6>
+                                        <h6>Date</h6>
+                                        <h6>Time</h6>
+                                        <h6>Fee</h6>
+                                    </div>
+
+                                    <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
+                                        <h6>Mizanur Rahman Azhari</h6>
+                                        <h6>12 / 08 / 2021</h6>
+                                        <h6>11.59 PM</h6>
+                                        <h6>999 BDT</h6>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="col-md-6">
+                                    <div className="mx-2 starChat-child-style">
+                                        <h5 className="text-white">Instructions</h5>
+                                        <p style={{ color: '#c2c2c2' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis rerum, ex recusandae facere dolorem quia cumque sapiente natus cum nulla quas possimus corrupti minus tempora officia dolor earum sunt sit vel. Architecto, accusamus neque non minima doloribus culpa itaque!</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
-                                <h6>Shakib Al Hasan</h6>
-                                <h6>12 / 08 / 2021</h6>
-                                <h6>11.59 PM</h6>
-                                <h6>999 BDT</h6>
-                            </div>
-                        </div>
-
-                        <div className="col-md-6">
-                            <div className="mx-2 starChat-child-style">
-                                <h5 className="text-white">Instructions</h5>
-                                <p style={{ color: '#c2c2c2' }}>User can only chat with the superstar for minimum 1
-                                    minute to maximum 5 minutes.
-                                    User should not insult superstar or speak about their personal topics. There should
-                                    be no insults or blasphemy with a superstar.
-                                    User should proofread the chat to superstar before sending it to superstar.
-                                    User should be friendly and cheerful with the star to maintain the conversation
-                                    positive.
-                                    User should maintain the basic Grammar, Spelling, and Use of Language with the
-                                    superstar.
-                                    User should be proactive but not intrusive.</p>
-                            </div>
                         </div>
                     </div>
 
@@ -179,7 +173,7 @@ const StarChat = (props) => {
                             </CustomToggle> */}
                         </form>
                     </div>
-
+                </CardContent>
 
                 {/* This is me */}
             </Card>
@@ -191,79 +185,65 @@ const StarChat = (props) => {
                         <h3 className="centered">Payment Method</h3>
                     </div>
 
-                    {/* <div className="row">
-                        <div className="col-md-6">
-                            <div className="form-group my-3">
-                                <big className="text-white">Password</big>
-                                <input type="password" className="form-control input-overlay"
-                                    id="exampleInputPassword1" />
+                    <div>
+                        <OwlCarousel className="owl-theme" loop margin={0} nav>
+                            <div className="item">
+                                <img
+                                    src={applePayLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
+                                />
                             </div>
-                        </div>
-                    </div> */}
+                            <div className="item">
+                                <img
+                                    src={bKashLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
 
-                    <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
-                    {/* <CustomToggle eventKey="0">
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={payoneerLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
 
-                    </CustomToggle> */}
-                </form>
-            </div>
-        </CardContent>
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={payPalLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
 
-        {/* This is me */}
-    </Card>
+                                />
+                            </div>
+                            <div className="item">
+                                <img
+                                    src={visaLogo}
+                                    alt=""
+                                    className="img-fluid payment-img"
 
-    {showCard ? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
-        <CardContent>
-            <div className="text-center image-middle">
-                <img className="singleFrame-style" src={singleFrame} alt="" />
-                <h3 className="centered">Payment Method</h3>
-            </div>
-
-            <div>
-                <OwlCarousel className="owl-theme" loop margin={0} nav>
-                    <div className="item">
-                        <img src={applePayLogo} alt="" className="img-fluid payment-img" />
+                                />
+                            </div>
+                        </OwlCarousel>
                     </div>
-                    <div className="item">
-                        <img src={bKashLogo} alt="" className="img-fluid payment-img" />
-                    </div>
-                    <div className="item">
-                        <img src={payoneerLogo} alt="" className="img-fluid payment-img" />
-                    </div>
-                    <div className="item">
-                        <img src={payPalLogo} alt="" className="img-fluid payment-img" />
-                    </div>
-                    <div className="item">
-                        <img src={visaLogo} alt="" className="img-fluid payment-img" />
-                    </div>
-                </OwlCarousel>
-            </div>
 
-            <div>
-                <form>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <div className="form-group my-3">
-                                <big className="text-white">Cardholder Name</big>
-                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" />
+                    <div>
+                        <form>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group my-3">
+                                        <big className="text-white">Cardholder Name</big>
+                                        <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+                                    </div>
+
+                                </div>
 
                             </div>
 
-                        </div>
 
-                    </div>
-
-                    <div className="row">
-                        <div className="col-md-6">
-                            <div className="form-group my-3">
-                                <big className="text-white">Password</big>
-                                <input type="password" className="form-control input-overlay"
-                                    id="exampleInputPassword1" />
-                            </div>
-                        </div>
-
-                        <div className="col-md-6">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
@@ -271,16 +251,28 @@ const StarChat = (props) => {
                                         <input type="password" className="form-control input-overlay" />
                                     </div>
                                 </div>
+
                                 <div className="col-md-6">
-                                    <div className="form-group my-3">
-                                        <big className="text-white">CCV</big>
-                                        <input type="email" className="form-control input-overlay"
-                                            id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your
-                                            email with anyone else.</small> */}
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <div className="form-group my-3">
+                                                <big className="text-white">Date</big>
+                                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-group my-3">
+                                                <big className="text-white">CCV</big>
+                                                <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                                {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
+
                             {/* <button  onClick={formSubmit}  className="my-3 btn btn-gold">Confirm Payment</button> */}
                                 <button onClick={formSubmit} type="submit" className="my-3 btn btn-gold">Register</button>
                         </form>
@@ -289,7 +281,6 @@ const StarChat = (props) => {
             </Card>
         </>
     );
-
 };
 
 export default StarChat;
