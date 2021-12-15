@@ -14,7 +14,7 @@ export default class LearnPost extends Component {
           <div className="container-fluid custom-container">
             <div className="row">
 
-              <div className="col-sm-3 justify-content-center">
+              <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right">
                 <LeftSidebar/>
               </div>
 
@@ -22,7 +22,7 @@ export default class LearnPost extends Component {
                 <Learn/>
               </div>
 
-              <div className="col-md-3 justify-content-center" >
+              <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right" >
                 <RightSidebar/>
               </div>
 

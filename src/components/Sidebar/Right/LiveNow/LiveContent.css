@@ -1,0 +1,78 @@
+.live-now-img {
+    border-radius: 10px;
+  }
+  
+  /* .live-notification{
+      margin-top: -80px;
+      margin-bottom: 100px
+  } */
+  
+  .live-notification {
+    /* margin-right: -10px; */
+    margin-left: -4vh;
+  }
+  
+  .live-now-parent {
+    /* margin-right: 24px; */
+    position: relative;
+    text-align: center;
+  }
+  
+  .live-btn-style {
+    height: 80%;
+    background-color: #ffca2c;
+  }
+
+  @media only screen and (max-width: 768px){
+    .live-btn-style {
+        height: 60%;
+        background-color: #ffca2c;
+      }
+  }
+  
+  .live-now-userName {
+    width: 85%;
+    position: absolute;
+    top: 90%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .live-userName-text {
+    margin-left: 20vh;
+    color: white;
+    font-size: 15px;
+    background-color: red;
+    display: block;
+  }
+  
+ 
+/* 
+  @media only screen and (max-width: 768px) {
+   
+  } */
+  
+  .live-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .live-center {
+    /* position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  }
+  
+  .live-text-parent{
+      background-color: #683a3a;
+      display: block;
+      position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .live-now-img{
+      margin-left: 10px;
+  }
