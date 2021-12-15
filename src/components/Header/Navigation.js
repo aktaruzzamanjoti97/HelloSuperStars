@@ -15,6 +15,8 @@ import './Navigation.css'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Shakib from "../../images/sakib.jpg";
 import Momotaz from '../../images/Momotaz.jpg'
+import { ClockIcon } from '@heroicons/react/solid';
+import Srabanti from '../../images/srabanti.jpg';
 
 const Navigation = () => {
 
@@ -69,23 +71,52 @@ const Navigation = () => {
                             <Nav.Link onClick={handleChatIsOpen} className="navPadpd">
                                 <div className="dropdown dropDownIconRemove">
                                     {/* <div className="superStarChatBar"> */}
-                                        <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i className="fa fa-comment circle-icon"></i>
-                                        </div>
+                                    <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i className="fa fa-comment circle-icon"></i>
+                                    </div>
                                     {/* </div> */}
 
                                     <div class="dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
-                                        <div>
+                                        <div onClick={handleShow}>
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
-                                                        className="img-fluid"
+                                                        className="img-fluid liveChatVideoPic"
                                                         style={{ width: "60px", borderRadius: "50%" }}
                                                         src={Shakib}
                                                         alt=""
                                                     />
-                                                    <div className="text-white ms-1">
+                                                    <div className="text-white ms-1 mt-1 profileName">
                                                         <p className="text-margin-bottom"><b>Shakib Al Hasan</b></p>
+                                                        <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                    </div>
+                                                </div>
+
+                                                <div className="timeStampColor">
+                                                    {/* <p className="text-margin-bottom">7/9/2021</p>
+                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p> */}
+
+                                                    <div className="d-flex text-warning">
+                                                        <div className="timeStamp-text-icon">
+                                                            <i className="mt-1 me-2 far fa-clock"></i>
+                                                        </div>
+                                                        <p className="mt-1">27h 32m</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div onClick={handleShow} className="mt-4">
+                                            <div className="d-flex justify-content-between m-3">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "60px", borderRadius: "50%" }}
+                                                        src={Momotaz}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                        <p className="text-margin-bottom"><b>Momotaz Begum</b></p>
                                                         <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                     </div>
                                                 </div>
@@ -97,17 +128,17 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div className="mt-4">
+                                        <div onClick={handleShow} className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
-                                                        className="img-fluid"
+                                                        className="img-fluid liveChatVideoPic"
                                                         style={{ width: "60px", borderRadius: "50%" }}
-                                                        src={Momotaz}
+                                                        src={Srabanti}
                                                         alt=""
                                                     />
-                                                    <div className="text-white ms-1">
-                                                        <p className="text-margin-bottom"><b>Shakib Al Hasan</b></p>
+                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                        <p className="text-margin-bottom"><b>Srabanti Mukherjee</b></p>
                                                         <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                     </div>
                                                 </div>
@@ -174,7 +205,9 @@ asdfasdf
                     </Navbar.Collapse>
                 </div>
 
-                <Modal className="liveChatModalVideo" show={show} onHide={handleClose} dialogClassName="" aria-labelledby="example-custom-modal-styling-title">
+                <Modal className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
 
                     <Modal.Body>
                         <iframe src={external_link} style={{ width: '100%', height: '400px' }} />
