@@ -50,7 +50,7 @@ export const RightSidebar = ({ history }) => {
                         <Learn />
 
                         <Link to='/learning-sessions'>
-                            <button className="Live-RS-btn" style={{ backgroundColor: getColor('/learning-sessions') }}>
+                            <button className="Live-RS-btn live-btn-style" style={{ backgroundColor: getColor('/learning-sessions') }}>
                                 <small className="see-all-live">See All</small>
                                 <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
                             </button>
@@ -69,7 +69,7 @@ export const RightSidebar = ({ history }) => {
                         <UpLive />
 
                         <Link to='/upcoming-live'>
-                            <button className="Live-RS-btn" style={{ backgroundColor: getColor('/upcoming-live') }}>
+                            <button className="Live-RS-btn live-btn-style" style={{ backgroundColor: getColor('/upcoming-live') }}>
                                 <small className="see-all-live">See All</small>
                                 <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
                             </button>
@@ -87,7 +87,7 @@ export const RightSidebar = ({ history }) => {
                             <UpAuditions />
 
                             <Link to='/upcoming-auditions'>
-                                <button className="Live-RS-btn" style={{ backgroundColor: getColor('/upcoming-auditions') }}>
+                                <button className="Live-RS-btn live-btn-style" style={{ backgroundColor: getColor('/upcoming-auditions') }}>
                                     <small className="see-all-live">See All</small>
                                     <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
                                 </button>

@@ -109,14 +109,14 @@ const StarChat = () => {
                                 <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
                             </div>
 
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Password</big>
                                         <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
                             {/* <CustomToggle eventKey="0">
