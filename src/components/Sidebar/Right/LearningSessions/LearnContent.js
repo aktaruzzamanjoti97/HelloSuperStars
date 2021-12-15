@@ -4,6 +4,7 @@ import '../../../CSS/Sidebar/Right/Right.css'
 export default function LearnContent({leran})  {
     return (
         <>
+
             <div class="column">
                 <div className="column-bg">
                     <img src={leran.profilePicture} className="Live-RS-img img-fluid" alt={leran.profilePicture} />
@@ -11,7 +12,10 @@ export default function LearnContent({leran})  {
                         <p className="text-center"><small>{leran.username}</small></p>
                     </div>
 
-                    
+                    <div class="ContentLight">
+                        🔴
+                    </div>
+
                 </div>
             </div>
         </>

@@ -20,14 +20,14 @@
   
   .live-btn-style {
     height: 80%;
-    background-color: #ffca2c;
   }
 
   @media only screen and (max-width: 768px){
     .live-btn-style {
-        height: 60%;
-        background-color: #ffca2c;
+        height: 10vh;
+        margin-top: 0px;
       }
+      
   }
   
   .live-now-userName {
