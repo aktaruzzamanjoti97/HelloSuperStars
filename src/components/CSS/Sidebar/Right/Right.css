@@ -1,3 +1,8 @@
+/* Sticky Rigth Sidebar */
+.LinkBtn{
+    position: sticky;
+    top: -123px;
+}
 
 .right-col-box-home-r{
    
@@ -18,10 +23,7 @@
     padding-top: 8px;
 }
 
-.LinkBtn{
-    position: sticky;
-    top: -85px;
-}
+
 
 .Live-S-Nav{
     position: relative;
