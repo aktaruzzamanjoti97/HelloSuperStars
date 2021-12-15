@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import ReactPlayer from 'react-player';
-import profileAzhari from '../../../../../images/Profile/azhari-profile.jpg';
-import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
+import profileAzhari from '../../../../../images/Shakib/pro.jpg';
+import azhari from "../../../../../images/Shakib/1.jpg";
 // import "../../../../CSS/Profile/starProfile/starPhotos.css";
 // import '../../../../CSS/Profile/starProfile/starPhotosDetails.css';
 import '../../../../CSS/Profile/starProfile/starVideoDetails.css';
@@ -39,7 +39,7 @@ const StarVideoDetails = () => {
                         </div>
                         <div className="col-md-8">
                             <div className="p-2">
-                                <ReactPlayer url="https://www.youtube.com/watch?v=3jtqM_EsUCQ&t=2s" className="img-fluid reactPlayer-style" playing={false}
+                                <ReactPlayer url="https://www.youtube.com/watch?v=8wb3hiF20bQ" className="img-fluid reactPlayer-style" playing={false}
                                     volume={1} onReady={() => console.log("ready now")} width="60" height="70vh"
                                 />
                             </div>
@@ -65,14 +65,14 @@ const StarVideoDetails = () => {
                                         alt=""
                                     />
                                     <div className="m-3">
-                                        <h5 className="text-light">Mizanur Rahman Azhari</h5>
-                                        <h6 style={{ color: "#a9a9a9" }}>April 30, 2021</h6>
+                                        <h5 className="text-light">Shakib Al Hasan  </h5>
+                                        <h6 style={{ color: "#a9a9a9" }}>6th Dec, 2021</h6>
                                     </div>
                                 </div>
                             </div>
 
                             <div>
-                                <p className="text-light">আপনার রমাদানকে প্রোডাক্টিভ করে তুলতে— কুরআনের সাথে সময় কাটান, কুরআনের সাথে সম্পর্কের নবায়ন করুন এবং কুরআনময় করে তুলুন এবারের রমাদান।</p>
+                                <p className="text-light">Shakib Al Hasan becomes the 6th player to take 200 wickets and score 4000 runs in Test cricket. He is the fastest cricketer to achieve this feat</p>
                                 <p className="bottom-border"></p>
                             </div>
 

@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Modal from 'react-bootstrap/Modal';
 // import Modal from 'react-modal';
-import profileAzhari from '../../../../../images/Profile/azhari-profile.jpg';
-import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
-import azhari2 from "../../../../../images/starProfile/StarPhotos/2.jpg";
-import azhari3 from "../../../../../images/starProfile/StarPhotos/3.jpg";
+import profileAzhari from '../../../../../images/Shakib/20.jpg';
+import azhari from "../../../../../images/Shakib/20.jpg";
+import azhari2 from "../../../../../images/Shakib/shakib-759-1.jpg";
+import azhari3 from "../../../../../images/Shakib/1.jpg";
 import "../../../../CSS/Profile/starProfile/starPhotos.css";
 import '../../../../CSS/Profile/starProfile/starPhotosDetails.css';
 
@@ -86,14 +86,14 @@ const StarPhotosDetails = () => {
                                         alt=""
                                     />
                                     <div className="m-3">
-                                        <h5 className="text-light">Mizanur Rahman Azhari</h5>
+                                        <h5 className="text-light">Shakib Al Hasan</h5>
                                         <h6 style={{ color: "#a9a9a9" }}>April 30, 2021</h6>
                                     </div>
                                 </div>
                             </div>
 
                             <div>
-                                <p className="text-light">আপনার রমাদানকে প্রোডাক্টিভ করে তুলতে— কুরআনের সাথে সময় কাটান, কুরআনের সাথে সম্পর্কের নবায়ন করুন এবং কুরআনময় করে তুলুন এবারের রমাদান।</p>
+                                <p className="text-light">Shakib Al Hasan becomes the 6th player to take 200 wickets and score 4000 runs in Test cricket. He is the fastest cricketer to achieve this feat</p>
                                 <p className="bottom-border"></p>
                             </div>
 

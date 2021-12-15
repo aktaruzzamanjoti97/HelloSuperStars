@@ -3,12 +3,12 @@ export const Lives = [
   {
     id:1,
       username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
+      profilePicture: "images/Shakib/pro.jpg",
   },
   {
     id:2,
     username: "Momtaz Begum",
-    profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+    profilePicture: "images/Momtaz-Begum-photo.jpg",
   },
   {
     id:3,
@@ -23,13 +23,13 @@ export const Lives = [
 export const Learns = [
     {
       id:1,
-      username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
+      username: "Srabanti Chatterjee",
+      profilePicture: "images/srabanti.jpg",
     },
     {
       id:2,
-      username: "Ayman Sadiq",
-      profilePicture: "images/Profile/ayman-profile.jpg",
+      username: "Shah Rukh Khan",
+      profilePicture: "images/Shah-Rukh-Khan.jpg",
     },
     {
       id:3,
@@ -62,7 +62,7 @@ export const UpLives = [
 export const Auditions = [
   {
     id:1,
-    username: "Shakib All Hasan",
+    username: "Shakib Al Hasan",
     profilePicture: "images/Profile/Shakibpro.png",
   },
   {
@@ -85,9 +85,9 @@ export const Auditions = [
 export const Users = [
     {
       id:1,
-      username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
-      postPic:"images/Profile/ShakibPost.jpg",
+      username: "Shakib Al Hasan",
+      profilePicture: "images/Shakib/shakib-al-hasan.jpg",
+      postPic:"images/Shakib/1.jpg",
       postTitel:"Coming live at 9.00 pm tonight. See you there!",
       time: "5:30 PM",
       date: "21th November",
@@ -101,9 +101,9 @@ export const Users = [
     {
       id:2,
       username: "Momtaz Begum",
-      profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+      profilePicture: "images/Momtaz-Begum-photo.jpg",
       postPic:"images/Momotaz.jpg",
-      postTitel:"",
+      postTitel:"Folk is in my bloodstream I cry folk and do sing folk. My listeners are the backbone of my passion. Folksong is something I always admire and let me be in peace to sing along",
       time: "5:30 PM",
       date: "10th December",
       candidate:"360",
@@ -217,15 +217,15 @@ export const Users = [
 
   export const youtubeLink = [
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=LRtEJPSj2-8"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=zm4roSWVehY"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=tUNGAuPW-_o"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=8wb3hiF20bQ&t=21s"
     }
   ]

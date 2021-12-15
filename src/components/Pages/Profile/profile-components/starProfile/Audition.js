@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import quranLight from '../../../../../images/Audition-images/quranLight-removebg-preview.png'
+import quranLight from '../../../../../images/215857-removebg-preview.png'
 // import ReactPlayer from "react-player";
 import '../../../../CSS/Audition/Audition.css'
 import AuditionCard from './AuditionCard';
@@ -20,8 +20,8 @@ export default function Audition() {
                                 <div className="d-flex align-items-center w-100 h-100">
 
                                     <div className="p-2">
-                                        <h3>Quran Reciting Challenge</h3>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia minima dolores eveniet facere debitis in blanditiis error rerum accusantium repellendus.</p>
+                                        <h3>Balling Challenge</h3>
+                                        <p>Shakib Al Hasan is ecstatic after dismissing MS Dhoni, Bangladesh v India, 1st ODI, Mirpur, June 18, 2015</p>
                                     </div>
                                 </div>
                             </div>

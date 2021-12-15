@@ -4,7 +4,7 @@ import "../../../../CSS/Profile/starProfile/starPost.css";
 // import profilePhoto from "../../../../../images/Profile/azhari-profile.jpg";
 import ReactPlayer from "react-player";
 import CardComponent from "./StarCardComponent/CardComponent";
-import WazContent from "../../../../../images/starProfile/waz-content.jpg";
+import WazContent from "../../../../../images/Shakib/3.jpg";
 // import Children from "../../../../../images/starProfile/starPostLeftContent/children.jpg";
 // import Jainamaj from "../../../../../images/starProfile/starPostLeftContent/jainamaz.jpg";
 // import Topi from "../../../../../images/starProfile/starPostLeftContent/Cap.jpg";
@@ -25,13 +25,13 @@ export default function StarPost() {
           <div className="cards-start">
             <div className="card-scroll">
               <CardComponent
-                name="Mizanur Rahman Azhari"
+                name="Shakib Al Hasan"
                 time="5.31 pm"
-                date="2nd july"
-                msg="As-salamu alaykum take greeting brothers"
+                date="10th December"
+                msg="“I Never Looked Back” I said, after being the best all-rounder in the world in ODIs. I talked about my success so far in the Cricket World Cup 2019: where it's all gone right!"
                 content={
                   <ReactPlayer
-                    url="https://youtu.be/3jtqM_EsUCQ"
+                    url="https://www.youtube.com/watch?v=8wb3hiF20bQ"
                     playing={false}
                     volume={1}
                     width="95%"
@@ -45,10 +45,10 @@ export default function StarPost() {
                 comment="105 Comments"
               />
               <CardComponent
-                name="Mizanur Rahman Azhari"
+                name="Shakib Al Hasan"
                 time="5.31 pm"
                 date="2nd july"
-                msg="As-salamu alaykum take greeting brothers"
+                msg="Playing for self is not mandatory but for your own country is absolutely essential."
                 content={
                   <div className="d-flex justify-content-center align-items-center text-light">
                     {
@@ -66,35 +66,19 @@ export default function StarPost() {
               />
 
               <CardComponent
-                name="Mizanur Rahman Azhari"
+                name="Shakib Al Hasan"
                 time="5.31 pm"
                 date="2nd july"
-                msg="As-salamu alaykum take greeting brothers"
+                msg="All are right"
                 content={
                   <div className="d-flex justify-content-center align-items-center text-light">
                     {
                       <small className="container mt-2">
-                        ইবরাহীম (‘আ.) বলেন, (وَلَكِنْ لِيَطْمَئِنَّ قَلْبِي)
-                        ‘তবে এ তো কেবল চিত্ত প্রশান্তির জন্য’- (২ঃ ২৬০)। মু‘আয
-                        (রাঃ) বলেন, ‘এসো আমাদের সঙ্গে বস, কিছুক্ষণ ঈমানের আলোচনা
-                        করি।’ ইবনু মাস‘ঊদ (রাঃ) বলেন, ‘ইয়াকীন হল পূর্ণ ঈমান।’
-                        ইবনু ‘উমার (রাঃ) বলেন, ‘বান্দা প্রকৃত তাকওয়ায় পৌঁছতে
-                        পারে না, যতক্ষণ পর্যন্ত সে, মনে যে বিষয় সন্দেহের সৃষ্টি
-                        করে, তা পরিত্যাগ না করে।’ মুজাহিদ (রহঃ) এ আয়াতের
-                        ব্যাখ্যায় বলেন, অর্থাৎ হে মুহাম্মাদ সাল্লাল্লাহু আলাইহি
-                        ওয়াসাল্লাম! আমি আপনাকে এবং নূহকে একই ধর্মের আদেশ করেছি।
-                        ইবনু ‘আব্বাস (রাঃ) বলেন, (شِرْعَةً وَمِنْهَاجًا) অর্থাৎ
-                        পথ ও পন্থা—এবং তোমাদের দু'আ অর্থাৎ তোমাদের ঈমান।
-                        উবায়দুল্লাহ্ ইবনু মূসা (রহঃ) ... ইবনু উমর (রাঃ) থেকে
-                        বর্ণিত, তিনি বলেন, রাসুলুল্লাহ সাল্লাল্লাহু আলাইহি
-                        ওয়াসাল্লাম ইরশাদ করেন, ইসলামের ভিত্তি পাঁচটি।
+                        The biggest fight for the people of a nation is the fight for independence. Salute to the brave army and people of Bangladesh. Each of the freedom fighter had sleepless nights trying to drive out the intruders from the nation.
                         <br />
                         <br />
                         <br />
-                        ১। আল্লাহ্ ছাড়া ইলাহ্ নেই এবং নিশ্চয় মুহাম্মদ আল্লাহ্‌র
-                        রাসূল-এ কথার সাক্ষ্য দান। ২। সালাত (নামায/নামাজ) কায়েম
-                        করা ৩। যাকাত দেওয়া ৪। হাজ্জ (হজ্জ) করা এবং ৫। রামাদান এর
-                        সিয়াম পালন করা।
+                        On this day, we showcase our respect for them and give them tribute for their bravery. Happy Victory Day of Bangladesh
                       </small>
                     }
                   </div>
@@ -105,25 +89,20 @@ export default function StarPost() {
               />
 
               <CardComponent
-                name="Mizanur Rahman Azhari"
+                
+                name="Shakib Al Hasan"
                 time="5.31 pm"
                 date="2nd july"
-                msg="As-salamu alaykum take greeting brothers"
+                msg="ICC coincided"
                 content={
                   <div className="d-flex justify-content-center align-items-center text-light">
                     {
                       <small className="container mt-2">
-                        "যে ব্যাক্তি আল্লাহ ও আখিরাতে বিশ্বাস রাখে, সে যেন তার
-                        মেহমানকে সম্মান করে। ....." "আল্লাহ তোমাদের চেহারা সুরত
-                        ও ধনসম্মদ দেখবেন না, তিনি দেখবেন তোমাদের অন্তর ও কাজ।
-                        ....."
+                        The 33-year-old, whose two-year ban from the ICC coincided with the suspension from international cricket, followed teammate Mushfiqur Rahim, who auctioned the bat in 2013 after winning the first double ODI in Bangladesh has been restored.
                         <br />
                         <br />
                         <br />
-                        ১। আল্লাহ্ ছাড়া ইলাহ্ নেই এবং নিশ্চয় মুহাম্মদ আল্লাহ্‌র
-                        রাসূল-এ কথার সাক্ষ্য দান। ২। সালাত (নামায/নামাজ) কায়েম
-                        করা ৩। যাকাত দেওয়া ৪। হাজ্জ (হজ্জ) করা এবং ৫। রামাদান এর
-                        সিয়াম পালন করা।
+                        Four times the base amount before the end of the auction on a Facebook page on Wednesday night. The funds raised from Shakib's bat will be donated to his foundation to fight the epidemic.
                       </small>
                     }
                   </div>

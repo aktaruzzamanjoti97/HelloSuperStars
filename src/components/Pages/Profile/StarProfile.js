@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
-import AzhariProfile from "../../../images/starProfile/azhariCover.jpg";
-import ProfileAzhari from "../../../images/starProfile/profile-azhari.png";
+import AzhariProfile from "../../../images/Shakib/2.png";
+import ProfileAzhari from "../../../images/Shakib/pro.jpg";
 import "../../CSS/Profile/starProfile/starProfile.css";
 import Navigation from "../../Header/Navigation";
 import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
@@ -37,10 +37,12 @@ const StarProfile = () => {
                 />
                 <div className="profile-name-contents mt-5 mx-2">
                   <h3 className="text-light mt-5 star-profile-name">
-                    Sakib Al Hasan
+
+                  Shakib Al Hasan
                   </h3>
                   <p className="text-warning star-profile-type">
-                    World Best All Rounder Cricketer
+                  @ShakibAllrounderHasan  · 
+
                   </p>
                 </div>
               </div>
