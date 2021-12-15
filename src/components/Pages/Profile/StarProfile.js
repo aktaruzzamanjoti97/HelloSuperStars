@@ -37,10 +37,10 @@ const StarProfile = () => {
                 />
                 <div className="profile-name-contents mt-5 mx-2">
                   <h3 className="text-light mt-5 star-profile-name">
-                    Mizanur Rahman Azhari
+                    Sakib Al Hasan
                   </h3>
                   <p className="text-warning star-profile-type">
-                    Public Figure Religious
+                    World Best All Rounder Cricketer
                   </p>
                 </div>
               </div>
@@ -123,6 +123,12 @@ const StarProfile = () => {
               exact
               component={StarChat}
             />
+            <Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+                    
             <Route exact path={path}>
               <StarPost />
             </Route>
