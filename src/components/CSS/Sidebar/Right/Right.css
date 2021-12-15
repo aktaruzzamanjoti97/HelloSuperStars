@@ -194,9 +194,9 @@
     .Live-rs-text-parent {
         background-color: #683a3a;
         opacity: 0.7;
-        /* width: 95% !important; */
+        width: 87% !important;
         color: rgb(255, 255, 255);
-        margin-left: 11px;
+        margin-left: 9px;
         /* border-bottom-left-radius: 10px; */
         /* border-bottom-right-radius: 10px; */
         font-size: 9px;
@@ -245,8 +245,8 @@
         bottom: 0; /* At the bottom. Use top:0 to append it to the top */
         color: #c70d0d; 
         font-size: 13px;
-        margin-left: 8em;
-        margin-bottom: 90px;
+        margin-left: 8.5em;
+        margin-bottom: 85px;
         padding: 20px; /* Some padding */
       }
 

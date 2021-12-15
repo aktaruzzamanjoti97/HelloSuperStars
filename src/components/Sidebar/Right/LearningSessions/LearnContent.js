@@ -9,7 +9,7 @@ export default function LearnContent({leran})  {
                 <div className="column-bg">
                     <img src={leran.profilePicture} className="Live-RS-img img-fluid" alt={leran.profilePicture} />
                     <div className="Live-rs-text-parent">
-                        <p className="text-center"><small>{leran.username}</small></p>
+                        <p className="text-center p-text-liv"><small>{leran.username}</small></p>
                     </div>
 
                     <div class="ContentLight">
