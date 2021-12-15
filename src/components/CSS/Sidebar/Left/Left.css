@@ -71,14 +71,14 @@
     color: #FFAD00;
   }
   
-  
-  
+  /* Sticky Left Sidebar */
   .left-col-box-home-chat{
     background-color: #343434;
     border-radius:10px; 
     position: sticky;
-    top: 80px;
+    top: 82px;
   }
+
 
   .Stars-search{
     color:#F0E25E;

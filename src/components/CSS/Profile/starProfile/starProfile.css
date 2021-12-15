@@ -2,7 +2,11 @@
     position: relative;
    
 }
-
+.abx-pro-chay{
+    width: 90px !important;
+    height: 50px !important;
+    border-radius: 50%;
+}
 .star-profile-pic{
     cursor: pointer;
   position: absolute;
