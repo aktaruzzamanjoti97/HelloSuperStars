@@ -79,7 +79,7 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <Route exact path='/' component={Home} />
+        <PrivateRoute exact path='/' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 
@@ -112,7 +112,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
-        <Route path='/accountCreate' exact component={AccountCreate} />
+        <PrivateRoute path='/accountCreate' exact component={AccountCreate} />
 
         <Route path='/tutorial' component={SliderTutorial} />
         <Route path='/packages' component={Packages} />
