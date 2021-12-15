@@ -1,7 +1,9 @@
 import React from 'react';
 import "../../CSS/Category/Category.css";
-import frame from "../../../images/Normal-User/Single-frame.png";
+// import frame from "../../../images/Normal-User/Single-frame.png";
 import Cricketer from '../../../images/Cricket.png';
+import Tamim from '../../../images/category/imgonline-com-ua-resize-89OYdRk8U8q-removebg-preview.png';
+import Musfiqur from '../../../images/category/musfiqur.png';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -19,8 +21,7 @@ const StarSelection = () => {
         <div className="star-container category-contaienr py-5 bg-dark  bg-img">
           <div className="d-flex justify-content-center align-items-center">
             <div className="center-frame">
-              <img src={frame} alt="" className="frame2" />
-              <h6 className="category-title" style={{ fontSize:'13px' }}>CHOOSE SUPERSTARS</h6>
+              <p className='star-choosing'>CHOOSE SUPERSTARS</p>
             </div>
           </div>
 
@@ -28,23 +29,27 @@ const StarSelection = () => {
 <OwlCarousel   center className='owl-theme' loop margin={0} items={3} mouseDrag >
   <div class='superstar-item'>
   
+  <img src={Tamim}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn sub-btn mb-1'>Tamim Iqbal</button>
+</div>
+  </div>
+  <div class='superstar-item'>
+  
   <img src={Cricketer}className='img-fluid ' alt="" />
 <div className="text-center">
-<button className='btn btn-primary star-btn'>Sakib Al Hasan</button>
+<button className='btn  star-btn sub-btn mb-1'>Sakib Al Hasan</button>
 </div>
   </div>
-  <div class='superstar-item '>
-  <img src={Cricketer} alt="" className='img-fluid'  />
-  <div className="text-center">
-<button className='btn btn-primary star-btn mx-3'>Sakib Al Hasan</button>
+
+  <div class='superstar-item'>
+  
+  <img src={Musfiqur}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn sub-btn mb-1'>Mushfiqur Rahim</button>
 </div>
   </div>
-  <div class='superstar-item '>
-  <img src={Cricketer} alt="" className='img-fluid' />
-  <div className="text-center">
-<button className='btn btn-primary star-btn'>Sakib Al Hasan</button>
-</div>
-  </div>
+ 
  
 </OwlCarousel>
 
