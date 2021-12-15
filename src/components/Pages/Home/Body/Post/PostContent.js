@@ -127,6 +127,7 @@ export default function UpcomingAuditionsContent({ user }) {
                             </div>
                         </Collapse>
                     </div>
+
                 </div>
             </div>
         </>
