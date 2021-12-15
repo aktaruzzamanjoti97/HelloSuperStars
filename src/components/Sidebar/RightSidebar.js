@@ -7,6 +7,7 @@ import Live from './Right/LiveNow/Live'
 import Learn from './Right/LearningSessions/Learn'
 import UpLive from './Right/UpcomingLive/UpLive'
 import UpAuditions from './Right/UpcomingAuditions/UpAudions'
+import './Right/LiveNow/LiveContent.css'
 
 
 
@@ -30,7 +31,7 @@ export const RightSidebar = ({ history }) => {
                         <Live />
 
                         <Link to='/live-now'>
-                            <button className="Live-RS-btn" style={{ backgroundColor: getColor('/live-now') }}>
+                            <button className="Live-RS-btn live-btn-style" style={{ backgroundColor: getColor('/live-now') }}>
                                 <small className="see-all-live">See All</small>
                                 <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
                             </button>

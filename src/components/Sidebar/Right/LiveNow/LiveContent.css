@@ -20,6 +20,14 @@
   
   .live-btn-style {
     height: 80%;
+    background-color: #ffca2c;
+  }
+
+  @media only screen and (max-width: 768px){
+    .live-btn-style {
+        height: 60%;
+        background-color: #ffca2c;
+      }
   }
   
   .live-now-userName {
@@ -37,16 +45,11 @@
     display: block;
   }
   
-  .Live-rs-text-parent {
-    background-color: #683a3a;
-    opacity: 0.7;
-    width: 95% !important;
-    margin-top: -1.5rem !important;
-    color: rgb(255, 255, 255);
-    margin-left: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
+ 
+/* 
+  @media only screen and (max-width: 768px) {
+   
+  } */
   
   .live-container {
     position: relative;
