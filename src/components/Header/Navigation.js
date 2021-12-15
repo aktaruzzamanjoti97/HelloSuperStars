@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
-import { Navbar, Nav, Form, Modal, Button } from 'react-bootstrap'
+import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 // import { Link } from "react-router-dom";
 // import HomeIcon from '@material-ui/icons/Home';
 // import ChatIcon from '@material-ui/icons/Chat';
 // import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 // import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
-import accountImg from '../../images/navbar/account.jpg'
-import '../CSS/Navbar/navbar.css';
-import { Link, NavLink } from 'react-router-dom'
-import { useState } from 'react';
-import './Navigation.css'
-import Dropdown from 'react-bootstrap/Dropdown'
+import Momotaz from '../../images/Momotaz.jpg';
+import accountImg from '../../images/navbar/account.jpg';
 import Shakib from "../../images/sakib.jpg";
-import Momotaz from '../../images/Momotaz.jpg'
-import { ClockIcon } from '@heroicons/react/solid';
 import Srabanti from '../../images/srabanti.jpg';
+import '../CSS/Navbar/navbar.css';
+import './Navigation.css';
 
 const Navigation = () => {
 
@@ -77,7 +74,7 @@ const Navigation = () => {
                                     {/* </div> */}
 
                                     <div class="dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
-                                        <div onClick={handleShow}>
+                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -87,8 +84,13 @@ const Navigation = () => {
                                                         alt=""
                                                     />
                                                     <div className="text-white ms-1 mt-1 profileName">
-                                                        <p className="text-margin-bottom"><b>Shakib Al Hasan</b></p>
-                                                        <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                        <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
+                                                            <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
+                                                                <p className="text-margin-bottom"><b>Shakib Al Hasan</b></p>
+                                                                <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                            </button>
+                                                        </a>
+
                                                     </div>
                                                 </div>
 
@@ -106,7 +108,7 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div onClick={handleShow} className="mt-4">
+                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -116,8 +118,12 @@ const Navigation = () => {
                                                         alt=""
                                                     />
                                                     <div className="text-white ms-1 mt-1 profileName">
-                                                        <p className="text-margin-bottom"><b>Momotaz Begum</b></p>
-                                                        <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                        <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
+                                                            <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
+                                                                <p className="text-margin-bottom"><b>Momotaz Begum</b></p>
+                                                                <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                            </button>
+                                                        </a>
                                                     </div>
                                                 </div>
 
@@ -128,7 +134,7 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div onClick={handleShow} className="mt-4">
+                                        <div className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -138,8 +144,12 @@ const Navigation = () => {
                                                         alt=""
                                                     />
                                                     <div className="text-white ms-1 mt-1 profileName">
-                                                        <p className="text-margin-bottom"><b>Srabanti Mukherjee</b></p>
-                                                        <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                        <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
+                                                            <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
+                                                                <p className="text-margin-bottom"><b>Srabonti Chatterjee</b></p>
+                                                                <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                            </button>
+                                                        </a>
                                                     </div>
                                                 </div>
 
@@ -206,8 +216,8 @@ asdfasdf
                 </div>
 
                 <Modal className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered>
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered>
 
                     <Modal.Body>
                         <iframe src={external_link} style={{ width: '100%', height: '400px' }} />
