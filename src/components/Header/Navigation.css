@@ -95,3 +95,9 @@
       font-size: 12px;
   }
 }
+
+.link-open{
+  background-color: #000000;
+  border: none;
+  color: #fff;
+}
