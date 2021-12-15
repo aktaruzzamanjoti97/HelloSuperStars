@@ -7,6 +7,9 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
 import Navigation from '../../Header/Navigation';
 import { useLocation, useHistory } from "react-router-dom";
+import Tennis from '../../../images/category/Tennis.png';
+import Cricket from '../../../images/category/Cricket.png'
+import Football from '../../../images/category/Football.png'
 
 
 const SubCategory = () => {
@@ -89,19 +92,42 @@ const SubCategory = () => {
       <div className="container category-contaienr p-5 bg-dark  bg-img">
         <div className="d-flex justify-content-center align-items-center">
           <div className="center-frame">
-            <img src={frame} alt="" className="frame" />
-            <h6 className="category-title">CHOOSE CATEGORY</h6>
+            {/* <img src={frame} alt="" className="frame" /> */}
+            <p className='star-choosing'>CHOOSE STAR CATEGORY</p>
           </div>
         </div>
 
       <div className="carousel-items my-4">
 
 <OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
-      
+
+<div class='superstar-item'>
+  
+  <img src={Cricket}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn star-btn mb-1 sub-btn'>Cricket</button>
+</div>
+  </div> 
+
+<div class='superstar-item'>
+  
+  <img src={Tennis}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn mb-1 sub-btn'>Tennis</button>
+</div>
+  </div>   
   
 
 
-        {viewCategory}
+  <div class='superstar-item'>
+  
+  <img src={Football}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn mb-1 sub-btn'>Football</button>
+</div>
+  </div> 
+
+        {/* {viewCategory} */}
       
 
 </OwlCarousel>

@@ -111,3 +111,19 @@
     border-radius: 3px;
     color: rgb(27, 26, 26);
   }
+  .star-choosing{
+    border: 2px solid #EDDF5D;
+border-radius: 4px;
+padding:5px 10px 5px 10px;
+color: #EDDF5D;
+font-weight: bold;
+font-size: 20px;
+  }
+
+  .sub-btn{
+    background-color: rgb(233, 233, 10);
+      }
+      .sub-btn:focus{
+    border: 2px solid black !important;
+    background-color:#FFAD00;
+      }
