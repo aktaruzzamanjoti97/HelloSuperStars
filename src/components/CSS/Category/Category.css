@@ -1,9 +1,10 @@
 .core-category-btn {
     font-weight: bolder;
     width: 200px;
-    height: 75px;
     font-size: 25px;
 }
+
+
 
 .category-contaienr {
     border: 3px solid yellow;
@@ -49,6 +50,7 @@
     text-align: center;
     color: #F0E25E;
     font-weight: bold;
+    font-size: 15px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -89,3 +91,39 @@
   .owl-item:not(.center) > div:hover {
     opacity: .75;
   }
+
+
+  #id_work_days input[type="checkbox"] {
+    display: none;
+  }
+
+  #id_work_days input[type="checkbox"]:checked + span {
+    border: 5px solid #fff;
+    color: black;
+  }
+
+  #id_work_days input[type="checkbox"]:checked + h4 {
+    border: 5px solid #fff;
+    color: black;
+  }
+
+  #id_work_days span {
+    border-radius: 3px;
+    color: rgb(27, 26, 26);
+  }
+  .star-choosing{
+    border: 2px solid #EDDF5D;
+border-radius: 4px;
+padding:5px 10px 5px 10px;
+color: #EDDF5D;
+font-weight: bold;
+font-size: 20px;
+  }
+
+  .sub-btn{
+    background-color: rgb(233, 233, 10);
+      }
+      .sub-btn:focus{
+    border: 2px solid black !important;
+    background-color:#FFAD00;
+      }

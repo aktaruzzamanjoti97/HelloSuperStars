@@ -1,7 +1,7 @@
 import React from "react";
 import "../../CSS/Profile/profile.css";
-import coverImg from "../../../images/Profile/cover.jpg";
-import profileImg from "../../../images/Profile/profile.jpg";
+import coverImg from "../../../images/Shakib/pro.jpg";
+import profileImg from "../../../images/Shakib/pro.jpg";
 import LeftCard from "./profile-components/LeftCard";
 import RightSideCard from "./profile-components/RightSideCard";
 import Azhari from "../../../images/Profile/Azhari.jpg";
@@ -215,8 +215,8 @@ const Profile = () => {
                       data-bs-target="#collapseTwo"
                       aria-expanded="false"
                       aria-controls="collapseTwo"
-                      // onClick={logoutSubmit}
-                      onClick={alert("hi")}
+                      onClick={logoutSubmit}
+                     
                     >
                       <span>
                         <i className="fas fa-sign-out-alt mx-2 profile-font-color fa-2x"></i>

@@ -1,18 +1,18 @@
 import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
+import AzhariProfile from "../../../images/Shakib/2.png";
+import ProfileAzhari from "../../../images/Shakib/pro.jpg";
 import "../../CSS/Profile/starProfile/starProfile.css";
-import AzhariProfile from "../../../images/starProfile/azhariCover.jpg";
-import ProfileAzhari from "../../../images/starProfile/profile-azhari.png";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
-import StarPhotos from "../../Pages/Profile/profile-components/starProfile/StarPhotos";
-
-import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
-import Souviner from "../../Pages/Profile/profile-components/starProfile/Souviner";
-import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
-import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
 import Navigation from "../../Header/Navigation";
+import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
+import Souviner from "../../Pages/Profile/profile-components/starProfile/Souviner";
+import StarPhotos from "../../Pages/Profile/profile-components/starProfile/StarPhotos";
+import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
+import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
 import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
+
 
 const StarProfile = () => {
   let { path, url } = useRouteMatch();
@@ -37,10 +37,12 @@ const StarProfile = () => {
                 />
                 <div className="profile-name-contents mt-5 mx-2">
                   <h3 className="text-light mt-5 star-profile-name">
-                    Mizanur Rahman Azhari
+
+                  Shakib Al Hasan
                   </h3>
                   <p className="text-warning star-profile-type">
-                    Public Figure Religious
+                  @ShakibAllrounderHasan  · 
+
                   </p>
                 </div>
               </div>
@@ -123,6 +125,19 @@ const StarProfile = () => {
               exact
               component={StarChat}
             />
+            <Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+
+
+
+
+
+            <Route path={`${path}/livechat/starChat`} exact component={StarChat}/>
+
+
             <Route exact path={path}>
               <StarPost />
             </Route>

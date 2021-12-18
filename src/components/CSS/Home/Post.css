@@ -10,9 +10,14 @@
 
 .PostCard{
     border: none;
+    background-color: #343434 !important;
 }
 .PostCard img{
     height: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    padding-bottom: 8px;
 }
 
 .Post-small-text{
@@ -87,7 +92,7 @@
 .comment-text-post{
     background-color: #555454;
     border-radius: 20px;
-    width: 20.8vw;
+    width: 35.2vw;
     font-size: 15px;
     color: white;
     height: auto;
@@ -103,6 +108,25 @@
     -o-border-radius: 20px;
 
 }
+.comment-text-post-x{
+    background-color: #555454;
+    border-radius: 20px;
+    width: 31.4vw;
+    font-size: 15px;
+    color: white;
+    height: auto;
+    border: 1px solid rgb(80, 80, 79) !important;
+    box-shadow: #000 ;
+    padding-left: 10px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
 .comment-text-post-sub{
     background-color: #ece5c3;
     border-radius: 5px;
@@ -121,6 +145,11 @@
 }
 
 .comment-text-post:focus {
+    outline: none;
+
+    
+}
+.comment-text-post-x:focus {
     outline: none;
 
     
@@ -372,34 +401,35 @@ li.post-comment .comet-avatar {
     right: 0;
     background: none;
 }
-.comment-text-post{
-    width: 23.5vw;
 
-}
-.comment-text-post{
-    width: 22vw;
 
-}
 
 .learningImg {
     filter: blur(3px);
   }
   
   .learningLockPremiumImg {
-    margin-top: -285px;
-    z-index: 1;
-    /* width: 80px; */
-    min-height: 285px;
+      position: absolute;
+      margin-top: 80px  !important;
   }
   
   .img-resize-LearnContent {
-    width: 200px;
+    width: 50% !important ;
   }
   
   @media only screen and (max-width: 768px) {
     .img-resize-LearnContent {
       width: 120px;
       margin-top: 80px;
+    }
+
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -100px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
     }
   }
   
@@ -439,6 +469,7 @@ li.post-comment .comet-avatar {
       left: -10px !important;
       
     }
+    
   }
   
   .buttonBorderNone .dropdown-toggle::after {
@@ -485,11 +516,49 @@ li.post-comment .comet-avatar {
         -o-border-radius: 5px;
     }
     .comment-text-post{
-        width: 65vw;
+        width: 62vw !important;
     
     }
+    .comment-text-post-x{
+        width: 60vw !important;
+    }
+   
   
   }
+
+  @media only screen and (max-width:1100px) {
+    .comment-text-post{
+        width:24vw ;
+    }
+    .comment-text-post-x{
+        width:23.5vw ;
+    }
+
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -50px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
+    }
+
+}
+@media only screen and (max-width:800px) {
+   
+
+    .learningLockPremiumImg {
+        position: absolute;
+        margin-top: -100px  !important;
+    }
+    
+    .img-resize-LearnContent {
+      width: 50% !important ;
+    }
+
+}
+
+
 
   @media only screen and (width: 600px) {
     .PostImgHe{

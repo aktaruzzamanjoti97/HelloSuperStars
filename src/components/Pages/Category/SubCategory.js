@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
 import frame from "../../../images/Normal-User/Single-frame.png";
 import OwlCarousel from 'react-owl-carousel';
@@ -6,7 +6,85 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
 import Navigation from '../../Header/Navigation';
+import { useLocation, useHistory } from "react-router-dom";
+import Tennis from '../../../images/category/Tennis.png';
+import Cricket from '../../../images/category/Cricket.png'
+import Football from '../../../images/category/Football.png'
+
+
 const SubCategory = () => {
+
+  const [subCategory, setSubCategory] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const location = useLocation();
+
+  const [Checked, setChecked] = useState([]);
+
+  const history = useHistory();
+
+  
+
+  const handleToggle = (value) => {
+
+    const currentIndex = Checked.indexOf(value);
+
+    const newChecked = [...Checked];
+
+    if (currentIndex === -1) {
+        newChecked.push(value)
+    } else {
+        newChecked.splice(currentIndex, 1)
+    }
+
+    setChecked(newChecked)
+
+}
+
+
+
+  useEffect(() => {
+
+      setSubCategory(location.state.detail);
+
+      console.log(subCategory);
+
+      setLoading(false);
+
+
+  }, [location]);
+
+  //console.log(subCategory);
+
+
+
+  var viewCategory = "";
+
+  if(loading)
+  {
+    return <h5>Loading Category...</h5>
+  }
+  else
+  {
+    viewCategory = 
+    subCategory.map( (subCategory, index) => {
+      return (
+        
+          <div class='item' id="id_work_days">
+              <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
+              <img src={`http://localhost:8000/${subCategory.image}`} alt=""/>
+              <h4 className="text-white text-center">{subCategory.name}</h4>
+          </div> 
+
+          
+        
+      )
+    });
+  }
+
+  
+
+
     return (
       <>
       <Navigation />
@@ -14,30 +92,52 @@ const SubCategory = () => {
       <div className="container category-contaienr p-5 bg-dark  bg-img">
         <div className="d-flex justify-content-center align-items-center">
           <div className="center-frame">
-            <img src={frame} alt="" className="frame" />
-            <h6 className="category-title">CHOOSE CATEGORY</h6>
+            {/* <img src={frame} alt="" className="frame" /> */}
+            <p className='star-choosing'>CHOOSE STAR CATEGORY</p>
           </div>
         </div>
 
       <div className="carousel-items my-4">
-      <OwlCarousel  center className='owl-theme' loop margin={15} items={3} mouseDrag >
-  <div class='item'>
-  <img src="https://p.imgci.com/db/PICTURES/CMS/290000/290089.jpg" alt="" />
 
-  </div>
-  <div class='item'>
-  <img src="https://p.imgci.com/db/PICTURES/CMS/290000/290089.jpg" alt="" />
-  </div>
-  <div class='item'>
-  <img src="https://wallpapertag.com/wallpaper/middle/9/3/b/851331-download-messi-and-neymar-wallpapers-1920x1080-for-4k-monitor.jpg" alt="" />
-  </div>
- 
+<OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
+
+<div class='superstar-item'>
+  
+  <img src={Cricket}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn star-btn mb-1 sub-btn'>Cricket</button>
+</div>
+  </div> 
+
+<div class='superstar-item'>
+  
+  <img src={Tennis}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn mb-1 sub-btn'>Tennis</button>
+</div>
+  </div>   
+  
+
+
+  <div class='superstar-item'>
+  
+  <img src={Football}className='img-fluid ' alt="" />
+<div className="text-center">
+<button className='btn  star-btn mb-1 sub-btn'>Football</button>
+</div>
+  </div> 
+
+        {/* {viewCategory} */}
+      
+
 </OwlCarousel>
+
+
+
+
+
       </div>
 
-        
-
-      
 
         <div className="category-footer mt-4 ">
           <h6 className=" text-center mt-2">
@@ -52,8 +152,11 @@ const SubCategory = () => {
             <Link to='/Starselection'><button className="btn mt-3 cg-done">Done</button></Link>
           </div>
         </div>
+
+        
       </div>
     </div>
+      
     </>
     );
 };

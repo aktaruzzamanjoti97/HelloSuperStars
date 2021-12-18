@@ -1,10 +1,10 @@
 .UpcomingLive{
-    background-image: url('../../../images/MashrafeMortaza_smile.jpeg');
+    
     width: 90%;
-    height: 250px;
+    height: 350px;
     margin-bottom: 10px;
     background-position: center;
-    opacity: 1;
+    background-repeat: no-repeat;
 }
 
 .Upc-live{
@@ -37,5 +37,10 @@
     
     .Upc-live-h-btn{
         width: 70% ;
+    }
+    .UpcomingLive{
+    
+        width: 90%;
+        height: 225px;
     }
 }

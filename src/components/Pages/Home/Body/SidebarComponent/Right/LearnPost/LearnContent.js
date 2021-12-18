@@ -2,7 +2,7 @@ import {React,useState} from "react";
 import { Link } from "react-router-dom";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { RiBarChartHorizontalFill } from "react-icons/ri";
-import { Collapse } from "react-bootstrap";
+import { Collapse, Container } from "react-bootstrap";
 import learningLockPremium from '../../../../../../../images/lockScreen.png';
 import '../../../../../../CSS/LearnContent/LearnContent.css';
 import LearnComment from "./LearnComment";
@@ -210,6 +210,9 @@ return (
         </div>
     </div>
     </div>
+
+   
+
 </>
 );
 };

@@ -49,30 +49,39 @@ const Signup = () => {
 
     const history = useHistory();
     const [registerInput, setRegister] = useState({
-        name: '',
+        first_name: '',
+        last_name: '',
         email: '',
-        phone: '',
         password: '',
         error_list: []
     });
     //const [regvalue,setRegValue]=useState('');
 
+    const [getPhone,setPhone]=useState('');
+
     const handleInput = (e) => {
+
         const {name,value}=e.target;
         setRegister((prev)=>{
             return({...prev,[name]:value});
         })
-        // e.persist();
-        // setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const phoneInput = (e) => {
+        //const {name,value}=e.target;
+        console.log(e.target.value);
     }
 
     const registerSubmit = (e) => {
         e.preventDefault();
 
+        console.log(getPhone);
+
         const data = {
-            name: registerInput.name,
+            first_name: registerInput.first_name,
+            last_name: registerInput.last_name,
             email: registerInput.email,
-            phone: registerInput.phone,
+            phone: getPhone,
             password: registerInput.password,
         }
 
@@ -82,7 +91,7 @@ const Signup = () => {
                 if(res.data.status === 200)
                 {
                     localStorage.setItem('auth_token', res.data.token);
-                    localStorage.setItem('auth_name', res.data.username);
+                    localStorage.setItem('auth_id', res.data.id);
                     swal("Success",res.data.message,"success");
                     history.push('/otp');
                 }
@@ -123,27 +132,27 @@ const Signup = () => {
                                                            
                                                             <div className="row">
                                                                 <div className="col">
-                                                                    <input type="text" onChange={handleInput} name='name' value={registerInput.name} className="form-control sign-up-style" placeholder='First name' required />
+                                                                    <input type="text" onChange={handleInput} name='first_name' value={registerInput.first_name} className="form-control sign-up-style" placeholder='First name' required />
                                                                     <span>{registerInput.error_list.name}</span>
                                                                 </div>
                                                                 <div className="col">
-                                                                    <input type="text" className="form-control sign-up-style" placeholder="Last name" />
+                                                                    <input type="text" onChange={handleInput} name='last_name' value={registerInput.last_name} className="form-control sign-up-style" placeholder="Last name" />
                                                                 </div>
                                                             </div>
                                                             <div className="row mt-3">
                                                                 <div className="col">
-                                                                    <input type="email" name='email' className="form-control sign-up-style" placeholder="Email" onChange={handleInput} value={registerInput.email} required />
-                                                                    <span>{registerInput.error_list.email}</span>
+                                                                    <input type="email" name='email' className="form-control sign-up-style" placeholder="Email" onChange={handleInput} value={registerInput.email}  />
+                                                                    <span><small className='text-danger'>{registerInput.error_list.email}</small></span>
                                                                 </div>
                                                                 <div className="col">
-                                                                {/* <PhoneInput country={'bd'} inputStyle={inputStyle}  buttonStyle={{ background:'none',border:'0' }}/> */}
-                                                                     <input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />
-                                                                    <span>{registerInput.error_list.phone}</span> 
+                                                                    <PhoneInput country={'bd'} inputStyle={inputStyle}  buttonStyle={{ background:'none',border:'0' }} name="phone" onChange={phone => setPhone(phone)}/> 
+                                                                     {/*<input type="text" name="phone" className="form-control sign-up-style" placeholder="Phone" onChange={handleInput} value={registerInput.phone} required />*/}
+                                                                    <span><small className='text-danger'>{registerInput.error_list.phone}</small></span> 
                                                                 </div>
                                                             </div>
                                                             <div className="row mt-3">
                                                                 <div className="col">
-                                                                    <input type={changeIcon ? `text` : `password`} onChange={handleInput}  name='password' value={registerInput.password} className="form-control sign-up-style" placeholder="Create password" required />
+                                                                    <input type={changeIcon ? `text` : `password`} onChange={handleInput}  name='password' value={registerInput.password} className="form-control sign-up-style" placeholder="Create password"  />
                                                                     <span className='sign-up-eye-icon-1' >
                                                                         <FontAwesomeIcon onClick={handleChangeIcon} icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>
@@ -151,7 +160,7 @@ const Signup = () => {
                                                                 </div>
                                                                 
                                                                 <div className="col">
-                                                                    <input type={changIcon1 ? `text` : `password`} ref={ConfirmPasswordRef} className="form-control sign-up-style" placeholder="Confirm password" required />
+                                                                    <input type={changIcon1 ? `text` : `password`} ref={ConfirmPasswordRef} className="form-control sign-up-style" placeholder="Confirm password"  />
                                                                     <span className='sign-up-eye-icon-2' onClick={handleChangeIcon1} >
                                                                         <FontAwesomeIcon icon={changIcon1 ? faEye : faEyeSlash} />
                                                                     </span>
@@ -166,27 +175,6 @@ const Signup = () => {
                                                             </div>
                                                         </form>
 
-
-                                                        {/* <Form onSubmit={handleSubmit}>
-                                                            <Form.Group id="name">
-                                                                <Form.Label>Name</Form.Label>
-                                                                <Form.Control ref={nameRef} type="text" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="email">
-                                                                <Form.Label>Email</Form.Label>
-                                                                <Form.Control ref={emailRef} type="email" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="password">
-                                                                <Form.Label>Password</Form.Label>
-                                                                <Form.Control ref={passwordRef} type="password" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="ConfirmPassword">
-                                                                <Form.Label>Password Comnfirmation</Form.Label>
-                                                                <Form.Control ref={ConfirmPasswordRef} type="password" required />
-                                                            </Form.Group>
-                                                            <br />
-                                                            <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
-                                                        </Form> */}
                                                     </Card.Body>
                                                 </Card>
                                                 {/* <div className="w-100 text-center mt-2">

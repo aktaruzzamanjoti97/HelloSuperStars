@@ -1,20 +1,112 @@
-import React, { useState } from 'react'
+import React, {useState, useEffect, useRef} from 'react';
 import '../CSS/AccountCreate/accountCreate.css'
 import avaterImage from '../../images/CreateAccount-page/Avater.png'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom';
 import Navigation from '../Header/Navigation'
+import axios from 'axios';
+import swal from 'sweetalert';
+
+
+
 const AccountCreate = () => {
   const [file, setFile] = useState('');
+  const [user, setUser] = useState([]);
   const [modal, setModal] = useState(false);
+
 
   const handleChange = (e) => {
     setFile(URL.createObjectURL(e.target.files[0]))
   }
+
+
   function ModalClick(event) {
     event.preventDefault();
     setModal(!modal);
     console.log(modal);
   }
+
+
+  useEffect(() => {
+    axios.get(`/api/user_info`).then(res =>{
+      
+      if(res.status === 200)
+      {
+        setUser(res.data.users)
+      }
+
+      console.log(res.data.users);
+    });
+  }, []);
+
+
+  const ConfirmPasswordRef = useRef();
+    //const { signup } = useAuth();
+
+    // const [loading, setLoading] = useState(false);
+    const loading=false;
+    const [changeIcon, setChange] = useState(false);
+    const [changIcon1, setChangeIcon1] = useState(false);
+
+
+
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
+
+    }
+
+    function handleChangeIcon1() {
+        setChangeIcon1(!(changIcon1));
+    }
+
+
+    const history = useHistory();
+    const [registerInput, setRegister] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        password: '',
+        error_list: []
+    });
+    //const [regvalue,setRegValue]=useState('');
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setRegister((prev)=>{
+            return({...prev,[name]:value});
+        })
+        // e.persist();
+        // setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const registerSubmit = (e) => {
+        e.preventDefault();
+
+        const data = {
+            name: registerInput.name,
+            email: registerInput.email,
+            phone: registerInput.phone,
+            password: registerInput.password,
+        }
+
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/register`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    localStorage.setItem('auth_token', res.data.token);
+                    localStorage.setItem('auth_name', res.data.username);
+                    swal("Success",res.data.message,"success");
+                    history.push('/otp');
+                }
+                else{
+                    setRegister({ ...registerInput,error_list: res.data.validation_errors });
+                }
+            });
+        });
+    }
+
+
 
   return (
 
@@ -50,12 +142,24 @@ const AccountCreate = () => {
                   >
                     Name
                   </label>
-                  <div className="col-sm-8">
+                  <div className="col-sm-4">
                     <input
                       type="text"
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
-                      placeholder="John Doe"
+                      placeholder="First Name"
+                      
+                      onChange={handleInput} name='first_name' value={user.first_name}
+                    />
+                  </div>
+                  <div className="col-sm-4">
+                    <input
+                      type="text"
+                      className="form-control form-control-sm account-input-style"
+                      id="colFormLabelSm"
+                      placeholder="Last Name"
+                      value={user.last_name}
+                      onChange={handleInput} name='last_name' value={user.last_name}
                     />
                   </div>
                 </div>
@@ -72,7 +176,8 @@ const AccountCreate = () => {
                       type="text"
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
-                      placeholder="+880182700000"
+                      
+                      onChange={handleInput} name='phone' value={user.phone}
                     />
                   </div>
                 </div>
@@ -89,7 +194,8 @@ const AccountCreate = () => {
                       type="email"
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
-                      placeholder="myname@gmail.com"
+                     
+                      onChange={handleInput} name='email' value={user.email}
                     />
                   </div>
                 </div>
@@ -306,7 +412,7 @@ right div and info field start */}
                             type="checkbox"
                             value=""
                             id="flexCheckChecked"
-                            checked
+                            
                           />
                           <label
                             className="form-check-label"
