@@ -79,23 +79,24 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <Route exact path='/' component={Home} />
+        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/guest' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryBody} />
         <Route exact path='/following' component={FollowingBody} />
-        <Route exact path='/wallet' component={WalletBody} />
-        <Route exact path='/enrolled-auditions' component={EnrollBody} />
+        <PrivateRoute exact path='/wallet' component={WalletBody} />
+        <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
 
-        <Route exact path='/settings' component={SettingsBody} />
-        <Route exact path="/setting/personal" component={Personal}/>
-        <Route exact path="/setting/educational" component={Educational}/>
-        <Route exact path="/setting/employment" component={Employment}/>
-        <Route exact path="/setting/interest" component={Interest}/>
-        <Route exact path="/setting/security" component={Security}/>
-        <Route exact path="/setting/report" component={Report}/>
+        <PrivateRoute exact path='/settings' component={SettingsBody} />
+        <PrivateRoute exact path="/setting/personal" component={Personal}/>
+        <PrivateRoute exact path="/setting/educational" component={Educational}/>
+        <PrivateRoute exact path="/setting/employment" component={Employment}/>
+        <PrivateRoute exact path="/setting/interest" component={Interest}/>
+        <PrivateRoute exact path="/setting/security" component={Security}/>
+        <PrivateRoute exact path="/setting/report" component={Report}/>
         {/* Left Sidebar End*/}
 
 
@@ -120,7 +121,7 @@ function App() {
         <Route path='/guestUser' exact component={GuestUserPage} />
 
         {/* profile page */}
-        <Route path='/profile' exact component={Profile} />
+        <PrivateRoute path='/profile' exact component={Profile} />
         <Route path='/starprofile'  component={StarProfile} />
 
           

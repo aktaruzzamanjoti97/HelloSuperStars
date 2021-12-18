@@ -69,7 +69,9 @@ const StarSelection = () => {
             </h6>
   
             <div className="ct-btn text-center">
-             <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link>
+            { localStorage.auth_id ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Done</button></Link> }
+             
+
             </div>
           </div>
         </div>
