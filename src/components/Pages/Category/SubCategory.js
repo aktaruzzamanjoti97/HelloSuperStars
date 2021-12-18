@@ -101,30 +101,69 @@ const SubCategory = () => {
 
 <OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
 
-<div class='superstar-item'>
-  
-  <img src={Cricket}className='img-fluid ' alt="" />
-<div className="text-center">
-<button className='btn star-btn mb-1 sub-btn'>Cricket</button>
+<div class='superstar-item adjust'>
+
+
+
+<div className="text-center" id="id_work_days2">
+
+<label>
+<input name="checkbox"  type="checkbox" />
+<img src={Cricket} className='img-fluid low' alt="" />
+
+{/* <span className='btn star-btn mb-1 sub-btn'></span> */}
+<span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+</label>
 </div>
+
+
+
   </div> 
 
-<div class='superstar-item'>
+
+
+
+
+
+
+
+
+
   
-  <img src={Tennis}className='img-fluid ' alt="" />
-<div className="text-center">
-<button className='btn  star-btn mb-1 sub-btn'>Tennis</button>
+
+<div class='superstar-item adjust'>
+  
+ 
+  <div className="text-center"  id="id_work_days2">
+<label>
+<input name="checkbox"  type="checkbox" />
+<img src={Tennis}className='img-fluid low' alt=""  />
+
+{/* <span className='btn star-btn mb-1 sub-btn'></span> */}
+<span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+</label>
 </div>
   </div>   
   
 
 
-  <div class='superstar-item'>
-  
-  <img src={Football}className='img-fluid ' alt="" />
-<div className="text-center">
-<button className='btn  star-btn mb-1 sub-btn'>Football</button>
+  <div class='superstar-item adjust'>
+
+
+
+  <div className="text-center" id="id_work_days2">
+<label>
+
+<input name="checkbox"  type="checkbox" />
+<img src={Football} className='img-fluid low' alt="" />
+
+{/* <span className='btn star-btn mb-1 sub-btn'></span> */}
+<span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+</label>
 </div>
+
+
+
   </div> 
 
         {/* {viewCategory} */}

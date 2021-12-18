@@ -121,9 +121,9 @@ const CoreCategory = () => {
       return (
         <div className="col-md-3  text-center" id="id_work_days">
 
-              <label >
+              <label className=''>
                 <input name="checkbox" value={item.id} type="checkbox" onChange={() => handleToggle(item.id)}/>
-                <span className='btn btn-warning core-category-btn my-3 py-auto'>{item.name}</span>
+                <span className='btn btn-warning core-category-btn my-3 category-core py-auto'>{item.name}</span>
               </label>
             
           </div>

@@ -97,9 +97,20 @@
     display: none;
   }
 
+  .category-core{
+    opacity: 0.6 !important;
+  }
+
   #id_work_days input[type="checkbox"]:checked + span {
     border: 5px solid #fff;
     color: black;
+    opacity: 1 !important;
+  }
+
+  
+
+  #id_work_days input[type="checkbox"]:checked + .category-core {
+    opacity: 1 !important;
   }
 
   #id_work_days input[type="checkbox"]:checked + h4 {
@@ -127,3 +138,107 @@ font-size: 20px;
     border: 2px solid black !important;
     background-color:#FFAD00;
       }
+
+
+      /* Subcategory items buttons style */
+
+      #id_work_days2 input[type="checkbox"] {
+        display: none;
+      }
+    
+      #id_work_days2 input[type="checkbox"]:checked + .low + span{
+        border:  3px solid gold;
+        width: 35px;
+        border-radius: 50%;
+        color: black;
+        
+      }
+    
+      #id_work_days2 input[type="checkbox"]:checked + .low {
+          opacity: 1!important;
+      }
+
+    
+      #id_work_days2 span {
+        /* border-radius: 3px;
+         */
+         height: 30px;
+        width: 30px;
+        border-radius: 50%;
+  
+      }
+      .dot1 {
+        height: 35px !important;
+        width: 35px !important;
+        background-color: #5270EE;
+        border-radius: 50%;
+        display: inline-block;
+        position:absolute;
+       top: 95%;
+       left: 48%;
+       transform:translate(-50%, -50%);
+        font-size:13px;
+      }
+
+
+
+
+   .low{
+     opacity: 0.5;
+     cursor: pointer;
+     
+   }
+   .adjust{
+     position: relative;
+   }
+
+
+
+
+  /* Star Selection */
+
+  #id_work_days3 input[type="checkbox"] {
+    display: none;
+  }
+
+  #id_work_days3 input[type="checkbox"]:checked + .low + span{
+    border:  3px solid gold;
+    width: 35px;
+    border-radius: 50%;
+    color: black;
+    
+  }
+
+  #id_work_days3 input[type="checkbox"]:checked + .low {
+      opacity: 1!important;
+  }
+
+
+  #id_work_days3 span {
+    /* border-radius: 3px;
+     */
+     height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+  }
+  
+
+
+
+
+   @media only screen and (max-width: 600px) {
+    .dot1 {
+      height: 15px !important;
+      width: 15px !important;
+      background-color: #5270EE;
+      border-radius: 50%;
+      display: inline-block;
+      position:absolute;
+     top: 95%;
+     left: 48%;
+     transform:translate(-50%, -50%);
+
+
+    }
+  }
