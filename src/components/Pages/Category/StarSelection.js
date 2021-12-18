@@ -26,19 +26,26 @@ const StarSelection = () => {
           </div>
 
 
+
 <OwlCarousel   center className='owl-theme' loop margin={0} items={3} mouseDrag >
+
+
+  
   <div class='superstar-item'>
   
   <img src={Tamim}className='img-fluid ' alt="" />
 <div className="text-center">
-<button className='btn  star-btn sub-btn mb-1'>Tamim Iqbal</button>
+<button className='btn  star-btn sub-btn mb-1'>Tamim Iqbal <i className='fa fa-spinner text-light fa-spin'></i></button>
 </div>
   </div>
+
+
+
   <div class='superstar-item'>
   
   <img src={Cricketer}className='img-fluid ' alt="" />
 <div className="text-center">
-<button className='btn  star-btn sub-btn mb-1'>Sakib Al Hasan</button>
+<button className='btn  star-btn sub-btn mb-1'>Sakib Al Hasan <i className='fa fa-spinner text-light fa-spin'></i></button>
 </div>
   </div>
 
@@ -46,12 +53,92 @@ const StarSelection = () => {
   
   <img src={Musfiqur}className='img-fluid ' alt="" />
 <div className="text-center">
-<button className='btn  star-btn sub-btn mb-1'>Mushfiqur Rahim</button>
+<button className='btn  star-btn sub-btn mb-1'>Mushfiqur Rahim <i className='fa fa-spinner text-light fa-spin'></i></button>
 </div>
   </div>
  
  
 </OwlCarousel>
+
+
+{/* <OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
+
+<div class='superstar-item adjust'>
+
+
+
+  <div className="text-center" id="id_work_days3">
+
+    <label>
+    <input name="checkbox"  type="checkbox" />
+    <img src={Cricketer} className='img-fluid low' alt="" />
+
+
+    <div className="text-center">
+    <button className='btn btn-primary mb-1'>Tamim Iqbal &nbsp; <i className='fa fa-spinner text-light fa-spin'></i> </button>
+    </div>
+    
+
+    </label>
+  </div>
+  
+
+
+
+  </div> 
+
+
+
+  <div class='superstar-item adjust'>
+
+
+
+<div className="text-center" id="id_work_days3">
+
+  <label>
+  <input name="checkbox"  type="checkbox" />
+  <img src={Cricketer} className='img-fluid low' alt="" />
+
+
+  <div className="text-center">
+  <button className='btn btn-primary mb-1'>Tamim Iqbal &nbsp; <i className='fa fa-spinner text-light fa-spin'></i> </button>
+  </div>
+ 
+
+  </label>
+</div>
+
+
+
+
+
+</div> 
+
+<div class='superstar-item adjust'>
+
+
+
+  <div className="text-center" id="id_work_days3">
+
+    <label>
+    <input name="checkbox"  type="checkbox" />
+    <img src={Cricketer} className='img-fluid low' alt="" />
+
+
+    <div className="text-center">
+    <button className='btn btn-primary mb-1'>Tamim Iqbal &nbsp; <i className='fa fa-spinner text-light fa-spin'></i> </button>
+    </div>
+    
+
+    </label>
+  </div>
+
+  </div> 
+      
+
+</OwlCarousel> */}
+
+
 
 
 
