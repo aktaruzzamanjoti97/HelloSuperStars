@@ -32,7 +32,7 @@
 }
 
 .text-margin-bottom {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .timeStampColor {
@@ -84,20 +84,52 @@
     left: -21vh;
     top: 8vh;
   }
-  .liveChatVideoPic{
-      width: 50px !important;
-      height: 50px;
+  .liveChatVideoPic {
+    width: 50px !important;
+    height: 50px;
+    border-radius: 48% !important;
   }
-  .timeStampColor{
-      font-size: 12px;
+  .timeStampColor {
+    font-size: 12px;
   }
-  .profileName{
-      font-size: 12px;
+  .profileName {
+    font-size: 12px;
   }
 }
 
-.link-open{
+.link-open {
   background-color: #000000;
   border: none;
   color: #fff;
+}
+
+.star-search-control {
+  padding: 0rem 0.5rem !important;
+  font-size: 1.1rem;
+  font-family: inherit;
+  outline: 0;
+  /* border: 1px solid chocolate; */
+  color: black;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  /* border-top-right-radius: 2rem; */
+  /* border-bottom-right-radius: 2rem; */
+  background-color: #fff;
+}
+
+.search-btn {
+  /* width: 55px; */
+  height: 38px;
+  font-size: 1rem;
+  background: #fff;
+  color: black;
+  border: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.star-search-box{
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: stretch;
 }
