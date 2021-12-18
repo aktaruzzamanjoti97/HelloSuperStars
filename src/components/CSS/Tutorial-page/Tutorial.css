@@ -10,6 +10,9 @@
     margin-bottom: 30px;
 
 }
+/* .Video-paly{
+  height: 64.5vh !important;
+} */
 .stIn-bg{
     background-color: black;
     border: 1px solid rgb(253, 187, 6);
@@ -23,6 +26,8 @@
     width: 100%;
     padding: 30px;
 }
+
+
 .skip{
     width: 60px;
     float: right;
@@ -40,6 +45,8 @@
     -o-border-radius: 5px;
     z-index: -1px;
 }
+
+
 
 /*   
   .CarouselHead {
