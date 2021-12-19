@@ -10,6 +10,34 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
 import Navigation from '../../Header/Navigation';
 
+const options = {
+  margin: 30,
+  responsiveClass: true,
+  nav: true,
+  dots: false,
+  autoplay: false,
+  navText: ["Prev", "Next"],
+  smartSpeed: 1000,
+  responsive: {
+      0: {
+          items: 1,
+      },
+      400: {
+          items: 1,
+      },
+      600: {
+          items: 2,
+      },
+      700: {
+          items: 3,
+      },
+      1000: {
+          items: 3,
+
+      }
+  },
+};
+
 const StarSelection = () => {
     return (
       <>
@@ -27,16 +55,87 @@ const StarSelection = () => {
 
 
 
-<OwlCarousel   center className='owl-theme' loop margin={0} items={3} mouseDrag >
+<OwlCarousel {...options} center className='owl-theme' loop margin={0} items={3} mouseDrag >
 
 
-  
-  <div class='superstar-item'>
-  
-  <img src={Tamim}className='img-fluid ' alt="" />
-<div className="text-center">
-<button className='btn  star-btn sub-btn mb-1'>Tamim Iqbal <i className='fa fa-spinner text-light fa-spin'></i></button>
+
+<div class='superstar-item adjust'>
+
+
+
+<div className="text-center" id="id_work_days3">
+
+<label className="star-select-label">
+<input name="checkbox"  type="checkbox" />
+<img src={Cricketer} className='img-fluid low' alt="" />
+
+<span className='btn  star-btn sub-btn px-4 py-2 '>Sakib al hasan<i className='fa fa-spinner text-light fa-spin mx-1'></i></span>
+</label>
 </div>
+
+
+
+  </div> 
+
+
+
+
+
+
+
+
+
+
+  
+
+<div class='superstar-item adjust'>
+  
+ 
+  <div className="text-center"  id="id_work_days3">
+<label className="star-select-label">
+<input name="checkbox"  type="checkbox" />
+<img src={Tamim}className='img-fluid low' alt=""  />
+
+
+<span className='btn  star-btn sub-btn px-4 py-2 '>Tamim Iqbal<i className='fa fa-spinner text-light fa-spin mx-1'></i></span>
+
+</label>
+</div>
+  </div>   
+  
+
+
+  <div class='superstar-item adjust'>
+
+
+
+  <div className="text-center" id="id_work_days3">
+<label className="star-select-label">
+
+<input name="checkbox"  type="checkbox" />
+<img src={Musfiqur} className='img-fluid low' alt="" />
+
+<span className='btn  star-btn sub-btn px-4 py-2 '>Mushfiqur Rahim<i className='fa fa-spinner text-light fa-spin mx-1'></i></span>
+</label>
+</div>
+
+
+
+  </div> 
+{/* 
+  
+  <div class='superstar-item '>
+
+ 
+<div className="text-center">
+  <label className='star-select-label'>
+<img src={Tamim}className='img-fluid ' alt="" />
+<button className='btn  star-btn sub-btn mb-1'>Tamim Iqbal <i className='fa fa-spinner text-light fa-spin'></i></button>
+</label>
+</div>
+
+
+
   </div>
 
 
@@ -55,7 +154,7 @@ const StarSelection = () => {
 <div className="text-center">
 <button className='btn  star-btn sub-btn mb-1'>Mushfiqur Rahim <i className='fa fa-spinner text-light fa-spin'></i></button>
 </div>
-  </div>
+  </div> */}
  
  
 </OwlCarousel>

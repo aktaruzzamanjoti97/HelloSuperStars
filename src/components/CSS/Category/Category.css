@@ -61,22 +61,24 @@
     width: 80%;
  
 }
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     .star-btn{
         width: 90px !important;
         height: 30px !important;
-        font-size: 8px;
+     
         margin: 0 !important;
+        font-weight:bold !important;
     }
-  }
+  } */
 .carousel-bg{
     height: 100px;
 }
 .star-btn{
-    width: 170px;
-    height: 47px;
-   
+    /* width: 170px;
+    height: 47px; */
     font-weight: bolder;
+    font-size:14px;
+   
 }
 .owl-item > div {
     cursor: pointer;
@@ -128,17 +130,15 @@ border-radius: 4px;
 padding:5px 10px 5px 10px;
 color: #EDDF5D;
 font-weight: bold;
-font-size: 20px;
+font-size: 15px !important;
   }
 
-  .sub-btn{
-    background-color: rgb(233, 233, 10);
-      }
-      .sub-btn:focus{
-    border: 2px solid black !important;
-    background-color:#FFAD00;
-      }
 
+  .sub-btn{
+    background-color: #554FEE;
+    color: #fff;
+      }
+     
 
       /* Subcategory items buttons style */
 
@@ -202,10 +202,10 @@ font-size: 20px;
   }
 
   #id_work_days3 input[type="checkbox"]:checked + .low + span{
-    border:  3px solid gold;
+    /* border:  3px solid gold;
     width: 35px;
-    border-radius: 50%;
-    color: black;
+    border-radius: 50%; */
+    color: gold;
     
   }
 
@@ -217,18 +217,15 @@ font-size: 20px;
   #id_work_days3 span {
     /* border-radius: 3px;
      */
-     height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  
 
   }
-  
 
 
 
 
    @media only screen and (max-width: 600px) {
-    .dot1 {
+    /* .dot1 {
       height: 15px !important;
       width: 15px !important;
       background-color: #5270EE;
@@ -240,5 +237,8 @@ font-size: 20px;
      transform:translate(-50%, -50%);
 
 
-    }
+    } */
   }
+.star-select-label{
+  display: block !important;
+}

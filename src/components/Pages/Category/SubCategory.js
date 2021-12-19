@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
-import frame from "../../../images/Normal-User/Single-frame.png";
+// import frame from "../../../images/Normal-User/Single-frame.png";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -11,7 +11,33 @@ import Tennis from '../../../images/category/Tennis.png';
 import Cricket from '../../../images/category/Cricket.png'
 import Football from '../../../images/category/Football.png'
 
+const options = {
+  margin: 30,
+  responsiveClass: true,
+  nav: true,
+  dots: false,
+  autoplay: false,
+  navText: ["Prev", "Next"],
+  smartSpeed: 1000,
+  responsive: {
+      0: {
+          items: 1,
+      },
+      400: {
+          items: 1,
+      },
+      600: {
+          items: 2,
+      },
+      700: {
+          items: 3,
+      },
+      1000: {
+          items: 3,
 
+      }
+  },
+};
 const SubCategory = () => {
 
   const [subCategory, setSubCategory] = useState([]);
@@ -99,7 +125,7 @@ const SubCategory = () => {
 
       <div className="carousel-items my-4">
 
-<OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
+<OwlCarousel {...options} center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3}   >
 
 <div class='superstar-item adjust'>
 
