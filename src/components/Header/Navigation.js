@@ -68,17 +68,17 @@ const Navigation = () => {
 
                             <Nav.Link onClick={handleChatIsOpen} className="navPadpd">
                                 <div className="dropdown dropDownIconRemove">
-                                    {/* <div className="superStarChatBar"> */}
+                     
                                     <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="fa fa-comment circle-icon"></i>
                                     </div>
-                                    {/* </div> */}
+              
 
-                                    <div class="dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
+                                    <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
 
-                                        <div className="container mb-5 mt-1 form-group has-search">
+                                        <div className="container mb-4 mt-2 form-group has-search">
                                             <span className="fa fa-search form-control-feedback"></span>
-                                            <input type="text" className="form-control search-design " placeholder="Search Superstar" />
+                                            <input type="text" className="form-control search-design" placeholder="Search Superstar" />
                                         </div>
 
                                         <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')">
@@ -141,7 +141,7 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')">
+                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -162,20 +162,13 @@ const Navigation = () => {
                                                 </div>
 
                                                 <div className="timeStampColor">
-                                                    {/* <p className="text-margin-bottom">7/9/2021</p>
-                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p> */}
-
-                                                    <div className="d-flex text-warning">
-                                                        <div className="timeStamp-text-icon">
-                                                            <i className="mt-1 me-2 far fa-clock"></i>
-                                                        </div>
-                                                        <b><p className="mt-1">1m 20s</p></b>
-                                                    </div>
+                                                    <p className="text-margin-bottom">7/9/2021</p>
+                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="mt-4">
+                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -184,13 +177,14 @@ const Navigation = () => {
                                                         src={Srabanti}
                                                         alt=""
                                                     />
-                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                    <div className="text-white ms-1 profileName">
                                                         <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
                                                             <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
-                                                                <p className="text-margin-bottom"><b>Srabonti Chatterjee</b></p>
+                                                                <p className="text-margin-bottom"><b>Shahrukh Khan</b></p>
                                                                 <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                             </button>
                                                         </a>
+
                                                     </div>
                                                 </div>
 
