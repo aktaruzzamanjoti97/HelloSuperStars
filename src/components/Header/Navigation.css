@@ -130,7 +130,7 @@
   border-bottom-right-radius: 2rem;
 }
 
-.star-search-box{
+.star-search-box {
   margin: 0.5rem 0;
   display: flex;
   align-items: stretch;
@@ -147,6 +147,9 @@
   padding: 15px;
 }
 
-.text-margin-style{
-  
+.my-modal {
+  width: 60vw !important;
+  max-width: none !important;
+
+  height: 80vh !important;
 }

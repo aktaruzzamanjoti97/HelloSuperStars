@@ -168,7 +168,7 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="mt-4">
+                                        <div onClick={handleShow} className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
@@ -178,9 +178,9 @@ const Navigation = () => {
                                                         alt=""
                                                     />
                                                     <div className="text-white ms-1 profileName">
-                                                        <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
-                                                            <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
-                                                                <p className="text-margin-bottom"><b>Shahrukh Khan</b></p>
+                                                        <a className="text-decoration-none">
+                                                            <button className="link-open">
+                                                                <p className="text-margin-bottom"><b>Srabanti Chaterjee</b></p>
                                                                 <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                             </button>
                                                         </a>
@@ -201,29 +201,6 @@ const Navigation = () => {
 
 
                             </Nav.Link>
-
-                            {/* <div>
-                                {
-                                    isChatOpen ? (
-                                        <div className="liveChatVideoDropdown">
-                                            <div style={{position: 'absolute',}} className="card">
-                                                <ul className="list-group list-group-flush">
-                                                    <li className="list-group-item bg-dark">
-asdfasdf
-                                                    </li>
-                                                    <li className="list-group-item bg-dark">
-
-                                                    </li>
-                                                    <li className="list-group-item">A third item</li>
-                                                </ul>
-                                            </div>
-
-                                            
-
-                                        </div>
-                                    ) : null
-                                }
-                            </div> */}
 
                             <Nav.Link className="navPadpd">
                                 <i className="fa fa-bell circle-icon" />
@@ -250,12 +227,12 @@ asdfasdf
                     </Navbar.Collapse>
                 </div>
 
-                <Modal className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
+                <Modal dialogClassName="my-modal" style={{height:'100vh'}} className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered>
 
                     <Modal.Body>
-                        <iframe src={external_link} style={{ width: '100%', height: '400px' }} />
+                        <iframe src={external_link} style={{ width: '100%', height: '600px' }} />
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
