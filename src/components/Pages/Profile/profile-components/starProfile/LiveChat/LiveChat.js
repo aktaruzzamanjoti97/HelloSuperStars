@@ -13,6 +13,11 @@ const LiveChat = () => {
   const [liveChat, setLiveChat] = useState([]);
   const [minute, setMinute] = useState();
   const [singleLiveChatEvent, setSingleLiveChatEvent] = useState({});
+  const [timeError, setTimeError] = useState();
+  const [minuteError, setMinuteError] = useState();
+  const [message, setMessage] = useState();
+  const [availableStatus, setAvailableStatus] = useState()
+  
 
   useEffect(() => {
     let isMounted = true;
@@ -29,11 +34,14 @@ const LiveChat = () => {
     });
   }, []);
 
+
   const [formData, setFormData] = useState({
     id: '',
     minute: '',
     error_list: []
   });
+
+
 
   const handleInput = (e) => {
     const {name,value}=e.target;
@@ -43,24 +51,53 @@ const LiveChat = () => {
 
   }
 
+  //form validation 
   const validateFormData = () => { 
-    // console.log(formData);
-    if (formData.minute != "" && formData.id != "" && formData.minute < 6) {
 
-      // axios.get('/sanctum/csrf-cookie').then(response => {
-      //   axios.post(`/api/user/liveChatRigister`, formData).then(res => {
-      //           if(res.data.status === 200)
-      //           {
-      //             console.log(res.data.livechat);
-      //             // setSingleLiveChatEvent(res.data.livechat)
-      //           }
-      //   });
-      // });
+    if (formData.minute != "" && formData.id != "" && formData.minute < 6 && formData.minute >= 1) {
+
+      axios.get('/sanctum/csrf-cookie').then(response => {
+        axios.get(`/api/user/getSingleLiveChatEvent/${formData.minute}/${formData.id}`).then(res => {
+                if(res.data.status === 200)
+                {
+                  console.log(res.data.available);
+                  if (res.data.available == true) {
+                    setModalShow(true)
+                    setMessage(res.data.message)
+                    setAvailableStatus(true)
+                    setMinuteError("")
+                    setTimeError("")
+                  } else {
+                    setModalShow(true)
+                    setMessage(res.data.message)
+                    setAvailableStatus(false)
+                    setMinuteError("")
+                    setTimeError("")
+                  }
+                }
+        });
+      });
       
+    } else {
 
-      setModalShow(true)
-    } else { 
-      alert("Please Insert Valid Data")
+      if (formData.minute == "") {
+        setMinuteError("Insert a valu !")
+      } else if(formData.minute < 1) {
+        setMinuteError("Invalid valu !")
+
+      } else if(formData.minute > 5) {
+        setMinuteError("Select Less than 5 minute !")
+      }else {
+        setMinuteError("")
+      }
+
+      if (formData.id == "") {
+        
+        setTimeError("Please Select date !")
+      } else {
+        setTimeError("")
+      }
+      
 
     }
   }
@@ -127,9 +164,10 @@ return (
                         
                         {LiveEvent}
                       
-                    </select>
+                      </select>
                   </from>
                 </div>
+                  <p className="" style={{ color:'red' }}>{timeError}</p>
               </div>
               {/* <div className="col-6 ">
                 <div className="Right-slot  w-75 text-center p-1">
@@ -149,7 +187,8 @@ return (
               <h6 className='text-light'>Time PeriodTime</h6>
                   <div className="left-slot  w-75 text-center p-1">
                   <input type='number' placeholder='Maximum 5 minute' name="minute"  onChange={handleInput}  className='form-control time'></input>
-                </div>
+                  </div>
+                  <p className="" style={{ color:'red' }}>{minuteError}</p>
               </div>
               
               <div className="col-6 ">
@@ -170,7 +209,7 @@ return (
               <span className='text-dark'>Check Slot</span>
             </div>
           </center>
-          <LiveChatModal data={formData} show={modalShow} onHide={()=> setModalShow(false)}
+          <LiveChatModal data={formData} show={modalShow} mesg={message} available={availableStatus} onHide={()=> setModalShow(false)}
             />
 
         </div>
