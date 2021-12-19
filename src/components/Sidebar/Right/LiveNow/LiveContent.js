@@ -15,9 +15,13 @@ export default function LiveContent ({Live}) {
                     <div class="ContentLight">
                         🔴
                     </div>
-
                 </div>
             </div>
+
+
+
         </>
     )
 }
+
+

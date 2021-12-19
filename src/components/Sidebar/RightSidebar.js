@@ -26,7 +26,7 @@ export const RightSidebar = ({ history }) => {
 
                     <div className="live-text-sln">Live now</div>
 
-                    <div className="Live-S-Nav d-flex" id="headingTwo">
+                    <div className="Live-S-Nav d-flex mx-2" id="headingTwo">
 
                         <Live />
 
