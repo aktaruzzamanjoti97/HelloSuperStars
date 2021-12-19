@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
 import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import Iframe from 'react-iframe';
 import ShahRukhKhan from '../../images/shahruk-khan.jpg'
 // import { Link } from "react-router-dom";
 // import HomeIcon from '@material-ui/icons/Home';
@@ -16,9 +17,9 @@ import Srabanti from '../../images/srabanti.jpg';
 import '../CSS/Navbar/navbar.css';
 import './Navigation.css';
 
+
 const Navigation = () => {
 
-    const external_link = "https://superstargroup-chat.herokuapp.com/?room=StarConversation_pofzeg96ul";
     // const internal_link="http://localhost:3001/about"
 
     const [isNavOpen, setIsNavOpen] = useState(false)
@@ -232,7 +233,14 @@ const Navigation = () => {
                     centered>
 
                     <Modal.Body>
-                        <iframe src={external_link} style={{ width: '100%', height: '600px' }} />
+                        <Iframe url="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8"
+                            width="100%"
+                            height="600px"
+                            id="myId"
+                            allow="camera;microphone"
+                            className="myClassname"
+                            display="initial"
+                            position="relative"/>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
