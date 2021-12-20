@@ -59,7 +59,7 @@ const LiveChat = () => {
   //form validation 
   const validateFormData = () => { 
    
-    if (minuteInput != "" && eventId != "" && minuteInput < 6 && minuteInput >= 1) {
+    if (minuteInput != "" && eventId != null && minuteInput < 6 && minuteInput >= 1) {
       setStatus(true)
       axios.get('/sanctum/csrf-cookie').then(response => {
         axios.get(`/api/user/getSingleLiveChatEvent/${minuteInput}/${eventId}`).then(res => {
