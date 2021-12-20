@@ -112,7 +112,7 @@ const LiveChat = () => {
   const minuteValu = "";
  const getEventInfo = (e) => {
    let id = e.target.value
-   setMinuteInput("");
+   setMinuteInput(null);
    setEventId(id);
    console.log(id);
         axios.get('/sanctum/csrf-cookie').then(response => {
