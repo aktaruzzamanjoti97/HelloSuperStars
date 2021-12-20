@@ -109,8 +109,10 @@ const LiveChat = () => {
     }
   }
   
+  const minuteValu = "";
  const getEventInfo = (e) => {
    let id = e.target.value
+   setMinuteInput("");
    setEventId(id);
    console.log(id);
         axios.get('/sanctum/csrf-cookie').then(response => {
@@ -121,7 +123,7 @@ const LiveChat = () => {
                       setSingleLiveChatEvent(res.data.livechat)
                       setFee(res.data.livechat.fee)
                       setFeeCount(res.data.livechat.fee)
-                 
+                      
                    
                       
                     }
@@ -213,7 +215,7 @@ return (
               <div className="col-6 ">
               <h6 className='text-light'>Time PeriodTime</h6>
                   <div className="left-slot  w-75 text-center p-1">
-                  <input type='number' placeholder='Maximum 5 minute' name="minute"  onChange={getFeeCount}  className='form-control time'></input>
+                  <input type='number' placeholder='Maximum 5 minute' name="minute" value={minuteInput}  onChange={getFeeCount}  className='form-control time'></input>
                   </div>
                   <p className="" style={{ color:'red' }}>{minuteError}</p>
               </div>
