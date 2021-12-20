@@ -11,12 +11,15 @@ const LiveChat = () => {
   const [modalShow, setModalShow] = React.useState(false);
 
   const [liveChat, setLiveChat] = useState([]);
-  const [minute, setMinute] = useState();
+  const [minuteInput, setMinuteInput] = useState(null);
+  const [eventId, setEventId] = useState(null);
   const [singleLiveChatEvent, setSingleLiveChatEvent] = useState({});
   const [timeError, setTimeError] = useState();
   const [minuteError, setMinuteError] = useState();
   const [message, setMessage] = useState();
   const [availableStatus, setAvailableStatus] = useState()
+  const [feeCount, setFeeCount] = useState()
+  const [fee, setFee] = useState()
   
 
   useEffect(() => {
@@ -28,7 +31,7 @@ const LiveChat = () => {
             if(res.data.status === 200)
             {
               setLiveChat(res.data.livechats);
-              // console.log(res.data.livechats);
+      
             }
         }           
     });
@@ -43,21 +46,21 @@ const LiveChat = () => {
 
 
 
-  const handleInput = (e) => {
-    const {name,value}=e.target;
-      setFormData((prev)=>{
-          return({...prev,[name]:value});
-      })
 
+
+  const InputFormData = {
+    id: eventId,
+    minute: minuteInput
   }
+
 
   //form validation 
   const validateFormData = () => { 
-
-    if (formData.minute != "" && formData.id != "" && formData.minute < 6 && formData.minute >= 1) {
+    
+    if (minuteInput != "" && eventId != "" && minuteInput < 6 && minuteInput >= 1) {
 
       axios.get('/sanctum/csrf-cookie').then(response => {
-        axios.get(`/api/user/getSingleLiveChatEvent/${formData.minute}/${formData.id}`).then(res => {
+        axios.get(`/api/user/getSingleLiveChatEvent/${minuteInput}/${eventId}`).then(res => {
                 if(res.data.status === 200)
                 {
                   console.log(res.data.available);
@@ -80,18 +83,18 @@ const LiveChat = () => {
       
     } else {
 
-      if (formData.minute == "") {
+      if (minuteInput == null) {
         setMinuteError("Insert a valu !")
-      } else if(formData.minute < 1) {
+      } else if(minuteInput < 1) {
         setMinuteError("Invalid valu !")
 
-      } else if(formData.minute > 5) {
+      } else if(minuteInput > 5) {
         setMinuteError("Select Less than 5 minute !")
       }else {
         setMinuteError("")
       }
 
-      if (formData.id == "") {
+      if (eventId == null) {
         
         setTimeError("Please Select date !")
       } else {
@@ -102,26 +105,46 @@ const LiveChat = () => {
     }
   }
   
- const getPerMinuteCost = (e) => {
-        let id = e.target.value
+ const getEventInfo = (e) => {
+   let id = e.target.value
+   setEventId(id);
+   console.log(id);
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.get(`/api/user/getSingleLiveChatEvent/${id}`).then(res => {
                     if(res.data.status === 200)
                     {
-                      
+                      // alert(2)
                       setSingleLiveChatEvent(res.data.livechat)
+                      setFee(res.data.livechat.fee)
+                      setFeeCount(res.data.livechat.fee)
+            
+                   
+                      
                     }
             });
         });
       // console.log(id);
   }
   
+  
+  const getFeeCount = (e) => {
+    let minute = e.target.value
+    setMinuteInput(minute);
+    if (minute <= 0) {
+      setFeeCount(fee)
+    } else {
+      setFeeCount(fee * minute)
+    }
+ 
+    
+  }
+  
 
 
 
-  const LiveEvent = liveChat.map((item) => {
+  const LiveEventTimeDate = liveChat.map((item) => {
     return (
-      <option onClick={getPerMinuteCost} value={item.id} >{moment(item.date).format('LL')}-- {moment(item.start_time).format('h:mm A')} To {moment(item.end_time).format('h:mm A')}</option>
+      <option onClick={getEventInfo} value={item.id} >{moment(item.date).format('LL')}-- {moment(item.start_time).format('h:mm A')} To {moment(item.end_time).format('h:mm A')}</option>
     )
   });
   
@@ -159,10 +182,10 @@ return (
               <div className="col-12">
                 <div className="left-slot  w-75 text-center p-1">
                   <from>
-                    <select  onChange={handleInput}  name="id" class="form-select star-select-xop" aria-label="Default select example">
+                    <select  onChange={getEventInfo}  name="id" class="form-select star-select-xop" aria-label="Default select example">
                       <option selected disabled >Select Date</option>
                         
-                        {LiveEvent}
+                        {LiveEventTimeDate}
                       
                       </select>
                   </from>
@@ -186,7 +209,7 @@ return (
               <div className="col-6 ">
               <h6 className='text-light'>Time PeriodTime</h6>
                   <div className="left-slot  w-75 text-center p-1">
-                  <input type='number' placeholder='Maximum 5 minute' name="minute"  onChange={handleInput}  className='form-control time'></input>
+                  <input type='number' placeholder='Maximum 5 minute' name="minute"  onChange={getFeeCount}  className='form-control time'></input>
                   </div>
                   <p className="" style={{ color:'red' }}>{minuteError}</p>
               </div>
@@ -194,7 +217,7 @@ return (
               <div className="col-6 ">
               <h6 className='text-light'>Cost per minutes</h6>
                 <div className="left-slot  w-75 text-center p-1">
-                <input type='text' value={singleLiveChatEvent.fee} readOnly text-center placeholder='1200tk' className='form-control time' disabled ></input>
+                <input type='text' value={feeCount} readOnly text-center placeholder='1200tk' className='form-control time' disabled ></input>
                 </div>
               </div>
             </div>
@@ -209,7 +232,7 @@ return (
               <span className='text-dark'>Check Slot</span>
             </div>
           </center>
-          <LiveChatModal data={formData} show={modalShow} mesg={message} available={availableStatus} onHide={()=> setModalShow(false)}
+          <LiveChatModal data={InputFormData} show={modalShow} mesg={message} available={availableStatus} onHide={()=> setModalShow(false)}
             />
 
         </div>
