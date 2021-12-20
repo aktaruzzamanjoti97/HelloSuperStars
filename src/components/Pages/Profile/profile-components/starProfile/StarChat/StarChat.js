@@ -11,6 +11,7 @@ import payPalLogo from '../../../../../../images/Payment-img/PayPal-Logo.wine.pn
 import visaLogo from '../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
+import loading from '../../../../../../images/LiveChat/Loading1.gif'
 import axios from "axios";
 import swal from 'sweetalert';
 import moment from 'moment'
@@ -39,6 +40,7 @@ const StarChat = (props) => {
     const [firstCard, setFirstCard] = useState(true);
     const [formName, setFormName] = useState()
     const [formPhone, setFormPhone] = useState()
+    const [status, setStatus] = useState(false);
     
 
     useEffect(() => {
@@ -52,7 +54,7 @@ const StarChat = (props) => {
                       
                         setLiveChatInfo(res.data.liveChat);
                         setStarInfo(res.data.starInfo)
-                      
+                        setStatus(true)
                     }
             });
         });
@@ -136,7 +138,8 @@ const StarChat = (props) => {
                             </div>
                         </div>
 
-
+                        {status ?
+                        
                         <div className="col-md-9">
                             <h4 className="starChat-heading">{liveChatInfo.title }</h4>
                             <div className="vb"></div>
@@ -154,7 +157,7 @@ const StarChat = (props) => {
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
                                         <h6>{starInfo.first_name } {starInfo.last_name }</h6>
                                         <h6>{moment(liveChatInfo.start_time).format('LL')}</h6>
-                                        <h6>{moment(liveChatInfo.start_time).add(oldData.minute, 'minutes').format('LT')}</h6>
+                                        <h6>{moment(liveChatInfo.start_time).add(liveChatInfo.slot_counter, 'minutes').add(oldData.minute, 'minutes').format('LT')}</h6>
                                         <h6>{liveChatInfo.fee * oldData.minute } BDT</h6>
                                     </div>
                                 </div>
@@ -170,6 +173,13 @@ const StarChat = (props) => {
                             </div>
 
                         </div>
+                            :
+                            <center>
+                                <div className="col-md-9" style={{ width: '50px', marginTop: '-130px'}}>
+                                    <img src={loading} alt="" style={{ width: '50px'}}/>
+                                </div>
+                            </center>
+                    }
                     </div>
 
                     <div className="whole-m-p">

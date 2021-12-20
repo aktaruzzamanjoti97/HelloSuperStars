@@ -5,6 +5,7 @@ import StarProfileRightContent from '../StarCardComponent/StarProfileRightConten
 import LiveChatModal from './LiveChatModal';
 import axios from "axios";
 import moment from 'moment';
+import loading from '../../../../../../images/LiveChat/Loading2.gif'
 
 
 const LiveChat = () => {
@@ -19,7 +20,8 @@ const LiveChat = () => {
   const [message, setMessage] = useState();
   const [availableStatus, setAvailableStatus] = useState()
   const [feeCount, setFeeCount] = useState()
-  const [fee, setFee] = useState()
+  const [fee, setFee] = useState(0)
+  const [status, setStatus] = useState(false);
   
 
   useEffect(() => {
@@ -56,9 +58,9 @@ const LiveChat = () => {
 
   //form validation 
   const validateFormData = () => { 
-    
-    if (minuteInput != "" && eventId != "" && minuteInput < 6 && minuteInput >= 1) {
-
+   
+    if (minuteInput != "" && eventId != null && minuteInput < 6 && minuteInput >= 1) {
+      setStatus(true)
       axios.get('/sanctum/csrf-cookie').then(response => {
         axios.get(`/api/user/getSingleLiveChatEvent/${minuteInput}/${eventId}`).then(res => {
                 if(res.data.status === 200)
@@ -70,12 +72,14 @@ const LiveChat = () => {
                     setAvailableStatus(true)
                     setMinuteError("")
                     setTimeError("")
+                    setStatus(false)
                   } else {
                     setModalShow(true)
                     setMessage(res.data.message)
                     setAvailableStatus(false)
                     setMinuteError("")
                     setTimeError("")
+                    setStatus(false)
                   }
                 }
         });
@@ -105,8 +109,10 @@ const LiveChat = () => {
     }
   }
   
+  const minuteValu = "";
  const getEventInfo = (e) => {
    let id = e.target.value
+   setMinuteInput(null);
    setEventId(id);
    console.log(id);
         axios.get('/sanctum/csrf-cookie').then(response => {
@@ -117,7 +123,7 @@ const LiveChat = () => {
                       setSingleLiveChatEvent(res.data.livechat)
                       setFee(res.data.livechat.fee)
                       setFeeCount(res.data.livechat.fee)
-            
+                      
                    
                       
                     }
@@ -209,13 +215,13 @@ return (
               <div className="col-6 ">
               <h6 className='text-light'>Time PeriodTime</h6>
                   <div className="left-slot  w-75 text-center p-1">
-                  <input type='number' placeholder='Maximum 5 minute' name="minute"  onChange={getFeeCount}  className='form-control time'></input>
+                  <input type='number' placeholder='Maximum 5 minute' name="minute" value={minuteInput}  onChange={getFeeCount}  className='form-control time'></input>
                   </div>
                   <p className="" style={{ color:'red' }}>{minuteError}</p>
               </div>
               
               <div className="col-6 ">
-              <h6 className='text-light'>Cost per minutes</h6>
+              <h6 className='text-light'>Total Cost</h6>
                 <div className="left-slot  w-75 text-center p-1">
                 <input type='text' value={feeCount} readOnly text-center placeholder='1200tk' className='form-control time' disabled ></input>
                 </div>
@@ -229,7 +235,7 @@ return (
               <span className='text-dark'>Check Slot</span>
             </div> */}
             <div className="Right-slot slot-btn bg-warning  w-25 text-center p-1" onClick={validateFormData}>
-              <span className='text-dark'>Check Slot</span>
+                <span className='text-dark'>Check Slot</span>{status? <img src={loading}  style={{ width:'20px',marginLeft: '10px' }} alt="" /> :null}
             </div>
           </center>
           <LiveChatModal data={InputFormData} show={modalShow} mesg={message} available={availableStatus} onHide={()=> setModalShow(false)}

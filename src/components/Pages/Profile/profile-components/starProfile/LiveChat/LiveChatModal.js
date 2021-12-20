@@ -30,7 +30,7 @@ return (
     <Modal.Body className='bg-img text-light'>
 
         <div className="info-message px-5">
-          {props.available? <img src={Congrass} alt="" className='img-fluid' /> : <img src={Sorry} alt="" className='img-fluid' />}
+          {props.available? <img src={Congrass} alt="" className='img-fluid' /> : <img src={Sorry} alt=""  className='img-fluid' />}
           
           {props.available? <h1 className='text-center congress'>Congratulation !</h1> : <h1 className='text-center congress'>Sorry !</h1>}
 
