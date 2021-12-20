@@ -157,7 +157,7 @@ const StarChat = (props) => {
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
                                         <h6>{starInfo.first_name } {starInfo.last_name }</h6>
                                         <h6>{moment(liveChatInfo.start_time).format('LL')}</h6>
-                                        <h6>{moment(liveChatInfo.start_time).add(oldData.minute, 'minutes').format('LT')}</h6>
+                                        <h6>{moment(liveChatInfo.start_time).add(liveChatInfo.slot_counter, 'minutes').add(oldData.minute, 'minutes').format('LT')}</h6>
                                         <h6>{liveChatInfo.fee * oldData.minute } BDT</h6>
                                     </div>
                                 </div>
