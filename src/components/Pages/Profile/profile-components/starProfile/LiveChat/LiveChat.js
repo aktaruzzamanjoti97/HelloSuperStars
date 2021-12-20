@@ -5,6 +5,7 @@ import StarProfileRightContent from '../StarCardComponent/StarProfileRightConten
 import LiveChatModal from './LiveChatModal';
 import axios from "axios";
 import moment from 'moment';
+import loading from '../../../../../../images/LiveChat/Loading2.gif'
 
 
 const LiveChat = () => {
@@ -19,7 +20,8 @@ const LiveChat = () => {
   const [message, setMessage] = useState();
   const [availableStatus, setAvailableStatus] = useState()
   const [feeCount, setFeeCount] = useState()
-  const [fee, setFee] = useState()
+  const [fee, setFee] = useState(0)
+  const [status, setStatus] = useState(false);
   
 
   useEffect(() => {
@@ -56,9 +58,9 @@ const LiveChat = () => {
 
   //form validation 
   const validateFormData = () => { 
-    
+   
     if (minuteInput != "" && eventId != "" && minuteInput < 6 && minuteInput >= 1) {
-
+      setStatus(true)
       axios.get('/sanctum/csrf-cookie').then(response => {
         axios.get(`/api/user/getSingleLiveChatEvent/${minuteInput}/${eventId}`).then(res => {
                 if(res.data.status === 200)
@@ -70,12 +72,14 @@ const LiveChat = () => {
                     setAvailableStatus(true)
                     setMinuteError("")
                     setTimeError("")
+                    setStatus(false)
                   } else {
                     setModalShow(true)
                     setMessage(res.data.message)
                     setAvailableStatus(false)
                     setMinuteError("")
                     setTimeError("")
+                    setStatus(false)
                   }
                 }
         });
@@ -229,7 +233,7 @@ return (
               <span className='text-dark'>Check Slot</span>
             </div> */}
             <div className="Right-slot slot-btn bg-warning  w-25 text-center p-1" onClick={validateFormData}>
-              <span className='text-dark'>Check Slot</span>
+                <span className='text-dark'>Check Slot</span>{status? <img src={loading}  style={{ width:'20px',marginLeft: '10px' }} alt="" /> :null}
             </div>
           </center>
           <LiveChatModal data={InputFormData} show={modalShow} mesg={message} available={availableStatus} onHide={()=> setModalShow(false)}
