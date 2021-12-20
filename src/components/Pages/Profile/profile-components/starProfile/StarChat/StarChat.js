@@ -13,12 +13,16 @@ import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
 import axios from "axios";
 import swal from 'sweetalert';
+import moment from 'moment'
 
 import { Link, Route,useLocation,  Redirect, useHistory} from 'react-router-dom';
 
 
 const StarChat = (props) => {
     const [oldData, setOldData] = useState([]);
+    const [eventInfo, setstate] = useState({});
+    const [liveChatInfo, setLiveChatInfo] = useState({});
+    const [starInfo, setStarInfo] = useState({});
     const [formdata, setFormdata] = useState({
         name: '',
         date_b: '',
@@ -27,14 +31,32 @@ const StarChat = (props) => {
         comment: '',
         error_list: []
     })
-    console.log(formdata);
+    // console.log(formdata);
     const [showCard, setShowCard] = React.useState(false)
     const history = useHistory();
     const location = useLocation();
+    const [showdownCard, setShowdownCard] = useState(false);
+    const [firstCard, setFirstCard] = useState(true);
+    const [formName, setFormName] = useState()
+    const [formPhone, setFormPhone] = useState()
+    
 
     useEffect(() => {
 
         setOldData(location.state.data);
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.get(`/api/user/sinlgeLiveChat/${location.state.data.id}`).then(res => {
+                    if(res.data.status === 200)
+                    {
+                      
+                        setLiveChatInfo(res.data.liveChat);
+                        setStarInfo(res.data.starInfo)
+                      
+                    }
+            });
+        });
+
   
     }, [location]);
 
@@ -48,8 +70,8 @@ const StarChat = (props) => {
     function handleClick(e) {
         e.preventDefault();
         setShowCard(true)
-        console.log(showCard)
-            ;
+       
+            
     }
 
     const formSubmit = (e) => {
@@ -64,10 +86,12 @@ const StarChat = (props) => {
             minute: oldData.minute,
         }
 
+        console.log(data);
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.post(`api/user/liveChatRigister/`, data).then(res => {
                 if(res.data.status === 200)
                 {
+                    console.log(res.data);
                     // setShowCard(true)
                     swal("Success",res.data.message,"success");
                     history.push('/');
@@ -77,9 +101,26 @@ const StarChat = (props) => {
         });
     }
 
+    //form validation
+    function handleClick(e) {
+        e.preventDefault();
+        if (formdata.name != "" && formdata.phone != "") {
+            setShowdownCard(true);
+            setFirstCard(false);
+        } else {
+            if (formdata.name == "") {
+                setFormName("Name Field Required !")
+            }
+            if (formdata.phone == "") {
+                setFormPhone("Phone Number Required !")
+            }
+        }
+     
+    }
+
     return (
         <>
-            <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+            {firstCard? <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
                 <CardContent>
                     <div className="row whole-m-p">
                         <div className="col-md-3">
@@ -97,7 +138,7 @@ const StarChat = (props) => {
 
 
                         <div className="col-md-9">
-                            <h4 className="starChat-heading">Live Chat</h4>
+                            <h4 className="starChat-heading">{liveChatInfo.title }</h4>
                             <div className="vb"></div>
 
                             <div className="mt-3 row">
@@ -111,10 +152,10 @@ const StarChat = (props) => {
                                     </div>
 
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
-                                        <h6>Mizanur Rahman Azhari</h6>
-                                        <h6>12 / 08 / 2021</h6>
-                                        <h6>11.59 PM</h6>
-                                        <h6>999 BDT</h6>
+                                        <h6>{starInfo.first_name } {starInfo.last_name }</h6>
+                                        <h6>{moment(liveChatInfo.start_time).format('LL')}</h6>
+                                        <h6>{moment(liveChatInfo.start_time).add(oldData.minute, 'minutes').format('LT')}</h6>
+                                        <h6>{liveChatInfo.fee * oldData.minute } BDT</h6>
                                     </div>
                                 </div>
 
@@ -123,7 +164,7 @@ const StarChat = (props) => {
                                 <div className="col-md-6">
                                     <div className="mx-2 starChat-child-style">
                                         <h5 className="text-white">Instructions</h5>
-                                        <p style={{ color: '#c2c2c2' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis rerum, ex recusandae facere dolorem quia cumque sapiente natus cum nulla quas possimus corrupti minus tempora officia dolor earum sunt sit vel. Architecto, accusamus neque non minima doloribus culpa itaque!</p>
+                                        <p style={{ color: '#c2c2c2' }}>{liveChatInfo.description }</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,15 +178,16 @@ const StarChat = (props) => {
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Name</big>
-                                        <input type="hidden" onChange={handleInput} name="event_id" value={oldData.id} />
-                                        <input type="hidden" onChange={handleInput} name="minute" value={oldData.minute} />
+
                                         <input type="text"   onChange={handleInput} className="form-control input-overlay" name="name"/>
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
+                                    <p className="" style={{ color:'red' }}>{formName}</p>
                                     <div className="form-group my-3">
                                         <big className="text-white">Date of Birth</big>
                                         <input type="date"  onChange={handleInput} className="form-control input-overlay"  name="date_b" />
                                     </div>
+                       
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
@@ -153,6 +195,7 @@ const StarChat = (props) => {
                                         <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="phone" />
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
+                                    <p className="" style={{ color:'red' }}>{formPhone}</p>
                                     <div className="form-group my-3">
                                         <big className="text-white">Location</big>
                                         <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="location" />
@@ -167,7 +210,7 @@ const StarChat = (props) => {
 
               
 
-                            {/* <button onClick={formSubmit} type="submit" className="my-3 btn btn-gold">Register</button> */}
+                           <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Next</button>
                             {/* <CustomToggle eventKey="0">
                                
                             </CustomToggle> */}
@@ -176,9 +219,11 @@ const StarChat = (props) => {
                 </CardContent>
 
                 {/* This is me */}
-            </Card>
+            </Card>:null}
+            
 
-            <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+            
+{showdownCard? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
                 <CardContent>
                     <div className="text-center image-middle">
                         <img className="singleFrame-style" src={singleFrame} alt="" />
@@ -278,7 +323,8 @@ const StarChat = (props) => {
                         </form>
                     </div>
                 </CardContent>
-            </Card>
+            </Card>:null}
+           
         </>
     );
 };
