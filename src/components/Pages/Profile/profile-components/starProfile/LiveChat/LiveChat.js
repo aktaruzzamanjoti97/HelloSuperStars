@@ -121,7 +121,7 @@ const LiveChat = () => {
                       setSingleLiveChatEvent(res.data.livechat)
                       setFee(res.data.livechat.fee)
                       setFeeCount(res.data.livechat.fee)
-            
+                 
                    
                       
                     }
@@ -219,7 +219,7 @@ return (
               </div>
               
               <div className="col-6 ">
-              <h6 className='text-light'>Cost per minutes</h6>
+              <h6 className='text-light'>Total Cost</h6>
                 <div className="left-slot  w-75 text-center p-1">
                 <input type='text' value={feeCount} readOnly text-center placeholder='1200tk' className='form-control time' disabled ></input>
                 </div>
