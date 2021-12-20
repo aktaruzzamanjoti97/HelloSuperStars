@@ -65,29 +65,29 @@ const categorySubmit = (e) => {
   }
 
   
-      axios.post(`/api/select_sub_category`, data).then(res => {
-          if(res.data.status === 200)
-              {
-                  swal("Success",res.data.message,"success");
-                  console.log(res.data.length);
-                  localStorage.setItem('category', res.data.length);
+      // axios.post(`/api/select_sub_category`, data).then(res => {
+      //     if(res.data.status === 200)
+      //         {
+      //             swal("Success",res.data.message,"success");
+      //             console.log(res.data.length);
+      //             localStorage.setItem('category', res.data.length);
 
-                  //history.push('/subCategory');
+      //             //history.push('/subCategory');
 
-                  history.push({
-                    pathname: '/subCategory',
-                    search: '?query=abc',
-                    state: { detail: res.data.length }
-                  });
-              }
-              else if(res.data.status === 401)
-              {
-                  swal("Warning",res.data.message,"warning");
-              }
-              else{
-                  setCategory({ ...selectCategory,error_list: res.data.validation_errors });
-              }
-      });
+      //             history.push({
+      //               pathname: '/subCategory',
+      //               search: '?query=abc',
+      //               state: { detail: res.data.length }
+      //             });
+      //         }
+      //         else if(res.data.status === 401)
+      //         {
+      //             swal("Warning",res.data.message,"warning");
+      //         }
+      //         else{
+      //             setCategory({ ...selectCategory,error_list: res.data.validation_errors });
+      //         }
+      // });
 
   
 }
