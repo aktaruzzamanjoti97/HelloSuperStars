@@ -4,8 +4,11 @@ import { Link } from "react-router-dom";
 import { Collapse } from "react-bootstrap";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import PostComment from "./PostComment";
+import moment from 'moment'
 
-export default function UpcomingAuditionsContent({ user }) {
+const mediaBaseUrl = "http://localhost:8000/";
+
+export default function UpcomingAuditionsContent({ post }) {
     const [open, setOpen] = useState(false);
     return (
         <>
@@ -16,21 +19,21 @@ export default function UpcomingAuditionsContent({ user }) {
                             
                             <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                                 <img
-                                    src={user.profilePicture}
+                                    src={mediaBaseUrl+post.star.image}
                                     className="PostImgHome"
-                                    alt={user.profilePicture}
+                                    alt="star-profile"
                                 />
                                 <span className="mx-2 text-warning text-light">
                                     <Link to="/starprofile" className="link-starPorfile">
-                                        {user.username}
+                                        {post.star.first_name} {post.star.last_name}
                                     </Link>
                                     <br></br>
                                     <small className="category-size-chat">
-                                        {" "}
-                                        <span className="Post-small-text">{user.time}</span>
+                                        {moment(post.created_at).format('LT')}
+                                        {" | "}
                                     </small>
                                     <small className="category-size-chat">
-                                        <span className="Post-small-text-r">{user.date}</span>
+                                        {moment(post.created_at).format('LL')}
                                     </small>
                                 </span>
                             </div>
@@ -60,10 +63,12 @@ export default function UpcomingAuditionsContent({ user }) {
                         </div>
                     </h2>
 
-                    <div className="my-2 Enroll-a Enroll-text">{user.postTitel}</div>
+                    
+                    <div className="my-2 Enroll-a Enroll-text">{post.title}</div>
+                    <div className="my-2 Enroll-a Enroll-text">{post.description}</div>
 
                     <div className="card PostCard">
-                        <img src={user.postPic} alt={user.postPic} />
+                        <img src={mediaBaseUrl+post.banner} alt={post.banner} />
                     </div>
 
                     <div className="row align-items-center justify-content-center ">
@@ -71,16 +76,16 @@ export default function UpcomingAuditionsContent({ user }) {
                             <ul className="PostHoUl Co-Auditions">
                                 <li className="like-post">
                                     <i className="fas fa-heart heart mx-1 "></i>
-                                    <small className="profile-card-text">{user.LikeCount}</small>
+                                    <small className="profile-card-text">100K</small>
                                 </li>
                                 <li className="share-post">
                                     <small className="profile-card-text">
-                                        {user.ShareCount} Share
+                                        100K Share
                                     </small>
                                 </li>
                                 <li className="comment-post">
                                     <small className=" profile-card-text">
-                                        {user.CommentCount} Comment
+                                        60K Comment
                                     </small>
                                 </li>
                             </ul>
