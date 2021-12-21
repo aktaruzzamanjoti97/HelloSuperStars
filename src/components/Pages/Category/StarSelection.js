@@ -228,7 +228,7 @@ const categorySubmit = (e) => {
           <h6 className=" text-center mt-2">
             <i className="far fa-star text-warning mx-1"></i>{" "}
             <i className="far fa-star text-warning mx-1"></i>{" "}
-            <span className="text-light">Choose at least 5 Categories</span>{" "}
+            <span className="text-light">Choose at least 51 Categories</span>{" "}
             <i className="far fa-star text-warning mx-1"></i>{" "}
             <i className="far fa-star text-warning mx-1"></i>
           </h6>
@@ -236,8 +236,8 @@ const categorySubmit = (e) => {
           
 
           <div className="ct-btn text-center">
-            { localStorage.auth_id ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Done</button></Link> }
-          </div>
+            { localStorage.auth_token ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Done</button></Link> }
+            </div>
 
 
         </div>

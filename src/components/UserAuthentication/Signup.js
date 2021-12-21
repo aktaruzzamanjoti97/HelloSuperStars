@@ -92,6 +92,7 @@ const Signup = () => {
                 {
                     localStorage.setItem('auth_token', res.data.token);
                     localStorage.setItem('auth_id', res.data.id);
+                    
                     swal("Success",res.data.message,"success");
                     history.push('/otp');
                 }
