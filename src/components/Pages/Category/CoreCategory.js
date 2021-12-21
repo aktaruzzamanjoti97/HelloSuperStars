@@ -11,24 +11,7 @@ import swal from 'sweetalert';
 
 const CoreCategory = () => {
 
-  // $(document).ready(function () {
 
-  //   var tmp = [];
-    
-  //   $("input[name='checkbox']").change(function() {
-  //   var checked = $(this).val();
-  //     if ($(this).is(':checked')) {
-  //       tmp.push(checked);
-  //     }else{
-  //     tmp.splice($.inArray(checked, tmp),1);
-  //     }
-  //   });
-   
-  //   $('#button').on('click', function () {
-  //      console.log(tmp);
-  //   });
-    
-  // });
 
   const [loading, setLoading] = useState(true);
   const [categorylist, setCategorylist] = useState([]);
@@ -73,9 +56,9 @@ const CoreCategory = () => {
         axios.post(`/api/select_category`, data).then(res => {
             if(res.data.status === 200)
                 {
-                    swal("Success",res.data.message,"success");
-                    console.log(res.data.length);
-                    localStorage.setItem('category', res.data.length);
+                    //swal("Success",res.data.message,"success");
+                     console.log(res.data.length);
+                     //localStorage.setItem('category', res.data.length);
 
                     //history.push('/subCategory');
 

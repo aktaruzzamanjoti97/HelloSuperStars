@@ -58,36 +58,36 @@ const SubCategory = () => {
 const categorySubmit = (e) => {
   e.preventDefault();
 
-  console.log(Checked);
+  //console.log(Checked);
   
   const data = {
       cat: Checked
   }
 
+
+
   
-      // axios.post(`/api/select_sub_category`, data).then(res => {
-      //     if(res.data.status === 200)
-      //         {
-      //             swal("Success",res.data.message,"success");
-      //             console.log(res.data.length);
-      //             localStorage.setItem('category', res.data.length);
+      axios.post(`/api/select_sub_category`, data).then(res => {
+          if(res.data.status === 200)
+              {
+                  //swal("Success",res.data.message,"success");
 
-      //             //history.push('/subCategory');
+                  console.log(res.data.length);
 
-      //             history.push({
-      //               pathname: '/subCategory',
-      //               search: '?query=abc',
-      //               state: { detail: res.data.length }
-      //             });
-      //         }
-      //         else if(res.data.status === 401)
-      //         {
-      //             swal("Warning",res.data.message,"warning");
-      //         }
-      //         else{
-      //             setCategory({ ...selectCategory,error_list: res.data.validation_errors });
-      //         }
-      // });
+                  //history.push('/subCategory');
+
+                  history.push({
+                    pathname: '/starselection',
+                    // search: '?query=abc',
+                    state: { detail: res.data.length }
+                  });
+              }
+              else if(res.data.status === 401)
+              {
+                  swal("Warning",res.data.message,"warning");
+              }
+              
+      });
 
   
 }
@@ -98,7 +98,7 @@ const categorySubmit = (e) => {
 
       setSubCategory(location.state.detail);
 
-      console.log(subCategory);
+      //console.log(subCategory);
       //console.log(images);
 
       setLoading(false);
@@ -113,17 +113,13 @@ const categorySubmit = (e) => {
 
   const NextArrow = ({ onClick }) => {
     return (
-      <div className="arrow next" onClick={onClick}>
-        <FaArrowRight />
-      </div>
+      <span></span>
     );
   };
 
   const PrevArrow = ({ onClick }) => {
     return (
-      <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft />
-      </div>
+      <span></span>
     );
   };
 
@@ -131,11 +127,17 @@ const categorySubmit = (e) => {
 
   const [imageIndex, setImageIndex] = useState(0);
 
+  var totalSlides = subCategory.length;
+
   const settings = {
     infinite: true,
     lazyLoad: true,
     speed: 300,
-    slidesToShow: 3,
+    slidesToShow: totalSlides >= 3 ? 3 : totalSlides,
+    slidesToScroll: 3,
+    //slidesToShow: 3,
+    //loopIfEqual: false,
+    autoplay: true,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -144,7 +146,7 @@ const categorySubmit = (e) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: totalSlides >= 3 ? 3 : totalSlides,
           slidesToScroll: 3,
           infinite: true,
           dots: true
@@ -201,10 +203,12 @@ const categorySubmit = (e) => {
 
 
         <div className={idx === imageIndex ? "slide activeSlide" : "slide"} id="id_work_days2">
-          <label>
-            <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.name)}/>
+          <label style={{ minHeight: "366px" }}>
+            <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
             <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt="" />
             <span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+
+            
           </label>
         </div>
     

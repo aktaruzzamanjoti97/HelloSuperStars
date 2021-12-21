@@ -29,7 +29,7 @@ const Profile = () => {
         localStorage.removeItem('auth_name');
         localStorage.removeItem('auth_id');
         swal("Success",res.data.message,"success");
-        history.push('/');
+        history.push('/login');
       }
       else
       {
