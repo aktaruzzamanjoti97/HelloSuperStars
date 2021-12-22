@@ -166,10 +166,17 @@ font-size: 15px !important;
         color: black;
         
       }
+
+      #id_work_days2 input[type="checkbox"]:checked + .low + span{
+        display: none!important;
+        opacity: 1!important;
+      }
     
-      #id_work_days2 input[type="checkbox"]:checked + .low {
+      #id_work_days2 input[type="checkbox"]:checked + .low{
           opacity: 1!important;
       }
+
+    
 
     
       #id_work_days2 span {
@@ -183,14 +190,28 @@ font-size: 15px !important;
       .dot1 {
         height: 35px !important;
         width: 35px !important;
+        /*background-color: #5270EE;*/
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        top: 56%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .dot2 {
+        height: 35px !important;
+        width: 35px !important;
         background-color: #5270EE;
         border-radius: 50%;
         display: inline-block;
-        position:absolute;
-       top: 85%;
-       left: 48%;
-       transform:translate(-50%, -50%);
-        font-size:13px;
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 13px;
       }
 
 
@@ -271,7 +292,7 @@ font-size: 15px !important;
   }
   
   .slide {
-    transform: scale(0.2);
+    transform: scale(0.4);
     transition: transform 300ms;
     opacity: 0.5;
   }
