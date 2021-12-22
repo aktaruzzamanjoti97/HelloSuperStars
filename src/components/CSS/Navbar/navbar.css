@@ -1,11 +1,11 @@
 .custom-container-nv {
-    width: 93vw;
+    width: 93.5%;
 }
 .custom-container {
-    width: 93vw;
+    width: 95%;
 }
 .custom-container-left-Right{
-    width: 23vw;
+    width: 23.5%;
 }
 
 @media only screen and (max-width: 768px) {

@@ -45,7 +45,7 @@ const Navigation = () => {
 
     return (
         <>
-            <Navbar className='navbar-bg navbar-position' expand="lg" sticky="top">
+            <Navbar className='navbar-bg navbar-position' expand="lg" >
 
                 <div className="container-fluid  custom-container-nv ">
                     <Navbar.Brand href="#" >
