@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
-import frame from "../../../images/Normal-User/Single-frame.png";
+import Lock from "../../../images/Normal-User/lock.png";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -138,6 +138,7 @@ const categorySubmit = (e) => {
     //slidesToShow: 3,
     //loopIfEqual: false,
     autoplay: true,
+    autoplaySpeed: 1000,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -206,7 +207,14 @@ const categorySubmit = (e) => {
           <label style={{ minHeight: "366px" }}>
             <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
             <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt="" />
-            <span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+
+            <span className="dot1 d-flex justify-content-center align-items-center">
+               <img src={Lock} alt="" style={{width: '165px'}}/> 
+              {/* <i className="fa fa-lock fa-5x text-warning " style={{width: '100px'}}></i> */}
+            </span>
+
+            <span className="dot2 d-flex justify-content-center align-items-center">
+            <i className='fa fa-spinner text-light fa-spin'></i> </span>
 
             
           </label>

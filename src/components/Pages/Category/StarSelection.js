@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
 import frame from "../../../images/Normal-User/Single-frame.png";
 import OwlCarousel from 'react-owl-carousel';
+import Lock from "../../../images/Normal-User/lock.png";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Navigation from '../../Header/Navigation';
@@ -131,6 +132,7 @@ const categorySubmit = (e) => {
     //slidesToShow: 3,
     //loopIfEqual: false,
     autoplay: true,
+    autoplaySpeed: 1000,
     centerMode: true,
     centerPadding: 0,
     nextArrow: <NextArrow />,
@@ -184,6 +186,10 @@ const categorySubmit = (e) => {
           <label>
             <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
             <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt={`http://localhost:8000/${subCategory.image}`} />
+            <span className="dot1 d-flex justify-content-center align-items-center">
+              <img src={Lock} alt="" style={{width: '165px'}}/> 
+              {/*<i className="fa fa-lock fa-5x text-warning " style={{width: '100px'}}></i>*/}
+            </span>
             <div className='text-center'>
               <button className="btn btn-primary mb-3"> 
                 {subCategory.super_star.first_name} {subCategory.super_star.last_name} 
@@ -228,7 +234,7 @@ const categorySubmit = (e) => {
           <h6 className=" text-center mt-2">
             <i className="far fa-star text-warning mx-1"></i>{" "}
             <i className="far fa-star text-warning mx-1"></i>{" "}
-            <span className="text-light">Choose at least 51 Categories</span>{" "}
+            <span className="text-light">Choose at least 5 Categories</span>{" "}
             <i className="far fa-star text-warning mx-1"></i>{" "}
             <i className="far fa-star text-warning mx-1"></i>
           </h6>
@@ -236,7 +242,7 @@ const categorySubmit = (e) => {
           
 
           <div className="ct-btn text-center">
-            { localStorage.auth_token ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Done</button></Link> }
+            { (localStorage.getItem('auth_token') === '[]')  ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Gest Login</button></Link> }
             </div>
 
 
