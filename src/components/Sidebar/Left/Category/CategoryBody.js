@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import LeftSidebar from '../../LeftSidebar'
 import RightSidebar from '../../RightSidebar'
-import Content from "./Content";
 
 import Navigation from '../../../Header/Navigation'
+import CategoryMap from "./CategoryMap";
 
 export default class ChooseCategory extends Component {
   render() {
@@ -19,7 +19,7 @@ export default class ChooseCategory extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center" >
-                  <Content/>
+                  <CategoryMap/>
               </div>
 
               <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right" >
