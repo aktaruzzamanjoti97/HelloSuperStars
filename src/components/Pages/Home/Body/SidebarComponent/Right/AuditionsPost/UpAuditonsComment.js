@@ -2,11 +2,11 @@ import {React, useState } from 'react'
 import Star from '../../../../../../../images/Profile/ayman-profile.jpg'
 
 import { Collapse } from "react-bootstrap";
-const LearnComment = () => {
+const UpAuditonsComment = () => {
 const [open, setOpen] = useState(false);
 return (
 <>
-    <div className="coment-area  ">
+<div className="coment-area  ">
         <ul className="we-comet ">
             <li>
                 <div className="comet-avatar">
@@ -83,4 +83,4 @@ return (
 )
 }
 
-export default LearnComment
+export default UpAuditonsComment
