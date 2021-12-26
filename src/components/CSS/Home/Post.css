@@ -85,6 +85,12 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+.btn-warning-post:hover{
+    color: white;
+    background-color: #c4c0b5;
+    width: 110px ;
+    height: 30px;
+}
 
 .comment-bg-post{
     background-color: #343434;
