@@ -50,14 +50,17 @@ return (
                 {user.postTitel}
             </div>
             <div class="container-meet card PostCard ">
-                <img src={user.postPic} alt="Snow" />
+                <img src={user.postPic} className="meetImg" alt="Snow" />
                 <div className="centered centered-meet">
                     <div className="meetP  d-flex">
-                        <div className="MeetupText col-md-9 fw-bold">
+                        <div className="MeetupText col-md-8 fw-bold">
                             Friday night at Pan Pacific Sonargaon with SAK 75
                         </div>
-                        <div className="Meetupbtn col-md-2 align-items-center justify-content-center">
-                            <button className="btn btn-warning w-100 text-light fw-bold">Book Now</button>
+                        <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
+                        <Link to="/starprofile" className="link-starPorfile">
+                        <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
+                            </Link>
+                            
                         </div>
                     </div>
                 </div>

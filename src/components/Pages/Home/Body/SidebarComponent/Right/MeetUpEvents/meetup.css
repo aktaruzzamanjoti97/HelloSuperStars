@@ -2,33 +2,124 @@
     position: absolute;
 }
 
-.container-meet{
+.container-meet {
     position: relative;
     text-align: center;
     color: white;
-    
-  }
 
-  .centered-meet{
-    background-image: linear-gradient(rgba(10, 10, 10, 0.781), rgba(0, 0, 0, 0.007));
-    width: 100%;
+}
+
+.centered-meet {
+    background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
+    width: 37.4vw;
     position: absolute;
-    top: 85% !important;
+    top: 86.4% !important;
     transform: translate(-50%, -50%);
-  }
+}
 
-  .meetP{
-     
-      padding-left: 30px;
-      padding: 10px;
-  }
+.meetP {
 
-  .MeetupText {
-      font-size: 1.5rem;
-      padding-left: 15px;
-      margin-left: 10px;
-  }
-  .Meetupbtn{
-     
-  }
+    padding-left: 30px;
+    padding: 10px;
+}
 
+.MeetupText {
+    font-size: 1.4rem;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
+.Meetupbtn {}
+
+.meetImg {
+    height: 380px !important;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 510px) {
+
+    .centered-meet {
+        width: 88.9% !important;
+        position: absolute;
+        top: 80% !important;
+        transform: translate(-50%, -50%);
+    }
+
+    .meetP {
+        padding-left: 2px;
+        padding: 10px;
+    }
+
+    .MeetupText {
+        font-size: .8rem !important;
+        padding-left: 4px;
+        margin-left: 10px;
+    }
+
+    .Meetupbtn {
+        width: 60%;
+
+    }
+
+    .bmt {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .centered-meet {
+        width: 93%;
+        position: absolute;
+        top: 82% !important;
+        transform: translate(-50%, -50%);
+    }
+
+    .meetP {
+        padding-left: 2px;
+        padding: 10px;
+    }
+
+    .MeetupText {
+        font-size: 1.5rem;
+        padding-left: 4px;
+        margin-left: 10px;
+    }
+
+    .Meetupbtn {
+        width: 40%;
+
+    }
+
+    .bmt {
+        font-size: 1rem;
+    }
+
+    .meetImg {
+        height: 300px !important;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+
+    .centered-meet {
+        width: 92.5%;
+        position: absolute;
+        top: 86% !important;
+        transform: translate(-50%, -50%);
+    }
+
+    .MeetupText {
+        font-size: 1rem;
+        padding-left: 4px;
+        margin-left: 10px;
+    }
+
+    .bmt {
+        font-size: .8rem;
+    }
+
+    .meetImg {
+        height: 300px !important;
+    }
+}
