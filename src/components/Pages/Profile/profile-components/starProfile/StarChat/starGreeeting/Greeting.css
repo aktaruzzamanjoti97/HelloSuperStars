@@ -1,0 +1,4 @@
+.greeting ::placeholder{
+    color:white !important;
+    font-size: 15px !important;
+}
