@@ -1,6 +1,9 @@
-import React from "react";
+import {React,useState } from "react";
+import { Collapse } from "react-bootstrap";
+import UpAuditonsComment from "./UpAuditonsComment";
 import '../../../../../../CSS/Home/UpcomingAuditions.css'
     export default function UpcomingAuditionsContent({user}){
+        const [open, setOpen] = useState(false);
         return (
           <>
                <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -56,19 +59,27 @@ import '../../../../../../CSS/Home/UpcomingAuditions.css'
                 
   
                             <div className="text-center hr-Auditions">
-                                <button className="btn-warning-post ">
-                                    <i className="fas fa-heart text-danger  mx-1"></i>
-                                    <small className="Post-Title-home"> Like</small>
-                                </button>
-                                <button className="btn-warning-post mx-2 ">
-                                    <i className="fas fa-comment  mx-1 "></i>
-                                    <small> Comment</small>
-                                </button>
-                                <button className="btn-warning-post">
-                                    <i className="fas fa-share  mx-1"></i>
-                                    <small> Share</small>
-                                </button>
-                            </div>
+                    <button className="btn-warning-post ">
+                        <i className="fas fa-heart text-danger  mx-1"></i>
+                        <small className="Post-Title-home"> Like</small>
+                    </button>
+                    <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
+                        aria-expanded={open} aria-controls="collapseID" >
+                        <i className="fas fa-comment  mx-1 "></i>
+                        <small> Comment</small>
+                    </button>
+                    <button className="btn-warning-post">
+                        <i className="fas fa-share  mx-1"></i>
+                        <small> Share</small>
+                    </button>
+                </div>
+
+                 {/* Comment Section */}
+                 <Collapse in={open}>
+                    <div id="collapseID">
+                        <UpAuditonsComment/>
+                    </div>
+                </Collapse>
 
 
                         </div>
