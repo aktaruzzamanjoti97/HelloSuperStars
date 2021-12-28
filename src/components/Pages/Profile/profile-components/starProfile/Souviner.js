@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import profilePhoto from "../../../../../images/Shakib/13.jpg";
-import Jainamaz from "../../../../../images/unnamed.jpg";
+import Jainamaz from "../../../../../images/LiveChat/balhasan.jpg";
 import "../../../../CSS/Profile/Souviner/Souviner.css";
 import smileImg from "../../../../../images/LiveChat/smileImg.jpg";
 import { Carousel } from "react-bootstrap";
@@ -37,8 +37,9 @@ return (
         </div>
 
         <div className="card-body ">
-          <div className="text-center">
-            <Carousel>
+          <div className="text-center ">
+          <img src={Jainamaz} alt="" className="img-fluid" />
+            {/* <Carousel>
               <Carousel.Item>
                 <img src={Jainamaz} className="img-fluid souviner-img" alt="" />
                 <Carousel.Caption></Carousel.Caption>
@@ -53,9 +54,9 @@ return (
 
                 <Carousel.Caption></Carousel.Caption>
               </Carousel.Item>
-            </Carousel>
+            </Carousel> */}
           </div>
-          <h4 className="mt-3 mx-1 text-light">Jainamaz</h4>
+          <h4 className="mt-3 mx-1 text-light">Gloves</h4>
           <h6 className="mt-3 mx-1  text-light">Live</h6>
           <p className="text-warning">19th Sep 2021 to 25th Sep 2021</p>
 

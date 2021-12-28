@@ -6,28 +6,66 @@ import Children from '../../../../../../../images/bat.jpg';
 import Jainamaj from '../../../../../../../images/ball.jpg';
 import Topi from '../../../../../../../images/greens.jpg';
 import Habibi from '../../../../../../../images/bat.jpg';
-// import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
-// import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
+import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
+import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
 import { Link,useRouteMatch } from 'react-router-dom';
-import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
+// import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
 // css design comes from star post page
 const StarProfileRightContent = () => {
   const {url}=useRouteMatch();
+
     return (
         <>
- <div class="card mx-auto my-4 left-card-star left-star-card">
+  <div class="card mx-auto my-4 left-card-star left-star-card">
+            
+            <div class="card-body">
+              <h6 class="card-title text-warning">Requested for</h6>
+
+              <div className=" d-flex justify-content-around">
+                <img
+                  src={Vector1}
+                  class="img-fluid souviner-request-img"
+                  alt=""
+                />
+                <img
+                  src={Vector2}
+                  class="img-fluid souviner-request-img"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div className="container mb-2">
+              <div className="row">
+                <div className="col-6 ">
+                 <Link to={`${url}/greeting`}>
+                  <button className="w-100 star-last-btn p-1">
+                    Greeting
+                  </button>
+                  </Link> 
+
+                </div>
+                <div className="col-6">
+                <Link to={`${url}/livechat`}> <button className="w-100 star-last-btn p-1">Live Chat</button></Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+ {/* <div class="card mx-auto my-4 left-card-star left-star-card">
             <div class="card-body">
               <h6 class="card-title text-warning"> Live chat</h6>
-              {/* <button class="pulse-button"></button> */}
+            
              <div className="container d-flex justify-content-center align-items-center">
                <img src={LiveChatpic} alt="" className='pulse-button  img-fluid liveChatpic'/>
              </div>
    <div className="text-center mt-3 ">
-   <Link to={`${url}/livechat`}><button className='w-100 enroll-btn '>Live chat</button></Link>
+ <button className='w-100 enroll-btn '>Live chat</button>
    </div>
 
             </div>
-          </div>
+          </div> */}
 
 
             <div class="card mx-auto my-4 left-card-star left-star-card">
@@ -94,38 +132,7 @@ const StarProfileRightContent = () => {
             </div>
           </div>
 
-          {/* <div class="card mx-auto my-4 left-card-star left-star-card">
-            
-            <div class="card-body">
-              <h6 class="card-title text-warning">Requested for</h6>
-
-              <div className=" d-flex justify-content-around">
-                <img
-                  src={Vector1}
-                  class="img-fluid souviner-request-img"
-                  alt=""
-                />
-                <img
-                  src={Vector2}
-                  class="img-fluid souviner-request-img"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div className="container mb-2">
-              <div className="row">
-                <div className="col-6 ">
-                  <button className="w-100 star-last-btn p-1">
-                    Greeting/Birthday/wish
-                  </button>
-                </div>
-                <div className="col-6">
-                  <button className="w-100 star-last-btn p-1">Live Chat</button>
-                </div>
-              </div>
-            </div>
-          </div> */}
+        
         </>
     );
 };
