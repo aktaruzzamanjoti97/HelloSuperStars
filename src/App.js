@@ -20,6 +20,7 @@ import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePo
 import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
 import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
 import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
+import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
 
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
@@ -107,6 +108,7 @@ function App() {
         <Route exact path='/learning-sessions' component={LearnPost}/>
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
+        <Route exact path='/meetup-events' component={MeetupPost}/>
 
         
 

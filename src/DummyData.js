@@ -77,6 +77,24 @@ export const Auditions = [
   },
 ];
 
+// Upcoming Auditions
+export const Meetup = [
+  {
+    id:1,
+    username: "Shakib All Hasan",
+    profilePicture: "images/Shakib/shakib-759-1.jpg",
+  },
+  {
+    id:2,
+    username: "Srabanti Chatterjee",
+    profilePicture: "images/Srabanti-Chatterjee-0loverays.jpg",
+  },
+  {
+    id:3,
+    username: "Mizanur Rahman Azhari",
+    profilePicture: "images/Profile/azhari-profile.jpg",
+  },
+];
 
 
 
