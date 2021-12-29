@@ -57,7 +57,7 @@ return (
                             Friday night at Pan Pacific Sonargaon with SAK 75
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
-                        <Link to="/starprofile" className="link-starPorfile">
+                        <Link to="starprofile/book-now" className="link-starPorfile">
                         <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
                             </Link>
                             
