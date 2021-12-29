@@ -4,35 +4,33 @@ import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import Iframe from 'react-iframe';
 import ShahRukhKhan from '../../images/shahruk-khan.jpg'
-// import { Link } from "react-router-dom";
-// import HomeIcon from '@material-ui/icons/Home';
-// import ChatIcon from '@material-ui/icons/Chat';
-// import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
 import Momotaz from '../../images/Momotaz.jpg';
 import accountImg from '../../images/navbar/account.jpg';
 import Shakib from "../../images/sakib.jpg";
 import Srabanti from '../../images/srabanti.jpg';
+import Sarika from '../../images/NotificationDropdown/Sarika-Sabah-14.jpg'
+import Tamim from '../../images/NotificationDropdown/Tamim.jpg'
+import Ayman from '../../images/NotificationDropdown/ayman.jpg'
+import Azhari from '../../images/NotificationDropdown/mizanurAzhari.jpg'
 import '../CSS/Navbar/navbar.css';
 import './Navigation.css';
+import NotificationDropdownModal from './NotificationDropdownModal/NotificationDropdownModal';
 
 
 const Navigation = () => {
 
-    // const internal_link="http://localhost:3001/about"
-
+    const [notiDropdownShow, setNotiDropdownShow] = React.useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false)
 
     const [isChatOpen, setIsChatOpen] = useState(false)
+
+    const [notificationChatDropdown, setNotificationChatDropdown] = useState(false)
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // const url = new URL(external_link)
-    // if (url.hostname === HOSTNAME ) return <a target="_blank" href={link}>{link}</a>
-    // else
 
 
     function navToggle(isNavOpen) {
@@ -41,6 +39,10 @@ const Navigation = () => {
 
     const handleChatIsOpen = () => {
         setIsChatOpen(!isChatOpen)
+    }
+
+    const handleNotificationDropdown = () => {
+        setNotificationChatDropdown(!notificationChatDropdown)
     }
 
     return (
@@ -69,11 +71,11 @@ const Navigation = () => {
 
                             <Nav.Link onClick={handleChatIsOpen} className="navPadpd">
                                 <div className="dropdown dropDownIconRemove">
-                     
+
                                     <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="fa fa-comment circle-icon"></i>
                                     </div>
-              
+
 
                                     <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
 
@@ -203,8 +205,137 @@ const Navigation = () => {
 
                             </Nav.Link>
 
-                            <Nav.Link className="navPadpd">
-                                <i className="fa fa-bell circle-icon" />
+
+
+                            {/* Notification Dropdown */}
+                            <Nav.Link onClick={handleNotificationDropdown} className="navPadpd">
+                                <div className="dropdown dropDownIconRemove">
+
+                                    <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i className="fa fa-bell circle-icon" />
+                                    </div>
+
+
+                                    <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
+
+
+
+                                        <div className="borderBottomNotificationDropdown">
+                                            <div className="d-flex justify-content-between m-2">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={Tamim}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 profileName">
+                                                        <div className="text-decoration-none">
+                                                            <div className="link-open">
+                                                                <p className="text-margin-bottom"><b>Tamim Iqbal</b></p>
+                                                                <p className="text-margin-bottom"><small>Coming to live at 8.00 PM tonight</small></p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div className="timeStampColor">
+                                                    {/* <p className="text-margin-bottom">7/9/2021</p> */}
+                                                    <p className="text-margin-bottom activeTime"><small>10 min ago</small></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div className="borderBottomNotificationDropdown">
+                                            <div className="d-flex justify-content-between m-2">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={Azhari}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                        <div className="text-decoration-none">
+                                                            <div className="link-open">
+                                                                <h6 className="text-margin-bottom"><b>Mizanur Rahman Azhari</b></h6>
+                                                                <p className="text-margin-bottom"><small>Greetings request video information</small></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="timeStampColor">
+                                                    <p className="text-margin-bottom">Today</p>
+                                                    <p className="text-margin-bottom"><small>2 hrs ago</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="borderBottomNotificationDropdown">
+                                            <div className="d-flex justify-content-between m-2">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={Ayman}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 profileName">
+                                                        <div className="text-decoration-none">
+                                                            <div className="textlink-open">
+                                                                <p className="text-margin-bottom"><b>Ayman Sadik</b></p>
+                                                                <p className="text-margin-bottom"><small>Uploaded a new video</small></p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div className="timeStampColor">
+                                                    <p className="text-margin-bottom">Yesterday</p>
+                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="borderBottomNotificationDropdown">
+                                            <div onClick={() => setNotiDropdownShow(true)} className="d-flex justify-content-between m-2">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={Sarika}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 profileName">
+                                                        <div className="text-decoration-none">
+                                                            <div className="link-open">
+                                                                <p className="text-margin-bottom"><b>Sarika Hassan</b></p>
+                                                                <p className="text-margin-bottom"><small>Started a new session</small></p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div className="timeStampColor">
+                                                    <p className="text-margin-bottom">12/12/22</p>
+                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <button className="btn btn-warning w-100">See More</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
                             </Nav.Link>
 
                             <Nav.Link className="navPadpd">
@@ -228,7 +359,7 @@ const Navigation = () => {
                     </Navbar.Collapse>
                 </div>
 
-                <Modal dialogClassName="my-modal" style={{height:'100vh'}} className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
+                <Modal dialogClassName="my-modal" style={{ height: '100vh' }} className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered>
 
@@ -240,12 +371,19 @@ const Navigation = () => {
                             allow="camera;microphone"
                             className="myClassname"
                             display="initial"
-                            position="relative"/>
+                            position="relative" />
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
                     </Modal.Body>
                 </Modal>
+
+
+
+                <NotificationDropdownModal
+                    show={notiDropdownShow}
+                    onHide={() => setNotiDropdownShow(false)}
+                />
 
             </Navbar>
         </>
