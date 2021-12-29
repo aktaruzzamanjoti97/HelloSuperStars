@@ -38,13 +38,13 @@ export const LeftSidebar = ({history}) => {
                             <h2 className="accordion-header " id="headingOne">
                                     <button className="accordion-button npm-bnt profile-accordion-button-icon left-bottom-ap collapsed"
                                         type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                        aria-controls="collapseOne" style={{backgroundColor:getColor('/category')}}>
+                                        aria-controls="collapseOne">
                                         <span>
-                                      <i className="fas fa-layer-group mx-2 profile-font-color fa-2x"style={{color:getColors('/category')}} ></i>
+                                      <i className="fas fa-layer-group mx-2 profile-font-color fa-2x"></i>
                                         </span>
-                                        <span className="mx-2 profile-font-color" style={{color:getColors('/category')}}>
+                                        <span className="mx-2 profile-font-color" >
                                             Category <br></br>
-                                            <small className="category-size-chat" style={{color:getColors('/category')}} > 5 selectd</small>
+                                            <small className="category-size-chat"  > 5 selectd</small>
                                         </span>
                                     </button>                     
                             </h2>
@@ -64,13 +64,13 @@ export const LeftSidebar = ({history}) => {
                                 <h2 className="accordion-header" id="headingTwo">
                                     <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo" style={{backgroundColor:getColor('/following')}}>
+                                        aria-controls="collapseTwo">
                                         <span>
-                                            <i className="fas fa-star mx-2 profile-font-color fa-2x" style={{color:getColors('/following')}}></i>
+                                            <i className="fas fa-star mx-2 profile-font-color fa-2x" ></i>
                                         </span>
-                                        <span className="mx-2 profile-font-color" style={{color:getColors('/following')}}>
+                                        <span className="mx-2 profile-font-color" >
                                             Following <br></br>
-                                            <small className="category-size-chat" style={{color:getColors('/following')}}> 25 star</small>
+                                            <small className="category-size-chat"> 25 star</small>
                                         </span>
                                     </button>
                                 </h2>
@@ -83,13 +83,13 @@ export const LeftSidebar = ({history}) => {
                                 <h2 className="accordion-header" id="headingTwo">
                                     <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                        aria-controls="collapseTwo" style={{backgroundColor:getColor('/wallet')}}>
+                                        aria-controls="collapseTwo" >
                                         <span>
-                                            <i className="fas fa-wallet mx-2 profile-font-color fa-2x" style={{color:getColors('/wallet')}}></i>
+                                            <i className="fas fa-wallet mx-2 profile-font-color fa-2x" ></i>
                                         </span>
-                                        <span className="mx-2 profile-font-color" style={{color:getColors('/wallet')}}>
+                                        <span className="mx-2 profile-font-color">
                                             Wallet <br></br>
-                                            <small className="category-size-chat" style={{color:getColors('/wallet')}}> 200 star</small>
+                                            <small className="category-size-chat" > 200 star</small>
                                         </span>
                                     </button>
                                 </h2>
@@ -102,13 +102,13 @@ export const LeftSidebar = ({history}) => {
                                 <h2 className="accordion-header" id="headingTwo">
                                         <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" 
-                                            aria-controls="collapseTwo" style={{backgroundColor:getColor('/enrolled-auditions')}}>
+                                            aria-controls="collapseTwo" >
                                             <span>
-                                                <i className="fas fa-id-card mx-2 profile-font-color fa-2x" style={{color:getColors('/enrolled-auditions')}}></i>
+                                                <i className="fas fa-id-card mx-2 profile-font-color fa-2x"></i>
                                             </span>
-                                            <span className="mx-2 profile-font-color" style={{color:getColors('/enrolled-auditions')}}>
+                                            <span className="mx-2 profile-font-color" >
                                                 Enrolled audition <br></br>
-                                                <small className="category-size-chat" style={{color:getColors('/enrolled-auditions')}}> 1 pending</small>
+                                                <small className="category-size-chat"> 1 pending</small>
                                             </span>
                                         </button>
 
@@ -122,11 +122,11 @@ export const LeftSidebar = ({history}) => {
                                 <h2 className="accordion-header" id="headingTwo">
                                     <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" 
-                                        aria-controls="collapseTwo" style={{backgroundColor:getColor('/settings')}} >
+                                        aria-controls="collapseTwo" >
                                         <span>
-                                            <i className="fas fa-cog mx-2 profile-font-color fa-2x" style={{color:getColors('/settings')}}></i>
+                                            <i className="fas fa-cog mx-2 profile-font-color fa-2x"></i>
                                         </span>
-                                        <span className="mx-2 profile-font-color" style={{color:getColors('/settings')}}>Setting</span>
+                                        <span className="mx-2 profile-font-color" >Setting</span>
                                     </button>
                                 </h2>
                             </div>
@@ -164,4 +164,4 @@ export const LeftSidebar = ({history}) => {
         </>
     )
 }
-export default withRouter(LeftSidebar);
+export default LeftSidebar;

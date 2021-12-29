@@ -1,7 +1,7 @@
 import React from "react";
 import "../../CSS/Profile/profile.css";
-import coverImg from "../../../images/Profile/cover.jpg";
-import profileImg from "../../../images/Profile/profile.jpg";
+import coverImg from "../../../images/Shakib/pro.jpg";
+import profileImg from "../../../images/Shakib/pro.jpg";
 import LeftCard from "./profile-components/LeftCard";
 import RightSideCard from "./profile-components/RightSideCard";
 import Azhari from "../../../images/Profile/Azhari.jpg";
@@ -27,8 +27,9 @@ const Profile = () => {
       {
         localStorage.removeItem('auth_token');
         localStorage.removeItem('auth_name');
+        localStorage.removeItem('auth_id');
         swal("Success",res.data.message,"success");
-        history.push('/');
+        history.push('/login');
       }
       else
       {

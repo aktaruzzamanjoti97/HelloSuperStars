@@ -3,12 +3,12 @@ export const Lives = [
   {
     id:1,
       username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
+      profilePicture: "images/Shakib/pro.jpg",
   },
   {
     id:2,
     username: "Momtaz Begum",
-    profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+    profilePicture: "images/Momtaz-Begum-photo.jpg",
   },
   {
     id:3,
@@ -23,18 +23,18 @@ export const Lives = [
 export const Learns = [
     {
       id:1,
-      username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
+      username: "Srabanti Chatterjee",
+      profilePicture: "images/03.jpg",
     },
     {
       id:2,
-      username: "Ayman Sadiq",
-      profilePicture: "images/Profile/ayman-profile.jpg",
+      username: "Shah Rukh Khan",
+      profilePicture: "images/Shah-Rukh-Khan.jpg",
     },
     {
       id:3,
-      username: "Mizanur Rahman Azhari",
-      profilePicture: "images/Profile/azhari-profile.jpg",
+      username: "Deepika Padukone",
+      profilePicture: "images/02.jpg",
     },
 ];
 
@@ -42,13 +42,13 @@ export const Learns = [
 export const UpLives = [
   {
     id:1,
-      username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
+      username: "Chris Hemsworth",
+      profilePicture: "images/01.jpg",
   },
   {
     id:2,
-    username: "Momtaz Begum",
-    profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+    username: "Scarlett Johansson ",
+    profilePicture: "images/scarlett_johansson_21.jpg",
   },
   {
     id:3,
@@ -62,13 +62,32 @@ export const UpLives = [
 export const Auditions = [
   {
     id:1,
-    username: "Shakib All Hasan",
-    profilePicture: "images/Profile/Shakibpro.png",
+    username: "Lionel Messi",
+    profilePicture: "images/04.jpg",
   },
   {
     id:2,
-    username: "Ayman Sadiq",
-    profilePicture: "images/Profile/ayman-profile.jpg",
+    username: "Cristiano Ronaldo",
+    profilePicture: "images/05.jpg",
+  },
+  {
+    id:3,
+    username: "Mizanur Rahman Azhari",
+    profilePicture: "images/Profile/azhari-profile.jpg",
+  },
+];
+
+// Upcoming Auditions
+export const Meetup = [
+  {
+    id:1,
+    username: "Shakib All Hasan",
+    profilePicture: "images/Shakib/shakib-759-1.jpg",
+  },
+  {
+    id:2,
+    username: "Srabanti Chatterjee",
+    profilePicture: "images/Srabanti-Chatterjee-0loverays.jpg",
   },
   {
     id:3,
@@ -80,15 +99,15 @@ export const Auditions = [
 
 
 
-
 // User Post
 export const Users = [
     {
       id:1,
-      username: "Shakib All Hasan",
-      profilePicture: "images/Profile/Shakibpro.png",
-      postPic:"images/Profile/ShakibPost.jpg",
+      username: "Shakib Al Hasan",
+      profilePicture: "images/Shakib/shakib-al-hasan.jpg",
+      postPic:"images/Shakib/1.jpg",
       postTitel:"Coming live at 9.00 pm tonight. See you there!",
+      video:"https://www.youtube.com/watch?v=LRtEJPSj2-8",
       time: "5:30 PM",
       date: "21th November",
       candidate:"360",
@@ -101,10 +120,11 @@ export const Users = [
     {
       id:2,
       username: "Momtaz Begum",
-      profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+      profilePicture: "images/Momtaz-Begum-photo.jpg",
       postPic:"images/Momotaz.jpg",
-      postTitel:"",
+      postTitel:"Folk is in my bloodstream I cry folk and do sing folk. My listeners are the backbone of my passion. Folksong is something I always admire and let me be in peace to sing along",
       time: "5:30 PM",
+      video:"https://www.youtube.com/watch?v=DtZ3YJouLbk",
       date: "10th December",
       candidate:"360",
       pdate: "01/01/2022",
@@ -116,9 +136,10 @@ export const Users = [
       id:3,
       username: "Srabanti Chatterjee ",
       profilePicture: "images/srabanti.jpg",
-      postPic:"images/Srabanti-Chatterjee-0loverays.jpg",
-      postTitel:"নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? কীভাবে গঠন করবো নতুন কোনো অভ্যাস? ",
+      postPic:"images/maxresdefault.jpg",
+      postTitel:" One person draws a picture in one mind, and the mind paints in another .",
       time: "5:30 PM",
+      video:"https://www.youtube.com/watch?v=uzvvDG-lRdA",
       date: "21th November",
       candidate:"360",
       pdate: "24/11/2021",
@@ -126,22 +147,9 @@ export const Users = [
       ShareCount: "100",
       CommentCount: "30",
     },
+   
     {
       id:4,
-      username: "Mizanur Rahman Azhari",
-      profilePicture: "images/Profile/azhari-profile.jpg",
-      postPic:"images/Profile/Azhari.jpg",
-      postTitel:"“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।” [সূরা আল-মা’ইদাহ, আয়াত: ২]",
-      time: "5:30 PM",
-      date: "10th December",
-      candidate:"360",
-      pdate: "01/01/2022",
-      LikeCount: "501",
-      ShareCount: "140",
-      CommentCount: "234",
-    },
-    {
-      id:5,
       username: "Shakib All Hasan",
       profilePicture: "images/Profile/Shakibpro.png",
       postPic:"images/Profile/ShakibPost.jpg",
@@ -157,11 +165,11 @@ export const Users = [
     },
     
     {
-      id:6,
+      id:5,
       username: "Srabanti Chatterjee ",
       profilePicture: "images/srabanti.jpg",
       postPic:"images/Srabanti-Chatterjee-0loverays.jpg",
-      postTitel:"নতুন অভ্যাস গঠন করতে গিয়ে বেশ ঝামেলায় পড়তে হয় আমাদের। একদিন, দুইদিন, এক সপ্তাহ নতুন কিছু করেই হাঁপিয়ে যাই আমরা। কী করা যায়? কীভাবে গঠন করবো নতুন কোনো অভ্যাস? ",
+      postTitel:"Had a fantastic shoot for the upcoming film! Stay tuned my fans something interesting is coming up fort all of you!",
       time: "5:30 PM",
       date: "21th November",
       candidate:"360",
@@ -171,7 +179,7 @@ export const Users = [
       CommentCount: "30",
     },
     {
-      id:7,
+      id:6,
       username: "Shakib All Hasan",
       profilePicture: "images/Profile/Shakibpro.png",
       postPic:"images/Profile/ShakibPost.jpg",
@@ -185,12 +193,13 @@ export const Users = [
       CommentCount: "30",
 
     },
+  
     {
-      id:8,
-      username: "Mizanur Rahman Azhari",
-      profilePicture: "images/Profile/azhari-profile.jpg",
-      postPic:"images/Profile/Azhari.jpg",
-      postTitel:"“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।” [সূরা আল-মা’ইদাহ, আয়াত: ২]",
+      id:7,
+      username: "Momtaz Begum",
+      profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
+      postPic:"images/Momotaz.jpg",
+      postTitel:"“Folksong is something I always admire and let me be in peace to sing along",
       time: "5:30 PM",
       date: "10th December",
       candidate:"360",
@@ -200,11 +209,101 @@ export const Users = [
       CommentCount: "234",
     },
     {
+      id:8,
+      username: "Shakib Al Hasan",
+      profilePicture: "images/Shakib/shakib-al-hasan.jpg",
+      postPic:"images/Shakib/1.jpg",
+      postTitel:"Coming live at 9.00 pm tonight. See you there!",
+      time: "5:30 PM",
+      date: "21th November",
+      candidate:"360",
+      pdate: "24/11/2021",
+      LikeCount: "240",
+      ShareCount: "100",
+      CommentCount: "30",
+
+    },
+    {
       id:9,
+      username: "Momtaz Begum",
+      profilePicture: "images/Momtaz-Begum-photo.jpg",
+      postPic:"images/Momotaz.jpg",
+      postTitel:"Folk is in my bloodstream I cry folk and do sing folk. My listeners are the backbone of my passion. Folksong is something I always admire and let me be in peace to sing along",
+      time: "5:30 PM",
+      date: "10th December",
+      candidate:"360",
+      pdate: "01/01/2022",
+      LikeCount: "501",
+      ShareCount: "140",
+      CommentCount: "234",
+    },
+    {
+      id:10,
+      username: "Srabanti Chatterjee ",
+      profilePicture: "images/srabanti.jpg",
+      postPic:"images/Srabanti-Chatterjee-0loverays.jpg",
+      postTitel:" One person draws a picture in one mind, and the mind paints in another .",
+      time: "5:30 PM",
+      date: "21th November",
+      candidate:"360",
+      pdate: "24/11/2021",
+      LikeCount: "240",
+      ShareCount: "100",
+      CommentCount: "30",
+    },
+   
+    {
+      id:11,
+      username: "Shakib All Hasan",
+      profilePicture: "images/Profile/Shakibpro.png",
+      postPic:"images/Profile/ShakibPost.jpg",
+      postTitel:"Coming live at 9.00 pm tonight. See you there!",
+      time: "5:30 PM",
+      date: "21th November",
+      candidate:"360",
+      pdate: "24/11/2021",
+      LikeCount: "240",
+      ShareCount: "100",
+      CommentCount: "30",
+
+    },
+    
+    {
+      id:12,
+      username: "Srabanti Chatterjee ",
+      profilePicture: "images/srabanti.jpg",
+      postPic:"images/Srabanti-Chatterjee-0loverays.jpg",
+      postTitel:"Had a fantastic shoot for the upcoming film! Stay tuned my fans something interesting is coming up fort all of you!",
+      time: "5:30 PM",
+      date: "21th November",
+      candidate:"360",
+      pdate: "24/11/2021",
+      LikeCount: "240",
+      ShareCount: "100",
+      CommentCount: "30",
+    },
+    {
+      id:13,
+      username: "Shakib All Hasan",
+      profilePicture: "images/Profile/Shakibpro.png",
+      postPic:"images/Profile/ShakibPost.jpg",
+      postTitel:"Coming live at 9.00 pm tonight. See you there!",
+      time: "5:30 PM",
+      date: "21th November",
+      candidate:"360",
+      pdate: "24/11/2021",
+      LikeCount: "240",
+      ShareCount: "100",
+      CommentCount: "30",
+
+    },
+  
+    {
+      id:14,
       username: "Momtaz Begum",
       profilePicture: "images/220px-Momtaz_Begum_(cropped).jpg",
       postPic:"images/Momotaz.jpg",
-      postTitel:"“সৎকর্মে এবং আল্লাহভীতির কাজে পরস্পরকে সহযোগিতা করো, আর পাপ এবং শত্রুতার কাজে কাউকে সহযোগিতা করো না। আল্লাহকে ভয় করো। নিশ্চই শাস্তিদানে তিনি অত্যন্ত কঠোর।” [সূরা আল-মা’ইদাহ, আয়াত: ২]",
+      postTitel:"“Folksong is something I always admire and let me be in peace to sing along",
       time: "5:30 PM",
       date: "10th December",
       candidate:"360",
@@ -217,15 +316,15 @@ export const Users = [
 
   export const youtubeLink = [
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=LRtEJPSj2-8"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=zm4roSWVehY"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=tUNGAuPW-_o"
     },
     {
-      link: "https://youtu.be/3jtqM_EsUCQ"
+      link: "https://www.youtube.com/watch?v=8wb3hiF20bQ&t=21s"
     }
   ]

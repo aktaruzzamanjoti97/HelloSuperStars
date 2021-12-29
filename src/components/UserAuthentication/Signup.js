@@ -92,6 +92,7 @@ const Signup = () => {
                 {
                     localStorage.setItem('auth_token', res.data.token);
                     localStorage.setItem('auth_id', res.data.id);
+                    
                     swal("Success",res.data.message,"success");
                     history.push('/otp');
                 }
@@ -175,27 +176,6 @@ const Signup = () => {
                                                             </div>
                                                         </form>
 
-
-                                                        {/* <Form onSubmit={handleSubmit}>
-                                                            <Form.Group id="name">
-                                                                <Form.Label>Name</Form.Label>
-                                                                <Form.Control ref={nameRef} type="text" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="email">
-                                                                <Form.Label>Email</Form.Label>
-                                                                <Form.Control ref={emailRef} type="email" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="password">
-                                                                <Form.Label>Password</Form.Label>
-                                                                <Form.Control ref={passwordRef} type="password" required />
-                                                            </Form.Group>
-                                                            <Form.Group id="ConfirmPassword">
-                                                                <Form.Label>Password Comnfirmation</Form.Label>
-                                                                <Form.Control ref={ConfirmPasswordRef} type="password" required />
-                                                            </Form.Group>
-                                                            <br />
-                                                            <Button disabled={loading} className="w-100" type="submit">Sign Up</Button>
-                                                        </Form> */}
                                                     </Card.Body>
                                                 </Card>
                                                 {/* <div className="w-100 text-center mt-2">

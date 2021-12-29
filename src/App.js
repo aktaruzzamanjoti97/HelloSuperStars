@@ -20,6 +20,7 @@ import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePo
 import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
 import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
 import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
+import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
 
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
@@ -63,6 +64,8 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.baseURL = "http://localhost:8000/";
 
+const mediaBaseUrl = "http://localhost:8000/";
+
 axios.interceptors.request.use(function (config)
 {
   const token = localStorage.getItem('auth_token');
@@ -79,23 +82,24 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <Route exact path='/' component={Home} />
+        <PrivateRoute exact path='/' component={Home} />
+        <Route exact path='/guest' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryBody} />
         <Route exact path='/following' component={FollowingBody} />
-        <Route exact path='/wallet' component={WalletBody} />
-        <Route exact path='/enrolled-auditions' component={EnrollBody} />
+        <PrivateRoute exact path='/wallet' component={WalletBody} />
+        <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
 
-        <Route exact path='/settings' component={SettingsBody} />
-        <Route exact path="/setting/personal" component={Personal}/>
-        <Route exact path="/setting/educational" component={Educational}/>
-        <Route exact path="/setting/employment" component={Employment}/>
-        <Route exact path="/setting/interest" component={Interest}/>
-        <Route exact path="/setting/security" component={Security}/>
-        <Route exact path="/setting/report" component={Report}/>
+        <PrivateRoute exact path='/settings' component={SettingsBody} />
+        <PrivateRoute exact path="/setting/personal" component={Personal}/>
+        <PrivateRoute exact path="/setting/educational" component={Educational}/>
+        <PrivateRoute exact path="/setting/employment" component={Employment}/>
+        <PrivateRoute exact path="/setting/interest" component={Interest}/>
+        <PrivateRoute exact path="/setting/security" component={Security}/>
+        <PrivateRoute exact path="/setting/report" component={Report}/>
         {/* Left Sidebar End*/}
 
 
@@ -104,6 +108,7 @@ function App() {
         <Route exact path='/learning-sessions' component={LearnPost}/>
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
+        <Route exact path='/meetup-events' component={MeetupPost}/>
 
         
 
@@ -120,7 +125,7 @@ function App() {
         <Route path='/guestUser' exact component={GuestUserPage} />
 
         {/* profile page */}
-        <Route path='/profile' exact component={Profile} />
+        <PrivateRoute path='/profile' exact component={Profile} />
         <Route path='/starprofile'  component={StarProfile} />
 
           

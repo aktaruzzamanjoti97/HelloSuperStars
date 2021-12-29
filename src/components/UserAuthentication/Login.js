@@ -42,7 +42,8 @@ const Login = () => {
                 if(res.data.status === 200)
                     {
                         localStorage.setItem('auth_token', res.data.token);
-                        localStorage.setItem('auth_name', res.data.username);
+                        localStorage.setItem('auth_name', res.data.name);
+                        localStorage.setItem('auth_id', res.data.id);
                         swal("Success",res.data.message,"success");
                         history.push('/');
                     }
@@ -102,7 +103,9 @@ const Login = () => {
                                                             </Form.Group>
                                                             <p>
                                                                 <Form.Group id="password">
-                                                                    <input type={changeIcon ? `text` : `password`} className='input-style w-50' name="password" onChange={handleInput} value={loginInput.password} placeholder='Password' required />
+                                                                    <input type={changeIcon ? `text` : `password`} 
+                                                                    className='input-style w-50' name="password" onChange={handleInput} v
+                                                                    alue={loginInput.password} placeholder='Password' required />
                                                                     <span onClick={handleChangeIcon} className='eye-icons'>
                                                                         <FontAwesomeIcon icon={changeIcon ? faEye : faEyeSlash} />
                                                                     </span>

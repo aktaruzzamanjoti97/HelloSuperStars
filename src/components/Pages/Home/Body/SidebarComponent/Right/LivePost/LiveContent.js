@@ -50,12 +50,12 @@ return (
             </h2>
 
             <div className="my-2 Enroll-a Enroll-text">
-                {user.postTitel}
+                {/* {user.postTitel} */}
             </div>
 
             <div className="card PostCard">
-                <ReactPlayer url="https://youtu.be/3jtqM_EsUCQ" className="Live-Video-x" playing={false} volume={1}
-                    onReady={()=> console.log("ready now")}
+                <ReactPlayer url={user.video} className="Live-Video-x" playing={false} volume={1} onReady={()=>
+                    console.log("ready now")}
                     />
             </div>
             <div className="row align-items-center justify-content-center ">
@@ -80,13 +80,8 @@ return (
                         <i className="fas fa-heart text-danger  mx-1"></i>
                         <small className="Post-Title-home"> Like</small>
                     </button>
-                    <button className="btn-warning-post mx-2 " onClick={()=> setOpen(!open)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={open}
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne"
-                        >
+                    <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
+                        aria-expanded={open} aria-controls="collapseID" >
                         <i className="fas fa-comment  mx-1 "></i>
                         <small> Comment</small>
                     </button>
@@ -98,14 +93,8 @@ return (
 
                 {/* Comment Section */}
                 <Collapse in={open}>
-                    <div id="example-collapse-text">
-                        <div className=" accordion-flush ">
-                            <div className=" comment-bg-post">
-                                <div id="flush-collapseOne" className="accordion-collapse collapse">
-                                    <LiveComment />
-                                </div>
-                            </div>
-                        </div>
+                    <div id="collapseID">
+                        <LiveComment />
                     </div>
                 </Collapse>
             </div>

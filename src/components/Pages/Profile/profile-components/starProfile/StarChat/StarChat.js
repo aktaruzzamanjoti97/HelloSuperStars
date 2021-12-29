@@ -1,6 +1,7 @@
+import React, { useState, useEffect, useRef } from 'react';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import * as React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import singleFrame from '../../../../../../images/Normal-User/Single-frame.png';
 import applePayLogo from '../../../../../../images/Payment-img/Apple_Pay_logo.png';
@@ -10,22 +11,118 @@ import payPalLogo from '../../../../../../images/Payment-img/PayPal-Logo.wine.pn
 import visaLogo from '../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../../../images/starProfile/StarPhotos/1.jpg';
 import '../../../../../CSS/Profile/starProfile/starChat.css';
+import loading from '../../../../../../images/LiveChat/Loading1.gif'
+import axios from "axios";
+import swal from 'sweetalert';
+import moment from 'moment'
+
+import { Link, Route,useLocation,  Redirect, useHistory} from 'react-router-dom';
 
 
-const StarChat = () => {
-
+const StarChat = (props) => {
+    const [oldData, setOldData] = useState([]);
+    const [eventInfo, setstate] = useState({});
+    const [liveChatInfo, setLiveChatInfo] = useState({});
+    const [starInfo, setStarInfo] = useState({});
+    const [formdata, setFormdata] = useState({
+        name: '',
+        date_b: '',
+        phone: '',
+        location: '',
+        comment: '',
+        error_list: []
+    })
+    // console.log(formdata);
     const [showCard, setShowCard] = React.useState(false)
+    const history = useHistory();
+    const location = useLocation();
+    const [showdownCard, setShowdownCard] = useState(false);
+    const [firstCard, setFirstCard] = useState(true);
+    const [formName, setFormName] = useState()
+    const [formPhone, setFormPhone] = useState()
+    const [status, setStatus] = useState(false);
+    
 
+    useEffect(() => {
+
+        setOldData(location.state.data);
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.get(`/api/user/sinlgeLiveChat/${location.state.data.id}`).then(res => {
+                    if(res.data.status === 200)
+                    {
+                      
+                        setLiveChatInfo(res.data.liveChat);
+                        setStarInfo(res.data.starInfo)
+                        setStatus(true)
+                    }
+            });
+        });
+
+  
+    }, [location]);
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setFormdata((prev)=>{
+              return({...prev,[name]:value});
+          })
+    
+    }
     function handleClick(e) {
         e.preventDefault();
         setShowCard(true)
-        console.log(showCard)
-            ;
+       
+            
+    }
+
+    const formSubmit = (e) => {
+        e.preventDefault()
+        const data = {
+            name: formdata.name,
+            date_b: formdata.date_b,
+            phone: formdata.phone,
+            location: formdata.location,
+            comment: formdata.comment,
+            event_id: oldData.id,
+            minute: oldData.minute,
+        }
+
+        console.log(data);
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`api/user/liveChatRigister/`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    console.log(res.data);
+                    // setShowCard(true)
+                    swal("Success",res.data.message,"success");
+                    history.push('/');
+                }
+                
+            });
+        });
+    }
+
+    //form validation
+    function handleClick(e) {
+        e.preventDefault();
+        if (formdata.name != "" && formdata.phone != "") {
+            setShowdownCard(true);
+            setFirstCard(false);
+        } else {
+            if (formdata.name == "") {
+                setFormName("Name Field Required !")
+            }
+            if (formdata.phone == "") {
+                setFormPhone("Phone Number Required !")
+            }
+        }
+     
     }
 
     return (
         <>
-            <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+            {firstCard? <Card style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
                 <CardContent>
                     <div className="row whole-m-p">
                         <div className="col-md-3">
@@ -41,9 +138,10 @@ const StarChat = () => {
                             </div>
                         </div>
 
-
+                        {status ?
+                        
                         <div className="col-md-9">
-                            <h4 className="starChat-heading">Live Chat</h4>
+                            <h4 className="starChat-heading">{liveChatInfo.title }</h4>
                             <div className="vb"></div>
 
                             <div className="mt-3 row">
@@ -57,10 +155,10 @@ const StarChat = () => {
                                     </div>
 
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
-                                        <h6>Mizanur Rahman Azhari</h6>
-                                        <h6>12 / 08 / 2021</h6>
-                                        <h6>11.59 PM</h6>
-                                        <h6>999 BDT</h6>
+                                        <h6>{starInfo.first_name } {starInfo.last_name }</h6>
+                                        <h6>{moment(liveChatInfo.start_time).format('LL')}</h6>
+                                        <h6>{moment(liveChatInfo.start_time).add(liveChatInfo.slot_counter, 'minutes').add(oldData.minute, 'minutes').format('LT')}</h6>
+                                        <h6>{liveChatInfo.fee * oldData.minute } BDT</h6>
                                     </div>
                                 </div>
 
@@ -69,12 +167,19 @@ const StarChat = () => {
                                 <div className="col-md-6">
                                     <div className="mx-2 starChat-child-style">
                                         <h5 className="text-white">Instructions</h5>
-                                        <p style={{ color: '#c2c2c2' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci perferendis rerum, ex recusandae facere dolorem quia cumque sapiente natus cum nulla quas possimus corrupti minus tempora officia dolor earum sunt sit vel. Architecto, accusamus neque non minima doloribus culpa itaque!</p>
+                                        <p style={{ color: '#c2c2c2' }}>{liveChatInfo.description }</p>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+                            :
+                            <center>
+                                <div className="col-md-9" style={{ width: '50px', marginTop: '-130px'}}>
+                                    <img src={loading} alt="" style={{ width: '50px'}}/>
+                                </div>
+                            </center>
+                    }
                     </div>
 
                     <div className="whole-m-p">
@@ -83,42 +188,39 @@ const StarChat = () => {
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Name</big>
-                                        <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+                                        <input type="text"   onChange={handleInput} className="form-control input-overlay" name="name"/>
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
+                                    <p className="" style={{ color:'red' }}>{formName}</p>
                                     <div className="form-group my-3">
                                         <big className="text-white">Date of Birth</big>
-                                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+                                        <input type="date"  onChange={handleInput} className="form-control input-overlay"  name="date_b" />
                                     </div>
+                       
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Phone Number</big>
-                                        <input type="email" className="form-control input-overlay" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                        <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="phone" />
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
+                                    <p className="" style={{ color:'red' }}>{formPhone}</p>
                                     <div className="form-group my-3">
                                         <big className="text-white">Location</big>
-                                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+                                        <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="location" />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="form-group my-1">
                                 <big className="text-white">Additional Message</big>
-                                <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+                                <input type="text"  onChange={handleInput} className="form-control input-overlay"  name="comment" />
                             </div>
 
-                            {/* <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group my-3">
-                                        <big className="text-white">Password</big>
-                                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
-                                    </div>
-                                </div>
-                            </div> */}
+              
 
-                            <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
+                           <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Next</button>
                             {/* <CustomToggle eventKey="0">
                                
                             </CustomToggle> */}
@@ -127,9 +229,11 @@ const StarChat = () => {
                 </CardContent>
 
                 {/* This is me */}
-            </Card>
+            </Card>:null}
+            
 
-            {showCard ? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
+            
+{showdownCard? <Card className="my-4" style={{ backgroundColor: '#343434' }} sx={{ minWidth: 275 }}>
                 <CardContent>
                     <div className="text-center image-middle">
                         <img className="singleFrame-style" src={singleFrame} alt="" />
@@ -199,7 +303,7 @@ const StarChat = () => {
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Password</big>
-                                        <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
+                                        <input type="password" className="form-control input-overlay" />
                                     </div>
                                 </div>
 
@@ -224,11 +328,13 @@ const StarChat = () => {
                                 </div>
                             </div>
 
-                            <button type="submit" className="my-3 btn btn-gold">Confirm Payment</button>
+                            {/* <button  onClick={formSubmit}  className="my-3 btn btn-gold">Confirm Payment</button> */}
+                                <button onClick={formSubmit} type="submit" className="my-3 btn btn-gold">Register</button>
                         </form>
                     </div>
                 </CardContent>
-            </Card> : null}
+            </Card>:null}
+           
         </>
     );
 };

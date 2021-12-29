@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
-import frame from "../../../images/Normal-User/Single-frame.png";
+import Lock from "../../../images/Normal-User/lock.png";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { Link } from 'react-router-dom';
 import Navigation from '../../Header/Navigation';
-import { useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
+import axios from 'axios';
+import swal from 'sweetalert';
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import Slider from "react-slick";
+
+const images = ['abc', 'nfrdsg', 'sdfsd', 'faef', 'srgrs', 'sfdf'];
 
 
 const SubCategory = () => {
 
   const [subCategory, setSubCategory] = useState([]);
+
+  
+
+
+
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
@@ -19,18 +29,21 @@ const SubCategory = () => {
   const [Checked, setChecked] = useState([]);
 
   const history = useHistory();
+  
 
   
 
-  const handleToggle = (value) => {
+  const handleToggle = (value, index) => {
 
     const currentIndex = Checked.indexOf(value);
 
     const newChecked = [...Checked];
 
+
     if (currentIndex === -1) {
         newChecked.push(value)
-    } else {
+    } 
+    else {
         newChecked.splice(currentIndex, 1)
     }
 
@@ -40,18 +53,126 @@ const SubCategory = () => {
 
 
 
+
+
+const categorySubmit = (e) => {
+  e.preventDefault();
+
+  //console.log(Checked);
+  
+  const data = {
+      cat: Checked
+  }
+
+
+
+  
+      axios.post(`/api/select_sub_category`, data).then(res => {
+          if(res.data.status === 200)
+              {
+                  //swal("Success",res.data.message,"success");
+
+                  console.log(res.data.length);
+
+                  //history.push('/subCategory');
+
+                  history.push({
+                    pathname: '/starselection',
+                    // search: '?query=abc',
+                    state: { detail: res.data.length }
+                  });
+              }
+              else if(res.data.status === 401)
+              {
+                  swal("Warning",res.data.message,"warning");
+              }
+              
+      });
+
+  
+}
+
+
+
   useEffect(() => {
 
       setSubCategory(location.state.detail);
 
-      console.log(subCategory);
+      //console.log(subCategory);
+      //console.log(images);
 
       setLoading(false);
-
 
   }, [location]);
 
   //console.log(subCategory);
+
+
+  ////// New Carousel  ///////
+
+
+  const NextArrow = ({ onClick }) => {
+    return (
+      <span></span>
+    );
+  };
+
+  const PrevArrow = ({ onClick }) => {
+    return (
+      <span></span>
+    );
+  };
+
+
+
+  const [imageIndex, setImageIndex] = useState(0);
+
+  var totalSlides = subCategory.length;
+
+  const settings = {
+    infinite: true,
+    lazyLoad: true,
+    speed: 300,
+    slidesToShow: totalSlides >= 3 ? 3 : totalSlides,
+    slidesToScroll: 3,
+    //slidesToShow: 3,
+    //loopIfEqual: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    centerMode: true,
+    centerPadding: 0,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: totalSlides >= 3 ? 3 : totalSlides,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+    beforeChange: (current, next) => setImageIndex(next),
+  };
+
+
 
 
 
@@ -64,17 +185,41 @@ const SubCategory = () => {
   else
   {
     viewCategory = 
-    subCategory.map( (subCategory, index) => {
+    subCategory.map( (subCategory, idx) => {
       return (
-        
-          <div class='item' id="id_work_days">
-              <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
-              <img src={`http://localhost:8000/${subCategory.image}`} alt=""/>
-              <h4 className="text-white text-center">{subCategory.name}</h4>
-          </div> 
 
-          
-        
+
+// <div class='superstar-item adjust' key={index}>
+//   <div className="text-center" id="id_work_days2">
+//     <label>
+//     <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id, index)}/>
+//     <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt="" />
+//     {/* <span className='btn star-btn mb-1 sub-btn'></span> */}
+//     <span className="dot1 d-flex justify-content-center align-items-center"> <i className='fa fa-spinner text-light fa-spin'></i> </span>
+    
+//     </label>
+//   </div>
+// </div> 
+
+
+
+        <div className={idx === imageIndex ? "slide activeSlide" : "slide"} id="id_work_days2">
+          <label style={{ minHeight: "366px" }}>
+            <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
+            <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt="" />
+
+            <span className="dot1 d-flex justify-content-center align-items-center">
+               <img src={Lock} alt="" style={{width: '165px'}}/> 
+              {/* <i className="fa fa-lock fa-5x text-warning " style={{width: '100px'}}></i> */}
+            </span>
+
+            <span className="dot2 d-flex justify-content-center align-items-center">
+            <i className='fa fa-spinner text-light fa-spin'></i> </span>
+
+            
+          </label>
+        </div>
+    
       )
     });
   }
@@ -89,25 +234,16 @@ const SubCategory = () => {
       <div className="container category-contaienr p-5 bg-dark  bg-img">
         <div className="d-flex justify-content-center align-items-center">
           <div className="center-frame">
-            <img src={frame} alt="" className="frame" />
-            <h6 className="category-title">CHOOSE CATEGORY</h6>
+            {/* <img src={frame} alt="" className="frame" /> */}
+            <p className='star-choosing'>CHOOSE STAR CATEGORY</p>
           </div>
         </div>
 
       <div className="carousel-items my-4">
 
-<OwlCarousel center className='owl-theme' loop margin={15} items={3} mouseDrag  className='owl-theme' loop margin={15} items={3} mouseDrag  >
-      
-  
-
-
+      <Slider {...settings}>
         {viewCategory}
-      
-
-</OwlCarousel>
-
-
-
+      </Slider>
 
 
       </div>
@@ -123,13 +259,15 @@ const SubCategory = () => {
           </h6>
 
           <div className="ct-btn text-center">
-            <Link to='/Starselection'><button className="btn mt-3 cg-done">Done</button></Link>
+            <button onClick={categorySubmit} className="btn mt-3 cg-done">Done</button>
           </div>
         </div>
 
         
       </div>
     </div>
+
+    
       
     </>
     );

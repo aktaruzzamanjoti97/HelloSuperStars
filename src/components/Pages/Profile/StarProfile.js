@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
-import AzhariProfile from "../../../images/starProfile/azhariCover.jpg";
-import ProfileAzhari from "../../../images/starProfile/profile-azhari.png";
+import AzhariProfile from "../../../images/Shakib/2.png";
+import ProfileAzhari from "../../../images/Shakib/pro.jpg";
 import "../../CSS/Profile/starProfile/starProfile.css";
 import Navigation from "../../Header/Navigation";
 import Audition from "../../Pages/Profile/profile-components/starProfile/Audition";
@@ -12,7 +12,7 @@ import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPos
 import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
 import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
-
+import Greeting from "./profile-components/starProfile/StarChat/starGreeeting/Greeting";
 
 const StarProfile = () => {
   let { path, url } = useRouteMatch();
@@ -37,10 +37,10 @@ const StarProfile = () => {
                 />
                 <div className="profile-name-contents mt-5 mx-2">
                   <h3 className="text-light mt-5 star-profile-name">
-                    Sakib Al Hasan
+                    Shakib Al Hasan
                   </h3>
                   <p className="text-warning star-profile-type">
-                    World Best All Rounder Cricketer
+                    @ShakibAllrounderHasan ·
                   </p>
                 </div>
               </div>
@@ -56,6 +56,8 @@ const StarProfile = () => {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto">
+
+
                   <NavLink
                     to={`${url}/post`}
                     className="text-decoration-none"
@@ -101,10 +103,13 @@ const StarProfile = () => {
                   >
                     Audition
                   </NavLink>
-                  {/* <NavLink to="/starChat" className='mx-2 text-decoration-none' style={isActive => ({
+                  {/* <NavLink     to={`${url}/greeting`} className='mx-2 text-decoration-none' style={isActive => ({
                       color: isActive ? "#ffad00" : "white"
-                    })}>Star Chat</NavLink> */}
+                    })}>greeting</NavLink> */}
                 </Nav>
+
+
+
               </Navbar.Collapse>
             </Container>
           </Navbar>
@@ -112,12 +117,8 @@ const StarProfile = () => {
           <Switch>
             <Route path={`${path}/livechat`} exact component={LiveChat} />
             <Route path={`${path}/post/livechat`} exact component={LiveChat} />
-            <Route
-              path={`${path}/:id/livechat`}
-              exact
-              component={LiveChat}
-            />
-           
+            <Route path={`${path}/:id/livechat`} exact component={LiveChat} />
+
             <Route
               path={`${path}/:id/livechat/starChat`}
               exact
@@ -129,12 +130,20 @@ const StarProfile = () => {
               component={StarChat}
             />
 
+            <Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
 
+            {/* greeting routing start*/}
 
-
-
-            <Route path={`${path}/livechat/starChat`} exact component={StarChat}/>
-
+            <Route exact path={`${path}/greeting`}>
+              <Greeting />
+            </Route>
+            <Route exact path={`${path}/:id/greeting`} component={Greeting} />
+           
+            {/* greeting routing end*/}
 
             <Route exact path={path}>
               <StarPost />
@@ -154,7 +163,9 @@ const StarProfile = () => {
             <Route path={`${path}/audition`}>
               <Audition />
             </Route>
-
+            {/* <Route path={`${path}/greeting`}>
+              <Greeting />
+            </Route> */}
             {/* <Route path="/photos" exact component={StarPhotos} />
               <Route path="/videos" exact component={Videos} />
               <Route path="/souviner" exact component={Souviner} />

@@ -1,14 +1,13 @@
 import React from "react";
 import "../../../../CSS/Profile/starProfile/starVideos.css";
-import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
-import azhari2 from "../../../../../images/starProfile/StarPhotos/2.jpg";
-import azhari3 from "../../../../../images/starProfile/StarPhotos/3.jpg";
-import azhari4 from "../../../../../images/starProfile/StarPhotos/4.jpg";
-import azhari5 from "../../../../../images/starProfile/StarPhotos/5.jpg";
-import azhari6 from "../../../../../images/starProfile/StarPhotos/6.jpg";
-import azhari7 from "../../../../../images/starProfile/StarPhotos/7.jpg";
-import azhari8 from "../../../../../images/starProfile/StarPhotos/8.jpg";
-import azhari9 from "../../../../../images/starProfile/StarPhotos/9.jpg";
+import azhari2 from "../../../../../images/Shakib/12.jpg";
+import azhari3 from "../../../../../images/Shakib/13.jpg";
+import azhari4 from "../../../../../images/Shakib/14.jpg";
+import azhari5 from "../../../../../images/Shakib/16.jpg";
+import azhari6 from "../../../../../images/Shakib/17.jpg";
+import azhari7 from "../../../../../images/Shakib/18.jpg";
+import azhari8 from "../../../../../images/Shakib/19.jpg";
+import azhari9 from "../../../../../images/Shakib/20.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import StarVideoDetails from "./StarVideoDetails";
 function Videos() {

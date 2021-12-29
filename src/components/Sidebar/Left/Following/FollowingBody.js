@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import LeftSidebar from '../../LeftSidebar'
 import RightSidebar from '../../RightSidebar'
-import Content from "./Content";
 
 import Navigation from '../../../Header/Navigation'
+import FollowMain from "./FollowMain";
 
 export default class FollowingBody extends Component {
   render() {
@@ -14,15 +14,15 @@ export default class FollowingBody extends Component {
           <div className="container-fluid custom-container">
             <div className="row">
 
-              <div className="col-sm-3 justify-content-center">
+              <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
                 <LeftSidebar/>
               </div>
               
-              <div className="col-sm-6 justify-content-center" >
-                  <Content/>
+              <div className="col-sm-6 justify-content-center postTab" >
+                  <FollowMain/>
               </div>
 
-              <div className="col-md-3 justify-content-center" >
+              <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight" >
                 <RightSidebar/>
               </div>
               

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
 import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import Iframe from 'react-iframe';
+import ShahRukhKhan from '../../images/shahruk-khan.jpg'
 // import { Link } from "react-router-dom";
 // import HomeIcon from '@material-ui/icons/Home';
 // import ChatIcon from '@material-ui/icons/Chat';
@@ -15,9 +17,9 @@ import Srabanti from '../../images/srabanti.jpg';
 import '../CSS/Navbar/navbar.css';
 import './Navigation.css';
 
+
 const Navigation = () => {
 
-    const external_link = "https://superstargroup-chat.herokuapp.com/?room=StarConversation_pofzeg96ul";
     // const internal_link="http://localhost:3001/about"
 
     const [isNavOpen, setIsNavOpen] = useState(false)
@@ -43,7 +45,7 @@ const Navigation = () => {
 
     return (
         <>
-            <Navbar className='navbar-bg navbar-position' expand="lg" sticky="top">
+            <Navbar className='navbar-bg navbar-position' expand="lg" >
 
                 <div className="container-fluid  custom-container-nv ">
                     <Navbar.Brand href="#" >
@@ -67,23 +69,29 @@ const Navigation = () => {
 
                             <Nav.Link onClick={handleChatIsOpen} className="navPadpd">
                                 <div className="dropdown dropDownIconRemove">
-                                    {/* <div className="superStarChatBar"> */}
+                     
                                     <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="fa fa-comment circle-icon"></i>
                                     </div>
-                                    {/* </div> */}
+              
 
-                                    <div class="dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
+                                    <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
+
+                                        <div className="container mb-4 mt-2 form-group has-search">
+                                            <span className="fa fa-search form-control-feedback"></span>
+                                            <input type="text" className="form-control search-design" placeholder="Search Superstar" />
+                                        </div>
+
                                         <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "48%" }}
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
                                                         src={Shakib}
                                                         alt=""
                                                     />
-                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                    <div className="text-white ms-1 profileName">
                                                         <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
                                                             <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
                                                                 <p className="text-margin-bottom"><b>Shakib Al Hasan</b></p>
@@ -102,7 +110,7 @@ const Navigation = () => {
                                                         <div className="timeStamp-text-icon">
                                                             <i className="mt-1 me-2 far fa-clock"></i>
                                                         </div>
-                                                        <p className="mt-1">1m 20s</p>
+                                                        <b><p className="mt-1">1m 20s</p></b>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +121,7 @@ const Navigation = () => {
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "48%" }}
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
                                                         src={Momotaz}
                                                         alt=""
                                                     />
@@ -134,22 +142,50 @@ const Navigation = () => {
                                             </div>
                                         </div>
 
-                                        <div className="mt-4">
+                                        <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="mt-4">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "60px", borderRadius: "48%" }}
-                                                        src={Srabanti}
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={ShahRukhKhan}
                                                         alt=""
                                                     />
-                                                    <div className="text-white ms-1 mt-1 profileName">
+                                                    <div className="text-white ms-1 profileName">
                                                         <a className="text-decoration-none" href="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8">
                                                             <button onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')" className="link-open">
-                                                                <p className="text-margin-bottom"><b>Srabonti Chatterjee</b></p>
+                                                                <p className="text-margin-bottom"><b>Shahrukh Khan</b></p>
                                                                 <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                             </button>
                                                         </a>
+
+                                                    </div>
+                                                </div>
+
+                                                <div className="timeStampColor">
+                                                    <p className="text-margin-bottom">7/9/2021</p>
+                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div onClick={handleShow} className="mt-4">
+                                            <div className="d-flex justify-content-between m-3">
+                                                <div className="d-flex">
+                                                    <img
+                                                        className="img-fluid liveChatVideoPic"
+                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                        src={Srabanti}
+                                                        alt=""
+                                                    />
+                                                    <div className="text-white ms-1 profileName">
+                                                        <a className="text-decoration-none">
+                                                            <button className="link-open">
+                                                                <p className="text-margin-bottom"><b>Srabanti Chaterjee</b></p>
+                                                                <p className="text-margin-bottom"><small>You have a schedule</small></p>
+                                                            </button>
+                                                        </a>
+
                                                     </div>
                                                 </div>
 
@@ -166,29 +202,6 @@ const Navigation = () => {
 
 
                             </Nav.Link>
-
-                            {/* <div>
-                                {
-                                    isChatOpen ? (
-                                        <div className="liveChatVideoDropdown">
-                                            <div style={{position: 'absolute',}} className="card">
-                                                <ul className="list-group list-group-flush">
-                                                    <li className="list-group-item bg-dark">
-asdfasdf
-                                                    </li>
-                                                    <li className="list-group-item bg-dark">
-
-                                                    </li>
-                                                    <li className="list-group-item">A third item</li>
-                                                </ul>
-                                            </div>
-
-                                            
-
-                                        </div>
-                                    ) : null
-                                }
-                            </div> */}
 
                             <Nav.Link className="navPadpd">
                                 <i className="fa fa-bell circle-icon" />
@@ -215,12 +228,19 @@ asdfasdf
                     </Navbar.Collapse>
                 </div>
 
-                <Modal className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
+                <Modal dialogClassName="my-modal" style={{height:'100vh'}} className="liveChatModalVideo" show={show} onHide={handleClose} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered>
 
                     <Modal.Body>
-                        <iframe src={external_link} style={{ width: '100%', height: '400px' }} />
+                        <Iframe url="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8"
+                            width="100%"
+                            height="600px"
+                            id="myId"
+                            allow="camera;microphone"
+                            className="myClassname"
+                            display="initial"
+                            position="relative"/>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
