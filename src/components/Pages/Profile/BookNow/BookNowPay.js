@@ -12,100 +12,93 @@ import BookNowModal from './BookNowModal';
 import { Button } from '@mui/material';
 
 const BookNowPay = () => {
-    const [modalShow, setModalShow] = React.useState(false);
-    return (
-        <>
-           <CardContent>
-                    <div className="text-center image-middle bookCa">
-                        <img className="singleFrame-style BookpayImg" src={singleFrame} alt="" />
-                        <h3 className="centered Bookpay">Payment Method</h3>
+const [modalShow, setModalShow] = React.useState(false);
+
+return (
+<>
+    <CardContent>
+        <div className="text-center image-middle bookCa">
+            <img className="singleFrame-style BookpayImg" src={singleFrame} alt="" />
+            <h3 className="centered Bookpay">Payment Method</h3>
+        </div>
+
+        <div>
+
+            <OwlCarousel className="owl-theme pay-carousel-xa fowl-carousel " loop margin={0} nav>
+                <div className="item">
+                    <img src={applePayLogo} alt="" className="img-fluid payment-img-xa" />
+                </div>
+                <div className="item">
+                    <img src={bKashLogo} alt="" className="img-fluid payment-img-xa" />
+                </div>
+                <div className="item">
+                    <img src={payoneerLogo} alt="" className="img-fluid payment-img-xa" />
+                </div>
+                <div className="item">
+                    <img src={payPalLogo} alt="" className="img-fluid payment-img-xa" />
+                </div>
+                <div className="item">
+                    <img src={visaLogo} alt="" className="img-fluid payment-img-xa" />
+                </div>
+            </OwlCarousel>
+
+        </div>
+
+        <div className='BookNow-m-p'>
+            <form>
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="form-group my-3">
+                            <big className="text-white">Cardholder Name</big>
+                            <input type="email" className="form-control BookNow-input" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="form-group my-3">
+                            <big className="text-white">Card Number</big>
+                            <input type="text" className="form-control BookNow-input" />
+                        </div>
                     </div>
 
-                    <div>
-
-                        <OwlCarousel className="owl-theme pay-carousel-xa fowl-carousel " loop margin={0} nav>
-                            <div className="item">
-                                <img src={applePayLogo} alt="" className="img-fluid payment-img-xa" />
+                    <div className="col-md-6">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="form-group my-3">
+                                    <big className="text-white">Date</big>
+                                    <input type="email" className="form-control BookNow-input" />
+                                </div>
                             </div>
-                            <div className="item">
-                                <img src={bKashLogo} alt="" className="img-fluid payment-img-xa" />
+                            <div className="col-md-6">
+                                <div className="form-group my-3">
+                                    <big className="text-white">CCV</big>
+                                    <input type="email" className="form-control BookNow-input" />
+                                </div>
                             </div>
-                            <div className="item">
-                                <img src={payoneerLogo} alt="" className="img-fluid payment-img-xa" />
-                            </div>
-                            <div className="item">
-                                <img src={payPalLogo} alt="" className="img-fluid payment-img-xa" />
-                            </div>
-                            <div className="item">
-                                <img src={visaLogo} alt="" className="img-fluid payment-img-xa" />
-                            </div>
-                        </OwlCarousel>
-
+                        </div>
                     </div>
+                </div>
 
-                    <div className='BookNow-m-p'>
-                        <form>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group my-3">
-                                        <big className="text-white">Cardholder Name</big>
-                                        <input type="email" className="form-control BookNow-input" />
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group my-3">
-                                        <big className="text-white">Card Number</big>
-                                        <input type="text" className="form-control BookNow-input" />
-                                    </div>
-                                </div>
-
-                                <div className="col-md-6">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="form-group my-3">
-                                                <big className="text-white">Date</big>
-                                                <input type="email" className="form-control BookNow-input" />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group my-3">
-                                                <big className="text-white">CCV</big>
-                                                <input type="email" className="form-control BookNow-input" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <div className="form-group my-3">
-                                        <button type="submit"
-                                            className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form>
-
-                        <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
-      <BookNowModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="form-group my-3">
+                            <button type="submit" className="my-3 btn btn-gold text-light fw-bold" onClick={(e)=>{
+                                e.preventDefault(); setModalShow(true) }}>Confirm</button>
+                            
+                            <BookNowModal show={modalShow} onHide={()=> setModalShow(false)} />
+                        </div>
                     </div>
-                </CardContent>  
-        </>
-    )
+                </div>
+
+            </form>
+
+        </div>
+    </CardContent>
+</>
+)
 }
 
 export default BookNowPay
