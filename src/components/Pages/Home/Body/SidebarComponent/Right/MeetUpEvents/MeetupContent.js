@@ -59,19 +59,12 @@ return (
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
-
-                        <Link to="/starprofile" className="link-starPorfile">
-                        <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
-                            </Link>
-
-
-
-
-                            
+                        <Link to="starprofile/book-now" className="link-starPorfile">
+                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
+                        </Link>  
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div className="row align-items-center justify-content-center ">
