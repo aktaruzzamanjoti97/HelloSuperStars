@@ -10,7 +10,10 @@ import Souviner from "../../Pages/Profile/profile-components/starProfile/Souvine
 import StarPhotos from "../../Pages/Profile/profile-components/starProfile/StarPhotos";
 import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPost";
 import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
+
+import GreetingsPayContent from "./GreetingsPay/GreetingsPayContent";
 import BookNowEvent from "./BookNow/BookNowEvent";
+
 import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
 import Greeting from "./profile-components/starProfile/StarChat/starGreeeting/Greeting";
@@ -126,14 +129,25 @@ return (
               component={StarChat}
             />
 
-       
+
+
+
+<Route
+              path={`${path}/user-greetings-pay`}
+              exact
+              component={GreetingsPayContent}
+            />
+
+
+            {/* greeting routing start*/}
 
             <Route exact path={`${path}/greeting`}>
               <Greeting />
             </Route>
             <Route exact path={`${path}/:id/greeting`} component={Greeting} />
-           
-        
+
+
+            {/* greeting routing end*/}
 
             <Route exact path={path}>
               <StarPost />
