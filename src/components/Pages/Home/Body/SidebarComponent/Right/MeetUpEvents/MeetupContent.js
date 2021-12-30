@@ -1,5 +1,5 @@
 import {React,useState} from "react";
-import { Link } from "react-router-dom";
+import { Link,useRouteMatch } from "react-router-dom";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { Collapse, Container } from "react-bootstrap";
 import MeetupComment from "./MeetupComment";
@@ -7,6 +7,7 @@ import './meetup.css'
 
 export default function MeetupContent({ user }) {
 const [open, setOpen] = useState(false);
+const {url}=useRouteMatch()
 return (
 <>
     <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -57,14 +58,13 @@ return (
                             Friday night at Pan Pacific Sonargaon with SAK 75
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
-                        <Link to="/starprofile" className="link-starPorfile">
-                        <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
-                            </Link>
-                            
+
+                        <Link to="starprofile/book-now" className="link-starPorfile">
+                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
+                        </Link>  
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div className="row align-items-center justify-content-center ">
