@@ -136,14 +136,14 @@ const StarProfile = () => {
               component={StarChat}
             />
 
-            {/* greeting routing start*/}
+       
 
             <Route exact path={`${path}/greeting`}>
               <Greeting />
             </Route>
             <Route exact path={`${path}/:id/greeting`} component={Greeting} />
            
-            {/* greeting routing end*/}
+        
 
             <Route exact path={path}>
               <StarPost />
@@ -161,6 +161,10 @@ const StarProfile = () => {
               <Souviner />
             </Route>
             <Route path={`${path}/audition`}>
+              <Audition />
+            </Route>
+
+            <Route path={`${path}/booking`}>
               <Audition />
             </Route>
             {/* <Route path={`${path}/greeting`}>
