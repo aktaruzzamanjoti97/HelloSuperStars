@@ -8,15 +8,20 @@ import swal from 'sweetalert';
 
 
 
+
 const AccountCreate = () => {
   const [file, setFile] = useState('');
   const [user, setUser] = useState([]);
   const [modal, setModal] = useState(false);
+  const [imagedata, setImagedata] = useState('');
+
+  const history = useHistory();
 
 
-  const handleChange = (e) => {
-    setFile(URL.createObjectURL(e.target.files[0]))
-  }
+  const handleChange = (file) => {
+    setFile(URL.createObjectURL(file[0]));
+    setImagedata(file[0]);
+}
 
 
   function ModalClick(event) {
@@ -26,85 +31,96 @@ const AccountCreate = () => {
   }
 
 
-  useEffect(() => {
-    axios.get(`/api/user_info`).then(res =>{
-      
-      if(res.status === 200)
-      {
-        setUser(res.data.users)
-      }
-
-      console.log(res.data.users);
-    });
-  }, []);
-
-
-  const ConfirmPasswordRef = useRef();
-    //const { signup } = useAuth();
-
-    // const [loading, setLoading] = useState(false);
-    const loading=false;
-    const [changeIcon, setChange] = useState(false);
-    const [changIcon1, setChangeIcon1] = useState(false);
-
-
-
-    function handleChangeIcon() {
-        setChange(!(changeIcon));
-
-    }
-
-    function handleChangeIcon1() {
-        setChangeIcon1(!(changIcon1));
-    }
-
-
-    const history = useHistory();
     const [registerInput, setRegister] = useState({
         first_name: '',
         last_name: '',
         email: '',
         phone: '',
-        password: '',
+        dob: '',
         error_list: []
     });
+
+    const [dateInput, setDate] = useState('');
+    const [countryInput, setCountry] = useState('');
+
+
     //const [regvalue,setRegValue]=useState('');
 
     const handleInput = (e) => {
-        const {name,value}=e.target;
-        setRegister((prev)=>{
-            return({...prev,[name]:value});
-        })
-        // e.persist();
-        // setRegister({...registerInput, [e.target.name]: e.target.value});
+        e.persist();
+        setRegister({...registerInput, [e.target.name]: e.target.value});
     }
 
-    const registerSubmit = (e) => {
+    const handleDateInput = (e) => {
+        setDate(e.target.value);
+    }
+
+    const handleCountryInput = (e) => {
+      setCountry(e.target.value);
+    }
+
+    
+
+    useEffect(() => {
+      axios.get(`/api/user_info`).then(res =>{
+        
+        if(res.status === 200)
+        {
+          setUser(res.data.users)
+          setRegister(res.data.users)
+          setFile('http://localhost:8000/'+res.data.users.image)
+          //setFile(`http://localhost:8000/${star.image}`)
+          //setDate(registerInput.user_info != null ? registerInput.user_info.dob : '')
+          setDate(res.data.users.user_info != null ? res.data.users.user_info.dob : '')
+          setCountry(res.data.users.user_info != null ? res.data.users.user_info.country: '')
+        }
+  
+        console.log(dateInput);
+      });
+      }, []);
+
+
+      const registerSubmit = (e) => {
         e.preventDefault();
 
-        const data = {
-            name: registerInput.name,
-            email: registerInput.email,
-            phone: registerInput.phone,
-            password: registerInput.password,
-        }
+        const fData = new FormData();
+
+        fData.append('image', imagedata);
+        fData.append('first_name', registerInput.first_name);
+        fData.append('last_name', registerInput.last_name);
+        fData.append('phone', registerInput.phone);
+        fData.append('email', registerInput.email);
+        fData.append('dob', dateInput);
+        fData.append('country', countryInput);
+        
+        // const data = {
+        //     first_name: registerInput.first_name,
+        //     last_name: registerInput.last_name,
+        //     email: registerInput.email,
+        //     phone: registerInput.phone,
+        //     dob: dateInput,
+        //     country: countryInput,
+        //     image: imagedata,
+        // }
 
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.post(`/api/register`, data).then(res => {
-                if(res.data.status === 200)
+          axios.post(`/api/user_info_update`, fData).then(res => {
+            if(res.data.status === 200)
+              {
+                swal("Success",res.data.message,"success");
+              }
+              else if(res.data.status === 401)
                 {
-                    localStorage.setItem('auth_token', res.data.token);
-                    localStorage.setItem('auth_name', res.data.name);
-                    swal("Success",res.data.message,"success");
-                    history.push('/otp');
+                  swal("Warning",res.data.message,"warning");
                 }
-                else{
-                    setRegister({ ...registerInput,error_list: res.data.validation_errors });
+              else{
+                  setRegister({ ...registerInput,error_list: res.data.validation_errors });
                 }
             });
         });
-    }
+
+      }
 
 
 
@@ -120,8 +136,9 @@ const AccountCreate = () => {
               <div className="avater-img my-3 text-center">
                 <img
                   src={file === "" ? avaterImage : file}
+                  
                   className="img-fluid avater-img-src"
-                  alt="profile-pic"
+                  alt={file}
                 />
               </div>
               <div className="upload-input text-center my-2">
@@ -129,12 +146,12 @@ const AccountCreate = () => {
                   <button className="btn btn-dark btn-upload">
                     Upload Profile Picture
                   </button>
-                  <input type="file" className="btn" onChange={handleChange} />
+                  <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} />
                 </div>
               </div>
 
               {/* Basic info form style start here left side */}
-              <form className="p-3">
+              <form className="p-3" onSubmit={registerSubmit}>
                 <div className="form-group row my-4">
                   <label
                     for="colFormLabelSm"
@@ -147,9 +164,7 @@ const AccountCreate = () => {
                       type="text"
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
-                      placeholder="First Name"
-                      
-                      onChange={handleInput} name='first_name' value={user.first_name}
+                      onChange={handleInput} name='first_name' value={registerInput.first_name}
                     />
                   </div>
                   <div className="col-sm-4">
@@ -158,8 +173,8 @@ const AccountCreate = () => {
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
                       placeholder="Last Name"
-                      value={user.last_name}
-                      onChange={handleInput} name='last_name' value={user.last_name}
+                      value={registerInput.last_name}
+                      onChange={handleInput} name='last_name'
                     />
                   </div>
                 </div>
@@ -177,7 +192,7 @@ const AccountCreate = () => {
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
                       
-                      onChange={handleInput} name='phone' value={user.phone}
+                      onChange={handleInput} name='phone' value={registerInput.phone}
                     />
                   </div>
                 </div>
@@ -195,7 +210,7 @@ const AccountCreate = () => {
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
                      
-                      onChange={handleInput} name='email' value={user.email}
+                      onChange={handleInput} name='email' value={registerInput.email}
                     />
                   </div>
                 </div>
@@ -209,12 +224,15 @@ const AccountCreate = () => {
                   </label>
                   <div className="col-sm-8">
                     <input
-                      type="text"
+                      type="date"
                       className="form-control form-control-sm account-input-style"
-                      id="colFormLabelSm"
-                      placeholder="12 Sep 1999"
+                      name="dob"
+                      value={dateInput}
+                      onChange={handleDateInput}
                     />
                   </div>
+
+                  
                 </div>
 
                 <div className="form-group row my-3">
@@ -229,13 +247,16 @@ const AccountCreate = () => {
                       type="text"
                       className="form-control form-control-sm account-input-style"
                       id="colFormLabelSm"
-                      placeholder="Bangladesh"
+                      name='country'
+                      //defaultValue={registerInput.user_info != null ? registerInput.user_info.country : ''}
+                      value={countryInput}
+                      onChange={handleCountryInput}
                     />
                   </div>
                 </div>
 
                 <div className="text-center my-2 ">
-                  <button className="btn btn-warning px-4 w-50 text-light">
+                  <button className="btn btn-warning px-4 w-50 text-light" type='submit'>
                     Save
                   </button>
                 </div>
@@ -271,8 +292,6 @@ right div and info field start */}
                             <option>Engineer</option>
                             <option>Doctor</option>
                           </select>
-
-
                         </div>
                       </div>
                       <h5 className="text-warning other-info-title mt-2">

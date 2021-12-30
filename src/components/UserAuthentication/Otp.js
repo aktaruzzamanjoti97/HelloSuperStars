@@ -51,7 +51,7 @@ const Otp = () => {
                 if(res.data.status === 200)
                     {
                         swal("Success",res.data.message,"success");
-                        history.push('/');
+                        history.push('/accountcreate');
                     }
                     else if(res.data.status === 401)
                     {
@@ -71,18 +71,25 @@ const Otp = () => {
         
     }
 
-
     // otp countdown start
-    const [counter, setCounter] =useState(60);
-  useEffect(() => {
-      const timer =
-      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-      return () => clearInterval(timer);
-  }, [counter]);
-// function handleResend(){
+    const [counter, setCounter] =useState(10);
 
-//     alert('resend data')
-// }
+    useEffect(() => {
+        const timer =
+        counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+        return () => clearInterval(timer);
+    }, [counter]);
+
+
+    function handleResend(){
+        axios.get(`/api/resend_otp`).then(res => {
+            if(res.data.status === 200)
+            {
+                setCounter(30);
+            }
+        });
+    }
+
 
     return (
         <>
@@ -110,8 +117,9 @@ const Otp = () => {
                                                         <div className="otp">
                                                             <FontAwesomeIcon className="ino mb-2" icon={faEnvelopeOpenText} />
                                                             <p>We have sent an OTP number to your phone. Enter the OTP below to verify your identity</p>
-                                                            <b>Time left {counter}s</b> <br />
+                                                            <b>Time left {counter} sec</b> <br />
 
+                                                            <form onSubmit={loginSubmit} >
                                                             
                                                             <div className="otpS align-items-center justify-content-center">
                                                                 <input type="text" className="inputs" name="otp1"  maxLength="1" onChange={handleInput} value={loginInput.otp1}/>
@@ -123,15 +131,21 @@ const Otp = () => {
                                                             </div>
 
                                                             <div className="btnO col-lg-12 align-items-center justify-content-center">
-                                                                <div className="btnS col-sm-6">
-                                                                    <Link to="/accountCreate" onClick={loginSubmit}> <button>Verify</button></Link>
-                                                                </div>
+                                                                
                                                                 <div className="btnA col-sm-6 mt-2">
                                                                     
-                                                                   {counter===0?   <button className='resend-btn'>Resend</button>:null}
+                                                                {counter===0 ? ( <span className='btn btn-warning OPT' onClick={handleResend}>Resend</span> ) 
+                                                                : (
+                                                                    <button className="btn btn-warning OPT" placeholder="Next" 
+                                                                    type="submit">
+                                                                    Next
+                                                                    </button> 
+                                                                ) }  
                                                                  
                                                                 </div>
                                                             </div>
+
+                                                            </form>
                                                             
 
                                                         </div>

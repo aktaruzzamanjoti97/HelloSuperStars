@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useRef} from 'react';
 import "../../CSS/Profile/profile.css";
 import coverImg from "../../../images/Shakib/pro.jpg";
 import profileImg from "../../../images/Shakib/pro.jpg";
@@ -18,6 +18,8 @@ import Navigation from "../../Header/Navigation";
 const Profile = () => {
 
   const history = useHistory();
+  const [user, setUser] = useState([]);
+  const [file, setFile] = useState('');
 
   const logoutSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +40,18 @@ const Profile = () => {
       }
     });
   }
+
+
+  useEffect(() => {
+    axios.get(`/api/user_info`).then(res =>{
+      
+      if(res.status === 200)
+      {
+        setUser(res.data.users)
+        setFile('http://localhost:8000/'+res.data.users.image)
+      }
+    });
+    }, []);
 
   return (
     <>
@@ -62,7 +76,7 @@ const Profile = () => {
         <div className="profile-div">
          <div className="profile-photo">
          <img
-            src={profileImg}
+            src={file}
             alt="profile-img"
             className="img-fluid profile-img"
           />
@@ -74,7 +88,7 @@ const Profile = () => {
          </div>
 
           <div className="prodile-pic-info text-center">
-            <h5 className="profile-font-color">Atif Hossain</h5>
+            <h5 className="profile-font-color">{user.first_name} {user.last_name}</h5>
             <h6 className="profile-font-color">Student</h6>
           </div>
         </div>
