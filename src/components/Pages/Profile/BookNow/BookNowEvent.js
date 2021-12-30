@@ -3,7 +3,7 @@ import Collapse from 'react-bootstrap/Collapse'
 import './BookNow.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import azhari from '../../../../images/starProfile/StarPhotos/1.jpg';
+import Azhari from '../../../../images/starProfile/StarPhotos/1.jpg';
 import BookNowPay from './BookNowPay';
 
 const BookNowEvent = (props) => {
@@ -20,7 +20,7 @@ return (
             <div className="row BookNow-m-p">
                 <div className="col-md-3 mb-3">
                     <div className="play-button-container">
-                        <img src={azhari} alt="" className="img-fluid BookImg" />
+                        <img src={Azhari} alt="" className="img-fluid BookImg" />
                     </div>
                 </div>
 

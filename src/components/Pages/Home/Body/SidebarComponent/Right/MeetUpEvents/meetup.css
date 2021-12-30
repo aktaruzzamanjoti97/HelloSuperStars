@@ -60,13 +60,29 @@
         width: 60%;
 
     }
-
     .bmt {
         font-size: 10px !important;
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 375px) {
+
+    .meetImg {
+        height: 220px !important;
+        object-fit: cover;
+    }
+    .centered-meet {
+        background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
+        width: 37.4vw;
+        position: absolute;
+        top: 86.4% !important;
+        transform: translate(-50%, -50%);
+    }
+   
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
 
     .centered-meet {
         width: 93%;
