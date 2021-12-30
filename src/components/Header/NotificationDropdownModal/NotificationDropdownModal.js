@@ -36,6 +36,7 @@ const NotificationDropdownModal = (props) => {
                         <Link to='/starProfile/user-greetings-pay'>
                             <button className="btn btn-warning w-50 mt-3">
                                 Register Now
+                               
                             </button>
                         </Link>
 
@@ -62,6 +63,7 @@ const NotificationDropdownModal = (props) => {
                     </div>
                 </div> */}
 
+                {/* <h1>This</h1> */}
             </Modal.Body>
         </Modal>
     );
