@@ -38,6 +38,137 @@ return (
             </div>
           </div>
         </div>
+        <div className="container next-div">
+          <div className="line-div my-1"></div>
+
+          <Navbar>
+            <Container>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mx-auto">
+
+
+                  <NavLink
+                    to={`${url}/post`}
+                    className="text-decoration-none"
+                    style={(isActive) => ({
+                      color: isActive ? "#ffad00" : "white",
+                    })}
+                  >
+                    Posts
+                  </NavLink>
+                  <NavLink
+                    to={`${url}/photos`}
+                    className="mx-2 text-decoration-none"
+                    style={(isActive) => ({
+                      color: isActive ? "#ffad00" : "white",
+                    })}
+                  >
+                    Photos
+                  </NavLink>
+                  <NavLink
+                    to={`${url}/videos`}
+                    className="mx-2 text-decoration-none"
+                    style={(isActive) => ({
+                      color: isActive ? "#ffad00" : "white",
+                    })}
+                  >
+                    Videos
+                  </NavLink>
+                  <NavLink
+                    to={`${url}/souviner`}
+                    className="mx-2 text-decoration-none"
+                    style={(isActive) => ({
+                      color: isActive ? "#ffad00" : "white",
+                    })}
+                  >
+                    Souviner
+                  </NavLink>
+                  <NavLink
+                    to={`${url}/audition`}
+                    className="mx-2 text-decoration-none"
+                    style={(isActive) => ({
+                      color: isActive ? "#ffad00" : "white",
+                    })}
+                  >
+                    Audition
+                  </NavLink>
+                  {/* <NavLink     to={`${url}/greeting`} className='mx-2 text-decoration-none' style={isActive => ({
+                      color: isActive ? "#ffad00" : "white"
+                    })}>greeting</NavLink> */}
+                </Nav>
+
+
+
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+
+          <Switch>
+            <Route path={`${path}/livechat`} exact component={LiveChat} />
+            <Route path={`${path}/post/livechat`} exact component={LiveChat} />
+            <Route path={`${path}/:id/livechat`} exact component={LiveChat} />
+
+            <Route
+              path={`${path}/:id/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+            <Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+
+            <Route
+              path={`${path}/livechat/starChat`}
+              exact
+              component={StarChat}
+            />
+
+       
+
+            <Route exact path={`${path}/greeting`}>
+              <Greeting />
+            </Route>
+            <Route exact path={`${path}/:id/greeting`} component={Greeting} />
+           
+        
+
+            <Route exact path={path}>
+              <StarPost />
+            </Route>
+            <Route path={`${path}/post`}>
+              <StarPost />
+            </Route>
+            <Route path={`${path}/photos`}>
+              <StarPhotos />
+            </Route>
+            <Route path={`${path}/videos`}>
+              <Videos />
+            </Route>
+            <Route path={`${path}/souviner`}>
+              <Souviner />
+            </Route>
+            <Route path={`${path}/audition`}>
+              <Audition />
+            </Route>
+
+            <Route path={`${path}/booking`}>
+              <Audition />
+            </Route>
+            {/* <Route path={`${path}/greeting`}>
+              <Greeting />
+            </Route> */}
+            {/* <Route path="/photos" exact component={StarPhotos} />
+              <Route path="/videos" exact component={Videos} />
+              <Route path="/souviner" exact component={Souviner} />
+              <Route path="/audition" exact component={Audition} />
+              <Route path='/liveChat' exact component={LiveChat} />
+              <Route exact path="/starChat" component={StarChat} />
+              <Route path="/" component={StarPost} /> */}
+          </Switch>
+        </div>
       </div>
     </div>
 

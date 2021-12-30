@@ -38,6 +38,9 @@ const StarProfileRightContent = () => {
             <div className="container mb-2">
               <div className="row">
                 <div className="col-6 ">
+
+
+                  
                  <Link to={`${url}/greeting`}>
                   <button className="w-100 star-last-btn p-1">
                     Greeting
