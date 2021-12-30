@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React, {useState, useEffect, useRef} from 'react';
 import "../../CSS/Profile/profile.css";
 import coverImg from "../../../images/Shakib/pro.jpg";
 import profileImg from "../../../images/Shakib/pro.jpg";
@@ -19,6 +20,9 @@ import ReactPlayer from 'react-player'
 const Profile = () => {
   const [messagenger, setMessenger] = useState(false);
   const history = useHistory();
+  const [user, setUser] = useState([]);
+  const [file, setFile] = useState('');
+
   function handleClick() {
     setMessenger(!messagenger);
   }
@@ -39,46 +43,58 @@ const Profile = () => {
     });
   };
 
+
+  useEffect(() => {
+    axios.get(`/api/user_info`).then(res =>{
+      
+      if(res.status === 200)
+      {
+        setUser(res.data.users)
+        setFile('http://localhost:8000/'+res.data.users.image)
+      }
+    });
+    }, []);
+
   return (
     <>
-      <Navigation />
-      <div className="full-container py-3 messege">
-        <div className="positioning-purpose">
-          {/* cover photo work start   */}
-          <div className="container mb-2">
-            <div className="profile-img-cover ">
-              <div className="profile-container">
-                <img
-                  src={coverImg}
-                  alt="bg-img"
-                  className="img-fluid profile-cover"
-                />
-                <button className="bottomright">
-                  <i className="far fa-edit mx-1"></i>
-                  Edit Cover photo
-                </button>
-              </div>
-            </div>
-            <div className="profile-div">
-              <div className="profile-photo">
-                <img
-                  src={profileImg}
-                  alt="profile-img"
-                  className="img-fluid profile-img"
-                />
-                <div className="bottomright-profile">
-                  <button className="profile-pic-button">
-                    <i className="fas fa-pen"></i>
-                  </button>
-                </div>
-              </div>
 
-              <div className="prodile-pic-info text-center">
-                <h5 className="profile-font-color">Atif Hossain</h5>
-                <h6 className="profile-font-color">Student</h6>
-              </div>
-            </div>
+    <Navigation />
+    <div className="full-container py-3 ">
+      {/* cover photo work start   */}
+      <div className="container mb-2">
+        <div className="profile-img-cover ">
+          <div className="profile-container">
+            <img
+              src={coverImg}
+              alt="bg-img"
+              className="img-fluid profile-cover"
+            />
+            <button className="bottomright">
+              <i className="far fa-edit mx-1"></i>
+              Edit Cover photo
+            </button>
           </div>
+        </div>
+        <div className="profile-div">
+         <div className="profile-photo">
+         <img
+            src={file}
+            alt="profile-img"
+            className="img-fluid profile-img"
+          />
+          <div className="bottomright-profile">
+          <button className='profile-pic-button'>
+          <i className="fas fa-pen"></i>
+          </button>
+
+          </div>
+
+          <div className="prodile-pic-info text-center">
+            <h5 className="profile-font-color">{user.first_name} {user.last_name}</h5>
+            <h6 className="profile-font-color">Student</h6>
+          </div>
+        </div>
+      </div>
 
           {/* cover photo work end   */}
           {/* main body container start */}
@@ -90,6 +106,7 @@ const Profile = () => {
                 <div className="mt-3">
                   <LeftCard title="Videos" />
                 </div>
+
 
                 <div className="container left-col-box p-3 mt-3">
                   <div className="accordion" id="accordionExample">
