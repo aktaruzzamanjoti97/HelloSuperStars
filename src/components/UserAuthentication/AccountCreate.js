@@ -40,6 +40,18 @@ const AccountCreate = () => {
         error_list: []
     });
 
+    const [infoInput, setInfo] = useState({
+      occupation: '',
+      edu_level: '',
+      institute: '',
+      subject: '',
+      position: '',
+      company: '',
+      salery_range: '',
+      error_list: []
+
+  });
+
     const [dateInput, setDate] = useState('');
     const [countryInput, setCountry] = useState('');
 
@@ -49,6 +61,11 @@ const AccountCreate = () => {
     const handleInput = (e) => {
         e.persist();
         setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const handleInfo = (e) => {
+      e.persist();
+      setInfo({...infoInput, [e.target.name]: e.target.value});
     }
 
     const handleDateInput = (e) => {
@@ -68,6 +85,7 @@ const AccountCreate = () => {
         {
           setUser(res.data.users)
           setRegister(res.data.users)
+          setInfo(res.data.info)
           setFile('http://localhost:8000/'+res.data.users.image)
           //setFile(`http://localhost:8000/${star.image}`)
           //setDate(registerInput.user_info != null ? registerInput.user_info.dob : '')
@@ -109,6 +127,43 @@ const AccountCreate = () => {
             if(res.data.status === 200)
               {
                 swal("Success",res.data.message,"success");
+              }
+              else if(res.data.status === 401)
+                {
+                  swal("Warning",res.data.message,"warning");
+                }
+              else{
+                  setRegister({ ...registerInput,error_list: res.data.validation_errors });
+                }
+            });
+        });
+
+      }
+
+
+      const infoSubmit = (e) => {
+        e.preventDefault();
+
+        const fData = new FormData();
+
+        fData.append('occupation', infoInput.occupation);
+        fData.append('edu_level', infoInput.edu_level);
+        fData.append('institute', infoInput.institute);
+        fData.append('subject', infoInput.subject);
+        fData.append('position', infoInput.position);
+        fData.append('company', infoInput.company);
+        fData.append('salery_range', infoInput.salery_range);
+
+        console.log(infoInput.occupation);
+
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+          axios.post(`/api/user_otherInfo_update`, fData).then(res => {
+            if(res.data.status === 200)
+              {
+                //swal("Success",res.data.message,"success");
+
+                setModal(!modal);
               }
               else if(res.data.status === 401)
                 {
@@ -274,7 +329,7 @@ right div and info field start */}
                 <div className="row">
                   <div className="col-md-8 account-create-bg p-4">
                     {/* professional info form start */}
-                    <form>
+                    <form onSubmit={infoSubmit}>
                       <h5 className="text-warning other-info-title my-2">
                         Other Information
                       </h5>
@@ -286,11 +341,12 @@ right div and info field start */}
                           Selected your Occupation
                         </label>
                         <div className="col-sm-6">
-                          <select class="form-control form-control-sm account-input-style">
-                            <option>Student</option>
-                            <option>Businessman</option>
-                            <option>Engineer</option>
-                            <option>Doctor</option>
+                          <select class="form-control form-control-sm account-input-style" onChange={handleInfo} name='occupation' value={infoInput.occupation}>
+                            <option value="Student">Student</option>
+                            <option value="Businessman">Businessman</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Others">Others</option>
                           </select>
                         </div>
                       </div>
@@ -305,12 +361,13 @@ right div and info field start */}
                           Educational Level
                         </label>
                         <div className="col-sm-6">
-                          <input
-                            type="text"
-                            className="form-control form-control-sm account-input-style"
-                            id="colFormLabelSm"
-                            placeholder="Bsc"
-                          />
+                          <select class="form-control form-control-sm account-input-style" onChange={handleInfo} name='edu_level' value={infoInput.edu_level}>
+                            <option value="JSC">JSC</option>
+                            <option value="SSC">SSC</option>
+                            <option value="HSC">HSC</option>
+                            <option value="Honours/Degree">Honours/Degree</option>
+                            <option value="PHD">PHD</option>
+                          </select>
                         </div>
                       </div>
 
@@ -327,6 +384,7 @@ right div and info field start */}
                             className="form-control form-control-sm account-input-style"
                             id="colFormLabelSm"
                             placeholder="Daffodil International University"
+                            onChange={handleInfo} name='institute' value={infoInput.institute}
                           />
                         </div>
                       </div>
@@ -344,6 +402,7 @@ right div and info field start */}
                             className="form-control form-control-sm account-input-style"
                             id="colFormLabelSm"
                             placeholder="CSE"
+                            onChange={handleInfo} name='subject' value={infoInput.subject}
                           />
                         </div>
                       </div>
@@ -363,6 +422,7 @@ right div and info field start */}
                             className="form-control form-control-sm account-input-style"
                             id="colFormLabelSm"
                             placeholder="IT manager"
+                            onChange={handleInfo} name='position' value={infoInput.position}
                           />
                         </div>
                       </div>
@@ -379,9 +439,11 @@ right div and info field start */}
                             className="form-control form-control-sm account-input-style"
                             id="colFormLabelSm"
                             placeholder="TFP solutions ltd"
+                            onChange={handleInfo} name='company' value={infoInput.company}
                           />
                         </div>
                       </div>
+
                       <div className="form-group row my-4">
                         <label
                           for="colFormLabelSm"
@@ -395,9 +457,19 @@ right div and info field start */}
                             className="form-control form-control-sm account-input-style"
                             id="colFormLabelSm"
                             placeholder="15000-20000"
+                            onChange={handleInfo} name='salery_range' value={infoInput.salery_range}
                           />
                         </div>
+
+                        
                       </div>
+
+                      <div className="form-group row my-1">
+                        <div className='col-sm-6'></div>
+                        <button type='submit' className='btn btn-warning text-light col-md-6 col-sm-6 col-xs-6 mx-auto'>Save</button>
+                      </div>
+
+
                     </form>
 
                     {/* professional info form end */}
@@ -410,7 +482,8 @@ right div and info field start */}
                       <h5 className="text-warning other-info-title">
                         Field of interest
                       </h5>
-                      <form className="text-warning checkbox-input-size">
+                      <form className="text-warning checkbox-input-size" >
+
                         <div className="form-check">
                           <input
                             className="form-check-input"
