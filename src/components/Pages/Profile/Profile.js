@@ -52,6 +52,10 @@ const Profile = () => {
         setUser(res.data.users)
         setFile('http://localhost:8000/'+res.data.users.image)
       }
+
+      console.log(res.data.users);
+
+
     });
     }, []);
 
@@ -78,8 +82,8 @@ const Profile = () => {
         <div className="profile-div">
          <div className="profile-photo">
          <img
-            src={file}
-            alt="profile-img"
+            src={`http://localhost:8000/${user.image}`}
+            alt={user.image}
             className="img-fluid profile-img"
           />
           <div className="bottomright-profile">
