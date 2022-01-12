@@ -126,7 +126,9 @@ function App() {
 
         {/* profile page */}
         <PrivateRoute path='/profile' exact component={Profile} />
-        <Route path='/starprofile'  component={StarProfile} />
+
+
+        <Route path='/starprofile/:star_id'  component={StarProfile} />
 
           
          {/* Category */}

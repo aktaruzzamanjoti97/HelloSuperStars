@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "../../CSS/Category/Category.css";
-import CategoryBtn from "./components/CategoryBtn";
 import "./components/CategoryBtn";
-import $ from 'jquery'
 import frame from "../../../images/Normal-User/Single-frame.png";
 import { Link, useHistory } from "react-router-dom";
 import Navigation from "../../Header/Navigation";
@@ -10,8 +8,6 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const CoreCategory = () => {
-
-
 
   const [loading, setLoading] = useState(true);
   const [categorylist, setCategorylist] = useState([]);

@@ -1,17 +1,50 @@
 import React,{ useState, useEffect, useRef } from 'react';
+import { Link, useHistory} from 'react-router-dom';
 import Collapse from 'react-bootstrap/Collapse'
 import './BookNow.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Azhari from '../../../../images/starProfile/StarPhotos/1.jpg';
 import BookNowPay from './BookNowPay';
+import axios from "axios";
+import moment from 'moment'
+import { Markup } from 'interweave';
 
 const BookNowEvent = (props) => {
 const [open, setOpen] = useState(false);
+
+const history = useHistory();
+const [star, setStar] = useState({});
+const [meetup, setMeetup] = useState('');
+
+
 function handleClick(e){
     e.preventDefault();
     setOpen(!open);
 }
+
+
+useEffect(() => {
+    let isMounted = true;
+    
+    const star_id = props.match.params.star;
+    const event_id = props.match.params.id;
+
+    axios.get(`/api/user/meetup-event/${star_id}/${event_id}`).then(res =>{
+    
+        if(isMounted)
+        {
+            if(res.data.status === 200)
+            {
+                setStar(res.data.star);
+                setMeetup(res.data.meetup);
+
+                console.log(res.data.star);
+            }
+        }
+    });
+
+}, [props.match.params.star, props.match.params.id, history]);
 
 return (
 <>
@@ -20,12 +53,12 @@ return (
             <div className="row BookNow-m-p">
                 <div className="col-md-3 mb-3">
                     <div className="play-button-container">
-                        <img src={Azhari} alt="" className="img-fluid BookImg" />
+                        <img src={`http://localhost:8000/${meetup.banner}`} alt="" className="img-fluid BookImg" />
                     </div>
                 </div>
 
                 <div className="col-md-9">
-                    <h4 className="BookNameText">Meet Mizanur Rahman at Friday night online</h4>
+                    <h4 className="BookNameText">{meetup.title}</h4>
                     <div className="vb"></div>
                     <div className="mt-3 row">
 
@@ -33,19 +66,19 @@ return (
                             <table className='taBook'>
                                 <tr >
                                     <th className='text-light bookTh'>Star</th>
-                                    <td className='BookNText'>Mizanur Rahman Azhari</td>
+                                    {/* <td className='BookNText'>{star.super_star?.first_name} {star.super_star?.last_name}</td> */}
                                 </tr>
                                 <tr >
                                     <th className='text-light bookTh'>Date</th>
-                                    <td className='BookNText'>12/08/2021</td>
+                                    <td className='BookNText'>{moment(meetup.date).format('LL')}</td>
                                 </tr>
                                 <tr >
                                     <th className='text-light bookTh'>Time</th>
-                                    <td className='BookNText'>10.00 PM to 11:00 PM</td>
+                                    <td className='BookNText'>{moment(meetup.start_time, "HH:mm:ss").format("hh:mm A")} to {moment(meetup.end_time, "HH:mm:ss").format("hh:mm A")}</td>
                                 </tr>
                                 <tr >
                                     <th className='text-light bookTh'>Fee</th>
-                                    <td className='BookNText'>999 BDT</td>
+                                    <td className='BookNText'>{meetup.fee} BDT</td>
                                 </tr>
                                 </table>
                             {/* <div className="text-white">
@@ -64,8 +97,9 @@ return (
 
                         <div className="col-md-6">
                                 <h5 className="text-white">Instructions</h5>
-                                <p className='BookNText'>orem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Duis accumsan vel nulla at euismod. Sed ipsum magna</p>
+                                <p className='BookNText'>
+                                    <Markup content= {meetup.description}/>
+                                </p>
                             
                         </div>
                     </div>
