@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import OwlCarousel from 'react-owl-carousel';
 import CardContent from '@mui/material/CardContent';
 
@@ -10,9 +11,52 @@ import payPalLogo from '../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import BookNowModal from './BookNowModal';
 import { Button } from '@mui/material';
+import axios from "axios";
+import swal from 'sweetalert';
 
-const BookNowPay = () => {
+const BookNowPay = (props) => {
+
+const history = useHistory();
 const [modalShow, setModalShow] = React.useState(false);
+
+const [cardInput, setCardInput] = useState({
+    card_holder_name: '',
+    card_number: '',
+    date: '',
+    ccv: '',
+    error_list: []
+});
+
+const handleInput = (e) => {
+    e.persist();
+    setCardInput({...cardInput, [e.target.name]: e.target.value});
+}
+
+const cardInfoSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+        meetup_event_id: props.event_id,
+        card_holder_name: cardInput.card_holder_name,
+        card_number: cardInput.card_number,
+        date: cardInput.date,
+        ccv: cardInput.ccv,
+    }
+
+    axios.get('/sanctum/csrf-cookie').then(response => {
+        axios.post(`/api/user/meetup-event/register`, data).then(res => {
+            if(res.data.status === 200)
+                {
+                    //swal("Success",res.data.message,"success");
+                    setModalShow(true);
+                    setCardInput([]);
+                }
+                else{
+                    setCardInput({ ...cardInput,error_list: res.data.validation_errors });
+                }
+        });
+    });
+    
+}
 
 return (
 <>
@@ -45,12 +89,12 @@ return (
         </div>
 
         <div className='BookNow-m-p'>
-            <form>
+            <form onSubmit={cardInfoSubmit}>
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-group my-3">
                             <big className="text-white">Cardholder Name</big>
-                            <input type="email" className="form-control BookNow-input" />
+                            <input type="text" className="form-control BookNow-input" name="card_holder_name" onChange={handleInput} value={cardInput.card_holder_name}/>
 
                         </div>
                     </div>
@@ -60,7 +104,8 @@ return (
                     <div className="col-md-6">
                         <div className="form-group my-3">
                             <big className="text-white">Card Number</big>
-                            <input type="text" className="form-control BookNow-input" />
+                            <input type="text"  className="form-control BookNow-input" name="card_number" onChange={handleInput} value={cardInput.card_number}/>
+                            
                         </div>
                     </div>
 
@@ -69,13 +114,13 @@ return (
                             <div className="col-md-6">
                                 <div className="form-group my-3">
                                     <big className="text-white">Date</big>
-                                    <input type="email" className="form-control BookNow-input" />
+                                    <input type="date" className="form-control BookNow-input" name="date" onChange={handleInput} value={cardInput.date}/>
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="form-group my-3">
                                     <big className="text-white">CCV</big>
-                                    <input type="email" className="form-control BookNow-input" />
+                                    <input type="text" className="form-control BookNow-input" name="ccv" onChange={handleInput} value={cardInput.ccv}/>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +130,9 @@ return (
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form-group my-3">
-                            <button type="submit" className="my-3 btn btn-gold text-light fw-bold" onClick={(e)=>{
-                                e.preventDefault(); setModalShow(true) }}>Confirm</button>
+                            {/* <button type="submit" className="my-3 btn btn-gold text-light fw-bold" onClick={(e)=>{
+                                e.preventDefault(); setModalShow(true) }}>Confirm</button> */}
+                                <button type="submit" className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
                             
                             <BookNowModal show={modalShow} onHide={()=> setModalShow(false)} />
                         </div>
