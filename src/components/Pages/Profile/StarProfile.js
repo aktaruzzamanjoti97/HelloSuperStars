@@ -1,4 +1,5 @@
-import React from "react";
+import React,{ useState, useEffect, useRef } from 'react';
+import { Link, useHistory} from 'react-router-dom';
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, Route, Switch, useRouteMatch } from "react-router-dom";
 import AzhariProfile from "../../../images/Shakib/2.png";
@@ -18,8 +19,38 @@ import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
 import Greeting from "./profile-components/starProfile/StarChat/starGreeeting/Greeting";
 
-const StarProfile = () => {
+import axios from "axios";
+
+const StarProfile = (props) => {
+const history = useHistory();
 let { path, url } = useRouteMatch();
+const [star, setStar] = useState({});
+
+
+useEffect(() => {
+  let isMounted = true;
+  
+  const star_id = props.match.params.star_id;
+
+  axios.get(`/api/star_info/${star_id}`).then(res =>{
+  
+      if(isMounted)
+      {
+          if(res.data.status === 200)
+          {
+              setStar(res.data.star);
+
+              console.log(res.data.star);
+          }
+      }
+  });
+
+}, [props.match.params.star_id, history]);
+
+
+
+console.log(url);
+
 return (
 <>
   <Navigation />
@@ -30,10 +61,10 @@ return (
           <img src={AzhariProfile} alt="bg-img" className="img-fluid profile-cover" />
 
           <div className="star-profile-pic d-flex">
-            <img src={ProfileAzhari} alt="" className="img-fluid profile-star " />
+            <img src={`http://localhost:8000/${star.image}`} alt="" className="img-fluid profile-star " />
             <div className="profile-name-contents mt-5 mx-2">
               <h3 className="text-light mt-5 star-profile-name">
-                Shakib Al Hasan
+                {star.first_name} {star.last_name}
               </h3>
               <p className="text-warning star-profile-type">
                 @ShakibAllrounderHasan ·
@@ -106,7 +137,9 @@ return (
             <Route path={`${path}/user-greetings-pay`} exact component={GreetingsPayContent} />
             {/* greeting routing end*/}
             
-            <Route path={`${path}/book-now`} exact component={BookNowEvent} />
+            {/* <Route path={`${path}/book-now`} exact component={BookNowEvent} /> */}
+
+            <Route path={`${path}/meetup-events/book_now/:id`} exact component={BookNowEvent}/>
 
             <Route exact path={path}>
               <StarPost />

@@ -4,10 +4,12 @@ import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import { Collapse, Container } from "react-bootstrap";
 import MeetupComment from "./MeetupComment";
 import './meetup.css'
+import moment from 'moment'
 
-export default function MeetupContent({ user }) {
+export default function MeetupContent({ event }) {
 const [open, setOpen] = useState(false);
 const {url}=useRouteMatch()
+
 return (
 <>
     <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -15,18 +17,18 @@ return (
             <h2 className="accordion-header PostBack">
                 <div className="d-flex justify-content-between">
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                        <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
+                        <img src={`http://localhost:8000/${event.star.image}`} className="PostImgHome" alt={event.star.image} />
                         <span className="mx-2 text-warning text-light">
                             <Link to="/starprofile" className="link-starPorfile">
-                            {user.username}
+                            {event.star.first_name} {event.star.last_name}
                             </Link>
                             <br></br>
                             <small className="category-size-chat">
                                 {" "}
-                                <span className="Post-small-text">{user.time}</span>
+                                <span className="Post-small-text">{moment(event.updated_at).format('LT')}</span>
                             </small>
                             <small className="category-size-chat">
-                                <span className="Post-small-text-r">{user.date}</span>
+                                <span className="Post-small-text-r">{moment(event.updated_at).format('LL')}</span>
                             </small>
                         </span>
                     </div>
@@ -48,20 +50,25 @@ return (
                 </div>
             </h2>
             <div className="my-2 Enroll-a Enroll-text">
-                {user.postTitel}
+                {event.title}
             </div>
             <div class="container-meet card PostCard ">
-                <img src={user.postPic} className="meetImg" alt="Snow" />
+                <img src={`http://localhost:8000/${event.banner}`} className="meetImg" alt="Snow" />
                 <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
-                            Friday night at Pan Pacific Sonargaon with SAK 75
+                            {event.title}
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
-                        <Link to="starprofile/book-now" className="link-starPorfile">
+                        {/* <Link to="starprofile/book-now" className="link-starPorfile">
                           <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
-                        </Link>  
+                        </Link> */}
+
+                        <Link to={`starprofile/${event.star_id}/meetup-events/book_now/${event.id}`} className="link-starPorfile">
+                          <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
+                        </Link>
+
                         </div>
                     </div>
                 </div>
@@ -72,13 +79,13 @@ return (
                     <ul className="PostHoUl Co-Auditions">
                         <li className="like-post">
                             <i className="fas fa-heart heart mx-1 "></i>
-                            <small className="profile-card-text">{user.LikeCount}</small>
+                            <small className="profile-card-text">200</small>
                         </li>
                         <li className="share-post">
-                            <small className="profile-card-text">{user.ShareCount} Share</small>
+                            <small className="profile-card-text">{event.ShareCount} Share</small>
                         </li>
                         <li className="comment-post">
-                            <small className=" profile-card-text">{user.CommentCount} Comment</small>
+                            <small className=" profile-card-text">{event.CommentCount} Comment</small>
                         </li>
 
                     </ul>
@@ -117,18 +124,18 @@ return (
             <h2 className="accordion-header PostBack">
                 <div className="d-flex justify-content-between">
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                        <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
+                        <img src={event.profilePicture} className="PostImgHome" alt={event.profilePicture} />
                         <span className="mx-2 text-warning text-light">
                             <Link to="/starprofile" className="link-starPorfile">
-                            {user.username}
+                            {event.username}
                             </Link>
                             <br></br>
                             <small className="category-size-chat">
                                 {" "}
-                                <span className="Post-small-text">{user.time}</span>
+                                <span className="Post-small-text">{event.time}</span>
                             </small>
                             <small className="category-size-chat">
-                                <span className="Post-small-text-r">{user.date}</span>
+                                <span className="Post-small-text-r">{event.date}</span>
                             </small>
                         </span>
                     </div>
@@ -150,10 +157,10 @@ return (
                 </div>
             </h2>
             <div className="my-2 Enroll-a Enroll-text">
-                {user.postTitel}
+                {event.postTitel}
             </div>
             <div className="card PostCard">
-                <img className="learningImg" src={user.postPic} alt={user.postPic} />
+                <img className="learningImg" src={event.postPic} alt={event.postPic} />
                 <div className="learningLockPremiumImg d-flex align-items-center justify-content-center">
                     <img src={learningLockPremium} className="img-fluid img-resize-LearnContent" alt="" />
                 </div>
@@ -163,13 +170,13 @@ return (
                     <ul className="PostHoUl Co-Auditions">
                         <li className="like-post">
                             <i className="fas fa-heart heart mx-1 "></i>
-                            <small className="profile-card-text">{user.LikeCount}</small>
+                            <small className="profile-card-text">{event.LikeCount}</small>
                         </li>
                         <li className="share-post">
-                            <small className="profile-card-text">{user.ShareCount} Share</small>
+                            <small className="profile-card-text">{event.ShareCount} Share</small>
                         </li>
                         <li className="comment-post">
-                            <small className=" profile-card-text">{user.CommentCount} Comment</small>
+                            <small className=" profile-card-text">{event.CommentCount} Comment</small>
                         </li>
 
                     </ul>
