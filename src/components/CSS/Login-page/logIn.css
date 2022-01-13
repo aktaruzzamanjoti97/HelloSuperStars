@@ -33,6 +33,12 @@
     
 }
 
+.content-center
+{
+    display: flex;
+    justify-content: center;
+}
+
 .input-style{
     outline: 0;
   border-width: 0 0 2px;
