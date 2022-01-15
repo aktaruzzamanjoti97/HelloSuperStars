@@ -1,16 +1,11 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import '../CSS/Sidebar/Right/Right.css'
 
-import Learn from './Right/LearningSessions/Learn'
-import UpLive from './Right/UpcomingLive/UpLive'
-import UpAuditions from './Right/UpcomingAuditions/UpAudions'
 import './Right/LiveNow/LiveContent.css'
 
 import Pro from "../../images/Shakib/14.jpg";
-
-import MeetupEvents from './Right/MeetupEvents/MeetupEvents'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -27,7 +22,7 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className=' col-md-2 Owl-Side-R' items={2} loop margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
 
@@ -56,12 +51,13 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className=' col-md-2 Owl-Side-R' items={2} loop margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
 
                             <div class="top-right">🔴</div>
-                             <div class="bottom-left">Bottom Left</div>
+
+                            <div class="bottom-left">Bottom Left</div>
 
                         </div>
                     </OwlCarousel>
@@ -85,7 +81,7 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className=' col-md-2 Owl-Side-R' items={2} loop margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
@@ -111,7 +107,7 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className=' col-md-2 Owl-Side-R' items={2} loop margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
@@ -138,7 +134,7 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className=' col-md-2 Owl-Side-R' items={2} loop margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
