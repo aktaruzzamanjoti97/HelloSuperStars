@@ -78,15 +78,17 @@ const Login = () => {
                         <div className="row">
                             <div className="col-md-10  mx-auto">
                                 <div className="row">
+
+
                                     <div className="col-md-6  pt-5 pt-lg-0  d-flex justify-content-center  flex-column">
-                                        <div className="mt-3 ">
+                                        <div class="">
                                             <HelloSuperStarDemo />
                                         </div>
                                     </div>
 
                                     <div className="col-lg-6 header-img">
                                         <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
-                                            <div className="w-100" style={{ maxWidth: "480px" }}>
+                                            <div className="w-100" >
                                                 <Card className='logIn-bg'>
                                                     <Card.Body>
 
@@ -129,6 +131,8 @@ const Login = () => {
                                             </div>
                                         </Container>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>

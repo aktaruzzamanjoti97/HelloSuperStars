@@ -3,115 +3,155 @@ import { Link, withRouter } from 'react-router-dom'
 
 import '../CSS/Sidebar/Right/Right.css'
 
-import Live from './Right/LiveNow/Live'
 import Learn from './Right/LearningSessions/Learn'
 import UpLive from './Right/UpcomingLive/UpLive'
 import UpAuditions from './Right/UpcomingAuditions/UpAudions'
 import './Right/LiveNow/LiveContent.css'
+
+import Pro from "../../images/Shakib/14.jpg";
+
 import MeetupEvents from './Right/MeetupEvents/MeetupEvents'
-
-export const RightSidebar = ({ history }) => {
-
-console.log(history)
-const getColor = (curr) => {
-if (history.location.pathname === curr)
-return "#FFAD00"
-}
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+export const RightSidebar = () => {
 
 return (
 <>
     <div className="LinkBtn">
-        <div className="accordion right-col-box-home-r mt-3">
 
+        {/* Live now */}
+        <div className=' xm-mnh-s mt-3'>
             <div className="live-text-sln">Live now</div>
 
-            <div className="Live-S-Nav d-flex mx-2" id="headingTwo">
+            <div className="row ">
 
-                <Live />
+                <div className="col-md-10">
+                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
 
-                <Link to='/live-now'>
-                <button className="Live-RS-btn live-btn-style" >
-                    <small className="see-all-live">See All</small>
-                    <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                </button>
-                </Link>
+                            <div class="top-right">🔴</div>
+                             <div class="bottom-left">Bottom Left</div>
+
+                        </div>
+                    </OwlCarousel>
+
+                </div>
+
+                <Link to='/live-now' className='col-md-2  item-xx-l mt-3 '>
+                <button className="btn bg-dark">
+                    <small className="text-light">See All</small>
+                    <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button></Link>
 
             </div>
 
         </div>
 
-        <div className="accordion right-col-box-home-r mt-3">
-
+        {/* Live now */}
+        <div className=' xm-mnh-s mt-3'>
             <div className="live-text-sln">Learning Sessions</div>
 
-            <div className="Live-S-Nav d-flex" id="headingTwo">
+            <div className="row ">
 
-                <Learn />
+                <div className="col-md-10">
+                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
 
-                <Link to='/learning-sessions'>
-                <button className="Live-RS-btn live-btn-style">
-                    <small className="see-all-live">See All</small>
-                    <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                </button>
-                </Link>
+                            <div class="top-right">🔴</div>
+                             <div class="bottom-left">Bottom Left</div>
+
+                        </div>
+                    </OwlCarousel>
+
+                </div>
+
+                <Link to='/learning-sessions' className='col-md-2  item-xx-l mt-3 '>
+                <button className="btn bg-dark">
+                    <small className="text-light">See All</small>
+                    <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button></Link>
 
             </div>
 
         </div>
 
-        <div className="accordion right-col-box-home-r mt-3">
-
+        {/*Upcoming Live */}
+        <div className=' xm-mnh-s mt-3'>
             <div className="live-text-sln">Upcoming Live</div>
 
-            <div className="Live-S-Nav d-flex" id="headingTwo">
+            <div className="row ">
 
-                <UpLive />
+                <div className="col-md-10">
+                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+                    </OwlCarousel>
 
-                <Link to='/upcoming-live'>
-                <button className="Live-RS-btn live-btn-style" >
-                    <small className="see-all-live">See All</small>
-                    <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                </button>
-                </Link>
+                </div>
+
+                <Link to='/upcoming-live' className='col-md-2  item-xx-l mt-3 '>
+                <button className="btn bg-dark">
+                    <small className="text-light">See All</small>
+                    <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button></Link>
 
             </div>
 
         </div>
-        <div className="accordion right-col-box-home-r mt-3">
 
+        {/*Upcoming Auditions */}
+        <div className=' xm-mnh-s mt-3'>
             <div className="live-text-sln">Upcoming Auditions</div>
 
-            <div className="Live-S-Nav d-flex" id="headingTwo">
+            <div className="row ">
 
-                <UpAuditions />
+                <div className="col-md-10">
+                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+                    </OwlCarousel>
 
-                <Link to='/upcoming-auditions'>
-                <button className="Live-RS-btn live-btn-style">
-                    <small className="see-all-live">See All</small>
-                    <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                </button>
-                </Link>
+                </div>
+
+                <Link to='/upcoming-auditions' className='col-md-2   item-xx-l mt-3 '>
+
+                <button className="btn bg-dark">
+                    <small className="text-light">See All</small>
+                    <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button></Link>
 
             </div>
 
         </div>
 
-       
+        {/*Meetup Events */}
+        <div className=' xm-mnh-s mt-3'>
+            <div className="live-text-sln">Meetup Events</div>
 
-        <div className="accordion right-col-box-home-r mt-3">
+            <div className="row ">
 
-            <div className="live-text-sln"> Meetup Events</div>
+                <div className="col-md-10">
+                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+                    </OwlCarousel>
 
-            <div className="Live-S-Nav d-flex" id="headingTwo">
+                </div>
 
-                <MeetupEvents />
-
-                <Link to='/meetup-events'>
-                <button className="Live-RS-btn live-btn-style ">
-                    <small className="see-all-live">See All</small>
-                    <i className="fas fa-arrow-alt-circle-down see-all-live-ico "></i>
-                </button>
-                </Link>
+                <Link to='/meetup-events' className='col-md-2  item-xx-l mt-3 '>
+                <button className="btn bg-dark">
+                    <small className="text-light">See All</small>
+                    <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button></Link>
 
             </div>
 
