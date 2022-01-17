@@ -12,6 +12,16 @@
     max-height: 90vw !important; */
 }
 
+/* .Nave_MarginTop{
+  
+    margin-top: 95px !important;
+} */
+
+.StickyNave{
+  position: fixed !important;
+  width: 100% !important;
+}
+
 .navbar-position {
   position: relative;
 }
