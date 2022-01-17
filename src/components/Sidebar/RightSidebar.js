@@ -9,6 +9,13 @@ import UpAuditions from './Right/UpcomingAuditions/UpAudions'
 import './Right/LiveNow/LiveContent.css'
 
 import Pro from "../../images/Shakib/14.jpg";
+import srabanti from "../../images/sar.jpg";
+import momtaj from "../../images/momtaz.png";
+import srk from "../../images/shahruk-khan.jpg";
+import ayman from "../../images/Ayman_Sadiq.jpg";
+import mashrafi from "../../images/MashrafeMortaza_smile.jpeg";
+import ms from "../../images/ms.jpg";
+import messi from "../../images/messi.jpg";
 
 import MeetupEvents from './Right/MeetupEvents/MeetupEvents'
 import OwlCarousel from 'react-owl-carousel';
@@ -27,14 +34,22 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                    <OwlCarousel className='col-md-2' items={2} loop autoplay autoplayTimeout={3000} margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
 
                             <div class="top-right">🔴</div>
                              <div class="bottom-left">Bottom Left</div>
-
                         </div>
+
+                        <div className='container-xc-ds item item-x '>
+                            <img src={messi} className="SidebarCarouselImg" alt="profilePicture" />
+
+                            <div class="top-right">🔴</div>
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+
+                        
                     </OwlCarousel>
 
                 </div>
@@ -56,9 +71,17 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                <OwlCarousel className='col-md-2' items={2} loop autoplay autoplayTimeout={3500} margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
-                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                            <img src={momtaj} className="SidebarCarouselImg" alt="profilePicture" />
+
+                            <div class="top-right">🔴</div>
+                             <div class="bottom-left">Bottom Left</div>
+
+                        </div>
+
+                        <div className='container-xc-ds item item-x '>
+                            <img src={srk} className="SidebarCarouselImg" alt="profilePicture" />
 
                             <div class="top-right">🔴</div>
                              <div class="bottom-left">Bottom Left</div>
@@ -85,7 +108,12 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                <OwlCarousel className='col-md-2' items={2} loop autoplay autoplayTimeout={4000} margin={0} dots={false} nav>
+                        <div className='container-xc-ds item item-x '>
+                            <img src={srabanti} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+
                         <div className='container-xc-ds item item-x '>
                             <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
@@ -111,9 +139,14 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                <OwlCarousel className='col-md-2' items={2} loop autoplay autoplayTimeout={2000} margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
-                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                            <img src={ayman} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+
+                        <div className='container-xc-ds item item-x '>
+                            <img src={srabanti} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
                         </div>
                     </OwlCarousel>
@@ -138,9 +171,14 @@ return (
             <div className="row ">
 
                 <div className="col-md-10">
-                    <OwlCarousel className=' col-md-2' items={2} loop margin={0} dots={false} nav>
+                <OwlCarousel className='col-md-2' items={2} loop autoplay autoplayTimeout={1500} margin={0} dots={false} nav>
                         <div className='container-xc-ds item item-x '>
-                            <img src={Pro} className="SidebarCarouselImg" alt="profilePicture" />
+                            <img src={mashrafi} className="SidebarCarouselImg" alt="profilePicture" />
+                             <div class="bottom-left">Bottom Left</div>
+                        </div>
+
+                        <div className='container-xc-ds item item-x '>
+                            <img src={ms} className="SidebarCarouselImg" alt="profilePicture" />
                              <div class="bottom-left">Bottom Left</div>
                         </div>
                     </OwlCarousel>

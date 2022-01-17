@@ -18,7 +18,7 @@ return (
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={user.profilePicture} className="PostImgHome" alt={user.profilePicture} />
                         <span className="mx-2 text-warning text-light">
-                            <Link to="/starprofile" className="link-starPorfile">
+                            <Link to={`/starprofile/${user.id}`} className="link-starPorfile">
                             {user.username}
                             </Link>
                             <br></br>

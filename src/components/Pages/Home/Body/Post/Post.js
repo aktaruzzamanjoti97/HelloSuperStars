@@ -4,6 +4,7 @@ import PostContent from './PostContent'
 import axios from "axios";
 
 import SkeletonArticle from '../Post_skaliton/SkeletonArticle';
+import { Markup } from 'interweave';
 
 
 
@@ -26,7 +27,7 @@ const Post = () => {
                         setPosts(res.data.livechats);
                         setstatus(false);
                     }, 300);
-                    // console.log(res.data.livechats);
+                    console.log(res.data.livechats);
           
                 }
             }           

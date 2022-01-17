@@ -19,7 +19,7 @@ return (
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={`http://localhost:8000/${event.star.image}`} className="PostImgHome" alt={event.star.image} />
                         <span className="mx-2 text-warning text-light">
-                            <Link to="/starprofile" className="link-starPorfile">
+                            <Link to={`/starprofile/${event.star_id}`} className="link-starPorfile">
                             {event.star.first_name} {event.star.last_name}
                             </Link>
                             <br></br>
