@@ -5,6 +5,7 @@ import { Collapse,Button } from "react-bootstrap";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import PostComment from "./PostComment";
 import moment from 'moment'
+import { Markup } from "interweave";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
@@ -20,7 +21,7 @@ return (
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={mediaBaseUrl+post.star.image} className="PostImgHome" alt="star-profile" />
                         <span className="mx-2 text-warning text-light">
-                            <Link to="/starprofile" className="link-starPorfile">
+                            <Link to={`/starprofile/${post.star_id}`} className="link-starPorfile">
                             {post.star.first_name} {post.star.last_name}
                             </Link>
                             <br></br>
@@ -51,8 +52,10 @@ return (
                 </div>
             </h2>
 
-            <div className="my-2 Enroll-a Enroll-text">{post.title}</div>
-            <div className="my-2 Enroll-a Enroll-text">{post.description}</div>
+            <h5 className="my-2 Enroll-a Enroll-text">{post.title}</h5>
+
+            <Markup className="my-2 Enroll-a Enroll-text text-ellipsis py-2" content={post.description}></Markup>
+
 
             <div className="card PostCard">
                 <img src={mediaBaseUrl+post.banner} alt={post.banner} />
