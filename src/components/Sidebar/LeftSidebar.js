@@ -27,7 +27,7 @@ export const LeftSidebar = ({history}) => {
     return (
         <>
         
-            <div className=" left-col-box p-3     ">
+            <div className=" left-col-box p-3 mt-3 ">
                 
                 <div class="accordion " id="accordionExample">
                     <div className="accordion" id="accordionExample">
@@ -109,6 +109,25 @@ export const LeftSidebar = ({history}) => {
                                             <span className="mx-2 profile-font-color" >
                                                 Enrolled audition <br></br>
                                                 <small className="category-size-chat"> 1 pending</small>
+                                            </span>
+                                        </button>
+
+                                </h2>
+                            </div>
+                        </Link>
+
+                        <Link className="teop-s" to='/activities'>
+                            <div className="accordion-item mt-1 left-bottom-ap" >
+                                <h2 className="accordion-header" id="headingTwo">
+                                        <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" 
+                                            aria-controls="collapseTwo" >
+                                            <span>
+                                                <i className="fas fa-id-card mx-2 profile-font-color fa-2x"></i>
+                                            </span>
+                                            <span className="mx-2 profile-font-color" >
+                                                Activities <br></br>
+                                                <small className="category-size-chat">4 activities recently</small>
                                             </span>
                                         </button>
 
