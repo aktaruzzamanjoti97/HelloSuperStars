@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navigation from "../../../Header/Navigation";
 import LeftSidebar from "../../LeftSidebar";
-import ActivitiesContente from "./Content/ActivitiesContente";
+import ActivitiesContent from "./Content/ActivitiesContent";
 
 export default class ActivitiesBody extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class ActivitiesBody extends Component {
               </div>
               
               <div className="col-sm-9 justify-content-center postTab">
-                 <ActivitiesContente/>
+                 <ActivitiesContent/>
               </div>
               
             </div>

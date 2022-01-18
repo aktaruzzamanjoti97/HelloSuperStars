@@ -16,7 +16,7 @@
 
 
 .Pic-Bg{
-    background: rgba(248, 232, 0, 0.212);
+    background: rgba(255, 166, 0, 0.39);
     border-radius: 5px;
 }
 .Pic-icon_x{
@@ -24,7 +24,7 @@
 }
 .Pic_Ic_text{
     font-size: 10px;
-    color: #ED9B52;
+    color: #ff0000;
 }
 
 
@@ -34,7 +34,7 @@
     position: relative;
     text-align: center;
     color: white;
-    border: 1px solid #FFBB2B !important;
+    border: 1px solid #2bffed !important;
     border-radius: 10px;
 }
 
@@ -45,4 +45,59 @@
   }
   
 
+
+  .Pic_Ic_Arr{
+    float: right;
+    margin-right: -30px;
+}
   
+
+  
+  /* Bottom left text */
+  .bottom-left-x-ax {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  .Pic_Ic_B{
+      font-size: 15px;
+  }
+
+  .Pic_Ic_BX{
+    font-size: 12px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right-x-ax {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 35px !important;
+    font: normal normal 600 24px/29px Gilroy ☞;
+  }
+  
+
+  .btn-x-r-ac{
+      color: gold;
+      border-radius: 10px;
+      border: none;
+      background: none;
+}
+
+.btn-x-r-ac:hover{
+    color: rgb(255, 255, 255) !important;
+}
+
+.centered-x-ac-y {
+    position: absolute;
+    top: 89%;
+    border: none;
+    border-radius: 0px 0px 10px 10px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(32, 218, 162);
+    transform: translate(-50%, -50%);
+}
+
