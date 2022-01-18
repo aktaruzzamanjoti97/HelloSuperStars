@@ -1,8 +1,27 @@
-import React from 'react'
+import {React , useEffect,useState} from 'react'
 import { Modal, Button} from 'react-bootstrap'
 import Clock from "../../../../../images/clock.png"
 import ClockImg from '../../../../../images/ActivitiseMo.jpg'
+import moment from 'moment';
+
 const ActivitiseModal = (props) => {
+const [days, setDays] = useState(0);
+const [hours, setHours] = useState(0);
+const [minutes, setMinutes] = useState(0);
+const [seconds, setSeconds] = useState(0);
+const [showSemicolon, setShowSemicolon] = useState(false);
+
+useEffect(() => {
+setInterval(() => {
+const now = moment();
+const then = moment('2022-01-18 12:12:12', 'YYYY-MM-DD hh:mm:ss');
+const countdown = moment(then - now);
+setDays(countdown.format('D'));
+setHours(countdown.format('hh'));
+setMinutes(countdown.format('mm'));
+setSeconds(countdown.format('ss'));
+}, 1000);
+}, []);
 return (
 <>
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" size="lg" centered className=''>
@@ -11,13 +30,13 @@ return (
             <div className=' d-flex'>
 
                 <div className='left-X-M-Ax col-md-6 mx-5'>
-                    <p >Connect with</p>
+                    <p>Connect with</p>
                     <h1 className='fw-bold mb-3'>Sakib All Hasan</h1>
 
                     <div className='d-flex '>
                         <span> <img src={Clock} alt="" /> </span> &nbsp;&nbsp;&nbsp;
                         <span>
-                            <h1 className='fw-bold text-warning'>50</h1>
+                            <h1 className='fw-bold text-warning'>{days}D&nbsp; <span className='Time_x_p'>{hours}:{minutes}:{seconds}</span></h1>
                         </span>
                     </div>
 
@@ -27,10 +46,12 @@ return (
                     <img src={ClockImg} alt="" className='Img-Mo_s img-fluid' />
                 </div>
             </div>
-            <button class="top-right_cross bg-warning" onClick={props.onHide}><i class="fas fa-times-circle "></i></button>
+
+            <button class="top-right_cross bg-warning" onClick={props.onHide}><i
+                    class="fas fa-times-circle "></i></button>
         </Modal.Body>
         <center>
-            <Button  className='btn bg-warning Modal_btn-xa mb-3'>Call Now</Button>
+            <Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold'>Call Now</Button>
         </center>
 
     </Modal>
