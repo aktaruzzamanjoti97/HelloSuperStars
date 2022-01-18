@@ -123,7 +123,7 @@ export const LeftSidebar = ({history}) => {
                                             data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" 
                                             aria-controls="collapseTwo" >
                                             <span>
-                                                <i className="fas fa-id-card mx-2 profile-font-color fa-2x"></i>
+                                                <i class="fas fa-id-card-alt mx-2 profile-font-color fa-2x"></i>
                                             </span>
                                             <span className="mx-2 profile-font-color" >
                                                 Activities <br></br>
