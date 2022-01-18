@@ -7,7 +7,9 @@
     object-fit:cover;
     border-radius: 10px;
 }
-
+.left-X-M-Ax{
+  font: normal normal arial;
+}
 
 .centered-x-ac {
     position: absolute;
@@ -28,11 +30,8 @@
 }
 
 
-
-
 .container-x-ac {
     position: relative;
-    text-align: center;
     color: white;
     border: 1px solid #2bffed !important;
     border-radius: 10px;
@@ -51,7 +50,15 @@
     margin-right: -30px;
 }
   
-
+/* Top right text */
+.top-right_cross{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  border: none;
+  border-radius: 10%;
+  -o-border-radius: 10%;
+}
   
   /* Bottom left text */
   .bottom-left-x-ax {
@@ -101,3 +108,22 @@
     transform: translate(-50%, -50%);
 }
 
+
+/* Modal */
+
+
+.right-X-M-Ax{
+}
+
+.Img-Mo_s{
+  width: 100% !important;
+}
+
+.Modal_B-Ac{
+  height: 300px;
+}
+
+.Modal_btn-xa{
+  border: none;
+  width: 25%;
+}
