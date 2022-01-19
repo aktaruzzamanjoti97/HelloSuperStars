@@ -1,0 +1,133 @@
+
+
+
+.Active-Img-X{
+    width: 100%;
+    height: 300px;
+    object-fit:cover;
+    border-radius: 10px;
+}
+.left-X-M-Ax{
+  font: normal normal arial;
+}
+
+.centered-x-ac {
+    position: absolute;
+    top: 82%;
+}
+
+
+.Pic-Bg{
+    background: rgba(255, 166, 0, 0.39);
+    border-radius: 5px;
+}
+.Pic-icon_x{
+    width: 18px;
+}
+.Pic_Ic_text{
+    font-size: 10px;
+    color: #ff0000;
+}
+
+
+.container-x-ac {
+    position: relative;
+    color: white;
+    border: 1px solid #2bffed !important;
+    border-radius: 10px;
+}
+
+  .bottom-left-Activities {
+    position: absolute;
+    bottom: 8px;
+    left: 40%;
+  }
+  
+
+
+  .Pic_Ic_Arr{
+    float: right;
+    margin-right: -30px;
+}
+  
+/* Top right text */
+.top-right_cross{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  border: none;
+  border-radius: 10%;
+  -o-border-radius: 10%;
+}
+  
+  /* Bottom left text */
+  .bottom-left-x-ax {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  .Pic_Ic_B{
+      font-size: 15px;
+  }
+
+  .Pic_Ic_BX{
+    font-size: 12px;
+  }
+  
+  /* Bottom right text */
+  .bottom-right-x-ax {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 35px !important;
+    font: normal normal 600 24px/29px Gilroy ☞;
+  }
+  
+
+  .btn-x-r-ac{
+      color: gold;
+      border-radius: 10px;
+      border: none;
+      background: none;
+}
+
+.btn-x-r-ac:hover{
+    color: rgb(255, 255, 255) !important;
+}
+
+.centered-x-ac-y {
+    position: absolute;
+    top: 89%;
+    border: none;
+    border-radius: 0px 0px 10px 10px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(32, 218, 162);
+    transform: translate(-50%, -50%);
+}
+
+
+/* Modal */
+
+
+.right-X-M-Ax{
+}
+
+.Img-Mo_s{
+  width: 100% !important;
+}
+
+.Modal_B-Ac{
+  height: 300px;
+}
+
+.Modal_btn-xa{
+  border: none;
+  width: 25%;
+}
+
+.Time_x_p{
+  font-size: 25px;
+}
