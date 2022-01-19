@@ -2,10 +2,10 @@ import {React, useState } from 'react'
 import { Collapse,Button } from "react-bootstrap";
 import Pro from '../../../../images/Shakib/12.jpg'
 const CommentPro = () => {
-    const [open, setOpen] = useState(false);
-    return (
-        <>
-              <div className="coment-area  ">
+const [open, setOpen] = useState(false);
+return (
+<>
+    <div className="coment-area  ">
         <ul className="we-comet ">
             <li>
                 <div className="comet-avatar">
@@ -59,11 +59,14 @@ const CommentPro = () => {
                 <Collapse in={open}>
                     <div id="collapseID">
                         <div className="accordion-button-fx-reply  ">
+                        <div class="centered-Comment d-flex">
                             <img src={Pro} className="com-post-img-head-reply" alt={Pro} />
-                            <form action="">
-                                <input className="form-control we-comment-reply" rows="1" id="autoresizing"
-                                    placeholder='write here...' />
-                            </form>
+                                <form action="">
+                                    <input className="form-control we-comment-reply-pro" rows="1" id="autoresizing"
+                                        placeholder='write here...' />
+                                </form>
+                            </div>
+
                         </div>
                     </div>
 
@@ -72,14 +75,17 @@ const CommentPro = () => {
             </li>
         </ul>
     </div>
+    
     <div className="comment-post-head">
+    <div class="centered-Comment d-flex">
         <img src={Pro} className="com-post-img-head-p" alt={Pro} />
         <form action="">
-            <input className="form-control comment-input-fill" rows="1" id="autoresizing" placeholder='write here...' />
+            <input className="form-control comment-Pro-fill" rows="1" id="autoresizing" placeholder='write here...' />
         </form>
     </div>
-        </>
-    )
+    </div>
+</>
+)
 }
 
 export default CommentPro

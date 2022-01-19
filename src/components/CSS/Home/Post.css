@@ -1,3 +1,44 @@
+/* Profile Page */
+
+.comment-Pro-fill{
+    margin-left: 10px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50px;
+    border: none !important;
+    resize: vertical;
+    width:22vw ;
+    overflow: auto;
+    padding-left: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+.comment-Pro-fill:focus {
+    outline: none !important;
+    background-color: rgb(65, 65, 65) !important;
+    border: none !important;
+    color: white;
+}
+
+
+.we-comment-reply-pro {
+    margin-left: 10px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50px;
+    border: none !important;
+    resize: vertical;
+    width:18vw ;
+    overflow: auto;
+    padding-left: 20px;
+    color: white;
+    font-size: 13px;
+    
+}
+
+/* Profile Page End */
+
+
+
 .PostImgHome{
     width: 40px !important;
     height: 40px !important;
