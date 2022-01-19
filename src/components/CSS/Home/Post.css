@@ -35,6 +35,17 @@
     
 }
 
+
+@media only screen and (max-width: 600px) {
+    .comment-Pro-fill{
+        width:60vw ;
+    }
+    .we-comment-reply-pro {
+        width:50vw ;
+    }
+
+  }
+
 /* Profile Page End */
 
 
@@ -397,11 +408,8 @@
 
 .com-post-img-head-reply {
     width: 25px !important;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    height: 25px !important;
+    border-radius: 50%;object-fit: cover !important;
 }
 
 .we-comment-reply {
@@ -497,7 +505,9 @@
 
 .com-post-img-head-p{
     width: 35px !important;
+    height: 35px !important;
     border-radius: 50%;
+    object-fit: cover !important;
 }
 .com-post-img{
     width: 25px !important;
