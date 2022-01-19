@@ -43,8 +43,42 @@
     .we-comment-reply-pro {
         width:50vw ;
     }
+    .UnlockBtnV{
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
+  }
 
   }
+
+.centered-p-c-d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .UnlockBtnV{
+      border: none;
+      border-radius: 10px;
+
+}
+
+  .UnlockBtnV:hover{
+    background-color: yellow !important;
+}
+
+.Blur_vp{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.UnlockBtnV:focus {
+    outline:0 !important;
+}
+.LockWidth{
+    width: 80% !important;
+}
 
 /* Profile Page End */
 
