@@ -1,12 +1,15 @@
-
-
-
 .Active-Img-X{
     width: 100%;
-    height: 300px;
+    height: 350px;
     object-fit:cover;
     border-radius: 10px;
 }
+@media only screen and (max-width: 600px) {
+  .Active-Img-X{
+    height: 250px;
+  }
+}
+
 .left-X-M-Ax{
   font: normal normal arial;
 }
@@ -130,4 +133,15 @@
 
 .Time_x_p{
   font-size: 25px;
+}
+
+
+/* Video Activities */
+
+.VideoActivities{
+  border: none;
+}
+.Call-btn-v:hover{
+  background-color: rgb(0, 63, 100) !important;
+  color: white !important;
 }

@@ -3,8 +3,9 @@ import { Modal, Button} from 'react-bootstrap'
 import Clock from "../../../../../images/clock.png"
 import ClockImg from '../../../../../images/ActivitiseMo.jpg'
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
-const ActivitiseModal = (props) => {
+const ActivitiesModal = (props) => {
 const [days, setDays] = useState(0);
 const [hours, setHours] = useState(0);
 const [minutes, setMinutes] = useState(0);
@@ -14,7 +15,7 @@ const [showSemicolon, setShowSemicolon] = useState(false);
 useEffect(() => {
 setInterval(() => {
 const now = moment();
-const then = moment('2022-01-18 12:12:12', 'YYYY-MM-DD hh:mm:ss');
+const then = moment('2022-02-18 12:12:12', 'YYYY-MM-DD hh:mm:ss');
 const countdown = moment(then - now);
 setDays(countdown.format('D'));
 setHours(countdown.format('hh'));
@@ -51,7 +52,7 @@ return (
                     class="fas fa-times-circle "></i></button>
         </Modal.Body>
         <center>
-            <Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold'>Call Now</Button>
+            <Link to='/activities/vide'><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link>
         </center>
 
     </Modal>
@@ -59,4 +60,4 @@ return (
 )
 }
 
-export default ActivitiseModal
+export default ActivitiesModal

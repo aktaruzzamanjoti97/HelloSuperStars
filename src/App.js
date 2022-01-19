@@ -41,6 +41,7 @@ import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
 import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 import ActivitiesBody from "./components/Sidebar/Left/Activities/ActivitiesBody";
+import VideoActivities from "./components/Sidebar/Left/Activities/Content/VideoActivities";
 
 import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
 import Personal from "./components/Sidebar/Left/Settings/SettingComponents/Personal";
@@ -94,6 +95,7 @@ function App() {
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
         <PrivateRoute exact path='/activities' component={ActivitiesBody} />
+        <PrivateRoute exact path='/activities/video' component={VideoActivities} />
 
         <PrivateRoute exact path='/settings' component={SettingsBody} />
         <PrivateRoute exact path="/setting/personal" component={Personal}/>
