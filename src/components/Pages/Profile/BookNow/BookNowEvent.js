@@ -20,79 +20,70 @@ const [meetup, setMeetup] = useState('');
 const [user, setUser] = useState('');
 const [passwordInput, setPassword] = useState('');
 
-
-
-
 const handleInput = (e) => {
-    e.persist();
-    setPassword(e.target.value);
+e.persist();
+setPassword(e.target.value);
 }
-
-
 
 function handleClick(e){
-    e.preventDefault();
-    setOpen(!open);
+e.preventDefault();
+setOpen(!open);
 }
 
-
 useEffect(() => {
-    let isMounted = true;
-    
-    const star_id = props.match.params.star;
-    const event_id = props.match.params.id;
+let isMounted = true;
 
-    axios.get(`/api/user/meetup-event/${star_id}/${event_id}`).then(res =>{
-    
-        if(isMounted)
-        {
-            if(res.data.status === 200)
-            {
-                setStar(res.data.star);
-                setMeetup(res.data.meetup);
+const star_id = props.match.params.star;
+const event_id = props.match.params.id;
 
-                console.log(res.data.star);
-            }
-        }
-    });
+axios.get(`/api/user/meetup-event/${star_id}/${event_id}`).then(res =>{
 
-    axios.get(`/api/user_info`).then(res =>{
-      
-        if(res.status === 200)
-        {
-          setUser(res.data.users)
-        }
-  
-        console.log(res.data.users);
-  
-      });
-   
+if(isMounted)
+{
+if(res.data.status === 200)
+{
+setStar(res.data.star);
+setMeetup(res.data.meetup);
+
+console.log(res.data.star);
+}
+}
+});
+
+axios.get(`/api/user_info`).then(res =>{
+
+if(res.status === 200)
+{
+setUser(res.data.users)
+}
+
+console.log(res.data.users);
+
+});
 
 }, [props.match.params.star, props.match.params.id, history]);
 
 const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = {
-        password: passwordInput,
-    }
-
-    axios.get('/sanctum/csrf-cookie').then(response => {
-        axios.post(`/api/verify_user`, data).then(res => {
-            if(res.data.status === 200)
-            {
-                setOpen(!open);
-            }
-            else
-            {
-                swal("Warning",res.data.message,"warning");
-            }
-
-        });
-    });
-    
+e.preventDefault();
+const data = {
+password: passwordInput,
 }
 
+axios.get('/sanctum/csrf-cookie').then(response => {
+axios.post(`/api/verify_user`, data).then(res => {
+if(res.data.status === 200)
+{
+setOpen(!open);
+}
+else
+{
+swal("Warning",res.data.message,"warning");
+}
 
+});
+});
+
+}
 
 return (
 <>
@@ -112,24 +103,26 @@ return (
 
                         <div className="col-md-6 BookNowMN">
                             <table className='taBook'>
-                                <tr >
+                                <tr>
                                     <th className='text-light bookTh'>Star</th>
-                                    {/* <td className='BookNText'>{star.super_star?.first_name} {star.super_star?.last_name}</td> */}
-                                    <td className='BookNText'>{meetup.star?.first_name} {meetup.star?.last_name}</td> 
+                                    {/* <td className='BookNText'>{star.super_star?.first_name}
+                                        {star.super_star?.last_name}</td> */}
+                                    <td className='BookNText'>{meetup.star?.first_name} {meetup.star?.last_name}</td>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <th className='text-light bookTh'>Date</th>
                                     <td className='BookNText'>{moment(meetup.date).format('LL')}</td>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <th className='text-light bookTh'>Time</th>
-                                    <td className='BookNText'>{moment(meetup.start_time, "HH:mm:ss").format("hh:mm A")} to {moment(meetup.end_time, "HH:mm:ss").format("hh:mm A")}</td>
+                                    <td className='BookNText'>{moment(meetup.start_time, "HH:mm:ss").format("hh:mm A")}
+                                        to {moment(meetup.end_time, "HH:mm:ss").format("hh:mm A")}</td>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <th className='text-light bookTh'>Fee</th>
                                     <td className='BookNText'>{meetup.fee} BDT</td>
                                 </tr>
-                                </table>
+                            </table>
                             {/* <div className="text-white">
                                 <h6>Star</h6>
                                 <h6>Date</h6>
@@ -145,11 +138,11 @@ return (
                         </div>
 
                         <div className="col-md-6">
-                                <h5 className="text-white">Instructions</h5>
-                                <p className='BookNText'>
-                                    <Markup content= {meetup.description}/>
-                                </p>
-                            
+                            <h5 className="text-white">Instructions</h5>
+                            <p className='BookNText'>
+                                <Markup content={meetup.description} />
+                            </p>
+
                         </div>
                     </div>
 
@@ -162,23 +155,25 @@ return (
                         <div className="col-md-6">
                             <div className="form-group my-3">
                                 <big className="text-white">Email/Phone</big>
-                                <input type="text" className="form-control BookNow-input" name="email" value={user.phone}/>
+                                <input type="text" className="form-control BookNow-input" name="email"
+                                    value={user.phone} />
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="form-group my-3">
                                 <big className="text-white">Password</big>
-                                <input type="password" className="form-control BookNow-input" name="password" onChange={handleInput} required/>
+                                <input type="password" className="form-control BookNow-input" name="password"
+                                    onChange={handleInput} required />
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group my-3">
-                                {/* <button type="submit" className="my-3 btn btn-gold text-light fw-bold" variant="link"
-                                    onClick={handleClick } aria-expanded={open}
+                                {/* <button type="submit" className="my-3 btn btn-gold text-light fw-bold"
+                                    variant="link" onClick={handleClick } aria-expanded={open}
                                     aria-controls="collapseID">Register</button> */}
-                                    <button type="submit" className="my-3 btn btn-gold text-light fw-bold" variant="link"
+                                <button type="submit" className="my-3 btn btn-gold text-light fw-bold" variant="link"
                                     aria-controls="collapseID">Register</button>
                             </div>
                         </div>
@@ -186,12 +181,12 @@ return (
                 </form>
             </div>
         </CardContent>
-        
+
         {/* Book Now Payment */}
 
         <Collapse in={open}>
             <div id="collapseID">
-               <BookNowPay event_id = {meetup.id}/>
+                <BookNowPay event_id={meetup.id} />
             </div>
         </Collapse>
 

@@ -20,6 +20,7 @@ import StarChat from "./profile-components/starProfile/StarChat/StarChat";
 import Greeting from "./profile-components/starProfile/StarChat/starGreeeting/Greeting";
 
 import axios from "axios";
+import UnlockPay from './profile-components/UnlockPay';
 
 const StarProfile = (props) => {
 const history = useHistory();
@@ -154,9 +155,11 @@ return (
             </Route>
             <Route path={`${path}/audition`}> <Audition />
             </Route>
-
             <Route path={`${path}/booking`}> <Audition />
             </Route>
+            <Route path={`${path}/unlock-pay`}> <UnlockPay />
+            </Route>
+
             {/*
             <Route path={`${path}/greeting`}> <Greeting />
             </Route> */}

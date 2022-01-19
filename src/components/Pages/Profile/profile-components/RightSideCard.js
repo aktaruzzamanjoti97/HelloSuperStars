@@ -2,6 +2,7 @@ import {React,useState} from "react";
 import { Collapse, Container } from "react-bootstrap";
 import CommentPro from "./CommentPro";
 import Lock from '../../../../images/lockScreen.png'
+import { Link } from "react-router-dom";
 const RightSideCard = (props) => {
 const [open, setOpen] = useState(false);
 return (
@@ -102,7 +103,12 @@ return (
       <img src={props.profileImg} alt="..." className="Blur_vp" />
       <div class="centered-p-c-d">
       <center><img src={Lock} alt={Lock} className="LockWidth" /></center>
-        <center><button className="btn bg-warning fw-bold UnlockBtnV">Unlock Now for 10$</button></center>
+        <center> 
+          <Link to="/starprofile/4/unlock-pay" className="link-starPorfile">
+            <button className="btn bg-warning fw-bold UnlockBtnV">Unlock Now for 10$</button>  
+          </Link>
+        </center>
+                      
       </div>
     </div>
 
