@@ -21,7 +21,7 @@ return (
                             <img src={Pro} className="image-fluid" alt="profilePicture" />
 
                             <center>
-                                <div className="flaxVideo bg-dark p-2 m-3">
+                                <div className= "  flaxVideo bg-dark p-2 m-3">
                                     <span className="p-3"><button className="BtnFlaxV btn bg-warning"><i
                                                 className="fas fa-video"></i></button></span>
                                     <span className="p-3"><button className="BtnFlaxV btn bg-warning"><i
