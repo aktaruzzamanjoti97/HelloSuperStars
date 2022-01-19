@@ -460,7 +460,9 @@
 }
 .com-post-img{
     width: 25px !important;
+    height: 25px !important;
     border-radius: 50%;
+    object-fit:cover;
 }
 .coment-head {
     display: inline-block;
