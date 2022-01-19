@@ -449,29 +449,18 @@
 }
 .com-post-img-head{
     width: 35px !important;
+    height:  35px !important;
+    object-fit:cover;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
 
 .com-post-img-head-p{
     width: 35px !important;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
-
 .com-post-img{
     width: 25px !important;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
 .coment-head {
     display: inline-block;

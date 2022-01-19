@@ -48,11 +48,11 @@ return (
                 </div>
             </div>
 
-            <button class="top-right_cross bg-warning" onClick={props.onHide}><i
+            <button class="top-right_cross bg-warning Cross-Btn-v text-light" onClick={props.onHide}><i
                     class="fas fa-times-circle "></i></button>
         </Modal.Body>
         <center>
-            <Link to='/activities/vide'><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link>
+            <Link to='/activities/video'><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link>
         </center>
 
     </Modal>
