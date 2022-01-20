@@ -1,3 +1,89 @@
+/* Profile Page */
+
+.comment-Pro-fill{
+    margin-left: 10px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50px;
+    border: none !important;
+    resize: vertical;
+    width:22vw ;
+    overflow: auto;
+    padding-left: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+.comment-Pro-fill:focus {
+    outline: none !important;
+    background-color: rgb(65, 65, 65) !important;
+    border: none !important;
+    color: white;
+}
+
+
+.we-comment-reply-pro {
+    margin-left: 10px;
+    background-color: rgb(65, 65, 65);
+    border-radius: 50px;
+    border: none !important;
+    resize: vertical;
+    width:18vw ;
+    overflow: auto;
+    padding-left: 20px;
+    color: white;
+    font-size: 13px;
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    .comment-Pro-fill{
+        width:60vw ;
+    }
+    .we-comment-reply-pro {
+        width:50vw ;
+    }
+    .UnlockBtnV{
+        border: none;
+        border-radius: 10px;
+        font-size: 12px;
+  }
+
+  }
+
+.centered-p-c-d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .UnlockBtnV{
+      border: none;
+      border-radius: 10px;
+
+}
+
+  .UnlockBtnV:hover{
+    background-color: yellow !important;
+}
+
+.Blur_vp{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.UnlockBtnV:focus {
+    outline:0 !important;
+}
+.LockWidth{
+    width: 80% !important;
+}
+
+/* Profile Page End */
+
+
+
 .PostImgHome{
     width: 40px !important;
     height: 40px !important;
@@ -356,11 +442,8 @@
 
 .com-post-img-head-reply {
     width: 25px !important;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    height: 25px !important;
+    border-radius: 50%;object-fit: cover !important;
 }
 
 .we-comment-reply {
@@ -449,29 +532,22 @@
 }
 .com-post-img-head{
     width: 35px !important;
+    height:  35px !important;
+    object-fit:cover;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
 
 .com-post-img-head-p{
     width: 35px !important;
+    height: 35px !important;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    object-fit: cover !important;
 }
-
 .com-post-img{
     width: 25px !important;
+    height: 25px !important;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    object-fit:cover;
 }
 .coment-head {
     display: inline-block;
