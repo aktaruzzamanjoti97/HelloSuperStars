@@ -22,7 +22,7 @@ return (
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={mediaBaseUrl+post.star.image} className="PostImgHome" alt="star-profile" />
                         <span className="mx-2 text-warning text-light">
-                            <Link to={`/starprofile/${post.star_id}`} className="link-starPorfile">
+                            <Link to={`/starprofile/${post.user_id}`} className="link-starPorfile">
                             {post.star.first_name} {post.star.last_name}
                             </Link>
                             <br></br>
@@ -62,6 +62,27 @@ return (
             <Link to={`starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
                 <img src={mediaBaseUrl+post.meetup.banner} alt={post.meetup.banner} />
             </Link>
+
+            <div className="centered centered-meet">
+                    <div className="meetP  d-flex">
+                        <div className="MeetupText col-md-8 fw-bold">
+                            {post.meetup.title}
+                        </div>
+                        <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
+
+                        {/* <Link to="starprofile/book-now" className="link-starPorfile">
+                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
+                        </Link> */}
+
+                        <Link to={`starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
+                          <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
+                        </Link>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
             <div className="row align-items-center justify-content-center ">
@@ -121,7 +142,7 @@ return (
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={mediaBaseUrl+post.star.image} className="PostImgHome" alt="star-profile" />
                         <span className="mx-2 text-warning text-light">
-                            <Link to={`/starprofile/${post.star_id}`} className="link-starPorfile">
+                            <Link to={`/starprofile/${post.user_id}`} className="link-starPorfile">
                             {post.star.first_name} {post.star.last_name}
                             </Link>
                             <br></br>
@@ -159,6 +180,25 @@ return (
 
             <div className="card PostCard">
                 <img src={mediaBaseUrl+post.livechat.banner} alt={post.livechat.banner} />
+
+                <div className="centered centered-meet">
+                    <div className="meetP  d-flex">
+                        <div className="MeetupText col-md-8 fw-bold">
+                            {post.livechat.title}
+                        </div>
+                        <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
+
+                        {/* <Link to="starprofile/book-now" className="link-starPorfile">
+                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
+                        </Link> */}
+
+                        <Link to={`starprofile/${post.livechat.star_id}/livechat`} className="link-starPorfile">
+                          <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
+                        </Link>
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="row align-items-center justify-content-center ">
