@@ -1,0 +1,25 @@
+.CatModal{
+border-radius: 10px !important;
+-webkit-border-radius: 10px !important;
+-moz-border-radius: 10px !important;
+-ms-border-radius: 10px !important;
+-o-border-radius: 10px !important;
+}
+
+.BlockCat{
+    background-color: black;
+}
+
+.CatBlockBtn{
+width: 120px;
+background: none;
+font-size: 15px;
+}
+
+.CatBlockBtn:hover{
+background-color: rgb(255, 255, 255) !important;
+}
+
+.CtaBL{
+    font-size: 30px;
+}
