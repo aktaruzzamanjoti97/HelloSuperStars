@@ -37,7 +37,6 @@ import CoreCategory from "./components/Pages/Category/CoreCategory";
 import SubCategory from "./components/Pages/Category/SubCategory";
 
 // Left Sidebar 
-import CategoryBody from './components/Sidebar/Left/Category/CategoryBody'
 import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 import ActivitiesBody from "./components/Sidebar/Left/Activities/ActivitiesBody";
@@ -60,6 +59,8 @@ import StarSelection from "./components/Pages/Category/StarSelection";
 import StarProfile from "./components/Pages/Profile/StarProfile";
 
 import axios from "axios";
+import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
+import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -90,7 +91,9 @@ function App() {
         <Route exact path='/marketplace' component={Market} />
 
         {/* Left Sidebar*/}
-        <Route exact path='/category' component={CategoryBody} />
+        <Route exact path='/category' component={CategoryMain} />
+        <Route exact path='/category-view' component={CategoryView} />
+
         <Route exact path='/following' component={FollowingBody} />
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
