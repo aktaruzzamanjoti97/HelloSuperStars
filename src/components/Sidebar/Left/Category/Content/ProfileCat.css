@@ -1,0 +1,415 @@
+.hexagon {
+  position: relative;
+  width: 150px;
+  height: 86.6px;
+  background-color: #171717;
+  margin: 43.3px 0;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 43.3px solid #171717;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 43.3px solid #171717;
+}
+
+.starProfileImage {
+  /* background-color: red; */
+  width: 6vw;
+  height: 12vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+}
+
+.star-Card {
+  /* width: 50vw; */
+  min-height: auto;
+  background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
+}
+
+.starCardPro {
+  /* position: absolute; */
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 5px solid orange;
+  height: 5.5rem;
+  width: 5.5rem;
+
+  margin-left: 0;
+}
+
+.nameStar {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hexagonBox {
+  position: relative;
+  top: 0.5vh;
+  left: 0vh;
+  /* clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 62% 74%, 62% 31%); */
+}
+
+.jotiDiv {
+  background-color: orange;
+  width: 100%;
+  height: 40vh;
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 66% 68%, 67% 34%);
+}
+
+@media only screen and (max-width: 414px) {
+  .hexagon {
+    position: relative;
+    width: 150px;
+    height: 86.6px;
+    background-color: #171717;
+    margin: 43.3px 0;
+  }
+
+  .hexagonBox {
+    margin-left: 2.5rem;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 43.3px solid #171717;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 43.3px solid #171717;
+  }
+
+  .starProfileImage {
+    width: 20vw;
+    height: 12vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+
+  .starCardPro {
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px solid orange;
+    height: 5rem;
+    width: 5rem;
+    margin-left: 0px;
+  }
+
+  .nameStar {
+    margin-top: 2px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    text-align: center;
+  }
+
+  .followButton {
+    margin: 0px !important;
+    /* width: 80% !important; */
+    text-align: center;
+  }
+
+  .blockButton {
+    margin: 12px 0px !important;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 541px) {
+  .hexagon {
+    position: relative;
+    width: 150px;
+    height: 86.6px;
+    background-color: #171717;
+    margin: 43.3px 0;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 43.3px solid #171717;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 43.3px solid #171717;
+  }
+
+  .starProfileImage {
+    width: 20vw;
+    height: 12vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+
+  .starCardPro {
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px solid orange;
+    height: 5rem;
+    width: 5rem;
+    margin-left: 0px;
+  }
+
+  .nameStar {
+    margin-top: 2px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    text-align: center;
+  }
+
+  .followButton {
+    margin: 5rem 0px !important;
+    text-align: center;
+  }
+
+  .blockButton {
+    margin: 12px 0px !important;
+    text-align: center;
+  }
+
+  .hexagonBox {
+    position: relative;
+    top: 0.5vh;
+    left: 0vh;
+    right: 5vh !important;
+
+    /* clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 62% 74%, 62% 31%); */
+  }
+}
+
+@media screen and (max-width: 540px) and (min-width: 415px) {
+  .hexagon {
+    position: relative;
+    width: 200px;
+    height: 115.47px;
+    background-color: #171717;
+    margin: 57.74px 0;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 57.74px solid #171717;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 57.74px solid #171717;
+  }
+
+  .starProfileImage {
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+
+  .starCardPro {
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px solid orange;
+    height: 6.5rem;
+    width: 6.5rem;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .followButton {
+    margin: 0px !important;
+    text-align: center;
+  }
+
+  .blockButton {
+    margin: 12px 0px !important;
+    text-align: center;
+  }
+
+  .nameStar {
+    margin-top: 5px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 770px) {
+  .hexagon {
+    position: relative;
+    width: 200px;
+    height: 115.47px;
+    background-color: #171717;
+    margin: 57.74px 0;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+  }
+
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 57.74px solid #171717;
+  }
+
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 57.74px solid #171717;
+  }
+
+  .hexagonBox {
+    position: relative;
+    top: 0.5vh;
+    left: 0vh;
+    right: 0 !important;
+
+    /* clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 62% 74%, 62% 31%); */
+  }
+
+  .starProfileImage {
+    width: 20vw;
+    height: 22vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+
+  .starCardPro {
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px solid orange;
+    height: 6.5rem;
+    width: 6.5rem;
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .nameStar {
+    margin-top: 10px !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    text-align: center;
+  }
+
+  .followButton {
+    margin: 0px !important;
+    text-align: center;
+  }
+
+  .blockButton {
+    margin: 12px 0px !important;
+    text-align: center;
+  }
+}
+
+@media screen and (width: 820px) {
+  .starProfileImage {
+    width: 20vw;
+    height: 13vh !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+}
+
+@media screen and (width: 1280px) {
+  .starProfileImage {
+    width: 20vw;
+    height: 18vh !important;
+    position: absolute;
+    left: -4vh;
+    top: 0;
+    right: 1vh !important;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+  .hexagonBox {
+    position: relative;
+    top: 0.5vh;
+    left: -4vh;
+    right: 0 !important;
+
+    /* clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 62% 74%, 62% 31%); */
+  }
+}
