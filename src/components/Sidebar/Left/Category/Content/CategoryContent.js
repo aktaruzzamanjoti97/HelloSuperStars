@@ -5,6 +5,8 @@ import BlockCat from "../Content/Block/BlockCat";
 import './CategoryJs.css';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { Dropdown } from "react-bootstrap";
+import SuggestedCategory from "./SugesstedCategory";
+
 const CategoryContent = () => {
 
   const [modalShow, setModalShow] = useState(false);
@@ -375,6 +377,9 @@ const CategoryContent = () => {
 
         </div>
       </div>
+
+
+      <SuggestedCategory headerStyle={headerStyle} />
     </>
   )
 }
