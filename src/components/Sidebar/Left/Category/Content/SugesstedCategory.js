@@ -8,27 +8,27 @@ const SuggestedCategory = ({headerStyle}) => {
 
 return (
 <>
-<div className="bg-dark my-4 d-flex justify-content-between" style={headerStyle.BorderStyle}>
-                <h4 className="text-light p-3">Suggested Category</h4>
-                <h4 className="p-3">
-                    {/* <Dropdown>
-                        <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                            <FilterListIcon />
-                        </Dropdown.Toggle>
+    <div className="bg-dark my-4 d-flex justify-content-between" style={headerStyle.BorderStyle}>
+        <h4 className="text-light p-3">Suggested Category</h4>
+        <h4 className="p-3">
+            {/* <Dropdown>
+                <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                    <FilterListIcon />
+                </Dropdown.Toggle>
 
-                        <Dropdown.Menu >
-                            <Dropdown.Item onClick={() => setData(mainData)} className="text-warning">Show all</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setData(data.filter((item) => {
-                                return item.follow === true;
-                            }))} className="text-warning">Following</Dropdown.Item>
-                            <Dropdown.Item onClick={() => setData(mainData.filter((item) => {
-                                return item.block === true;
-                            }))} className="text-warning">Blocked</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown> */}
+                <Dropdown.Menu>
+                    <Dropdown.Item onClick={()=> setData(mainData)} className="text-warning">Show all</Dropdown.Item>
+                    <Dropdown.Item onClick={()=> setData(data.filter((item) => {
+                        return item.follow === true;
+                        }))} className="text-warning">Following</Dropdown.Item>
+                    <Dropdown.Item onClick={()=> setData(mainData.filter((item) => {
+                        return item.block === true;
+                        }))} className="text-warning">Blocked</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown> */}
 
-                </h4>
-            </div>
+        </h4>
+    </div>
 
     <div className="col-md-12 mt-3">
         <div className="row">
