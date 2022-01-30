@@ -1,9 +1,11 @@
-import { React, useState} from "react";
+import React, { useState} from "react";
 import { Link } from 'react-router-dom'
 import './CategoryJs.css'
 import EventImg from '../../../../../images/FootbalImage.jpg'
-
+import BlockCat from "../Content/Block/BlockCat";
 const CategoryContent = () => {
+
+const [modalShow, setModalShow] = useState(false);
 
 const [value, setValue] = useState(true);
 const [btn, setBtn] = useState("Follow");
@@ -20,21 +22,24 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
@@ -57,21 +62,23 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
@@ -94,21 +101,23 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
@@ -131,21 +140,23 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
@@ -168,21 +179,23 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
@@ -205,21 +218,23 @@ return (
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={EventImg} className="ImgCatView" alt={EventImg} />
-              <button className="border-light bottom-left-View text-light">Block</button>
-              <div class="CenterAda p-3">|</div>
-              <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
-                setValue(!value);
-                if (value === true) {
-                setBtn("Unfollow");
-                }
-                else {
-                setBtn("Follow");
-                }
-                }}
-                style={
-                value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                }
-                >{btn}</button>
+              <button className="border-light bottom-left-View text-light" onClick={()=>
+                setModalShow(true)}>Block</button>
+              <BlockCat show={modalShow} onHide={()=> setModalShow(false)} />
+                <div class="CenterAda p-3">|</div>
+                <button className="border-light bottom-right-View text-light" type="button" onClick={()=> {
+                  setValue(!value);
+                  if (value === true) {
+                  setBtn("Unfollow");
+                  }
+                  else {
+                  setBtn("Follow");
+                  }
+                  }}
+                  style={
+                  value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
+                  }
+                  >{btn}</button>
             </div>
           </div>
         </div>
