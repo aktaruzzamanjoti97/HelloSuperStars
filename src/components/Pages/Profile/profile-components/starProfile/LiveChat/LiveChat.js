@@ -150,7 +150,7 @@ const LiveChat = () => {
 
   const LiveEventTimeDate = liveChat.map((item) => {
     return (
-      <option onClick={getEventInfo} value={item.id} >{moment(item.date).format('LL')}-- {moment(item.start_time).format('h:mm A')} To {moment(item.end_time).format('h:mm A')}</option>
+      <option onClick={getEventInfo} value={item.id} >{item.title} {moment(item.date).format('LL')}</option>
     )
   });
   
@@ -189,7 +189,7 @@ return (
                 <div className="left-slot  w-75 text-center p-1">
                   <from>
                     <select  onChange={getEventInfo}  name="id" class="form-select star-select-xop" aria-label="Default select example">
-                      <option selected disabled >Select Date</option>
+                      <option selected disabled >Select Event</option>
                         
                         {LiveEventTimeDate}
                       

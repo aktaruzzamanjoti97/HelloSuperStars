@@ -177,13 +177,13 @@ const Navigation = () => {
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
                                                         style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                        src={Srabanti}
+                                                        src={Shakib}
                                                         alt=""
                                                     />
                                                     <div className="text-white ms-1 profileName">
                                                         <a className="text-decoration-none">
                                                             <button className="link-open">
-                                                                <p className="text-margin-bottom"><b>Srabanti Chaterjee</b></p>
+                                                                <p className="text-margin-bottom"><b>Mustafizur Rahman</b></p>
                                                                 <p className="text-margin-bottom"><small>You have a schedule</small></p>
                                                             </button>
                                                         </a>
@@ -364,7 +364,7 @@ const Navigation = () => {
                     centered>
 
                     <Modal.Body>
-                        <Iframe url="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8"
+                        <Iframe url="https://hellosuperstar-livechat.herokuapp.com/?room=HelloSuperStar-LiveChat_eworfj924t6"
                             width="100%"
                             height="600px"
                             id="myId"

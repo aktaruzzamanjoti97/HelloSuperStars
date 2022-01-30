@@ -95,7 +95,7 @@ function App() {
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
         <PrivateRoute exact path='/activities' component={ActivitiesBody} />
-        <PrivateRoute exact path='/activities/video' component={VideoActivities} />
+        <PrivateRoute exact path='/activities/video/:id' component={VideoActivities} />
 
         <PrivateRoute exact path='/settings' component={SettingsBody} />
         <PrivateRoute exact path="/setting/personal" component={Personal}/>

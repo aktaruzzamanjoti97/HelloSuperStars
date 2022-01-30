@@ -25,15 +25,16 @@ useEffect(() => {
 
     console.log(props.event)
 
-    setInterval(() => {
-    const now = moment();
-    const then = moment('2022-03-20 12:12:12', 'YYYY-MM-DD hh:mm:ss');
-    const countdown = moment(then - now);
-    setDays(countdown.format('D'));
-    setHours(countdown.format('hh'));
-    setMinutes(countdown.format('mm'));
-    setSeconds(countdown.format('ss'));
-    }, 1000);
+
+setInterval(() => {
+const now = moment();
+const then = moment('2022-03-20 12:12:12', 'YYYY-MM-DD hh:mm:ss');
+const countdown = moment(then - now);
+setDays(countdown.format('D'));
+setHours(countdown.format('hh'));
+setMinutes(countdown.format('mm'));
+setSeconds(countdown.format('ss'));
+}, 1000);
 
 }, [props.event]);
 
@@ -50,7 +51,7 @@ return (
                 <div className="col-md-6 mb-4">
             <div className="card container-x-ac">
 
-                <img src={`http://localhost:8000/${event.meetup_event?.banner}`}  className="Active-Img-X" alt="profilePicture" />
+                <img src={`http://localhost:8000/${event.live_chat?.banner}`}  className="Active-Img-X" alt="profilePicture" />
 
                 <div class="centered-x-ac-y"></div>
 
@@ -65,7 +66,7 @@ return (
                 <div class="bottom-left-x-ax">
                     <div className="d-flex p-1">
                         <div className="mx-4">
-                            <span className="Pic_Ic_B">{event.meetup_event?.title}</span><br />
+                            <span className="Pic_Ic_B">{event.live_chat?.title}</span><br />
                             <span className="Pic_Ic_BX">20 January 2022</span>
                             &nbsp; &nbsp;<span className="Pic_Ic_BX">11 : 00 PM</span>
                             &nbsp; &nbsp;<span className="Pic_Ic_BX">Pending</span>
@@ -81,12 +82,12 @@ return (
                         </div>
                     </div>
 
-                    {/* <Link to={`/activities/video/${event.meetup_event_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
+                    {/* <Link to={`/activities/video/${event.live_chat_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
 
                     {/* <Link to={{ 
  pathname: "/activities/video", 
  state: {
-     event_id: event.meetup_event?.event_link
+     event_id: event.live_chat?.event_link
  }
 }}>
 
@@ -94,7 +95,7 @@ return (
 
 </Link> */}
 
-<a target="_blank" href={event.meetup_event?.event_link} ><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
+<a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2"><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
 
                 </div>
 

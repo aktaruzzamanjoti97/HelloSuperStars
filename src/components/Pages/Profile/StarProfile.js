@@ -19,13 +19,19 @@ import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
 import StarChat from "./profile-components/starProfile/StarChat/StarChat";
 import Greeting from "./profile-components/starProfile/StarChat/starGreeeting/Greeting";
 
+import SkeletonArticle from "../Home/Body/Post_skaliton/SkeletonArticle";
+import PostContent from "../Home/Body/Post/PostContent";
+
 import axios from "axios";
-import UnlockPay from './profile-components/UnlockPay';
+import StarProfileRightContent from './profile-components/starProfile/StarCardComponent/StarProfileRightContent/StarProfileRightContent';
 
 const StarProfile = (props) => {
 const history = useHistory();
 let { path, url } = useRouteMatch();
 const [star, setStar] = useState({});
+
+const [posts, setPosts] = useState([]);
+  const [status, setstatus] = useState(true);
 
 
 useEffect(() => {
@@ -46,11 +52,24 @@ useEffect(() => {
       }
   });
 
+  axios.get(`api/user/getStarPost/${star_id}`).then((res) => {
+    
+      if (res.data.status === 200) {
+        //   setLiveChat(res.data.livechats);
+        setInterval(() => {
+          setPosts(res.data.livechats);
+          setstatus(false);
+        }, 300);
+        //console.log(res.data.livechats);
+      }
+    
+  });
+
 }, [props.match.params.star_id, history]);
 
 
 
-console.log(url);
+//console.log(url);
 
 return (
 <>
@@ -142,11 +161,47 @@ return (
 
             <Route path={`${path}/meetup-events/book_now/:id`} exact component={BookNowEvent}/>
 
+
             <Route exact path={path}>
-              <StarPost />
+              {/* <StarPost starId={star.id}/> */}
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-8">
+                    {status &&
+                      [1, 2, 3, 4].map((valu) => <SkeletonArticle theme="dark" />)}
+
+                    {posts &&
+                      posts.map((data) => <PostContent key={data.id} post={data} />)}
+                  </div>
+
+                  <div className="col-md-4">
+                    <StarProfileRightContent/>
+                  </div>
+                </div>
+              </div>
             </Route>
-            <Route path={`${path}/post`}> <StarPost />
+
+
+
+            <Route path={`${path}/post`}> 
+            <div className="container">
+                <div className="row">
+                  <div className="col-md-8">
+                    {status &&
+                      [1, 2, 3, 4].map((valu) => <SkeletonArticle theme="dark" />)}
+
+                    {posts &&
+                      posts.map((data) => <PostContent key={data.id} post={data} />)}
+                  </div>
+
+                  <div className="col-md-4">
+                    <StarProfileRightContent/>
+                  </div>
+                </div>
+              </div>
             </Route>
+
+
             <Route path={`${path}/photos`}> <StarPhotos />
             </Route>
             <Route path={`${path}/videos`}> <Videos />
@@ -155,11 +210,9 @@ return (
             </Route>
             <Route path={`${path}/audition`}> <Audition />
             </Route>
+
             <Route path={`${path}/booking`}> <Audition />
             </Route>
-            <Route path={`${path}/unlock-pay`}> <UnlockPay />
-            </Route>
-
             {/*
             <Route path={`${path}/greeting`}> <Greeting />
             </Route> */}

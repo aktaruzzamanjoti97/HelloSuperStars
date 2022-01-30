@@ -23,6 +23,7 @@ const Meetup = () => {
             {meetupList.map((meetupList) => (
                 <MeetupContent key={meetupList.id} event={meetupList} />
             ))}
+            
         </>
     )
 }
