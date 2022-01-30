@@ -164,7 +164,7 @@ const ProfileCat = () => {
                     data.map((singleData) => {
                         return (
                             <div className="col-md-6">
-                                <div className="star-Card my-3">
+                                <div className="star-Card starCardBorder my-3">
                                     <div className="row">
                                         <div className="col-md-6 col-sm-6 cardFirstSection">
                                             <div className="mt-5 pt-4">
