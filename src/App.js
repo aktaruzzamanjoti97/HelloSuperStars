@@ -1,66 +1,52 @@
+import axios from "axios";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
-
-import {Route, Switch, BrowserRouter} from "react-router-dom";
-
-import Login from "./components/UserAuthentication/Login";
-import Signup from "./components/UserAuthentication/Signup";
-import Otp from "./components/UserAuthentication/Otp";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
-import AccountCreate from "./components/UserAuthentication/AccountCreate";
-import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
-import Packages from "./components/Pages/User/Packages/Packages";
-import Profile from './components/Pages/Profile/Profile';
-
-// Home Page
-import Home from "./components/Pages/Home/HomePages";
-
-import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
-import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
-import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
-import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
-import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
-
-// Market Place Page
-import Market from "./components/Pages/Market/MarketPlace";
-
-
 import './App.css';
-import './components/CSS/BodyColor.css'
-
-import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
-
-
+import './components/CSS/BodyColor.css';
 // Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
+import StarSelection from "./components/Pages/Category/StarSelection";
 import SubCategory from "./components/Pages/Category/SubCategory";
-
-// Left Sidebar 
-import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
-import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
+import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
+import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
+import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
+import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
+// Error
+import Error from "./components/Pages/Home/Error";
+// Home Page
+import Home from "./components/Pages/Home/HomePages";
+// Market Place Page
+import Market from "./components/Pages/Market/MarketPlace";
+import Profile from './components/Pages/Profile/Profile';
+import StarProfile from "./components/Pages/Profile/StarProfile";
+import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
+import Packages from "./components/Pages/User/Packages/Packages";
+import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ActivitiesBody from "./components/Sidebar/Left/Activities/ActivitiesBody";
 import VideoActivities from "./components/Sidebar/Left/Activities/Content/VideoActivities";
-
-import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
-import Personal from "./components/Sidebar/Left/Settings/SettingComponents/Personal";
+import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
+import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
+import ProfileCatBody from "./components/Sidebar/Left/Category/Content/ProfileCatBody";
+import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+// Left Sidebar 
+import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
 import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
 import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
 import Interest from "./components/Sidebar/Left/Settings/SettingComponents/Interest";
-import Security from "./components/Sidebar/Left/Settings/SettingComponents/Security";
+import Personal from "./components/Sidebar/Left/Settings/SettingComponents/Personal";
 import Report from "./components/Sidebar/Left/Settings/SettingComponents/Report";
-
-// Error
-import Error from "./components/Pages/Home/Error";
+import Security from "./components/Sidebar/Left/Settings/SettingComponents/Security";
+import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
 import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
+import AccountCreate from "./components/UserAuthentication/AccountCreate";
+import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
+import Login from "./components/UserAuthentication/Login";
+import Otp from "./components/UserAuthentication/Otp";
+import Signup from "./components/UserAuthentication/Signup";
 
-
-import StarSelection from "./components/Pages/Category/StarSelection";
-import StarProfile from "./components/Pages/Profile/StarProfile";
-
-import axios from "axios";
-import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
-import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -93,6 +79,7 @@ function App() {
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />
         <Route exact path='/category-view' component={CategoryView} />
+        <Route exact path='/category-profile' component={ProfileCatBody} />
 
         <Route exact path='/following' component={FollowingBody} />
         <PrivateRoute exact path='/wallet' component={WalletBody} />

@@ -1,8 +1,8 @@
-import React, { useState} from "react";
-import { Link } from 'react-router-dom'
-import './CategoryJs.css'
-import EventImg from '../../../../../images/FootbalImage.jpg'
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import EventImg from '../../../../../images/FootbalImage.jpg';
 import BlockCat from "../Content/Block/BlockCat";
+import './CategoryJs.css';
 const CategoryContent = () => {
 
 const [modalShow, setModalShow] = useState(false);
@@ -44,7 +44,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
@@ -83,7 +83,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
@@ -122,7 +122,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
@@ -161,7 +161,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
@@ -200,7 +200,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
@@ -239,7 +239,7 @@ return (
           </div>
         </div>
 
-        <Link to='category-view'>
+        <Link to='/category-profile'>
         <div className='CatBgView '>
           <div className="text-success fw-bold ">
             <h6 className='centeredASd fw-bold text-warning'>
