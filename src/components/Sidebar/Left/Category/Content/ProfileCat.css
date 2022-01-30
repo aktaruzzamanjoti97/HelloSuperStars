@@ -85,6 +85,10 @@
     margin: 43.3px 0;
   }
 
+  .hexagonBox {
+    margin-left: 2.5rem;
+  }
+
   .hexagon:before,
   .hexagon:after {
     content: "";
@@ -326,7 +330,7 @@
   .hexagonBox {
     position: relative;
     top: 0.5vh;
-    left: -4vh;
+    left: 0vh;
     right: 0 !important;
 
     /* clip-path: polygon(11% 0, 100% 0, 100% 100%, 11% 100%, 62% 74%, 62% 31%); */
