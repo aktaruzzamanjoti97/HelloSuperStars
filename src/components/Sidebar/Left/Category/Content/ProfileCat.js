@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import messiVsPsg from '../../../../images/messivspsg.png';
+import messiVsPsg from '../../../../../images/messivspsg.png';
 import './ProfileCat.css';
 
 const ProfileCat = () => {
@@ -45,7 +45,7 @@ const ProfileCat = () => {
     return (
         <>
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-12">
                     <div className="star-Card m-3">
                         <div className="row">
                             <div className="col-md-6 col-sm-6 cardFirstSection">
