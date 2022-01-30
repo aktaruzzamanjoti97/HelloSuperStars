@@ -5,7 +5,7 @@ import '../CSS/Sidebar/Left/Category.css'
 import '../CSS/Sidebar/Left/Following.css'
 
 import {Link, withRouter} from 'react-router-dom'
-import SubCatdata from './Left/Category/SubCategory/SubCatData'
+
 import { Users } from '../../DummyData'
 import Online from '../Sidebar/Left/StarsOnline/Online'
 
@@ -23,7 +23,6 @@ export const LeftSidebar = ({history}) => {
       return "white"
     }
 
-
     return (
         <>
         
@@ -31,33 +30,24 @@ export const LeftSidebar = ({history}) => {
                 
                 <div class="accordion " id="accordionExample">
                     <div className="accordion" id="accordionExample">
-                        
-                       
-                        <div className="accordion-item left-bottom-ap">
-                            <Link className="teop-s" to='/category'>
-                            <h2 className="accordion-header " id="headingOne">
-                                    <button className="accordion-button npm-bnt profile-accordion-button-icon left-bottom-ap collapsed"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                        aria-controls="collapseOne">
+
+                        <Link className="teop-s" to='/category'>
+                            <div className="accordion-item mt-1 left-bottom-ap">
+                                <h2 className="accordion-header" id="headingTwo">
+                                    <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
                                         <span>
-                                      <i className="fas fa-layer-group mx-2 profile-font-color fa-2x"></i>
+                                            <i className="fas fa-layer-group mx-2 profile-font-color fa-2x" ></i>
                                         </span>
                                         <span className="mx-2 profile-font-color" >
-                                            Category <br></br>
-                                            <small className="category-size-chat"  > 5 selectd</small>
+                                        Category <br></br>
+                                            <small className="category-size-chat"> 5 selected</small>
                                         </span>
-                                    </button>                     
-                            </h2>
-                            </Link>
-
-                            <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                                <div className="accordion-body accordion-body-im Select-home-category-scroll ">
-                                    <SubCatdata/>
-                                </div>
+                                    </button>
+                                </h2>
                             </div>
-
-                        </div>
+                        </Link>
 
                         <Link className="teop-s" to='/following'>
                             <div className="accordion-item mt-1 left-bottom-ap">
