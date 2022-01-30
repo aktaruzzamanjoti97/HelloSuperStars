@@ -1,10 +1,17 @@
-import React, { Component } from "react";
+import React,{ useState, useEffect, useRef } from 'react';
 import Pro from "../../../../../images/asddasd.jpg.jpg";
 import Clock from "../../../../../images/clock.png"
 import Navigation from "../../../../Header/Navigation";
+import Iframe from 'react-iframe';
+import { Link, useHistory} from 'react-router-dom';
+import axios from "axios";
 
-export default class VideoActivities extends Component {
-render() {
+const VideoActivities = (props) => {
+    const [event, setEvent] = useState({});
+
+    const history = useHistory();
+
+
 return (
 <React.Fragment>
     <Navigation />
@@ -18,7 +25,14 @@ return (
                     <center>
                         <div className="card mb-4 VideoActivities">
 
-                            <img src={Pro} className="image-fluid" alt="profilePicture" />
+                        <Iframe url=''
+                            width="100%"
+                            height="600hv"
+                            id="myId"
+                            allow="camera;microphone"
+                            className="myClassname bg-dark"
+                            display="initial"
+                            position="relative" />
 
                             <center>
                                 <div className= "  flaxVideo bg-dark p-2 m-3">
@@ -42,5 +56,7 @@ return (
     </div>
 </React.Fragment>
 );
+
 }
-}
+
+export default VideoActivities;

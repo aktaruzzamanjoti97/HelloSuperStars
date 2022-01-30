@@ -6,8 +6,12 @@ import { DotsHorizontalIcon } from "@heroicons/react/solid";
 import PostComment from "./PostComment";
 import moment from 'moment'
 import { Markup } from "interweave";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
+import ShowMoreText from "react-show-more-text";
 
 const mediaBaseUrl = "http://localhost:8000/";
+
 
 export default function UpcomingAuditionsContent({ post }) {
 const [open, setOpen] = useState(false);
@@ -55,11 +59,38 @@ return (
 
             <h5 className="my-2 Enroll-a Enroll-text">{post.meetup.title}</h5>
 
-            <Markup className="my-2 Enroll-a Enroll-text text-ellipsis py-2" content={post.meetup.description}></Markup>
+            
+
+            <ShowMoreText
+                /* Default options */
+                lines={3}
+                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>Show more</span>}
+                less="Show less"
+                className="content-css my-2 Enroll-a Enroll-text py-2"
+                anchorClass="my-anchor-css-class"
+                //onClick={executeOnClick}
+                expanded={false}
+                
+                truncatedEndingComponent={"... "}
+            >
+            <Markup  content={post.meetup.description}></Markup>
+
+            </ShowMoreText>
+
+            {/* <ReactReadMoreReadLess
+                charLimit={200}
+                readMoreText={"Read more ▼"}
+                readLessText={"Read less ▲"}
+                readMoreClassName="text-white"
+                readLessClassName="text-white"
+            >
+                {post.meetup.description.replace(regex, "")}
+            </ReactReadMoreReadLess> */}
+
 
 
             <div className="card PostCard">
-            <Link to={`starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
+            <Link to={`/starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
                 <img src={mediaBaseUrl+post.meetup.banner} alt={post.meetup.banner} />
             </Link>
 
@@ -74,7 +105,7 @@ return (
                           <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
                         </Link> */}
 
-                        <Link to={`starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
+                        <Link to={`/starprofile/${post.meetup.star_id}/meetup-events/book_now/${post.event_id}`} className="link-starPorfile">
                           <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
                         </Link>
 
@@ -175,7 +206,23 @@ return (
 
             <h5 className="my-2 Enroll-a Enroll-text">{post.livechat.title}</h5>
 
-            <Markup className="my-2 Enroll-a Enroll-text text-ellipsis py-2" content={post.livechat.description}></Markup>
+            <ShowMoreText
+                /* Default options */
+                lines={3}
+                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>Show more</span>}
+                less="See less"
+                className="content-css my-2 Enroll-a Enroll-text py-2"
+                anchorClass="my-anchor-css-class"
+                //onClick={executeOnClick}
+                expanded={false}
+                
+                truncatedEndingComponent={"... "}
+            >
+            <Markup  content={post.livechat.description}></Markup>
+
+            </ShowMoreText>
+
+            
 
 
             <div className="card PostCard">
@@ -192,7 +239,7 @@ return (
                           <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
                         </Link> */}
 
-                        <Link to={`starprofile/${post.livechat.star_id}/livechat`} className="link-starPorfile">
+                        <Link to={`/starprofile/${post.livechat.star_id}/livechat`} className="link-starPorfile">
                           <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
                         </Link>
 
