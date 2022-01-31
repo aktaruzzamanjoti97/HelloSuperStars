@@ -10,7 +10,7 @@ import azhari8 from "../../../../../images/Shakib/19.jpg";
 import azhari9 from "../../../../../images/Shakib/20.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import StarVideoDetails from "./StarVideoDetails";
-function Videos() {
+function Videos({star_id}) {
   return (
     // This full page mainly comes from star photos page
     <div className="container">
@@ -128,7 +128,7 @@ function Videos() {
         </div>
 
         <div className="col-md-4">
-          <StarProfileRightContent />
+          <StarProfileRightContent star_id={star_id} />
         </div>
       </div>
     </div>
