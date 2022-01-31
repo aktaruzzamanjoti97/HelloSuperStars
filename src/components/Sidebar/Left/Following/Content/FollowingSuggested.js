@@ -55,7 +55,7 @@ const [data, setData] = useState([
         <div className="row">
             {data.map((singleData) => {
             return (
-            <div className="containerSa col-md-3 mb-3">
+            <div className="col-md-3 mb-3">
 
                 <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
                     <div className="carousel-inner">
@@ -72,7 +72,7 @@ const [data, setData] = useState([
                                 setBtn("✅ Following");
                                 }
                                 else {
-                                setBtn("+ Follow");
+                                setBtn("➕ Follow");
                                 }
                                 }}
                                 // style={
