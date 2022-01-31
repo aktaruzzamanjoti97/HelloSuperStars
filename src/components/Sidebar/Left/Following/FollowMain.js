@@ -1,30 +1,39 @@
-import  React from "react";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import OwlCarousel from "react-owl-carousel";
+import React, { Component } from "react";
+import Navigation from "../../../Header/Navigation";
+import LeftSidebar from "../../LeftSidebar";
+import RightSidebar from "../../RightSidebar";
+import FollowingContent from "./Content/FollowingContent";
 
-import FollowingMap from "./FollowingMap";
-import FollowingCarousel from "./FollowingCarousel";
 
-const FollowMain = () => {
-  return (
-    <>
-      <div className="fl2">
 
-        <div className="owlCarousel-sticky">
-          <OwlCarousel className="owl-theme mt-2 btn-flo fowl-carousel" loop margin={0} nav>
-              <FollowingCarousel/>
-          </OwlCarousel>
+
+export default class FollowMain extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Navigation/>
+        <div className="homebody"  style={{ background: "#000000"}}>
+          <div className="container-fluid  custom-container">
+            <div className="row">
+
+              <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
+                <LeftSidebar/>
+              </div>
+              
+              <div className="col-sm-6 justify-content-center postTab" >
+                 <FollowingContent/>
+              </div>
+
+              <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight" >
+                <RightSidebar/>
+              </div>
+              
+            </div>
+          </div>
         </div>
-        
-        <div className="col-12 row d-flex mainCat-follow ">
-            <FollowingMap/>
-        </div>
-      
-      </div>
-    </>
-  );
-};
+      </React.Fragment>
+    );
+  }
+}
 
-export default FollowMain;
 

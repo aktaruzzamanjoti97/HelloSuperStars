@@ -1,0 +1,108 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+
+  .FollowingCatBG {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 120px;
+    overflow: hidden;
+    background-image: linear-gradient(
+        rgba(5, 5, 5, 0), 
+        rgba(10, 10, 10, 0.897), 
+        rgba(0, 0, 0, 0.966));
+
+  }
+
+  .FollowingCatText {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: white;
+    font-size: 16px;
+    background-color: none !important;
+    padding-bottom: 6px;
+  }
+
+  .FollowingCat {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    background-color: none !important;
+  }
+  .FollowingCat:hover {
+    border: 1px solid rgb(255, 188, 4);
+    color: rgb(255, 188, 4);
+  }
+.ImgFollowView{
+    width: 100%;
+    height: 230px;
+    border: 1px solid gold;
+    border-radius: 3px;
+}
+
+.SuggestedCat{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.DotsCAt .owl-dots .owl-dot span {
+   
+    display: None !important;
+}
+
+.owl-theme .owl-dots {
+   display: none !important;
+}
+
+.DotsCAt .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: center;
+}
+
+.DotsCAt .owl-item{
+    width: 180px !important;
+}
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1400px){
+    .ImgFollowView{
+        width: 100%;
+        height: 180px;
+        border: 1px solid gold;
+        border-radius: 3px;
+    }
+    
+  .FollowingCatBG {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 120px;
+    overflow: hidden;
+    background-image: linear-gradient(
+        rgba(5, 5, 5, 0), 
+        rgba(10, 10, 10, 0.897), 
+        rgba(0, 0, 0, 0.966));
+
+  }
+
+  }

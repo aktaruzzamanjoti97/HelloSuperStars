@@ -64,9 +64,9 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>Show more</span>}
-                less="Show less"
-                className="content-css my-2 Enroll-a Enroll-text py-2"
+                more={<span style={{ color: 'gray', textDecoration:'underline' }}>See more</span>}
+                less={<span style={{ color: 'gray', textDecoration:'underline' }}>See less</span>}
+                className="content-css my-2 Enroll-a Enroll-text  py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
                 expanded={false}
@@ -209,7 +209,7 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>Show more</span>}
+                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>See more</span>}
                 less="See less"
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"

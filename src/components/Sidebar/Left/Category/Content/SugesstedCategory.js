@@ -4,7 +4,9 @@ import Comics from '../../../../../images/comics.jpeg';
 import EventImg from '../../../../../images/FootbalImage.jpg';
 import tvNatok from '../../../../../images/tvNatok.jpeg';
 import './CategoryJs.css';
+
 const SuggestedCategory = ({ headerStyle }) => {
+
 
     return (
         <>

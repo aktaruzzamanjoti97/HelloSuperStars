@@ -32,7 +32,8 @@ import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryVie
 import ProfileCatBody from "./components/Sidebar/Left/Category/Content/ProfileCatBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 // Left Sidebar 
-import FollowingBody from "./components/Sidebar/Left/Following/FollowingBody";
+
+import FollowMain from "./components/Sidebar/Left/Following/FollowMain";
 import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
 import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
 import Interest from "./components/Sidebar/Left/Settings/SettingComponents/Interest";
@@ -81,7 +82,7 @@ function App() {
         <Route exact path='/category-view' component={CategoryView} />
         <Route exact path='/category-profile' component={ProfileCatBody} />
 
-        <Route exact path='/following' component={FollowingBody} />
+        <Route exact path='/following' component={FollowMain} />
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
         <PrivateRoute exact path='/activities' component={ActivitiesBody} />
