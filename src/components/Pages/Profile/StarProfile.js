@@ -26,6 +26,7 @@ import axios from "axios";
 import StarProfileRightContent from './profile-components/starProfile/StarCardComponent/StarProfileRightContent/StarProfileRightContent';
 
 const StarProfile = (props) => {
+  const star_id = props.match.params.star_id;
 const history = useHistory();
 let { path, url } = useRouteMatch();
 const [star, setStar] = useState({});
@@ -33,11 +34,11 @@ const [star, setStar] = useState({});
 const [posts, setPosts] = useState([]);
   const [status, setstatus] = useState(true);
 
-
+ 
 useEffect(() => {
   let isMounted = true;
   
-  const star_id = props.match.params.star_id;
+
 
   axios.get(`/api/star_info/${star_id}`).then(res =>{
   
@@ -67,8 +68,7 @@ useEffect(() => {
 
 }, [props.match.params.star_id, history]);
 
-
-
+// alert(star_id)
 //console.log(url);
 
 return (
@@ -141,9 +141,9 @@ return (
           </Navbar>
 
           <Switch>
-            <Route path={`${path}/livechat`} exact component={LiveChat} />
-            <Route path={`${path}/post/livechat`} exact component={LiveChat} />
-            <Route path={`${path}/:id/livechat`} exact component={LiveChat} />
+           
+            {/* <Route path={`${path}/post/livechat`} exact component={LiveChat} /> */}
+            {/* <Route path={`${path}/:id/livechat`} exact component={LiveChat} /> */}
 
             <Route path={`${path}/:id/livechat/starChat`} exact component={StarChat} />
             <Route path={`${path}/livechat/starChat`} exact component={StarChat} />
@@ -151,9 +151,8 @@ return (
             <Route path={`${path}/livechat/starChat`} exact component={StarChat} />
 
             {/* greeting routing start*/}
-            <Route exact path={`${path}/greeting`}> <Greeting />
-            </Route>
-            <Route exact path={`${path}/:id/greeting`} component={Greeting} />
+            
+            {/* <Route exact path={`${path}/:id/greeting`} component={Greeting} /> */}
             <Route path={`${path}/user-greetings-pay`} exact component={GreetingsPayContent} />
             {/* greeting routing end*/}
             
@@ -175,7 +174,7 @@ return (
                   </div>
 
                   <div className="col-md-4">
-                    <StarProfileRightContent/>
+                      <StarProfileRightContent star_id={star_id} />
                   </div>
                 </div>
               </div>
@@ -195,23 +194,30 @@ return (
                   </div>
 
                   <div className="col-md-4">
-                    <StarProfileRightContent/>
+                    <StarProfileRightContent star_id={star_id} />
                   </div>
                 </div>
               </div>
             </Route>
 
 
-            <Route path={`${path}/photos`}> <StarPhotos />
+              <Route path={`${path}/photos`}>
+                <StarPhotos star_id={star_id}/>
             </Route>
-            <Route path={`${path}/videos`}> <Videos />
+            <Route path={`${path}/videos`}> <Videos star_id={star_id} />
             </Route>
-            <Route path={`${path}/souviner`}> <Souviner />
+            <Route path={`${path}/souviner`}> <Souviner star_id={star_id}/>
             </Route>
-            <Route path={`${path}/audition`}> <Audition />
+            <Route path={`${path}/audition`}> <Audition star_id={star_id}/>
             </Route>
 
-            <Route path={`${path}/booking`}> <Audition />
+            <Route path={`${path}/booking`}> <Audition star_id={star_id} />
+              </Route>
+              
+              <Route path={`${path}/livechat`} exact>
+                <LiveChat star_id={star_id} />
+              </Route>
+              <Route exact path={`${path}/greeting`}> <Greeting star_id={star_id}/>
             </Route>
             {/*
             <Route path={`${path}/greeting`}> <Greeting />

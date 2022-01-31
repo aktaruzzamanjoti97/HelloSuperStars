@@ -11,7 +11,7 @@ import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent
 import { Link,useRouteMatch } from 'react-router-dom';
 // import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
 // css design comes from star post page
-const StarProfileRightContent = () => {
+const StarProfileRightContent = ({star_id}) => {
   const {url}=useRouteMatch();
 
     return (
@@ -19,7 +19,7 @@ const StarProfileRightContent = () => {
   <div class="card mx-auto my-4 left-card-star left-star-card">
             
             <div class="card-body">
-              <h6 class="card-title text-warning">Requested for</h6>
+            <h6 class="card-title text-warning">Requested for</h6>
 
               <div className=" d-flex justify-content-around">
                 <img
@@ -41,7 +41,7 @@ const StarProfileRightContent = () => {
 
 
                   
-                 <Link to={`${url}/greeting`}>
+                 <Link to={`/starprofile/${star_id}/greeting`}  >
                   <button className="w-100 star-last-btn p-1">
                     Greeting
                   </button>
@@ -49,7 +49,7 @@ const StarProfileRightContent = () => {
 
                 </div>
                 <div className="col-6">
-                <Link to={`${url}/livechat`}> <button className="w-100 star-last-btn p-1">Live Chat</button></Link>
+                <Link to={`/starprofile/${star_id}/livechat`}> <button className="w-100 star-last-btn p-1">Live Chat</button></Link>
                 </div>
               </div>
             </div>

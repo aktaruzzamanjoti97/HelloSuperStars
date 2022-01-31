@@ -8,7 +8,7 @@ import moment from 'moment';
 import loading from '../../../../../../images/LiveChat/Loading2.gif'
 
 
-const LiveChat = () => {
+const LiveChat = ({star_id}) => {
   const [modalShow, setModalShow] = React.useState(false);
 
   const [liveChat, setLiveChat] = useState([]);
@@ -247,7 +247,7 @@ return (
     </div>
 
     <div className="col-md-4">
-      <StarProfileRightContent />
+      <StarProfileRightContent star_id={star_id}/>
     </div>
   </div>
 

@@ -3,7 +3,7 @@ import StarProfileRightContent from "../../StarCardComponent/StarProfileRightCon
 import "./Greeting.css";
 
 import ReactPlayer from 'react-player'
-const Greeting = () => {
+const Greeting = ({star_id}) => {
 const [check, setcheck] = useState(true);
 function handleClick(){
     setcheck(false);
@@ -104,7 +104,7 @@ function handleClick(){
               </div>
           </div>
           <div className="col-md-4  mt-3">
-            <StarProfileRightContent />
+            <StarProfileRightContent star_id={star_id} />
           </div>
         </div>
       </div>
