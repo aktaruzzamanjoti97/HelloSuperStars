@@ -1,0 +1,42 @@
+.middleCardBackground {
+  background-color: #383542;
+}
+
+.focusText {
+  background-color: #2b2935;
+}
+
+.dateText {
+  color: #fcad00;
+}
+
+.superstarLogoImg {
+  width: 80px;
+}
+/* 
+.my-modal {
+  width: 90vw; 
+  max-width: 90vw;
+  border: 0 !important;
+} */
+
+.backImage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.btnSty {
+  background-color: #ea8508 !important;
+}
+
+.bigModal {
+  border-radius: 10px !important;
+}
