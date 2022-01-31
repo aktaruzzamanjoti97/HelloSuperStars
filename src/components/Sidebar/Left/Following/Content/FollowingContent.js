@@ -78,7 +78,7 @@ return (
                                 setBtn(" ✅ Following");
                                 }
                                 else {
-                                setBtn("+ Follow");
+                                setBtn("➕ Follow");
                                 }
                                 }}
                                 // style={
