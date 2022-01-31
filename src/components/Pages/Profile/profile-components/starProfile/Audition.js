@@ -6,7 +6,7 @@ import '../../../../CSS/Audition/Audition.css'
 import AuditionCard from './AuditionCard';
 import { youtubeLink } from '../../../../../DummyData'
 
-export default function Audition() {
+export default function Audition({star_id}) {
     return (
         <div>
             <div className="text-light">

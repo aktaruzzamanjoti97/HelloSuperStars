@@ -8,7 +8,7 @@ import { Carousel } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-function Souviner() {
+function Souviner({star_id}) {
 const [more, setmore] = useState(false);
 return (
 <div className="container">
@@ -135,7 +135,7 @@ return (
     </div>
 
     <div className="col-md-4">
-      <StarProfileRightContent />
+      <StarProfileRightContent star_id={star_id} />
     </div>
   </div>
 </div>

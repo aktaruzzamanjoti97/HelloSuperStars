@@ -12,14 +12,14 @@ import azhari9 from "../../../../../images/Shakib/19.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import StarPhotosDetails from "./StarPhotosDetails";
 
-export default function StarPhotos() {
+export default function StarPhotos({star_id}) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-8 mt-3">
           <div class="card m-2 star-photos-card mx-auto pb-3">
             <div class="card-body">
-              <h5 class="card-title text-warning">Photos</h5>
+              <h5 class="card-title text-warning">Photos{star_id}</h5>
             </div>
             <div className="star-line"></div>
 
@@ -105,7 +105,7 @@ export default function StarPhotos() {
         </div>
 
         <div className="col-md-4">
-   <StarProfileRightContent />
+   <StarProfileRightContent star_id={star_id}/>
         </div>
       </div>
     </div>
