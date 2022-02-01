@@ -15,11 +15,10 @@ const Greeting = ({star_id}) => {
   const [check, setcheck] = useState(true);
   const [startTime, setStartTime] = useState(new Date());
   const [endTime, setEndTime] = useState(new Date());
-function handleClick(){
-    setcheck(false);
-}
+
   
-function handelTimeSubmit(e) {
+  function handelTimeSubmit(e) {
+    setcheck(false)
   e.preventDefault();
 
   let Form_data = new FormData(e.target)
@@ -32,6 +31,7 @@ function handelTimeSubmit(e) {
         
         //document.getElementById('input_form').reset();
         swal("Success", res.data.message, "success");
+        
 
       } else {
         swal("error", "hello", "error");
@@ -129,16 +129,17 @@ function handelTimeSubmit(e) {
                           setStartTime(getStartTime);
                         }}
                       />
-                      </LocalizationProvider>
-                      
-                      <input type="text" name="name" />
-                  
+                      </LocalizationProvider>  
                   </div>
                   <div className="">
+                      {check ?
+                        
+                        <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
+                      :
+                      
+                      <button className='my-3 btn btn-success px-4 py-2' disabled>Applied <i class="fas fa-check-circle mx-1"></i></button>
+                      }
 
-                      <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
-
-                      {/* <button className='my-3 btn btn-success px-4 py-2' disabled>Applied <i class="fas fa-check-circle mx-1"></i></button> */}
                   </div>
                 </Form>
             </div>
