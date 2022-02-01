@@ -1,12 +1,46 @@
 import React,{useState} from "react";
 import StarProfileRightContent from "../../StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import "./Greeting.css";
+import TextField from "@mui/material/TextField";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import moment from 'moment'
+import axios from "axios";
+import swal from "sweetalert";
 
 import ReactPlayer from 'react-player'
+import { Form } from "react-bootstrap";
 const Greeting = ({star_id}) => {
-const [check, setcheck] = useState(true);
+  const [check, setcheck] = useState(true);
+  const [startTime, setStartTime] = useState(new Date());
+  const [endTime, setEndTime] = useState(new Date());
 function handleClick(){
     setcheck(false);
+}
+  
+function handelTimeSubmit(e) {
+  e.preventDefault();
+
+  let Form_data = new FormData(e.target)
+  Form_data.append('time', moment(startTime));
+  Form_data.append('greetings_id', star_id);
+
+  axios.get("/sanctum/csrf-cookie").then((response) => {
+    axios.post(`api/user/greetings_registaion`, Form_data).then((res) => {
+      if (res.data.status === 200) {
+        
+        //document.getElementById('input_form').reset();
+        swal("Success", res.data.message, "success");
+
+      } else {
+        swal("error", "hello", "error");
+
+      }
+    });
+  });
+    
+  
 }
   return (
     <>
@@ -82,22 +116,32 @@ function handleClick(){
                 <h5 className='my-3 text-light'>Greet receiving date and time</h5>
 
                 <div className="row mt-3">
-              <div className="col-6 ">
-             
-                  <div className="left-slot greeting  w-75 text-center p-1">
-                  <input type='text' placeholder='20 Sep 2021' name="minute"   className='form-control time' disabled></input>
-                  </div>
+                <Form onSubmit={handelTimeSubmit}>
+                  <div className="col-6 ">
+                        
                 
-              </div>
-              
-              <div className="col-6 ">
-           
-                <div className="left-slot greeting w-75 text-center p-1">
-                <input type='text' readOnly text-center placeholder='11:59 PM' className='form-control time' disabled ></input>
-                </div>
-              </div>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <DateTimePicker
+                        renderInput={(props) => <TextField {...props} />}
+                        label="Start Time"
+                        value={startTime}
+                        onChange={(getStartTime) => {
+                          setStartTime(getStartTime);
+                        }}
+                      />
+                      </LocalizationProvider>
+                      
+                      <input type="text" name="name" />
+                  
+                  </div>
+                  <div className="">
+
+                      <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
+
+                      {/* <button className='my-3 btn btn-success px-4 py-2' disabled>Applied <i class="fas fa-check-circle mx-1"></i></button> */}
+                  </div>
+                </Form>
             </div>
-            {check?<button className='my-3 btn btn-warning px-4 py-2' onClick={handleClick}>Apply Now!</button>:<button className='my-3 btn btn-success px-4 py-2' disabled>Applied <i class="fas fa-check-circle mx-1"></i></button>}
 
 
                 </div>
