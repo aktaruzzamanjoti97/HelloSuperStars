@@ -15,7 +15,7 @@
 }
 
 .upperSideNotification.dropdown-menu.show li {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: black;
   font-size: 15px;
   list-style: none;
@@ -24,4 +24,29 @@
 .upperSideNotification.dropdown-menu.show li:hover {
   color: gold;
   background-color: black;
+}
+
+.MuiOutlinedInput-root {
+  color: #fcca2c !important;
+  border: #fcca2c 1px solid;
+}
+
+label {
+  background-color: #343434;
+  color: #ffffff !important;
+  padding: 0px 10px !important;
+}
+
+.MuiOutlinedInput-root .MuiSvgIcon-root {
+  color: #000000;
+  background-color: #fcca2c;
+  border-radius: 100%;
+  padding: 2px;
+}
+
+.MuiSvgIcon-root:hover {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 100%;
+  padding: 2px;
 }

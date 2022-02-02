@@ -4,7 +4,7 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import moment from 'moment';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import ReactPlayer from 'react-player';
 import swal from "sweetalert";
@@ -14,8 +14,34 @@ import "./Greeting.css";
 const Greeting = ({ star_id }) => {
   const [check, setcheck] = useState(true);
   const [startTime, setStartTime] = useState(new Date());
-  const [endTime, setEndTime] = useState(new Date());
+  const [greeting, setGreeting] = useState(null);
+  const [status, setStatus] = useState({
+    'status': '',
+    'msg' : ','
+  });
 
+
+  useEffect(() => {
+
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get('/api/user/greetings_registaion_status').then((res) => {
+        if (res.data.status === 200) {
+          console.log(res.data.greeting);
+          setGreeting(res.data.greeting);
+          if (res.data.greeting) {
+            setcheck(false)
+          }
+          if (res.data.greeting.status == 0) {
+            setStatus({'status':'Pending'})
+          }
+    
+        } else {
+          swal("error", "Data base Error", "error");
+
+        }
+      });
+    });
+  },[]);
 
   function handelTimeSubmit(e) {
     setcheck(false)
@@ -31,6 +57,11 @@ const Greeting = ({ star_id }) => {
 
           //document.getElementById('input_form').reset();
           swal("Success", res.data.message, "success");
+          setGreeting(res.data.greeting);
+          if (res.data.greeting.status == 0) {
+            setStatus({'status':'Pending'})
+          }
+      
 
 
         } else {
@@ -113,7 +144,9 @@ const Greeting = ({ star_id }) => {
               <div class="card-body">
                 <div className="d-flex justify-content-between">
                   <h5 className="card-title text-warning">Apply</h5>
-
+                  {greeting ? 
+                  
+                
                   <div className="dropdown me-2 buttonBorderNone">
                     <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                       data-bs-toggle="dropdown" aria-expanded="false">
@@ -131,7 +164,9 @@ const Greeting = ({ star_id }) => {
                           <div className="ms-5">
                             <li>Date</li>
                             <li>Date</li>
-                            <li>Pending</li>
+                            <li>
+                                 {status.status} 
+                            </li>
                           </div>
                         </ul>
                         <div className="d-flex justify-content-between mt-4 mb-3">
@@ -146,6 +181,9 @@ const Greeting = ({ star_id }) => {
                       </div>
                     </div>
                   </div>
+                :
+                    ""
+                }
 
                 </div>
 
@@ -154,7 +192,7 @@ const Greeting = ({ star_id }) => {
 
                 <div className="row mt-3">
                   <Form onSubmit={handelTimeSubmit}>
-                    <div className="col-6 ">
+                    <div className="col-6 p-3">
 
 
                       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -168,7 +206,7 @@ const Greeting = ({ star_id }) => {
                         />
                       </LocalizationProvider>
                     </div>
-                    <div className="">
+                    <div className="col-6 px-3">
                       {check ?
 
                         <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
