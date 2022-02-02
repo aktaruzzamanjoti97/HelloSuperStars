@@ -16,8 +16,8 @@ const Greeting = ({ star_id }) => {
   const [startTime, setStartTime] = useState(new Date());
   const [greeting, setGreeting] = useState(null);
   const [status, setStatus] = useState({
-    'status': '',
-    'msg' : ','
+    action: true,
+    msg : ''
   });
 
 
@@ -32,7 +32,14 @@ const Greeting = ({ star_id }) => {
             setcheck(false)
           }
           if (res.data.greeting.status == 0) {
-            setStatus({'status':'Pending'})
+            setStatus({
+             ...status,
+              msg: 'Pending'
+            })
+         
+          } else {
+            setStatus({msg:'Appreoved'})
+       
           }
     
         } else {
@@ -59,7 +66,10 @@ const Greeting = ({ star_id }) => {
           swal("Success", res.data.message, "success");
           setGreeting(res.data.greeting);
           if (res.data.greeting.status == 0) {
-            setStatus({'status':'Pending'})
+            setStatus({
+              ...status,
+              msg: 'Pending'
+            })
           }
       
 
@@ -165,18 +175,24 @@ const Greeting = ({ star_id }) => {
                             <li>Date</li>
                             <li>Date</li>
                             <li>
-                                 {status.status} 
+                                 {status.msg} 
                             </li>
                           </div>
-                        </ul>
-                        <div className="d-flex justify-content-between mt-4 mb-3">
-                          <button className="btn btn-warning ms-4">
-                            <i className="fas fa-redo-alt"></i> Retry
-                          </button>
-                          <button className="btn btn-warning me-4">
-                            <i class="fas fa-trash-alt"></i> Delete
-                          </button>
-                        </div>
+                          </ul>
+           
+                          {status.action ?
+                            
+                          <div className="d-flex justify-content-between mt-4 mb-3">
+                            <button className="btn btn-warning ms-4">
+                              <i className="fas fa-redo-alt"></i> Retry
+                            </button>
+                            <button className="btn btn-warning me-4">
+                              <i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                          </div>
+                          :
+                            ""}
+                  
                         
                       </div>
                     </div>
