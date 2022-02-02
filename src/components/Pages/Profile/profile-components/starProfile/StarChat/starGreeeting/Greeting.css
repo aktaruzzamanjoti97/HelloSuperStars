@@ -1,4 +1,27 @@
-.greeting ::placeholder{
-    color:white !important;
-    font-size: 15px !important;
+.greeting ::placeholder {
+  color: white !important;
+  font-size: 15px !important;
+}
+
+.upperSideNotification.dropdown-menu.show {
+  display: block;
+  background: #000000;
+  border: 1px solid #e4d759;
+  border-radius: 10px;
+  top: -280px !important;
+  left: -220px !important;
+  width: 16vw !important;
+  height: 22vh !important;
+}
+
+.upperSideNotification.dropdown-menu.show li {
+  color: #FFFFFF;
+  background-color: black;
+  font-size: 15px;
+  list-style: none;
+}
+
+.upperSideNotification.dropdown-menu.show li:hover {
+  color: gold;
+  background-color: black;
 }
