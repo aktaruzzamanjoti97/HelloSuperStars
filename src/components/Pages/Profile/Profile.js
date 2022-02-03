@@ -14,6 +14,9 @@ import axios from "axios";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
 import Navigation from "../../Header/Navigation";
+import raihan from '../../../images/raihan.png'
+import raihanProfileImage from '../../../images/raihanProfile.jpg'
+import coverImage from '../../../images/coverImage.jpg'
 import sakibal from "../../../images/Profile/shakib-message.jpg";
 import ReactPlayer from 'react-player'
 const Profile = () => {
@@ -65,16 +68,16 @@ return (
     <div className="container mb-2">
       <div className="profile-img-cover ">
         <div className="profile-container">
-          <img src={coverImg} alt="bg-img" className="img-fluid profile-cover" />
+          <img src={coverImage} alt="bg-img" className="img-fluid profile-cover" />
           <button className="bottomright">
             <i className="far fa-edit mx-1"></i>
             Edit Cover photo
           </button>
         </div>
       </div>
-      <div className="profile-div">
+      <div className="profile-div mb-5">
         <div className="profile-photo">
-          <img src={`http://localhost:8000/${user.image}`} alt={user.image} className="img-fluid profile-img" />
+          <img src={raihanProfileImage} alt={raihanProfileImage} className="img-fluid profile-img" />
           <div className="bottomright-profile">
             <button className='profile-pic-button'>
               <i className="fas fa-pen"></i>
@@ -83,7 +86,7 @@ return (
           </div>
 
           <div className="prodile-pic-info text-center">
-            <h5 className="profile-font-color">{user.first_name} {user.last_name}</h5>
+            <h5 className="profile-font-color">Raihan Halim</h5>
             <h6 className="profile-font-color">Student</h6>
           </div>
         </div>

@@ -54,6 +54,9 @@
     height: 350px;
     width: 100%;
     border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: center;
+    /* object-fit: cover; */
 }
 
 .profile-div {
@@ -64,8 +67,8 @@
 
 .profile-img {
     cursor: pointer;
-    height: 130px;
-    width: 130px;
+    height: 170px;
+    width: 170px;
     border-radius: 50%;
     color: #818181;
 }
