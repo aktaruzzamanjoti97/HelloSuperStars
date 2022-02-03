@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navigation from "../../../Header/Navigation";
 import LeftSidebar from "../../LeftSidebar";
 import RightSidebar from "../../RightSidebar";
-import FollowingContent from "./Content/FollowingContent";
+import FollowingMap from "./Content/FollowingMap";
 
 
 
@@ -21,7 +21,7 @@ export default class FollowMain extends Component {
               </div>
               
               <div className="col-sm-6 justify-content-center postTab" >
-                 <FollowingContent/>
+                 <FollowingMap/>
               </div>
 
               <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight" >
