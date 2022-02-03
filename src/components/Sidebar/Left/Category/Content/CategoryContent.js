@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import EventImg from '../../../../../images/FootbalImage.jpg';
 import BlockCat from "../Content/Block/BlockCat";
 import './CategoryJs.css';
+import cricketImg from '../../../../../images/cricket.jpg';
+import footballImg from '../../../../../images/footballImg.jpg';
+import tennisImg from '../../../../../images/tennis.jpeg';
+import golfImg from '../../../../../images/golf.jpg'
+import pubg from '../../../../../images/pubg.jpeg'
+import archaryImg from '../../../../../images/archery.jpg'
 import SuggestedCategory from "./SugesstedCategory";
 import { useHistory } from "react-router-dom";
 
@@ -17,9 +23,10 @@ const CategoryContent = () => {
   }
 
   const [modalShow, setModalShow] = useState(false);
-  const [mainData, setMainData] = useState([{
+  const [mainData, setMainData] = useState([
+    {
     id: 1,
-    bgImg: EventImg,
+    bgImg: cricketImg,
     categoryName: 'Cricket',
     follow: true,
     block: false,
@@ -27,31 +34,30 @@ const CategoryContent = () => {
   },
   {
     id: 2,
-    bgImg: EventImg,
+    bgImg: footballImg,
     categoryName: 'FootBall',
     follow: false,
     block: true,
   },
   {
     id: 3,
-    bgImg: EventImg,
-    categoryName: 'Tennes',
+    bgImg: tennisImg,
+    categoryName: 'Tennis',
     follow: true,
     block: true,
-
   },
   {
     id: 4,
-    bgImg: EventImg,
-    categoryName: 'Tennes',
+    bgImg: golfImg,
+    categoryName: 'Golf',
     follow: true,
     block: true,
 
   },
   {
     id: 5,
-    bgImg: EventImg,
-    categoryName: 'Tennes',
+    bgImg: pubg,
+    categoryName: 'Pubg',
     follow: true,
     block: true,
 
@@ -59,8 +65,8 @@ const CategoryContent = () => {
 
   {
     id: 6,
-    bgImg: EventImg,
-    categoryName: 'Tennes',
+    bgImg: archaryImg,
+    categoryName: 'Archery',
     follow: true,
     block: false,
 
@@ -71,32 +77,33 @@ const CategoryContent = () => {
   const [data, setData] = useState([
     {
       id: 1,
-      bgImg: EventImg,
+      bgImg: cricketImg,
       categoryName: 'Cricket',
       follow: true,
       block: false,
+  
     },
     {
       id: 2,
-      bgImg: EventImg,
+      bgImg: footballImg,
       categoryName: 'FootBall',
       follow: false,
       block: true,
     },
     {
       id: 3,
-      bgImg: EventImg,
-      categoryName: 'Tennes',
+      bgImg: tennisImg,
+      categoryName: 'Tennis',
       follow: true,
       block: true,
-
     },
     {
       id: 4,
-      bgImg: EventImg,
-      categoryName: 'Tennes',
+      bgImg: golfImg,
+      categoryName: 'Golf',
       follow: true,
       block: true,
+  
     },
   ])
 
