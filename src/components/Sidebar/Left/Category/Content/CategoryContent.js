@@ -13,6 +13,7 @@ import pubg from '../../../../../images/pubg.jpeg'
 import archaryImg from '../../../../../images/archery.jpg'
 import SuggestedCategory from "./SugesstedCategory";
 import { useHistory } from "react-router-dom";
+import CategoryContentMap from './CategoryContentMap';
 
 const CategoryContent = () => {
 
@@ -25,63 +26,12 @@ const CategoryContent = () => {
   const [modalShow, setModalShow] = useState(false);
   const [mainData, setMainData] = useState([
     {
-    id: 1,
-    bgImg: cricketImg,
-    categoryName: 'Cricket',
-    follow: true,
-    block: false,
-
-  },
-  {
-    id: 2,
-    bgImg: footballImg,
-    categoryName: 'FootBall',
-    follow: false,
-    block: true,
-  },
-  {
-    id: 3,
-    bgImg: tennisImg,
-    categoryName: 'Tennis',
-    follow: true,
-    block: true,
-  },
-  {
-    id: 4,
-    bgImg: golfImg,
-    categoryName: 'Golf',
-    follow: true,
-    block: true,
-
-  },
-  {
-    id: 5,
-    bgImg: pubg,
-    categoryName: 'Pubg',
-    follow: true,
-    block: true,
-
-  },
-
-  {
-    id: 6,
-    bgImg: archaryImg,
-    categoryName: 'Archery',
-    follow: true,
-    block: false,
-
-  }
-
-
-  ])
-  const [data, setData] = useState([
-    {
       id: 1,
       bgImg: cricketImg,
       categoryName: 'Cricket',
       follow: true,
       block: false,
-  
+
     },
     {
       id: 2,
@@ -103,7 +53,58 @@ const CategoryContent = () => {
       categoryName: 'Golf',
       follow: true,
       block: true,
-  
+
+    },
+    {
+      id: 5,
+      bgImg: pubg,
+      categoryName: 'Pubg',
+      follow: true,
+      block: true,
+
+    },
+
+    {
+      id: 6,
+      bgImg: archaryImg,
+      categoryName: 'Archery',
+      follow: true,
+      block: false,
+
+    }
+
+
+  ])
+  const [data, setData] = useState([
+    {
+      id: 1,
+      bgImg: cricketImg,
+      categoryName: 'Cricket',
+      follow: true,
+      block: false,
+
+    },
+    {
+      id: 2,
+      bgImg: footballImg,
+      categoryName: 'FootBall',
+      follow: false,
+      block: true,
+    },
+    {
+      id: 3,
+      bgImg: tennisImg,
+      categoryName: 'Tennis',
+      follow: true,
+      block: true,
+    },
+    {
+      id: 4,
+      bgImg: golfImg,
+      categoryName: 'Golf',
+      follow: true,
+      block: true,
+
     },
   ])
 
@@ -159,48 +160,9 @@ const CategoryContent = () => {
         <div className="row">
           {data.map((singleData) => {
             return (
-              <div className="containerSa  col-md-4 mb-3">
 
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                  <div className="carousel-inner">
-                    <div className="carousel-item active cateAS">
-                      <img src={singleData.bgImg} className="ImgCatView" alt={EventImg} />
 
-                      <div className="CatBG"></div>
-
-                      <button className="border-light bottom-left-View text-light" onClick={() =>
-                        setModalShow(true)}>Block</button>
-                      <BlockCat show={modalShow} onHide={() => setModalShow(false)} />
-                      
-                      <div class="CenterAda p-3">|</div>
-                      <button className="border-light bottom-right-View text-light" type="button" onClick={() => {
-                        setValue(!value);
-                        if (value === true) {
-                          setBtn("Unfollow");
-                        }
-                        else {
-                          setBtn("Follow");
-                        }
-                      }}
-                        style={
-                          value ? { backgroundColor: "" } : { backgroundColor: "#46587B" }
-                        }
-                      >{btn}</button>
-                    </div>
-                  </div>
-                </div>
-
-                <Link to='/category-profile'>
-                  <div className='CatBgView '>
-                    <div className="text-success fw-bold ">
-                      <h6 className='centeredASd fw-bold text-warning'>
-                        {singleData.categoryName}
-                      </h6>
-                    </div>
-                  </div>
-                </Link>
-
-              </div>
+              <CategoryContentMap singleData={singleData} key={singleData.id} />
             )
           })}
 
