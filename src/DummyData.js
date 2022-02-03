@@ -328,3 +328,59 @@ export const Users = [
       link: "https://www.youtube.com/watch?v=8wb3hiF20bQ&t=21s"
     }
   ]
+
+
+  // Follow
+  export const Follow = [
+   
+    {
+      id:1,
+      username: "Mizanur Rahman Azhari",
+      FollowPic: "images/Profile/azhari-profile.jpg",
+    },
+
+    {
+      id:2,
+        username: "Shakib All Hasan",
+        FollowPic: "images/Shakib/pro.jpg",
+    },
+    {
+      id:3,
+      username: "Momtaz Begum",
+      FollowPic: "images/Momtaz-Begum-photo.jpg",
+    },
+    {
+      id:4,
+      username: "Shakib Khan",
+      FollowPic: "images/shakib_Khan.jpg",
+    },
+    {
+      id:5,
+      username: "Mosharraf Karim",
+      FollowPic: "images/MosharrafKarim.jpg",
+    },
+
+  ];
+
+
+  export const Following = [
+   
+    {
+      id:1,
+      username: "James",
+      FollowingPic: "images/James.jpg",
+    },
+
+    {
+      id:2,
+        username: "Chanchal Chowdhury",
+        FollowingPic: "images/chanchal.jpg",
+    },
+    {
+      id:3,
+      username: "Srabanti Chatterjee",
+      FollowingPic: "images/srabanti.jpg",
+    },
+    
+
+  ];
