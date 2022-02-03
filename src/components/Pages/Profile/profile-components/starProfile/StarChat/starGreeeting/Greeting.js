@@ -24,7 +24,7 @@ const Greeting = ({ star_id }) => {
   useEffect(() => {
 
       axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.get('/api/user/greetings_registaion_status').then((res) => {
+      axios.get(`/api/user/greetings_registaion_status/${star_id}`).then((res) => {
         if (res.data.status === 200) {
           console.log(res.data.greeting);
           setGreeting(res.data.greeting);
@@ -172,8 +172,8 @@ const Greeting = ({ star_id }) => {
                             <li>Status</li>
                           </div>
                           <div className="ms-5">
-                            <li>Date</li>
-                            <li>Date</li>
+                            <li>{moment(greeting.created_at).format('LL')}</li>
+                            <li>{moment(greeting.request_time).format('LL')}</li>
                             <li>
                                  {status.msg} 
                             </li>
