@@ -81,18 +81,18 @@ return (
                         </div>
                     </div>
 
-                    {/* <Link to={`/activities/video/${event.meetup_event_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
+                                {/* <Link to={`/activities/video/${event.meetup_event_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
 
-                    {/* <Link to={{ 
- pathname: "/activities/video", 
- state: {
-     event_id: event.meetup_event?.event_link
- }
-}}>
+                                {/* <Link to={{ 
+            pathname: "/activities/video", 
+            state: {
+                event_id: event.meetup_event?.event_link
+            }
+            }}>
 
-<Button className='btn bg-warning mb-3 text-dark fw-bold'>Call Now</Button>
+            <Button className='btn bg-warning mb-3 text-dark fw-bold'>Call Now</Button>
 
-</Link> */}
+            </Link> */}
 
 <a target="_blank" href={event.meetup_event?.event_link} ><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
 

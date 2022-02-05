@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import axios from "axios";
+import swal from "sweetalert";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -8,10 +10,34 @@ import Topi from '../../../../../../../images/greens.jpg';
 import Habibi from '../../../../../../../images/bat.jpg';
 import Vector1 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/1.jpg';
 import Vector2 from '../../../../../../../images/starProfile/starPostLeftContent/Card3/2.jpg';
-import { Link,useRouteMatch } from 'react-router-dom';
+import { Link,useRouteMatch,useHistory } from 'react-router-dom';
 // import LiveChatpic from '../../../../../../../images/LiveChat/Live.png'
 // css design comes from star post page
-const StarProfileRightContent = ({star_id}) => {
+const StarProfileRightContent = ({ star_id }) => {
+  const history = useHistory();
+  
+
+  let greetingsCheck = () => {
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get("/api/user/greetings_star_status/"+star_id).then((res) => {
+        if (res.data.status === 200) {
+          
+          if (res.data.action) {
+            history.push(`/starprofile/${star_id}/greeting`);
+          } else {
+            swal("Not Available", "Greetings Not Available Now", "warning");
+          }
+  
+        } else {
+          swal("error", "Data base Error", "error");
+  
+        }
+      });
+    });
+    // 
+
+  }
   const {url}=useRouteMatch();
 
     return (
@@ -41,12 +67,12 @@ const StarProfileRightContent = ({star_id}) => {
 
 
                   
-                 <Link to={`/starprofile/${star_id}/greeting`}  >
-                  <button className="w-100 star-last-btn p-1">
+                 {/* <Link to={`/starprofile/${star_id}/greeting`}  > */}
+                  <button className="w-100 star-last-btn p-1" onClick={greetingsCheck}>
                     Greeting
                   </button>
-                  </Link> 
-
+                {/* </Link>  */}
+                
                 </div>
                 <div className="col-6">
                 <Link to={`/starprofile/${star_id}/livechat`}> <button className="w-100 star-last-btn p-1">Live Chat</button></Link>
