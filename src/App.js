@@ -21,6 +21,7 @@ import Home from "./components/Pages/Home/HomePages";
 import Market from "./components/Pages/Market/MarketPlace";
 import Profile from './components/Pages/Profile/Profile';
 import StarProfile from "./components/Pages/Profile/StarProfile";
+import CR7Souvenir from "./components/Pages/Souvenir/Content/CR7Souvenir";
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import Packages from "./components/Pages/User/Packages/Packages";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
@@ -134,6 +135,8 @@ function App() {
           
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
+
+        <Route exact path='/cr7' component={CR7Souvenir} />
 
         {/* Error */}
         <Route component={Error} />
