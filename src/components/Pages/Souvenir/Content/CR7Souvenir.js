@@ -4,9 +4,10 @@ import './CR7Souvenir.css'
 import Bidding from '../../../../images/Shakib/pro.jpg'
 import bAckColo from '../../../../images/bAckColo.jpg'
 import Icon from '../../../../images/IconHans-removebg-preview.png'
+import CR7Modal from './CR7Modal'
 
 const CR7Souvenir = () => {
-
+const [modalShow, setModalShow] = React.useState(false);
 return (
 <>
 
@@ -45,7 +46,6 @@ return (
               </div>
             </div>
 
-
             <div className="containerSa col-md-4 mb-3">
               <div className="carousel w-100 ">
                 <img src={bAckColo} className="Cr7img" alt={bAckColo} />
@@ -66,7 +66,6 @@ return (
               </div>
             </div>
 
-
             <div className="containerSa col-md-4 mb-3">
               <div className="carousel w-100 ">
                 <img src={bAckColo} className="Cr7img" alt={bAckColo} />
@@ -77,7 +76,6 @@ return (
               </div>
             </div>
 
-
             <div className="containerSa col-md-4 mb-3">
               <div className="carousel w-100 ">
                 <img src={bAckColo} className="Cr7img" alt={bAckColo} />
@@ -87,7 +85,6 @@ return (
                 <h5 className="btn Cr7ss py-1 text-light ">Asad Ali</h5>
               </div>
             </div>
-
 
             <div className="containerSa col-md-4 mb-3">
               <div className="carousel w-100 ">
@@ -149,15 +146,12 @@ return (
           </div>
 
         </div>
-        
-          <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'><i class="fas fa-gavel"></i> &nbsp;Confirm</button>
-          <button className='btn Acquire fw-bold px-4 py-2 mb-3'><i class="fas fa-id-card-alt"></i> &nbsp;Acquire application</button>
-       
-       
-      </div>
 
-      <div className="d-flex col-md-5 bg-warning p-2  mx-2 CR7Right">
-        Test right
+        <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'><i class="fas fa-gavel"></i> &nbsp;Confirm</button>
+        <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
+          <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
+        <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />
+
       </div>
 
     </div>

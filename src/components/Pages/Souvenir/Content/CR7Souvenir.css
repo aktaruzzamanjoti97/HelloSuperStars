@@ -79,3 +79,30 @@
 
 
 
+/* Modal */
+
+.containerModalBg{
+   
+    height: 300px !important;
+}
+.containerModalCr7 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.centeredMZ {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mODALcR7{
+      background-color: rgb(63, 63, 63) !important;
+  }
+
+
+  .Cr7Text{
+      font-size: 15px;
+  }
