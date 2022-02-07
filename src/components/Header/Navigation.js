@@ -46,7 +46,7 @@ const Navigation = () => {
     }
 
     return (
-        <>
+        <div className='sticky-top'>
             <Navbar className='navbar-bg navbar-position ' expand="lg" >
 
                 <div className="container-fluid  custom-container-nv ">
@@ -386,7 +386,7 @@ const Navigation = () => {
                 />
 
             </Navbar>
-        </>
+        </div>
     );
 };
 
