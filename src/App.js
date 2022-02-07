@@ -22,7 +22,6 @@ import Market from "./components/Pages/Market/MarketPlace";
 import Profile from './components/Pages/Profile/Profile';
 import StarProfile from "./components/Pages/Profile/StarProfile";
 import SouvenirSignature from "./components/Pages/Souvenir/Content/SouvenirSignature/SouvenirSignature";
-import CR7Souvenir from "./components/Pages/Souvenir/Content/CR7Souvenir";
 import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import Packages from "./components/Pages/User/Packages/Packages";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
@@ -50,6 +49,8 @@ import Login from "./components/UserAuthentication/Login";
 import Otp from "./components/UserAuthentication/Otp";
 import Signup from "./components/UserAuthentication/Signup";
 import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProduct";
+import Souvenir from "./components/Pages/Souvenir/Souvenir";
+import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
 
 
 axios.defaults.withCredentials = true;
@@ -138,8 +139,11 @@ function App() {
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
 
+
+        {/* Souvenir */}
+        <Route exact path='/souvenir' component={Souvenir} />
+        <Route exact path='/souvenir-winner' component={WinnerCR7} />
         <Route exact path='/souvenir/signature' component={SouvenirSignature} />
-        <Route exact path='/cr7' component={CR7Souvenir} />
         <Route exact path='/acquiring-product' component={AcquiringProduct} />
 
         {/* Error */}
