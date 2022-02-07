@@ -8,8 +8,10 @@ import { Carousel } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import SouvinerModal from "./StarChat/SouvinerModal";
 function Souviner({star_id}) {
 const [more, setmore] = useState(false);
+const [modalShow, setModalShow] = React.useState(false);
 return (
 <div className="container">
   <div className="row">
@@ -86,7 +88,7 @@ return (
       <div className="card my-4 left-card-souviner mx-auto">
         <div className="card-body">
           <h5 className="card-title text-warning">Biding</h5>
-          <OwlCarousel className="owl-theme" loop margin={0} items={3} nav>
+          <OwlCarousel className="owl-theme" loop margin={0} items={4} nav>
             <div className="item">
               <div className="card loopCard h-25">
                 <div className="text-center">
@@ -99,11 +101,25 @@ return (
               </div>
             </div>
           </OwlCarousel>
-          ;
+          
+          
         </div>
+        <div className="participate-btn my-2 mx-3">
+  <button className="btn btn-warning px-5 py-2" onClick={() => setModalShow(true)}>
+Participate Now!
+  </button>
+</div>
+
+<SouvinerModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+      
       </div>
 
-      <div className="card my-4 left-card-souviner mx-auto">
+    
+
+      {/* <div className="card my-4 left-card-souviner mx-auto">
         <div className="card-body">
           <h5 className="card-title text-warning">Start Biding</h5>
 
@@ -131,7 +147,8 @@ return (
           </form>
 
         </div>
-      </div>
+      </div> */}
+
     </div>
 
     <div className="col-md-4">
