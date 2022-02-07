@@ -7,6 +7,8 @@ import PostComment from "./PostComment";
 import moment from 'moment'
 import { Markup } from "interweave";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+//import Lock from "../../../images/Normal-User/lock.png";
+import Lock from "../../../../../../src/images/Normal-User/lock.png";
 
 import ShowMoreText from "react-show-more-text";
 
@@ -304,6 +306,7 @@ return (
 
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={mediaBaseUrl+post.star?.image} className="PostImgHome" alt="star-profile" />
+                        
                         <span className="mx-2 text-warning text-light">
                             <Link to={`/starprofile/${post.user_id}`} className="link-starPorfile">
                             {post.star?.first_name} {post.star?.last_name}
@@ -354,31 +357,23 @@ return (
 
             </ShowMoreText>
 
-            
+            {post.general?.type === 'paid' ? (
+                <div className="card PostCard">
+                    <img src={mediaBaseUrl+post.general?.image} alt={post.general?.image} className="ImgBlur"/>
 
-
-            <div className="card PostCard">
-                <img src={mediaBaseUrl+post.general?.image} alt={post.general?.image} />
-
-                <div className="centered centered-meet">
-                    <div className="meetP  d-flex">
-                        <div className="MeetupText col-md-8 fw-bold">
-                            {post.general?.title}
-                        </div>
-                        <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
-
-                        {/* <Link to="starprofile/book-now" className="link-starPorfile">
-                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
-                        </Link> */}
-
-                        <Link to={`/starprofile/${post.general?.star_id}/livechat`} className="link-starPorfile">
-                          <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
-                        </Link>
-
-                        </div>
-                    </div>
+                    <span className="dot2 d-flex justify-content-center align-items-center">
+                        <img src={Lock} alt="" style={{width: '200px'}}/> 
+                    </span> 
                 </div>
-            </div>
+            ) : 
+            (
+                <div className="card PostCard">
+                    <img src={mediaBaseUrl+post.general?.image} alt={post.general?.image} className=""/>
+                </div>
+            )
+            }
+
+            
 
             <div className="row align-items-center justify-content-center ">
                 <div className="container ">
