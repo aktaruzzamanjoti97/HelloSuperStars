@@ -32,7 +32,7 @@ return (
                         Winner
                     </div>
 
-                    <img src={Winner} alt={Winner} className='img-fluid WinnerImg' />
+                    <img src={Winner} alt={Winner} className='WinnerImg' />
                     <div className="WinnerBack"></div>
                     <img src={CR7user} alt=""  className='CR7user img-fluid'/>
 
