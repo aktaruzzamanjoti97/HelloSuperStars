@@ -18,7 +18,9 @@ const Greeting = ({ star_id }) => {
   // const [check, setcheck] = useState(false);
   const [startTime, setStartTime] = useState(new Date());
   const [greeting, setGreeting] = useState(null);
+
   const [GreetingInfo, setGreetingInfo] = useState({});
+
   const [status, setStatus] = useState({
     action: true,
     msg : ''
@@ -28,12 +30,14 @@ const Greeting = ({ star_id }) => {
   useEffect(() => {
   
     // setcheck(true)
+
     GreetingsRegStatus()
     
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.get('/api/user/greetings_star_status/'+star_id).then((res) => {
           if (res.data.status === 200) {
         
+
               setGreetingInfo(res.data.greeting);
           } else {
             swal("error", "Data base Error", "error");
@@ -42,9 +46,11 @@ const Greeting = ({ star_id }) => {
       });
       
 
+
   }, []);
   
   let GreetingsRegStatus = () => {
+
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios.get("/api/user/greetings_registaion_status").then((res) => {
         if (res.data.status === 200) {
@@ -52,7 +58,9 @@ const Greeting = ({ star_id }) => {
           setGreeting(res.data.greeting);
           // setcheck(res.data.action)
 
+
         
+
           if (res.data.greeting.status == 0) {
             setStatus({
              ...status,
