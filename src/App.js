@@ -49,6 +49,7 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import Login from "./components/UserAuthentication/Login";
 import Otp from "./components/UserAuthentication/Otp";
 import Signup from "./components/UserAuthentication/Signup";
+import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProduct";
 
 
 axios.defaults.withCredentials = true;
@@ -139,6 +140,7 @@ function App() {
 
         <Route exact path='/souvenir/signature' component={SouvenirSignature} />
         <Route exact path='/cr7' component={CR7Souvenir} />
+        <Route exact path='/acquiring-product' component={AcquiringProduct} />
 
         {/* Error */}
         <Route component={Error} />
