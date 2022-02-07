@@ -1,7 +1,7 @@
 import {React , useEffect,useState} from 'react';
 import { Modal, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CR7Mo from '../../../../images/clock.png';
+import CR7Mo from '../../../../images/Souvenir/Icons/sorry.png';
 
 const CR7Modal = (props) => {
 return (
@@ -10,8 +10,8 @@ return (
 
         <Modal.Body className=' py-5 Modal_B-Ac  containerModalBg mODALcR7'>
 
-            <div className='containerModalCr7 fw-bold mx-5 mb-5'>
-                <img src={CR7Mo} alt="" className='img-fluid' />
+            <div className='containerModalCr7 fw-bold mx-5 mb-3'>
+                <img src={CR7Mo} alt="" className='img-fluid CR7Mo' />
             </div>
             <div className='containerModalCr7 fw-bold mx-5'>
                 You're not in the top bidders list. Only the top bidders can apply for product acquiring.
