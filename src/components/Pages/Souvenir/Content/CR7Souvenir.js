@@ -4,7 +4,9 @@ import './CR7Souvenir.css'
 import UserPro from '../../../../images/Shakib/pro.jpg'
 import BGImg from '../../../../images/Souvenir/fundo-floral-preto-png-2.png'
 import Bid from '../../../../images/Souvenir/Icons/bid.png'
+import Confirm from '../../../../images/Souvenir/Icons/auction.png'
 import CR7Modal from './CR7Modal'
+
 
 const CR7Souvenir = () => {
 const [modalShow, setModalShow] = React.useState(false);
@@ -144,13 +146,13 @@ return (
         </div>
 
         <div className=" col-md-5 mb-3">
-          <img src={Bid} alt={Bid}  className='img-fluid'/>
+          <img src={Bid} alt={Bid}  className='img-fluid BibImg'/>
         </div>
       </div>
 
     </div>
 
-    <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'><i class="fas fa-gavel"></i> &nbsp;Confirm</button>
+    <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'> <img src={Confirm} className='ConfirmCR7' alt={Confirm}/> &nbsp;Confirm</button>
     <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
       <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
     <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />

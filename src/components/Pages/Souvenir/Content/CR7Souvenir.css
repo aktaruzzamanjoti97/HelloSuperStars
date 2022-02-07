@@ -111,7 +111,13 @@
   }
 
 
+.ApplyImg{
+  width: 60%;
+}
 
+.notify-img{
+  border-radius: 5px;
+}
 
 /* WinnerCR7 */
 
@@ -174,3 +180,13 @@
     width: 100%;
     height: 23rem;
   }
+
+
+  .ConfirmCR7{
+    width: 25px;
+  }
+
+  .BibImg{
+    width: 150px;
+  }
+
