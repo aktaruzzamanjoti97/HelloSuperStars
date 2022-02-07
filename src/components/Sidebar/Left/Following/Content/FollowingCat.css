@@ -105,8 +105,45 @@
         rgba(0, 0, 0, 0.966));
 
   }
+
+
+
   .FollowingCatText{
     font-size: 12px;
   }
 
   }
+
+
+.CR7Scroll{
+  overflow-y: auto;
+  height: 46vh;
+}
+
+.CR7Scroll::-webkit-scrollbar {
+  display: none;
+}
+.inputBgSA{
+  background-color: gray;
+  float: left !important;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px !important;
+}
+
+.inputBgSA::placeholder{
+  color: white;
+  
+
+}
+
+.ConfirmS{
+  margin-right: 20px;
+  background: #5B677A 0% 0% no-repeat padding-box;
+}
+.Acquire{
+  background: transparent linear-gradient(180deg, #FFFF00 0%, #E8B100 100%) 0% 0% no-repeat padding-box;
+}
+
+
