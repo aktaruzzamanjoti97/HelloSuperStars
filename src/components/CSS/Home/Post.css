@@ -892,6 +892,25 @@ li.post-comment .comet-avatar {
   display: -webkit-box;
 }
 
+.dot2
+{
+    height: 35px !important;
+    width: 35px !important;
+    /* background-color: #5270EE; */
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.ImgBlur{
+    filter: blur(3px) !important;
+}
 
 
 

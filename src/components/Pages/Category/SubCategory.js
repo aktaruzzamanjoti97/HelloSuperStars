@@ -208,10 +208,9 @@ const categorySubmit = (e) => {
             <input name="checkbox" value={subCategory.id} type="checkbox" onChange={() => handleToggle(subCategory.id)}/>
             <img src={`http://localhost:8000/${subCategory.image}`} className='img-fluid low' alt="" />
 
-            <span className="dot1 d-flex justify-content-center align-items-center">
+            {/* <span className="dot1 d-flex justify-content-center align-items-center">
                <img src={Lock} alt="" style={{width: '165px'}}/> 
-              {/* <i className="fa fa-lock fa-5x text-warning " style={{width: '100px'}}></i> */}
-            </span>
+            </span> */}
 
             <span className="dot2 d-flex justify-content-center align-items-center">
             <i className='fa fa-spinner text-light fa-spin'></i> </span>
