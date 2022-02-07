@@ -1,8 +1,8 @@
 import React from 'react'
 import Navigation from '../../Header/Navigation';
 import RightSideSouvenir from './Content/RightSideSouvenir/RightSideSouvenir';
-import souvenirImage from '../../../images/SouvenirJoti.png';
-import Winner from '../../../images/SouvenirJoti.png';
+import souvenirImage from '../../../images/Souvenir/souvenir.png';
+import Winner from '../../../images/Souvenir/souvenir.png';
 import CR7user from '../../../images/navbar/account.jpg';
 import './Content/CR7Souvenir.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Navigation from '../../Header/Navigation';
 import RightSideSouvenir from './Content/RightSideSouvenir/RightSideSouvenir';
-import souvenirImage from '../../../images/SouvenirJoti.png';
+import souvenirImage from '../../../images/Souvenir/souvenir.png';
 import CR7Souvenir from './Content/CR7Souvenir';
 
 const Souvenir = () => {
