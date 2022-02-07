@@ -12,9 +12,10 @@ import StarProfileRightContent from "../../StarCardComponent/StarProfileRightCon
 import "./Greeting.css";
 
 const Greeting = ({ star_id }) => {
-  const [check, setcheck] = useState(true);
+  // const [check, setcheck] = useState(false);
   const [startTime, setStartTime] = useState(new Date());
   const [greeting, setGreeting] = useState(null);
+  const [GreetingInfo, setGreetingInfo] = useState(null);
   const [status, setStatus] = useState({
     action: true,
     msg : ''
@@ -22,23 +23,43 @@ const Greeting = ({ star_id }) => {
 
 
   useEffect(() => {
+  
+    // setcheck(true)
 
+    
       axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.get(`/api/user/greetings_registaion_status/${star_id}`).then((res) => {
-        if (res.data.status === 200) {
-          console.log(res.data.greeting);
-          setGreeting(res.data.greeting);
-          if (res.data.greeting) {
-            setcheck(false)
+        axios.get('/api/user/greetings_star_status/'+star_id).then((res) => {
+            if (res.data.status === 200) {
+              setGreetingInfo(res.data.greeting);
+          } else {
+            swal("error", "Data base Error", "error");
           }
+        });
+      });
+      
+    greetingsStatusCheck();
+  }, []);
+  
+  let greetingsStatusCheck = () => {
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get("/api/user/greetings_registaion_status").then((res) => {
+        if (res.data.status === 200) {
+     
+          setGreeting(res.data.greeting);
+          // setcheck(res.data.action)
+
+          console.log(res.data.action);
           if (res.data.greeting.status == 0) {
             setStatus({
              ...status,
               msg: 'Pending'
             })
-         
+            // setcheck(true)
           } else {
-            setStatus({msg:'Appreoved'})
+            setStatus({
+              ...status,
+              msg: 'Appreoved'
+            })
        
           }
     
@@ -47,24 +68,27 @@ const Greeting = ({ star_id }) => {
 
         }
       });
-    });
-  },[]);
+      });
+  }
 
   function handelTimeSubmit(e) {
-    setcheck(false)
+    // setcheck(true)
     e.preventDefault();
 
     let Form_data = new FormData(e.target)
     Form_data.append('time', moment(startTime));
-    Form_data.append('greetings_id', star_id);
+    Form_data.append('greetings_id', GreetingInfo.id);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios.post(`api/user/greetings_registaion`, Form_data).then((res) => {
         if (res.data.status === 200) {
+        
+          setGreeting(res.data.greeting);
+          // setcheck(true)
 
           //document.getElementById('input_form').reset();
           swal("Success", res.data.message, "success");
-          setGreeting(res.data.greeting);
+
           if (res.data.greeting.status == 0) {
             setStatus({
               ...status,
@@ -223,12 +247,11 @@ const Greeting = ({ star_id }) => {
                       </LocalizationProvider>
                     </div>
                     <div className="col-6 px-3">
-                      {check ?
-
-                        <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
-                        :
+                      {greeting ?
 
                         <button className='my-3 btn btn-success px-4 py-2' disabled>Applied <i class="fas fa-check-circle mx-1"></i></button>
+                        :
+                        <button className='my-3 btn btn-warning px-4 py-2' type="submit" >Apply Now!</button>
                       }
 
                     </div>
