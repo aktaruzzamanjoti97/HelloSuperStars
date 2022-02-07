@@ -80,9 +80,9 @@ const SouvenirSignature = () => {
                                             </div>
                                         </div>
 
-                                        <div className="my-3">
-                                            <button className="btn btn-warning">Apply</button>
-                                            <button className="btn btn-warning">Dismiss Process</button>
+                                        <div className="my-4">
+                                            <button className="btn btn-warning"> Apply</button>
+                                            <button className="btn btn-secondary mx-3">Dismiss Process</button>
                                         </div>
 
                                     </form>
