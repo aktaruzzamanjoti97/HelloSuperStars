@@ -1,0 +1,108 @@
+.ReactCr7{
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+}
+
+.CR7Player{
+    width: 60vw;
+}
+
+
+.CR7Right{
+    width: 35% !important;
+}
+
+
+.Cr7s {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    font-size: 22px;
+    background-color: none !important;
+}
+
+  
+.Cr7ss {
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    font-size: 15px;
+    background-color: none !important;
+  }
+
+
+  .Cr7img{
+    width: 100%;
+    height: 21vh;
+    object-fit: cover;
+    border: 1px solid gold;
+    border-radius: 3px;
+}
+  .Cr7View {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 11.1vh;
+    overflow: hidden;
+    background-image: linear-gradient(
+        rgba(5, 5, 5, 0), 
+        rgba(10, 10, 10, 0.952), 
+        rgb(0, 0, 0));
+
+  }
+.Cr7Pro{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    font-size: 15px;
+    background-color: none !important;
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .LiveBidding{
+        border: 1px solid goldenrod;
+        border-radius: 5px;
+        width: 30.5%;
+    }
+  }
+
+
+
+/* Modal */
+
+.containerModalBg{
+   
+    height: 300px !important;
+}
+.containerModalCr7 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.centeredMZ {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mODALcR7{
+      background-color: rgb(63, 63, 63) !important;
+  }
+
+
+  .Cr7Text{
+      font-size: 15px;
+  }

@@ -81,7 +81,7 @@
         width: 90% !important;
     }
 
-    .top-right {
+    .top-right-c {
         position: absolute;
         top: 10px !important;
         font-size: 8px !important;
@@ -91,7 +91,7 @@
     }
 
       
-  .bottom-left {
+  .bottom-left-c {
     position: absolute;
     bottom:0px;
     background: rgba(80, 6, 6, 0.568);
@@ -131,7 +131,7 @@
 
     }
 
-    .top-right {
+    .top-right-c {
         position: absolute;
         top: 10px !important;
         font-size: 8px !important;
@@ -141,7 +141,7 @@
     }
 
       
-  .bottom-left {
+  .bottom-left-c {
     position: absolute;
     bottom: 5px;
     background: rgba(80, 6, 6, 0.568);
@@ -169,7 +169,7 @@
     color: white;
   }
 
-  .top-right {
+  .top-right-c {
     position: absolute;
     top: 8px;
     font-size: 10px;
@@ -178,7 +178,7 @@
     border-radius: 50%;
 }
   
-  .bottom-left {
+  .bottom-left-c {
     position: absolute;
     bottom: 5px;
     background: rgba(80, 6, 6, 0.568);
@@ -222,7 +222,7 @@
     margin-top: -2.5rem !important;
     color: rgb(255, 255, 255);
     margin-left: 10px;
-    border-bottom-left-radius: 10px;
+    border-bottom-left-c-radius: 10px;
     border-bottom-right-radius: 10px;
   }
 
@@ -335,7 +335,7 @@
         margin-top: -1.4rem !important;
         color: rgb(255, 255, 255);
         margin-left: 11px;
-        /* border-bottom-left-radius: 10px; */
+        /* border-bottom-left-c-radius: 10px; */
         /* border-bottom-right-radius: 10px; */
         font-size: 9px;
     }
@@ -363,7 +363,7 @@
         width: 87% !important;
         color: rgb(255, 255, 255);
         margin-left: 9px;
-        /* border-bottom-left-radius: 10px; */
+        /* border-bottom-left-c-radius: 10px; */
         /* border-bottom-right-radius: 10px; */
         font-size: 9px;
     }
@@ -429,7 +429,7 @@
         margin-top: -1.4rem !important;
         color: rgb(255, 255, 255);
         margin-left: 11px;
-        /* border-bottom-left-radius: 10px; */
+        /* border-bottom-left-c-radius: 10px; */
         /* border-bottom-right-radius: 10px; */
         font-size: 9px;
     }
@@ -452,7 +452,7 @@
         margin-top: -1.4rem !important;
         color: rgb(255, 255, 255);
         margin-left: 10px;
-        /* border-bottom-left-radius: 10px; */
+        /* border-bottom-left-c-radius: 10px; */
         /* border-bottom-right-radius: 10px; */
         font-size: 16px;
     }
