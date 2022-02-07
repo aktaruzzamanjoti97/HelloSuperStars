@@ -23,7 +23,7 @@ return (
 
                 <p className="text-white PText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa similique
                     cum qui ab fugit veniam repellendus officiis, consequuntur esse culpa quibusdam aut tempore,
-                    incidunt ea nesciunt soluta itaque voluptas maiores.
+                    incidunt ea nesciunt soluta itaque voluptas maiores. <span>See more</span>
                 </p>
 
                 <div className="mb-3 WinnerBg">
