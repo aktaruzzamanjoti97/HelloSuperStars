@@ -6,7 +6,6 @@ import './App.css';
 import './components/CSS/BodyColor.css';
 
 // Category
-
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import StarSelection from "./components/Pages/Category/StarSelection";
 import SubCategory from "./components/Pages/Category/SubCategory";
@@ -37,8 +36,8 @@ import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
 import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
 import ProfileCatBody from "./components/Sidebar/Left/Category/Content/ProfileCatBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
-// Left Sidebar 
 
+// Left Sidebar 
 import FollowMain from "./components/Sidebar/Left/Following/FollowMain";
 import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
 import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
