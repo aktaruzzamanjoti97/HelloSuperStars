@@ -31,11 +31,11 @@
   border: #fcca2c 1px solid;
 }
 
-/* label {
+label {
   background-color: #343434;
   color: #ffffff !important;
   padding: 0px 10px !important;
-} */
+}
 
 .MuiOutlinedInput-root .MuiSvgIcon-root {
   color: #000000;

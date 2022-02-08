@@ -1,3 +1,4 @@
+
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import DateTimePicker from "@mui/lab/DateTimePicker";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -10,12 +11,16 @@ import ReactPlayer from 'react-player';
 import swal from "sweetalert";
 import StarProfileRightContent from "../../StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import "./Greeting.css";
+import { Markup } from 'interweave';
+
 
 const Greeting = ({ star_id }) => {
   // const [check, setcheck] = useState(false);
   const [startTime, setStartTime] = useState(new Date());
   const [greeting, setGreeting] = useState(null);
-  const [GreetingInfo, setGreetingInfo] = useState(null);
+
+  const [GreetingInfo, setGreetingInfo] = useState({});
+
   const [status, setStatus] = useState({
     action: true,
     msg : ''
@@ -26,10 +31,13 @@ const Greeting = ({ star_id }) => {
   
     // setcheck(true)
 
+    GreetingsRegStatus()
     
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.get('/api/user/greetings_star_status/'+star_id).then((res) => {
-            if (res.data.status === 200) {
+          if (res.data.status === 200) {
+        
+
               setGreetingInfo(res.data.greeting);
           } else {
             swal("error", "Data base Error", "error");
@@ -37,10 +45,12 @@ const Greeting = ({ star_id }) => {
         });
       });
       
-    greetingsStatusCheck();
+
+
   }, []);
   
-  let greetingsStatusCheck = () => {
+  let GreetingsRegStatus = () => {
+
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios.get("/api/user/greetings_registaion_status").then((res) => {
         if (res.data.status === 200) {
@@ -48,7 +58,9 @@ const Greeting = ({ star_id }) => {
           setGreeting(res.data.greeting);
           // setcheck(res.data.action)
 
-          console.log(res.data.action);
+
+        
+
           if (res.data.greeting.status == 0) {
             setStatus({
              ...status,
@@ -70,6 +82,7 @@ const Greeting = ({ star_id }) => {
       });
       });
   }
+
 
   function handelTimeSubmit(e) {
     // setcheck(true)
@@ -107,6 +120,40 @@ const Greeting = ({ star_id }) => {
 
 
   }
+
+  /**
+   * delete register grettings 
+   */
+  let handelGreetingsRegDelete = () => {
+    swal({
+      title: "Are you sure?",
+      text: "You Want to Delete your Greetings",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+          axios.get("/sanctum/csrf-cookie").then((response) => {
+          axios.get("api/user/greetings_reg_delete/"+greeting.id).then((res) => {
+            if (res.data.status === 200) {
+            GreetingsRegStatus()
+            swal("Your Greetings is Delete", {
+              icon: "success",
+            });
+
+            } else {
+              swal("error", "hello", "error");
+
+            }
+          });
+        });
+      
+      } else {
+        // swal("Your Greetings is safe!");
+      }
+    });
+  }
   return (
     <>
       <div className="container">
@@ -136,43 +183,34 @@ const Greeting = ({ star_id }) => {
 
               </div>
             </div>
-
+            {GreetingInfo ?
+       
             <div className="text-warning">
               <div class="card live-card-bg my-4 mx-auto">
                 <div class="card-body">
                   <h5 class="card-title text-warning">Instructions</h5>
                   <div className="star-line"></div>
                   <div className="instruct">
-                    <p class=" my-4 text-light">
-                      1. User can only chat with the superstar for minimum 1
-                      minute to maximum 5 minutes.
-                    </p>
-                    <p class=" my-4 text-light">
-                      2. User should not insult superstar or speak about their
-                      personal topics. There should be no insults or blasphemy
-                      with a superstar.
-                    </p>
-                    <p class=" my-4 text-light">
-                      3. User should proofread the chat to superstar before
-                      sending it to superstar{" "}
-                    </p>
+                      <Markup content={GreetingInfo.description}/>
                   </div>
                 </div>
               </div>
             </div>
+          :""}
 
-
+          {GreetingInfo ?
+       
             <div class="card live-card-bg my-4 mx-auto">
               <div class="card-body">
                 <h5 class="card-title text-warning">Cost</h5>
                 <div className="star-line"></div>
                 <div className="instruct">
-                  <h5 className='my-2 text-light'>200 BDT</h5>
+                    <h5 className='my-2 text-light'>{GreetingInfo.cost} BDT</h5>
                 </div>
               </div>
             </div>
 
-
+          :""}
 
             <div class="card live-card-bg my-4 mx-auto">
               <div class="card-body">
@@ -207,10 +245,10 @@ const Greeting = ({ star_id }) => {
                           {status.action ?
                             
                           <div className="d-flex justify-content-between mt-4 mb-3">
-                            <button className="btn btn-warning ms-4">
+                            <button className="btn btn-warning ms-4" onClick={handelGreetingsRegDelete}>
                               <i className="fas fa-redo-alt"></i> Retry
                             </button>
-                            <button className="btn btn-warning me-4">
+                            <button className="btn btn-warning me-4" onClick={handelGreetingsRegDelete}>
                               <i class="fas fa-trash-alt"></i> Delete
                             </button>
                           </div>
