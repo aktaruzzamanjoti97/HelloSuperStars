@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "../../../../CSS/Home/Post.css";
 import { Link } from "react-router-dom";
 import { Collapse,Button } from "react-bootstrap";
@@ -9,13 +9,114 @@ import { Markup } from "interweave";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 //import Lock from "../../../images/Normal-User/lock.png";
 import Lock from "../../../../../../src/images/Normal-User/lock.png";
+import axios from "axios";
+import swal from 'sweetalert';
 
 import ShowMoreText from "react-show-more-text";
+import { set } from "date-fns";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
 
+
 export default function UpcomingAuditionsContent({ post }) {
+    const [react, setReact] = useState('');
+    const [value,setValue]=useState(null);
+
+    var showReact = "";
+
+
+    useEffect(() => {
+
+        axios.get(`api/check_react/${post.id}`).then(res =>{
+            
+            if(res.data.status === 200)
+            {
+
+                if(res.data.reacted.post_id === post.id)
+                {
+                    setValue(
+                        <button className="btn-warning-post" onClick={(e) => {
+                            e.preventDefault()
+                            handleSubmit(post.id)
+                            }}>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Liked {post.id}</small>
+                        </button>
+                    )
+                }
+                else{
+                    setValue(
+                        <button className="btn-warning-post" onClick={(e) => {
+                            e.preventDefault()
+                            handleSubmit(post.id)
+                            }}>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Like {post.id}</small>
+                        </button>
+                    )
+                }
+            }
+                     
+        });
+
+
+    }, []);
+
+
+
+    const handleSubmit = (id) => {
+        //e.preventDefault();
+
+
+        
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.get(`/api/submit_react/${id}`).then(res => {
+                if(res.data.status === 200)
+                {
+                    axios.get(`api/check_react/${post.id}`).then(res =>{
+            
+                        if(res.data.status === 200)
+                        {
+                            console.log('result',res.data.reacted);
+            
+                            if(res.data.reacted.post_id === post.id)
+                            {
+                                setValue(
+                                    <button className="btn-warning-post" onClick={(e) => {
+                                        e.preventDefault()
+                                        handleSubmit(post.id)
+                                        }}>
+                                        <i className="fas fa-heart text-danger  mx-1"></i>
+                                        <small className="Post-Title-home"> Liked {post.id}</small>
+                                    </button>
+                                )
+                            }
+                            else{
+                                setValue(
+                                    <button className="btn-warning-post" onClick={(e) => {
+                                        e.preventDefault()
+                                        handleSubmit(post.id)
+                                        }}>
+                                        <i className="fas fa-heart text-danger  mx-1"></i>
+                                        <small className="Post-Title-home"> Like {post.id}</small>
+                                    </button>
+                                )
+                            }
+                        }
+                                 
+                    });
+                }
+                else
+                {
+                    swal("Warning",'failed',"warning");
+                }
+            
+            });
+        });
+        
+    }
+
 const [open, setOpen] = useState(false);
 return (
 <>
@@ -299,10 +400,15 @@ return (
         </div>
     ) :
     (
+
+        
         <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
+        
         <div className="card Enroll-AuditionsB">
             <h2 className="accordion-header PostBack">
                 <div className="d-flex justify-content-between">
+
+                
 
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
                         <img src={mediaBaseUrl+post.star?.image} className="PostImgHome" alt="star-profile" />
@@ -396,10 +502,44 @@ return (
                 </div>
 
                 <div className="text-center hr-Auditions">
-                    <button className="btn-warning-post ">
+
+                {value ? (
+                    <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
+                        <i className="fas fa-heart text-danger  mx-1"></i>
+                        <small className="Post-Title-home"> Liked </small>
+                    </button> 
+                ) : (
+                    <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
+                        <i className="fas fa-heart text-light  mx-1"></i>
+                        <small className="Post-Title-home"> Like</small>
+                    </button> 
+                ) }
+
+                    {/* {value ? value : (
+                    <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
                         <i className="fas fa-heart text-danger  mx-1"></i>
                         <small className="Post-Title-home"> Like</small>
-                    </button>
+                    </button> 
+                    )} */}
+
+                    {/* <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
+                        <i className="fas fa-heart text-danger  mx-1"></i>
+                        <small className="Post-Title-home"> Liked</small>
+                    </button> */}
+                    
+
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
                         aria-expanded={open} aria-controls="collapseID" >
                         <i className="fas fa-comment  mx-1 "></i>
