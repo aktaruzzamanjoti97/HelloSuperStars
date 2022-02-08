@@ -4,7 +4,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import './App.css';
 import './components/CSS/BodyColor.css';
+
 // Category
+
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import StarSelection from "./components/Pages/Category/StarSelection";
 import SubCategory from "./components/Pages/Category/SubCategory";
@@ -13,10 +15,13 @@ import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/Learn
 import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
 import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
 import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
+
 // Error
 import Error from "./components/Pages/Home/Error";
+
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
+
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
 import Profile from './components/Pages/Profile/Profile';
@@ -48,6 +53,8 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import Login from "./components/UserAuthentication/Login";
 import Otp from "./components/UserAuthentication/Otp";
 import Signup from "./components/UserAuthentication/Signup";
+
+// Souvenir
 import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProduct";
 import Souvenir from "./components/Pages/Souvenir/Souvenir";
 import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
