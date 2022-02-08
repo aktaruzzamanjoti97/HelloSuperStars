@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
 import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
@@ -16,6 +16,11 @@ import Azhari from '../../images/NotificationDropdown/mizanurAzhari.jpg'
 import '../CSS/Navbar/navbar.css';
 import './Navigation.css';
 import NotificationDropdownModal from './NotificationDropdownModal/NotificationDropdownModal';
+import Skeleton , { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import swal from "sweetalert";
+import axios from "axios";
+import moment from 'moment'
 
 
 const Navigation = () => {
@@ -30,8 +35,31 @@ const Navigation = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [notifictions, setNotifictions] = useState([]);
+    const [load, setLoad] = useState(true);
 
 
+    useEffect(() => {
+        checkNotification()
+   
+    },[])
+
+    let checkNotification = () => {
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+            axios.get('/api/user/check_notification').then((res) => {
+                if (res.data.status === 200) {
+                    setNotifictions(res.data.notifiction)                
+                    if (notifictions.length > 0) {
+                        setLoad(false)
+                    }
+                    
+              } else {
+                swal("error", "Data base Error", "error");
+      
+              }
+            });
+          }); 
+    }
 
     function navToggle(isNavOpen) {
         setIsNavOpen(isNavOpen)
@@ -42,8 +70,11 @@ const Navigation = () => {
     }
 
     const handleNotificationDropdown = () => {
+        checkNotification()
         setNotificationChatDropdown(!notificationChatDropdown)
     }
+
+
 
     return (
         <div className='sticky-top'>
@@ -87,6 +118,7 @@ const Navigation = () => {
                                         <div onClick="parent.open('https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8')">
                                             <div className="d-flex justify-content-between m-3">
                                                 <div className="d-flex">
+                                                   
                                                     <img
                                                         className="img-fluid liveChatVideoPic"
                                                         style={{ width: "55px", height: "55px", borderRadius: "48%" }}
@@ -218,114 +250,67 @@ const Navigation = () => {
 
                                     <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
 
+                                        {load? [1, 2, 3].map(data =>
+                                            
+                                            
+                                        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                                            <div className="borderBottomNotificationDropdown">
+                                                <div className="d-flex justify-content-between m-2">
+                                                    <div className="d-flex">
+                                            
+                                                            <Skeleton height={55} width={55} circle={true}/>
+                                                    
+                                                
+                                                        <div className="text-white ms-1 profileName">
+                                                            <div className="text-decoration-none">
+                                                                <div className="link-open px-2 py-2">
+                                                                    <Skeleton width={180} height={15}/>
+                                                                    <Skeleton width={200} height={10}/>
+                                                                </div>
+                                                            </div>
 
+                                                        </div>
+                                                    </div>
+                                                    <div className="timeStampColor">
+                                            
+                                                    </div>
 
-                                        <div className="borderBottomNotificationDropdown">
-                                            <div className="d-flex justify-content-between m-2">
-                                                <div className="d-flex">
-                                                    <img
-                                                        className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                        src={Tamim}
-                                                        alt=""
-                                                    />
-                                                    <div className="text-white ms-1 profileName">
-                                                        <div className="text-decoration-none">
-                                                            <div className="link-open">
-                                                                <p className="text-margin-bottom"><b>Tamim Iqbal</b></p>
-                                                                <p className="text-margin-bottom"><small>Coming to live at 8.00 PM tonight</small></p>
+                                                </div>
+                                            </div>
+                                        </SkeletonTheme>
+                                        ) :
+                                            
+                                       notifictions.map(data => 
+                                                <div className="borderBottomNotificationDropdown">
+                                                    <div className="d-flex justify-content-between m-2">
+                                                        <div className="d-flex">
+                                                            <img
+                                                                className="img-fluid liveChatVideoPic"
+                                                                style={{ width: "55px", height: "55px", borderRadius: "48%" }}
+                                                                src={Azhari}
+                                                                alt=""
+                                                            />
+                                                            <div className="text-white ms-1 mt-1 profileName">
+                                                                <div className="text-decoration-none">
+                                                                    <div className="link-open">
+                                                                    <h6 className="text-margin-bottom"><b>{data.notification_text.type}</b></h6>
+                                                                        <p className="text-margin-bottom"><small>{data.notification_text.text}</small></p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                    </div>
-                                                </div>
-                                                <div className="timeStampColor">
-                                                    {/* <p className="text-margin-bottom">7/9/2021</p> */}
-                                                    <p className="text-margin-bottom activeTime"><small>10 min ago</small></p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div className="borderBottomNotificationDropdown">
-                                            <div className="d-flex justify-content-between m-2">
-                                                <div className="d-flex">
-                                                    <img
-                                                        className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                        src={Azhari}
-                                                        alt=""
-                                                    />
-                                                    <div className="text-white ms-1 mt-1 profileName">
-                                                        <div className="text-decoration-none">
-                                                            <div className="link-open">
-                                                                <h6 className="text-margin-bottom"><b>Mizanur Rahman Azhari</b></h6>
-                                                                <p className="text-margin-bottom"><small>Greetings request video information</small></p>
-                                                            </div>
+                                                        <div className="timeStampColor">
+                                                            <p className="text-margin-bottom">Today</p>
+                                                            <p className="text-margin-bottom"><small>2 hrs ago</small></p>
                                                         </div>
                                                     </div>
                                                 </div>
+                                        )
+                                        
+                                        }
 
-                                                <div className="timeStampColor">
-                                                    <p className="text-margin-bottom">Today</p>
-                                                    <p className="text-margin-bottom"><small>2 hrs ago</small></p>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div className="borderBottomNotificationDropdown">
-                                            <div className="d-flex justify-content-between m-2">
-                                                <div className="d-flex">
-                                                    <img
-                                                        className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                        src={Ayman}
-                                                        alt=""
-                                                    />
-                                                    <div className="text-white ms-1 profileName">
-                                                        <div className="text-decoration-none">
-                                                            <div className="textlink-open">
-                                                                <p className="text-margin-bottom"><b>Ayman Sadik</b></p>
-                                                                <p className="text-margin-bottom"><small>Uploaded a new video</small></p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div className="timeStampColor">
-                                                    <p className="text-margin-bottom">Yesterday</p>
-                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="borderBottomNotificationDropdown">
-                                            <div onClick={() => setNotiDropdownShow(true)} className="d-flex justify-content-between m-2">
-                                                <div className="d-flex">
-                                                    <img
-                                                        className="img-fluid liveChatVideoPic"
-                                                        style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                        src={Sarika}
-                                                        alt=""
-                                                    />
-                                                    <div className="text-white ms-1 profileName">
-                                                        <div className="text-decoration-none">
-                                                            <div className="link-open">
-                                                                <p className="text-margin-bottom"><b>Sarika Hassan</b></p>
-                                                                <p className="text-margin-bottom"><small>Started a new session</small></p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div className="timeStampColor">
-                                                    <p className="text-margin-bottom">12/12/22</p>
-                                                    <p className="text-margin-bottom"><small>5.10 PM</small></p>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div>
                                             <button className="btn btn-warning w-100">See More</button>
