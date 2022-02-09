@@ -60,7 +60,7 @@ const CoreCategory = () => {
 
                     history.push({
                       pathname: '/subCategory',
-                      search: '?query=abc',
+                      //search: '?query=abc',
                       state: { detail: res.data.length }
                     });
                 }
