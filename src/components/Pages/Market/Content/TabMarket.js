@@ -2,9 +2,12 @@ import React from 'react'
 
 import { Nav, Tab } from 'react-bootstrap';
 import AuctionsImg from '../../../../images/Souvenir/Icons/auction.png'
-import MarketPlaceTab from './MarketPlaceTab';
+import Chart from '../../../../images/shopping-cart-icon.png'
+
 
 import './TabMarket.css'
+import MarketMap from './MarketMap';
+import AuctionMap from './AuctionMap';
 const TabMarket = () => {
 return (
 <div>
@@ -14,7 +17,7 @@ return (
             <div className="d-flex TabCom m-2 ">
                 <div className="TabBtn1 w-100 px-2 mt-3">
                     <Nav.Link eventKey="first" className='btn fw-bold text-dark bg-warning'>
-                        {/* <span> <img src={User} className="img-fluid-Tab mx-2" alt="" /></span> */}
+                        <span> <img src={Chart} className="img-fluid-Tab mx-2" alt="" /></span>
                         <span>Marketplace</span>
                     </Nav.Link>
                 </div>
@@ -31,14 +34,15 @@ return (
                 {/* Tab || User Portal */}
                 <Tab.Pane eventKey="first">
 
-                    <MarketPlaceTab/>
+                    <MarketMap/>
                     <hr />
 
                 </Tab.Pane>
 
                 {/* Tab || Comments */}
                 <Tab.Pane eventKey="second">
-                    <p className='text-light'>sgdsfgdfgdfsd</p>
+                    <AuctionMap/>
+                    <hr />
                 </Tab.Pane>
 
             </Tab.Content>

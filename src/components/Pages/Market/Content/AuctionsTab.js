@@ -1,9 +1,9 @@
 import React from 'react'
 
-const MarketPlaceTab = ({user}) => {
-return (
-<>
-    <div className="card m-3 AuctionsA ">
+const AuctionsTab = ({user}) => {
+  return (
+    <>
+      <div className="card m-3 AuctionsA ">
         <div className=" row TabMar">
             <div className="col-md-6">
                 <img src={user.jersey} alt="" className='img-fluid AuctionsImg ' />
@@ -32,16 +32,17 @@ return (
                             {user.name}
                         </div>
                     </span>
+                    <span className='BestPrice  '> Best Price</span>
 
                 </div>
 
-                <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Buy Now</button>
+                <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Participate</button>
 
             </div>
         </div>
     </div>
-</>
-)
+    </>
+  )
 }
 
-export default MarketPlaceTab
+export default AuctionsTab
