@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import './App.css';
 import './components/CSS/BodyColor.css';
+
 // Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import StarSelection from "./components/Pages/Category/StarSelection";
@@ -13,10 +14,13 @@ import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/Learn
 import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
 import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
 import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
+
 // Error
 import Error from "./components/Pages/Home/Error";
+
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
+
 // Market Place Page
 import Market from "./components/Pages/Market/MarketPlace";
 import Profile from './components/Pages/Profile/Profile';
@@ -32,8 +36,8 @@ import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
 import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
 import ProfileCatBody from "./components/Sidebar/Left/Category/Content/ProfileCatBody";
 import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
-// Left Sidebar 
 
+// Left Sidebar 
 import FollowMain from "./components/Sidebar/Left/Following/FollowMain";
 import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
 import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
@@ -48,6 +52,8 @@ import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDe
 import Login from "./components/UserAuthentication/Login";
 import Otp from "./components/UserAuthentication/Otp";
 import Signup from "./components/UserAuthentication/Signup";
+
+// Souvenir
 import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProduct";
 import Souvenir from "./components/Pages/Souvenir/Souvenir";
 import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
