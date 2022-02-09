@@ -6,8 +6,8 @@ import Pro from '../../../../images/account.jpg'
 const MarketPlaceTab = () => {
 return (
 <>
-    <div className="card m-3 AuctionsA border-warning">
-        <div className="d-flex">
+    <div className="card m-3 AuctionsA ">
+        <div className=" row TabMar">
             <div className="col-md-6">
                 <img src={CardImg} alt="" className='img-fluid AuctionsImg ' />
             </div>
@@ -15,9 +15,7 @@ return (
 
                 <img src={CardIBg} alt="" className='img-fluid AuctionsImg AuctionsImgBl ' />
 
-                {/* <div className='AucBack'></div> */}
-
-                <h5 className='JerseyAucHe text-light fw-bold'>Bangladeshi jersey</h5>
+                <h5 className='JerseyAucHe text-light fw-bold'>Bangladeshi jersey </h5>
                 <p className='text-light JerseyAucHeP'>The product was designed for 2022
                     Bangladesh VS India series.</p>
 
