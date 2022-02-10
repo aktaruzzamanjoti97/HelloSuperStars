@@ -1,18 +1,31 @@
 import React from 'react'
+import Pds from '../../../../images/Ayman_Sadiq.jpg'
+import Pro from "../../../../images/Shakib/14.jpg";
+
+import OwlCarousel from 'react-owl-carousel';
+
 
 const AuctionsTab = ({user}) => {
-  return (
-    <>
-      <div className="card m-3 AuctionsA ">
+
+
+
+return (
+<>
+
+    <div className="card m-3 AuctionsA ">
         <div className=" row TabMar">
             <div className="col-md-6">
-                <img src={user.jersey} alt="" className='img-fluid AuctionsImg ' />
+            <OwlCarousel items={1} loop autoplay autoplayTimeout={3000} margin={0} dots={false} >
+                    <img src={user.jersey} alt="" className='img-fluid AuctionsImg ' />
+                    <img src={Pds} alt="" className='img-fluid AuctionsImg ' />
+                    <img src={Pro} alt="" className='img-fluid AuctionsImg ' />
+                </OwlCarousel>
             </div>
             <div className="col-md-6 containerAuc ">
 
                 <img src={user.back} alt="" className='img-fluid AuctionsImg AuctionsImgBl ' />
 
-                <h5 className='JerseyAucHe text-light fw-bold'>{user.title} Bangladeshi jersey </h5>
+                <h5 className='JerseyAucHe text-light fw-bold'>{user.title}  </h5>
                 <p className='text-light JerseyAucHeP'>{user.desc} </p>
 
                 <span className="text-center JerseyAucDol">
@@ -41,8 +54,8 @@ const AuctionsTab = ({user}) => {
             </div>
         </div>
     </div>
-    </>
-  )
+</>
+)
 }
 
 export default AuctionsTab

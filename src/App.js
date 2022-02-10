@@ -57,6 +57,7 @@ import Signup from "./components/UserAuthentication/Signup";
 import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProduct";
 import Souvenir from "./components/Pages/Souvenir/Souvenir";
 import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
+import Shipping from "./components/Pages/Market/Shipping";
 
 
 axios.defaults.withCredentials = true;
@@ -86,6 +87,7 @@ function App() {
         <Route exact path='/guest' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
+        <Route exact path='/marketplace/shipping' component={Shipping} />
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />

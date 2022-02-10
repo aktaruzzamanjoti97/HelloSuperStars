@@ -1,13 +1,25 @@
 import React from 'react'
 
+import Pds from '../../../../images/Ayman_Sadiq.jpg'
+import Pro from "../../../../images/Shakib/14.jpg";
+
+import OwlCarousel from 'react-owl-carousel';
+import { Link } from 'react-router-dom';
+
 const MarketPlaceTab = ({user}) => {
 return (
 <>
     <div className="card m-3 AuctionsA ">
         <div className=" row TabMar">
+
             <div className="col-md-6">
-                <img src={user.jersey} alt="" className='img-fluid AuctionsImg ' />
+                <OwlCarousel items={1} loop autoplay autoplayTimeout={3000} margin={0} dots={false} >
+                    <img src={user.jersey} alt="" className='img-fluid AuctionsImg ' />
+                    <img src={Pds} alt="" className='img-fluid AuctionsImg ' />
+                    <img src={Pro} alt="" className='img-fluid AuctionsImg ' />
+                </OwlCarousel>
             </div>
+
             <div className="col-md-6 containerAuc ">
 
                 <img src={user.back} alt="" className='img-fluid AuctionsImg AuctionsImgBl ' />
@@ -35,7 +47,7 @@ return (
 
                 </div>
 
-                <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Buy Now</button>
+                <Link to='/marketplace/shipping'><button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Buy Now</button></Link>
 
             </div>
         </div>
