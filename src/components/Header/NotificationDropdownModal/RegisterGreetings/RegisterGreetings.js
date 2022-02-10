@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
+import React, { useState ,useEffect } from 'react';
+import { Card, Form } from 'react-bootstrap';
 import CardContent from '@mui/material/CardContent';
 import OwlCarousel from 'react-owl-carousel';
 import singleFrame from '../../../../images/Normal-User/Single-frame.png';
@@ -10,19 +10,32 @@ import payPalLogo from '../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../images/starProfile/StarPhotos/1.jpg';
 // import '../../../../../CSS/Profile/starProfile/starChat.css';
-import loading from '../../../../images/LiveChat/Loading1.gif'
-import axios from "axios";
-import swal from 'sweetalert';
-import moment from 'moment'
+// import loading from '../../../../images/LiveChat/Loading1.gif'
+// import axios from "axios";
+// import swal from 'sweetalert';
+// import moment from 'moment'
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { Markup } from 'interweave';
+
 
 const RegisterGreetings = () => {
 
     const [showCard, setShowCard] = React.useState(false)
+    const [Input, setInput] = useState();
+    const [greetingInfo, setGreetingInfo] = useState({})
+    const location = useLocation();
+    
+    useEffect(() => {
+        setGreetingInfo(location.state.greetingInfo);
+  
+    },[location])
 
-    function handleClick(e) {
+    let hendelSubmit = (e) => {
         e.preventDefault();
-        setShowCard(true)
-
+        let form_data = new FormData(e.target);
+        let data = Object.fromEntries(form_data.entries());
+        console.log(data);
+        
     }
 
     return (
@@ -46,24 +59,20 @@ const RegisterGreetings = () => {
 
 
                         <div className="col-md-9">
-                            <h4 className="starChat-heading">Live Chat Demo Title</h4>
+                            <h4 className="starChat-heading">Greetings Details</h4>
                             <div className="vb"></div>
 
                             <div className="mt-3 row">
 
                                 <div className="col-md-6 display-style-starChat">
                                     <div className="me-5 starChat-child-style text-white">
-                                        <h6>Star</h6>
-                                        <h6>Date</h6>
-                                        <h6>Time</h6>
+                                        <h6>Title</h6>
                                         <h6>Fee</h6>
                                     </div>
 
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
-                                        <h6>Mizanur Rahman Azhari</h6>
-                                        <h6>December 23, 2021</h6>
-                                        <h6>10:37 AM</h6>
-                                        <h6>3030 BDT</h6>
+                                        <h6>{greetingInfo.title}</h6>
+                                        <h6>{greetingInfo.cost} BDT</h6>
                                     </div>
                                 </div>
 
@@ -72,7 +81,9 @@ const RegisterGreetings = () => {
                                 <div className="col-md-6">
                                     <div className="mx-2 starChat-child-style">
                                         <h5 className="text-white">Instructions</h5>
-                                        <p style={{ color: '#c2c2c2' }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                                        <p style={{ color: '#c2c2c2' }}>
+                                        <Markup content={greetingInfo.description}/>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +94,7 @@ const RegisterGreetings = () => {
                     </div>
 
                     <div className="whole-m-p">
-                        <form>
+                        <Form onSubmit={hendelSubmit}>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
@@ -115,7 +126,7 @@ const RegisterGreetings = () => {
 
                             <div className="form-group my-1">
                                 <big className="text-white">Greeting Context</big>
-                                <input type="text" className="form-control input-overlay" name="comment" />
+                                <textarea name="" id="" cols="10" rows="5" className='form-control input-overlay'></textarea>
                             </div>
 
                             <div className="form-group my-1">
@@ -136,14 +147,17 @@ const RegisterGreetings = () => {
 
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <button type="submit" className="my-3 btn btn-gold submit-greetings-btn">Register</button>
+                                </div>
 
+                            </div>
 
-
-                            <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
                             {/* <CustomToggle eventKey="0">
                                
                             </CustomToggle> */}
-                        </form>
+                        </Form>
                     </div>
                 </CardContent>
 

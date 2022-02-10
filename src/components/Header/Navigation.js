@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
 import { Button, Form, Modal, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import Iframe from 'react-iframe';
 import ShahRukhKhan from '../../images/shahruk-khan.jpg'
 import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
@@ -21,6 +21,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import swal from "sweetalert";
 import axios from "axios";
 import moment from 'moment'
+import ApprovedImg from '../Header/NotificationDropdownModal/defultImg/approved.png'
 
 
 const Navigation = () => {
@@ -36,8 +37,9 @@ const Navigation = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [notifictions, setNotifictions] = useState([]);
+    const [greetingInfo, setGreetingInfo] = useState([]);
     const [load, setLoad] = useState(true);
-
+    const history = useHistory();
 
     useEffect(() => {
         checkNotification()
@@ -49,6 +51,7 @@ const Navigation = () => {
             axios.get('/api/user/check_notification').then((res) => {
                 if (res.data.status === 200) {
                     setNotifictions(res.data.notifiction)                
+                    setGreetingInfo(res.data.greeting_info) 
                     if (notifictions.length > 0) {
                         setLoad(false)
                     }
@@ -72,6 +75,14 @@ const Navigation = () => {
     const handleNotificationDropdown = () => {
         checkNotification()
         setNotificationChatDropdown(!notificationChatDropdown)
+    }
+
+    const greetingsDetailsForm = () => {
+
+        history.push({
+            pathname: `/starprofile/${greetingInfo.star_id}/greetings_registration_form`,
+            state: {greetingInfo: greetingInfo}
+          });
     }
 
 
@@ -250,7 +261,7 @@ const Navigation = () => {
 
                                     <div class="container chatContainer dropdown-menu toggle" aria-labelledby="dropdownMenuButton1">
 
-                                        {load? [1, 2, 3].map(data =>
+                                        {load? [1].map(data =>
                                             
                                             
                                         <SkeletonTheme baseColor="#202020" highlightColor="#444">
@@ -281,13 +292,13 @@ const Navigation = () => {
                                         ) :
                                             
                                        notifictions.map(data => 
-                                                <div className="borderBottomNotificationDropdown">
+                                                <div className="borderBottomNotificationDropdown" onClick={greetingsDetailsForm}>
                                                     <div className="d-flex justify-content-between m-2">
                                                         <div className="d-flex">
                                                             <img
                                                                 className="img-fluid liveChatVideoPic"
                                                                 style={{ width: "55px", height: "55px", borderRadius: "48%" }}
-                                                                src={Azhari}
+                                                                src={ApprovedImg}
                                                                 alt=""
                                                             />
                                                             <div className="text-white ms-1 mt-1 profileName">
@@ -301,8 +312,8 @@ const Navigation = () => {
                                                         </div>
 
                                                         <div className="timeStampColor">
-                                                            <p className="text-margin-bottom">Today</p>
-                                                            <p className="text-margin-bottom"><small>2 hrs ago</small></p>
+                                                            <p className="text-margin-bottom">{moment(data.notification_text.created_at).format('LT')}</p>
+                                                            <p className="text-margin-bottom"><small>{moment(data.notification_text.created_at).format('LL')}</small></p>
                                                         </div>
                                                     </div>
                                                 </div>
