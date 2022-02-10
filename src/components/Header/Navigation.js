@@ -77,13 +77,21 @@ const Navigation = () => {
         setNotificationChatDropdown(!notificationChatDropdown)
     }
 
-    const greetingsDetailsForm = () => {
-
-        history.push({
-            pathname: `/starprofile/${greetingInfo.star_id}/greetings_registration_form`,
-            state: {greetingInfo: greetingInfo}
-          });
+    const greetingsDetailsForm = (notification_id, view_status) => {
+        if (view_status == 0) {
+            
+            history.push({
+                pathname: `/starprofile/${greetingInfo.star_id}/greetings_registration_form`,
+                state: {
+                    greetingInfo: greetingInfo,
+                    notification_id: notification_id
+                }
+              });
+        } else {
+            history.push("/activities")
+        }
     }
+
 
 
 
@@ -291,8 +299,9 @@ const Navigation = () => {
                                         </SkeletonTheme>
                                         ) :
                                             
-                                       notifictions.map(data => 
-                                                <div className="borderBottomNotificationDropdown" onClick={greetingsDetailsForm}>
+                                            notifictions.map(data => 
+                                           
+                                                <div className="borderBottomNotificationDropdown" onClick={()=>greetingsDetailsForm(data.id,data.view_status)}>
                                                     <div className="d-flex justify-content-between m-2">
                                                         <div className="d-flex">
                                                             <img
@@ -301,6 +310,7 @@ const Navigation = () => {
                                                                 src={ApprovedImg}
                                                                 alt=""
                                                             />
+                                                        
                                                             <div className="text-white ms-1 mt-1 profileName">
                                                                 <div className="text-decoration-none">
                                                                     <div className="link-open">
