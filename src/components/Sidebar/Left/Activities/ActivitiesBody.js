@@ -59,12 +59,12 @@ const ActivitiesBody = () => {
               </div>
               
               <div className="col-sm-9 justify-content-center postTab">
-                <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn'>Meetup Events</h2>
+                <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Meetup Events</h2>
                  <ActivitiesContent event={posts}/>
 
                  <hr/>
 
-                 <h2 className='text-light fw-bold bg-dark p-2 btn'>LiveChat Events</h2>
+                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>LiveChat Events</h2>
                  <ActivitiesContent2 event={posts2}/>
               </div>
               

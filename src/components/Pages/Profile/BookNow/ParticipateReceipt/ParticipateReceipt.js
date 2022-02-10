@@ -75,7 +75,7 @@ const ParticipateReceipt = (props) => {
                             <div className="m-3">
                                 <div className="my-2">
                                     <small>Name</small>
-                                    <h5 className="fw-bolder">Aktaruzzaman</h5>
+                                    <h5 className="fw-bolder">{localStorage.getItem('auth_name')}</h5>
                                 </div>
                                 <div className="my-2">
                                     <small>Adress</small>
