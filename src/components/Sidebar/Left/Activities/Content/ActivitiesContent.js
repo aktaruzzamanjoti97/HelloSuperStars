@@ -8,11 +8,14 @@ import { Modal, Button} from 'react-bootstrap'
 
 import moment from 'moment';
 import { event, post } from "jquery";
+import UpComingLiveComment from "../../../../Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpComingLiveComment";
+import ParticipateReceipt from "../../../../Pages/Profile/BookNow/ParticipateReceipt/ParticipateReceipt";
 
 
 const ActivitiesContent = (props) => {
 
 const [modalShow, setModalShow] = React.useState(false);
+const [modalShow1, setModalShow1] = React.useState(false);
 const [days, setDays] = useState(0);
 const [hours, setHours] = useState(0);
 const [minutes, setMinutes] = useState(0);
@@ -81,22 +84,25 @@ return (
                         </div>
                     </div>
 
-                                {/* <Link to={`/activities/video/${event.meetup_event_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
 
-                                {/* <Link to={{ 
-            pathname: "/activities/video", 
-            state: {
-                event_id: event.meetup_event?.event_link
-            }
-            }}>
-
-            <Button className='btn bg-warning mb-3 text-dark fw-bold'>Call Now</Button>
-
-            </Link> */}
-
-<a target="_blank" href={event.meetup_event?.event_link} ><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
-
-                </div>
+                    {event.meetup_event?.meetup_type === 'Online' ? (
+                        <a target="_blank" href={event.meetup_event?.event_link}>
+                        <Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button>
+                        </a>
+                    ) : (
+                        <>
+                        <Button className='btn bg-warning  mb-3 text-dark' onClick={() => setModalShow1(true)}>Check Ticket</Button>
+                        <ParticipateReceipt
+        show={modalShow1}
+        onHide={() => setModalShow1(false)}
+      />
+           
+                        </>
+                       
+                        
+                    )}
+                    
+                     </div>
 
             </div>
         </div>

@@ -35,27 +35,10 @@ export default function UpcomingAuditionsContent({ post }) {
 
                 if(res.data.reacted.post_id === post.id)
                 {
-                    setValue(
-                        <button className="btn-warning-post" onClick={(e) => {
-                            e.preventDefault()
-                            handleSubmit(post.id)
-                            }}>
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Liked {post.id}</small>
-                        </button>
-                    )
+                    setValue(res.data.reacted)
+                    setData({ likes: post.react_number , updated: true });
                 }
-                else{
-                    setValue(
-                        <button className="btn-warning-post" onClick={(e) => {
-                            e.preventDefault()
-                            handleSubmit(post.id)
-                            }}>
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Like {post.id}</small>
-                        </button>
-                    )
-                }
+                
             }
                      
         });
@@ -63,49 +46,40 @@ export default function UpcomingAuditionsContent({ post }) {
 
     }, []);
 
+    const [data, setData] = useState({
+        likes: post.react_number,
+        updated: false
+      });
+
 
 
     const handleSubmit = (id) => {
         //e.preventDefault();
 
+        if (!data.updated) {
+            setData({ likes: data.likes + 1, updated: true });
+          } else {
+            setData({ likes: data.likes - 1, updated: false });
+          }
 
-        
-        axios.get('/sanctum/csrf-cookie').then(response => {
             axios.get(`/api/submit_react/${id}`).then(res => {
                 if(res.data.status === 200)
                 {
-                    axios.get(`api/check_react/${post.id}`).then(res =>{
+                    // axios.get(`api/check_react/${post.id}`).then(res =>{
             
-                        if(res.data.status === 200)
-                        {
-                            console.log('result',res.data.reacted);
+                    //     if(res.data.status === 200)
+                    //     {
+                    //         console.log('result',value);
             
-                            if(res.data.reacted.post_id === post.id)
-                            {
-                                setValue(
-                                    <button className="btn-warning-post" onClick={(e) => {
-                                        e.preventDefault()
-                                        handleSubmit(post.id)
-                                        }}>
-                                        <i className="fas fa-heart text-danger  mx-1"></i>
-                                        <small className="Post-Title-home"> Liked {post.id}</small>
-                                    </button>
-                                )
-                            }
-                            else{
-                                setValue(
-                                    <button className="btn-warning-post" onClick={(e) => {
-                                        e.preventDefault()
-                                        handleSubmit(post.id)
-                                        }}>
-                                        <i className="fas fa-heart text-danger  mx-1"></i>
-                                        <small className="Post-Title-home"> Like {post.id}</small>
-                                    </button>
-                                )
-                            }
-                        }
-                                 
-                    });
+                    //         if(res.data.reacted.post_id === post.id)
+                    //         {
+                    //             setValue(post.id)
+                    //         }
+                    //         else{
+                    //             setValue(null)
+                    //         }
+                    //     }       
+                    // });
                 }
                 else
                 {
@@ -113,11 +87,16 @@ export default function UpcomingAuditionsContent({ post }) {
                 }
             
             });
-        });
-        
     }
 
+
+    
+
+
+
 const [open, setOpen] = useState(false);
+
+
 return (
 <>
     { post.type === 'meetup' ? (
@@ -167,8 +146,8 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gray', textDecoration:'underline' }}>See more</span>}
-                less={<span style={{ color: 'gray', textDecoration:'underline' }}>See less</span>}
+                more={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See more</span>}
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text  py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -224,7 +203,7 @@ return (
                     <ul className="PostHoUl Co-Auditions">
                         <li className="like-post">
                             <i className="fas fa-heart heart mx-1 "></i>
-                            <small className="profile-card-text">100K</small>
+                            <small className="profile-card-text">{data.likes}</small>
                         </li>
                         <li className="share-post">
                             <small className="profile-card-text">
@@ -240,10 +219,20 @@ return (
                 </div>
 
                 <div className="text-center hr-Auditions">
-                    <button className="btn-warning-post ">
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button>
+                    <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
+                        {data.updated ? (
+                            <>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Liked</small>
+                            </>
+                        ) : <>
+                            <i className="fas fa-heart text-light  mx-1"></i>
+                            <small className="Post-Title-home"> Like</small>
+                        </> }
+                </button>
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
                         aria-expanded={open} aria-controls="collapseID" >
                         <i className="fas fa-comment  mx-1 "></i>
@@ -313,7 +302,7 @@ return (
                 /* Default options */
                 lines={3}
                 more={<span style={{ color: 'gold', textDecoderation: 'none' }}>See more</span>}
-                less="See less"
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -356,7 +345,7 @@ return (
                     <ul className="PostHoUl Co-Auditions">
                         <li className="like-post">
                             <i className="fas fa-heart heart mx-1 "></i>
-                            <small className="profile-card-text">100K</small>
+                            <small className="profile-card-text">{data.likes}</small>
                         </li>
                         <li className="share-post">
                             <small className="profile-card-text">
@@ -372,10 +361,20 @@ return (
                 </div>
 
                 <div className="text-center hr-Auditions">
-                    <button className="btn-warning-post ">
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button>
+                <button className="btn-warning-post" onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit(post.id)
+                        }}>
+                        {data.updated ? (
+                            <>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Liked</small>
+                            </>
+                        ) : <>
+                            <i className="fas fa-heart text-light  mx-1"></i>
+                            <small className="Post-Title-home"> Like</small>
+                        </> }
+                </button>
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
                         aria-expanded={open} aria-controls="collapseID" >
                         <i className="fas fa-comment  mx-1 "></i>
@@ -450,8 +449,8 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>See more</span>}
-                less="See less"
+                more={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See more</span>}
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -486,7 +485,7 @@ return (
                     <ul className="PostHoUl Co-Auditions">
                         <li className="like-post">
                             <i className="fas fa-heart heart mx-1 "></i>
-                            <small className="profile-card-text">100K</small>
+                            <small className="profile-card-text">{data.likes}</small>
                         </li>
                         <li className="share-post">
                             <small className="profile-card-text">
@@ -503,41 +502,20 @@ return (
 
                 <div className="text-center hr-Auditions">
 
-                {value ? (
-                    <button className="btn-warning-post" onClick={(e) => {
+                <button className="btn-warning-post" onClick={(e) => {
                         e.preventDefault()
                         handleSubmit(post.id)
                         }}>
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Liked </small>
-                    </button> 
-                ) : (
-                    <button className="btn-warning-post" onClick={(e) => {
-                        e.preventDefault()
-                        handleSubmit(post.id)
-                        }}>
-                        <i className="fas fa-heart text-light  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button> 
-                ) }
-
-                    {/* {value ? value : (
-                    <button className="btn-warning-post" onClick={(e) => {
-                        e.preventDefault()
-                        handleSubmit(post.id)
-                        }}>
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button> 
-                    )} */}
-
-                    {/* <button className="btn-warning-post" onClick={(e) => {
-                        e.preventDefault()
-                        handleSubmit(post.id)
-                        }}>
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Liked</small>
-                    </button> */}
+                        {data.updated ? (
+                            <>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Liked</small>
+                            </>
+                        ) : <>
+                            <i className="fas fa-heart text-light  mx-1"></i>
+                            <small className="Post-Title-home"> Like</small>
+                        </> }
+                </button>
                     
 
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}
