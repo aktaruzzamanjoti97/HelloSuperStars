@@ -31,8 +31,10 @@ export default function UpcomingAuditionsContent({ post }) {
 
                 if(res.data.reacted.post_id === post.id)
                 {
+                    setValue(res.data.reacted)
                     setData({ likes: post.react_number , updated: true });
                 }
+                
             }
                      
         });
@@ -44,12 +46,10 @@ export default function UpcomingAuditionsContent({ post }) {
         likes: post.react_number,
         updated: false
       });
-    
 
 
     const handleSubmit = (id) => {
         //e.preventDefault();
-    
         if (!data.updated) {
             setData({ likes: data.likes + 1, updated: true });
           } else {
@@ -72,6 +72,8 @@ export default function UpcomingAuditionsContent({ post }) {
 
 
 const [open, setOpen] = useState(false);
+
+
 return (
 <>
     { post.type === 'meetup' ? (
@@ -121,8 +123,8 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gray', textDecoration:'underline' }}>See more</span>}
-                less={<span style={{ color: 'gray', textDecoration:'underline' }}>See less</span>}
+                more={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See more</span>}
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text  py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -277,7 +279,7 @@ return (
                 /* Default options */
                 lines={3}
                 more={<span style={{ color: 'gold', textDecoderation: 'none' }}>See more</span>}
-                less="See less"
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -566,8 +568,8 @@ return (
             <ShowMoreText
                 /* Default options */
                 lines={3}
-                more={<span style={{ color: 'gold', textDecoderation: 'none' }}>See more</span>}
-                less="See less"
+                more={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See more</span>}
+                less={<span style={{ color: 'gold', textDecoderation: 'none!important' }}>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
@@ -639,18 +641,16 @@ return (
                         e.preventDefault()
                         handleSubmit(post.id)
                         }}>
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Like</small>
-                    </button> 
-                    )} */}
-
-                    {/* <button className="btn-warning-post" onClick={(e) => {
-                        e.preventDefault()
-                        handleSubmit(post.id)
-                        }}>
-                        <i className="fas fa-heart text-danger  mx-1"></i>
-                        <small className="Post-Title-home"> Liked</small>
-                    </button> */}
+                        {data.updated ? (
+                            <>
+                            <i className="fas fa-heart text-danger  mx-1"></i>
+                            <small className="Post-Title-home"> Liked</small>
+                            </>
+                        ) : <>
+                            <i className="fas fa-heart text-light  mx-1"></i>
+                            <small className="Post-Title-home"> Like</small>
+                        </> }
+                </button>
                     
 
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}

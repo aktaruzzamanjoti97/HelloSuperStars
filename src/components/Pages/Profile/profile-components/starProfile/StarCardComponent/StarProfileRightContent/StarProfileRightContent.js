@@ -26,7 +26,7 @@ const StarProfileRightContent = ({ star_id }) => {
           if (res.data.action) {
             history.push(`/starprofile/${star_id}/greeting`);
           } else {
-            swal("Not Available", "Greetings Not Available Now", "warning");
+            swal("Unavailable now", "Greetings Not Available Now", "warning");
           }
   
         } else {

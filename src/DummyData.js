@@ -384,3 +384,45 @@ export const Users = [
     
 
   ];
+
+
+
+  export const Market = [
+   
+    {
+      id:1,
+      jersey:"images/FootbalImage.jpg",
+      back: "images/Souvenir/fundo-floral-preto-png-2.png",
+      tile:"Bangladeshi Jersey",
+      desc:"The product was designed for 2022 Bangladesh VS India series.",
+      pro:"images/chanchal.jpg",
+      price:"20.99",
+      name: "Chanchal Chowdhury",
+      type:"Owner",
+    },
+
+    {
+      id:2,
+      jersey:"images/FootbalImage.jpg",
+      back: "images/Souvenir/fundo-floral-preto-png-2.png",
+      tile:"Bangladeshi Jersey",
+      desc:"The product was designed for 2022 Bangladesh VS India series.",
+      pro: "images/James.jpg",
+      price:"8.99",
+      name: "James",
+      type:"Owner",
+    },
+    {
+      id:3,
+      jersey:"images/FootbalImage.jpg",
+      back: "images/Souvenir/fundo-floral-preto-png-2.png",
+      tile:"Bangladeshi Jersey",
+      desc:"The product was designed for 2022 Bangladesh VS India series.",
+      pro: "images/srabanti.jpg",
+      price:'11.99',
+      name: "Srabanti Chatterjee",
+      type:"Owner",
+    },
+    
+
+  ];

@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import Navigation from "../../Header/Navigation";
 import LeftSidebar from "../../Sidebar/LeftSidebar";
 import RightSidebar from "../../Sidebar/RightSidebar";
-import Contents from "../Market/Content/Content";
+// import Contents from "../Market/Content/Content";
 import '../../CSS/Navbar/navbar.css'
+import TabMarket from "./Content/TabMarket";
 
 export default class MarketPlace extends Component {
     render() {
@@ -20,7 +21,8 @@ export default class MarketPlace extends Component {
                 </div>
   
                 <div className="col-sm-6 justify-content-center  postTab" >
-                  <Contents/>
+                  {/* <Contents/> */}
+                  <TabMarket/>
                 </div>
   
                 <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight" >

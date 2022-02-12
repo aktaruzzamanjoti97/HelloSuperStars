@@ -13,6 +13,7 @@ import StarPost from "../../Pages/Profile/profile-components/starProfile/StarPos
 import Videos from "../../Pages/Profile/profile-components/starProfile/Videos";
 
 import GreetingsPayContent from "./GreetingsPay/GreetingsPayContent";
+import GreetingsRegistrationForm from "../../Header/NotificationDropdownModal/RegisterGreetings/RegisterGreetings";
 import BookNowEvent from "./BookNow/BookNowEvent";
 
 import LiveChat from "./profile-components/starProfile/LiveChat/LiveChat";
@@ -209,6 +210,8 @@ return (
             <Route path={`${path}/souviner`}> <Souviner star_id={star_id}/>
             </Route>
             <Route path={`${path}/audition`}> <Audition star_id={star_id}/>
+            </Route>
+            <Route path={`${path}/greetings_registration_form`}> <GreetingsRegistrationForm star_id={star_id}/>
             </Route>
 
             <Route path={`${path}/booking`}> <Audition star_id={star_id} />
