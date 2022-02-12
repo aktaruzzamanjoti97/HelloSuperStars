@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
+import React, { useState ,useEffect } from 'react';
+import { Card, Form } from 'react-bootstrap';
 import CardContent from '@mui/material/CardContent';
 import OwlCarousel from 'react-owl-carousel';
 import singleFrame from '../../../../images/Normal-User/Single-frame.png';
@@ -9,21 +9,71 @@ import payoneerLogo from '../../../../images/Payment-img/Payoneer-Logo.wine.png'
 import payPalLogo from '../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import azhari from '../../../../images/starProfile/StarPhotos/1.jpg';
-// import '../../../../../CSS/Profile/starProfile/starChat.css';
-import loading from '../../../../images/LiveChat/Loading1.gif'
+import PhoneInput from 'react-phone-input-2'
+
+import loading from '../../../../images/LiveChat/Loading2.gif';
 import axios from "axios";
 import swal from 'sweetalert';
-import moment from 'moment'
+
+import { Link, useLocation, useHistory } from "react-router-dom";
+import { Markup } from 'interweave';
+
 
 const RegisterGreetings = () => {
 
     const [showCard, setShowCard] = React.useState(false)
+    const [Input, setInput] = useState();
+    const [greetingInfo, setGreetingInfo] = useState({})
+    const [notifictionInfo, setNotifictionInfo] = useState()
+    const [changeIcon, setChange] = useState(false);
 
-    function handleClick(e) {
+    const location = useLocation();
+    const [inputError, setInputError] = useState([]);
+    const [loding, setLoading] = useState(false)
+
+    const history = useHistory();
+
+    
+    useEffect(() => {
+        setGreetingInfo(location.state.greetingInfo);
+        setNotifictionInfo(location.state.notification_id);
+
+       
+        
+    },[location])
+    let hendelSubmit = (e) => {
         e.preventDefault();
-        setShowCard(true)
+        setLoading(true)
+
+        let form_data = new FormData(e.target);
+        let data = Object.fromEntries(form_data.entries());
+        console.log(data);
+
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+            axios.post("/api/user/greetings_registaion_update", data).then((res) => {
+                setLoading(false);
+              
+                if (res.data.status === 200) {
+                    history.push("/activities")
+                swal("Good job!", "You clicked the button!", "success", {
+                    button: "Aww yiss!",
+                  });
+      
+              } else {
+                  console.log('first', res.data.validation_errors);
+                  setInputError(res.data.validation_errors);
+              }
+            });
+        });
+        
+          
+    }
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
 
     }
+
+    
 
     return (
         <div>
@@ -46,24 +96,20 @@ const RegisterGreetings = () => {
 
 
                         <div className="col-md-9">
-                            <h4 className="starChat-heading">Live Chat Demo Title</h4>
+                            <h4 className="starChat-heading">Greetings Details</h4>
                             <div className="vb"></div>
 
                             <div className="mt-3 row">
 
                                 <div className="col-md-6 display-style-starChat">
                                     <div className="me-5 starChat-child-style text-white">
-                                        <h6>Star</h6>
-                                        <h6>Date</h6>
-                                        <h6>Time</h6>
+                                        <h6>Title</h6>
                                         <h6>Fee</h6>
                                     </div>
 
                                     <div style={{ color: "#c2c2c2" }} className="mx-5 starChat-child-style">
-                                        <h6>Mizanur Rahman Azhari</h6>
-                                        <h6>December 23, 2021</h6>
-                                        <h6>10:37 AM</h6>
-                                        <h6>3030 BDT</h6>
+                                        <h6>{greetingInfo.title}</h6>
+                                        <h6>{greetingInfo.cost} BDT</h6>
                                     </div>
                                 </div>
 
@@ -72,7 +118,9 @@ const RegisterGreetings = () => {
                                 <div className="col-md-6">
                                     <div className="mx-2 starChat-child-style">
                                         <h5 className="text-white">Instructions</h5>
-                                        <p style={{ color: '#c2c2c2' }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                                        <p style={{ color: '#c2c2c2' }}>
+                                        <Markup content={greetingInfo.description}/>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -83,27 +131,32 @@ const RegisterGreetings = () => {
                     </div>
 
                     <div className="whole-m-p">
-                        <form>
+                        
+                        <Form onSubmit={hendelSubmit}>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
-                                        <big className="text-white">Name</big>
-
+                                        <big className="text-white">Name</big><big className='text-danger'> *</big>
+                                        <input type='hidden' name="notification_id" value={notifictionInfo}/>
                                         <input type="text" className="form-control input-overlay" name="name" />
-                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                        <small id="emailHelp" class="form-text text-danger">{ inputError.name }</small>
+                            
+                                
                                     </div>
                                     <p className="" style={{ color: 'red' }}></p>
                                     <div className="form-group my-3">
-                                        <big className="text-white">Date of Birth</big>
+                                        <big className="text-white">Date of Birth</big><big className='text-danger'> *</big>
                                         <input type="date" className="form-control input-overlay" name="date_b" />
+                                        <small id="emailHelp" class="form-text text-danger">{ inputError.date_b }</small>
                                     </div>
 
                                 </div>
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
-                                        <big className="text-white">Phone Number</big>
-                                        <input type="text" className="form-control input-overlay" name="phone" />
-                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
+                                        <big className="text-white">Phone Number</big><big className='text-danger'> *</big>
+                                        <input type="phone" className="form-control input-overlay" name="phone" />
+                                        <small id="emailHelp" class="form-text text-danger">{ inputError.phone }</small>
+
                                     </div>
                                     <p className="" style={{ color: 'red' }}></p>
                                     <div className="form-group my-3">
@@ -114,21 +167,24 @@ const RegisterGreetings = () => {
                             </div>
 
                             <div className="form-group my-1">
-                                <big className="text-white">Greeting Context</big>
-                                <input type="text" className="form-control input-overlay" name="comment" />
+                                <big className="text-white">Greeting Context</big><big className='text-danger'> *</big>
+                                <textarea name="greetings_context" id="" cols="10" rows="5" className='form-control input-overlay'></textarea>
+                                <small id="emailHelp" class="form-text text-danger">{ inputError.greetings_context }</small>
                             </div>
 
                             <div className="form-group my-1">
                                 <big className="text-white">Additional Message</big>
-                                <input type="text" className="form-control input-overlay" name="comment" />
+                                <input type="text" className="form-control input-overlay" name="add_msg" />
                             </div>
 
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
-                                        <big className="text-white">Password</big>
+                                        <big className="text-white">Password</big><big className='text-danger'> *</big>
 
-                                        <input type="text" className="form-control input-overlay" name="name" />
+                                        <input type="text" className="form-control input-overlay" name="password" />
+                                        <small id="emailHelp" class="form-text text-danger">{ inputError.password }</small>
+
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
                                     {/* <p className="" style={{ color: 'red' }}></p> */}
@@ -136,14 +192,17 @@ const RegisterGreetings = () => {
 
                                 </div>
                             </div>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <button type="submit" className="my-3 btn btn-gold submit-greetings-btn">Register {loding ? <img src={loading} style={{ width: '20px', marginLeft: '10px' }} alt="" />:null}</button>
+                                </div>
 
+                            </div>
 
-
-                            <button onClick={handleClick} type="submit" className="my-3 btn btn-gold">Register</button>
                             {/* <CustomToggle eventKey="0">
                                
                             </CustomToggle> */}
-                        </form>
+                        </Form>
                     </div>
                 </CardContent>
 
