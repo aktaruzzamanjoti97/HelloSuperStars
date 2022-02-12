@@ -242,8 +242,9 @@ const Greeting = ({ star_id }) => {
                           </div>
                           </ul>
            
-                          {status.action ?
-                            
+                          {greeting.status > 0 ?
+                           ""
+                           : 
                           <div className="d-flex justify-content-between mt-4 mb-3">
                             <button className="btn btn-warning ms-4" onClick={handelGreetingsRegDelete}>
                               <i className="fas fa-redo-alt"></i> Retry
@@ -252,8 +253,7 @@ const Greeting = ({ star_id }) => {
                               <i class="fas fa-trash-alt"></i> Delete
                             </button>
                           </div>
-                          :
-                            ""}
+                        }
                   
                         
                       </div>
