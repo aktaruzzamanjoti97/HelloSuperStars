@@ -8,7 +8,7 @@ return (
 <>
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
 
-        <Modal.Body className=' py-5 Modal_B-Ac  containerModalBg mODALcR7'>
+        {/* <Modal.Body className=' py-5 Modal_B-Ac  containerModalBg mODALcR7'>
 
             <div className='containerModalCr7 fw-bold mx-5 mb-3'>
                 <img src={CR7Mo} alt="" className='img-fluid CR7Mo' />
@@ -27,9 +27,9 @@ return (
                 className='btn bg-dark Modal_btn-xa mb-3 text-light fw-bold Call-btn-v mx-3'>Home</Button></Link>
             <Link to='/'><Button
                 className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v mx-3'>Back</Button></Link>
-        </center>
+        </center> */}
 
-        {/* <Modal.Body className=' py-5 Modal_B-Ac  containerModalBg mODALcR7'>
+        <Modal.Body className=' py-5 Modal_B-Ac  containerModalBg mODALcR7'>
 
             <div className='mx-3'>
             <h5 className='text-warning mb-4'>Acquire product process</h5>
@@ -48,7 +48,7 @@ return (
                 className='btn bg-dark Modal_btn-xa mb-3 text-light Call-btn-v mx-3'>Cancel</Button></Link>
             <Link to='/'><Button
                 className='btn bg-warning Modal_btn-xa mb-3 text-dark Call-btn-v mx-3'>Continue</Button></Link>
-        </center> */}
+        </center>
 
     </Modal>
 </>
