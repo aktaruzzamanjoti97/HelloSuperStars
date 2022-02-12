@@ -116,6 +116,7 @@ return (
                                 {moment(post.created_at).format('LT')}
                                 {" | "}
                             </small>
+                            
                             <small className="category-size-chat">
                                 {moment(post.created_at).format('LL')}
                             </small>
