@@ -28,7 +28,7 @@ const Category = () => {
                                         <p>Some representative placeholder content for the first slide.</p>
                                     </div>
                                 </div>
-                                {/* <div className="carousel-item">
+                                <div className="carousel-item">
                             <img src={EntertainmentImg} className="ImgCat" alt={EntertainmentImg} />
                             <div className="carousel-caption">
                                 <h5>Second slide label</h5>
@@ -41,7 +41,7 @@ const Category = () => {
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
-                        </div> */}
+                        </div>
                             </div>
                         </div>
 
