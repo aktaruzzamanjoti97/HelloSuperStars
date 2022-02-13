@@ -227,12 +227,11 @@
 
 .Box-Line{
   top: 755px;
-left: 620px;
-width: 67px;
-height: 0px;
-/* UI Properties */
-border: 2px solid #FFFFFF;
-opacity: 0.5;
+  left: 620px;
+  width: 67px;
+  height: 0px;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;
 }
 
 .ImgRightP {
@@ -241,4 +240,8 @@ opacity: 0.5;
   right: 20px;
   width: 30px;
   
+}
+
+.PSize{
+  font-size: .9rem;
 }
