@@ -58,6 +58,8 @@ import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProdu
 import Souvenir from "./components/Pages/Souvenir/Souvenir";
 import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
 import Shipping from "./components/Pages/Market/Shipping";
+import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
+import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 
 
 axios.defaults.withCredentials = true;
@@ -152,6 +154,9 @@ function App() {
         <Route exact path='/souvenir-winner' component={WinnerCR7} />
         <Route exact path='/souvenir-apply' component={SouvenirSignature} />
         <Route exact path='/souvenir-applied' component={AcquiringProduct} />
+
+        {/* Learning Session */}
+        <Route exact path="/register-learning-details" component={RegisterLearningDetails} />
 
         {/* Error */}
         <Route component={Error} />
