@@ -31,7 +31,7 @@ export default function UpcomingAuditionsContent({ post }) {
 
                 if(res.data.reacted.post_id === post.id)
                 {
-                    setValue(res.data.reacted)
+                    
                     setData({ likes: post.react_number , updated: true });
                 }
                 
@@ -675,6 +675,8 @@ return (
             </div>
 
         </div>
+        </div>
+
         </div>
     )
     
