@@ -4,6 +4,7 @@ import souvenirImage from '../../../../images/Souvenir/souvenir.png';
 import ApplyImg from '../../../../images/Souvenir/Illustration/Gift.svg'
 import Navigation from '../../../Header/Navigation';
 import './CR7Souvenir.css'
+import { Link } from 'react-router-dom';
 function AcquiringProduct() {
 return(
     <>
@@ -33,9 +34,9 @@ return(
                         </div>
                     </div>
 
-                    <button className="btn btn-warning px-5 py-2 my-2">
+                    <Link to='souvenir-winner'><button className="btn btn-warning px-5 py-2 my-2">
                         <i class="fas fa-bell"></i> Result
-                    </button>
+                    </button></Link>
 
                 </div>
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import souvenirImage from '../../../../../images/SouvenirJoti.png';
 import Navigation from '../../../../Header/Navigation';
 import RightSideSouvenir from '../RightSideSouvenir/RightSideSouvenir';
@@ -21,7 +22,7 @@ const SouvenirSignature = () => {
                                 <div className="col-md-9">
                                     <div className="my-4">
                                         <div className="d-flex flex-start">
-                                        <h1 className="fw-bolder text-white">CR Signature Football</h1>
+                                        <h1 className="fw-bolder text-white">CR7 Signature Football</h1>
                                         </div>
                                         
                                         <p className="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa similique cum qui ab fugit veniam repellendus officiis, consequuntur esse culpa quibusdam aut tempore, incidunt ea nesciunt soluta itaque voluptas maiores.</p>
@@ -81,7 +82,7 @@ const SouvenirSignature = () => {
                                         </div>
 
                                         <div className="my-4">
-                                            <button className="btn btn-warning"> Apply</button>
+                                            <Link to='/souvenir-applied'><button className="btn btn-warning"> Apply</button></Link>
                                             <button className="btn btn-secondary mx-3">Dismiss Process</button>
                                         </div>
 
