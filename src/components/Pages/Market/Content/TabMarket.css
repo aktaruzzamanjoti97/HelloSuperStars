@@ -301,3 +301,37 @@
     }
     
   }
+
+
+
+
+/* Market Modal  */
+.ModalPur{
+    background-color: #050400a4;
+}
+.UrcModal{
+    border-radius: 10px;
+    background-color: #050400;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    
+    background-clip: padding-box;
+    border: 1px solid rgb(141, 243, 8);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.Purchase{
+    width: 150px;
+}
+
+
+  .MarketNM {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+

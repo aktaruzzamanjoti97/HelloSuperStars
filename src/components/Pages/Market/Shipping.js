@@ -4,8 +4,11 @@ import OwlCarousel from 'react-owl-carousel';
 import Bkash from '../../../images/Payment-img/BKash-bKash-Logo.wine.png'
 import Payonner from '../../../images/Payment-img/Payoneer-Logo.wine.png'
 import Papal from '../../../images/Payment-img/PayPal-Logo.wine.png'
+import MarketModal from './Content/MarketModal';
 
 const Shipping = () => {
+    const [modalShow, setModalShow] = React.useState(false);
+    
 
 let [num, setNum]= useState(0);
 let incNum =()=>{
@@ -149,7 +152,8 @@ if(num<10) { setNum(Number(num)+1); } }; let decNum=()=> {
             </div>
 
             <div className="row AbcTa justify-content-end mb-5">
-                <button className='btn btn-warning MakePaBtn'>Make Payment</button>
+                <button className='btn btn-warning MakePaBtn' onClick={() => setModalShow(true)}>Make Payment</button>
+                <MarketModal show={modalShow} onHide={()=> setModalShow(false)} />
             </div>
 
         </div>
