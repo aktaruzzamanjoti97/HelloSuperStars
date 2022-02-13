@@ -5,6 +5,7 @@ import ApplyImg from '../../../../images/Souvenir/Illustration/Gift.svg'
 import Navigation from '../../../Header/Navigation';
 import './CR7Souvenir.css'
 import { Link } from 'react-router-dom';
+import RightSideSouvenirWithoutTime from './RightSideSouvenir/RightSideSouvenirWithoutTime';
 function AcquiringProduct() {
 return(
     <>
@@ -41,7 +42,7 @@ return(
                 </div>
 
                 <div className="col-md-4 ">
-                    <RightSideSouvenir />
+                    <RightSideSouvenirWithoutTime />
                 </div>
 
             </div>

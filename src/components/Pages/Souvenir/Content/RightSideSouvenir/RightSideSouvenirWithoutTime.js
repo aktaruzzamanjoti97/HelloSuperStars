@@ -1,14 +1,12 @@
 import React from 'react';
 import ChartCompo from '../SouvenirSignature/ChartCompo';
 import BiddingHistory from './BiddingHistory/BiddingHistory';
-import RemainingTimeSouvenir from './RemainingTimeSouvenir/RemainingTimeSouvenir';
 import SuperstarCard from './SuperstarCard/SuperstarCard';
 
-const RightSideSouvenir = () => {
+const RightSideSouvenirWithoutTime = () => {
 
     return (
-        <div>
-            <RemainingTimeSouvenir />
+        <div className=" mt-4">
             <ChartCompo />
             <SuperstarCard />
             <BiddingHistory />
@@ -16,4 +14,4 @@ const RightSideSouvenir = () => {
     );
 };
 
-export default RightSideSouvenir;
+export default RightSideSouvenirWithoutTime;

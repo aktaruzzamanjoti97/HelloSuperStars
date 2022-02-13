@@ -1,19 +1,17 @@
-import { React, useState, useEffect } from "react";
-import "../../../../CSS/Home/Post.css";
-import { Link } from "react-router-dom";
-import { Collapse,Button } from "react-bootstrap";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
-import PostComment from "./PostComment";
-import moment from 'moment'
+import axios from "axios";
 import { Markup } from "interweave";
-import ReactReadMoreReadLess from "react-read-more-read-less";
+import moment from 'moment';
+import { React, useEffect, useState } from "react";
+import { Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import ShowMoreText from "react-show-more-text";
+import swal from 'sweetalert';
 //import Lock from "../../../images/Normal-User/lock.png";
 import Lock from "../../../../../../src/images/Normal-User/lock.png";
-import axios from "axios";
-import swal from 'sweetalert';
+import "../../../../CSS/Home/Post.css";
+import PostComment from "./PostComment";
 
-import ShowMoreText from "react-show-more-text";
-import { set } from "date-fns";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
@@ -31,7 +29,6 @@ export default function UpcomingAuditionsContent({ post }) {
 
                 if(res.data.reacted.post_id === post.id)
                 {
-                    
                     setData({ likes: post.react_number , updated: true });
                 }
                 
@@ -93,7 +90,6 @@ return (
                                 {moment(post.created_at).format('LT')}
                                 {" | "}
                             </small>
-                            
                             <small className="category-size-chat">
                                 {moment(post.created_at).format('LL')}
                             </small>
@@ -157,7 +153,7 @@ return (
             <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
-                            {post.meetup.title}
+                            Meetup {post.meetup?.meetup_type === 'Online' ? <>(Online)</> : <>(Offline)</>}
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
@@ -301,7 +297,7 @@ return (
                 <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
-                            {post.livechat?.title}
+                            Live Chat
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
@@ -443,7 +439,7 @@ return (
                 <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
-                            {post.learning_session?.title}
+                            Learning
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
@@ -519,8 +515,6 @@ return (
         </div>
     ) :
     (
-
-        
         <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
         
         <div className="card Enroll-AuditionsB">
@@ -637,21 +631,7 @@ return (
                         </> }
                 </button>
 
-                    {/* {value ? value : (
-                    <button className="btn-warning-post" onClick={(e) => {
-                        e.preventDefault()
-                        handleSubmit(post.id)
-                        }}>
-                        {data.updated ? (
-                            <>
-                            <i className="fas fa-heart text-danger  mx-1"></i>
-                            <small className="Post-Title-home"> Liked</small>
-                            </>
-                        ) : <>
-                            <i className="fas fa-heart text-light  mx-1"></i>
-                            <small className="Post-Title-home"> Like</small>
-                        </> }
-                </button>
+                   
                     
 
                     <button className="btn-warning-post mx-2 " variant="link" onClick={()=> setOpen(!open)}

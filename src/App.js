@@ -116,33 +116,32 @@ function App() {
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
         <Route exact path='/meetup-events' component={MeetupPost}/>
-
-        
-
         {/* Right Sidebar End */}
-       
+
+        {/* Account Section */}
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
         <PrivateRoute path='/accountCreate' exact component={AccountCreate} />
 
+
         <Route path='/tutorial' component={SliderTutorial} />
         <Route path='/packages' component={Packages} />
-
         <Route path='/guestUser' exact component={GuestUserPage} />
 
         {/* profile page */}
         <PrivateRoute path='/profile' exact component={Profile} />
 
 
+        {/* Star profile page */}
         <Route path='/starprofile/:star_id'  component={StarProfile} />
 
           
-         {/* Category */}
-          <Route path='/coreCategory' exact component={CoreCategory} />
-          <Route path='/subCategory' exact component={SubCategory} />
+        {/* Category */}
+        <Route path='/coreCategory' exact component={CoreCategory} />
+        <Route path='/subCategory' exact component={SubCategory} />
 
-          <Route path='/starselection' exact component={StarSelection} />
+        <Route path='/starselection' exact component={StarSelection} />
           
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
