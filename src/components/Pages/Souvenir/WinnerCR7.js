@@ -5,6 +5,7 @@ import souvenirImage from '../../../images/Souvenir/souvenir.png';
 import Winner from '../../../images/Souvenir/fundo-floral-preto-png-2.png';
 import CR7user from '../../../images/navbar/account.jpg';
 import './Content/CR7Souvenir.css'
+import RightSideSouvenirWithoutTime from './Content/RightSideSouvenir/RightSideSouvenirWithoutTime';
 
 const WinnerCR7 = () => {
 return (
@@ -43,7 +44,7 @@ return (
             </div>
 
             <div className="col-md-4">
-                <RightSideSouvenir />
+                <RightSideSouvenirWithoutTime />
             </div>
 
         </div>

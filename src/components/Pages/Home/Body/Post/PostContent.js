@@ -1,19 +1,17 @@
-import { React, useState, useEffect } from "react";
-import "../../../../CSS/Home/Post.css";
-import { Link } from "react-router-dom";
-import { Collapse,Button } from "react-bootstrap";
 import { DotsHorizontalIcon } from "@heroicons/react/solid";
-import PostComment from "./PostComment";
-import moment from 'moment'
+import axios from "axios";
 import { Markup } from "interweave";
-import ReactReadMoreReadLess from "react-read-more-read-less";
+import moment from 'moment';
+import { React, useEffect, useState } from "react";
+import { Collapse } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import ShowMoreText from "react-show-more-text";
+import swal from 'sweetalert';
 //import Lock from "../../../images/Normal-User/lock.png";
 import Lock from "../../../../../../src/images/Normal-User/lock.png";
-import axios from "axios";
-import swal from 'sweetalert';
+import "../../../../CSS/Home/Post.css";
+import PostComment from "./PostComment";
 
-import ShowMoreText from "react-show-more-text";
-import { set } from "date-fns";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
@@ -31,7 +29,6 @@ export default function UpcomingAuditionsContent({ post }) {
 
                 if(res.data.reacted.post_id === post.id)
                 {
-                    //setValue(res.data.reacted)
                     setData({ likes: post.react_number , updated: true });
                 }
                 
@@ -659,8 +656,6 @@ return (
 
         </div>
         </div>
-
-        
     )
     
      }
