@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "../../CSS/Category/Category.css";
-import frame from "../../../images/Normal-User/Single-frame.png";
-import OwlCarousel from 'react-owl-carousel';
-import Lock from "../../../images/Normal-User/lock.png";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Navigation from '../../Header/Navigation';
@@ -53,7 +50,7 @@ const StarSelection = () => {
 
 
 
-const categorySubmit = (e) => {
+const starSubmit = (e) => {
   e.preventDefault();
 
   console.log(Checked);
@@ -63,25 +60,23 @@ const categorySubmit = (e) => {
   }
 
   
-      // axios.post(`/api/select_sub_category`, data).then(res => {
-      //     if(res.data.status === 200)
-      //         {
-      //             swal("Success",res.data.message,"success");
+      axios.post(`/api/select_star`, data).then(res => {
+          if(res.data.status === 200)
+              {
+                  //swal("Success",res.data.message,"success");
 
-      //             //history.push('/subCategory');
+                  console.log(res.data.result)
 
-      //             history.push({
-      //               pathname: '/starselection',
-      //               // search: '?query=abc',
-      //               // state: { detail: res.data.length }
-      //             });
-      //         }
-      //         else if(res.data.status === 401)
-      //         {
-      //             swal("Warning",res.data.message,"warning");
-      //         }
+                  history.push({
+                    pathname: '/',
+                  });
+              }
+              else if(res.data.status === 401)
+              {
+                  swal("Warning",res.data.message,"warning");
+              }
               
-      // });
+      });
 
   
 }
@@ -241,8 +236,8 @@ const categorySubmit = (e) => {
           
 
           <div className="ct-btn text-center">
-            { (localStorage.getItem('auth_token') === '[]')  ? <Link to='/'> <button className="btn mt-3 cg-done">Done</button></Link> : <Link to='/guest'> <button className="btn mt-3 cg-done">Gest Login</button></Link> }
-            </div>
+            { (localStorage.getItem('auth_token') === '[]')  ?  <Link to='/guest'> <button className="btn mt-3 cg-done">Gest Login</button></Link>  : <button onClick={starSubmit} className="btn mt-3 cg-done">Done</button> }
+          </div>
 
 
         </div>
