@@ -11,228 +11,106 @@ import './CategoryJs.css';
 
 const Category = () => {
 
-return (
-<>
+    return (
+        <>
 
-    <div className="col-md-12 mt-3">
-        <div className="row">
+            <div className="col-md-12 mt-3">
+                <div className="row">
 
-            <div className="containerSa col-md-6 mb-3">
+                    <div className="containerSa col-md-6 mb-3">
 
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={EntertainmentImg} className="ImgCat" alt={EntertainmentImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div className="carousel-item">
                             <img src={EntertainmentImg} className="ImgCat" alt={EntertainmentImg} />
                             <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={EventImg} className="ImgCat" alt={EntertainmentImg} />
-                            <div className="carousel-caption">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src={musicImg} className="ImgCat" alt={EntertainmentImg} />
+                            <img src={EntertainmentImg} className="ImgCat" alt={EntertainmentImg} />
                             <div className="carousel-caption">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
                         </div>
+                            </div>
+                        </div>
+
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-film"></i>&nbsp;
+                                        Entertainment
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
+
                     </div>
-                </div>
 
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-film"></i>&nbsp;
-                            Entertainment
-                        </h4>
-                    </div>
-                </div>
-                </Link>
+                    <div className="containerSa col-md-6 mb-3">
 
-            </div>
-
-            <div className="containerSa col-md-6 mb-3">
-
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={religionImg} className="ImgCat" alt={religionImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {/* <div className="carousel-item">
                             <img src={religionImg} className="ImgCat" alt={religionImg} />
                             <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={EventImg} className="ImgCat" alt={religionImg} />
-                            <div className="carousel-caption">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src={musicImg} className="ImgCat" alt={religionImg} />
+                            <img src={religionImg} className="ImgCat" alt={religionImg} />
                             <div className="carousel-caption">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
+                        </div> */}
+                            </div>
                         </div>
+
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-praying-hands"></i>&nbsp;
+                                        Religion
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
+
                     </div>
-                </div>
 
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-praying-hands"></i>&nbsp;
-                            Religion
-                        </h4>
-                    </div>
-                </div>
-                </Link>
+                    <div className="containerSa col-md-6 mb-3">
 
-            </div>
-
-            <div className="containerSa col-md-6 mb-3">
-
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={sportImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={EventImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={musicImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-futbol"></i>&nbsp;
-                            Sport
-                        </h4>
-                    </div>
-                </div>
-                </Link>
-
-            </div>
-
-            <div className="containerSa col-md-6 mb-3">
-
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={politicsImg} className="ImgCat" alt={politicsImg} />
-                            <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={musicImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={EventImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-futbol"></i>&nbsp;
-                            Politics
-                        </h4>
-                    </div>
-                </div>
-                </Link>
-
-            </div>
-
-            <div className="containerSa col-md-6 mb-3">
-
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={educationImg} className="ImgCat" alt={educationImg} />
-                            <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={EventImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src={musicImg} className="ImgCat" alt={EventImg} />
-                            <div className="carousel-caption">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-futbol"></i>&nbsp;
-                            Education
-                        </h4>
-                    </div>
-                </div>
-                </Link>
-            </div>
-
-            <div className="containerSa col-md-6 mb-3">
-
-                <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={musicImg} className="ImgCat" alt={musicImg} />
-                            <div className="carousel-caption">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div className="carousel-item">
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={sportImg} className="ImgCat" alt={EventImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {/* <div className="carousel-item">
                             <img src={EventImg} className="ImgCat" alt={EventImg} />
                             <div className="carousel-caption">
                                 <h5>Second slide label</h5>
@@ -245,27 +123,155 @@ return (
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
+                        </div> */}
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <Link to='category-view'>
-                <div className='CatBgS '>
-                    <div className="text-success fw-bold ">
-                        <h4 className='centeredASd fw-bold text-warning'>
-                            <i className="fas fa-futbol"></i>&nbsp;
-                            Education
-                        </h4>
-                    </div>
-                </div>
-                </Link>
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-futbol"></i>&nbsp;
+                                        Sport
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
 
+                    </div>
+
+
+
+                    <div className="containerSa col-md-6 mb-3">
+
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={politicsImg} className="ImgCat" alt={politicsImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {/* <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
             </div>
-
         </div>
-    </div>
-</>
-)
+        <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div> */}
+                            </div>
+                        </div>
+
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-futbol"></i>&nbsp;
+                                        Politics
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
+
+                    </div>
+
+                    
+                    <div className="containerSa col-md-6 mb-3">
+
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={educationImg} className="ImgCat" alt={educationImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {/* <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div> */}
+                            </div>
+                        </div>
+
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-futbol"></i>&nbsp;
+                                        Education
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
+
+                    </div>
+
+
+                         
+                    <div className="containerSa col-md-6 mb-3">
+
+                        <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
+                            <div className="carousel-inner">
+                                <div className="carousel-item active">
+                                    <img src={musicImg} className="ImgCat" alt={musicImg} />
+                                    <div className="carousel-caption">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {/* <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div>
+        </div>
+        <div className="carousel-item">
+            <img src={EventImg} className="ImgCat" alt={EventImg} />
+            <div className="carousel-caption">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div>
+        </div> */}
+                            </div>
+                        </div>
+
+                        <Link to='category-view'>
+                            <div className='CatBgS '>
+                                <div className="text-success fw-bold ">
+                                    <h4 className='centeredASd fw-bold text-warning'>
+                                        <i className="fas fa-futbol"></i>&nbsp;
+                                        Education
+                                    </h4>
+                                </div>
+                            </div>
+                        </Link>
+
+                    </div>
+
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Category
