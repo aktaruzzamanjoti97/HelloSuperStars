@@ -219,7 +219,6 @@ return (
                     </div>
                 </div>
                 </Link>
-
             </div>
 
             <div className="containerSa col-md-6 mb-3">
