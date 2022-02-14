@@ -13,6 +13,7 @@ import { set } from "date-fns";
 import axios from "axios";
 import swal from 'sweetalert';
 import { Collapse } from "@mui/material";
+import RegisterNow from "../ReigsterNow/RegisterNow";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
@@ -70,6 +71,8 @@ const handleSubmit = (id) => {
 
 return (
 <>
+
+<RegisterNow post = {post} />
 
 <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
         <div className="card Enroll-AuditionsB">

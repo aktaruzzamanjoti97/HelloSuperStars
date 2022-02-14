@@ -4,7 +4,8 @@ import Pro from "../../../../../images/Capture.JPG";
 import Clock from "../../../../../images/clock.png";
 import ActivitiesModal from "./ActivitiesModal";
 import { Link } from 'react-router-dom';
-import { Modal, Button} from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
+import LoadingSkeleton from "./LoadingSkeleton";
 
 import moment from 'moment';
 import { event, post } from "jquery";
@@ -46,7 +47,7 @@ return (
 
 
 
-        {props.event.map((event) => {
+        {props.loader ?props.event.map((event) => {
             return(
                 <div className="col-md-6 mb-4">
             <div className="card container-x-ac">
@@ -85,24 +86,27 @@ return (
                     {/* <Link to={`/activities/video/${event.live_chat_id}`}  ><Button className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v'>Call Now</Button></Link> */}
 
                     {/* <Link to={{ 
- pathname: "/activities/video", 
- state: {
-     event_id: event.live_chat?.event_link
- }
-}}>
+                        pathname: "/activities/video", 
+                        state: {
+                            event_id: event.live_chat?.event_link
+                        }
+                        }}>
 
-<Button className='btn bg-warning mb-3 text-dark fw-bold'>Call Now</Button>
+                        <Button className='btn bg-warning mb-3 text-dark fw-bold'>Call Now</Button>
 
-</Link> */}
+                        </Link> */}
 
-<a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2"><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
+                        <a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2"><Button className='btn bg-warning  mb-3 text-dark'>Join Now</Button></a>
 
                 </div>
 
             </div>
         </div>
             )
-        })}
+        }) :
+        
+        <LoadingSkeleton/>
+        }
 
 
         

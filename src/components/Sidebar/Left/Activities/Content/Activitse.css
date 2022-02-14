@@ -1,61 +1,56 @@
-.Active-Img-X{
-    width: 100%;
-    height: 350px;
-    object-fit:cover;
-    border-radius: 10px;
+.Active-Img-X {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 @media only screen and (max-width: 600px) {
-  .Active-Img-X{
+  .Active-Img-X {
     height: 250px;
   }
-  
 }
 
-.left-X-M-Ax{
+.left-X-M-Ax {
   font: normal normal arial;
 }
 
 .centered-x-ac {
-    position: absolute;
-    top: 82%;
+  position: absolute;
+  top: 82%;
 }
 
-
-.Pic-Bg{
-    background: rgba(255, 166, 0, 0.39);
-    border-radius: 5px;
+.Pic-Bg {
+  background: rgba(255, 166, 0, 0.39);
+  border-radius: 5px;
 }
-.Pic-icon_x{
-    width: 18px;
+.Pic-icon_x {
+  width: 18px;
 }
-.Pic_Ic_text{
-    font-size: 10px;
-    color: #ff0000;
+.Pic_Ic_text {
+  font-size: 10px;
+  color: #ff0000;
 }
-
 
 .container-x-ac {
-    position: relative;
-    color: white;
-    border: 1px solid #2bffed !important;
-    border-radius: 10px;
+  position: relative;
+  color: white;
+  border: 1px solid #2bffed !important;
+  border-radius: 10px;
 }
 
-  .bottom-left-Activities {
-    position: absolute;
-    bottom: 8px;
-    left: 40%;
-  }
-  
-
-
-  .Pic_Ic_Arr{
-    float: right;
-    margin-right: -30px;
+.bottom-left-Activities {
+  position: absolute;
+  bottom: 8px;
+  left: 40%;
 }
-  
+
+.Pic_Ic_Arr {
+  float: right;
+  margin-right: -30px;
+}
+
 /* Top right text */
-.top-right_cross{
+.top-right_cross {
   position: absolute;
   top: 8px;
   right: 16px;
@@ -63,174 +58,161 @@
   border-radius: 10%;
   -o-border-radius: 10%;
 }
-  
-  /* Bottom left text */
-  .bottom-left-x-ax {
-    position: absolute;
-    bottom: 8px;
-    left: 16px;
-  }
-  
-  .Pic_Ic_B{
-      font-size: 15px;
-  }
 
-  .Pic_Ic_BX{
-    font-size: 12px;
-  }
-  
-  /* Bottom right text */
-  .bottom-right-x-ax {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    font-size: 35px !important;
-    font: normal normal 600 24px/29px Gilroy ☞;
-  }
-  
-
-  .btn-x-r-ac{
-      color: gold;
-      border-radius: 10px;
-      border: none;
-      background: none;
+/* Bottom left text */
+.bottom-left-x-ax {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
 }
 
-.btn-x-r-ac:hover{
-    color: rgb(255, 255, 255) !important;
+.Pic_Ic_B {
+  font-size: 15px;
+}
+
+.Pic_Ic_BX {
+  font-size: 12px;
+}
+
+/* Bottom right text */
+.bottom-right-x-ax {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 35px !important;
+  font: normal normal 600 24px/29px Gilroy ☞;
+}
+
+.btn-x-r-ac {
+  color: gold;
+  border-radius: 10px;
+  border: none;
+  background: none;
+}
+
+.btn-x-r-ac:hover {
+  color: rgb(255, 255, 255) !important;
 }
 
 .centered-x-ac-y {
-    position: absolute;
-    top: 89%;
-    border: none;
-    border-radius: 0px 0px 10px 10px;
-    left: 50%;
-    width: 100%;
-    height: 70px;
-    background-color: rgb(32, 218, 162);
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 89%;
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+  left: 50%;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(32, 218, 162);
+  transform: translate(-50%, -50%);
 }
-
 
 /* Modal */
 
-
-.right-X-M-Ax{
+.right-X-M-Ax {
 }
 
-.Img-Mo_s{
+.Img-Mo_s {
   width: 100% !important;
 }
 
-.Modal_B-Ac{
+.Modal_B-Ac {
   height: 300px;
 }
 
-.Modal_btn-xa{
+.Modal_btn-xa {
   border: none;
   width: 25%;
 }
 
-.Time_x_p{
+.Time_x_p {
   font-size: 25px;
 }
 
-
 /* Video Activities */
 
-.VideoActivities{
+.VideoActivities {
   border: none;
   width: 80vw;
   background-color: black !important;
 }
-.Call-btn-v:hover{
+.Call-btn-v:hover {
   background-color: rgb(0, 63, 100) !important;
   color: white !important;
 }
 
-.Cross-Btn-v:hover{
+.Cross-Btn-v:hover {
   color: rgb(255, 0, 0) !important;
 }
 
-.flaxVideo{
+.flaxVideo {
   width: 30vw;
   border-radius: 10px;
 }
-.BtnFlaxV{
+.BtnFlaxV {
   border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
 @media only screen and (max-width: 800px) {
- 
-  .flaxVideo{
+  .flaxVideo {
     width: 60vw !important;
     border-radius: 10px;
   }
 }
 
-
-
-
-
-
 /* Purchase */
-.PurchaseBg{
-  
-   position: absolute;
-    top: 89%;
-    border: none;
-    border-radius: 0px 0px 10px 10px;
-    left: 50%;
-    width: 100%;
-    height: 70px;
-    background-image: linear-gradient(to right, 
-    rgb(1, 31, 56) , rgb(8, 6, 6));
-    transform: translate(-50%, -50%);
+.PurchaseBg {
+  position: absolute;
+  top: 89%;
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+  left: 50%;
+  width: 100%;
+  height: 70px;
+  background-image: linear-gradient(to right, rgb(1, 31, 56), rgb(8, 6, 6));
+  transform: translate(-50%, -50%);
 }
 
-
-.PurModal{
+.PurModal {
   border-radius: 5px;
-  border: 1px solid gold;opacity: 1;
-  background: #2A2A2A 0% 0% no-repeat padding-box !important;
+  border: 1px solid gold;
+  opacity: 1;
+  background: #2a2a2a 0% 0% no-repeat padding-box !important;
 }
 
-.PurImg{
+.PurImg {
   border-radius: 5px;
   border: 1px solid white;
   object-fit: cover;
-
 }
 
-.SpLeft{
- width: 120px;
- font-size: .9rem;
+.SpLeft {
+  width: 120px;
+  font-size: 0.9rem;
 }
 
-.SpRight{
-  font-size: .9rem;
- }
-
- .DeliveryImg{
-   width: 25px;
- }
-
- .BoxR{
-   border-radius: 50%;
+.SpRight {
+  font-size: 0.9rem;
 }
-.PenCol{
+
+.DeliveryImg {
+  width: 25px;
+}
+
+.BoxR {
+  border-radius: 50%;
+}
+.PenCol {
   background-color: #504d4d !important;
 }
 
-.Box-Line{
+.Box-Line {
   top: 755px;
   left: 620px;
   width: 67px;
   height: 0px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   opacity: 0.5;
 }
 
@@ -239,10 +221,8 @@
   bottom: 20px;
   right: 20px;
   width: 30px;
-  
 }
 
 .PSize{
   font-size: .9rem;
   margin-top: 5px;
-}
