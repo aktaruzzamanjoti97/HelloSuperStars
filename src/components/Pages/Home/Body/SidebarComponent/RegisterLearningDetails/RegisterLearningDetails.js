@@ -2,6 +2,7 @@ import React from 'react';
 import guitarImage from '../../../../../../images/guitter.jpg';
 import BookNowPay from '../../../../Profile/BookNow/BookNowPay';
 import RegisterNowPay from './RegisterNowPay/RegisterNowPay';
+import './RegisterLearningDetails.css'
 
 const RegisterLearningDetails = () => {
     return (
@@ -9,9 +10,10 @@ const RegisterLearningDetails = () => {
             <div>
                 <img src={guitarImage} className="img-fluid w-100" alt="" />
             </div>
-            <div className="bg-dark mt-3 p-4 row">
+            <div className="bg-dark mt-3 p-5 row">
 
-                <h5 className="fw-bold text-warning mb-4">Learning Session Details</h5>
+                <h5 className="fw-bold text-warning">Learning Session Details</h5>
+                <div className="bottomBorderLearningDetails mb-4"></div>
 
                 <div className="col-md-4 BookNowMN">
                     <table className='taBook'>

@@ -7,15 +7,15 @@ import bKashLogo from '../../../../../../../images/Payment-img/BKash-bKash-Logo.
 import payoneerLogo from '../../../../../../../images/Payment-img/Payoneer-Logo.wine.png';
 import payPalLogo from '../../../../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
-import ParticipateReceipt from '../../../../../Profile/BookNow/ParticipateReceipt/ParticipateReceipt';
+import CongratulationModal from './CongratulationModal/CongratulationModal';
 
 const RegisterNowPay = () => {
 
-    const [cardModalShow, setCardModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
 
-
-
-
+    const cardInfoSubmit = (e) => {
+        e.preventDefault();
+    }
 
     return (
         <CardContent className="bg-dark my-4">
@@ -47,7 +47,7 @@ const RegisterNowPay = () => {
                 </div>
 
                 <div className='BookNow-m-p'>
-                    <form onSubmit="">
+                    <form onSubmit={cardInfoSubmit}>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group my-3">
@@ -90,11 +90,13 @@ const RegisterNowPay = () => {
                                 <div className="form-group my-3">
                                     {/* <button type="submit" className="my-3 btn btn-gold text-light fw-bold" onClick={(e)=>{
                                 e.preventDefault(); setModalShow(true) }}>Confirm</button> */}
-                                    <button onClick={() => setCardModalShow(true)} type="submit" className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
+                                    <button onClick={() => setModalShow(true)} type="submit" className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
 
-                                    <ParticipateReceipt
-                                        show={cardModalShow}
-                                        onHide={() => setCardModalShow(false)}
+                             
+
+                                    <CongratulationModal
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)}
                                     />
                                     {/* <BookNowModal show={modalShow} onHide={() => setModalShow(false)} /> */}
                                 </div>
