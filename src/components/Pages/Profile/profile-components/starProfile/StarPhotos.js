@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import "../../../../CSS/Profile/starProfile/starPhotos.css";
 // import azhari from "../../../../../images/starProfile/StarPhotos/1.jpg";
 import azhari2 from "../../../../../images/Shakib/12.jpg";
@@ -11,46 +11,66 @@ import azhari8 from "../../../../../images/Shakib/18.jpg";
 import azhari9 from "../../../../../images/Shakib/19.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import StarPhotosDetails from "./StarPhotosDetails";
+import axios from "axios";
 
 export default function StarPhotos({star_id}) {
+  const [post,setPost]=useState([]);
+
+
+  useEffect(() => {
+
+    axios.get(`api/star_photos/${star_id}`).then(res =>{
+        
+        if(res.data.status === 200)
+        {
+          setPost(res.data.post)
+          console.log('sakib', res.data.post)
+        }
+                 
+    });
+
+
+}, []);
+
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-8 mt-3">
           <div class="card m-2 star-photos-card mx-auto pb-3">
             <div class="card-body">
-              <h5 class="card-title text-warning">Photos{star_id}</h5>
+              <h5 class="card-title text-warning">Photos</h5>
             </div>
             <div className="star-line"></div>
 
             <div className="card-body mb-2">
-              <div className="row text-center">
-                <div className="col-4  ">
-                  <StarPhotosDetails />
-                  {/* <img
-                    src={azhari}
-                    alt=""
-                    className="img-fluid star-card-left-photos"
-                  /> */}
-                </div>
 
-                <div className="col-4 ">
+
+              <div className="row text-center">
+
+
+              {post.map((post) => (
+                  <div className="col-4 mb-3">
                   <img
-                    src={azhari2}
+                    src={`http://localhost:8000/${post.image}`}
                     alt=""
                     className="img-fluid star-card-left-photos"
                   />
                 </div>
-                <div className="col-4 ">
-                  <img
-                    src={azhari3}
-                    alt=""
-                    className="img-fluid star-card-left-photos"
-                  />
-                </div>
+              ))}
+
+
+                
+
+                
+
+                
+                
+
+
               </div>
 
-              <div className="row text-center mt-3">
+              {/* <div className="row text-center mt-3">
                 <div className="col-4  ">
                   <img
                     src={azhari4}
@@ -98,7 +118,10 @@ export default function StarPhotos({star_id}) {
                     className="img-fluid star-card-left-photos"
                   />
                 </div>
-              </div>
+              </div> */}
+
+
+
             </div>
            
           </div>
