@@ -30,6 +30,7 @@ const Learn = () => {
     console.log(posts);
     return (
         <>
+            
             {posts.map((u) => (
                 <LearnContent key={u.id} post={u} />
             ))}
