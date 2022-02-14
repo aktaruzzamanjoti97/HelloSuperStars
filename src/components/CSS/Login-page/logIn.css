@@ -4,6 +4,7 @@
    background-position:top;
   background-size: cover;
 }
+
 .logIm img{
     width: 350px;
     height: 337px;
@@ -72,4 +73,11 @@
     opacity: 0.8;
     font-size: 15px;
 
+}
+
+.BidBorder{
+    border: 1px solid gold !important;
+    border-radius: 10px;
+    background-color: none !important;
+    
 }

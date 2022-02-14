@@ -33,11 +33,15 @@ return (
                         Winner
                     </div>
 
-                    <img src={Winner} alt={Winner} className='WinnerImg' />
+                    <img src={Winner} alt={Winner} className='WinnerImg ' />
                     <div className="WinnerBack"></div>
+                    
                     <img src={CR7user} alt=""  className='CR7user img-fluid'/>
 
-                    <div className="WinnerName btn text-light fw-bold">Apurbo Roy</div>
+                    {/* <h3 className="WinnerName btn text-light fw-bold">Apurbo Roy</h3> */}
+                    <div className="btn WinnerCrC fw-bold">
+                       Apurbo Roy
+                    </div>
 
                 </div>
 

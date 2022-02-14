@@ -7,12 +7,14 @@ function SouvinerModal(props) {
   {...props}
   size="lg"
   aria-labelledby="contained-modal-title-vcenter"
+  
   centered
 >
  
-  <Modal.Body className='bg-img'>
+<div className='BidBorder'>
+<Modal.Body className='bg-img '>
    <div className="d-flex justify-content-end">
-       <i class="fas fa-times-circle MarketNM text-warning" onClick={props.onHide}></i>
+       <i class="fas fa-times-circle MarketNM text-warning btn " onClick={props.onHide}></i>
    </div>
     <div className='text-center'>
         <img src={ModalImg} className='img-fluid' alt="" />
@@ -27,11 +29,13 @@ function SouvinerModal(props) {
         </button>
 
         <Link to='/souvenir'><button className="btn btn-warning  px-5 py-2 mx-3">
-            Bit Now
+            Bid Now
         </button></Link>
 
     </div>
   </Modal.Body>
+</div>
+
 
 {/* <Modal.Footer>
 <Button onClick={props.onHide}>Close</Button>

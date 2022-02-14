@@ -223,6 +223,6 @@
   width: 30px;
 }
 
-.PSize {
-  font-size: 0.9rem;
-}
+.PSize{
+  font-size: .9rem;
+  margin-top: 5px;
