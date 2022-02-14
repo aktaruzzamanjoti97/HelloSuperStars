@@ -9,6 +9,8 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import SouvinerModal from "./StarChat/SouvinerModal";
+import Icon from '../.../../../../../../images/Souvenir/Icons/auction.png'
+
 function Souviner({star_id}) {
 const [more, setmore] = useState(false);
 const [modalShow, setModalShow] = React.useState(false);
@@ -105,8 +107,8 @@ return (
           
         </div>
         <div className="participate-btn my-2 mx-3">
-  <button className="btn btn-warning px-5 py-2" onClick={() => setModalShow(true)}>
-Participate Now!
+  <button className="btn btn-warning px-5 py-2 fw-bold" onClick={() => setModalShow(true)}>
+    <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
   </button>
 </div>
 
