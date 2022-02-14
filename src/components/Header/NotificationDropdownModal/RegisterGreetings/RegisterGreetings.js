@@ -55,8 +55,8 @@ const RegisterGreetings = () => {
               
                 if (res.data.status === 200) {
                     history.push("/activities")
-                swal("Good job!", "You clicked the button!", "success", {
-                    button: "Aww yiss!",
+                swal("Done", "Your information saved successfully", "success", {
+                    button: "ok",
                   });
       
               } else {
