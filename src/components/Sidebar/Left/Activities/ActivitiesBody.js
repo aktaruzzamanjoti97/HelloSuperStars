@@ -4,6 +4,7 @@ import LeftSidebar from "../../LeftSidebar";
 import ActivitiesContent from "./Content/ActivitiesContent";
 import ActivitiesContent2 from "./Content/ActivitiesContent2";
 import axios from "axios";
+import Purchase from './Content/Purchase';
 
 
 const ActivitiesBody = () => {
@@ -66,6 +67,11 @@ const ActivitiesBody = () => {
 
                  <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>LiveChat Events</h2>
                  <ActivitiesContent2 event={posts2}/>
+
+                 <hr/>
+
+                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Purchase</h2>
+                 <Purchase event={posts2}/>
               </div>
               
             </div>

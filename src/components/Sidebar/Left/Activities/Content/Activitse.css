@@ -170,3 +170,78 @@
     border-radius: 10px;
   }
 }
+
+
+
+
+
+
+/* Purchase */
+.PurchaseBg{
+  
+   position: absolute;
+    top: 89%;
+    border: none;
+    border-radius: 0px 0px 10px 10px;
+    left: 50%;
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(to right, 
+    rgb(1, 31, 56) , rgb(8, 6, 6));
+    transform: translate(-50%, -50%);
+}
+
+
+.PurModal{
+  border-radius: 5px;
+  border: 1px solid gold;opacity: 1;
+  background: #2A2A2A 0% 0% no-repeat padding-box !important;
+}
+
+.PurImg{
+  border-radius: 5px;
+  border: 1px solid white;
+  object-fit: cover;
+
+}
+
+.SpLeft{
+ width: 120px;
+ font-size: .9rem;
+}
+
+.SpRight{
+  font-size: .9rem;
+ }
+
+ .DeliveryImg{
+   width: 25px;
+ }
+
+ .BoxR{
+   border-radius: 50%;
+}
+.PenCol{
+  background-color: #504d4d !important;
+}
+
+.Box-Line{
+  top: 755px;
+  left: 620px;
+  width: 67px;
+  height: 0px;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;
+}
+
+.ImgRightP {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  
+}
+
+.PSize{
+  font-size: .9rem;
+}
