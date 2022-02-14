@@ -27,7 +27,7 @@ function SouvinerModal(props) {
         </button>
 
         <Link to='/souvenir'><button className="btn btn-warning  px-5 py-2 mx-3">
-            Bit Now
+            Bid Now
         </button></Link>
 
     </div>
