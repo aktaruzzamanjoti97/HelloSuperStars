@@ -10,6 +10,7 @@ import moment from 'moment';
 import { event, post } from "jquery";
 import UpComingLiveComment from "../../../../Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpComingLiveComment";
 import ParticipateReceipt from "../../../../Pages/Profile/BookNow/ParticipateReceipt/ParticipateReceipt";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 
 const ActivitiesContent = (props) => {
@@ -20,7 +21,8 @@ const [days, setDays] = useState(0);
 const [hours, setHours] = useState(0);
 const [minutes, setMinutes] = useState(0);
 const [seconds, setSeconds] = useState(0);
-const [showSemicolon, setShowSemicolon] = useState(false);
+    const [showSemicolon, setShowSemicolon] = useState(false);
+    const [loading, setLoading] = useState(false);
 
 
 
@@ -48,9 +50,9 @@ return (
 
 
 
-        {props.event.map((event) => {
+        {props.loader? props.event.map((event) => {
             return(
-                <div className="col-md-6 mb-4">
+            <div className="col-md-6 mb-4">
             <div className="card container-x-ac">
 
                 <img src={`http://localhost:8000/${event.meetup_event?.banner}`}  className="Active-Img-X" alt="profilePicture" />
@@ -93,21 +95,25 @@ return (
                         <>
                         <Button className='btn bg-warning  mb-3 text-dark' onClick={() => setModalShow1(true)}>Check Ticket</Button>
                         <ParticipateReceipt
-        show={modalShow1}
-        onHide={() => setModalShow1(false)}
-      />
-           
-                        </>
-                       
+                        show={modalShow1}
+                        onHide={() => setModalShow1(false)}
+                    />
                         
-                    )}
-                    
-                     </div>
+                                        </>
+                                    
+                                        
+                                    )}
+                                    
+                                    </div>
 
-            </div>
-        </div>
+                            </div>
+                </div>
+                
+                
             )
-        })}
+        }) :
+        <LoadingSkeleton/>
+        }
 
 
         
