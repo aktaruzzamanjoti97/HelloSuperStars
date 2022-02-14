@@ -42,7 +42,7 @@ return (
 
         <div className="card-body ">
           <div className="text-center ">
-          <img src={Jainamaz} alt="" className="img-fluid" />
+            <img src={Jainamaz} alt="" className="img-fluid" />
             {/* <Carousel>
               <Carousel.Item>
                 <img src={Jainamaz} className="img-fluid souviner-img" alt="" />
@@ -67,7 +67,8 @@ return (
           <h6 className="mt-3 mx-1  text-light">Details</h6>
           <div className="souviner-details">
             <p className="text-light">
-            The 33-year-old, whose two-year ban from the ICC coincided with the suspension from international cricket, followed...
+              The 33-year-old, whose two-year ban from the ICC coincided with the suspension from international cricket,
+              followed...
               <span className="seemore text-warning" onClick={()=> {
                 setmore(!more);
                 }}
@@ -78,7 +79,10 @@ return (
 
             {more ? (
             <p className="text-light">
-             teammate Mushfiqur Rahim, who auctioned the bat in 2013 after winning the first double ODI in Bangladesh has been restored. Four times the base amount before the end of the auction on a Facebook page on Wednesday night. The funds raised from Shakib's bat will be donated to his foundation to fight the epidemic.
+              teammate Mushfiqur Rahim, who auctioned the bat in 2013 after winning the first double ODI in Bangladesh
+              has been restored. Four times the base amount before the end of the auction on a Facebook page on
+              Wednesday night. The funds raised from Shakib's bat will be donated to his foundation to fight the
+              epidemic.
             </p>
             ) : (
             ""
@@ -103,23 +107,18 @@ return (
               </div>
             </div>
           </OwlCarousel>
-          
-          
+
         </div>
         <div className="participate-btn my-2 mx-3">
-  <button className="btn btn-warning px-5 py-2 fw-bold" onClick={() => setModalShow(true)}>
-    <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
-  </button>
-</div>
+          <button className="btn btn-warning px-5 py-2 fw-bold" onClick={()=> setModalShow(true)}>
+            <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
+          </button>
+        </div>
 
-<SouvinerModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-      
+        <SouvinerModal show={modalShow} onHide={()=> setModalShow(false)}
+          />
+
       </div>
-
-    
 
       {/* <div className="card my-4 left-card-souviner mx-auto">
         <div className="card-body">

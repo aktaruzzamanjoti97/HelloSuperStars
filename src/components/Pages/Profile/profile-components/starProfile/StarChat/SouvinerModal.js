@@ -7,10 +7,11 @@ function SouvinerModal(props) {
   {...props}
   size="lg"
   aria-labelledby="contained-modal-title-vcenter"
+  
   centered
 >
  
-  <Modal.Body className='bg-img'>
+  <Modal.Body className='bg-img BidBorder'>
    <div className="d-flex justify-content-end">
        <i class="fas fa-times-circle MarketNM text-warning" onClick={props.onHide}></i>
    </div>
