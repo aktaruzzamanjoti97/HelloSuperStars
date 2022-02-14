@@ -8,7 +8,7 @@ return (
 <>
     <Modal {...props} centered size='lm'>
 
-        <Modal.Body className='mODALcR7 '>
+        {/* <Modal.Body className='mODALcR7 '>
 
             <div className='containerModalCr7 fw-bold mx-5 m-4'>
                 <img src={CR7Mo} alt="" className='img-fluid CR7Mo' />
@@ -27,9 +27,10 @@ return (
                 className='btn bg-warning Modal_btn-xa mb-3 text-dark fw-bold Call-btn-v mx-3'>Back</Button></Link>
         </center>
 
-        </Modal.Body>
+        </Modal.Body> */}
 
-        {/* <Modal.Body className='mODALcR7 bg-dark'>
+
+        <Modal.Body className='mODALcR7'>
 
             <div className='mx-3 my-4'>
                 <h5 className='text-warning mb-4'>Acquire product process</h5>
@@ -53,7 +54,7 @@ return (
         </center>
 
         </Modal.Body>
-        */}
+       
 
     </Modal>
 </>

@@ -47,7 +47,7 @@
 }
   .Cr7View {
     position: absolute;
-    top: 73%;
+    top: 73.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 98%;
@@ -150,7 +150,7 @@
 .WinnerImg{
     filter: blur(3px);
     -webkit-filter: blur(3px);
-    height: 23rem;
+    height: 22rem;
     object-fit: cover;
     width: 100%;
 }
@@ -163,10 +163,23 @@
      padding: 15px;
 }
 
+
+.WinnerCrC{
+  background: #19122b;
+  width: 100% !important;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 15px;
+}
+
+
+
+
 .WinnerName{
     background: transparent
      linear-gradient(180deg, 
-     #28284E 0%, #34284D 0%,
+     #28284E 0%, #3b3053 0%,
       #343437 100%) 0% 0% 
       no-repeat padding-box;
       padding: 20px;
@@ -176,24 +189,23 @@
 
 .CR7user {
     position: absolute;
-    top: 50%;
+    top: 49.99%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
+    width: 50%;
+    height: 69.8%;
     object-fit: cover;
-    border-radius: 10%;
 }
 
   .WinnerBack{
     position: absolute;
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #0000009c;
     object-fit: cover;
     width: 100%;
-    height: 23rem;
+    height: 22.1rem;
   }
 
 

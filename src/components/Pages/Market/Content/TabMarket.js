@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { Nav, Tab } from 'react-bootstrap';
+import { Col, Nav, Row, Tab } from 'react-bootstrap';
 import AuctionsImg from '../../../../images/Souvenir/Icons/auction.png'
 import Chart from '../../../../images/shopping-cart-icon.png'
-
 
 import './TabMarket.css'
 import MarketMap from './MarketMap';
@@ -15,33 +14,39 @@ return (
 
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <div className="d-flex TabCom m-2 ">
-                <div className="TabBtn1 w-100 px-2 mt-3">
-                    <Nav.Link eventKey="first" className='btn fw-bold text-dark bg-warning'>
-                        <span> <img src={Chart} className="img-fluid-Tab mx-2" alt="" /></span>
-                        <span>Marketplace</span>
-                    </Nav.Link>
-                </div>
-                <div className="TabBtn2 w-100  px-2 mt-3">
-                    <Nav.Link eventKey="second" className='btn fw-bold text-light bg-success'>
-                        <span> <img src={AuctionsImg} className="img-fluid-Tab mx-2" alt="" /></span>
-                        <span>Auctions</span>
-                    </Nav.Link>
-                </div>
+                <Nav variant="pills" className="flex-column">
+
+                    <div className="d-flex TabCom m-2 ">
+                        <div className="TabBtn1 w-100 px-2 mt-3">
+                            <Nav.Link eventKey="first" className='btn fw-bold NavC '>
+                                <span> <img src={Chart} className="img-fluid-Tab mx-2" alt="" /></span>
+                                <span>Marketplace</span>
+                            </Nav.Link>
+                        </div>
+                        <div className="TabBtn2 w-100  px-2 mt-3">
+                            <Nav.Link eventKey="second" className='btn fw-bold NavC '>
+                                <span> <img src={AuctionsImg} className="img-fluid-Tab mx-2" alt="" /></span>
+                                <span>Auctions</span>
+                            </Nav.Link>
+                        </div>
+                    </div>
+                </Nav>
             </div>
+            
 
             <Tab.Content>
 
                 {/* Tab || User Portal */}
                 <Tab.Pane eventKey="first">
 
-                    <MarketMap/>
+                    <MarketMap />
                     <hr />
 
                 </Tab.Pane>
 
                 {/* Tab || Comments */}
                 <Tab.Pane eventKey="second">
-                    <AuctionMap/>
+                    <AuctionMap />
                     <hr />
                 </Tab.Pane>
 

@@ -27,9 +27,9 @@ return (
     </div>
 
     <div className="bg-dark mb-3 ">
-      <p className='text-light p-3'>Live UserPro</p>
 
       <div className="row mx-3 CR7Scroll ">
+        <p className='text-light mt-3 fw-bold'>Live Bidding</p>
 
         <div className="containerSa col-md-4 mb-3">
           <div className="carousel w-100 ">
@@ -136,16 +136,16 @@ return (
     </div>
 
     <div className="bg-dark mb-3">
-      <p className='text-light p-3'>Bid Now</p>
 
       <div className="row mx-3 justify-content-between ">
+        <p className='text-light mt-3 fw-bold'>Bid Now</p>
 
         <div className=" col-md-6 mb-3 ">
           <input type="text" className='p-3 mb-3 w-100 inputBgSA' placeholder='$ Enter amount' />
           <input type="password" className='p-3 mb-3 w-100 inputBgSA' placeholder='Enter Password' />
         </div>
 
-        <div className=" col-md-5 mb-3">
+        <div className=" col-md-4 mb-3 ">
           <img src={Bid} alt={Bid} className='img-fluid BibImg' />
         </div>
       </div>
@@ -155,7 +155,7 @@ return (
     <div className='d-flex justify-content-end'>
       <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'> <img src={Confirm} className='ConfirmCR7'
           alt={Confirm} /> &nbsp;Bid Now</button>
-          
+
       <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
         <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
       <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />
