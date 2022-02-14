@@ -8,17 +8,40 @@ import payoneerLogo from '../../../../../../../images/Payment-img/Payoneer-Logo.
 import payPalLogo from '../../../../../../../images/Payment-img/PayPal-Logo.wine.png';
 import visaLogo from '../../../../../../../images/Payment-img/Visa_Inc._logo.svg.png';
 import CongratulationModal from './CongratulationModal/CongratulationModal';
+import { Form } from 'react-bootstrap';
+import axios from "axios";
+import swal from 'sweetalert';
 
-const RegisterNowPay = () => {
+
+const RegisterNowPay = ({post_id}) => {
 
     const [modalShow, setModalShow] = React.useState(false);
 
     const cardInfoSubmit = (e) => {
         e.preventDefault();
+        let form_data = new FormData(e.target)
+        let data = Object.fromEntries(form_data.entries());
+        let formData = { ...data, post_id: post_id };
+
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+            axios.post("/api/learnig-session", formData).then((res) => { 
+                if (res.data.status === 200) {
+              
+                    setModalShow(true)
+      
+              } else {
+                  console.log('first', res.data.validation_errors);
+
+              }
+            });
+        });
+  
     }
 
     return (
-        <CardContent className="bg-dark my-4">
+        <>
+           
+                  <CardContent className="bg-dark my-4">
                 <div className="text-center image-middle bookCa">
                     <img className="singleFrame-style BookpayImg" src={singleFrame} alt="" />
                     <h3 className="centered Bookpay">Payment Method</h3>
@@ -47,7 +70,7 @@ const RegisterNowPay = () => {
                 </div>
 
                 <div className='BookNow-m-p'>
-                    <form onSubmit={cardInfoSubmit}>
+                    <Form onSubmit={cardInfoSubmit}>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group my-3">
@@ -83,16 +106,19 @@ const RegisterNowPay = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="col-md-6">
+                            <button type="submit" className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
+                            </div>
+                            
                         </div>
 
+
+                    </Form>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="form-group my-3">
                                     {/* <button type="submit" className="my-3 btn btn-gold text-light fw-bold" onClick={(e)=>{
                                 e.preventDefault(); setModalShow(true) }}>Confirm</button> */}
-                                    <button onClick={() => setModalShow(true)} type="submit" className="my-3 btn btn-gold text-light fw-bold">Confirm</button>
-
-                             
 
                                     <CongratulationModal
                                         show={modalShow}
@@ -103,10 +129,10 @@ const RegisterNowPay = () => {
                             </div>
                         </div>
 
-                    </form>
-
                 </div>
             </CardContent>
+        </>
+  
     );
 };
 
