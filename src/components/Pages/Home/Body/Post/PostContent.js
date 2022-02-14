@@ -658,7 +658,7 @@ export default function UpcomingAuditionsContent({ post }) {
                     )
 
             }
-
         </>
     );
+
 }
