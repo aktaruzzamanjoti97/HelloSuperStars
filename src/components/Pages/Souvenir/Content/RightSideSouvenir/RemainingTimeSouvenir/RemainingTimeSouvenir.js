@@ -37,7 +37,7 @@ const RemainingTimeSouvenir = () => {
             <h6 className="text-warning fw-bold my-2">Remaining Time</h6>
             <div className="d-flex my-2">
                 <div>
-                    <img className="img-fluid" width="35px" src={clockSvg} alt="" />
+                    <img className="img-fluid me-3" width="35px" src={clockSvg} alt="" />
                 </div>
                 <div className="remaining">
                     <div className="d-flex justify-content-around  text-white">
