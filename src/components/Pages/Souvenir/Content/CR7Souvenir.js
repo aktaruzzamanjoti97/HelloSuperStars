@@ -7,7 +7,6 @@ import Bid from '../../../../images/Souvenir/Icons/bid.png'
 import Confirm from '../../../../images/Souvenir/Icons/auction.png'
 import CR7Modal from './CR7Modal'
 
-
 const CR7Souvenir = () => {
 const [modalShow, setModalShow] = React.useState(false);
 return (
@@ -19,7 +18,8 @@ return (
 
     <p className="text-white PText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa similique cum qui ab
       fugit veniam repellendus officiis,
-      consequuntur esse culpa quibusdam aut tempore, incidunt ea nesciunt soluta itaque voluptas maiores. <span>See more</span></p>
+      consequuntur esse culpa quibusdam aut tempore, incidunt ea nesciunt soluta itaque voluptas maiores. <span>See
+        more</span></p>
     <div className="ReactCr7 bg-dark p-4 mb-3 ">
       <center>
         <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' className='CR7Player img-fluid' />
@@ -146,16 +146,21 @@ return (
         </div>
 
         <div className=" col-md-5 mb-3">
-          <img src={Bid} alt={Bid}  className='img-fluid BibImg'/>
+          <img src={Bid} alt={Bid} className='img-fluid BibImg' />
         </div>
       </div>
 
     </div>
 
-    <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'> <img src={Confirm} className='ConfirmCR7' alt={Confirm}/> &nbsp;Confirm</button>
-    <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
-      <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
-    <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />
+    <div className='d-flex justify-content-end'>
+      <button className='btn ConfirmS fw-bold px-4 py-2 mb-3'> <img src={Confirm} className='ConfirmCR7'
+          alt={Confirm} /> &nbsp;Bid Now</button>
+          
+      <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
+        <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
+      <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />
+
+    </div>
 
   </div>
 

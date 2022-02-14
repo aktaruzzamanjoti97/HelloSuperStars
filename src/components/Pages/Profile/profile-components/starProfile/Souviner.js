@@ -109,14 +109,13 @@ return (
           </OwlCarousel>
 
         </div>
-        <div className="participate-btn my-2 mx-3">
+        <div className="participate-btn my-2 mx-3 d-flex justify-content-end">
           <button className="btn btn-warning px-5 py-2 fw-bold" onClick={()=> setModalShow(true)}>
             <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
           </button>
         </div>
 
-        <SouvinerModal show={modalShow} onHide={()=> setModalShow(false)}
-          />
+        <SouvinerModal show={modalShow} onHide={()=> setModalShow(false)} />
 
       </div>
 
@@ -141,6 +140,7 @@ return (
                   <small> Stay Anonmyous</small>
                 </label>
               </div>
+
               <div className="col">
                 <button className='w-100 btn btn-warning'>Bid</button>
               </div>
