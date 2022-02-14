@@ -12,6 +12,17 @@
     border: 1.5px solid gold;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: rgb(0, 0, 0);
+    background-color: #fdd10d;
+}
+
+.nav-pills .nav-link, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #030303;
+}
+
+
 
 .containerAuc{
     position: relative;

@@ -46,7 +46,7 @@ return (
                         </div>
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Delivery</div>
-                            <div className="SpRight d-flex col-md-9">Pending</div>
+                            <div className="SpRight d-flex col-md-9 text-warning ">Pending</div>
                         </div>
                     </div>
 
@@ -55,7 +55,7 @@ return (
                 <div className="Delivery d-flex mt-4">
 
                     <div className="">
-                        <div className='BoxR mx-3 btn-light p-2'> 
+                        <div className='BoxR mx-3 btn-warning text-light p-2'> 
                         <img src={Clock} alt="" className='DeliveryImg' />
                         </div>
                         <p className='text-light text-center PSize'>Pending</p>
@@ -64,7 +64,7 @@ return (
                     <span className='Box-Line mt-3'></span>
 
                     <div className="">
-                        <div className='BoxR PenCol mx-3 btn-light p-2'> 
+                        <div className='BoxR PenCol mx-3 btn-warning text-light p-2'> 
                         <img src={Delivery} alt="" className='DeliveryImg' />
                         </div>
                         <p className='text-light text-center PSize'>Delivered</p>
@@ -73,7 +73,7 @@ return (
                     <span className='Box-Line mt-3'></span>
 
                     <div className="">
-                        <div className='BoxR PenCol mx-3 btn-light p-2'> 
+                        <div className='BoxR PenCol mx-3 btn-warning text-light p-2'> 
                         <img src={Box} alt="" className='DeliveryImg' />
                         </div>
                         <p className='text-light text-center PSize'>Received</p>
