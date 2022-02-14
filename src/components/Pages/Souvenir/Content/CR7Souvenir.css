@@ -102,8 +102,19 @@
   }
 
   .mODALcR7{
-      background-color: rgb(63, 63, 63) !important;
-  }
+    position: relative;
+    display: flex;
+    border: 1px solid gold;
+    flex-direction: column;
+    width: 100%;
+    background-color: #2b2b2ce5;
+    pointer-events: auto;
+    /* background-color: #fff; */
+    background-clip: padding-box;
+    border-radius: 0.3rem;
+    outline: 0;
+      
+}
 
 
   .Cr7Text{
