@@ -39,6 +39,8 @@ const Post = () => {
     return (
      
         <>
+
+            
             {status && [1,2,3,4].map((valu)=><SkeletonArticle theme="dark"/>)  }
             
             {posts && posts.map((data) => (
