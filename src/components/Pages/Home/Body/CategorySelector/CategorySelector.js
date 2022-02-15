@@ -63,7 +63,7 @@ const CategorySelector = () => {
     };
 
     return (
-        <div className="bgCategory container">
+        <div className="bgCategory container containerCategorySelector">
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
