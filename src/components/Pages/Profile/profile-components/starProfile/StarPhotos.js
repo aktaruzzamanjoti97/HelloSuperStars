@@ -10,28 +10,21 @@ import azhari7 from "../../../../../images/Shakib/17.jpg";
 import azhari8 from "../../../../../images/Shakib/18.jpg";
 import azhari9 from "../../../../../images/Shakib/19.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
+import Lock from "../../../../../../src/images/Normal-User/lock.png";
 import StarPhotosDetails from "./StarPhotosDetails";
 import axios from "axios";
 
-export default function StarPhotos({star_id}) {
-  const [post,setPost]=useState([]);
-
+export default function StarPhotos({ star_id }) {
+  const [post, setPost] = useState([]);
 
   useEffect(() => {
-
-    axios.get(`api/star_photos/${star_id}`).then(res =>{
-        
-        if(res.data.status === 200)
-        {
-          setPost(res.data.post)
-          console.log('sakib', res.data.post)
-        }
-                 
+    axios.get(`api/star_photos/${star_id}`).then((res) => {
+      if (res.data.status === 200) {
+        setPost(res.data.post);
+        console.log("sakib", res.data.post);
+      }
     });
-
-
-}, []);
-
+  }, []);
 
   return (
     <div className="container">
@@ -44,30 +37,49 @@ export default function StarPhotos({star_id}) {
             <div className="star-line"></div>
 
             <div className="card-body mb-2">
-
-
               <div className="row text-center">
+                {post.map((postData) => (
+                  <>
+                    {post.type === "paid" ? (
+                      <>
+                        {postData.image ? (
+                          <div className="col-4 mb-3">
+                            <div style={{ position: "relative" }}>
+                              <img
+                                src={`http://localhost:8000/${postData.image}`}
+                                alt=""
+                                className="img-fluid star-card-left-photos ImgBlur"
+                              />
+                              <span className="dot2 d-flex justify-content-center align-items-center">
+                                <img
+                                  src={Lock}
+                                  alt=""
+                                  style={{ width: "100px" }}
+                                />
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <></>
+                    )}
 
-
-              {post.map((post) => (
-                  <div className="col-4 mb-3">
-                  <img
-                    src={`http://localhost:8000/${post.image}`}
-                    alt=""
-                    className="img-fluid star-card-left-photos"
-                  />
-                </div>
-              ))}
-
-
-                
-
-                
-
-                
-                
-
-
+                    {postData.image ? (
+                      <div className="col-4 mb-3">
+                        <img
+                          src={`http://localhost:8000/${postData.image}`}
+                          alt=""
+                          className="img-fluid star-card-left-photos"
+                        />
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ))}
               </div>
 
               {/* <div className="row text-center mt-3">
@@ -119,16 +131,12 @@ export default function StarPhotos({star_id}) {
                   />
                 </div>
               </div> */}
-
-
-
             </div>
-           
           </div>
         </div>
 
         <div className="col-md-4">
-   <StarProfileRightContent star_id={star_id}/>
+          <StarProfileRightContent star_id={star_id} />
         </div>
       </div>
     </div>
