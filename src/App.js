@@ -156,7 +156,7 @@ function App() {
         <Route exact path='/souvenir-applied' component={AcquiringProduct} />
 
         {/* Learning Session */}
-        <Route exact path="/register-learning-details" component={RegisterLearningDetails} />
+        <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
 
         {/* Error */}
         <Route component={Error} />
