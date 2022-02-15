@@ -111,3 +111,7 @@
 .btnAngleDouble{
   padding: 0.1rem .5rem;
 }
+
+.containerCategorySelector{
+  border-radius: 10px;
+}
