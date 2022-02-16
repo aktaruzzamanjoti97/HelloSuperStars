@@ -40,7 +40,7 @@ export default function StarPhotos({ star_id }) {
               <div className="row text-center">
                 {post.map((postData) => (
                   <>
-                    {post.type === "paid" ? (
+                    {postData.type === "paid" ? (
                       <>
                         {postData.image ? (
                           <div className="col-4 mb-3">
@@ -64,19 +64,19 @@ export default function StarPhotos({ star_id }) {
                         )}
                       </>
                     ) : (
-                      <></>
-                    )}
-
-                    {postData.image ? (
-                      <div className="col-4 mb-3">
-                        <img
-                          src={`http://localhost:8000/${postData.image}`}
-                          alt=""
-                          className="img-fluid star-card-left-photos"
-                        />
-                      </div>
-                    ) : (
-                      <></>
+                      <>
+                        {postData.image ? (
+                          <div className="col-4 mb-3">
+                            <img
+                              src={`http://localhost:8000/${postData.image}`}
+                              alt=""
+                              className="img-fluid star-card-left-photos"
+                            />
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+                      </>
                     )}
                   </>
                 ))}

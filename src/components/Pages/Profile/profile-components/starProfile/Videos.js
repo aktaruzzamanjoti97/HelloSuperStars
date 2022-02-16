@@ -11,6 +11,7 @@ import azhari9 from "../../../../../images/Shakib/20.jpg";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import StarVideoDetails from "./StarVideoDetails";
 import ReactPlayer from "react-player";
+import Lock from "../../../../../../src/images/Normal-User/lock.png";
 import axios from "axios";
 
 function Videos({ star_id }) {
@@ -37,23 +38,57 @@ function Videos({ star_id }) {
 
             <div className="card-body mb-2">
               <div className="row text-center">
-
-
-              {/* <div className="col-4 play-button-container ">
+                {/* <div className="col-4 play-button-container ">
                   <StarVideoDetails />
                 </div> */}
 
-
-                {post.map((postData) => (
-                  <div className="col-4 mb-3">
-                    <ReactPlayer
-                      url={postData.video}
-                      playing={false}
-                      volume={1}
-                      width="100%"
-                      height="100%" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
-                    />
-                  </div>
+                {post.map((postVideo) => (
+                  <>
+                    {postVideo.type === "paid" ? (
+                      <>
+                        {postVideo.video ? (
+                          <div className="col-4 mb-3">
+                            <div style={{ position: "relative" }}>
+                              <ReactPlayer
+                                url={postVideo.video}
+                                playing={false}
+                                className="ImgBlur"
+                                volume={1}
+                                width="100%"
+                                height="100%" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                              />
+                              <span className="dot2 d-flex justify-content-center align-items-center">
+                                <img
+                                  src={Lock}
+                                  alt=""
+                                  style={{ width: "100px" }}
+                                />
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {postVideo.video ? (
+                          <div className="col-4 mb-3">
+                            <ReactPlayer
+                              url={postVideo.video}
+                              playing={false}
+                              className="ImgBlur"
+                              volume={1}
+                              width="100%"
+                              height="100%" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                            />
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    )}
+                  </>
                 ))}
 
                 {/* <div className="col-4 play-button-container">
