@@ -4,12 +4,15 @@ import LeftSidebar from "../../LeftSidebar";
 import ActivitiesContent from "./Content/ActivitiesContent";
 import ActivitiesContent2 from "./Content/ActivitiesContent2";
 import axios from "axios";
+import Purchase from './Content/Purchase';
 
 
 const ActivitiesBody = () => {
 
   const [posts, setPosts] = useState([])
   const [posts2, setPosts2] = useState([])
+  const[eventLodaer, setEventLodaer] = useState(false)
+  const[liveChattLodaer, setLiveChatLodaer] = useState(false)
 
 
   useEffect(() => {
@@ -22,7 +25,8 @@ const ActivitiesBody = () => {
             {
             //   setLiveChat(res.data.livechats);
                 setInterval(() => {
-                    setPosts(res.data.events);
+                  setPosts(res.data.events);
+                  setEventLodaer(true)
                 }, 300);
       
             }
@@ -36,7 +40,8 @@ const ActivitiesBody = () => {
           {
           //   setLiveChat(res.data.livechats);
               setInterval(() => {
-                  setPosts2(res.data.events);
+                setPosts2(res.data.events);
+                setLiveChatLodaer(true)
               }, 300);
     
           }
@@ -60,12 +65,17 @@ const ActivitiesBody = () => {
               
               <div className="col-sm-9 justify-content-center postTab">
                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Meetup Events</h2>
-                 <ActivitiesContent event={posts}/>
+                 <ActivitiesContent loader={eventLodaer} event={posts}/>
 
                  <hr/>
 
                  <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>LiveChat Events</h2>
-                 <ActivitiesContent2 event={posts2}/>
+                 <ActivitiesContent2 loader={liveChattLodaer} event={posts2}/>
+
+                 <hr/>
+
+                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Purchase</h2>
+                 <Purchase event={posts2}/>
               </div>
               
             </div>

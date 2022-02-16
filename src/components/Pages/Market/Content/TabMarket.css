@@ -12,6 +12,17 @@
     border: 1.5px solid gold;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: rgb(0, 0, 0);
+    background-color: #fdd10d;
+}
+
+.nav-pills .nav-link, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #030303;
+}
+
+
 
 .containerAuc{
     position: relative;
@@ -301,3 +312,37 @@
     }
     
   }
+
+
+
+
+/* Market Modal  */
+.ModalPur{
+    background-color: #050400a4;
+}
+.UrcModal{
+    border-radius: 10px;
+    background-color: #050400;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    
+    background-clip: padding-box;
+    border: 1px solid rgb(141, 243, 8);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+.Purchase{
+    width: 150px;
+}
+
+
+  .MarketNM {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
+

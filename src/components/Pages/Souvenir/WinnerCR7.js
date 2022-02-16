@@ -5,6 +5,7 @@ import souvenirImage from '../../../images/Souvenir/souvenir.png';
 import Winner from '../../../images/Souvenir/fundo-floral-preto-png-2.png';
 import CR7user from '../../../images/navbar/account.jpg';
 import './Content/CR7Souvenir.css'
+import RightSideSouvenirWithoutTime from './Content/RightSideSouvenir/RightSideSouvenirWithoutTime';
 
 const WinnerCR7 = () => {
 return (
@@ -32,18 +33,22 @@ return (
                         Winner
                     </div>
 
-                    <img src={Winner} alt={Winner} className='WinnerImg' />
+                    <img src={Winner} alt={Winner} className='WinnerImg ' />
                     <div className="WinnerBack"></div>
+                    
                     <img src={CR7user} alt=""  className='CR7user img-fluid'/>
 
-                    <div className="WinnerName btn text-light fw-bold">Apurbo Roy</div>
+                    {/* <h3 className="WinnerName btn text-light fw-bold">Apurbo Roy</h3> */}
+                    <div className="btn WinnerCrC fw-bold">
+                       Apurbo Roy
+                    </div>
 
                 </div>
 
             </div>
 
             <div className="col-md-4">
-                <RightSideSouvenir />
+                <RightSideSouvenirWithoutTime />
             </div>
 
         </div>

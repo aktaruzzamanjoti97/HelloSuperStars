@@ -61,7 +61,7 @@ const BookNowPay = (props) => {
 
     return (
         <>
-            <CardContent>
+            <CardContent className="">
                 <div className="text-center image-middle bookCa">
                     <img className="singleFrame-style BookpayImg" src={singleFrame} alt="" />
                     <h3 className="centered Bookpay">Payment Method</h3>

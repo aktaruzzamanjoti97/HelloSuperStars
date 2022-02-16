@@ -1,0 +1,8 @@
+.bottomBorderLearningDetails {
+  border-bottom: 1px solid gray;
+}
+.banner-image-larning {
+  width: auto;
+  height: 40vh;
+  object-fit: cover;
+}

@@ -58,6 +58,8 @@ import AcquiringProduct from "./components/Pages/Souvenir/Content/AcquiringProdu
 import Souvenir from "./components/Pages/Souvenir/Souvenir";
 import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
 import Shipping from "./components/Pages/Market/Shipping";
+import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
+import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 
 
 axios.defaults.withCredentials = true;
@@ -116,33 +118,32 @@ function App() {
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
         <Route exact path='/meetup-events' component={MeetupPost}/>
-
-        
-
         {/* Right Sidebar End */}
-       
+
+        {/* Account Section */}
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/otp' component={Otp} />
         <PrivateRoute path='/accountCreate' exact component={AccountCreate} />
 
+
         <Route path='/tutorial' component={SliderTutorial} />
         <Route path='/packages' component={Packages} />
-
         <Route path='/guestUser' exact component={GuestUserPage} />
 
         {/* profile page */}
         <PrivateRoute path='/profile' exact component={Profile} />
 
 
+        {/* Star profile page */}
         <Route path='/starprofile/:star_id'  component={StarProfile} />
 
           
-         {/* Category */}
-          <Route path='/coreCategory' exact component={CoreCategory} />
-          <Route path='/subCategory' exact component={SubCategory} />
+        {/* Category */}
+        <Route path='/coreCategory' exact component={CoreCategory} />
+        <Route path='/subCategory' exact component={SubCategory} />
 
-          <Route path='/starselection' exact component={StarSelection} />
+        <Route path='/starselection' exact component={StarSelection} />
           
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
@@ -151,8 +152,11 @@ function App() {
         {/* Souvenir */}
         <Route exact path='/souvenir' component={Souvenir} />
         <Route exact path='/souvenir-winner' component={WinnerCR7} />
-        <Route exact path='/souvenir/signature' component={SouvenirSignature} />
-        <Route exact path='/acquiring-product' component={AcquiringProduct} />
+        <Route exact path='/souvenir-apply' component={SouvenirSignature} />
+        <Route exact path='/souvenir-applied' component={AcquiringProduct} />
+
+        {/* Learning Session */}
+        <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
 
         {/* Error */}
         <Route component={Error} />
