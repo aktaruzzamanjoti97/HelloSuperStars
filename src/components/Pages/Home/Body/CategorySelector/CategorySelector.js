@@ -1,6 +1,8 @@
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useHistory } from 'react-router-dom';
 import Slider from "react-slick";
 import slide4 from '../../../../../images/homepage/homepage/images/education.webp';
 import slide3 from '../../../../../images/homepage/homepage/images/enterTainment.jpg';
@@ -8,26 +10,71 @@ import slide6 from '../../../../../images/homepage/homepage/images/fbInsta.jpg';
 import slide1 from '../../../../../images/homepage/homepage/images/imagefs.jpg';
 import slide5 from '../../../../../images/homepage/homepage/images/religion.jpg';
 import slide2 from '../../../../../images/homepage/homepage/images/socialMedia.jpg';
-import LeftArrow from '../../../../../images/left-arrow.svg';
-import RightArrow from '../../../../../images/right-arrow.svg';
 import './CategorySelector.css';
+
+const sliderImageLink = [
+    {
+        id: 1,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 2,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 3,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 4,
+        slider: slide4,
+        categoryName: "Education"
+    },
+    {
+        id: 5,
+        slider: slide5,
+        categoryName: "Religion"
+    },
+    {
+        id: 6,
+        slider: slide6,
+        categoryName: "Social Media"
+    },
+    {
+        id: 7,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 8,
+        slider: slide2,
+        categoryName: "LiveNews"
+    },
+]
 
 
 const CategorySelector = () => {
 
+    const [imageInfo, setImageInfo] = useState({});
+    const history = useHistory();
+
     const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-        <img src={LeftArrow} alt="prevArrow" {...props} />
+        // <img src={LeftArrow} alt="prevArrow" {...props} />
+        <FaArrowLeft {...props} />
     );
 
     const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-        <img src={RightArrow} alt="nextArrow" {...props} />
+        <FaArrowRight {...props} />
     );
 
 
     var settings = {
         autoplay: true,
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
@@ -62,8 +109,37 @@ const CategorySelector = () => {
         ]
     };
 
+    const toggleHandler = (item) => () => {
+        setImageInfo((state) => ({
+            ...state,
+            [item.id]: state[item.id]
+                ? null
+                : {
+                    id: item.id,
+                    slider: item.slider,
+                    categoryName: item.categoryName
+                }
+        }))
+    }
+
+    const handleSubCategory = () => {
+        return (
+            <>
+                {
+                    imageInfo ? history.push('/home/sub-category') : null
+                }
+            </>
+
+        )
+
+    }
+
+    useEffect(() => {
+        console.log(imageInfo);
+    }, [imageInfo])
+
     return (
-        <div className="bgCategory container containerCategorySelector">
+        <div className="bgCategory container containerCategorySelector mt-3">
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
@@ -71,7 +147,34 @@ const CategorySelector = () => {
                 </div>
 
                 <Slider {...settings}>
-                    <div className="p-1">
+                    {
+                        sliderImageLink.map((i) => {
+                            return (
+                                <>
+                                    <div  key={i.id} className="p-1">
+                                        <div>
+                                            <img onClick={handleSubCategory} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                        </div>
+                                        <div className="d-flex justify-content-center socialMedia">
+                                            <div className="mx-1">
+                                                <div class="content">
+                                                    <label class="switch m5">
+                                                        <input onChange={toggleHandler(i)} type="checkbox" />
+                                                        <small></small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <small className="text-white mx-1">{i.categoryName}</small>
+                                        </div>
+                                    </div>
+                                    {
+
+                                    }
+                                </>
+                            )
+                        })
+                    }
+                    {/* <div className="p-1">
                         <div>
                             <img src={slide1} alt="" className="img-fluid homePageCarouselImg" />
                         </div>
@@ -198,7 +301,7 @@ const CategorySelector = () => {
                             </div>
                             <small className="text-white mx-1">Social Media</small>
                         </div>
-                    </div>
+                    </div> */}
                 </Slider>
             </div>
 

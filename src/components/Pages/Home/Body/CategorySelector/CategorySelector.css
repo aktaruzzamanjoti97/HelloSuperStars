@@ -101,17 +101,18 @@
 }
 
 .sliderCategory .slick-arrow {
-  background-color: gold;
-  color: gold;
+  background-color: #737373;
+  height: 15vh;
+  color: white;
 }
 .sliderCategory .slick-arrow:hover {
   background-color: gold;
 }
 
-.btnAngleDouble{
-  padding: 0.1rem .5rem;
+.btnAngleDouble {
+  padding: 0.1rem 0.5rem;
 }
 
-.containerCategorySelector{
+.containerCategorySelector {
   border-radius: 10px;
 }
