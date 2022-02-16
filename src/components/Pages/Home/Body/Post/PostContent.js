@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 import Lock from "../../../../../../src/images/Normal-User/lock.png";
 import "../../../../CSS/Home/Post.css";
 import PostComment from "./PostComment";
+import ReactPlayer from "react-player";
 
 
 const mediaBaseUrl = "http://localhost:8000/";
@@ -575,17 +576,69 @@ export default function UpcomingAuditionsContent({ post }) {
 
                                     {post.general?.type === 'paid' ? (
                                         <div className="card PostCard">
-                                            <img src={mediaBaseUrl + post.general?.image} alt={post.general?.image} className="ImgBlur" />
+.
+                                          {post.general?.image ? (
+                                            <>
+                                              <img src={mediaBaseUrl + post.general?.image} alt={post.general?.image} className="ImgBlur" />
+
+                                                <span className="dot2 d-flex justify-content-center align-items-center">
+                                                    <img src={Lock} alt="" style={{ width: '200px' }} />
+                                                </span>
+                                            </>
+                                          ) : (
+
+                                            <>
+                                           
+                                            <ReactPlayer
+                                            url={post.general?.video}
+                                            playing={false}
+                                            className="ImgBlur"
+                                            volume={1}
+                                            width="100%"
+                                            height="400px" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                                            />
 
                                             <span className="dot2 d-flex justify-content-center align-items-center">
-                                                <img src={Lock} alt="" style={{ width: '200px' }} />
-                                            </span>
+                                                    <img src={Lock} alt="" style={{ width: '200px' }} />
+                                                </span>
+                                          </>
+                                            
+                                          )}
+                                            
+
+                                            
                                         </div>
                                     ) :
                                         (
-                                            <div className="card PostCard">
-                                                <img src={mediaBaseUrl + post.general?.image} alt={post.general?.image} className="" />
-                                            </div>
+                                          <div className="card PostCard">
+
+                                          {post.general?.image ? (
+                                            <>
+                                              <img src={mediaBaseUrl + post.general?.image} alt={post.general?.image} className="" />
+
+                                               
+                                            </>
+                                          ) : (
+
+                                            <>
+                                           
+                                            <ReactPlayer
+                                            url={post.general?.video}
+                                            playing={false}
+                                            className=""
+                                            volume={1}
+                                            width="100%"
+                                            height="400px" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                                            />
+
+                                            
+                                          </>
+                                            
+                                          )}
+                                            
+
+                                            
+                                        </div>
                                         )
                                     }
 
