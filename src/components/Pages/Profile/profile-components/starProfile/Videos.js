@@ -77,7 +77,6 @@ function Videos({ star_id }) {
                             <ReactPlayer
                               url={postVideo.video}
                               playing={false}
-                              className="ImgBlur"
                               volume={1}
                               width="100%"
                               height="100%" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
