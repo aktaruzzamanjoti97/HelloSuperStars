@@ -38,6 +38,7 @@ const Navigation = () => {
     const handleShow = () => setShow(true);
     const [notifictions, setNotifictions] = useState([]);
     const [greetingInfo, setGreetingInfo] = useState([]);
+    const [greetinsTyps, setGreetinsTyps] = useState([]);
     const [load, setLoad] = useState(true);
     const history = useHistory();
 
@@ -51,7 +52,9 @@ const Navigation = () => {
             axios.get('/api/user/check_notification').then((res) => {
                 if (res.data.status === 200) {
                     setNotifictions(res.data.notifiction)                
-                    setGreetingInfo(res.data.greeting_info) 
+                    setGreetingInfo(res.data.greeting_info)
+                    setGreetinsTyps(res.data.greeting_type)
+                    
                     if (notifictions.length > 0) {
                         setLoad(false)
                     }
@@ -84,7 +87,9 @@ const Navigation = () => {
                 pathname: `/starprofile/${greetingInfo.star_id}/greetings_registration_form`,
                 state: {
                     greetingInfo: greetingInfo,
-                    notification_id: notification_id
+                    notification_id: notification_id,
+                    greetins_typs: greetinsTyps,
+
                 }
               });
         } else {

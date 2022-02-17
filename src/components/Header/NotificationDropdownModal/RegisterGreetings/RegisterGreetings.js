@@ -24,6 +24,9 @@ const RegisterGreetings = () => {
     const [showCard, setShowCard] = React.useState(false)
     const [Input, setInput] = useState();
     const [greetingInfo, setGreetingInfo] = useState({})
+    const [userInfo, setUserInfo] = useState({})
+    const [userIsload, setUserIsload] = useState(true);
+    const [greetingTypes, setGreetingTypes] = useState([]);
     const [notifictionInfo, setNotifictionInfo] = useState()
     const [changeIcon, setChange] = useState(false);
 
@@ -37,6 +40,17 @@ const RegisterGreetings = () => {
     useEffect(() => {
         setGreetingInfo(location.state.greetingInfo);
         setNotifictionInfo(location.state.notification_id);
+        setGreetingTypes(location.state.greetins_typs);
+
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+            axios.get("/api/user-information").then((res) => {
+                if (res.data.status === 200) {
+                    setUserInfo(res.data.user_info);
+                    setUserIsload(false)
+                }
+      
+            });
+        });
 
        
         
@@ -96,7 +110,9 @@ const RegisterGreetings = () => {
 
 
                         <div className="col-md-9">
-                            <h4 className="starChat-heading">Greetings Details</h4>
+                       
+                                <h4 className="starChat-heading">Greetings Details</h4>
+                         
                             <div className="vb"></div>
 
                             <div className="mt-3 row">
@@ -137,8 +153,14 @@ const RegisterGreetings = () => {
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Name</big><big className='text-danger'> *</big>
-                                        <input type='hidden' name="notification_id" value={notifictionInfo}/>
-                                        <input type="text" className="form-control input-overlay" name="name" />
+                                        <input type='hidden' name="notification_id" value={notifictionInfo} />
+                                        {userIsload ?
+                                        
+                                        <input type="text" value={userInfo.first_name+userInfo.last_name} className="form-control input-overlay" name="name" disabled/>
+                                        :
+                                        <input type="text" value={userInfo.first_name+userInfo.last_name} className="form-control input-overlay" name="name" />
+                                    
+                                        }
                                         <small id="emailHelp" class="form-text text-danger">{ inputError.name }</small>
                             
                                 
@@ -154,14 +176,29 @@ const RegisterGreetings = () => {
                                 <div className="col-md-6">
                                     <div className="form-group my-3">
                                         <big className="text-white">Phone Number</big><big className='text-danger'> *</big>
-                                        <input type="phone" className="form-control input-overlay" name="phone" />
+                                        {userIsload ?
+                                            <input type="phone" value={userInfo.phone} className="form-control input-overlay" name="phone" disabled/>
+                                            :
+                                            <input type="phone" value={userInfo.phone} className="form-control input-overlay" name="phone" />
+                                        }
                                         <small id="emailHelp" class="form-text text-danger">{ inputError.phone }</small>
 
                                     </div>
                                     <p className="" style={{ color: 'red' }}></p>
                                     <div className="form-group my-3">
-                                        <big className="text-white">Location</big>
-                                        <input type="text" className="form-control input-overlay" name="location" />
+                                        <big className="text-white">Greetings Type</big><big className='text-danger'> *</big>
+                                        <select className="form-control input-overlay" name="greetings_type">
+                                            <option selected disabled>select greetings type</option>
+                                            {greetingTypes ? greetingTypes.map(data =>
+                                            
+                                            <option value= {data.id}>{data.greeting_type}</option>
+                                            ) : ""}
+                                            
+                                        </select>
+                                      
+                                        <small id="emailHelp" class="form-text text-danger">{ inputError.greetings_type }</small>
+
+                                        {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
                                 </div>
                             </div>
@@ -187,6 +224,16 @@ const RegisterGreetings = () => {
 
                                         {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
+                                    {/* <p className="" style={{ color: 'red' }}></p> */}
+                                    
+
+                                </div>
+                                <div className="col-md-6">
+                                <div className="form-group my-3">
+                                        <big className="text-white">Location</big>
+                                        <input type="text" className="form-control input-overlay" name="location" />
+                                    </div>
+                     
                                     {/* <p className="" style={{ color: 'red' }}></p> */}
                                     
 
