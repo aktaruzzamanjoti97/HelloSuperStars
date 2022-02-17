@@ -1,15 +1,18 @@
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Slider from "react-slick";
-import slide4 from '../../../../../images/homepage/homepage/images/education.webp';
-import slide3 from '../../../../../images/homepage/homepage/images/enterTainment.jpg';
-import slide6 from '../../../../../images/homepage/homepage/images/fbInsta.jpg';
-import slide1 from '../../../../../images/homepage/homepage/images/imagefs.jpg';
-import slide5 from '../../../../../images/homepage/homepage/images/religion.jpg';
-import slide2 from '../../../../../images/homepage/homepage/images/socialMedia.jpg';
-import './CategorySelector.css';
+import React, { useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useHistory } from 'react-router-dom';
+import Slider from 'react-slick';
+import slide4 from '../../../../../../images/homepage/homepage/images/education.webp';
+import slide3 from '../../../../../../images/homepage/homepage/images/enterTainment.jpg';
+import slide6 from '../../../../../../images/homepage/homepage/images/fbInsta.jpg';
+import slide1 from '../../../../../../images/homepage/homepage/images/imagefs.jpg';
+import slide5 from '../../../../../../images/homepage/homepage/images/religion.jpg';
+import slide2 from '../../../../../../images/homepage/homepage/images/socialMedia.jpg';
+import SubCategoryHomePage from '../SubCategoryHomePage';
+
+
 
 const sliderImageLink = [
     {
@@ -55,9 +58,13 @@ const sliderImageLink = [
 ]
 
 
-const SubCategorySelector = () => {
+const SubCategorySelector = (id) => {
 
-    const [imageInfo, setImageInfo] = useState({});
+    const selectedSubCategory = sliderImageLink.find((single) => single.id === id);
+    console.log(selectedSubCategory);
+
+    const [imageInfo, setImageInfo] = useState([]);
+    const history = useHistory();
 
     const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
         // <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -107,191 +114,175 @@ const SubCategorySelector = () => {
         ]
     };
 
-    const toggleHandler = (item) => () => { 
-        setImageInfo((state) => ({
-            ...state,
-            [item.id] : state[item.id]
-                ? null
-                : {
-                    id: item.id,
-                    slider: item.slider,
-                    categoryName: item.categoryName
+    const toggleHandler = (item) => () => {
+        setImageInfo((state) => ([...state, {
+            id: item.id,
+            slider: item.slider,
+            categoryName: item.categoryName
+        }
+        ]))
+    }
+
+    const handleSubCategory = (id) => {
+
+        const selectedCategory = imageInfo.filter((imgData) => id === imgData.id)
+
+        return (
+            <>
+                {
+                    selectedCategory.length ? <SubCategoryHomePage id={id} /> : null
                 }
-        }))
+            </>
+        )
     }
-
-    const handleSubCategory = () => {
-        
-    }
-
-    useEffect(() => {
-        console.log(imageInfo);
-    }, [imageInfo])
 
     return (
         <div className="bgCategory container containerCategorySelector mt-3">
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
-                    <small className="text-white mx-2"> Category </small>
+                    <small className="text-white mx-2"> Sub Category </small>
                 </div>
 
                 <Slider {...settings}>
-                    {
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input  type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input  type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    <div key={selectedSubCategory.id} className="p-1">
+                        <div>
+                            <img src={selectedSubCategory.slider} alt="" className="img-fluid homePageCarouselImg" />
+                        </div>
+                        <div className="d-flex justify-content-center socialMedia">
+                            <div className="mx-1">
+                                <div class="content">
+                                    <label class="switch m5">
+                                        <input type="checkbox" />
+                                        <small></small>
+                                    </label>
+                                </div>
+                            </div>
+                            <small className="text-white mx-1">{selectedSubCategory.categoryName}</small>
+                        </div>
+                    </div>
+                    {/* {
                         sliderImageLink.map((i) => {
                             return (
                                 <>
-                                    <div onClick={handleSubCategory} key={i.id} className="p-1">
-                                        <div>
-                                            <img src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
-                                        </div>
-                                        <div className="d-flex justify-content-center socialMedia">
-                                            <div className="mx-1">
-                                                <div class="content">
-                                                    <label class="switch m5">
-                                                        <input onChange={toggleHandler(i)} type="checkbox" />
-                                                        <small></small>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <small className="text-white mx-1">{i.categoryName}</small>
-                                        </div>
-                                    </div>
-                                    {
 
-                                    }
+
                                 </>
                             )
                         })
-                    }
-                    {/* <div className="p-1">
-                        <div>
-                            <img src={slide1} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Sports</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide2} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Live News</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide3} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Entertainment</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide4} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Education</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide5} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Religion</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide6} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Social Media</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide1} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Social Media</small>
-                        </div>
-                    </div>
-                    <div className="p-1">
-                        <div>
-                            <img src={slide2} alt="" className="img-fluid homePageCarouselImg" />
-                        </div>
-                        <div className="d-flex justify-content-center socialMedia">
-                            <div className="mx-1">
-                                <div class="content">
-                                    <label class="switch m5">
-                                        <input type="checkbox" />
-                                        <small></small>
-                                    </label>
-                                </div>
-                            </div>
-                            <small className="text-white mx-1">Social Media</small>
-                        </div>
-                    </div> */}
+                    } */}
                 </Slider>
             </div>
 
@@ -300,4 +291,3 @@ const SubCategorySelector = () => {
 };
 
 export default SubCategorySelector;
-

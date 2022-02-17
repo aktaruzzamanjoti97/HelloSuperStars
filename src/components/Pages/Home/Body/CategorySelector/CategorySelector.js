@@ -10,6 +10,7 @@ import slide6 from '../../../../../images/homepage/homepage/images/fbInsta.jpg';
 import slide1 from '../../../../../images/homepage/homepage/images/imagefs.jpg';
 import slide5 from '../../../../../images/homepage/homepage/images/religion.jpg';
 import slide2 from '../../../../../images/homepage/homepage/images/socialMedia.jpg';
+import SubCategoryHomePage from '../SubCategoryHomePage/SubCategoryHomePage';
 import './CategorySelector.css';
 
 const sliderImageLink = [
@@ -58,7 +59,7 @@ const sliderImageLink = [
 
 const CategorySelector = () => {
 
-    const [imageInfo, setImageInfo] = useState({});
+    const [imageInfo, setImageInfo] = useState([]);
     const history = useHistory();
 
     const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -110,28 +111,26 @@ const CategorySelector = () => {
     };
 
     const toggleHandler = (item) => () => {
-        setImageInfo((state) => ({
-            ...state,
-            [item.id]: state[item.id]
-                ? null
-                : {
-                    id: item.id,
-                    slider: item.slider,
-                    categoryName: item.categoryName
-                }
-        }))
+        setImageInfo((state) => ([...state, {
+            id: item.id,
+            slider: item.slider,
+            categoryName: item.categoryName
+        }
+        ]))
     }
 
-    const handleSubCategory = () => {
+    const handleSubCategory = (id) => {
+
+        const selectedCategory = imageInfo.filter((imgData) => id === imgData.id)
+       
+        
         return (
             <>
                 {
-                    imageInfo ? history.push('/home/sub-category') : null
+                    selectedCategory.length ?  <SubCategoryHomePage id={id} /> && history.push('/sub-category')  : null
                 }
             </>
-
         )
-
     }
 
     useEffect(() => {
@@ -151,9 +150,9 @@ const CategorySelector = () => {
                         sliderImageLink.map((i) => {
                             return (
                                 <>
-                                    <div  key={i.id} className="p-1">
+                                    <div key={i.id} className="p-1">
                                         <div>
-                                            <img onClick={handleSubCategory} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img onClick={() => handleSubCategory(i.id)} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">
@@ -167,9 +166,7 @@ const CategorySelector = () => {
                                             <small className="text-white mx-1">{i.categoryName}</small>
                                         </div>
                                     </div>
-                                    {
-
-                                    }
+                                 
                                 </>
                             )
                         })

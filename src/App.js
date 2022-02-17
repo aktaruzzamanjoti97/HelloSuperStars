@@ -60,6 +60,7 @@ import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
 import Shipping from "./components/Pages/Market/Shipping";
 import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
+import SubCategoryHomePage from "./components/Pages/Home/Body/SubCategoryHomePage/SubCategoryHomePage";
 
 
 axios.defaults.withCredentials = true;
@@ -69,10 +70,9 @@ axios.defaults.baseURL = "http://localhost:8000/";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
-axios.interceptors.request.use(function (config)
-{
+axios.interceptors.request.use(function (config) {
   const token = localStorage.getItem('auth_token');
-  config.headers.Authorization = token ? `Bearer ${token}` : '' ;
+  config.headers.Authorization = token ? `Bearer ${token}` : '';
   return config;
 });
 
@@ -81,90 +81,91 @@ axios.interceptors.request.use(function (config)
 function App() {
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
 
-      <Switch>
-        {/* Navbar */}
-        <PrivateRoute exact path='/' component={Home} />
-        <Route exact path='/guest' component={Home} />
-        
-        <Route exact path='/marketplace' component={Market} />
-        <Route exact path='/marketplace/shipping' component={Shipping} />
+        <Switch>
+          {/* Navbar */}
+          <PrivateRoute exact path='/' component={Home} />
+          <Route exact path='/guest' component={Home} />
+          <Route exact path='/sub-category' component={SubCategoryHomePage} />
 
-        {/* Left Sidebar*/}
-        <Route exact path='/category' component={CategoryMain} />
-        <Route exact path='/category-view' component={CategoryView} />
-        <Route exact path='/category-profile' component={ProfileCatBody} />
+          <Route exact path='/marketplace' component={Market} />
+          <Route exact path='/marketplace/shipping' component={Shipping} />
 
-        <Route exact path='/following' component={FollowMain} />
-        <PrivateRoute exact path='/wallet' component={WalletBody} />
-        <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
-        <PrivateRoute exact path='/activities' component={ActivitiesBody} />
-        <PrivateRoute exact path='/activities/video/:id' component={VideoActivities} />
+          {/* Left Sidebar*/}
+          <Route exact path='/category' component={CategoryMain} />
+          <Route exact path='/category-view' component={CategoryView} />
+          <Route exact path='/category-profile' component={ProfileCatBody} />
 
-        <PrivateRoute exact path='/settings' component={SettingsBody} />
-        <PrivateRoute exact path="/setting/personal" component={Personal}/>
-        <PrivateRoute exact path="/setting/educational" component={Educational}/>
-        <PrivateRoute exact path="/setting/employment" component={Employment}/>
-        <PrivateRoute exact path="/setting/interest" component={Interest}/>
-        <PrivateRoute exact path="/setting/security" component={Security}/>
-        <PrivateRoute exact path="/setting/report" component={Report}/>
-        {/* Left Sidebar End*/}
+          <Route exact path='/following' component={FollowMain} />
+          <PrivateRoute exact path='/wallet' component={WalletBody} />
+          <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
+          <PrivateRoute exact path='/activities' component={ActivitiesBody} />
+          <PrivateRoute exact path='/activities/video/:id' component={VideoActivities} />
 
-
-        {/* Right Sidebar   */}
-        <Route exact path='/live-now' component={LivePost} />
-        <Route exact path='/learning-sessions' component={LearnPost}/>
-        <Route exact path='/upcoming-live' component={UpLivePost} />
-        <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
-        <Route exact path='/meetup-events' component={MeetupPost}/>
-        {/* Right Sidebar End */}
-
-        {/* Account Section */}
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/otp' component={Otp} />
-        <PrivateRoute path='/accountCreate' exact component={AccountCreate} />
+          <PrivateRoute exact path='/settings' component={SettingsBody} />
+          <PrivateRoute exact path="/setting/personal" component={Personal} />
+          <PrivateRoute exact path="/setting/educational" component={Educational} />
+          <PrivateRoute exact path="/setting/employment" component={Employment} />
+          <PrivateRoute exact path="/setting/interest" component={Interest} />
+          <PrivateRoute exact path="/setting/security" component={Security} />
+          <PrivateRoute exact path="/setting/report" component={Report} />
+          {/* Left Sidebar End*/}
 
 
-        <Route path='/tutorial' component={SliderTutorial} />
-        <Route path='/packages' component={Packages} />
-        <Route path='/guestUser' exact component={GuestUserPage} />
+          {/* Right Sidebar   */}
+          <Route exact path='/live-now' component={LivePost} />
+          <Route exact path='/learning-sessions' component={LearnPost} />
+          <Route exact path='/upcoming-live' component={UpLivePost} />
+          <Route exact path='/upcoming-auditions' component={AuditionsPost} />
+          <Route exact path='/meetup-events' component={MeetupPost} />
+          {/* Right Sidebar End */}
 
-        {/* profile page */}
-        <PrivateRoute path='/profile' exact component={Profile} />
-
-
-        {/* Star profile page */}
-        <Route path='/starprofile/:star_id'  component={StarProfile} />
-
-          
-        {/* Category */}
-        <Route path='/coreCategory' exact component={CoreCategory} />
-        <Route path='/subCategory' exact component={SubCategory} />
-
-        <Route path='/starselection' exact component={StarSelection} />
-          
-      
-        <Route exact path='/logo' component={HelloSuperStarDemo} />
+          {/* Account Section */}
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/otp' component={Otp} />
+          <PrivateRoute path='/accountCreate' exact component={AccountCreate} />
 
 
-        {/* Souvenir */}
-        <Route exact path='/souvenir' component={Souvenir} />
-        <Route exact path='/souvenir-winner' component={WinnerCR7} />
-        <Route exact path='/souvenir-apply' component={SouvenirSignature} />
-        <Route exact path='/souvenir-applied' component={AcquiringProduct} />
+          <Route path='/tutorial' component={SliderTutorial} />
+          <Route path='/packages' component={Packages} />
+          <Route path='/guestUser' exact component={GuestUserPage} />
 
-        {/* Learning Session */}
-        <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
+          {/* profile page */}
+          <PrivateRoute path='/profile' exact component={Profile} />
 
-        {/* Error */}
-        <Route component={Error} />
-        
-      </Switch>
-    </BrowserRouter>
+
+          {/* Star profile page */}
+          <Route path='/starprofile/:star_id' component={StarProfile} />
+
+
+          {/* Category */}
+          <Route path='/coreCategory' exact component={CoreCategory} />
+          <Route path='/subCategory' exact component={SubCategory} />
+
+          <Route path='/starselection' exact component={StarSelection} />
+
+
+          <Route exact path='/logo' component={HelloSuperStarDemo} />
+
+
+          {/* Souvenir */}
+          <Route exact path='/souvenir' component={Souvenir} />
+          <Route exact path='/souvenir-winner' component={WinnerCR7} />
+          <Route exact path='/souvenir-apply' component={SouvenirSignature} />
+          <Route exact path='/souvenir-applied' component={AcquiringProduct} />
+
+          {/* Learning Session */}
+          <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
+
+          {/* Error */}
+          <Route component={Error} />
+
+        </Switch>
+      </BrowserRouter>
     </>
   );
-} 
+}
 
 export default App;
