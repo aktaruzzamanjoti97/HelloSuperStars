@@ -13,6 +13,7 @@ const ActivitiesBody = () => {
   const [posts2, setPosts2] = useState([])
   const[eventLodaer, setEventLodaer] = useState(false)
   const[liveChattLodaer, setLiveChatLodaer] = useState(false)
+  const[greetingsLodaer, setGreetingsLodaer] = useState(false)
 
 
   useEffect(() => {
@@ -23,11 +24,10 @@ const ActivitiesBody = () => {
         {
             if(res.data.status === 200)
             {
-            //   setLiveChat(res.data.livechats);
-                setInterval(() => {
+           
                   setPosts(res.data.events);
                   setEventLodaer(true)
-                }, 300);
+               
       
             }
         }           
@@ -38,11 +38,25 @@ const ActivitiesBody = () => {
       
           if(res.data.status === 200)
           {
-          //   setLiveChat(res.data.livechats);
-              setInterval(() => {
+          //
                 setPosts2(res.data.events);
                 setLiveChatLodaer(true)
-              }, 300);
+             
+    
+          }
+               
+    });
+    
+
+    axios.get('api/user/check_notification').then(res =>{
+
+      
+          if(res.data.status === 200)
+          {
+        
+                setEventLodaer(res.data.greeting_info);
+                setGreetingsLodaer(true)
+            
     
           }
                
