@@ -29,6 +29,7 @@ const RegisterLearningDetails = (props) => {
             if (res.data.status === 200) {
             
                 setPost(res.data.learnigSession);
+                console.log('data', res.data.learnigSession)
               
             }
           
@@ -58,7 +59,7 @@ const RegisterLearningDetails = (props) => {
                             <th className='text-light bookTh'>Star</th>
                             {/* <td className='BookNText'>{star.super_star?.first_name}
                 {star.super_star?.last_name}</td> */}
-                            <td className='BookNText'>{post.star?.first_name}</td>
+                            <td className='BookNText'>{post.star?.first_name} {post.star?.last_name}</td>
                         </tr>
                         <tr>
                             <th className='text-light bookTh'>Date</th>

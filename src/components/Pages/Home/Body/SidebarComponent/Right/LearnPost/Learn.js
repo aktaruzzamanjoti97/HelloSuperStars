@@ -9,28 +9,18 @@ const Learn = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        let isMounted = true;
         axios.get('api/user/getAllLearningSession').then(res =>{
-    
-            if(isMounted)
+            if(res.data.status === 200)
             {
-                if(res.data.status === 200)
-                {
-                //   setLiveChat(res.data.livechats);
-                    setInterval(() => {
-                        setPosts(res.data.post);
-                        //setstatus(false);
-                    }, 300);
-                    console.log(res.data.post);
-                }
-            }           
+                setPosts(res.data.post);
+                console.log('learning',res.data.post);
+
+            }          
         });
     }, []);
 
-    console.log(posts);
     return (
         <>
-            
             {posts.map((u) => (
                 <LearnContent key={u.id} post={u} />
             ))}
