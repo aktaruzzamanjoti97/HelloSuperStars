@@ -12,6 +12,7 @@ import swal from 'sweetalert';
 const AccountCreate = () => {
   const [file, setFile] = useState('');
   const [user, setUser] = useState([]);
+  const [interest, setInterestType] = useState([]);
   const [modal, setModal] = useState(false);
   const [imagedata, setImagedata] = useState('');
 
@@ -93,9 +94,22 @@ const AccountCreate = () => {
           setCountry(res.data.users.user_info != null ? res.data.users.user_info.country: '')
         }
   
-        console.log(dateInput);
+        // console.log(dateInput);
       });
+      
+      axios.get(`/api/user/interest/type`).then(res =>{
+        
+        if(res.status === 200)
+        {
+          setInterestType(res.data.allinteresttypes)
+        }
+  
+        
+      });
+
       }, []);
+
+      // console.log('check ',interesttype)
 
 
       const registerSubmit = (e) => {
@@ -178,7 +192,7 @@ const AccountCreate = () => {
       }
 
 
-
+      // console.log('check ',interest)
   return (
 
     <>
@@ -484,20 +498,10 @@ right div and info field start */}
                       </h5>
                       <form className="text-warning checkbox-input-size" >
 
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Traveling
-                          </label>
-                        </div>
+                       {/* {console.log('check ',interest)} */}
+
+                       {interest.map((event) => 
+                        //  {console.log('check ',event.interest_type)}
                         <div className="form-check mt-2">
                           <input
                             className="form-check-input"
@@ -510,96 +514,10 @@ right div and info field start */}
                             className="form-check-label"
                             for="flexCheckChecked"
                           >
-                            Food
+                            {event.interest_type}
                           </label>
                         </div>
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Technology
-                          </label>
-                        </div>
-
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Entertainment
-                          </label>
-                        </div>
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Digital World
-                          </label>
-                        </div>
-
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Gaming
-                          </label>
-                        </div>
-
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Environment
-                          </label>
-                        </div>
-                        <div className="form-check mt-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label"
-                            for="flexCheckDefault"
-                          >
-                            Education
-                          </label>
-                        </div>
+                        )}
 
                         <button onClick={ModalClick} className='btn btn-warning text-light sav-btn-ca  my-4'>Save</button>
                         
