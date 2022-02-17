@@ -32,6 +32,9 @@ export const RightSidebar = () => {
   const [meetupPhotos, setMeetupPhotos] = useState([]);
   const [loadingMeetupPhotos, setLoadingMeetupPhotos] = useState(true);
 
+  const [liveChat, setLiveChat] = useState([]);
+  const [loadingLiveChat, setLoadingLiveChat] = useState(true);
+
   /* const [liveChatPhotos, setliveChatPhotos] = useState([]);
   const [loadingliveChatPhotos, setLoadingliveChatPhotos] = useState(true);
  */
@@ -54,6 +57,13 @@ export const RightSidebar = () => {
       if (res.status === 200) {
         setMeetupPhotos(res.data.meetup);
         setLoadingMeetupPhotos(false);
+      }
+    });
+
+    axios.get('/api/user/live_chat/all').then((res) => {
+      if (res.status === 200) {
+        setLiveChat(res.data.event);
+        setLoadingLiveChat(false);
       }
     });
 
@@ -125,6 +135,34 @@ var meetupEventPhoto = "";
         </>
       ))
   }
+
+  //<============================Show meetup photos==========================>
+var liveChatPhoto = "";
+
+if(loadingLiveChat)
+{
+  return <h5>...</h5>
+}
+else
+{
+  liveChatPhoto = 
+
+  liveChat.map((photo) => (
+      <>
+        <div className="container-xc-ds item item-x ">
+            
+          <img
+            src={`http://localhost:8000/${photo.banner}`}
+            className="SidebarCarouselImg"
+            alt="profilePicture"
+          />
+
+          <div class="top-right-c">🔴</div>
+          <div class="bottom-left-c">Bottom Left</div>
+        </div>
+      </>
+    ))
+}
 
  
 
@@ -214,7 +252,7 @@ var meetupEventPhoto = "";
 
         {/*Upcoming Live */}
         <div className=" xm-mnh-s mt-3">
-          <div className="live-text-sln">Upcoming Live</div>
+          <div className="live-text-sln">Live Chat</div>
 
           <div className="row ">
             <div className="col-md-10">
@@ -228,23 +266,7 @@ var meetupEventPhoto = "";
                 dots={false}
                 nav
               >
-                <div className="container-xc-ds item item-x ">
-                  <img
-                    src={srabanti}
-                    className="SidebarCarouselImg"
-                    alt="profilePicture"
-                  />
-                  <div class="bottom-left-c">Bottom Left</div>
-                </div>
-
-                <div className="container-xc-ds item item-x ">
-                  <img
-                    src={Pro}
-                    className="SidebarCarouselImg"
-                    alt="profilePicture"
-                  />
-                  <div class="bottom-left-c">Bottom Left</div>
-                </div>
+                {liveChatPhoto}
               </OwlCarousel>
             </div>
 
