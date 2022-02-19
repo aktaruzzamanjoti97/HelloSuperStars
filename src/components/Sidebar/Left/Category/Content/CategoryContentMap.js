@@ -7,8 +7,8 @@ const CategoryContentMap = (props) => {
     const [value, setValue] = useState(true);
     const [btn, setBtn] = useState("Follow");
 
-    const { id, bgImg, categoryName,
-        follow, block } = props.singleData
+    // const { id, bgImg, categoryName,
+    //     follow, block } = props.singleData
 
     return (
         <>
@@ -17,7 +17,7 @@ const CategoryContentMap = (props) => {
                 <div id="carouselExampleCaptions" className="carousel w-100 " data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active cateAS">
-                            <img src={bgImg} className="ImgCatView" alt={bgImg} />
+                            <img src={`http://localhost:8000/${props.singleData.image}`} className="ImgCatView" alt={props.singleData.image} />
 
                             <div className="CatBG"></div>
 
@@ -47,7 +47,7 @@ const CategoryContentMap = (props) => {
                     <div className='CatBgView '>
                         <div className="text-success fw-bold ">
                             <h6 className='centeredASd fw-bold text-warning'>
-                                {categoryName}
+                                {props.singleData.name}
                             </h6>
                         </div>
                     </div>
