@@ -93,7 +93,7 @@ function App() {
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />
-        <Route exact path='/category-view' component={CategoryView} />
+        <Route exact path='/category-view/:slug' component={CategoryView} />
         <Route exact path='/category-profile' component={ProfileCatBody} />
 
         <Route exact path='/following' component={FollowMain} />
