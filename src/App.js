@@ -61,6 +61,8 @@ import Shipping from "./components/Pages/Market/Shipping";
 import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 import SubCategoryHomePage from "./components/Pages/Home/Body/SubCategoryHomePage/SubCategoryHomePage";
+import SportCategory from "./components/Pages/Home/Body/CategorySelector/SportCategory/SportCategory";
+import LiveNewsCategory from "./components/Pages/Home/Body/CategorySelector/LiveNewsCategory/LiveNewsCategory";
 
 
 axios.defaults.withCredentials = true;
@@ -158,6 +160,11 @@ function App() {
 
           {/* Learning Session */}
           <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
+
+
+          {/* Sub-category route */}
+          <Route exact path="/sport-category" component={SportCategory} />
+          <Route exact path="/live-news-category" component={LiveNewsCategory} />
 
           {/* Error */}
           <Route component={Error} />

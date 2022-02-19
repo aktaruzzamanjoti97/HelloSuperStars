@@ -4,9 +4,9 @@ import LeftSidebar from '../../../../../Sidebar/LeftSidebar';
 import RightSidebar from '../../../../../Sidebar/RightSidebar';
 import Post from '../../Post/Post';
 import PromoVideo from '../../PromoVideo/PromoVideo';
-import SportCategorySlide from './SportCategorySlide';
+import LiveNewsCategorySlide from './LiveNewsCategorySlide';
 
-const SportCategory = () => {
+const LiveNewsCategory = () => {
     return (
         <>
         <Navigation />
@@ -23,8 +23,8 @@ const SportCategory = () => {
               </div>
 
               <div className="col-sm-6 justify-content-center postTab ">
-                {/* <CategorySelector /> */}
-                <SportCategorySlide />
+                
+                <LiveNewsCategorySlide />
                 <Post />
               </div>
 
@@ -40,4 +40,4 @@ const SportCategory = () => {
     );
 };
 
-export default SportCategory;
+export default LiveNewsCategory;

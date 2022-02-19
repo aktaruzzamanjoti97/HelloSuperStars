@@ -47,3 +47,147 @@ export const fakeCategoryData = [
         categoryName: "LiveNews"
     },
 ]
+
+export const sportCategoryData = [
+    {
+        id: 1,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 2,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 3,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 4,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 5,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 6,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 7,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+    {
+        id: 8,
+        slider: slide1,
+        categoryName: "Sports"
+    },
+]
+
+export const liveNewsData = [
+    {
+        id: 1,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 2,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 3,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 4,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 5,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+    {
+        id: 6,
+        slider: slide2,
+        categoryName: "Live News"
+    },
+ 
+]
+
+export const entertainmentData = [
+    {
+        id: 1,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 2,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 3,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 4,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 5,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 6,
+        slider: slide3,
+        categoryName: "Entertainment"
+    },
+]
+
+export const educationData = [
+    {
+        id: 1,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 2,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 3,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 4,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 5,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+    {
+        id: 6,
+        slider: slide4,
+        categoryName: "Entertainment"
+    },
+]
+
