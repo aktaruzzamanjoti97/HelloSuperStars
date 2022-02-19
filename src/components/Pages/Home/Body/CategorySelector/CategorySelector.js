@@ -141,26 +141,36 @@ const CategorySelector = () => {
         ]
     };
 
-    // const toggleHandler = (item) => () => {
-    //     setImageInfo((state) => ([...state, {
-    //         id: item.id,
-    //         slider: item.slider,
-    //         categoryName: item.categoryName
-    //     }
-    //     ]))
-    // }
+
 
     const handleSubCategory = (obj) => {
 
-        const selectedCategory = select.selectedCheckboxes.filter((num) => obj.id === num)
+        const selectedCategory = select.selectedCheckboxes.filter((data) => obj.id === data.id)
         console.log('SelectedCategory', selectedCategory);
+
+
+
+        function statementFunction() {
+            selectedCategory.map((single) => {
+                return (
+                    <>
+                        {
+                            single.categoryName == 'Sports' ? history.push('/sport-category') : single.categoryName == 'Live News' ? history.push('/live-news-category') : single.categoryName == 'Entertainment' ? history.push('/entertainment-category') : single.categoryName == 'Education' ? history.push('/education-category') : single.categoryName == 'Religion' ? history.push('/religion-category') : null 
+                        }
+                        
+                    </>
+                )
+            })
+
+        }
 
 
         return (
             <>
-                {
-                    selectedCategory.length ? history.push('/sub-category') : null
-                }
+
+                {selectedCategory.length ? statementFunction() : null}
+
+
             </>
         )
     }
@@ -186,7 +196,7 @@ const CategorySelector = () => {
                                 <>
                                     <div key={i.id} className="p-1">
                                         <div>
-                                            <img onClick={() => handleSubCategory(i.id)} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img onClick={() => handleSubCategory(i)} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">
@@ -195,8 +205,8 @@ const CategorySelector = () => {
                                                         <input type="checkbox"
                                                             onChange={() => onChange(i)}
                                                             selected={selectedCheckboxes.includes(i.id)}
-                                                            // handleSubCategory = {() => handleSubCategory(idx)}
-                                                            />
+                                                        // handleSubCategory = {() => handleSubCategory(idx)}
+                                                        />
                                                         <small></small>
                                                     </label>
                                                 </div>
