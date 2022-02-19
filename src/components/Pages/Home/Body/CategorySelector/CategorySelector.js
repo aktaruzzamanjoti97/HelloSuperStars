@@ -10,8 +10,8 @@ import slide6 from '../../../../../images/homepage/homepage/images/fbInsta.jpg';
 import slide1 from '../../../../../images/homepage/homepage/images/imagefs.jpg';
 import slide5 from '../../../../../images/homepage/homepage/images/religion.jpg';
 import slide2 from '../../../../../images/homepage/homepage/images/socialMedia.jpg';
-import SubCategoryHomePage from '../SubCategoryHomePage/SubCategoryHomePage';
 import './CategorySelector.css';
+import { fakeCategoryData } from './fakeCategoryData';
 
 const sliderImageLink = [
     {
@@ -58,6 +58,37 @@ const sliderImageLink = [
 
 
 const CategorySelector = () => {
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+        setList(fakeCategoryData)
+    }, [list])
+
+    const [select, setSelect] = useState({
+        selectedCheckboxes: []
+    });
+
+    console.log(select.selectedCheckboxes);
+
+    const onChange = (obj) => {
+        const selectedCheckboxes = select.selectedCheckboxes;
+
+        // Find index
+        const findIdx = selectedCheckboxes.indexOf(obj);
+
+        // Index > -1 means that the item exists and that the checkbox is checked
+        // and in that case we want to remove it from the array and uncheck it
+        if (findIdx > -1) {
+            selectedCheckboxes.splice(findIdx, 1);
+        } else {
+            selectedCheckboxes.push(obj);
+        }
+
+        setSelect({
+            selectedCheckboxes: selectedCheckboxes
+        });
+    };
+
 
     const [imageInfo, setImageInfo] = useState([]);
     const history = useHistory();
@@ -110,32 +141,35 @@ const CategorySelector = () => {
         ]
     };
 
-    const toggleHandler = (item) => () => {
-        setImageInfo((state) => ([...state, {
-            id: item.id,
-            slider: item.slider,
-            categoryName: item.categoryName
-        }
-        ]))
-    }
+    // const toggleHandler = (item) => () => {
+    //     setImageInfo((state) => ([...state, {
+    //         id: item.id,
+    //         slider: item.slider,
+    //         categoryName: item.categoryName
+    //     }
+    //     ]))
+    // }
 
-    const handleSubCategory = (id) => {
+    const handleSubCategory = (obj) => {
 
-        const selectedCategory = imageInfo.filter((imgData) => id === imgData.id)
-       
-        
+        const selectedCategory = select.selectedCheckboxes.filter((num) => obj.id === num)
+        console.log('SelectedCategory', selectedCategory);
+
+
         return (
             <>
                 {
-                    selectedCategory.length ?  <SubCategoryHomePage id={id} /> && history.push('/sub-category')  : null
+                    selectedCategory.length ? history.push('/sub-category') : null
                 }
             </>
         )
     }
 
-    useEffect(() => {
-        console.log(imageInfo);
-    }, [imageInfo])
+    // useEffect(() => {
+    //     console.log(imageInfo);
+    // }, [imageInfo])
+
+    const { selectedCheckboxes } = select;
 
     return (
         <div className="bgCategory container containerCategorySelector mt-3">
@@ -147,7 +181,7 @@ const CategorySelector = () => {
 
                 <Slider {...settings}>
                     {
-                        sliderImageLink.map((i) => {
+                        list.map((i, idx) => {
                             return (
                                 <>
                                     <div key={i.id} className="p-1">
@@ -158,7 +192,11 @@ const CategorySelector = () => {
                                             <div className="mx-1">
                                                 <div class="content">
                                                     <label class="switch m5">
-                                                        <input onChange={toggleHandler(i)} type="checkbox" />
+                                                        <input type="checkbox"
+                                                            onChange={() => onChange(i)}
+                                                            selected={selectedCheckboxes.includes(i.id)}
+                                                            // handleSubCategory = {() => handleSubCategory(idx)}
+                                                            />
                                                         <small></small>
                                                     </label>
                                                 </div>
@@ -166,7 +204,7 @@ const CategorySelector = () => {
                                             <small className="text-white mx-1">{i.categoryName}</small>
                                         </div>
                                     </div>
-                                 
+
                                 </>
                             )
                         })
