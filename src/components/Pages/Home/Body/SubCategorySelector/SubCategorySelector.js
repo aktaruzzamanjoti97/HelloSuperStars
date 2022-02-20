@@ -5,12 +5,12 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 import Slider from "react-slick";
+import slide1 from '../../../../../images/homepage/images/sakibCri.jpg';
+import slide2 from '../../../../../images/homepage/images/messi-ronaldo-1593920966.jpg';
+import slide3 from '../../../../../images/homepage/images/hacky.jpg';
 import slide4 from '../../../../../images/homepage/images/education.webp';
-import slide3 from '../../../../../images/homepage/images/enterTainment.jpg';
-import slide6 from '../../../../../images/homepage/images/fbInsta.jpg';
-import slide1 from '../../../../../images/homepage/images/imagefs.jpg';
-import slide5 from '../../../../../images/homepage/images/religion.jpg';
-import slide2 from '../../../../../images/homepage/images/socialMedia.jpg';
+import slide5 from '../../../../../images/homepage/images/chess.jpg';
+import slide6 from '../../../../../images/homepage/images/Badminton.jpg';
 
 const sliderImageLink = [
     {
@@ -42,16 +42,6 @@ const sliderImageLink = [
         id: 6,
         slider: slide6,
         categoryName: "Badminton"
-    },
-    {
-        id: 7,
-        slider: slide1,
-        categoryName: "Golf"
-    },
-    {
-        id: 8,
-        slider: slide2,
-        categoryName: "Volleyball"
     },
 ]
 
