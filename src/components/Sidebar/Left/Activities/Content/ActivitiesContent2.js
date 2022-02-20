@@ -49,7 +49,7 @@ return (
 
         {props.loader ?props.event.map((event) => {
             return(
-                <div className="col-md-6 mb-4">
+                <div className="col-md-4 mb-6">
             <div className="card container-x-ac">
 
                 <img src={`http://localhost:8000/${event.live_chat?.banner}`}  className="Active-Img-X" alt="profilePicture" />
@@ -77,7 +77,7 @@ return (
                 <div class="bottom-right-x-ax ">
                     <div className="d-flex p-1">
                         <div className="btn-x-r-ac">
-                            <button className="btn-x-r-ac" onClick={()=> setModalShow(true)}>
+                            <button className="btn-x-r-ac py-2" onClick={()=> setModalShow(true)}>
                                 <i className="fas fa-arrow-alt-circle-right "></i></button>
                             <ActivitiesModal show={modalShow} onHide={()=> setModalShow(false)} />
                         </div>
