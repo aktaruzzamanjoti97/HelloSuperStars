@@ -15,7 +15,7 @@ return (
     <div className="row mt-3">
 
 
-        <div className="col-md-6 mb-4">
+        <div className="col-md-4 mb-4">
             <div className="card container-x-ac">
 
                 <img src={PurchaseImg} className="Active-Img-X"

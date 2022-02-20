@@ -1,12 +1,12 @@
 .Active-Img-X {
   width: 100%;
-  height: 350px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
 }
 @media only screen and (max-width: 600px) {
   .Active-Img-X {
-    height: 250px;
+    height: 150px;
   }
 }
 
@@ -32,6 +32,7 @@
 }
 
 .container-x-ac {
+  margin-top: 22px;
   position: relative;
   color: white;
   border: 1px solid #2bffed !important;
@@ -96,7 +97,7 @@
 
 .centered-x-ac-y {
   position: absolute;
-  top: 89%;
+  top: 86%;
   border: none;
   border-radius: 0px 0px 10px 10px;
   left: 50%;
@@ -223,7 +224,7 @@
   width: 30px;
 }
 
-.PSize{
-  font-size: .9rem;
+.PSize {
+  font-size: 0.9rem;
   margin-top: 5px;
 }

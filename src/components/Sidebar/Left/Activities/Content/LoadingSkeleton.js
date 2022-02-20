@@ -6,13 +6,13 @@ import 'react-loading-skeleton/dist/skeleton.css'
 const LoadingSkeleton = () => {
   return (
       <>
-          {[1, 2].map(data =>
+          {[1, 2,3].map(data =>
             
             
         <SkeletonTheme baseColor="#202020" highlightColor="#444">
-          <div className="col-md-6 mb-4 ">
+          <div className="col-md-4 mb-4 ">
               <div className="rounded" >
-              <Skeleton width="100%" height={200}/>
+              <Skeleton width="100%" height={150}/>
 
                   <div className="bg-dark py-3 px-2">
                

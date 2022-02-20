@@ -20,17 +20,16 @@ const ActivitiesBody = () => {
     let isMounted = true;
     axios.get('api/user/registerMeestup').then(res =>{
 
-        if(isMounted)
-        {
+           //setEventLodaer(true)
+     
             if(res.data.status === 200)
             {
-           
+                  // console.log('meet up event', res.data.events)
                   setPosts(res.data.events);
-                  setEventLodaer(true)
                
       
             }
-        }           
+                 
     });
 
     axios.get('api/user/registerLivechat').then(res =>{
@@ -79,7 +78,7 @@ const ActivitiesBody = () => {
               
               <div className="col-sm-9 justify-content-center postTab">
                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Meetup Events</h2>
-                 <ActivitiesContent loader={eventLodaer} event={posts}/>
+                 <ActivitiesContent eventLodaer={eventLodaer} event={posts}/>
 
                  <hr/>
 
