@@ -153,7 +153,7 @@ const CategorySelector = () => {
                                 <>
                                     <div  key={i.id} className="p-1">
                                         <div>
-                                            <img onClick={handleSubCategory} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img onClick={handleSubCategory} src={i.slider} alt="" className="img-fluid homePageCarouselImg btn" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">

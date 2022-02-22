@@ -5,12 +5,12 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 import Slider from "react-slick";
-import slide1 from '../../../../../images/homepage/images/sakibCri.jpg';
-import slide2 from '../../../../../images/homepage/images/messi-ronaldo-1593920966.jpg';
-import slide3 from '../../../../../images/homepage/images/hacky.jpg';
-import slide4 from '../../../../../images/homepage/images/education.webp';
-import slide5 from '../../../../../images/homepage/images/chess.jpg';
-import slide6 from '../../../../../images/homepage/images/Badminton.jpg';
+import slide1 from '../../../../../../images/homepage/images/sakibCri.jpg';
+import slide2 from '../../../../../../images/homepage/images/messi-ronaldo-1593920966.jpg';
+import slide3 from '../../../../../../images/homepage/images/hacky.jpg';
+import slide4 from '../../../../../../images/homepage/images/education.webp';
+import slide5 from '../../../../../../images/homepage/images/chess.jpg';
+import slide6 from '../../../../../../images/homepage/images/Badminton.jpg';
 
 const sliderImageLink = [
     {
@@ -126,7 +126,7 @@ const SubCategorySelector = () => {
                                 <>
                                     <div  key={i.id} className="p-1">
                                         <div>
-                                            <img src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img src={i.slider} alt="" className="img-fluid homePageCarouselImg btn" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">

@@ -3,7 +3,7 @@ import Navigation from "../../../../Header/Navigation";
 import LeftSidebar from "../../../../Sidebar/LeftSidebar";
 import RightSidebar from "../../../../Sidebar/RightSidebar";
 import Post from "../Post/Post";
-import SubCategorySelector from "../SubCategorySelector/SubCategorySelector";
+import SubCategorySelector from "./SubCategorySelector/SubCategorySelector";
 import PromoVideo from "../PromoVideo/PromoVideo";
 
 
