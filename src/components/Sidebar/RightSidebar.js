@@ -82,17 +82,17 @@ export const RightSidebar = () => {
 
 // <==============================show photos for learning session==========================>
 
-  var learningSessionPhoto = "";
 
-  if(loadingLearningSession)
+var learningSessionPhoto = "";
+  if(false)
   {
     return <h5>...</h5>
   }
   else
+  
   {
     learningSessionPhoto = 
-
-    learningSession.map((photo) => (
+    learningSession?learningSession.map((photo) => (
         <>
           <div className="container-xc-ds item item-x ">
               
@@ -106,8 +106,7 @@ export const RightSidebar = () => {
             <div class="bottom-left-c">Bottom Left</div>
           </div>
         </>
-      ))
-  }
+      )): <></>}
 //<============================Show meetup photos==========================>
 var meetupEventPhoto = "";
 
