@@ -60,6 +60,7 @@ import WinnerCR7 from "./components/Pages/Souvenir/WinnerCR7";
 import Shipping from "./components/Pages/Market/Shipping";
 import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
+import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
 
 
 axios.defaults.withCredentials = true;
@@ -119,6 +120,9 @@ function App() {
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
         <Route exact path='/meetup-events' component={MeetupPost}/>
         {/* Right Sidebar End */}
+
+        {/* Selector */}
+        <Route exact path='/selector-sub-category' component={SubCategorySelector} />
 
         {/* Account Section */}
         <Route exact path='/login' component={Login} />
