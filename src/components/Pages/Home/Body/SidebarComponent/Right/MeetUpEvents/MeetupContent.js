@@ -17,7 +17,8 @@ return (
             <h2 className="accordion-header PostBack">
                 <div className="d-flex justify-content-between">
                     <div className="accordion-button-fx profile1-accordion-button PostBack  collapsed">
-                        <img src={`http://localhost:8000/${event.star.image}`} className="PostImgHome" alt={event.star.image} />
+                        <img src={`http://localhost:8000/${event.star.image}`} className="PostImgHome"
+                            alt={event.star.image} />
                         <span className="mx-2 text-warning text-light">
                             <Link to={`/starprofile/${event.star_id}`} className="link-starPorfile">
                             {event.star.first_name} {event.star.last_name}
@@ -52,26 +53,36 @@ return (
             <div className="my-2 Enroll-a Enroll-text">
                 {event.title}
             </div>
-            <div class="container-meet card PostCard ">
+            <div class="container-meet  PostCardMeet  MeetCon">
                 <img src={`http://localhost:8000/${event.banner}`} className="meetImg" alt="Snow" />
-                <div className="centered centered-meet">
+
+                <div className="colorMeet">
+                    <h5 class="MeetCon-left">{event.title}</h5>
+
+                    <div class="MeetCon-right text-center">
+                        <Link to={`starprofile/${event.star_id}/meetup-events/book_now/${event.id}`}
+                            className="link-starPorfile">
+                        <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
                             {event.title}
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
-                        {/* <Link to="starprofile/book-now" className="link-starPorfile">
-                          <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
-                        </Link> */}
-
-                        <Link to={`starprofile/${event.star_id}/meetup-events/book_now/${event.id}`} className="link-starPorfile">
-                          <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
-                        </Link>
+                            <Link to={`starprofile/${event.star_id}/meetup-events/book_now/${event.id}`}
+                                className="link-starPorfile">
+                            <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
+                            </Link>
 
                         </div>
                     </div>
-                </div>
+                </div> */}
+                
             </div>
 
             <div className="row align-items-center justify-content-center ">
