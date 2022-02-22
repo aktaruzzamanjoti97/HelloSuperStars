@@ -1,0 +1,17 @@
+.sketon-container {
+  border-radius: 10px;
+}
+
+.sklion-item {
+  width: 15vh;
+  height: 10vh;
+}
+
+.sklion-button {
+  width: 5vh;
+  height: 10vh;
+}
+
+.sketon-container {
+  width: 100%;
+}
