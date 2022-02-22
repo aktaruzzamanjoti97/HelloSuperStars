@@ -34,14 +34,11 @@ const ActivitiesBody = () => {
 
     axios.get('api/user/registerLivechat').then(res =>{
 
-      
           if(res.data.status === 200)
           {
           //
                 setPosts2(res.data.events);
                 setLiveChatLodaer(true)
-             
-    
           }
                
     });
