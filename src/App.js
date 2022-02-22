@@ -85,6 +85,7 @@ function App() {
     <BrowserRouter>
 
       <Switch>
+        
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />
         <Route exact path='/guest' component={Home} />

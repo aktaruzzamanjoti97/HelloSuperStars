@@ -103,14 +103,14 @@ return (
 
             <h5 className="my-2 Enroll-a Enroll-text">{post.meetup.title}</h5>
 
-            <ShowMoreText /* Default options */ lines={3} more={<span
-                style={{ color: 'gray'}}>See more</span>}
-                less={<span style={{ color: 'gray'}}>See less</span>}
+            <ShowMoreText 
+                lines={3} more={<span
+                >See more</span>}
+                less={<span >See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
                 expanded={false}
-
                 truncatedEndingComponent={"... "}
                 >
                 <Markup content={post.meetup.description}></Markup>
@@ -209,7 +209,6 @@ return (
         </div>
     </div>
 
-
     ) : post.type === 'livechat' ?
     (
     <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
@@ -253,14 +252,14 @@ return (
 
             <h5 className="my-2 Enroll-a Enroll-text">{post.livechat?.title}</h5>
 
-            <ShowMoreText /* Default options */ lines={3} more={<span
-                style={{ color: 'gray'}}>See more</span>}
-                less={<span style={{ color: 'gray'}}>See less</span>}
+            <ShowMoreText 
+                lines={3} 
+                more={<span>See more</span>}
+                less={<span >See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
                 expanded={false}
-
                 truncatedEndingComponent={"... "}
                 >
                 <Markup content={post.livechat?.description}></Markup>
@@ -392,14 +391,14 @@ return (
 
             <h5 className="my-2 Enroll-a Enroll-text">{post.learning_session?.title}</h5>
 
-            <ShowMoreText /* Default options */ lines={3} more={<span
-                style={{ color: 'gray'}}>See more</span>}
-                less={<span style={{ color: 'gray'}}>See less</span>}
+            <ShowMoreText 
+                lines={3}
+                more={<span >See more</span>}
+                less={<span >See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
                 //onClick={executeOnClick}
                 expanded={false}
-
                 truncatedEndingComponent={"... "}
                 >
                 <Markup content={post.learning_session?.description}></Markup>
@@ -535,14 +534,14 @@ return (
 
                 <h5 className="my-2 Enroll-a Enroll-text">{post.general?.title}</h5>
 
-                <ShowMoreText /* Default options */ lines={3} more={<span
-                    style={{ color: 'gray'}}>See more</span>}
-                    less={<span style={{ color: 'gray'}}>See less</span>}
+                <ShowMoreText 
+                    lines={3} 
+                    more={<span>See more</span>}
+                    less={<span>See less</span>}
                     className="content-css my-2 Enroll-a Enroll-text py-2"
                     anchorClass="my-anchor-css-class"
                     //onClick={executeOnClick}
                     expanded={false}
-
                     truncatedEndingComponent={"... "}
                     >
                     <Markup content={post.general?.description}></Markup>
