@@ -97,7 +97,12 @@
   background-color: #343434;
 }
 .homePageCarouselImg {
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
+  height: 12vh !important;
+  width: 100% !important; 
+  object-fit: cover;
+  padding: 0px !important;
+  
 }
 
 .sliderCategory .slick-arrow {

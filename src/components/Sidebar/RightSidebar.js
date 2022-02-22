@@ -85,9 +85,11 @@ export const RightSidebar = () => {
 
 
 
+
   const learningSessionPhoto = () => {
     return (
       learningSession.map((photo) => (
+
         <>
           <div className="container-xc-ds item item-x ">
               
@@ -101,10 +103,12 @@ export const RightSidebar = () => {
             <div class="bottom-left-c">Bottom Left</div>
           </div>
         </>
+
       ))
     )
   }
   
+
 //<============================Show meetup photos==========================>
 const meetupEventPhoto = () => {
     return (
