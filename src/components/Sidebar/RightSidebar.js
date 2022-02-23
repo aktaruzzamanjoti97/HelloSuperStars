@@ -22,6 +22,7 @@ import MeetupEvents from "./Right/MeetupEvents/MeetupEvents";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import RightSideSkeliton from "./RightSideSkeliton";
 export const RightSidebar = () => {
 
 // <=====================================All useState==============================>
@@ -83,16 +84,12 @@ export const RightSidebar = () => {
 // <==============================show photos for learning session==========================>
 
 
-var learningSessionPhoto = "";
-  if(false)
-  {
-    return <h5>...</h5>
-  }
-  else
-  
-  {
-    learningSessionPhoto = 
-    learningSession?learningSession.map((photo) => (
+
+
+  const learningSessionPhoto = () => {
+    return (
+      learningSession.map((photo) => (
+
         <>
           <div className="container-xc-ds item item-x ">
               
@@ -106,19 +103,16 @@ var learningSessionPhoto = "";
             <div class="bottom-left-c">Bottom Left</div>
           </div>
         </>
-      )): <></>}
-//<============================Show meetup photos==========================>
-var meetupEventPhoto = "";
 
-  if(loadingMeetupPhotos)
-  {
-    return <h5>...</h5>
+      ))
+    )
   }
-  else
-  {
-    meetupEventPhoto = 
+  
 
-    meetupPhotos.map((photo) => (
+//<============================Show meetup photos==========================>
+const meetupEventPhoto = () => {
+    return (
+      meetupPhotos.map((photo) => (
         <>
           <div className="container-xc-ds item item-x ">
               
@@ -133,35 +127,34 @@ var meetupEventPhoto = "";
           </div>
         </>
       ))
-  }
+  )
+}
 
   //<============================Show meetup photos==========================>
-var liveChatPhoto = "";
+  const liveChatPhoto = () => {
+    return (
+    
+      liveChat.map((photo) => (
+          <>
+            <div className="container-xc-ds item item-x ">
+                
+              <img
+                src={`http://localhost:8000/${photo.banner}`}
+                className="SidebarCarouselImg"
+                alt="profilePicture"
+              />
+      
+              <div class="top-right-c">🔴</div>
+              <div class="bottom-left-c">Bottom Left</div>
+            </div>
+          </>
+        ))
+  )
+  };
 
-if(loadingLiveChat)
-{
-  return <h5>...</h5>
-}
-else
-{
-  liveChatPhoto = 
 
-  liveChat.map((photo) => (
-      <>
-        <div className="container-xc-ds item item-x ">
-            
-          <img
-            src={`http://localhost:8000/${photo.banner}`}
-            className="SidebarCarouselImg"
-            alt="profilePicture"
-          />
 
-          <div class="top-right-c">🔴</div>
-          <div class="bottom-left-c">Bottom Left</div>
-        </div>
-      </>
-    ))
-}
+
 
  
 
@@ -218,7 +211,9 @@ else
         </div>
 
         {/* Live now */}
-
+        {loadingLearningSession ?
+        <RightSideSkeliton/>
+        :
         <div className=" xm-mnh-s mt-3">
           <div className="live-text-sln">Learning Sessions</div>
 
@@ -235,7 +230,7 @@ else
                 dots={false}
                 nav
               >
-                {learningSessionPhoto}
+                {learningSessionPhoto()}
 
               </OwlCarousel>
             </div>
@@ -248,8 +243,13 @@ else
             </Link>
           </div>
         </div>
+      
+      }
 
         {/*Upcoming Live */}
+        {loadingLiveChat ?
+          <RightSideSkeliton />
+          :
         <div className=" xm-mnh-s mt-3">
           <div className="live-text-sln">Live Chat</div>
 
@@ -265,7 +265,7 @@ else
                 dots={false}
                 nav
               >
-                {liveChatPhoto}
+                {liveChatPhoto()}
               </OwlCarousel>
             </div>
 
@@ -277,6 +277,7 @@ else
             </Link>
           </div>
         </div>
+        }
 
         {/*Upcoming Auditions */}
         <div className=" xm-mnh-s mt-3">
@@ -327,33 +328,37 @@ else
         </div>
 
         {/*Meetup Events */}
-        <div className=" xm-mnh-s mt-3">
-          <div className="live-text-sln">Meetup Events</div>
+        {loadingMeetupPhotos ?
+            <RightSideSkeliton />
+          :  
+          <div className=" xm-mnh-s mt-3">
+            <div className="live-text-sln">Meetup Events</div>
 
-          <div className="row ">
-            <div className="col-md-10">
-              <OwlCarousel
-                className="col-md-2"
-                items={2}
-                loop
-                autoplay
-                autoplayTimeout={1500}
-                margin={0}
-                dots={false}
-                nav
-              >
-                {meetupEventPhoto}
-              </OwlCarousel>
+            <div className="row ">
+              <div className="col-md-10">
+                <OwlCarousel
+                  className="col-md-2"
+                  items={2}
+                  loop
+                  autoplay
+                  autoplayTimeout={1500}
+                  margin={0}
+                  dots={false}
+                  nav
+                >
+                  {meetupEventPhoto()}
+                </OwlCarousel>
+              </div>
+
+              <Link to="/meetup-events" className="col-md-2  item-xx-l mt-3 ">
+                <button className="btn bg-dark">
+                  <small className="text-light">See All</small>
+                  <i className="fas fa-arrow-alt-circle-down text-light "></i>
+                </button>
+              </Link>
             </div>
-
-            <Link to="/meetup-events" className="col-md-2  item-xx-l mt-3 ">
-              <button className="btn bg-dark">
-                <small className="text-light">See All</small>
-                <i className="fas fa-arrow-alt-circle-down text-light "></i>
-              </button>
-            </Link>
           </div>
-        </div>
+      }
       </div>
     </>
   );
