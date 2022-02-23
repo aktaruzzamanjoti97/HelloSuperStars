@@ -13,7 +13,7 @@
     background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
     width: 37.4vw;
     position: absolute;
-    top: 86.4% !important;
+    top: 88.7% !important;
     transform: translate(-50%, -50%);
 }
 
@@ -82,6 +82,8 @@
     
 }
 
+
+
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
 
     .centered-meet {
@@ -112,8 +114,10 @@
     }
 
     .meetImg {
-        height: 300px !important;
+        height: 10rem !important;
     }
+
+    
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1400px) {
@@ -135,7 +139,106 @@
         font-size: .8rem;
     }
 
-    .meetImg {
-        height: 300px !important;
+    .MeetCon-left {
+        left: 15px !important;
+      }
+
+    .colorMeet {
+        height: 150px;
+        position: absolute;
+        bottom: 0px;
+        width: 92.4% !important;
+        left: 3.8% !important;
+        right: 3.8% !important;
+        background: linear-gradient(#07020200,#000000da, #070202e7);
     }
+    
 }
+
+
+
+/* ------------------------------- */
+
+
+/* Container holding the image and the text */
+.MeetCon {
+    position: relative;
+  }
+  
+  /* Bottom left text */
+  .MeetCon-left {
+    position: absolute;
+    bottom: 15px;
+    width: 68%;
+    left: 50px;
+  }
+  
+  /* Bottom right text */
+  .MeetCon-right {
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+  }
+  
+  /* Centered text */
+  .MeetCon-centered {
+    position: absolute;
+    
+    left: 2.5%;
+    right: 2.5%;
+    height: 380px !important;
+    background: linear-gradient(#ffffff00,#e6646400, #000000);
+  }
+
+
+.colorMeet {
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    width: 95%;
+    left: 2.5%;
+    background: linear-gradient(#07020200,#000000da, #070202e7);
+}
+
+
+.PostCardMeet img {
+    height: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 40vh !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    
+        .MeetCon-left {
+            left: 0px !important;
+          }
+    
+        .colorMeet {
+            height: 150px;
+            position: absolute;
+            bottom: 0px;
+            width: 90% !important;
+            left: 4.9% !important;
+            background: linear-gradient(#07020200,#000000da, #070202e7);
+        }
+
+        .PostCardMeet img {
+            height: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 100%;
+            object-fit: cover;
+            height: 30vh !important;
+        }
+        .MeetCon-right {
+            
+            right: 20px;
+          }
+   
+    
+}
+

@@ -914,3 +914,13 @@ li.post-comment .comet-avatar {
 
 
 
+/* See More */
+
+a {
+    text-decoration: none !important;
+    color: #ffc107;
+}
+
+a:hover {
+    color: #ffffff;
+}

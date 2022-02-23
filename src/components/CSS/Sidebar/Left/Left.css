@@ -140,18 +140,32 @@ box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 
 .SidebarStarListImage{
-  width: 35px;
-  height: 35px;
+  width: 45px !important;
+  height: 45px !important;
   object-fit: cover;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  border-radius: 50% !important;
 }
+/* .OnlineGreen{
+  color: green;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+} */
+
+.onLineMo{
+  position: absolute;
+  top:28px !important;
+  font-size: 10px !important;
+  right: 0px !important;
+}
+
+.containerOnline {
+  position: relative;
+}
+
+
+
 .chatName{
   font-size: 13px;
   color: white;
