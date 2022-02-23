@@ -1,9 +1,10 @@
-import slide4 from '../../../../../images/homepage/homepage/images/education.webp';
-import slide3 from '../../../../../images/homepage/homepage/images/enterTainment.jpg';
-import slide6 from '../../../../../images/homepage/homepage/images/fbInsta.jpg';
-import slide1 from '../../../../../images/homepage/homepage/images/imagefs.jpg';
-import slide5 from '../../../../../images/homepage/homepage/images/religion.jpg';
-import slide2 from '../../../../../images/homepage/homepage/images/socialMedia.jpg';
+import slide4 from '../../../../../images/homepage/images/education.webp';
+import slide3 from '../../../../../images/homepage/images/enterTainment.jpg';
+import slide6 from '../../../../../images/homepage/images/fbInsta.jpg';
+import slide1 from '../../../../../images/homepage/images/imagefs.jpg';
+import slide5 from '../../../../../images/homepage/images/religion.jpg';
+import slide2 from '../../../../../images/homepage/images/socialMedia.jpg';
+// import slide8 from '../../../../../images/homepage/images/socialMedia.jpg';
 
 export const fakeCategoryData = [
     {

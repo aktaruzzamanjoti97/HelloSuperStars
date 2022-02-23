@@ -4,12 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHistory } from 'react-router-dom';
 import Slider from "react-slick";
-import slide4 from '../../../../../images/homepage/images/education.webp';
-import slide3 from '../../../../../images/homepage/images/download.jpg';
-import slide6 from '../../../../../images/homepage/images/fbInsta.jpg';
-import slide1 from '../../../../../images/homepage/images/imagefs.jpg';
-import slide5 from '../../../../../images/homepage/images/religion.jpg';
-import slide2 from '../../../../../images/homepage/images/socialMedia.jpg';
 import './CategorySelector.css';
 import { fakeCategoryData } from './fakeCategoryData';
 
