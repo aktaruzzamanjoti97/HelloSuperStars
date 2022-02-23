@@ -189,6 +189,7 @@
   }
   .Mobile{
     display: block !important;
+    position: sticky;
   }
 }
 

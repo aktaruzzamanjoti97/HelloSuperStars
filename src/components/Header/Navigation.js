@@ -22,6 +22,7 @@ import swal from "sweetalert";
 import axios from "axios";
 import moment from 'moment'
 import ApprovedImg from '../Header/NotificationDropdownModal/defultImg/approved.png'
+import MobileSide from './MobileSide';
 
 const Navigation = () => {
 
@@ -121,7 +122,7 @@ return (
 
         <div className="Mobile ">
 
-            <div className="navigation bg-dark text-light ">
+            <div className="navigation bg-dark text-light justify-content-between">
 
                 <div className="d-flex mx-2">
                     <NavLink className="active-link" to='/'>
@@ -369,9 +370,25 @@ return (
                                     alt='account create ' /></NavLink>
                 </div>
 
-                <div className="d-flex mx-2">
-                    <NavLink to="/"> <i class="fas fa-bars IconMobile mx-2"></i></NavLink>
+                {/* Message */}
+                <div className="d-flex mx-2 DropX">
+                    <div className="dropdown dropDownIconRemove">
+                        <div className="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i className="fa fa-bars circle-iconM"></i>
+                        </div>
+
+                        <div className="container chatContainer dropdown-menu toggleM" aria-labelledby="dropdownMenuButton1">
+                            <MobileSide/>
+                        </div>
+
+                    </div>
                 </div>
+                {/* Message End */}
+
+                {/* <div className="d-flex mx-2">
+                    <NavLink to="/"> <i class="fas fa-bars IconMobile mx-2"></i></NavLink>
+                </div> */}
 
             </div>
         </div>

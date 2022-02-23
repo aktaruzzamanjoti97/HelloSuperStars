@@ -45,6 +45,16 @@
 
 }
 
+.circle-iconM {
+    background: #a19e9ef8;
+    padding: 12px;
+    border-radius: 10%;
+    color: #2C2C2C;
+    width: 40px;
+    height: 40px;
+}
+
+
 .circle-icon-x {
     color: #FFCA2C;
     background-color: rgba(245, 245, 245, 0.993);
@@ -129,3 +139,30 @@ pointer-events: none;
     outline: none;
 
 }
+
+@media only screen and (max-width: 768px) {
+.dropdown-menu.show.toggleM {
+    border-radius: none !important;
+    width: 24.5rem;
+    left: -21vh;
+    top: 8vh;
+    height: 93vh;
+}
+
+.DropX .dropdown-menu.show {
+    display: block;
+    margin-top: 13px !important;
+    background: black;
+    border:none !important;
+    border-radius: none !important;
+}
+}
+
+
+
+
+
+
+
+/* This Mobile Side */
+
