@@ -175,4 +175,13 @@ box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 
 
 
+/* MobileLeft */
+
+
+
+@media only screen and (max-width: 600px) {
+  .MobileLeft{
+    display: none;
+  }
+}
 

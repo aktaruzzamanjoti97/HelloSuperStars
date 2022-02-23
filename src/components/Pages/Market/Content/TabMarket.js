@@ -17,7 +17,7 @@ return (
                 <Nav variant="pills" className="flex-column">
 
                     <div className="d-flex TabCom m-2 ">
-                        <div className="TabBtn1 w-100 px-2 mt-3">
+                        <div className="TabBtn1 w-100  mt-3">
                             <Nav.Link eventKey="first" className='btn fw-bold NavC '>
                                 <span> <img src={Chart} className="img-fluid-Tab mx-2" alt="" /></span>
                                 <span>Marketplace</span>

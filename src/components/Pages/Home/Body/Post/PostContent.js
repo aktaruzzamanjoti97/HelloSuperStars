@@ -101,9 +101,9 @@ return (
                 </div>
             </h2>
 
-            <h5 className="my-2 Enroll-a Enroll-text">{post.meetup.title}</h5>
+            <h5 className="my-2 Enroll-a Enroll-text text-justify ">{post.meetup.title}</h5>
 
-            <ShowMoreText lines={3} more={<span>See more</span>}
+            <ShowMoreText  lines={3} more={<span>See more</span>}
                 less={<span>See less</span>}
                 className="content-css my-2 Enroll-a Enroll-text py-2"
                 anchorClass="my-anchor-css-class"
@@ -245,7 +245,7 @@ return (
                 </div>
             </h2>
 
-            <h5 className="my-2 Enroll-a Enroll-text">{post.livechat?.title}</h5>
+            <h5 className="my-2 Enroll-a Enroll-text text-justify">{post.livechat?.title}</h5>
 
             <ShowMoreText lines={3} more={<span>See more</span>}
                 less={<span>See less</span>}
@@ -382,7 +382,7 @@ return (
                 </div>
             </h2>
 
-            <h5 className="my-2 Enroll-a Enroll-text">{post.learning_session?.title}</h5>
+            <h5 className="my-2 Enroll-a Enroll-text text-justify">{post.learning_session?.title}</h5>
 
             <ShowMoreText lines={3} more={<span>See more</span>}
                 less={<span>See less</span>}
@@ -522,7 +522,7 @@ return (
                 </div>
             </h2>
 
-            <h5 className="my-2 Enroll-a Enroll-text">{post.general?.title}</h5>
+            <h5 className="my-2 Enroll-a Enroll-text text-justify">{post.general?.title}</h5>
 
             <ShowMoreText lines={3} more={<span>See more</span>}
                 less={<span>See less</span>}
