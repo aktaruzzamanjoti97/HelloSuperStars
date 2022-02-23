@@ -70,10 +70,9 @@ axios.defaults.baseURL = "http://localhost:8000/";
 
 const mediaBaseUrl = "http://localhost:8000/";
 
-axios.interceptors.request.use(function (config)
-{
+axios.interceptors.request.use(function (config) {
   const token = localStorage.getItem('auth_token');
-  config.headers.Authorization = token ? `Bearer ${token}` : '' ;
+  config.headers.Authorization = token ? `Bearer ${token}` : '';
   return config;
 });
 
@@ -170,6 +169,6 @@ function App() {
     </BrowserRouter>
     </>
   );
-} 
+}
 
 export default App;
