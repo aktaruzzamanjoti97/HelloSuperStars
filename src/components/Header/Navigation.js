@@ -28,6 +28,7 @@ const Navigation = () => {
 
 const [notiDropdownShow, setNotiDropdownShow] = React.useState(false);
 const [isNavOpen, setIsNavOpen] = useState(false)
+const [showView, setShowView] = useState(false);
 
 const [isChatOpen, setIsChatOpen] = useState(false)
 
@@ -275,7 +276,7 @@ return (
                     </div>
                 </div>
                 {/* Message End */}
-                
+
                 {/* Notify */}
                 <div className="d-flex mx-2">
                     <div className="dropdown dropDownIconRemove">
@@ -366,24 +367,64 @@ return (
                 </div>
 
                 <div className="d-flex mx-2">
-                <NavLink to='/profile'><img src={accountImg} className='MobileImg'
-                                    alt='account create ' /></NavLink>
+                    <NavLink to='/profile'><img src={accountImg} className='MobileImg' alt='account create ' />
+                    </NavLink>
                 </div>
 
                 {/* Message */}
                 <div className="d-flex mx-2 DropX">
+                    <i className="fa fa-bars circle-iconM" onClick={()=> setShowView(true)}></i>
+                </div>
+
+                <Modal show={showView} onHide={()=> setShowView(false)} className='MobileViewSide bg-danger' >
+
+                    {/* <Modal.Header closeButton>
+                        <Modal.Title id="example-custom-modal-styling-title">
+                            Menu
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    </Modal.Body> */}
+                    <div className="row">
+
+                        {/* <div className="col-6 mt-2">
+                            <Link to='/category'>
+                            <div className="d-flex btn CatBlock">
+                                <div className='text-warning col-3'><i className="fas fa-layer-group mx-2 mt-2"></i>
+                                </div>
+                                <div className='Cat-Title col-9'>Category <br />
+                                    <small className="category-size-chat"> 5 Selected</small>
+                                </div>
+                            </div>
+                            </Link>
+                        </div> */}
+
+                        <div className="col-6 mt-2">
+                           Menu
+                        </div>
+                        <div className="col-6 mt-2">
+                           <button closeButton></button>
+                        </div>
+
+                    </div>
+
+                    <MobileSide />
+                </Modal>
+
+                {/* <div className="d-flex mx-2 DropX">
                     <div className="dropdown dropDownIconRemove">
                         <div className="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <i className="fa fa-bars circle-iconM"></i>
                         </div>
 
-                        <div className="container chatContainer dropdown-menu toggleM" aria-labelledby="dropdownMenuButton1">
-                            <MobileSide/>
+                        <div className="container chatContainer dropdown-menu toggleM"
+                            aria-labelledby="dropdownMenuButton1">
+                            <MobileSide />
                         </div>
 
                     </div>
-                </div>
+                </div> */}
                 {/* Message End */}
 
                 {/* <div className="d-flex mx-2">
