@@ -4,14 +4,11 @@
 .Enroll-AuditionsB{
     background-color: #343434;
     border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 .Enroll-text{
     color: white;
-    margin-right: 10px;
+    margin-right: 20px;
+    text-align: justify !important;
 }
 
 .Enroll-Video{
@@ -19,10 +16,6 @@
     height: 200px !important;
     margin: "0 auto";
     border-radius: 7px !important;
-    -webkit-border-radius: 7px !important;
-    -moz-border-radius: 7px !important;
-    -ms-border-radius: 7px !important;
-    -o-border-radius: 7px !important;
 }
 
 .Live-Video-x{

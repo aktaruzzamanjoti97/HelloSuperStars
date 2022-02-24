@@ -175,7 +175,6 @@ const meetupEventPhoto = () => {
                 autoplayTimeout={3000}
                 margin={0}
                 dots={false}
-                nav
               >
                 <div className="container-xc-ds item item-x ">
                   <img
@@ -228,7 +227,6 @@ const meetupEventPhoto = () => {
                 autoplayTimeout={3500}
                 margin={0}
                 dots={false}
-                nav
               >
                 {learningSessionPhoto()}
 
@@ -263,7 +261,6 @@ const meetupEventPhoto = () => {
                 autoplayTimeout={4000}
                 margin={0}
                 dots={false}
-                nav
               >
                 {liveChatPhoto()}
               </OwlCarousel>
@@ -293,7 +290,6 @@ const meetupEventPhoto = () => {
                 autoplayTimeout={2000}
                 margin={0}
                 dots={false}
-                nav
               >
                 <div className="container-xc-ds item item-x ">
                   <img
@@ -344,7 +340,6 @@ const meetupEventPhoto = () => {
                   autoplayTimeout={1500}
                   margin={0}
                   dots={false}
-                  nav
                 >
                   {meetupEventPhoto()}
                 </OwlCarousel>

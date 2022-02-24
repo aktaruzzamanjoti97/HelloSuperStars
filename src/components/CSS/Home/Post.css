@@ -913,14 +913,15 @@ li.post-comment .comet-avatar {
 }
 
 
-
 /* See More */
 
 a {
     text-decoration: none !important;
-    color: #ffc107;
+    color: #ffc10794;
+    font-size: 14px;
 }
 
 a:hover {
-    color: #ffffff;
+    color: #ffc107;
+    
 }

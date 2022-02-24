@@ -20,7 +20,7 @@ export default class MarketPlace extends Component {
                   <LeftSidebar/>
                 </div>
   
-                <div className="col-sm-6 justify-content-center  postTab" >
+                <div className="col-sm-6 justify-content-center  postTab ShoppingX" >
                   {/* <Contents/> */}
                   <TabMarket/>
                 </div>

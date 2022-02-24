@@ -26,7 +26,7 @@ export const LeftSidebar = ({history}) => {
     return (
         <>
         
-            <div className=" left-col-box p-3 mt-3 ">
+            <div className="MobileLeft left-col-box p-3 mt-3 ">
                 
                 <div class="accordion " id="accordionExample">
                     <div className="accordion" id="accordionExample">
@@ -149,7 +149,7 @@ export const LeftSidebar = ({history}) => {
             </div>
             
             { /* Stars Online */}
-            <div className="container left-col-box-home-chat chat01 p-3 mt-3">
+            <div className="MobileLeft container left-col-box-home-chat chat01 p-3 mt-3">
                 <div className="accordion left-c">
                     <div class="accordion-header input-group ">
                         <span class="form-outline Stars-search">Stars Online</span>
