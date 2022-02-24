@@ -156,4 +156,3 @@ const SubCategorySelector = () => {
 };
 
 export default SubCategorySelector;
-
