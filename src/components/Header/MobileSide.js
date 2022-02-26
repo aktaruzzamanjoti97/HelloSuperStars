@@ -33,7 +33,7 @@ return (
         </div>
 
         <div className="col-6 mt-2">
-            <Link to=''>
+            <Link to='/wallet'>
             <div className="d-flex btn CatBlock">
                 <div className='text-warning col-3'><i className="fas fa-id-card mx-2 mt-2"></i></div>
                 <div className='Cat-Title col-9'>Wallet <br />
@@ -44,7 +44,7 @@ return (
         </div>
 
         <div className="col-6 mt-2">
-            <Link to='/wallet'>
+            <Link to='/enrolled-auditions'>
             <div className="d-flex btn CatBlock">
                 <div className='text-warning col-3'><i className="fas fa-star mx-2 mt-2"></i></div>
                 <div className='Cat-Title col-9'>Enrolled audition <br />
@@ -55,7 +55,7 @@ return (
         </div>
 
         <div className="col-6 mt-2">
-            <Link to='/enrolled-auditions'>
+            <Link to='/activities'>
             <div className="d-flex btn CatBlock">
                 <div className='text-warning col-3'><i className="fas fa-id-card mx-2 mt-2"></i></div>
                 <div className='Cat-Title col-9'>Activities <br />

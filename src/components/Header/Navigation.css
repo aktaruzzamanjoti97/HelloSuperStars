@@ -343,3 +343,124 @@ input.search-text::-webkit-search-cancel-button {
 .modal-content {
   background-color: rgb(0, 0, 0);
 }
+
+
+
+/* Online Star */
+
+.StarOnline{
+  background-color: #212529;
+}
+.PicOn{
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.StarOName{
+  font-size: .8rem;
+}
+
+.PicOnC .owl-dots .owl-dot span {
+   
+  display: None !important;
+}
+
+.owl-theme .owl-dots {
+ display: none !important;
+}
+
+.PicOnC .owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: center;
+}
+
+.PicOnC .owl-item{
+  width: 100px !important;
+
+}
+
+/* 
+element.style {
+  width: 150px;
+} */
+
+.onLineMoStar{
+  position: absolute;
+  top:45px !important;
+  font-size: 10px !important;
+  right:35px !important;
+}
+
+.MenuSide{
+  position: absolute;
+  top:0px !important;
+  font-size: 10px !important;
+  right:10px !important;
+}
+.LogoMobile{
+  width: 60px;
+}
+
+/* .{
+  padding:4px;
+  height: 93.1vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
+} */
+
+.ModalMobileB {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.MobileScrollBar
+{
+    height: 82vh;
+    overflow-y: scroll;
+}
+.MobileScrollBar::-webkit-scrollbar {
+    width: 0px !important;
+    background: none;
+  }
+  .MobileScrollBar::-webkit-scrollbar-thumb {
+    background: none; 
+  }
+
+.CrossMobile{
+  width: 20px;
+}
+
+.LogoText{
+  font-size: 20px;
+}
+
+.LiveMoBG{
+  background-color: rgb(235, 146, 14);
+  border-radius: 10px;
+  padding: 2px;
+}
+.LivePIcM{
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.LivePIcM_t{
+  font-size: .8rem;
+  color: #fff;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
