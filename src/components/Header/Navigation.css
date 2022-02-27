@@ -464,3 +464,12 @@ element.style {
    -webkit-line-clamp: 1; /* number of lines to show */
    -webkit-box-orient: vertical;
 }
+
+
+.LeftTeI{
+  font-size: 15px;
+}
+
+.LeftTeP{
+  font-size: 10px;
+}
