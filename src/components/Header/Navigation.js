@@ -8,11 +8,9 @@ import helloSuperstarLogo from '../../images/HelloSuperStarLogo.png';
 import Momotaz from '../../images/Momotaz.jpg';
 import accountImg from '../../images/navbar/account.jpg';
 import Shakib from "../../images/sakib.jpg";
-import Srabanti from '../../images/srabanti.jpg';
-import Sarika from '../../images/NotificationDropdown/Sarika-Sabah-14.jpg'
-import Tamim from '../../images/NotificationDropdown/Tamim.jpg'
-import Ayman from '../../images/NotificationDropdown/ayman.jpg'
-import Azhari from '../../images/NotificationDropdown/mizanurAzhari.jpg'
+import Logo from '../../images/HelloSuperStarLogo.png';
+import Cross from '../../images/Vector.png';
+
 import '../CSS/Navbar/navbar.css';
 import './Navigation.css';
 import NotificationDropdownModal from './NotificationDropdownModal/NotificationDropdownModal';
@@ -23,11 +21,21 @@ import axios from "axios";
 import moment from 'moment'
 import ApprovedImg from '../Header/NotificationDropdownModal/defultImg/approved.png'
 import MobileSide from './MobileSide';
+import StarOnlineMobile from './StarOnlineMobile';
+import RightSection from './Right/LiveSction';
+import LiveNowMenu from './Right/LiveNowMenu';
 
 const Navigation = () => {
 
 const [notiDropdownShow, setNotiDropdownShow] = React.useState(false);
 const [isNavOpen, setIsNavOpen] = useState(false)
+
+//Menu Mobile
+
+const [showMenu, setShowMenu] = useState(false);
+
+const handleCloseMenu = () => setShowMenu(false);
+const handleShowMenu = () => setShowMenu(true);
 
 const [isChatOpen, setIsChatOpen] = useState(false)
 
@@ -275,7 +283,7 @@ return (
                     </div>
                 </div>
                 {/* Message End */}
-                
+
                 {/* Notify */}
                 <div className="d-flex mx-2">
                     <div className="dropdown dropDownIconRemove">
@@ -366,29 +374,61 @@ return (
                 </div>
 
                 <div className="d-flex mx-2">
-                <NavLink to='/profile'><img src={accountImg} className='MobileImg'
-                                    alt='account create ' /></NavLink>
+                    <NavLink to='/profile'><img src={accountImg} className='MobileImg' alt='account create ' />
+                    </NavLink>
                 </div>
 
                 {/* Message */}
-                <div className="d-flex mx-2 DropX">
-                    <div className="dropdown dropDownIconRemove">
-                        <div className="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i className="fa fa-bars circle-iconM"></i>
-                        </div>
+                <div className="d-flex mx-2 DropX ">
+                    <i className="fa fa-bars circle-iconM " onClick={handleShowMenu}></i>
+                </div>
 
-                        <div className="container chatContainer dropdown-menu toggleM" aria-labelledby="dropdownMenuButton1">
-                            <MobileSide/>
+                <Modal show={showMenu} onHide={handleCloseMenu} animation={false} onClick={handleCloseMenu}
+                    className='MobileViewSide bg-danger'>
+                    <div closeButton className='ModalMobileB'>
+
+                        <div variant="secondary" onClick={handleCloseMenu}>
+                            <img src={Logo} alt="" className='LogoMobile' />
+                            <span className='text-warning mx-2 LogoText'>Hello Superstars</span>
                         </div>
+                        <img src={Cross} alt="" className='CrossMobile' onClick={handleCloseMenu} />
+                        
+                    </div>
+
+                    <div className="col-6 mt-2">
+                        <h5 className='text-light'>Menu</h5>
+                    </div>
+                    <div className="MobileScrollBar">
+                        <StarOnlineMobile />
+                        <MobileSide />
+                        <LiveNowMenu/>
+                    </div>
+                    {/* <Modal.Footer>
+                        <Button variant="secondary" onClick={handleCloseMenu}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={handleCloseMenu}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer> */}
+                </Modal>
+                {/*
+                <Modal showMenu={showMenu} onHide={()=> handleCloseMenu(false)} className='MobileViewSide bg-danger' >
+
+                    <div className="col-6 mt-2">
+                        <h5 className='text-light '>Menu</h5>
+                    </div>
+                    <div class="MenuSide">
+                        <img src={Logo} alt="" className='LogoMobile' />
+                    </div>
+
+                    <div className="MobileScrollBar">
+                        <StarOnlineMobile />
+                        <MobileSide />
 
                     </div>
-                </div>
-                {/* Message End */}
 
-                {/* <div className="d-flex mx-2">
-                    <NavLink to="/"> <i class="fas fa-bars IconMobile mx-2"></i></NavLink>
-                </div> */}
+                </Modal> */}
 
             </div>
         </div>
