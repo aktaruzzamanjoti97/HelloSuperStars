@@ -22,7 +22,7 @@ import moment from 'moment'
 import ApprovedImg from '../Header/NotificationDropdownModal/defultImg/approved.png'
 import MobileSide from './MobileSide';
 import StarOnlineMobile from './StarOnlineMobile';
-import RightSection from './Right/LiveSction';
+
 import LiveNowMenu from './Right/LiveNowMenu';
 
 const Navigation = () => {
