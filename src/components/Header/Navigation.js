@@ -383,7 +383,7 @@ return (
                     <i className="fa fa-bars circle-iconM " onClick={handleShowMenu}></i>
                 </div>
 
-                <Modal show={showMenu} onHide={handleCloseMenu} animation={false} onClick={handleCloseMenu}
+                <Modal show={showMenu} onHide={handleCloseMenu} animation={false} 
                     className='MobileViewSide bg-danger'>
                     <div closeButton className='ModalMobileB'>
 
@@ -403,32 +403,8 @@ return (
                         <MobileSide />
                         <LiveNowMenu/>
                     </div>
-                    {/* <Modal.Footer>
-                        <Button variant="secondary" onClick={handleCloseMenu}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={handleCloseMenu}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer> */}
                 </Modal>
-                {/*
-                <Modal showMenu={showMenu} onHide={()=> handleCloseMenu(false)} className='MobileViewSide bg-danger' >
-
-                    <div className="col-6 mt-2">
-                        <h5 className='text-light '>Menu</h5>
-                    </div>
-                    <div class="MenuSide">
-                        <img src={Logo} alt="" className='LogoMobile' />
-                    </div>
-
-                    <div className="MobileScrollBar">
-                        <StarOnlineMobile />
-                        <MobileSide />
-
-                    </div>
-
-                </Modal> */}
+                
 
             </div>
         </div>

@@ -444,10 +444,33 @@ element.style {
 }
 
 .LiveMoBG{
-  background-color: rgb(235, 146, 14);
+  background: linear-gradient(to right, rgba(240, 33, 33, 0.596) , rgba(255, 0, 85, 0.671));
   border-radius: 10px;
   padding: 2px;
 }
+
+.LearnMoBG{
+  background: linear-gradient(to right, rgba(33, 240, 205, 0.534) , rgba(0, 81, 255, 0.226));
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.ChatMoBG{
+  background: linear-gradient(to right, rgba(226, 240, 33, 0.795) , rgba(255, 115, 0, 0.226));
+  border-radius: 10px;
+  padding: 2px;
+}
+.AuditionMoBG{
+  background: linear-gradient(to right, rgb(240, 174, 33) , rgba(202, 14, 70, 0.829));
+  border-radius: 10px;
+  padding: 2px;
+}
+.MeetMoBG{
+  background: linear-gradient(to right, rgba(33, 240, 230, 0.534) , rgba(161, 202, 14, 0.582));
+  border-radius: 10px;
+  padding: 2px;
+}
+
 .LivePIcM{
   width: 60px;
   height: 50px;
@@ -472,4 +495,25 @@ element.style {
 
 .LeftTeP{
   font-size: 10px;
+}
+
+
+/* .LBtnScroll{
+  
+  overflow-x: scroll;
+} */
+.LBtn{
+  font-size: .8rem;
+  color: #fff;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: horizontal;
+}
+
+
+.LBtn .nav-link.active, .LBtn .show>.nav-link {
+  color: rgb(255, 255, 255) !important;
+  background: linear-gradient(to right, rgba(35, 0, 236, 0.295) , rgba(255, 0, 76, 0.644)) !important;
 }
