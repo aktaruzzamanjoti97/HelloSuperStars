@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import EntertainmentImg from "../../../../../images/entertainmentImg.jpg";
-import EventImg from "../../../../../images/FootbalImage.jpg";
-import religionImg from "../../../../../images/religionImage.jpg";
-import sportImg from "../../../../../images/sports.jpg";
-import politicsImg from "../../../../../images/politics.jpg";
-import educationImg from "../../../../../images/education.jpeg";
-import musicImg from "../../../../../images/music.jpeg";
 import "./CategoryJs.css";
 import axios from "axios";
 
@@ -52,34 +45,6 @@ const Category = () => {
                 </div>
               </div>
 
-
-              {/* <div className="carousel-item">
-                <img
-                  src={EntertainmentImg}
-                  className="ImgCat"
-                  alt={EntertainmentImg}
-                />
-                <div className="carousel-caption">
-                  <h5>Second slide label</h5>
-                  <p>
-                    Some representative placeholder content for the second
-                    slide.
-                  </p>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  src={EntertainmentImg}
-                  className="ImgCat"
-                  alt={EntertainmentImg}
-                />
-                <div className="carousel-caption">
-                  <h5>Third slide label</h5>
-                  <p>
-                    Some representative placeholder content for the third slide.
-                  </p>
-                </div>
-              </div> */}
 
 
             </div>

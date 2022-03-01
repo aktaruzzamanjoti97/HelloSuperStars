@@ -59,9 +59,9 @@ const CoreCategory = () => {
                     //history.push('/subCategory');
 
                     history.push({
-                      pathname: '/subCategory',
+                      pathname: '/',
                       //search: '?query=abc',
-                      state: { detail: res.data.length }
+                      //state: { detail: res.data.length }
                     });
                 }
                 else if(res.data.status === 401)
@@ -145,7 +145,8 @@ const CoreCategory = () => {
 
 
           <div className="ct-btn text-center">
-            <button onClick={loginSubmit} className="btn mt-3 cg-done">Done</button>
+            <button onClick={loginSubmit} className="btn mt-3 mx-2 cg-done">Done</button>
+            <Link to='/'> <button className="btn mt-3 mx-2 cg-skip">Skip</button> </Link>
           </div>
         </div>
 

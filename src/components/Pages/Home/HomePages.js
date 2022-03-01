@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from 'react';
 import Navigation from "../../Header/Navigation";
 import LeftSidebar from '../../Sidebar/LeftSidebar';
 import RightSidebar from '../../Sidebar/RightSidebar';
@@ -7,9 +7,31 @@ import Post from "./Body/Post/Post";
 // import PostContent from "./Body/Post/PostContent";
 import PromoVideo from "./Body/PromoVideo/PromoVideo";
 
+import io from 'socket.io-client';
 
-export default class HomePages extends Component {
-  render() {
+
+
+  const Homepage = () => {
+
+  //const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    //const socket = io(`http://localhost:3000`);
+    var socket = io("http://localhost:3000",{query: 1 });
+    
+    socket.on('connection', (msg) => {
+      console.log('sonet', msg);
+    });
+
+    socket.emit('user_id', localStorage.getItem('auth_id'));
+
+  }, []);
+
+
+
+
+
+
     return (
       <React.Fragment>
         <Navigation />
@@ -40,5 +62,7 @@ export default class HomePages extends Component {
         <br />
       </React.Fragment>
     );
-  }
+  
 }
+
+export default Homepage
