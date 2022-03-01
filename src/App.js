@@ -5,6 +5,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import './App.css';
 import './components/CSS/BodyColor.css';
 
+
 // Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import StarSelection from "./components/Pages/Category/StarSelection";

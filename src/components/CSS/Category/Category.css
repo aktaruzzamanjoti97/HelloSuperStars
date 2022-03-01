@@ -32,6 +32,14 @@ label{
     background-color: #FFAD00;
 }
 
+.cg-skip {
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #e25e21;
+}
+
 .main-container {
     background-image: url(../../../images/bg.jpeg);
     background-size: cover;
@@ -117,9 +125,10 @@ label{
   }
 
   #id_work_days input[type="checkbox"]:checked + span {
-    border: 5px solid #fff;
-    color: black;
+    /* border: 5px solid #fff; */
+    color: #171717;
     opacity: 1 !important;
+    background: #fff;
   }
 
   

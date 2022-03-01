@@ -402,7 +402,7 @@ return (
                 <div className="centered centered-meet">
                     <div className="meetP  d-flex">
                         <div className="MeetupText col-md-8 fw-bold">
-                            Learning
+                            Learning Session
                         </div>
                         <div className="Meetupbtn col-md-3 align-items-center justify-content-center">
 
@@ -411,10 +411,12 @@ return (
                             <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
                             </Link> */}
 
-                            <Link to={`/starprofile/${post.learning_session?.star_id}/livechat`}
-                                className="link-starPorfile">
-                            <button className="btn btn-warning text-light fw-bold bmt">Book Now</button>
-                            </Link>
+                            <Link to={{
+                                        pathname: `/register-learning-details/${post.learning_session.slug}`,
+                                        state:{post:post}
+                                    }} className="link-starPorfile">
+                                        <button className="btn btn-warning text-light fw-bold bmt w-100">Register Now</button>
+                                    </Link>
 
                         </div>
                     </div>
