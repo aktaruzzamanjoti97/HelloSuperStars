@@ -1,11 +1,8 @@
 
 import React, { Component } from "react";
 import LeftSidebar from '../../LeftSidebar'
-import RightSidebar from '../../RightSidebar'
-
 import Navigation from '../../../Header/Navigation'
-import FollowMain from "./FollowMain";
-
+import FanStar from "./Content/FanStar";
 export default class FanGroupBody extends Component {
   render() {
     return (
@@ -18,16 +15,10 @@ export default class FanGroupBody extends Component {
               <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
                 <LeftSidebar/>
               </div>
-              dfgdfg
               
-              {/* <div className="col-sm-6 justify-content-center postTab" >
-                  <FollowMain/>
+              <div className="col-sm-9 justify-content-center postTab" >
+                <FanStar/>
               </div>
-
-              <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight" >
-                <RightSidebar/>
-              </div> */}
-              
             </div>
           </div>
         </div>

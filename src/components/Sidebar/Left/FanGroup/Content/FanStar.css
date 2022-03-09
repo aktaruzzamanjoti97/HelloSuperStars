@@ -1,0 +1,52 @@
+
+
+
+
+.StartCover{
+    height: 25vh;
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+}
+
+.TitleFan{
+    font-size: larger;
+}
+.subTitleFan{
+    font-size: smaller;
+    color: rgba(240, 248, 255, 0.726);
+}
+.nav-pills .NavColorFan, .nav-pills .show>.NavColorFan {
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #343434;
+}
+.nav-pills .NavColorFan.active, .nav-pills .show>.NavColorFan {
+    color: black;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: transparent linear-gradient(115deg, #FAED89 0%, #FFC000 69%, #FFC633 100%) 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.FanNave{
+    width: 100%;
+}
+
+
+.SelectFan{
+    width: 20vw;
+}
+
+
+
+
+
+
+
+.MediaCard{
+    width: 13.3vw;
+}
