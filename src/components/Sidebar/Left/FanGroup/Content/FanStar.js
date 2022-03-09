@@ -8,86 +8,84 @@ import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
 
 const FanStar = () => {
-const options = [
-{ value: "Salman Khan Team", label: "Salman Khan Team" },
-{ value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
-{ value: "vanilla", label: "Vanilla" },
-];
-return (
-<>
-    <div className="mt-3">
+  const options = [
+    { value: "Salman Khan Team", label: "Salman Khan Team" },
+    { value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
+  ];
+  return (
+    <>
+      <div className="mt-3">
         <img src={StarCover} alt="" className="img-fluid StartCover mb-2" />
         <b className="text-light fw-bold TitleFan">
-            Salman VS Sharukh Fan group
+          Salman VS Sharukh Fan group
         </b>
         <p className="subTitleFan">
-            Created at 12 Feb 2022 | Continue till 12 April 2022
+          Created at 12 Feb 2022 | Continue till 12 April 2022
         </p>
-    </div>
+      </div>
 
-    <div className="FanNave">
+      <div className="FanNave">
         <div className="row">
+          <div className="col-sm-8 mb-3 ">
+            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+              <Nav variant="pills" className="d-flex MobileFabNave justify-content-between">
+                <Nav.Item>
+                  <Nav.Link className="fw-bold NavColorFan" eventKey="first">
+                    <i class="fa fa-house-user me-1"></i>Home
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className="fw-bold NavColorFan" eventKey="second">
+                    <i class="fa fa-house-user me-1"></i> Media
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className="fw-bold NavColorFan" eventKey="third">
+                    <i class="fa fa-house-user me-1"></i>Member
+                  </Nav.Link>
+                </Nav.Item>
 
-            <div className="col-sm-8 ">
+                <Nav.Item>
+                  <Select options={options} className="SelectFan desktopFan" />
+                </Nav.Item>
 
-                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                <Select options={options} className="SelectFan mobileFan" />
 
-                    <Nav variant="pills" className="d-flex justify-content-between">
+              </Nav>
 
-                        <Nav.Item>
-                            <Nav.Link className="fw-bold NavColorFan" eventKey="first">
-                                <i class="fa fa-house-user me-1"></i>Home
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className="fw-bold NavColorFan" eventKey="second">
-                                <i class="fa fa-house-user me-1"></i> Media
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link className="fw-bold NavColorFan" eventKey="third">
-                                <i class="fa fa-house-user me-1"></i>Member
-                            </Nav.Link>
-                        </Nav.Item>
+              <div className="FanCreatePost d-flex mt-3 px-3 pt-2 pb-2">
 
-                        <Nav.Item>
-                            <Select options={options} className="SelectFan" />
-                        </Nav.Item>
+                <button className="btn text-light fw-bold CreateSm" disabled>
+                  Create a post
+                </button>
+                <button  className="btn CreateInputFan">Click here to create a post</button>
 
-                    </Nav>
-                    
-                    <div className="FanCreatPost d-flex mt-3 bg-info"> 
-                                        Creat Post
-                        </div>
-                        
+              </div>
 
-                    <Tab.Content>
+              <Tab.Content>
+                <Tab.Pane eventKey="first" className="">
+                  <FanPost />
+                </Tab.Pane>
 
-                        <Tab.Pane eventKey="first" className="">
-                            <FanPost/>
-                        </Tab.Pane>
+                <Tab.Pane eventKey="second">
+                  <FanMedia />
+                </Tab.Pane>
 
-                        <Tab.Pane eventKey="second">
-                            <FanMedia/>
-                        </Tab.Pane>
+                <Tab.Pane eventKey="third">
+                  <FanMember />
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+          </div>
 
-                        <Tab.Pane eventKey="third">
-                            <FanMember/>
-                        </Tab.Pane>
-
-                    </Tab.Content>
-                </Tab.Container>
-
-            </div>
-
-            {/* Chat Box */}
-            <div className="col-sm-4 ">
-                <button>Message Group</button>
-            </div>
+          {/* Chat Box */}
+          <div className="col-sm-4 ">
+            <button>Message Group</button>
+          </div>
         </div>
-    </div>
-</>
-);
+      </div>
+    </>
+  );
 };
 
 export default FanStar;
