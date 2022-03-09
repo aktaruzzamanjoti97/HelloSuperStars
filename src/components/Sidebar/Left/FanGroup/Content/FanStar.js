@@ -27,9 +27,13 @@ return (
 
     <div className="FanNave">
         <div className="row">
+
             <div className="col-sm-8 ">
+
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+
                     <Nav variant="pills" className="d-flex justify-content-between">
+
                         <Nav.Item>
                             <Nav.Link className="fw-bold NavColorFan" eventKey="first">
                                 <i class="fa fa-house-user me-1"></i>Home
@@ -49,8 +53,13 @@ return (
                         <Nav.Item>
                             <Select options={options} className="SelectFan" />
                         </Nav.Item>
-                        <button className="w-100 mt-3"> Write post</button>
+
                     </Nav>
+                    
+                    <div className="FanCreatPost d-flex mt-3 bg-info"> 
+                                        Creat Post
+                        </div>
+                        
 
                     <Tab.Content>
 
