@@ -62,6 +62,10 @@ import Shipping from "./components/Pages/Market/Shipping";
 import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
+import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
+
+// Fan Group
+
 
 
 axios.defaults.withCredentials = true;
@@ -99,6 +103,9 @@ function App() {
         <Route exact path='/category-profile' component={ProfileCatBody} />
 
         <Route exact path='/following' component={FollowMain} />
+
+        <Route exact path='/fan-group' component={FanGroupBody} />
+
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
         <PrivateRoute exact path='/activities' component={ActivitiesBody} />

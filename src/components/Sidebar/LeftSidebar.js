@@ -61,6 +61,25 @@ export const LeftSidebar = ({history}) => {
                                         <span className="mx-2 profile-font-color" >
                                             Following <br></br>
                                             <small className="category-size-chat"> 25 star</small>
+                                            
+                                        </span>
+                                    </button>
+                                </h2>
+                            </div>
+                        </Link>
+
+                        <Link className="teop-s" to='/fan-group'>
+                            <div className="accordion-item mt-1 left-bottom-ap">
+                                <h2 className="accordion-header" id="headingTwo">
+                                    <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        <span>
+                                            <i className="fas fa-user mx-2 profile-font-color fa-2x" ></i>
+                                        </span>
+                                        <span className="mx-2 profile-font-color" >
+                                            Fan Group <br></br>
+                                            <small className="category-size-chat"> 2 group</small>
                                         </span>
                                     </button>
                                 </h2>
