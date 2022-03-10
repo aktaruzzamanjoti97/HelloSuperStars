@@ -1,0 +1,72 @@
+input[type="checkbox"].css-checkbox + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.3em;
+  font-family: "Arial";
+}
+
+input[type="checkbox"].css-checkbox {
+  display: none;
+}
+
+input[type="checkbox"].css-checkbox + label:before {
+  content: "\2714";
+  border: 0.1em solid gold;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+  margin-bottom: 3.8px;
+}
+
+input[type="checkbox"].css-checkbox + label:active:before {
+  transform: scale(0);
+}
+
+input[type="checkbox"].css-checkbox:checked + label:before {
+  background-color: #ed820a;
+  border-color: #ed820a;
+  color: #fff;
+}
+
+.selectAll {
+  color: gold;
+  font-size: 18px;
+  /* margin-left: 1rem; */
+  margin: 0.2rem 1rem !important;
+}
+
+.coreCategory {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* border: 1px solid goldenrod; */
+}
+
+.iconRight {
+  font-size: 26px;
+  color: gold !important;
+}
+
+.skipFont {
+  font-size: 18px;
+}
+
+.coreCategorySkip {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
