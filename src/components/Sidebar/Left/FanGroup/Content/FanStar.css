@@ -220,6 +220,17 @@
   
   }
 
+  @media only screen and (max-width: 600px) {
+    .FanBg {
+        width: 20.66vw;
+       
+      }
+      .MediaImg{
+        width: 44.6% ;
+    }
+  
+  }
+
 
 
 
@@ -240,3 +251,66 @@
 
 
 
+  .MembersListFan{
+      width: 48.5%;
+      background: transparent linear-gradient(103deg, #00DE7B 0%, #00AD8E 100%) 0% 0% no-repeat padding-box;
+      border-radius: 10px;
+      opacity: 1;
+  }
+
+  .MembersListFanAdmin{
+    width: 48.5%;
+    background: transparent linear-gradient(101deg, #F103F5 0%, #6F1FFD 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+  }
+
+
+  .MembersListFanUser{
+    width: 48.5%;
+   
+    border-radius: 10px;
+    opacity: 1;
+  }
+.FaNMemBerList{
+    text-align: left !important;
+     background: transparent linear-gradient(101deg, #484849 0%, #484849 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+
+}
+  .MemImgStar{
+      width: 20px;
+      margin-right: 10px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid white;
+}
+
+.FanMemberScroll{
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+.FanMemberScroll::-webkit-scrollbar {
+    width: 0px;
+  }
+
+
+  .nav-pills .NavMember, .nav-pills .show>.NavMember {
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #212121;
+}
+.nav-pills .NavMember.active, .nav-pills .show>.NavMember {
+    color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #212121;
+    border-radius: 2px;
+    font-weight: 600;
+    border-bottom: 2px solid goldenrod;
+    opacity: 1;
+}

@@ -22,6 +22,17 @@ return (
         </div>
 
         <div className="col-6 mt-2">
+            <Link to='/fan-group'>
+            <div className="d-flex btn CatBlock">
+                <div className='text-warning col-3'><i className="fa-solid fa-user-group mx-2 mt-2"></i></div>
+                <div className='Cat-Title col-9'>Fan Group <br />
+                    <small className="category-size-chat"> 25 star</small>
+                </div>
+            </div>
+            </Link>
+        </div>
+
+        <div className="col-6 mt-2">
             <Link to='/following'>
             <div className="d-flex btn CatBlock">
                 <div className='text-warning col-3'><i className="fas fa-star mx-2 mt-2"></i></div>
