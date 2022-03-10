@@ -11,21 +11,29 @@ return (
             </i> Yours Groups</p>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Salman VS Shahrukh Fan group</div>
             <Link to='/your-group'> <button className='btn w-100 ExploreBtn'>Explore &nbsp;<i
                     class="fa-solid fa-right-long"></i></button></Link>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Messi VS CR7 Fan group</div>
             <Link to='/your-group'> <button className='btn w-100 ExploreBtn'>Explore &nbsp;<i
                     class="fa-solid fa-right-long"></i></button></Link>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Salman VS Shahrukh Fan group</div>
             <Link to='/your-group'> <button className='btn w-100 ExploreBtn'>Explore &nbsp;<i
                     class="fa-solid fa-right-long"></i></button></Link>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Messi VS CR7 Fan group</div>
             <Link to='/your-group'> <button className='btn w-100 ExploreBtn'>Explore &nbsp;<i
                     class="fa-solid fa-right-long"></i></button></Link>
         </div>

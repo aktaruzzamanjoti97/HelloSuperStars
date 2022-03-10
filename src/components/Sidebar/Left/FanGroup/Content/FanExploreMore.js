@@ -9,18 +9,26 @@ const FanExploreMore = () => {
                 </i> &nbsp;Explore More</p>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Sakib Khan VS Jayed Khan</div>
             <button className='btn w-100 ExploreBtnMore btn-success'>Explore &nbsp;<i class="fa-solid fa-right-long"></i></button>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Pewdiepie VS Mr Beast</div>
             <button className='btn w-100 ExploreBtnMore btn-success'>Explore &nbsp;<i class="fa-solid fa-right-long"></i></button>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Sakib Khan VS Jayed Khan</div>
             <button className='btn w-100 ExploreBtnMore btn-success'>Explore &nbsp;<i class="fa-solid fa-right-long"></i></button>
         </div>
         <div className="YourGroups col-md-6 pb-3">
             <img src={YoursImg} className="YoursImg img-fluid" alt="" />
+            <div className="FanBg"></div>
+            <div className="bottom-Fan">Salman VS Shahrukh Fan group</div>
             <button className='btn w-100 ExploreBtnMore btn-success'>Explore &nbsp;<i class="fa-solid fa-right-long"></i></button>
         </div>
     </div>

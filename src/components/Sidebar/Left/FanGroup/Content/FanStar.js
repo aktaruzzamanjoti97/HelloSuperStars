@@ -1,5 +1,5 @@
 import React from "react";
-import StarCover from "../../../../../images/Profile/cover.jpg";
+import StarCover from "../../../../../images/xuc3pamd.png";
 import Select from "react-select";
 import "./FanStar.css";
 import { Nav, Row, Tab } from "react-bootstrap";
