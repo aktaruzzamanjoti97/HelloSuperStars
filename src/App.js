@@ -63,6 +63,7 @@ import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/Rei
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
 import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
+import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
 
 // Fan Group
 
@@ -104,7 +105,8 @@ function App() {
 
         <Route exact path='/following' component={FollowMain} />
 
-        <Route exact path='/fan-group' component={FanGroupBody} />
+        <Route exact path='/fan-group' component={FanHome} />
+        <Route exact path='/your-group' component={FanGroupBody} />
 
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
