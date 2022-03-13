@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StarProfileRightContent from "./StarCardComponent/StarProfileRightContent/StarProfileRightContent";
 import profilePhoto from "../../../../../images/Shakib/13.jpg";
 import Jainamaz from "../../../../../images/LiveChat/balhasan.jpg";
@@ -11,9 +11,17 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import SouvinerModal from "./StarChat/SouvinerModal";
 import Icon from '../.../../../../../../images/Souvenir/Icons/auction.png'
 
+
 function Souviner({star_id}) {
 const [more, setmore] = useState(false);
 const [modalShow, setModalShow] = React.useState(false);
+const [product,setProduct] = useState([]);
+
+useEffect(()=>{
+
+
+},[])
+
 return (
 <div className="container">
   <div className="row">
