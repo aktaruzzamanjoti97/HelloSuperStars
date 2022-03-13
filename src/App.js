@@ -96,7 +96,7 @@ function App() {
         <Route exact path='/guest' component={Home} />
         
         <Route exact path='/marketplace' component={Market} />
-        <Route exact path='/marketplace/shipping' component={Shipping} />
+        <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />
