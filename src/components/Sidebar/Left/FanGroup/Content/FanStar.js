@@ -1,16 +1,18 @@
-import React from "react";
+import React, { Component, useState } from 'react'
 import StarCover from "../../../../../images/xuc3pamd.png";
 import Select from "react-select";
 import "./FanStar.css";
-import { Nav, Row, Tab } from "react-bootstrap";
+import { Form, Nav, Row, Tab } from "react-bootstrap";
 import FanPost from "./FanPost";
 import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
 // import PicMa form '../../../../../images/05.jpg';
 
 import PicMa from "../../../../../images/05.jpg";
+import CreatePostModal from './CreatePostModal';
 
 const FanStar = () => {
+  const [modalShow, setModalShow] = React.useState(false);
 const options = [
 { value: "Salman Khan Team", label: "Salman Khan Team" },
 { value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
@@ -61,8 +63,11 @@ return (
             <button className="btn text-light fw-bold CreateSm" disabled>
               Create a post
             </button>
-            <button className="btn CreateInputFan">Click here to create a post</button>
-
+            <button className="btn CreateInputFan" onClick={() => setModalShow(true)}>Click here to create a post</button>
+            <CreatePostModal
+        show={modalShow}
+        onHide={() => setModalShow(false) } className="ModalXC"
+      />
           </div>
 
           <Tab.Content>
@@ -83,7 +88,7 @@ return (
 
       {/* Chat Box */}
 
-      <div className="col-sm-4 MessengerHead  ">
+      <div className="col-sm-4 MessengerHead mb-2 ">
 
         <div className=" MessengerBody py-3 ps-2 text-light">
           <h6 className="fw-bold mx-2">Group inbox</h6>
@@ -137,22 +142,35 @@ return (
             <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
           </div>
+
+          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
+            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
+            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
+          </div>
+
+          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
+            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
+            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
+            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
+          </div>
+
         </div>
 
         <div className="d-flex MessengerFooter  py-2 ps-2 text-light">
 
           <div className="IconMessage col-md-3 me-3 d-flex">
-            <span className="btn"><i className=" text-light fa-solid fa-circle-plus"></i></span>
-            <span className="btn"><i className="text-light fa-solid fa-image"></i></span>
-            <span className="btn"><i className="text-light fa-solid fa-face-smile-beam"></i></span>
+            <i className="text-light IconMessageT m-2 fa-solid fa-circle-plus"></i>
+            <i className="text-light IconMessageT m-2 fa-solid fa-image"></i>
+            <i className="text-light IconMessageT m-2 fa-solid fa-face-smile-beam"></i>
           </div>
 
           <div className="IconMessage col-md-7 d-flex">
-            <input type="text" className="w-100 ms-3 form-control" />
+            <input type="text" className="MessageWidth ps-3" placeholder="type text..."/>
           </div>
 
-          <div className="IconMessage col-md-2 d-flex ms-2">
-            <i class="btn text-light fa-brands fa-telegram"></i>
+          <div className="IconMessage col-md-1 d-flex ms-2">
+            <i class="m-2 me-3 text-light IconMessageT SendT text-left fa-brands fa-telegram"></i>
           </div>
 
         </div>
