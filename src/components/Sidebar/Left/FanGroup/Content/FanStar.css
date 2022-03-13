@@ -346,9 +346,16 @@
     font-size: smaller;
 }
 
-.MessengerText{
 
+
+.MessengerText{
+    max-height: 50vh;
+    overflow-y: scroll;
 }
+
+.MessengerText::-webkit-scrollbar {
+    width: 0px;
+  }
 
 .PicLeftMessage{
     width: 2.59rem;
@@ -406,12 +413,27 @@
     text-align: end;
 }
 
+.IconMessageT{
+    cursor: pointer;
+}
+
+.MessageWidth{
+    width: 100%;
+    border: 1px solid rgb(134, 134, 134, 0.829) ;
+    background-color: #2C2C2C;
+    border-radius: 30px;
+    color: white;
+    font-size: small;
+}
 
 @media only screen and (max-width: 1400px) {
     .textColMa{
         
         margin-left: 25px !important;
         
+    }
+    .MessageWidth{
+        margin-left: 10px;
     }
     .TexMessage{
         
@@ -424,6 +446,9 @@
     .textColMaR{
        font-size: 13px;
        width: 90%;
+    }
+    .SendT{
+        margin-right: 20px;
     }
   }
 
