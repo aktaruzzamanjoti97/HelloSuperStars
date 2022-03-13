@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import StarCover from "../../../../../images/xuc3pamd.png";
 import Select from "react-select";
 import "./FanStar.css";
@@ -9,8 +9,10 @@ import FanMember from "./FanMember";
 // import PicMa form '../../../../../images/05.jpg';
 
 import PicMa from "../../../../../images/05.jpg";
+import CreatePostModal from './CreatePostModal';
 
 const FanStar = () => {
+  const [modalShow, setModalShow] = React.useState(false);
 const options = [
 { value: "Salman Khan Team", label: "Salman Khan Team" },
 { value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
@@ -61,8 +63,11 @@ return (
             <button className="btn text-light fw-bold CreateSm" disabled>
               Create a post
             </button>
-            <button className="btn CreateInputFan">Click here to create a post</button>
-
+            <button className="btn CreateInputFan" onClick={() => setModalShow(true)}>Click here to create a post</button>
+            <CreatePostModal
+        show={modalShow}
+        onHide={() => setModalShow(false) } className="ModalXC"
+      />
           </div>
 
           <Tab.Content>
