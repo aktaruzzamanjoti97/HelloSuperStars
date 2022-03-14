@@ -8,15 +8,19 @@ import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
 // import PicMa form '../../../../../images/05.jpg';
 
-import PicMa from "../../../../../images/05.jpg";
+
 import CreatePostModal from './CreatePostModal';
+import Default from './MessageGroup/Default';
+import Shrukh from './MessageGroup/Shrukh';
+import Salman from './MessageGroup/Salman';
 
 const FanStar = () => {
-  const [modalShow, setModalShow] = React.useState(false);
-const options = [
-{ value: "Salman Khan Team", label: "Salman Khan Team" },
-{ value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
-];
+const [value, setValue] = useState("0");
+const [modalShow, setModalShow] = React.useState(false);
+// const options = [
+// { value: "Salman Khan Team", label: "Salman Khan Team" },
+// { value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
+// ];
 return (
 <>
   <div className="mt-3">
@@ -51,11 +55,21 @@ return (
             </Nav.Item>
 
             <Nav.Item>
-              <Select options={options} className="SelectFan desktopFan" />
+              {/* <Select options={options} className="SelectFan desktopFan" /> */}
+
+              <select className="form-select SelectFan desktopFan"  aria-label="Default select example" onChange={(e) => setValue(e.target.value)} >
+                <option value="0">Shrukh Khan / Salman khan</option>
+                <option value="1">Shrukh khan</option>
+                <option value="2">Salman khan</option>
+              </select>
             </Nav.Item>
 
-            <Select options={options} className="SelectFan mobileFan" />
-
+            {/* <Select options={options} className="SelectFan mobileFan" /> */}
+            <select className="form-select SelectFan mobileFan"  aria-label="Default select example" onChange={(e) => setValue(e.target.value)} >
+                <option value="0">Shrukh Khan / Salman khan</option>
+                <option value="1">Shrukh khan</option>
+                <option value="2">Salman khan</option>
+              </select>
           </Nav>
 
           <div className="FanCreatePost d-flex mt-3 px-3 pt-2 pb-2">
@@ -63,11 +77,8 @@ return (
             <button className="btn text-light fw-bold CreateSm" disabled>
               Create a post
             </button>
-            <button className="btn CreateInputFan" onClick={() => setModalShow(true)}>Click here to create a post</button>
-            <CreatePostModal
-        show={modalShow}
-        onHide={() => setModalShow(false) } className="ModalXC"
-      />
+            <button className="btn CreateInputFan" onClick={()=> setModalShow(true)}>Click here to create a post</button>
+            <CreatePostModal show={modalShow} onHide={()=> setModalShow(false) } className="ModalXC"  />
           </div>
 
           <Tab.Content>
@@ -88,94 +99,29 @@ return (
 
       {/* Chat Box */}
 
+      {value === "0" ? (
       <div className="col-sm-4 MessengerHead mb-2 ">
 
-        <div className=" MessengerBody py-3 ps-2 text-light">
-          <h6 className="fw-bold mx-2">Group inbox</h6>
-
-          <div className="top-right-messenger">
-
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span className="messengerUser"> & 20 more</span>
-          </div>
-        </div>
-
-        <div className="container MessengerText py-2 ps-2 text-light ">
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-        </div>
-
-        <div className="d-flex MessengerFooter  py-2 ps-2 text-light">
-
-          <div className="IconMessage col-md-3 me-3 d-flex">
-            <i className="text-light IconMessageT m-2 fa-solid fa-circle-plus"></i>
-            <i className="text-light IconMessageT m-2 fa-solid fa-image"></i>
-            <i className="text-light IconMessageT m-2 fa-solid fa-face-smile-beam"></i>
-          </div>
-
-          <div className="IconMessage col-md-7 d-flex">
-            <input type="text" className="MessageWidth ps-3" placeholder="type text..."/>
-          </div>
-
-          <div className="IconMessage col-md-1 d-flex ms-2">
-            <i class="m-2 me-3 text-light IconMessageT SendT text-left fa-brands fa-telegram"></i>
-          </div>
-
-        </div>
+        <Default/>
 
       </div>
+
+      ) : null}
+      {value === "1" ? (
+         <div className="col-sm-4 MessengerHead mb-2 ">
+
+         <Shrukh/>
+ 
+       </div>
+        ) : null}
+        {value === "2" ? (
+          <div className="col-sm-4 MessengerHead mb-2 ">
+
+          <Salman/>
+  
+        </div>
+        ) : null}
+
     </div>
   </div>
 </>

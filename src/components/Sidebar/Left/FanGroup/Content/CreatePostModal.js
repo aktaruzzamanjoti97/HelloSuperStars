@@ -1,12 +1,14 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
-
+import Group from '../../../../../images/Group 485.png'
 const CreatePostModal = (props) => {
+    
 return (
 <>
     <div className="">
         <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
             <h4 closeButton className="fw-bold text-light p-2 ModalPostC">Create a post</h4>
+            <img src={Group} alt="" className="ModalIcon" onClick={props.onHide}/>
             <Modal.Body>
 
                 <textarea rows="8" cols="" className="w-100 PostTextM p-2">Type here to post something...</textarea>

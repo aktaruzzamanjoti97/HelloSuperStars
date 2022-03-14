@@ -506,3 +506,65 @@ opacity: 1;
 /* .ModalBGM{
     background-color: #000000c7;
 } */
+
+.ModalIcon{
+    width: 137px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    border-radius: 0px 5px 0px 0px;
+    object-fit: cover;
+}
+
+
+
+
+/* MessageGroup */
+.MessageImgBody{
+    position: relative;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+.MessageImg{
+    object-fit: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    margin: 0px;
+    margin-left: -8px !important;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+.ImgCenterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@media only screen and (max-width: 1400px) {
+    .MessageImg{
+        width: 44vh;
+    }
+    .ImgCenterText {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+}
+
+
+@media only screen and (min-width: 1401px) {
+    .MessageImg{
+        width: 44.69vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .MessageImg{
+        width: 322px;
+    }
+}
