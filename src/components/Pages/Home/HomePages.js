@@ -52,7 +52,7 @@ import io from 'socket.io-client';
                 <Post />
               </div>
 
-              <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right postRight">
+              <div className="col-ms-3 justify-content-center container-fluid custom-container-left-Right postRight">
                 <RightSidebar />
               </div>
 

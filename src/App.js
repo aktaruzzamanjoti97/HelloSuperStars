@@ -63,6 +63,11 @@ import Shipping from "./components/Pages/Market/Shipping";
 import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/ReigsterNow/RegisterNow";
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
+import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
+import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
+
+// Fan Group
+
 
 
 axios.defaults.withCredentials = true;
@@ -92,14 +97,21 @@ function App() {
         <Route exact path='/guest' component={Home} />
 
         <Route exact path='/marketplace' component={Market} />
+
         <Route exact path='/marketplace/shipping' component={Shipping} />
         <Route exact path='/videocall'  component={VideoCall} />
+
+        <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />
         <Route exact path='/category-view/:slug' component={CategoryView} />
         <Route exact path='/category-profile' component={ProfileCatBody} />
 
         <Route exact path='/following' component={FollowMain} />
+
+        <Route exact path='/fan-group' component={FanHome} />
+        <Route exact path='/your-group' component={FanGroupBody} />
+
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
         <PrivateRoute exact path='/activities' component={ActivitiesBody} />
