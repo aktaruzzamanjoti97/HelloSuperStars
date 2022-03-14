@@ -5,6 +5,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import './App.css';
 import './components/CSS/BodyColor.css';
 
+import VideoCall from './VideoCall'
 
 // Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
@@ -94,10 +95,13 @@ function App() {
         {/* Navbar */}
         <PrivateRoute exact path='/' component={Home} />
         <Route exact path='/guest' component={Home} />
-        
-        <Route exact path='/marketplace' component={Market} />
-        <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
 
+        <Route exact path='/marketplace' component={Market} />
+
+        <Route exact path='/marketplace/shipping' component={Shipping} />
+        <Route exact path='/videocall'  component={VideoCall} />
+
+        <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryMain} />
         <Route exact path='/category-view/:slug' component={CategoryView} />
