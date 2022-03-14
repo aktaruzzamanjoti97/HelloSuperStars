@@ -64,6 +64,7 @@ import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarCompone
 import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
 import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
 import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
+import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector/NestedSubCategoryBody";
 
 // Fan Group
 
@@ -133,6 +134,9 @@ function App() {
 
         {/* Selector */}
         <Route exact path='/selector-sub-category' component={SubCategorySelector} />
+
+        {/* NestedSelector */}
+        <Route exact path='/selector-nested-category' component={NestedSubCategoryBody} />
 
         {/* Account Section */}
         <Route exact path='/login' component={Login} />
