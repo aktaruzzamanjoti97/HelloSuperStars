@@ -4,6 +4,12 @@ import slide6 from '../../../../../images/homepage/images/fbInsta.jpg';
 import slide1 from '../../../../../images/homepage/images/imagefs.jpg';
 import slide5 from '../../../../../images/homepage/images/religion.jpg';
 import slide2 from '../../../../../images/homepage/images/socialMedia.jpg';
+import Liton from '../../../../../images/nestedCategory/liton.jpg';
+import Shakib from '../../../../../images/nestedCategory/Shakib-Al-Hasan.webp';
+import Taskin from '../../../../../images/nestedCategory/taskin.jpg';
+import Tamim from '../../../../../images/nestedCategory/tamim.jpg';
+import Musfiq from '../../../../../images/nestedCategory/musfiq.jpg';
+import Mashrafee from '../../../../../images/nestedCategory/mashrafee.jpg';
 // import slide8 from '../../../../../images/homepage/images/socialMedia.jpg';
 
 export const fakeCategoryData = [
@@ -189,6 +195,39 @@ export const educationData = [
         id: 6,
         slider: slide4,
         categoryName: "Entertainment"
+    },
+]
+
+export const nestedCategoryData = [
+    {
+        id: 1,
+        slider: Liton,
+        categoryName: "Liton Das"
+    },
+    {
+        id: 2,
+        slider: Shakib,
+        categoryName: "Shakib Al Hasan"
+    },
+    {
+        id: 3,
+        slider: Taskin,
+        categoryName: "Taskin Ahmed"
+    },
+    {
+        id: 4,
+        slider: Tamim,
+        categoryName: "Tamim Iqbal"
+    },
+    {
+        id: 5,
+        slider: Musfiq,
+        categoryName: "Musfiqur Rahim"
+    },
+    {
+        id: 6,
+        slider: Mashrafee,
+        categoryName: "Mashrafee Mortaza"
     },
 ]
 

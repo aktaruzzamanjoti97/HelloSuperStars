@@ -4,16 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHistory } from 'react-router-dom';
 import Slider from "react-slick";
-import './CategorySelector.css';
-import { fakeCategoryData } from './fakeCategoryData';
+import '../CategorySelector.css';
+import { nestedCategoryData } from '../fakeCategoryData';
 
 
-
-const CategorySelector = () => {
+const NestedSubCategory = () => {
     const [list, setList] = useState([]);
 
     useEffect(() => {
-        setList(fakeCategoryData)
+        setList(nestedCategoryData)
     }, [list])
 
     const [select, setSelect] = useState({
@@ -120,7 +119,7 @@ const CategorySelector = () => {
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
-                    <small className="text-white mx-2"> Category </small>
+                    <small className="text-white mx-2"> Cricket </small>
                 </div>
 
                 <Slider {...settings}>
@@ -130,7 +129,7 @@ const CategorySelector = () => {
                                 <>
                                     <div key={i.id} className="p-1">
                                         <div>
-                                            <img onClick={() => handleSubCategory(i)} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">
@@ -161,4 +160,4 @@ const CategorySelector = () => {
     );
 };
 
-export default CategorySelector;
+export default NestedSubCategory;
