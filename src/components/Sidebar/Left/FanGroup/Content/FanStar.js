@@ -1,28 +1,27 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import StarCover from "../../../../../images/xuc3pamd.png";
-import Select from "react-select";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import "./FanStar.css";
-import { Form, Nav, Row, Tab } from "react-bootstrap";
+import { Nav, Tab } from "react-bootstrap";
 import FanPost from "./FanPost";
 import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
-// import PicMa form '../../../../../images/05.jpg';
-
 
 import CreatePostModal from './CreatePostModal';
 import Default from './MessageGroup/Default';
 import Shrukh from './MessageGroup/Shrukh';
 import Salman from './MessageGroup/Salman';
+import ConfirmModalMessage from './MessageGroup/ConfirmModalMessage';
 
 const FanStar = () => {
-const [value, setValue] = useState("0");
-const [modalShow, setModalShow] = React.useState(false);
-// const options = [
-// { value: "Salman Khan Team", label: "Salman Khan Team" },
-// { value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
-// ];
+  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow1, setModalShow1] = React.useState(false);
+  const [title, setTitle] = React.useState("Shrukh Khan/ Salman Khan");
+  const [btnCng, setbtnCng] = React.useState("0");
+
 return (
 <>
+
   <div className="mt-3">
     <img src={StarCover} alt="" className="img-fluid StartCover mb-2" />
     <b className="text-light fw-bold TitleFan">
@@ -35,7 +34,8 @@ return (
 
   <div className="FanNave">
     <div className="row">
-      <div className="col-sm-8 mb-3 ">
+      <div className="col-sm-8 mb-3 PositionTabX">
+
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Nav variant="pills" className="d-flex MobileFabNave justify-content-between">
             <Nav.Item>
@@ -55,21 +55,40 @@ return (
             </Nav.Item>
 
             <Nav.Item>
-              {/* <Select options={options} className="SelectFan desktopFan" /> */}
 
-              <select className="form-select SelectFan desktopFan"  aria-label="Default select example" onChange={(e) => setValue(e.target.value)} >
-                <option value="0">Shrukh Khan / Salman khan</option>
-                <option value="1">Shrukh khan</option>
-                <option value="2">Salman khan</option>
-              </select>
+              {/* Desktop View */}
+              <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
+              <Dropdown.Item className='w-100' >
+                <p onClick={() => {  setTitle("Shrukh Khan"); setModalShow1(true) }} >
+                  Shrukh khan
+                </p>
+                <ConfirmModalMessage show={modalShow1} onHide={() => setModalShow1(false)} />
+              </Dropdown.Item>
+              <Dropdown.Item >
+                <p onClick={() => {setTitle("Salman khan");  }} >
+                  Salman khan
+                </p>
+                <ConfirmModalMessage show={modalShow} onHide={() => setModalShow(false)} />
+              </Dropdown.Item>
+            </DropdownButton>
+
             </Nav.Item>
 
-            {/* <Select options={options} className="SelectFan mobileFan" /> */}
-            <select className="form-select SelectFan mobileFan"  aria-label="Default select example" onChange={(e) => setValue(e.target.value)} >
-                <option value="0">Shrukh Khan / Salman khan</option>
-                <option value="1">Shrukh khan</option>
-                <option value="2">Salman khan</option>
-              </select>
+
+            {/* Mobile View */}
+            <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan mobileFan fw-bold" >
+              <Dropdown.Item href="#/action-2">
+                <p onClick={() => {setTitle("Shrukh Khan"); }} >
+                  Shrukh khan
+                </p>
+              </Dropdown.Item>
+              <Dropdown.Item >
+                <p onClick={() => {setTitle("Salman khan");  }} >
+                  Salman khan
+                </p>
+              </Dropdown.Item>
+            </DropdownButton>
+
           </Nav>
 
           <div className="FanCreatePost d-flex mt-3 px-3 pt-2 pb-2">
@@ -77,8 +96,8 @@ return (
             <button className="btn text-light fw-bold CreateSm" disabled>
               Create a post
             </button>
-            <button className="btn CreateInputFan" onClick={()=> setModalShow(true)}>Click here to create a post</button>
-            <CreatePostModal show={modalShow} onHide={()=> setModalShow(false) } className="ModalXC"  />
+            <button className="btn CreateInputFan" onClick={() => setModalShow(true)}>Click here to create a post</button>
+            <CreatePostModal show={modalShow} onHide={() => setModalShow(false) } className="ModalXC" />
           </div>
 
           <Tab.Content>
@@ -97,31 +116,21 @@ return (
         </Tab.Container>
       </div>
 
+            
       {/* Chat Box */}
 
-      {value === "0" ? (
-      <div className="col-sm-4 MessengerHead mb-2 ">
+      {btnCng === "0" ?
+        <div className="col-sm-4 MessengerHead mb-2 "><Default/> </div>
+      : null}
 
-        <Default/>
+      {btnCng === "1" ? 
+        <div className="col-sm-4 MessengerHead mb-2 "><Shrukh/> </div>
+      : null}
 
-      </div>
-
-      ) : null}
-      {value === "1" ? (
-         <div className="col-sm-4 MessengerHead mb-2 ">
-
-         <Shrukh/>
- 
-       </div>
-        ) : null}
-        {value === "2" ? (
-          <div className="col-sm-4 MessengerHead mb-2 ">
-
-          <Salman/>
-  
-        </div>
-        ) : null}
-
+      {btnCng === "2" ?
+       <div className="col-sm-4 MessengerHead mb-2 "><Salman/> </div>
+      : null}
+      
     </div>
   </div>
 </>
