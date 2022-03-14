@@ -6,8 +6,14 @@ import Delivery from '../../../../../images/Souvenir/delivery.png'
 import Message from '../../../../../images/message-solid.svg'
 import Box from '../../../../../images/Souvenir/box.png'
 import { Link } from 'react-router-dom';
+import { Markup } from 'interweave';
+import moment from 'moment';
 
 const PurchaseModal = (props) => {
+
+    const product = props?.activity;
+// console.log("modal data working "+product)
+
 return (
 <>
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" size='lg' centered className=''>
@@ -25,25 +31,32 @@ return (
                     <div className="row">
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Owner</div>
-                            <div className="SpRight d-flex col-md-9">Christiano Ronaldo</div>
+                            <div className="SpRight d-flex col-md-9">{product.marketplace?.superstar.first_name} {product.marketplace?.superstar.last_name}</div>
+                            
                         </div>
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Description</div>
-                            <div className="SpRight d-flex col-md-9">Lorem ipsum some demo text goes here as the product
-                                description given before</div>
+                            <div className="SpRight d-flex col-md-9">
+                                <Markup content={product.marketplace?.description}/>
+                            </div>
                         </div>
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Price</div>
-                            <div className="SpRight d-flex col-md-9">$ &nbsp; 199.00</div>
+                            <div className="SpRight d-flex col-md-9">$ &nbsp; { product.total_price }</div>
                         </div>
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Ordered</div>
-                            <div className="SpRight d-flex col-md-9">10 - 01 - 2022</div>
+                            <div className="SpRight d-flex col-md-9">{moment(product.created_at).format('LL')}</div>
                         </div>
+
+                        {(product.status === '2') ?
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Paid on</div>
-                            <div className="SpRight d-flex col-md-9">12 - 01 - 2022</div>
+                            <div className="SpRight d-flex col-md-9">{moment(product.delivery_at).format('LL')}</div>
                         </div>
+                        : ''
+                        }
+
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Delivery</div>
                             <div className="SpRight d-flex col-md-9 text-warning ">Pending</div>
@@ -63,19 +76,40 @@ return (
                     </div>
                     <span className='Box-Line mt-3'></span>
 
+                    {/* console.log('Activity ' ) */}
+
+                    
                     <div className="">
+                    {(product.status === '1' || product.status === '2') ?
+                    
+                        <div className='BoxR  mx-3 btn-warning text-light p-2'> 
+                        <img src={Delivery} alt="" className='DeliveryImg' />
+                        </div>
+
+                        :
+
                         <div className='BoxR PenCol mx-3 btn-warning text-light p-2'> 
                         <img src={Delivery} alt="" className='DeliveryImg' />
                         </div>
-                        <p className='text-light text-center PSize'>Delivered</p>
-                        
+                }
+                        <p className='text-light text-center PSize'>Delivered</p> 
                     </div>
+
+
+
                     <span className='Box-Line mt-3'></span>
+                    
 
                     <div className="">
-                        <div className='BoxR PenCol mx-3 btn-warning text-light p-2'> 
-                        <img src={Box} alt="" className='DeliveryImg' />
-                        </div>
+                        {(product.status === '2') ?
+                            <div className='BoxR mx-3 btn-warning text-light p-2'> 
+                            <img src={Box} alt="" className='DeliveryImg' />
+                            </div>
+                            :
+                            <div className='BoxR PenCol mx-3 btn-warning text-light p-2'> 
+                            <img src={Box} alt="" className='DeliveryImg' />
+                            </div>
+                        }
                         <p className='text-light text-center PSize'>Received</p>
                         
                     </div>
