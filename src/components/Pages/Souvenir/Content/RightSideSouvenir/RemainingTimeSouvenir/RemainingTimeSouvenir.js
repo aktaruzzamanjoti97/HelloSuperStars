@@ -1,17 +1,22 @@
-import React from 'react';
+import moment from 'moment';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import clockSvg from '../../../../../../images/clock-svgrepo-com.svg';
 import './RemainingTimeSouvenir.css';
 
-const RemainingTimeSouvenir = () => {
+const RemainingTimeSouvenir =({AuctionData}) => {
 
-    const countDownDate = new Date("February 22, 2022 15:37:25").getTime();
+    const auctionTime = moment(AuctionData.bid_to).format('LL HH:mm:ss')
+    //console.log(auctionTime);
+    const countDownDate = new Date(auctionTime).getTime();
     const [day, setDay] = useState('');
     const [hour, setHour] = useState('');
     const [minute, setMinute] = useState('');
     const [second, setSecond] = useState('');
 
-    setInterval(() => {
+useEffect(()=>{
+
+    const interval = setInterval(() => {
         const now = new Date().getTime();
         const distance = countDownDate - now;
 
@@ -31,6 +36,10 @@ const RemainingTimeSouvenir = () => {
         setSecond(seconds)
 
     }, 1000);
+
+    return ()=>clearInterval(interval);
+
+},[])
 
     return (
         <div className="bg-dark p-4 my-3">

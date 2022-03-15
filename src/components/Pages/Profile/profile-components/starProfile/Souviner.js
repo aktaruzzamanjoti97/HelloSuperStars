@@ -31,7 +31,6 @@ useEffect(()=>{
 },[])
 
 const openModal = (data) => {
-  console.log('sonet',data);
   setModalShow(true)
   setModalData(data)
 }

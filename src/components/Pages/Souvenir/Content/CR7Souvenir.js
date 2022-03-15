@@ -6,23 +6,22 @@ import BGImg from '../../../../images/Souvenir/fundo-floral-preto-png-2.png'
 import Bid from '../../../../images/Souvenir/Icons/bid.png'
 import Confirm from '../../../../images/Souvenir/Icons/auction.png'
 import CR7Modal from './CR7Modal'
+import { Markup } from 'interweave'
 
-const CR7Souvenir = () => {
+const CR7Souvenir = ({data}) => {
 const [modalShow, setModalShow] = React.useState(false);
 return (
 <>
 
   <div className="col-md-7">
 
-    <h3 className="fw-bolder text-white mt-4">CR Signature Football</h3>
+    <h3 className="fw-bolder text-white mt-4">{data.name}</h3>
 
-    <p className="text-white PText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa similique cum qui ab
-      fugit veniam repellendus officiis,
-      consequuntur esse culpa quibusdam aut tempore, incidunt ea nesciunt soluta itaque voluptas maiores. <span>See
+    <p className="text-white PText"><Markup content={data.details}/> <span>See
         more</span></p>
     <div className="ReactCr7 bg-dark p-4 mb-3 ">
       <center>
-        <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' className='CR7Player img-fluid' />
+      <img src={`http://localhost:8000/${data.product_image}`} className="img-fluid w-100 CR7Cover coverHeight " alt="" />
       </center>
     </div>
 
