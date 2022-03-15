@@ -4,6 +4,7 @@ import Pro from "../../../../images/Shakib/14.jpg";
 
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const AuctionsTab = ({user}) => {
@@ -43,8 +44,10 @@ return (
                             {user.type}
                         </small>
                         <div className="proTextAc">
+                            <Link to={`/starprofile/${user.star.id}`}>
                             {user.star.first_name}
                             {user.star.last_name}
+                            </Link>
                         </div>
                     </span>
                     <span className='BestPrice  '> Best Price</span>

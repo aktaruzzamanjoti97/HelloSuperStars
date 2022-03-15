@@ -28,7 +28,7 @@ function SouvinerModal(props) {
             Not Now 
         </button>
 
-        <Link to='/souvenir'><button className="btn btn-warning  px-5 py-2 mx-3">
+        <Link to={`/souvenir/${props.data}`}><button className="btn btn-warning  px-5 py-2 mx-3">
             Bid Now
         </button></Link>
 
