@@ -16,6 +16,7 @@ import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  
   const [modalShowSh, setModalShowSh] = React.useState(false);
   const [modalShow1, setModalShow1] = React.useState(false);
   const [title, setTitle] = React.useState("Shah Rukh Khan / Salman Khan");
@@ -27,7 +28,7 @@ return (
   <div className="mt-3">
     <img src={StarCover} alt="" className="img-fluid StartCover mb-2" />
     <b className="text-light fw-bold TitleFan">
-      Salman VS Sharukh Fan group
+      Salman VS Shah Rukh Fan group
     </b>
     <p className="subTitleFan">
       Created at 12 Feb 2022 | Continue till 12 April 2022
@@ -61,14 +62,14 @@ return (
               {/* Desktop View */}
               <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
               <Dropdown.Item className='w-100' >
-                <p onClick={() => {  setTitle("Shrukh Khan"); modalShowSh(true); setbtnCng("1") }} >
+                <p onClick={() =>{setTitle("Shah Rukh Khan");setModalShowSh(true);setbtnCng("1")}}  >
                   Shah Rukh Khan
                 </p>
                 <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} />
               </Dropdown.Item>
               
               <Dropdown.Item >
-                <p onClick={() => {setTitle("Salman khan");setModalShow1(true); setbtnCng("2") }} >
+                <p onClick={() => {setTitle("Salman Khan");setModalShow1(true); setbtnCng("2") }} >
                   Salman khan
                 </p>
                 <ConfirmModalMessage show={modalShow} onHide={() => setModalShow(false)} />
