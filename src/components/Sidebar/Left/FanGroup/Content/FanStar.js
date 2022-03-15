@@ -1,24 +1,26 @@
 import React from 'react'
+import { Dropdown, DropdownButton,Nav, Tab } from "react-bootstrap";
 import StarCover from "../../../../../images/xuc3pamd.png";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import "./FanStar.css";
-import { Nav, Tab } from "react-bootstrap";
+
 import FanPost from "./FanPost";
 import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
 
 import CreatePostModal from './CreatePostModal';
+import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
+import ConfirmModalSa from './MessageGroup/ConfirmModalSa';
+
 import Default from './MessageGroup/Default';
 import Shrukh from './MessageGroup/Shrukh';
 import Salman from './MessageGroup/Salman';
-import ConfirmModalMessage from './MessageGroup/ConfirmModalSh';
-import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
+
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
   
   const [modalShowSh, setModalShowSh] = React.useState(false);
-  const [modalShow1, setModalShow1] = React.useState(false);
+  const [modalShowSa, setModalShowSa] = React.useState(false);
   const [title, setTitle] = React.useState("Shah Rukh Khan / Salman Khan");
   const [btnCng, setbtnCng] = React.useState("0");
 
@@ -69,10 +71,10 @@ return (
               </Dropdown.Item>
               
               <Dropdown.Item >
-                <p onClick={() => {setTitle("Salman Khan");setModalShow1(true); setbtnCng("2") }} >
+                <p onClick={() => {setTitle("Salman Khan");setModalShowSa(true); setbtnCng("2") }} >
                   Salman khan
                 </p>
-                <ConfirmModalMessage show={modalShow} onHide={() => setModalShow(false)} />
+                <ConfirmModalSa show={modalShowSa} onHide={() => setModalShowSa(false)} />
               </Dropdown.Item>
             </DropdownButton>
 

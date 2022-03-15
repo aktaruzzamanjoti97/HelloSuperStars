@@ -1,10 +1,17 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import {useHistory} from 'react-router-dom'
 import Group from '../../../../../../images/Group 485.png'
 import helloSuperStar from '../../../../../../images/helloSuperStar.png'
 
+
 const ConfirmModalSa = (props) => {
-    const [btnCng, setbtnCng] = React.useState("0");
+
+    let history = useHistory()
+    const handleClick =() => {
+        history.push('/fan-group')
+    }
+
 return (
 <>
     <div className="AzcV">
@@ -23,8 +30,8 @@ return (
 
 
                 <div className="d-flex mt-2 justify-content-center">
-                    <button className="btn mx-2 w-25 PostTextMs border-warning">Go Back</button>
-                    <button className="btn mx-2 w-25 PostTextMs1 fw-bold" onClick={() => setbtnCng("1")}>Join Now</button>
+                    <button onClick={handleClick} className="btn mx-2 w-25 PostTextMs border-warning">Go Back</button>
+                    <button className="btn mx-2 w-25 PostTextMs1 fw-bold" onClick={props.onHide} >Join Now</button>
                 </div>
                 
             </div>

@@ -17,7 +17,7 @@ return (
 
       <CR7Souvenir />
 
-      <div className="col-md-4">
+      <div className="col-md-4"> 
         <RightSideSouvenir />
       </div>
 
