@@ -18,7 +18,7 @@ const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowSh, setModalShowSh] = React.useState(false);
   const [modalShow1, setModalShow1] = React.useState(false);
-  const [title, setTitle] = React.useState("Shrukh Khan/ Salman Khan");
+  const [title, setTitle] = React.useState("Shah Rukh Khan / Salman Khan");
   const [btnCng, setbtnCng] = React.useState("0");
 
 return (
@@ -62,7 +62,7 @@ return (
               <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
               <Dropdown.Item className='w-100' >
                 <p onClick={() => {  setTitle("Shrukh Khan"); modalShowSh(true); setbtnCng("1") }} >
-                  Shrukh khan
+                  Shah Rukh Khan
                 </p>
                 <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} />
               </Dropdown.Item>

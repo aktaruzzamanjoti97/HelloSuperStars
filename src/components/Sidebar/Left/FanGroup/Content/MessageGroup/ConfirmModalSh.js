@@ -4,7 +4,7 @@ import Group from '../../../../../../images/Group 485.png'
 import helloSuperStar from '../../../../../../images/helloSuperStar.png'
 
 const ConfirmModalSh = (props) => {
-    const [btnCng, setbtnCng] = React.useState("0");
+    
 return (
 <>
     <div className="AzcV">
@@ -24,7 +24,7 @@ return (
 
                 <div className="d-flex mt-2 justify-content-center">
                     <button className="btn mx-2 w-25 PostTextMs border-warning">Go Back</button>
-                    <button className="btn mx-2 w-25 PostTextMs1 fw-bold" onClick={() => setbtnCng("1")}>Join Now</button>
+                    <button className="btn mx-2 w-25 PostTextMs1 fw-bold" >Join Now</button>
                 </div>
                 
             </div>
