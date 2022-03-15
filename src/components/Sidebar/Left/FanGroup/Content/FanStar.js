@@ -1,24 +1,29 @@
-import React, { Component, useState } from 'react'
+import React from 'react'
 import StarCover from "../../../../../images/xuc3pamd.png";
-import Select from "react-select";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import "./FanStar.css";
-import { Form, Nav, Row, Tab } from "react-bootstrap";
+import { Nav, Tab } from "react-bootstrap";
 import FanPost from "./FanPost";
 import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
-// import PicMa form '../../../../../images/05.jpg';
 
-import PicMa from "../../../../../images/05.jpg";
 import CreatePostModal from './CreatePostModal';
+import Default from './MessageGroup/Default';
+import Shrukh from './MessageGroup/Shrukh';
+import Salman from './MessageGroup/Salman';
+import ConfirmModalMessage from './MessageGroup/ConfirmModalSh';
+import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
-const options = [
-{ value: "Salman Khan Team", label: "Salman Khan Team" },
-{ value: "Shakib All Hasan Team ", label: "Shakib All Hasan Team " },
-];
+  const [modalShowSh, setModalShowSh] = React.useState(false);
+  const [modalShow1, setModalShow1] = React.useState(false);
+  const [title, setTitle] = React.useState("Shrukh Khan/ Salman Khan");
+  const [btnCng, setbtnCng] = React.useState("0");
+
 return (
 <>
+
   <div className="mt-3">
     <img src={StarCover} alt="" className="img-fluid StartCover mb-2" />
     <b className="text-light fw-bold TitleFan">
@@ -31,7 +36,8 @@ return (
 
   <div className="FanNave">
     <div className="row">
-      <div className="col-sm-8 mb-3 ">
+      <div className="col-sm-8 mb-3 PositionTabX">
+
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Nav variant="pills" className="d-flex MobileFabNave justify-content-between">
             <Nav.Item>
@@ -51,10 +57,40 @@ return (
             </Nav.Item>
 
             <Nav.Item>
-              <Select options={options} className="SelectFan desktopFan" />
+
+              {/* Desktop View */}
+              <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
+              <Dropdown.Item className='w-100' >
+                <p onClick={() => {  setTitle("Shrukh Khan"); modalShowSh(true); setbtnCng("1") }} >
+                  Shrukh khan
+                </p>
+                <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} />
+              </Dropdown.Item>
+              
+              <Dropdown.Item >
+                <p onClick={() => {setTitle("Salman khan");setModalShow1(true); setbtnCng("2") }} >
+                  Salman khan
+                </p>
+                <ConfirmModalMessage show={modalShow} onHide={() => setModalShow(false)} />
+              </Dropdown.Item>
+            </DropdownButton>
+
             </Nav.Item>
 
-            <Select options={options} className="SelectFan mobileFan" />
+
+            {/* Mobile View */}
+            <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan mobileFan fw-bold" >
+              <Dropdown.Item href="#/action-2">
+                <p onClick={() => {setTitle("Shrukh Khan"); }} >
+                  Shrukh khan
+                </p>
+              </Dropdown.Item>
+              <Dropdown.Item >
+                <p onClick={() => {setTitle("Salman khan");  }} >
+                  Salman khan
+                </p>
+              </Dropdown.Item>
+            </DropdownButton>
 
           </Nav>
 
@@ -64,10 +100,7 @@ return (
               Create a post
             </button>
             <button className="btn CreateInputFan" onClick={() => setModalShow(true)}>Click here to create a post</button>
-            <CreatePostModal
-        show={modalShow}
-        onHide={() => setModalShow(false) } className="ModalXC"
-      />
+            <CreatePostModal show={modalShow} onHide={() => setModalShow(false) } className="ModalXC" />
           </div>
 
           <Tab.Content>
@@ -86,96 +119,21 @@ return (
         </Tab.Container>
       </div>
 
+            
       {/* Chat Box */}
 
-      <div className="col-sm-4 MessengerHead mb-2 ">
+      {btnCng === "0" ?
+        <div className="col-sm-4 MessengerHead mb-2 "><Default/> </div>
+      : null}
 
-        <div className=" MessengerBody py-3 ps-2 text-light">
-          <h6 className="fw-bold mx-2">Group inbox</h6>
+      {btnCng === "1" ? 
+        <div className="col-sm-4 MessengerHead mb-2 "><Shrukh/> </div>
+      : null}
 
-          <div className="top-right-messenger">
-
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span><img src={PicMa} alt="" className="PicMessenger" /></span>
-            <span className="messengerUser"> & 20 more</span>
-          </div>
-        </div>
-
-        <div className="container MessengerText py-2 ps-2 text-light ">
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-          </div>
-
-          <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
-            <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
-            <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-          </div>
-
-        </div>
-
-        <div className="d-flex MessengerFooter  py-2 ps-2 text-light">
-
-          <div className="IconMessage col-md-3 me-3 d-flex">
-            <i className="text-light IconMessageT m-2 fa-solid fa-circle-plus"></i>
-            <i className="text-light IconMessageT m-2 fa-solid fa-image"></i>
-            <i className="text-light IconMessageT m-2 fa-solid fa-face-smile-beam"></i>
-          </div>
-
-          <div className="IconMessage col-md-7 d-flex">
-            <input type="text" className="MessageWidth ps-3" placeholder="type text..."/>
-          </div>
-
-          <div className="IconMessage col-md-1 d-flex ms-2">
-            <i class="m-2 me-3 text-light IconMessageT SendT text-left fa-brands fa-telegram"></i>
-          </div>
-
-        </div>
-
-      </div>
+      {btnCng === "2" ?
+       <div className="col-sm-4 MessengerHead mb-2 "><Salman/> </div>
+      : null}
+      
     </div>
   </div>
 </>
