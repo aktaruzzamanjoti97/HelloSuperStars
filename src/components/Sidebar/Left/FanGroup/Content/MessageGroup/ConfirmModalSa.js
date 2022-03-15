@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import Group from '../../../../../../images/Group 485.png'
 import helloSuperStar from '../../../../../../images/helloSuperStar.png'
 
-const ConfirmModalMessage = (props) => {
+const ConfirmModalSa = (props) => {
     const [btnCng, setbtnCng] = React.useState("0");
 return (
 <>
@@ -34,4 +34,4 @@ return (
 </>
 )
 };
-export default ConfirmModalMessage
+export default ConfirmModalSa

@@ -11,10 +11,12 @@ import CreatePostModal from './CreatePostModal';
 import Default from './MessageGroup/Default';
 import Shrukh from './MessageGroup/Shrukh';
 import Salman from './MessageGroup/Salman';
-import ConfirmModalMessage from './MessageGroup/ConfirmModalMessage';
+import ConfirmModalMessage from './MessageGroup/ConfirmModalSh';
+import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalShowSh, setModalShowSh] = React.useState(false);
   const [modalShow1, setModalShow1] = React.useState(false);
   const [title, setTitle] = React.useState("Shrukh Khan/ Salman Khan");
   const [btnCng, setbtnCng] = React.useState("0");
@@ -59,13 +61,14 @@ return (
               {/* Desktop View */}
               <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
               <Dropdown.Item className='w-100' >
-                <p onClick={() => {  setTitle("Shrukh Khan"); setModalShow1(true) }} >
+                <p onClick={() => {  setTitle("Shrukh Khan"); modalShowSh(true); setbtnCng("1") }} >
                   Shrukh khan
                 </p>
-                <ConfirmModalMessage show={modalShow1} onHide={() => setModalShow1(false)} />
+                <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} />
               </Dropdown.Item>
+              
               <Dropdown.Item >
-                <p onClick={() => {setTitle("Salman khan");  }} >
+                <p onClick={() => {setTitle("Salman khan");setModalShow1(true); setbtnCng("2") }} >
                   Salman khan
                 </p>
                 <ConfirmModalMessage show={modalShow} onHide={() => setModalShow(false)} />
