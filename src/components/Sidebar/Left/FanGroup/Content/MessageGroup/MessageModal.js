@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
-import Group from '../../../../../images/Group 485.png'
-const CreatePostModal = (props) => {
+import Group from '../../../../../../images/Group 485.png'
+const MessageModal = (props) => {
     
 return (
 <>
     <div className="">
-        <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
+        <Modal {...props} size="ms" aria-labelledby="contained-modal-title-vcenter" centered >
             <h4 closeButton className="fw-bold text-light p-2 ModalPostC">Create a post</h4>
             <img src={Group} alt="" className="ModalIcon" onClick={props.onHide}/>
             <Modal.Body>
@@ -27,5 +27,4 @@ return (
 </>
 )
 };
-
-export default CreatePostModal;
+export default MessageModal

@@ -31,7 +31,6 @@ return (
     {AuctionProduct.map((product)=>(
       <>
       <img src={`http://localhost:8000/${product.banner}`} className="img-fluid w-100 CR7Cover coverHeight " alt="" />
-
        <div className="row justify-content-between">
       <CR7Souvenir key={product.id} data={product} />
       <div className="col-md-4">

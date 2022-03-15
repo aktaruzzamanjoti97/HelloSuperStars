@@ -35,15 +35,22 @@
 
 .SelectFan{
     width: 20vw;
+    background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #D6B900;
+    border-radius: 2px;
+    opacity: 1;
 }
 
+
+/* 
 .MobileFabNave{
     position: sticky;
     top: 81px;
     overflow: hidden;
     z-index: 1;
     background-color: black;
-}
+} */
 
 .MediaCard{
     width: 13.3vw;
@@ -506,3 +513,152 @@ opacity: 1;
 /* .ModalBGM{
     background-color: #000000c7;
 } */
+
+.ModalIcon{
+    width: 137px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    border-radius: 0px 5px 0px 0px;
+    object-fit: cover;
+}
+
+
+
+
+/* MessageGroup */
+.MessageImgBody{
+    position: relative;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+.MessageImg{
+    object-fit: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    margin: 0px;
+    margin-left: -8px !important;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+.ImgCenterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@media only screen and (max-width: 1400px) {
+    .MessageImg{
+        width: 44vh;
+    }
+    .ImgCenterText {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+      }
+}
+
+
+@media only screen and (min-width: 1401px) {
+    .MessageImg{
+        width: 44.69vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .MessageImg{
+        width: 322px;
+    }
+}
+
+
+.MXZNav{
+    display: block;
+    position: absolute;
+  top: 8px;
+  right: 16px;
+    background: #fffefe;
+    border: none !important;
+    border-radius: 10px;
+    overflow: visible ;
+    display: block;
+}
+
+
+.DropModalW{
+    position: relative;
+}
+
+.SelectFan .btn-primary {
+    background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: none !important;
+    border-radius: 2px;
+    color: black;
+    opacity: 1;
+    width: 100% ;
+    text-align: justify;
+}
+
+.SelectFan .dropdown-toggle::after {
+    position: absolute;
+  top: 15px;
+  right: 16px;
+}
+
+.SelectFan .dropdown-menu.show {
+    display: block;
+    background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    padding-top: 5px;
+    border: 1px solid ;
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* .PositionTabX{
+    position: relative;
+}
+.DesktopViewX{
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    display: block !important;
+} */
+
+.PostTextMs{
+    border: 1px solid #FFF700;
+    border-radius: 5px;
+    color: #FFF700;
+    opacity: 1;
+}
+.PostTextMs1{
+    background: transparent linear-gradient(129deg, #EBE078 0%, #FFE418 20%, #FFE53C 53%, #D2A435 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    opacity: 1;
+}
+.XCsText{
+    font-size: small;
+}
+
+.ConMBOdy{
+    background: #161617 0% 0% no-repeat padding-box;
+    border: 2px solid #FFF700;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.AzcV .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
