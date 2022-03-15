@@ -23,7 +23,7 @@ return (
 
                 <h5 className='text-light mb-3'>Purchase status</h5>
                 <div className="col-md-5 d-flex">
-                    <img src={Pur} alt="" className='img-fluid PurImg mb-3' />
+                    <img src={`http://localhost:8000/${product.marketplace?.image}`} alt="" className='img-fluid PurImg mb-3' />
                 </div>
 
                 <div className="col-md-7 d-flex">
@@ -59,7 +59,14 @@ return (
 
                         <div className="owner d-flex text-light">
                             <div className="SpLeft d-flex col-md-3 fw-bold">Delivery</div>
+                            {(product.status === '0') ?
                             <div className="SpRight d-flex col-md-9 text-warning ">Pending</div>
+                            :
+                            product.status === '1' ?
+                            <div className="SpRight d-flex col-md-9 text-warning ">Delivered</div>
+                            :
+                            <div className="SpRight d-flex col-md-9 text-warning ">Received</div>
+                            }
                         </div>
                     </div>
 
