@@ -5,10 +5,20 @@ import Pro from "../../../../images/Shakib/14.jpg";
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SouvinerModal from '../../Profile/profile-components/starProfile/StarChat/SouvinerModal';
+import Icon from '../../../../images/Souvenir/Icons/auction.png'
 
 
 const AuctionsTab = ({user}) => {
 const baseUrl = "http://localhost:8000/";
+
+const [modalShow, setModalShow] = React.useState(false);
+const [modalData,setModalData] = useState('');
+
+const openModal = (data) => {
+    setModalShow(true)
+    setModalData(data)
+  }
 
 return (
 <>
@@ -50,11 +60,15 @@ return (
                             </Link>
                         </div>
                     </span>
-                    <span className='BestPrice  '> Best Price</span>
+                    <span className='BestPrice'> Best Price</span>
 
                 </div>
-                <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Participate</button>
+                {/* <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Participate</button> */}
+                <button className="btn bg-warning fw-bold w-75 JerseyAucBuy" onClick={()=> openModal(user.id)}>
+                <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
+              </button>
             </div>
+            <SouvinerModal show={modalShow} onHide={()=> setModalShow(false)} data={modalData} />
         </div>
     </div>
 </>
