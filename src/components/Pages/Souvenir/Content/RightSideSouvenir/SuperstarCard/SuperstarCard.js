@@ -1,7 +1,8 @@
+import moment from 'moment';
 import React from 'react';
 import './SuperstarCard.css';
 
-const SuperstarCard = () => {
+const SuperstarCard = ({AuctionData}) => {
     return (
         <div className="superStarCard bg-dark p-4 my-4">
             <h6 className="text-warning fw-bold ms-4">Superstar</h6>
@@ -14,10 +15,10 @@ const SuperstarCard = () => {
                         <li  className="my-1">End</li>
                     </div>
                     <div className="col-md-9">
-                        <li  className="my-1">CHRISTIANO RONALDO</li>
+                        <li  className="my-1">{AuctionData.star.first_name} {AuctionData.star.last_name}</li>
                         <li  className="my-1">Sports</li>
-                        <li  className="my-1">20-02-2022</li>
-                        <li  className="my-1">30-02-2022</li>
+                        <li  className="my-1">{moment(AuctionData.bid_from).format('YYYY-MM-DD')}</li>
+                        <li  className="my-1">{moment(AuctionData.bid_to).format('YYYY-MM-DD')}</li>
                     </div>
                 </div>
 

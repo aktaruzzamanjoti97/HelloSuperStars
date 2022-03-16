@@ -53,9 +53,7 @@ return (
                     <span className='BestPrice  '> Best Price</span>
 
                 </div>
-
                 <button className='btn bg-warning fw-bold w-75 JerseyAucBuy'> Participate</button>
-
             </div>
         </div>
     </div>

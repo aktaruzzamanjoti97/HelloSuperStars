@@ -4,14 +4,14 @@ import BiddingHistory from './BiddingHistory/BiddingHistory';
 import RemainingTimeSouvenir from './RemainingTimeSouvenir/RemainingTimeSouvenir';
 import SuperstarCard from './SuperstarCard/SuperstarCard';
 
-const RightSideSouvenir = () => {
+const RightSideSouvenir = ({data}) => {
 
     return (
         <div>
-            <RemainingTimeSouvenir />
-            <ChartCompo />
-            <SuperstarCard />
-            <BiddingHistory />
+            <RemainingTimeSouvenir AuctionData={data}/>
+            <ChartCompo AuctionData={data}/>
+            <SuperstarCard AuctionData={data}/>
+            <BiddingHistory AuctionData={data}/>
         </div>
     );
 };

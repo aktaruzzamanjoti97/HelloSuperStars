@@ -172,7 +172,7 @@ function App() {
 
 
         {/* Souvenir */}
-        <Route exact path='/souvenir' component={Souvenir} />
+        <Route exact path='/souvenir/:product_id' component={Souvenir} />
         <Route exact path='/souvenir-winner' component={WinnerCR7} />
         <Route exact path='/souvenir-apply' component={SouvenirSignature} />
         <Route exact path='/souvenir-applied' component={AcquiringProduct} />
