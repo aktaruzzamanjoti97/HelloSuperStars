@@ -16,15 +16,17 @@ const CR7Souvenir = ({data}) => {
 
 const [modalShow, setModalShow] = React.useState(false);
 
-const [liveBidding,setLiveBidding] = useState([]);
+const [liveBidding,setLiveBidding] = useState();
+
 
 useEffect(()=>{
   axios.get(`/api/user/liveBidding/auction/${data.id}`).then((res)=>{
     if(res.data.status === 200 ){
+      console.log("data from live bidding",res.data.bidding)
       setLiveBidding(res.data.bidding);
     }
   })
-},[liveBidding])
+},[])
 
 const [auctionInput, setAuctionInput] = useState({
   auction_id: data.id,
@@ -89,7 +91,7 @@ return (
             <img src={UserPro} alt={UserPro} className="Cr7Pro " />
             <div className="Cr7View"></div>
             <h1 className="btn Cr7s py-1 text-warning fw-bold">{bid.amount}</h1>
-            <h5 className="btn Cr7ss py-1 text-light ">{bid.user.first_name}</h5>
+            <h5 className="btn Cr7ss py-1 text-light ">{bid.user[0].first_name} {bid.user[0].last_name}</h5>
           </div>
         </div>
   </>
