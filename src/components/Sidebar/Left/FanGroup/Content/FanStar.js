@@ -12,7 +12,7 @@ import ConfirmModalSh from './MessageGroup/ConfirmModalSh';
 import ConfirmModalSa from './MessageGroup/ConfirmModalSa';
 
 import Default from './MessageGroup/Default';
-import Shrukh from './MessageGroup/Shrukh';
+// import Shrukh from './MessageGroup/Shrukh';
 import Salman from './MessageGroup/Salman';
 
 
@@ -62,7 +62,7 @@ return (
             <Nav.Item>
 
               {/* Desktop View */}
-              <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan desktopFan" >
+              <DropdownButton  id="dropdown-basic-button"  title={title} className={title=='Shah Rukh Khan'?`ShahrukhFan desktopFan`:title=='Salman Khan'?`SalmanFan desktopFan`:'SelectFanDefault'} >
               <Dropdown.Item className='w-100' >
                 <p onClick={() =>{setTitle("Shah Rukh Khan");setModalShowSh(true);setbtnCng("1")}}  >
                   Shah Rukh Khan
@@ -71,7 +71,7 @@ return (
               </Dropdown.Item>
               
               <Dropdown.Item >
-                <p onClick={() => {setTitle("Salman Khan");setModalShowSa(true); setbtnCng("2") }} >
+                <p onClick={() => {setTitle("Salman Khan");setModalShowSh(true);setbtnCng("1") }} >
                   Salman khan
                 </p>
                 <ConfirmModalSa show={modalShowSa} onHide={() => setModalShowSa(false)} />
@@ -83,8 +83,8 @@ return (
 
             {/* Mobile View */}
             <DropdownButton id="dropdown-basic-button" title={title} className="SelectFan mobileFan fw-bold" >
-              <Dropdown.Item href="#/action-2">
-                <p onClick={() => {setTitle("Shrukh Khan"); }} >
+              <Dropdown.Item href="#/action-2" style={{ backgroundColor:'green' }}>
+                <p  onClick={() => {setTitle("Shrukh Khan"); }} >
                   Shrukh khan
                 </p>
               </Dropdown.Item>
@@ -128,12 +128,7 @@ return (
       {btnCng === "0" ?
         <div className="col-sm-4 MessengerHead mb-2 "><Default/> </div>
       : null}
-
-      {btnCng === "1" ? 
-        <div className="col-sm-4 MessengerHead mb-2 "><Shrukh/> </div>
-      : null}
-
-      {btnCng === "2" ?
+      {btnCng === "1" ?
        <div className="col-sm-4 MessengerHead mb-2 "><Salman/> </div>
       : null}
       

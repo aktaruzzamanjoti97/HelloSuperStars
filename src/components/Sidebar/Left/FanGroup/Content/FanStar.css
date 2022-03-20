@@ -33,7 +33,7 @@
 }
 
 
-.SelectFan{
+.SelectFanDefault{
     width: 20vw;
     background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -580,8 +580,8 @@ opacity: 1;
 .MXZNav{
     display: block;
     position: absolute;
-  top: 8px;
-  right: 16px;
+    top: 8px;
+    right: 16px;
     background: #fffefe;
     border: none !important;
     border-radius: 10px;
@@ -594,7 +594,9 @@ opacity: 1;
     position: relative;
 }
 
-.SelectFan .btn-primary {
+
+
+.SelectFanDefault .btn-primary {
     background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border: none !important;
@@ -605,13 +607,13 @@ opacity: 1;
     text-align: justify;
 }
 
-.SelectFan .dropdown-toggle::after {
+.SelectFanDefault .dropdown-toggle::after {
     position: absolute;
-  top: 15px;
-  right: 16px;
+    top: 15px;
+    right: 16px;
 }
 
-.SelectFan .dropdown-menu.show {
+.SelectFanDefault .dropdown-menu.show {
     display: block;
     background: transparent linear-gradient(107deg, #FAEC85 0%, #F9C02B 100%) 0% 0% no-repeat padding-box;
     width: 100%;
@@ -619,6 +621,66 @@ opacity: 1;
     border: 1px solid ;
     border-radius: 0px 0px 5px 5px;
 }
+
+
+.ShahrukhFan .btn-primary {
+   background: transparent linear-gradient(101deg, #F103F5 0%, #6F1FFD 100%) 0% 0% no-repeat padding-box;
+   box-shadow: 0px 3px 6px #00000029;
+   border: none !important;
+   padding-right: 12vw;
+   color: black;
+   opacity: 1;
+   width: 100% ;
+   text-align: justify;
+}
+
+.ShahrukhFan .dropdown-toggle::after {
+   position: absolute;
+   top: 15px;
+   right: 16px;
+}
+
+.ShahrukhFan .dropdown-menu.show {
+   display: block;
+   background: transparent linear-gradient(101deg, #F103F5 0%, #6F1FFD 100%) 0% 0% no-repeat padding-box;
+   width: 100%;
+   padding-top: 5px;
+   border: 1px solid ;
+   border-radius: 0px 0px 5px 5px;
+}
+
+
+.SalmanFan .btn-primary {
+    background: transparent linear-gradient(103deg, #00DE7B 0%, #00AD8E 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    padding-right: 12vw;
+    border: none !important;
+    border-radius: 2px;
+    color: black;
+    opacity: 1;
+    width: 100% ;
+    text-align: justify;
+}
+
+.SalmanFan .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+}
+
+.SalmanFan .dropdown-menu.show {
+    display: block;
+     background: transparent linear-gradient(103deg, #00DE7B 0%, #00AD8E 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    padding-top: 5px;
+    border: 1px solid ;
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+
+
+
 
 /* .PositionTabX{
     position: relative;
