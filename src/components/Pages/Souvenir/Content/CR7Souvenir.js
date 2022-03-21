@@ -88,7 +88,7 @@ return (
   <div className="containerSa col-md-4 mb-3">
           <div className="carousel w-100 ">
             <img src={BGImg} className="Cr7img" alt={BGImg} />
-            <img src={UserPro} alt={UserPro} className="Cr7Pro " />
+            <img src={`http://localhost:8000/${bid.user[0].image}`} alt={UserPro} className="Cr7Pro " />
             <div className="Cr7View"></div>
             <h1 className="btn Cr7s py-1 text-warning fw-bold">{bid.amount}</h1>
             <h5 className="btn Cr7ss py-1 text-light ">{bid.user[0].first_name} {bid.user[0].last_name}</h5>
