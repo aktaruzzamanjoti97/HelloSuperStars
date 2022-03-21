@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Nav, Row, Tab } from 'react-bootstrap'
 import Educational from './Educational'
+import Employment from './Employment'
 import Personal from './Personal'
 
 const SettingsHome = () => {
@@ -22,7 +23,7 @@ return (
                                     <Nav.Link eventKey="second">Educational</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
-                                    <Nav.Link eventKey="second">Employment</Nav.Link>
+                                    <Nav.Link eventKey="third">Employment</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
                                     <Nav.Link eventKey="second">Interest</Nav.Link>
@@ -43,6 +44,8 @@ return (
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
                                    <Educational/>
+                                </Tab.Pane><Tab.Pane eventKey="third">
+                                   <Employment/>
                                 </Tab.Pane>
                             </Tab.Content>
                             </Col>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import {Form} from 'react-bootstrap'
 
-const Educational = () => {
+const Employment = () => {
 
-const [inputList, setInputList] = useState([{ degree: "", institute: "", subject: "" }]);
+const [inputList, setInputList] = useState([{ position: "", company: "", salary: "" }]);
 
 const handleInputChange = (e, index) => {
 const { name, value } = e.target;
@@ -13,7 +13,7 @@ setInputList(list);
 };
 
 const handleAddClick = () => {
-setInputList([...inputList, { degree: "", institute: "", subject: "" }]);
+setInputList([...inputList, { position: "", company: "", salary: "" }]);
 };
 
 const handleRemoveClick = index => {
@@ -21,6 +21,7 @@ const list = [...inputList];
 list.splice(index, 1);
 setInputList(list);
 };
+
 return (
 <>
     <form action="">
@@ -31,27 +32,27 @@ return (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <div className="d-flex mb-4">
-                    <div className="NameSe text-light col-md-2 btn">Degree</div>
+                    <div className="NameSe text-light col-md-2 btn">Position</div>
                     <div className="col-md-8">
-                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="degree"
-                            value={x.degree} />
+                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="position"
+                            value={x.position} />
                     </div>
                 </div>
 
                 <div className="d-flex mb-4">
-                    <div className="NameSe text-light col-md-2 btn">Institute</div>
+                    <div className="NameSe text-light col-md-2 btn">Company</div>
                     <div className="col-md-8">
                         <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)}
-                            name="institute"
-                            value={x.institute} />
+                            name="company"
+                            value={x.company} />
                     </div>
                 </div>
 
-                <div className="d-flex mb-4">
-                    <div className="NameSe text-light col-md-2 btn">Subject</div>
+                <div className="d-flex mb-2">
+                    <div className="NameSe text-light col-md-2 btn">Salary Range</div>
                     <div className="col-md-8">
-                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="subject"
-                            value={x.subject} />
+                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="salary"
+                            value={x.salary} />
                     </div>
                 </div>
 
@@ -94,4 +95,4 @@ return (
 )
 }
 
-export default Educational
+export default Employment
