@@ -8,3 +8,26 @@
 .NameSe{
     text-align: left !important;
 }
+
+
+.ButtonSe{
+    justify-content: center;
+    margin-right:8vw;
+}
+
+.ButtonSE{
+    border: 1px solid goldenrod;
+    color: aliceblue;
+    float:  ri;
+
+}
+
+.ButtonSE:hover{
+    border: 1px solid goldenrod;
+    color: black;
+    background-color: goldenrod;
+}
+
+.NavBtn{
+    font-size: larger !important;
+}

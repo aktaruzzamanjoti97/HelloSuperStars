@@ -9,46 +9,52 @@ return (
             <div className="d-flex mb-4">
                 <div className="NameSe text-light col-md-2 btn">Name</div>
                 <div className="col-md-8">
-                    <Form.Control type="text" placeholder="Enter email" className='w-100' />
+                    <Form.Control type="text" className='w-75' />
                 </div>
             </div>
 
             <div className="d-flex mb-4">
                 <div className="NameSe text-light col-md-2 btn">Phone</div>
                 <div className="col-md-8">
-                    <Form.Control type="text" placeholder="Enter email" className='w-100' />
-                </div>
-            </div>
-
-
-            <div className="d-flex mb-4">
-                <div className="NameSe text-light col-md-2 btn">Name</div>
-                <div className="col-md-8">
-                    <Form.Control type="text" placeholder="Enter email" className='w-100' />
+                    <Form.Control type="text" className='w-75' />
                 </div>
             </div>
 
             <div className="d-flex mb-4">
-                <div className="NameSe text-light col-md-2 btn">Name</div>
+                <div className="NameSe text-light col-md-2 btn">Email</div>
                 <div className="col-md-8">
-                    <Form.Control type="text" placeholder="Enter email" className='w-100' />
+                    <Form.Control type="text" className='w-75' />
                 </div>
             </div>
 
             <div className="d-flex mb-4">
-                <div className="NameSe text-light col-md-2 btn">Name</div>
+                <div className="NameSe text-light col-md-2 btn">Birthday</div>
                 <div className="col-md-8">
-                    <Form.Control type="text" placeholder="Enter email" className='w-100' />
+                    <Form.Control type="date" className='w-75' />
                 </div>
             </div>
 
+            <div className="d-flex mb-4">
+                <div className="NameSe text-light col-md-2 btn">Country</div>
+                <div className="col-md-8">
+                    <Form.Control type="text" className='w-75' />
+                </div>
+            </div>
 
-
-            <Button variant="primary" type="submit" className='mx-2'>
-                Submit
-            </Button>
+            <div className="d-flex mb-4">
+                <div className="NameSe text-light col-md-2 btn">Password</div>
+                <div className="col-md-8">
+                    <Form.Control type="password" className='w-75' />
+                </div>
+            </div>
 
         </Form.Group>
+
+        <div className="d-flex mb-4 ButtonSe">
+            <button type="submit" className='btn ButtonSE fw-bold w-25'>
+                Save
+            </button>
+        </div>
 
     </Form>
 </>
