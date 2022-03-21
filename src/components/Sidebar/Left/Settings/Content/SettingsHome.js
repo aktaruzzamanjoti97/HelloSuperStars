@@ -10,6 +10,7 @@ const SettingsHome = () => {
 return (
 <>
     <div className="container CustomSettings">
+        
         <div className="row">
             <div className="col-md-12 mt-3  ">
                 <h5 className='navSetting px-2 py-3 fw-bold text-warning'>Setting</h5>
