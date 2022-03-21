@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Nav, Row, Tab } from 'react-bootstrap'
 import Educational from './Educational'
 import Employment from './Employment'
+import Interest from './Interest'
 import Personal from './Personal'
 
 const SettingsHome = () => {
@@ -26,7 +27,7 @@ return (
                                     <Nav.Link eventKey="third">Employment</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
-                                    <Nav.Link eventKey="second">Interest</Nav.Link>
+                                    <Nav.Link eventKey="four">Interest</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
                                     <Nav.Link eventKey="second">Security</Nav.Link>
@@ -34,18 +35,22 @@ return (
                                 <Nav.Item className='mb-3 NavBtn'>
                                     <Nav.Link eventKey="second">Report</Nav.Link>
                                 </Nav.Item>
-                                
+
                             </Nav>
                             </Col>
                             <Col sm={9} className='bg-dark pt-5'>
                             <Tab.Content>
-                                <Tab.Pane eventKey="first" >
-                                   <Personal/>
+                                <Tab.Pane eventKey="first">
+                                    <Personal />
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
-                                   <Educational/>
-                                </Tab.Pane><Tab.Pane eventKey="third">
-                                   <Employment/>
+                                    <Educational />
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="third">
+                                    <Employment />
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="four">
+                                    <Interest />
                                 </Tab.Pane>
                             </Tab.Content>
                             </Col>
