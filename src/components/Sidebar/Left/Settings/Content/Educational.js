@@ -33,7 +33,7 @@ return (
                 <div className="d-flex mb-4">
                     <div className="NameSe text-light col-md-2 btn">Degree</div>
                     <div className="col-md-8">
-                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="degree"
+                        <Form.Control type="text" className='w-75 MobileSettingsNa' onChange={e=> handleInputChange(e, i)} name="degree"
                             value={x.degree} />
                     </div>
                 </div>
@@ -41,7 +41,7 @@ return (
                 <div className="d-flex mb-4">
                     <div className="NameSe text-light col-md-2 btn">Institute</div>
                     <div className="col-md-8">
-                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)}
+                        <Form.Control type="text" className='w-75 MobileSettingsNa' onChange={e=> handleInputChange(e, i)}
                             name="institute"
                             value={x.institute} />
                     </div>
@@ -50,7 +50,7 @@ return (
                 <div className="d-flex mb-4">
                     <div className="NameSe text-light col-md-2 btn">Subject</div>
                     <div className="col-md-8">
-                        <Form.Control type="text" className='w-75' onChange={e=> handleInputChange(e, i)} name="subject"
+                        <Form.Control type="text" className='w-75 MobileSettingsNa' onChange={e=> handleInputChange(e, i)} name="subject"
                             value={x.subject} />
                     </div>
                 </div>
@@ -80,7 +80,7 @@ return (
         <div className="d-flex mb-4">
             <div className="NameSe text-light col-md-2 btn">Password</div>
             <div className="col-md-8">
-                <Form.Control type="password" className='w-75' />
+                <Form.Control type="password" className='w-75 MobileSettingsNa' />
             </div>
         </div>
         <div className="d-flex mb-4 ButtonSe">

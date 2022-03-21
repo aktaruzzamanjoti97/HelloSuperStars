@@ -4,11 +4,12 @@ import Educational from './Educational'
 import Employment from './Employment'
 import Interest from './Interest'
 import Personal from './Personal'
+import Security from './Security'
 
 const SettingsHome = () => {
 return (
 <>
-    <div className="container">
+    <div className="container CustomSettings">
         <div className="row">
             <div className="col-md-12 mt-3  ">
                 <h5 className='navSetting px-2 py-3 fw-bold text-warning'>Setting</h5>
@@ -30,7 +31,7 @@ return (
                                     <Nav.Link eventKey="four">Interest</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
-                                    <Nav.Link eventKey="second">Security</Nav.Link>
+                                    <Nav.Link eventKey="five">Security</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
                                     <Nav.Link eventKey="second">Report</Nav.Link>
@@ -40,6 +41,7 @@ return (
                             </Col>
                             <Col sm={9} className='bg-dark pt-5'>
                             <Tab.Content>
+
                                 <Tab.Pane eventKey="first">
                                     <Personal />
                                 </Tab.Pane>
@@ -52,6 +54,10 @@ return (
                                 <Tab.Pane eventKey="four">
                                     <Interest />
                                 </Tab.Pane>
+                                <Tab.Pane eventKey="five">
+                                    <Security />
+                                </Tab.Pane>
+
                             </Tab.Content>
                             </Col>
                         </Row>

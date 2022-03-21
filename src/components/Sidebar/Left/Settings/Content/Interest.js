@@ -33,7 +33,7 @@ return (
             
             <div className="d-flex mb-4 mt-3 ButtonSe">
                 <Form.Control type="password" className='PassBtn bg-dark text-light' placeholder='enter password' />
-                <button type="submit" className='btn ButtonSE fw-bold w-25 mx-2 '> Save </button>
+                <button type="submit" className='btn ButtonSE ButtonSEA fw-bold w-25 mx-2 '> Save </button>
             </div>
 
         </Form>
