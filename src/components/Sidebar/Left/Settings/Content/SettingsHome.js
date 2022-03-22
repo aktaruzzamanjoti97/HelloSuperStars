@@ -4,6 +4,7 @@ import Educational from './Educational'
 import Employment from './Employment'
 import Interest from './Interest'
 import Personal from './Personal'
+import Report from './Report'
 import Security from './Security'
 
 const SettingsHome = () => {
@@ -35,7 +36,7 @@ return (
                                     <Nav.Link eventKey="five">Security</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className='mb-3 NavBtn'>
-                                    <Nav.Link eventKey="second">Report</Nav.Link>
+                                    <Nav.Link eventKey="six">Report</Nav.Link>
                                 </Nav.Item>
 
                             </Nav>
@@ -57,6 +58,9 @@ return (
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="five">
                                     <Security />
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="six">
+                                    <Report />
                                 </Tab.Pane>
 
                             </Tab.Content>

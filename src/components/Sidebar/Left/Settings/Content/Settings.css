@@ -66,5 +66,8 @@
         width: 120px !important;
         margin-left: 10px !important;
     }
+    .ReportSet{
+        margin-left: 0px !important;
+    }
 
   }
