@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LeftSidebar from '../../LeftSidebar';
-import Content from "./Content";
+
 import Navigation from '../../../Header/Navigation'
 import SettingsHome from "./Content/SettingsHome";
 import './Content/Settings.css'
@@ -19,9 +19,7 @@ export default class Body extends Component {
               </div>
               
               <div className="col-sm-9 justify-content-center postTab">
-                
                   <SettingsHome/>
-                  <Content/>
               </div>
               
             </div>

@@ -15,10 +15,10 @@ return (
         <div className="row">
             <div className="col-md-12 mt-3  ">
                 <h5 className='navSetting px-2 py-3 fw-bold text-warning'>Setting</h5>
-                <div className="col-md-12 px-3">
+                <div className="col-md-12 px-3 SettingsB">
                     <Tab.Container id="left-tabs-example" defaultActiveKey="first" className=''>
                         <Row>
-                            <Col sm={3} className='bg-success pt-3 '>
+                            <Col sm={3} className='bg-success pt-3 SettingsL '>
                             <Nav variant="pills" className="flex-column">
                                 <Nav.Item className='mb-3 NavBtn'>
                                     <Nav.Link eventKey="first">Personal</Nav.Link>
@@ -41,7 +41,7 @@ return (
 
                             </Nav>
                             </Col>
-                            <Col sm={9} className='bg-dark pt-5'>
+                            <Col sm={9} className='bg-dark pt-5 SettingsR'>
                             <Tab.Content>
 
                                 <Tab.Pane eventKey="first">

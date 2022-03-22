@@ -41,13 +41,9 @@ import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 
 // Left Sidebar 
 import FollowMain from "./components/Sidebar/Left/Following/FollowMain";
-import Educational from "./components/Sidebar/Left/Settings/SettingComponents/Educational";
-import Employment from "./components/Sidebar/Left/Settings/SettingComponents/Employment";
-import Interest from "./components/Sidebar/Left/Settings/SettingComponents/Interest";
-import Personal from "./components/Sidebar/Left/Settings/SettingComponents/Personal";
-import Report from "./components/Sidebar/Left/Settings/SettingComponents/Report";
-import Security from "./components/Sidebar/Left/Settings/SettingComponents/Security";
+
 import SettingsBody from "./components/Sidebar/Left/Settings/SettingsBody";
+
 import WalletBody from "./components/Sidebar/Left/Wallet/WalletBody";
 import AccountCreate from "./components/UserAuthentication/AccountCreate";
 import HelloSuperStarDemo from './components/UserAuthentication/HelloSuperStarDemo';
@@ -119,12 +115,7 @@ function App() {
         <PrivateRoute exact path='/activities/video/:id' component={VideoActivities} />
 
         <PrivateRoute exact path='/settings' component={SettingsBody} />
-        <PrivateRoute exact path="/setting/personal" component={Personal}/>
-        <PrivateRoute exact path="/setting/educational" component={Educational}/>
-        <PrivateRoute exact path="/setting/employment" component={Employment}/>
-        <PrivateRoute exact path="/setting/interest" component={Interest}/>
-        <PrivateRoute exact path="/setting/security" component={Security}/>
-        <PrivateRoute exact path="/setting/report" component={Report}/>
+        
         {/* Left Sidebar End*/}
 
 
