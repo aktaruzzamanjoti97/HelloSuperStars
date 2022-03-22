@@ -9,6 +9,7 @@ import CR7Modal from './CR7Modal'
 import { Markup } from 'interweave'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import ReactImageMagnify from 'react-image-magnify';
 
 const CR7Souvenir = ({data}) => {
 
@@ -17,16 +18,17 @@ const CR7Souvenir = ({data}) => {
 const [modalShow, setModalShow] = React.useState(false);
 
 const [liveBidding,setLiveBidding] = useState();
+const [liveUpdate,setUpdate] = useState("");
 
 
 useEffect(()=>{
   axios.get(`/api/user/liveBidding/auction/${data.id}`).then((res)=>{
     if(res.data.status === 200 ){
-      console.log("data from live bidding",res.data.bidding)
+      //console.log("data from live bidding",res.data.bidding)
       setLiveBidding(res.data.bidding);
     }
   })
-},[])
+},[liveUpdate])
 
 const [auctionInput, setAuctionInput] = useState({
   auction_id: data.id,
@@ -49,14 +51,14 @@ const auctionSubmit = (e) => {
     amount: auctionInput.amount,
     password: auctionInput.password,
   }
-  console.log(auctionInput.auction_id,)
+ 
 
 
   axios.get('/sanctum/csrf-cookie').then(response => {
       axios.post(`/api/user/bidding/auction/product`, data).then(res => {
           if(res.data.status === 200)
           {
-             console.log("bidding Done");
+            setUpdate(1)
           }
           
       });
@@ -73,9 +75,20 @@ return (
     <p className="text-white PText"><Markup content={data.details}/> <span>See
         more</span></p>
     <div className="ReactCr7 bg-dark p-4 mb-3 ">
-      <center>
-      <img src={`http://localhost:8000/${data.product_image}`} className="img-fluid w-100 CR7Cover coverHeight " alt="" />
-      </center>
+
+    <ReactImageMagnify {...{
+    smallImage: {
+        alt: 'Image Not Found',
+        isFluidWidth: true,
+        src: `http://localhost:8000/${data.product_image}`
+    },
+    largeImage: {
+        src: `http://localhost:8000/${data.product_image}`,
+        width: 1800,
+        height: 1800
+    }
+}} />
+    
     </div>
 
     <div className="bg-dark mb-3 ">
@@ -123,14 +136,14 @@ return (
     <div className='d-flex justify-content-end'>
       <button type='submit'className='btn ConfirmS fw-bold px-4 py-2 mb-3'> <img src={Confirm} className='ConfirmCR7'
           alt={Confirm} /> &nbsp;Bid Now</button>
-
+    </div>
+</form>
+<div className='d-flex justify-content-end'>
       <button className='btn Acquire fw-bold px-4 py-2 mb-3' onClick={()=> setModalShow(true)}>
         <i class="fas fa-id-card-alt"> </i> &nbsp;Acquire application</button>
         
       <CR7Modal show={modalShow} onHide={()=> setModalShow(false)} />
-
     </div>
-</form>
 
 
   </div>
