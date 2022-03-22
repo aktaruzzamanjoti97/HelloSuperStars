@@ -1,0 +1,70 @@
+.navSetting{
+    background-color: rgb(90, 92, 92);
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+}
+
+
+.NameSe{
+    text-align: left !important;
+}
+
+
+.ButtonSe{
+    justify-content: center;
+    margin-right:8vw;
+}
+
+.ButtonSE{
+    border: 1px solid goldenrod;
+    color: aliceblue;
+    float:  ri;
+
+}
+
+.ButtonSE:hover{
+    border: 1px solid goldenrod;
+    color: black;
+    background-color: goldenrod;
+}
+
+.NavBtn{
+    font-size: larger !important;
+}
+
+.PassBtn{
+    width: 200px;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .CustomSettings{
+        width: 100% !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .NameSe{
+        width: 100px;
+    }
+
+    .MobileSettingsNa{
+        width: 100% !important;
+    }
+    .ButtonSE{
+        width: 30vw !important;
+        margin-left: 45px !important;
+    }
+    .PassBtn{
+        width: 200px;
+        margin-left: 60px !important;
+        
+    }
+    .ButtonSEA{
+        width: 120px !important;
+        margin-left: 10px !important;
+    }
+
+  }
