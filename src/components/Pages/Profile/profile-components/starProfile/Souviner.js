@@ -25,10 +25,19 @@ useEffect(()=>{
   axios.get(`/api/user/getStarAuction/${star_id}`).then((res)=>{
       if(res.data.status === 200){
           setProduct(res.data.product);
-          //console.log("From test",res.data.product)
+          console.log("From test data",res.data.product)
       }
   })
 },[])
+
+// useEffect(()=>{
+//   axios.get(`/api/user/liveBidding/auction/${product.id}`).then((res)=>{
+//       if(res.data.status === 200){
+//           //setProduct(res.data.bidding);
+//           console.log("From test bidding",res.data.bidding)
+//       }
+//   })
+// },[])
 
 const openModal = (data) => {
   setModalShow(true)
@@ -46,7 +55,11 @@ return (
       
 
       {product.map((product) => (
+
         <span>
+
+          {console.log('bidding person',product.bidding)}
+
           <div className="card left-col-box PostCard mb-3 mt-3 left-card-souviner mx-auto">
             <div className="accordion-item PostBack d-flex justify-content-between">
               <h2 className="accordion-header PostBack">
@@ -107,20 +120,32 @@ return (
             <div className="card-body">
               <h5 className="card-title text-warning">Biding</h5>
               <OwlCarousel className="owl-theme" loop margin={0} items={4} nav>
+
+
+              {product.bidding.map((bid) => (
+              
+
                 <div className="item">
-                  <div className="card loopCard h-25">
-                    <div className="text-center">
-                      <img src={smileImg} className="img-fluid rounded-circle" height="50px" width="50px" alt="" />
-                    </div>
-                    <div className="card-body text-center">
-                      <h6 className="card-title simleName">Mr. Abul</h6>
-                      <p className="card-text">2000 BDT</p>
-                    </div>
+                <div className="card loopCard h-25">
+                  <div className="text-center">
+                    <img src={`http://localhost:8000/${bid.user[0].image}`}className="img-fluid rounded-circle" height="50px" width="50px" alt="" />
+                  </div>
+                  <div className="card-body text-center">
+                    <h6 className="card-title simleName">{bid.name}</h6>
+                    <p className="card-text">{bid.amount}</p>
                   </div>
                 </div>
+                </div>
+
+              ))}
+                
               </OwlCarousel>
   
             </div>
+
+            
+
+
             <div className="participate-btn my-2 mx-3 d-flex justify-content-end">
               {/* <button className="btn btn-warning px-5 py-2 fw-bold" onClick={()=> setModalShow(true)}>
                 <img src={Icon} alt="" className="mx-2 " height={18} /> Participate
@@ -130,9 +155,12 @@ return (
               </button>
             </div>
   
-            
-  
           </div>
+
+          
+
+
+
         </span>
       ))}
 

@@ -28,7 +28,6 @@ function SouvinerModal(props) {
         <button className="btn btn-dark px-5 py-2" onClick={props.onHide}>
             Not Now 
         </button>
-        {console.log("from modal",props.data)}
         <Link to={`/souvenir/${props.data}`}><button className="btn btn-warning  px-5 py-2 mx-3">
             Bid Now
         </button></Link>
