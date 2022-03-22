@@ -13,9 +13,10 @@ import Icon from '../.../../../../../../images/Souvenir/Icons/auction.png'
 import axios from "axios";
 import moment from "moment";
 import { Markup } from "interweave";
-
+import ReactImageMagnify from 'react-image-magnify';
 
 function Souviner({star_id}) {
+  
 const [more, setmore] = useState(false);
 const [modalShow, setModalShow] = React.useState(false);
 const [product,setProduct] = useState([]);
@@ -83,8 +84,20 @@ return (
             </div>
   
             <div className="card-body ">
-              <div className="text-center ">
-                <img src={`http://localhost:8000/${product.product_image}`} alt="" className="img-fluid" style={{width:'500px'}}/>
+              <div  className="text-center " >
+
+              <ReactImageMagnify {...{
+    smallImage: {
+        alt: 'Image Not Found',
+        isFluidWidth: true,
+        src: `http://localhost:8000/${product.product_image}`
+    },
+    largeImage: {
+        src: `http://localhost:8000/${product.product_image}`,
+        width: 1800,
+        height: 1800,
+    }
+}} />
               </div>
               <h4 className="mt-3 mx-1 text-light">{product.title}</h4>
               <h6 className="mt-3 mx-1  text-light">Live</h6>
@@ -93,7 +106,8 @@ return (
               <h6 className="mt-3 mx-1  text-light">Details</h6>
               <div className="souviner-details">
                 <p className="text-light">
-                  <Markup content={product.details}/>
+       
+                  <Markup content={`${product.details.substring(0, 100)}`} />
                   <span className="seemore text-warning" onClick={()=> {
                     setmore(!more);
                     }}
@@ -104,10 +118,7 @@ return (
   
                 {more ? (
                 <p className="text-light">
-                  teammate Mushfiqur Rahim, who auctioned the bat in 2013 after winning the first double ODI in Bangladesh
-                  has been restored. Four times the base amount before the end of the auction on a Facebook page on
-                  Wednesday night. The funds raised from Shakib's bat will be donated to his foundation to fight the
-                  epidemic.
+                 <Markup content={product.details}/>
                 </p>
                 ) : (
                 ""
@@ -169,7 +180,7 @@ return (
 
     <SouvinerModal show={modalShow} onHide={()=> setModalShow(false)} data={modalData} />
 
-    <div className="col-md-4">
+    <div className="col-md-4" style={{zIndex:'-1'}}>
       <StarProfileRightContent star_id={star_id} />
     </div>
 
