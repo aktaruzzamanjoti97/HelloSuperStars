@@ -11,6 +11,7 @@ import {
   updateParticipant,
 } from "./VideoChatContents/store/actioncreator";
 import { connect } from "react-redux";
+import Navigation from "./components/Header/Navigation";
 
 function VideoCall(props) {
   const getUserStream = async () => {

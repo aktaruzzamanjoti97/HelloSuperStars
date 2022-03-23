@@ -88,7 +88,7 @@ const StarChat = (props) => {
 
     console.log(data);
     axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`api/user/liveChatRigister/`, data).then((res) => {
+      axios.post(`api/user/liveChat/register`, data).then((res) => {
         if (res.data.status === 200) {
           console.log(res.data);
           // setShowCard(true)

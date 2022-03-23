@@ -525,7 +525,7 @@ right div and info field start */}
 
                       </form>
                       <div className=''>
-                            <Link to='/'> <button className='Skip-bt-ac mb-3'>Skip</button></Link>
+                            <Link to='/coreCategory'> <button className='Skip-bt-ac mb-3'>Skip</button></Link>
                       </div>
 
                     
@@ -557,7 +557,7 @@ right div and info field start */}
               Would you like to get our newsletter and promotional offers through email?
             </p>
             <div className="choose-btn1">
-              <Link to='/' className='btn btn-warning text-light w-25'>Yes</Link>
+              <Link to='/coreCategory' className='btn btn-warning text-light w-25'>Yes</Link>
               <button className="btn text-warning w-25" onClick={ModalClick}>
                 No
               </button>
