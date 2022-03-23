@@ -63,6 +63,9 @@ import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
 import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
 import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector/NestedSubCategoryBody";
 
+import LearningSessionLiveStream from "./VideoCall";
+
+
 // Fan Group
 
 
@@ -170,6 +173,8 @@ function App() {
 
         {/* Learning Session */}
         <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
+        <Route exact path="/learning-session/live_stream" component={LearningSessionLiveStream} />
+        
 
         {/* Error */}
         <Route component={Error} />

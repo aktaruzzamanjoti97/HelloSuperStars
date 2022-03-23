@@ -4,6 +4,7 @@ import Participants from "../Participants/Participants.component";
 import "./MainScreen.css";
 import { connect } from "react-redux";
 import { setMainStream, updateUser } from "../../store/actioncreator";
+import Navigation from "../../../components/Header/Navigation";
 
 const MainScreen = (props) => {
   const participantRef = useRef(props.participants);
@@ -74,6 +75,9 @@ const MainScreen = (props) => {
   };
   return (
     <div className="wrapper">
+
+    <Navigation></Navigation>
+
       <div className="main-screen">
         <Participants />
       </div>

@@ -93,7 +93,7 @@ const Greeting = ({ star_id }) => {
     Form_data.append('greetings_id', GreetingInfo.id);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`api/user/greetings_registaion`, Form_data).then((res) => {
+      axios.post(`api/user/greetings/register`, Form_data).then((res) => {
         if (res.data.status === 200) {
         
           setGreeting(res.data.greeting);

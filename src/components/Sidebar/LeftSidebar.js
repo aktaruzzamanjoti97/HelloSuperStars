@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom'
+import { Users } from '../../DummyData'
+import Online from '../Sidebar/Left/StarsOnline/Online'
+import axios from "axios";
 
 import '../CSS/Sidebar/Left/Left.css'
 import '../CSS/Sidebar/Left/Category.css'
 import '../CSS/Sidebar/Left/Following.css'
 
-import {Link, withRouter} from 'react-router-dom'
 
-import { Users } from '../../DummyData'
-import Online from '../Sidebar/Left/StarsOnline/Online'
 
 export const LeftSidebar = ({history}) => {
+    const [activity, setCountActivity] = useState(0);
 
     console.log(history)
-    const getColor=(curr)=>
-    {
-      if (history.location.pathname===curr)
-      return "#FFAD00"
-    }
-    const getColors=(curr)=>
-    {
-      if (history.location.pathname===curr)
-      return "white"
-    }
+   
+
+    useEffect(() => {
+        axios.get('api/user/activity_count').then(res =>{
+            if(res.data.status === 200)
+            {
+                setCountActivity(res.data.activity);
+            }   
+        });
+    }, []);
 
     return (
         <>
@@ -136,7 +138,7 @@ export const LeftSidebar = ({history}) => {
                                             </span>
                                             <span className="mx-2 profile-font-color" >
                                                 Activities <br></br>
-                                                <small className="category-size-chat">4 activities recently</small>
+                                                <small className="category-size-chat">{activity} activities recently</small>
                                             </span>
                                         </button>
 

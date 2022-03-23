@@ -20,7 +20,7 @@ export const Participant = (props) => {
     <div  >
       <CardVideoCall>
         <video
-        style={currentParticipant.name==='star'?{height:'70vh'}:currentParticipant.name==='admin'?{height:'30vh'}:null}
+        style={currentParticipant.name==='star'?{height:'80vh', border: '2px solid gold'}:currentParticipant.name==='admin'?{height:'30vh'}:{maxHeight:'80vh'}}
           ref={videoRef}
           className="video"
           id={`participantVideo${curentIndex}`}
