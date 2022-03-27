@@ -84,6 +84,9 @@ const ActivitiesBody = () => {
                  <ActivitiesContent3 loader={liveChattLodaer} event={posts3}/>
 
                  <hr/>
+
+                 <h2 className='mt-3 text-light fw-bold bg-dark p-2 btn w-100 text-center'>Purchase</h2>
+                 <Purchase event={posts2}/>
                  
               </div>
               
