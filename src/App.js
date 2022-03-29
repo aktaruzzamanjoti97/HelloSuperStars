@@ -64,6 +64,8 @@ import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
 import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector/NestedSubCategoryBody";
 
 import LearningSessionLiveStream from "./VideoCall";
+import ParticipateGuitarChord from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/ParticipateGuitarChord";
+import AuditionGuitar from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditionGuitar";
 
 
 // Fan Group
@@ -127,6 +129,8 @@ function App() {
         <Route exact path='/learning-sessions' component={LearnPost}/>
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
+        <Route exact path='/participant-guitar-chord' component={ParticipateGuitarChord}/>
+        <Route exact path='/participant-upload' component={AuditionGuitar}/>
         <Route exact path='/meetup-events' component={MeetupPost}/>
         {/* Right Sidebar End */}
 
