@@ -2,6 +2,7 @@ import { CardContent } from "@mui/material";
 import React from "react";
 import { Card, Carousel, Form } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
+import { Link } from "react-router-dom";
 // import avaterImage from "../../../../../../../../images/CreateAccount-page/Avater.png";
 import avaterImage from "../../../../../../../../images/avatarImage.webp";
 import guitarParticipant from "../../../../../../../../images/guitarParticipate.png";
@@ -320,8 +321,19 @@ const ParticipateGuitarChord = () => {
             >
               <CardContent>
                 <FileUpload />
+                <div className="row">
+                      <div className="col-md-6">
+                        <Link to='/participant-upload'><button
+                          type="submit"
+                          className="my-3 btn btn-gold submit-greetings-btn"
+                        >
+                          Upload
+                        </button></Link>
+                      </div>
+                    </div>
               </CardContent>
             </Card>
+            
           </div>
         </div>
       </div>

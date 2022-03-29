@@ -1,47 +1,52 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Carousel, Form } from 'react-bootstrap';
+import OwlCarousel from "react-owl-carousel";
 import ReactPlayer from 'react-player';
 // import '../../../../CSS/Audition/Audition.css';
 // import { youtubeLink } from '../../../../../../../DummyData'
 import './AuditionGuitar.css'
 import BannerL from '../../../../../../../images/maxresdefault.jpg'
 import avaterImage from "../../../../../../../images/maxresdefault.jpg";
-// import guitarParticipant from "../../../../../../../../images/guitarParticipate.png";
-// import singleFrame from "../../../../../../../../images/Normal-User/Single-frame.png";
-// import applePayLogo from "../../../../../../../../images/Payment-img/Apple_Pay_logo.png";
-// import bKashLogo from "../../../../../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
-// import payoneerLogo from "../../../../../../../../images/Payment-img/Payoneer-Logo.wine.png";
-// import payPalLogo from "../../../../../../../../images/Payment-img/PayPal-Logo.wine.png";
-// import visaLogo from "../../../../../../../../images/Payment-img/Visa_Inc._logo.svg.png";
+import Navigation from '../../../../../../Header/Navigation';
+import guitarParticipant from "../../../../../../../images/guitarParticipate.png";
+import singleFrame from "../../../../../../../images/Normal-User/Single-frame.png";
+import applePayLogo from "../../../../../../../images/Payment-img/Apple_Pay_logo.png";
+import bKashLogo from "../../../../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
+import payoneerLogo from "../../../../../../../images/Payment-img/Payoneer-Logo.wine.png";
+import payPalLogo from "../../../../../../../images/Payment-img/PayPal-Logo.wine.png";
+import visaLogo from "../../../../../../../images/Payment-img/Visa_Inc._logo.svg.png";
 
 const AuditionGuitar = (props) => {
 console.log();
 return (
 <>
+    <Navigation />
+    <Carousel>
+        <Carousel.Item>
+            <img className="d-block w-100" src={guitarParticipant} alt="First slide" />
+
+        </Carousel.Item>
+        <Carousel.Item>
+            <img className="d-block w-100" src={guitarParticipant} alt="Second slide" />
+
+        </Carousel.Item>
+        <Carousel.Item>
+            <img className="d-block w-100" src={guitarParticipant} alt="Third slide" />
+
+        </Carousel.Item>
+    </Carousel>
     <div className="container">
 
-    <div className="d-flex justify-content-center mb-3">
-          <div className="avater-img mb-3 mx-2 text-center">
-            <img
-              src={avaterImage}
-              className="img-fluid avatar-img-src"
-              alt=""
-            />
-          </div>
-          <div className="avater-img mb-3 mx-2 text-center">
-            <img
-              src={avaterImage}
-              className="img-fluid avatar-img-src"
-              alt=""
-            />
-          </div>
-          <div className="avater-img mb-3 mx-2 text-center">
-            <img
-              src={avaterImage}
-              className="img-fluid avatar-img-src"
-              alt=""
-            />
-          </div>
+        <div className="d-flex justify-content-center mb-3">
+            <div className="avater-img mb-3 mx-2 text-center">
+                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
+            </div>
+            <div className="avater-img mb-3 mx-2 text-center">
+                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
+            </div>
+            <div className="avater-img mb-3 mx-2 text-center">
+                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
+            </div>
         </div>
 
         <div className="row AuB mt-3 px-5">
