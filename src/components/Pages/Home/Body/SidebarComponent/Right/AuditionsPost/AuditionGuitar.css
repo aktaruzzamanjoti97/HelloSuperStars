@@ -1,0 +1,82 @@
+
+
+
+.AuB{
+    border-radius: 5px;
+    background-color: #343434;
+   
+}
+
+.hrT {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.63);
+}
+
+.VideoAU{
+    /* width: 100%; */
+    height: 200px !important;
+}
+
+.MainAu{
+    position: relative;
+}
+
+
+.ImgAudi{
+    border-radius: 5px !important;
+}
+
+.AUa{
+    background-color: #1d1c1c;
+}
+.centered-Au {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    border: none;
+    transform: translate(-50%, -50%);
+    background: transparent linear-gradient(180deg, #F9A826 0%, #E97C00 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 15px #1B2B5819;
+    border-radius: 10px;
+    color: aliceblue;
+    opacity: 1;
+  }
+
+.Left-Au {
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
+  }
+
+.Right-Au {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+
+  }
+
+
+@media only screen and (min-width: 1025px) {
+    
+.ImgAudi{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+
+}
+.centered-Au {
+    
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+    
+    .ImgAudi{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    }
