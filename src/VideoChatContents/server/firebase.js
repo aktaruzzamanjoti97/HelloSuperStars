@@ -20,17 +20,8 @@ export const db = firebase;
 
 var firepadRef = firebase.database().ref();
 
-<<<<<<< Updated upstream
-//export const userName = prompt("What's your name?");
-export const userName = 'user';
-=======
-// export const userName = prompt("What's your name?");
-
-// export const userName = '';
-
 export const userName = 'user';
 
->>>>>>> Stashed changes
 const urlparams = new URLSearchParams(window.location.search);
 const roomId = urlparams.get("id");
 

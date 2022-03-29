@@ -1,8 +1,8 @@
-import {React,useEffect,useState } from "react";
+import {React,useState } from "react";
 import { Collapse } from "react-bootstrap";
 import UpAuditonsComment from "./UpAuditonsComment";
 import '../../../../../../CSS/Home/UpcomingAuditions.css'
-import axios from "axios";
+
 import moment from "moment";
     export default function UpcomingAuditionsContent({user}){
         const [open, setOpen] = useState(false);
