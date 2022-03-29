@@ -5,13 +5,11 @@ import firebase from "firebase";
 //   databaseURL:"https://meetcloneapp-default-rtdb.asia-southeast1.firebasedatabase.app/" // Add databaseURL
 // };
 
-
 var firebaseConfig = {
-    apiKey: "AIzaSyBO1__jCxGrPE8RrfP8i1JTkwRNvkcS4E0", // Add API Key
-    databaseURL:"https://hellosup-62016-default-rtdb.asia-southeast1.firebasedatabase.app/" // Add databaseURL
-  };
-  
-
+  apiKey: "AIzaSyBO1__jCxGrPE8RrfP8i1JTkwRNvkcS4E0", // Add API Key
+  databaseURL:
+    "https://hellosup-62016-default-rtdb.asia-southeast1.firebasedatabase.app/", // Add databaseURL
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -20,17 +18,8 @@ export const db = firebase;
 
 var firepadRef = firebase.database().ref();
 
-<<<<<<< Updated upstream
-//export const userName = prompt("What's your name?");
-export const userName = 'user';
-=======
-// export const userName = prompt("What's your name?");
+export const userName = "user";
 
-// export const userName = '';
-
-export const userName = 'user';
-
->>>>>>> Stashed changes
 const urlparams = new URLSearchParams(window.location.search);
 const roomId = urlparams.get("id");
 
