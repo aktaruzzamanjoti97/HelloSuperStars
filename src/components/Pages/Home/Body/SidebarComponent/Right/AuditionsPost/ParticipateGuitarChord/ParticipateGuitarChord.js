@@ -127,11 +127,6 @@ const ParticipateGuitarChord = () => {
                         <div className="form-group my-3">
                           <big className="text-white">Participate Name</big>
                           <big className="text-danger"> *</big>
-                          <input
-                            type="hidden"
-                            name="notification_id"
-                            value=""
-                          />
 
                           <input
                             type="text"
