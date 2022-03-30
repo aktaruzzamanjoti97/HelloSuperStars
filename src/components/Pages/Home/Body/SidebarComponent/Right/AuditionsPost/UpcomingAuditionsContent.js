@@ -11,7 +11,7 @@ import { useHistory } from "react-router-dom";
         let history = useHistory();
 
         const handleRouteChange = () =>{
-            history.push('/participant-audition')
+            history.push(`/participant-audition/${user.id}`)
         }
 
   

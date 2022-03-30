@@ -1,10 +1,16 @@
+import axios from "axios";
 import React, { useRef, useState } from "react";
 import { FileDrop } from "react-file-drop";
 import { AiOutlineCloseCircle, AiOutlineUpload } from "react-icons/ai";
 import styles from "./style.module.css";
 
-const FileUpload = () => {
-  const [selectFile, setSelectFile] = useState(null);
+const FileUpload = ({id}) => {
+
+ 
+
+  const [selectFile, setSelectFile] = useState({
+    video_url:'',
+  });
 
   const fileInputRef = useRef(null);
 
@@ -31,8 +37,26 @@ const FileUpload = () => {
     fileInputRef.current.click();
   };
 
+
+
+
+  const videoSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+
+      video_url:selectFile
+    }
+     axios.post(`/api/user/video/participate/${id}`, data).then(res => {
+        if(res.data.status === 200)
+        {
+          console.log("video  done")
+        }
+        
+    });
+  }
+
   return (
-    <div>
+    <form onSubmit={videoSubmit}>
       <div>
         <div className="container-fluid mt-5 mb-3">
           <div className="row">
@@ -83,7 +107,7 @@ const FileUpload = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

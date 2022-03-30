@@ -1,8 +1,11 @@
 import { CardContent } from "@mui/material";
-import React from "react";
+import axios from "axios";
+import { Markup } from "interweave";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
 import { Card, Carousel, Form } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import avaterImage from "../../../../../../../../images/CreateAccount-page/Avater.png";
 import avaterImage from "../../../../../../../../images/avatarImage.webp";
 import guitarParticipant from "../../../../../../../../images/guitarParticipate.png";
@@ -17,62 +20,121 @@ import FileUpload from "./FileUpload";
 import "./ParticipateGuitarChord.css";
 
 const ParticipateGuitarChord = () => {
+
+  const params = useParams();
+  const [participateAudition,setParticipant] = useState([]);
+  const [user,setUser] = useState([]);
+  const [payment,setPayment] = useState([]);
+
+
+const [participantData, setParticipantData] = useState({
+  audition_id: params.id,
+  password:''
+})
+
+  const handleInput = (e) => {
+
+    const {name,value}=e.target;
+    setParticipantData((prev)=>{
+        return({...prev,[name]:value});
+    })
+  }
+
+const [cardInfo, setCardInfo] = useState({
+
+  audition_id: params.id,
+  card_holder_name:'',
+  card_number:'',
+
+
+})
+  
+  const handleCardInput = (e) => {
+
+    const {name,value}=e.target;
+    setCardInfo((prev)=>{
+        return({...prev,[name]:value});
+    })
+  }
+ const paymentSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+  
+      audition_id: cardInfo.audition_id,
+      card_holder_name:cardInfo.card_holder_name,
+      card_number:cardInfo.card_number,
+    }
+     axios.post(`/api/user/payment/participate`, data).then(res => {
+        if(res.data.status === 200)
+        {
+          console.log("payment done")
+        }
+        
+    });
+  }
+
+
+  const auditionSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+  
+      audition_id: participantData.audition_id,
+      password: participantData.password,
+    }
+     axios.post(`/api/user/register/participate`, data).then(res => {
+        if(res.data.status === 200)
+        {
+          console.log("Registration done")
+        }
+        
+    });
+  }
+
+    useEffect(()=>{
+      axios.get(`/api/user/audition/participate/${params.id}`).then((res)=>{
+        console.log("Participant Data",res.data.participateAudition)
+        setParticipant(res.data.participateAudition)
+        setUser(res.data.user)
+        setPayment(res.data.payment)
+      })
+     
+       },[params.id])
+      
+
+
   return (
     <div>
       <Navigation />
-      <Carousel>
+
+      {participateAudition.map((audition)=>(
+        <>
+        <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={guitarParticipant}
+            src={`http://localhost:8000/${audition.banner}`}
             alt="First slide"
           />
 
         </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={guitarParticipant}
-            alt="Second slide"
-          />
-
-
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={guitarParticipant}
-            alt="Third slide"
-          />
-
-          
-        </Carousel.Item>
       </Carousel>
       <div className="container">
+           <div className="d-flex justify-content-center mb-3">
+      {audition.judge.map((judge)=>(
+        <>
 
-        <div className="d-flex justify-content-center mb-3">
           <div className="avater-img mb-3 mx-2 text-center">
             <img
-              src={avaterImage}
+              src={`http://localhost:8000/${judge.user?.image}`}
               className="img-fluid avatar-img-src"
               alt=""
             />
           </div>
-          <div className="avater-img mb-3 mx-2 text-center">
-            <img
-              src={avaterImage}
-              className="img-fluid avatar-img-src"
-              alt=""
-            />
-          </div>
-          <div className="avater-img mb-3 mx-2 text-center">
-            <img
-              src={avaterImage}
-              className="img-fluid avatar-img-src"
-              alt=""
-            />
-          </div>
+      
+        </>
+      ))}
         </div>
+
 
         <div>
           <div>
@@ -80,7 +142,7 @@ const ParticipateGuitarChord = () => {
               <CardContent>
                 <div className="row whole-m-p">
                   <div className="col-md-12">
-                    <h4 className="starChat-heading">Guitar Chord</h4>
+                    <h4 className="starChat-heading">{audition.title}</h4>
 
                     <div className="vb"></div>
 
@@ -96,9 +158,9 @@ const ParticipateGuitarChord = () => {
                           style={{ color: "#c2c2c2" }}
                           className="mx-5 starChat-child-style"
                         >
-                          <h6>12/08/21</h6>
-                          <h6>12/08/21</h6>
-                          <h6>100 BDT</h6>
+                          <h6>{moment(audition.start_time).format('LL')}</h6>
+                          <h6>{moment(audition.end_time).format('LL')}</h6>
+                          <h6>${audition.fee}</h6>
                         </div>
                       </div>
 
@@ -106,22 +168,17 @@ const ParticipateGuitarChord = () => {
                         <div className="mx-2 starChat-child-style">
                           <h5 className="text-white">Description</h5>
                           <p style={{ color: "#c2c2c2" }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Enim unde, magnam nemo atque similique facere
-                            architecto repudiandae? Id qui cumque dicta
-                            perspiciatis illum amet aliquid iure blanditiis
-                            magnam expedita possimus vitae, quisquam temporibus
-                            earum commodi. Placeat voluptas nostrum tempore
-                            porro.
+                           <Markup content={audition.description}/>
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="whole-m-p">
-                  <Form>
+{user.map((info)=>(
+  <>
+<div className="whole-m-p">
+                  <Form onSubmit={auditionSubmit}>
                     <div className="row">
                       <div className="col-md-6">
                         <div className="form-group my-3">
@@ -130,9 +187,9 @@ const ParticipateGuitarChord = () => {
 
                           <input
                             type="text"
-                            value=""
+                            value={info.first_name}
                             className="form-control input-overlay"
-                            name="name"
+                            name="first_name"
                           />
                         </div>
                         <p className="" style={{ color: "red" }}></p>
@@ -142,7 +199,9 @@ const ParticipateGuitarChord = () => {
                           <input
                             type="date"
                             className="form-control input-overlay"
-                            name="date_b"
+                            name="birth"
+                            value={info.birth} 
+                        
                           />
                         </div>
                       </div>
@@ -153,7 +212,7 @@ const ParticipateGuitarChord = () => {
 
                           <input
                             type="phone"
-                            value=""
+                            value={info.phone}
                             className="form-control input-overlay"
                             name="phone"
                           />
@@ -165,9 +224,10 @@ const ParticipateGuitarChord = () => {
 
                           <input
                             type="password"
-                            value=""
+                            value={participantData.password} 
                             className="form-control input-overlay"
                             name="password"
+                            onChange={handleInput}
                           />
                         </div>
                       </div>
@@ -189,6 +249,9 @@ const ParticipateGuitarChord = () => {
                       </CustomToggle> */}
                   </Form>
                 </div>
+  </>
+))}
+                
               </CardContent>
             </Card>
 
@@ -244,13 +307,16 @@ const ParticipateGuitarChord = () => {
                 </div>
 
                 <div>
-                  <form>
+                  <form onSubmit={paymentSubmit}>
                     <div className="row">
                       <div className="col-md-6">
                         <div className="form-group my-3">
                           <big className="text-white">Cardholder Name</big>
                           <input
-                            type="email"
+                            type="text"
+                            name="card_holder_name"
+                            value={cardInfo.card_holder_name}
+                            onChange={handleCardInput}
                             className="form-control input-overlay"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
@@ -264,7 +330,10 @@ const ParticipateGuitarChord = () => {
                         <div className="form-group my-3">
                           <big className="text-white">Card number</big>
                           <input
-                            type="password"
+                            type="text"
+                            name="card_number"
+                            value={cardInfo.card_number}
+                            onChange={handleCardInput}
                             className="form-control input-overlay"
                           />
                         </div>
@@ -308,14 +377,16 @@ const ParticipateGuitarChord = () => {
                 </div>
               </CardContent>
             </Card>
-
-            <Card
+            {payment.map((auditionPayment)=>(
+  <>
+    {auditionPayment.status == 1?<>
+                  <Card
               className="my-4"
               style={{ backgroundColor: "#343434" }}
               sx={{ minWidth: 275 }}
             >
               <CardContent>
-                <FileUpload />
+                <FileUpload id ={params.id}/>
                 <div className="row">
                       <div className="col-md-6">
                         <Link to='/participant-upload'><button
@@ -329,9 +400,15 @@ const ParticipateGuitarChord = () => {
               </CardContent>
             </Card>
             
+    </>:null}
+  </>
+))}
+
           </div>
         </div>
       </div>
+        </>
+      ))}
     </div>
   );
 };
