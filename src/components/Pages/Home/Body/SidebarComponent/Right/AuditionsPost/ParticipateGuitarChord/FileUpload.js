@@ -48,7 +48,7 @@ const FileUpload = () => {
                   <button onClick={onTargetClick} className={styles.uploadBtn}>
                     Upload File
                   </button>
-                  <p className="text-center">
+                  <p className="text-center text-white">
                     {selectFile !== null ? (
                       <>
                         {selectFile.name}

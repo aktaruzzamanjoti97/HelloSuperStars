@@ -4,8 +4,15 @@ import UpAuditonsComment from "./UpAuditonsComment";
 import '../../../../../../CSS/Home/UpcomingAuditions.css'
 
 import moment from "moment";
+import { useHistory } from "react-router-dom";
     export default function UpcomingAuditionsContent({user}){
         const [open, setOpen] = useState(false);
+
+        let history = useHistory();
+
+        const handleRouteChange = () =>{
+            history.push('/participant-audition')
+        }
 
   
         return (
@@ -37,7 +44,7 @@ import moment from "moment";
 
                                     <div className="container d-flex  align-items-center justify-content-center">
 
-                                        <button className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
+                                        <button onClick={handleRouteChange} className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
 
                                     </div>
 
