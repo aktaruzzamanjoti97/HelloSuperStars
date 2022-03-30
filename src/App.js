@@ -110,7 +110,7 @@ function App() {
         <Route exact path='/following' component={FollowMain} />
 
         <Route exact path='/fan-group' component={FanHome} />
-        <Route exact path='/your-group' component={FanGroupBody} />
+        <Route exact path='/group/:slug' component={FanGroupBody} />
 
         <PrivateRoute exact path='/wallet' component={WalletBody} />
         <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
