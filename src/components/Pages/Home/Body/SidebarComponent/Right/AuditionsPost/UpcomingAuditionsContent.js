@@ -2,36 +2,49 @@ import {React,useState } from "react";
 import { Collapse } from "react-bootstrap";
 import UpAuditonsComment from "./UpAuditonsComment";
 import '../../../../../../CSS/Home/UpcomingAuditions.css'
+
+import moment from "moment";
+import { useHistory } from "react-router-dom";
     export default function UpcomingAuditionsContent({user}){
         const [open, setOpen] = useState(false);
+
+        let history = useHistory();
+
+        const handleRouteChange = () =>{
+            history.push('/participant-audition')
+        }
+
+  
         return (
           <>
                <div className="container align-items-center justify-content-center col-11 Enroll-Auditions">
                   <div className="card Enroll-AuditionsB">
     
                       <div className="my-2 Enroll-a Enroll-text">
-                          {user.postTitel}
+                          {user.title}
                       </div>
 
                       <div className="row align-items-center justify-content-center ">
                         
                             <div className="container align-items-center justify-content-center UpcomingAuditions col-md-6"
-                                style={{ backgroundImage:'url("../../../../../../../images/messi.jpg")' }}>
+                                style={{ backgroundImage: `url(http://localhost:8000/${user.banner})` }}>
                                 <div className="container xyz-auditions"> <br />
                                     <div className="container d-flex xyz-audition align-items-center justify-content-center">
+                                        {user.judge.map((judge)=>(
 
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
-                                        <img src={user.profilePicture} className="Pic-Auditions" alt={user.profilePicture} />
+                                        <img src={`http://localhost:8000/${judge.user?.image}`}  className="Pic-Auditions" alt={user.profilePicture} />
+                                     
+                                        ))}
+                                      
                                         </div> <br /> <br />
 
                                         <div className="container d-flex align-items-center justify-content-center">
-                                        <p className="Pa-btn-text">FROM JUNE 25 - july 30</p>
+                                        <p className="Pa-btn-text">{moment(user.start_time).format('LL')} - {moment(user.end_time).format('LL')}</p>
                                     </div>
 
                                     <div className="container d-flex  align-items-center justify-content-center">
 
-                                        <button className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
+                                        <button onClick={handleRouteChange} className="container d-flex xyz-audition-btn align-items-center justify-content-center">Participate</button>
 
                                     </div>
 
@@ -82,9 +95,7 @@ import '../../../../../../CSS/Home/UpcomingAuditions.css'
                 </Collapse>
 
 
-                        </div>
-
-                      
+                        </div>                     
                   </div>
               </div>
           </>
