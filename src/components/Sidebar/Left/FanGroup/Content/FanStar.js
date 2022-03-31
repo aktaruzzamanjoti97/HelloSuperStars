@@ -72,10 +72,10 @@ const FanStar = () => {
       }
     });
   }
-
+  console.log("fanGroupId is ", fanGroupId);
   useEffect(() => {
     axios.get(`/api/user/fan/group/join/${fanGroupId}`).then(res => {
-      // console.log(res.data.category);
+      console.log("fanGroupId is ", fanGroupId);
       if (res.status === 200) {
         setFanJoinDetails(res.data.fanJoinDetails);
         setTitle(res.data.fanJoinDetails.star_name);
