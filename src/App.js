@@ -129,7 +129,7 @@ function App() {
         <Route exact path='/learning-sessions' component={LearnPost}/>
         <Route exact path='/upcoming-live' component={UpLivePost} />
         <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
-        <Route exact path='/participant-audition' component={ParticipateGuitarChord}/>
+        <Route exact path='/participant-audition/:id' component={ParticipateGuitarChord}/>
         <Route exact path='/participant-upload' component={AuditionGuitar}/>
         <Route exact path='/meetup-events' component={MeetupPost}/>
         {/* Right Sidebar End */}
