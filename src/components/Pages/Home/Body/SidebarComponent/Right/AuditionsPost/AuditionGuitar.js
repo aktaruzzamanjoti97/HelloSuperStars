@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Form } from 'react-bootstrap';
 import OwlCarousel from "react-owl-carousel";
 import ReactPlayer from 'react-player';
@@ -15,53 +15,83 @@ import bKashLogo from "../../../../../../../images/Payment-img/BKash-bKash-Logo.
 import payoneerLogo from "../../../../../../../images/Payment-img/Payoneer-Logo.wine.png";
 import payPalLogo from "../../../../../../../images/Payment-img/PayPal-Logo.wine.png";
 import visaLogo from "../../../../../../../images/Payment-img/Visa_Inc._logo.svg.png";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { Markup } from 'interweave';
 
-const AuditionGuitar = (props) => {
-console.log();
+const AuditionGuitar = () => {
+
+
+    const params = useParams();
+
+    const [participateAudition,setParticipant] = useState([]);
+    const [mainVideo,setMainVideo] = useState([]);
+
+    useEffect(()=>{
+        axios.get(`/api/user/audition/participate/video/${params.id}`).then((res)=>{
+
+          console.log('participant video',res.data.participateAudition,)
+          setParticipant(res.data.participateAudition)
+          setMainVideo(res.data.ownVideo)
+          console.log("my video",res.data.ownVideo)
+
+        })
+       
+         },[params.id])
+        
+  
+
+
+console.log('main video',mainVideo);
 return (
 <>
     <Navigation />
-    <Carousel>
-        <Carousel.Item>
-            <img className="d-block w-100" src={guitarParticipant} alt="First slide" />
 
-        </Carousel.Item>
-        <Carousel.Item>
-            <img className="d-block w-100" src={guitarParticipant} alt="Second slide" />
+    
 
-        </Carousel.Item>
+    {participateAudition.map((audition)=>(
+        <>
+            <Carousel>
         <Carousel.Item>
-            <img className="d-block w-100" src={guitarParticipant} alt="Third slide" />
+            <img className="d-block w-100" src={`http://localhost:8000/${audition.banner}`} alt="First slide" />
 
         </Carousel.Item>
     </Carousel>
     <div className="container">
 
         <div className="d-flex justify-content-center mb-3">
+        {audition.judge.map((judge)=>(
+        <>
+      
             <div className="avater-img mb-3 mx-2 text-center">
-                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
+                <img src={`http://localhost:8000/${judge.user?.image}`}className="img-fluid avatar-img-src" alt="" />
             </div>
-            <div className="avater-img mb-3 mx-2 text-center">
-                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
-            </div>
-            <div className="avater-img mb-3 mx-2 text-center">
-                <img src={avaterImage} className="img-fluid avatar-img-src" alt="" />
-            </div>
+        </>
+      ))}
+
         </div>
 
         <div className="row AuB mt-3 px-5">
-            <h4 className="text-warning text-center fw-bold pt-5 pb-3 hrT">Guitar chord</h4>
+            <h4 className="text-warning text-center fw-bold pt-5 pb-3 hrT">{audition.title}</h4>
             <p className='text-light text-center'>Description</p>
-            <p className='text-light text-center'>orem ipsum dolor sit amet,consectetur adipiscing elit. Duis accumsan
-                vel nulla at euismod. Sed ipsum magna orem ipsum dolor sit amet,consectetur adipiscing elit. Duis
-                accumsan vel nulla at euismod. Sed ipsum magna orem ipsum dolor sit amet,consectetur adipiscing elit.
-                Duis accumsan vel nulla at euismod. Sed ipsum magna</p>
+            <p className='text-light text-center'>{<Markup content={audition.description}/>}</p>
 
             <div className="MainAu">
-                <img src={BannerL} alt="" className='ImgAudi img-fluid mb-3' />
+
+        
+            <video width="100%" controls>
+                  <source
+                    src={
+                        mainVideo.video_url != null
+                        ? `http://localhost:8000/${mainVideo.video_url}`
+                        : "https://youtu.be/dgfTiONcnTc"
+                    }
+                    type="video/mp4"
+                  />
+                </video>
+        
                 <button class="centered-Au fw-bold ">Show Result</button>
                 <h6 class="Left-Au fw-bold text-light">🤍 120</h6>
-                <h5 class="Right-Au fw-bold text-light"><i class="fa-solid fa-expand "></i></h5>
             </div>
 
         </div>
@@ -70,14 +100,28 @@ return (
             <div className="row ms-1">
                 <h4 className="text-warning text-center fw-bold pt-3 pb-1 hrT ">Participants</h4>
             </div>
+
+
+{audition.participant.map((videos)=>(
+
             <div className="col-md-4">
                 <Card className="AUa my-3 p-2">
-                    <Card.Body>
-                        <ReactPlayer url={"https://www.youtube.com/watch?v=LRtEJPSj2-8"} className="img-fluid VideoAU"
-                            playing={false} volume={1} onReady={()=> console.log("ready now")}
-                            />
+                   
+                        <Card.Body>
+                
+                    <video width="100%" controls>
+                  <source
+                    src={
+                        videos?.video_url != null
+                        ? `http://localhost:8000/${mainVideo.video_url}`
+                        : "https://youtu.be/dgfTiONcnTc"
+                    }
+                    type="video/mp4"
+                  />
+                </video>
+               
                     </Card.Body>
-
+                     
                     <Card.Footer style={{ border: 'none' }}>
                         <div className="row audition-belowDiv">
                             <div className="col-md-5">
@@ -105,150 +149,17 @@ return (
                 </Card>
 
             </div>
-            <div className="col-md-4">
-                <Card className="AUa my-3 p-2">
-                    <Card.Body>
-                        <ReactPlayer url={"https://www.youtube.com/watch?v=LRtEJPSj2-8"} className="img-fluid VideoAU"
-                            playing={false} volume={1} onReady={()=> console.log("ready now")}
-                            />
-                    </Card.Body>
 
-                    <Card.Footer style={{ border: 'none' }}>
-                        <div className="row audition-belowDiv">
-                            <div className="col-md-5">
-                                <button className="d-flex justify-content-center icon-style"
-                                    style={{ backgroundColor: '#ffad00'}}>
-                                    <div className="mt-2">
-                                        <i style={{ color: '#fff' }} class="fas fa-heart mx-1"></i>
-                                        <span className="text-white">Like</span>
-                                    </div>
-                                </button>
-                            </div>
+            ))}
 
-                            <div className="col-md-7">
-                                <div className="love-count">
-                                    <div className="d-flex justify-content-end">
-                                        <div className="mt-2 me-2">
-                                            <i style={{ color: 'red' }} className="fas fa-heart mx-1"></i>
-                                            <span className='text-light'>120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Card.Footer>
-                </Card>
 
-            </div>
 
-            <div className="col-md-4">
-                <Card className="AUa my-3 p-2">
-                    <Card.Body>
-                        <ReactPlayer url={"https://www.youtube.com/watch?v=LRtEJPSj2-8"} className="img-fluid VideoAU"
-                            playing={false} volume={1} onReady={()=> console.log("ready now")}
-                            />
-                    </Card.Body>
 
-                    <Card.Footer style={{ border: 'none' }}>
-                        <div className="row audition-belowDiv">
-                            <div className="col-md-5">
-                                <button className="d-flex justify-content-center icon-style"
-                                    style={{ backgroundColor: '#ffad00'}}>
-                                    <div className="mt-2">
-                                        <i style={{ color: '#fff' }} class="fas fa-heart mx-1"></i>
-                                        <span className="text-white">Like</span>
-                                    </div>
-                                </button>
-                            </div>
-
-                            <div className="col-md-7">
-                                <div className="love-count">
-                                    <div className="d-flex justify-content-end">
-                                        <div className="mt-2 me-2">
-                                            <i style={{ color: 'red' }} className="fas fa-heart mx-1"></i>
-                                            <span className='text-light'>120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Card.Footer>
-                </Card>
-
-            </div>
-            <div className="col-md-4">
-                <Card className="AUa my-3 p-2">
-                    <Card.Body>
-                        <ReactPlayer url={"https://www.youtube.com/watch?v=LRtEJPSj2-8"} className="img-fluid VideoAU"
-                            playing={false} volume={1} onReady={()=> console.log("ready now")}
-                            />
-                    </Card.Body>
-
-                    <Card.Footer style={{ border: 'none' }}>
-                        <div className="row audition-belowDiv">
-                            <div className="col-md-5">
-                                <button className="d-flex justify-content-center icon-style"
-                                    style={{ backgroundColor: '#ffad00'}}>
-                                    <div className="mt-2">
-                                        <i style={{ color: '#fff' }} class="fas fa-heart mx-1"></i>
-                                        <span className="text-white">Like</span>
-                                    </div>
-                                </button>
-                            </div>
-
-                            <div className="col-md-7">
-                                <div className="love-count">
-                                    <div className="d-flex justify-content-end">
-                                        <div className="mt-2 me-2">
-                                            <i style={{ color: 'red' }} className="fas fa-heart mx-1"></i>
-                                            <span className='text-light'>120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Card.Footer>
-                </Card>
-
-            </div>
-            <div className="col-md-4">
-                <Card className="AUa my-3 p-2">
-                    <Card.Body>
-                        <ReactPlayer url={"https://www.youtube.com/watch?v=LRtEJPSj2-8"} className="img-fluid VideoAU"
-                            playing={false} volume={1} onReady={()=> console.log("ready now")}
-                            />
-                    </Card.Body>
-
-                    <Card.Footer style={{ border: 'none' }}>
-                        <div className="row audition-belowDiv">
-                            <div className="col-md-5">
-                                <button className="d-flex justify-content-center icon-style"
-                                    style={{ backgroundColor: '#ffad00'}}>
-                                    <div className="mt-2">
-                                        <i style={{ color: '#fff' }} class="fas fa-heart mx-1"></i>
-                                        <span className="text-white">Like</span>
-                                    </div>
-                                </button>
-                            </div>
-
-                            <div className="col-md-7">
-                                <div className="love-count">
-                                    <div className="d-flex justify-content-end">
-                                        <div className="mt-2 me-2">
-                                            <i style={{ color: 'red' }} className="fas fa-heart mx-1"></i>
-                                            <span className='text-light'>120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </Card.Footer>
-                </Card>
-
-            </div>
         </div>
 
     </div>
+        </>
+    ))}
 </>
 );
 };
