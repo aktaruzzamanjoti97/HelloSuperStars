@@ -13,10 +13,8 @@ const VideoActivities = (props) => {
 
 
 return (
-<React.Fragment>
-    <Navigation />
-
-    <div className="homebody" style={{ background: "#000000"}}>
+<>
+<div className="homebody" style={{ background: "#000000"}}>
         <div className="container-fluid  custom-container">
             <div className="row">
 
@@ -54,7 +52,7 @@ return (
             </div>
         </div>
     </div>
-</React.Fragment>
+</>
 );
 
 }

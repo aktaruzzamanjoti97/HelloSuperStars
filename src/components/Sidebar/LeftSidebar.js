@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {Link } from 'react-router-dom'
 import { Users } from '../../DummyData'
 import Online from '../Sidebar/Left/StarsOnline/Online'
+import OnlineUser from '../Sidebar/Left/StarsOnline/OnlineUser'
 import axios from "axios";
+
 
 import '../CSS/Sidebar/Left/Left.css'
 import '../CSS/Sidebar/Left/Category.css'
@@ -10,24 +12,25 @@ import '../CSS/Sidebar/Left/Following.css'
 
 
 
-export const LeftSidebar = ({history}) => {
+export const LeftSidebar = ({history, onlineUserProp}) => {
     const [activity, setCountActivity] = useState(0);
-
-    console.log(history)
-   
+    const [onlineUsers, setOnlineUsers] = useState([]);
+    
 
     useEffect(() => {
+
+        setOnlineUsers(onlineUserProp);
+
         axios.get('api/user/activity_count').then(res =>{
             if(res.data.status === 200)
             {
                 setCountActivity(res.data.activity);
             }   
         });
-    }, []);
+    }, [onlineUserProp]);
 
     return (
         <>
-        
             <div className="MobileLeft left-col-box p-3 mt-3 ">
                 
                 <div class="accordion " id="accordionExample">
@@ -181,6 +184,10 @@ export const LeftSidebar = ({history}) => {
 
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">
+                            {onlineUsers.map((u) => (
+                              <OnlineUser key={u.userId} user={u.userId} />
+                            ))}
+
                             {Users.map((u) => (
                               <Online key={u.id} user={u} />
                             ))}
@@ -188,8 +195,12 @@ export const LeftSidebar = ({history}) => {
                     </div>
 
                 </div>
+
+                
             </div>
             { /* Stars Online End*/}
+
+            
 
         </>
     )

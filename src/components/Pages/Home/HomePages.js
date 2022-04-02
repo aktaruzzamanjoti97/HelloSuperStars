@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Navigation from "../../Header/Navigation";
 import LeftSidebar from '../../Sidebar/LeftSidebar';
 import RightSidebar from '../../Sidebar/RightSidebar';
@@ -7,60 +7,36 @@ import Post from "./Body/Post/Post";
 // import PostContent from "./Body/Post/PostContent";
 import PromoVideo from "./Body/PromoVideo/PromoVideo";
 
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 
 
   const Homepage = () => {
 
-  //const [socket, setSocket] = useState(null);
+    const [onlineUsers, setOnlineUsers] = useState([]);
+
+  const socket = useRef();
 
   useEffect(() => {
-    //const socket = io(`http://localhost:3000`);
-    var socket = io("http://localhost:3000",{query: 1 });
-    
-    socket.on('connection', (msg) => {
-      console.log('sonet', msg);
+    socket.current = io("ws://localhost:8900");
+  }, []);
+
+  useEffect(() => {
+    console.log('cur_user_right', localStorage.getItem('auth_id'))
+    socket.current.emit("addUser", localStorage.getItem('auth_id'));
+    socket.current.on("getUsers", (users) => {
+      setOnlineUsers(users
+        // user.followings?.filter((f) => users.some((u) => u.userId === f))
+      );
     });
-
-    socket.emit('user_id', localStorage.getItem('auth_id'));
-
   }, []);
 
 
-
-
-
-
     return (
-      <React.Fragment>
-        <Navigation />
-        <div className="homebody ">
-          <div className="container-fluid custom-container ">
-            <div className="row">
-
-              <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
-                <div className="promoVideoBorder">
-                  <PromoVideo />
-                </div>
-
-                <LeftSidebar />
-              </div>
-
-              <div className="col-sm-6 justify-content-center postTab ">
-                <CategorySelector />
-                <Post />
-              </div>
-
-              <div className="col-ms-3 justify-content-center container-fluid custom-container-left-Right postRight">
-                <RightSidebar />
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <br />
-      </React.Fragment>
+      <>
+        <CategorySelector />
+        <Post />
+      </>
     );
   
 }
