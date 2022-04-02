@@ -133,9 +133,9 @@ const [cardInfo, setCardInfo] = useState({
       
         </>
       ))}
+
+      
         </div>
-
-
         <div>
           <div>
             <Card style={{ backgroundColor: "#343434" }} sx={{ minWidth: 275 }}>
@@ -387,16 +387,6 @@ const [cardInfo, setCardInfo] = useState({
             >
               <CardContent>
                 <FileUpload id ={params.id}/>
-                <div className="row">
-                      <div className="col-md-6">
-                        <Link to='/participant-upload'><button
-                          type="submit"
-                          className="my-3 btn btn-gold submit-greetings-btn"
-                        >
-                          Upload
-                        </button></Link>
-                      </div>
-                    </div>
               </CardContent>
             </Card>
             

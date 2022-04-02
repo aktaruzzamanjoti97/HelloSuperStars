@@ -2,15 +2,14 @@ import axios from "axios";
 import React, { useRef, useState } from "react";
 import { FileDrop } from "react-file-drop";
 import { AiOutlineCloseCircle, AiOutlineUpload } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 import styles from "./style.module.css";
 
 const FileUpload = ({id}) => {
 
- 
+ const history = useHistory();
 
-  const [selectFile, setSelectFile] = useState({
-    video_url:'',
-  });
+  const [selectFile, setSelectFile] = useState(null);
 
   const fileInputRef = useRef(null);
 
@@ -25,7 +24,7 @@ const FileUpload = ({id}) => {
     if (
       file.type === "image/jpeg" ||
       file.type === "image/png" ||
-      file.type === "image/jpg"
+      file.type === "video/mp4"
     ) {
     } else if (file.type === "text/plain") {
       const text = await file.text();
@@ -42,17 +41,18 @@ const FileUpload = ({id}) => {
 
   const videoSubmit = (e) => {
     e.preventDefault();
-    const data = {
+    const fData = new FormData();
+    fData.append("audition_id", id);
+    fData.append("video_url",selectFile);
+    //console.log('selected_file',selectFile)
 
-      video_url:selectFile
-    }
-     axios.post(`/api/user/video/participate/${id}`, data).then(res => {
-        if(res.data.status === 200)
-        {
-          console.log("video  done")
-        }
-        
-    });
+    axios.post(`/api/user/video/participate`,fData).then(res => {
+            if(res.data.status === 200)
+            {
+              history.push(`/participant-upload/${id}`);
+            }
+            
+        });
   }
 
   return (
@@ -69,9 +69,9 @@ const FileUpload = ({id}) => {
                   className={styles.hidden}
                 />
                 <div className={styles.text}>
-                  <button onClick={onTargetClick} className={styles.uploadBtn}>
+                  <span onClick={onTargetClick} className={styles.uploadBtn}>
                     Upload File
-                  </button>
+                  </span>
                   <p className="text-center text-white">
                     {selectFile !== null ? (
                       <>
@@ -106,6 +106,23 @@ const FileUpload = ({id}) => {
             </div>
           </div>
         </div>
+        <div className="row">
+                      <div className="col-md-6">
+                        {/* <Link to='/participant-upload'><button
+                          type="submit"
+                          className="my-3 btn btn-gold submit-greetings-btn"
+                        >
+                          Upload
+                        </button></Link> */}
+                        <button
+                          type="submit"
+                          className="my-3 btn btn-gold submit-greetings-btn"
+                          // onClick={}
+                        >
+                          Upload
+                        </button>
+                      </div>
+                    </div>
       </div>
     </form>
   );
