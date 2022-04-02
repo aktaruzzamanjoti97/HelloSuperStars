@@ -7,6 +7,7 @@ const FanMember = () => {
 
   const [fanDetails, setFanDetails] = React.useState([]);
   const [myStar, setMyStar] = useState([]);
+  const [anotherStar, setAnotherStar] = useState([]);
 
   // const [myAnotherStar, setMyAnotherStar] = React.useState('');
   const { slug } = useParams();
@@ -20,6 +21,7 @@ const FanMember = () => {
         setFanDetails(res.data.fanDetails);
         
         setMyStar(res.data.my_user_join);
+        setAnotherStar(res.data.another_user_join);
         
         // setMyAnotherStar(res.data.fanDetails.another_user_join);
       }
@@ -54,14 +56,14 @@ const FanMember = () => {
                   <div className="col-md-6 px-2 MembersListFan">
                     <button className="btn w-100 ">
                       <img src={`http://localhost:8000/${fanDetails.my_superstar?.image}`} alt="" className="MemImgStar" />
-                      {fanDetails.my_superstar?.first_name} {fanDetails.my_superstar?.last_name} - 130
+                      {fanDetails.my_superstar?.first_name} {fanDetails.my_superstar?.last_name} - {myStar.length}
                        {/* - 130 */}
                     </button>
                   </div>
                   <div className="col-md-6 px-2 MembersListFanAdmin">
                     <button className="btn w-100 ">
                       <img src={`http://localhost:8000/${fanDetails.another_superstar?.image}`} alt="" className="MemImgStar" />
-                      {fanDetails.another_superstar?.first_name} {fanDetails.another_superstar?.last_name} - 132
+                      {fanDetails.another_superstar?.first_name} {fanDetails.another_superstar?.last_name} - {anotherStar.length}
                     </button>
                   </div>
                 </div>
@@ -81,8 +83,8 @@ const FanMember = () => {
                   {
                     myStar.map((fan, i)=>(
                       <button className="btn w-100 text-light FaNMemBerList mb-3">
-                        <img src={StarSla} alt="" className="MemImgStar" />
-                        {fan}
+                        <img src={`http://localhost:8000/${fan.image}`} alt="" className="MemImgStar" />
+                        {fan.first_name} {fan.last_name}
                       </button>
                     ))
                   }
@@ -94,30 +96,15 @@ const FanMember = () => {
                   <div className="col-md-6  px-2 MembersListFanUser mb-3">
 
                     {/*____________ Shahrukh Khan Admin ____________ */}
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
+                    
+                    {
+                    anotherStar.map((fan, i)=>(
+                      <button className="btn w-100 text-light FaNMemBerList mb-3">
+                        <img src={`http://localhost:8000/${fan.image}`} alt="" className="MemImgStar" />
+                        {fan.first_name} {fan.last_name}
+                      </button>
+                    ))
+                  }
 
 
                   </div>
