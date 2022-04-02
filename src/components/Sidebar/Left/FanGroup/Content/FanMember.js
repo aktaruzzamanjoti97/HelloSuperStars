@@ -1,7 +1,32 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Nav, Tab } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import StarSla from "../../../../../images/salman.jpg";
 const FanMember = () => {
+
+  const [fanDetails, setFanDetails] = React.useState([]);
+  const [myStar, setMyStar] = useState([]);
+
+  // const [myAnotherStar, setMyAnotherStar] = React.useState('');
+  const { slug } = useParams();
+  console.log('slug fanDetails ', fanDetails);
+  console.log('My olld myStar ', myStar);
+
+  useEffect(() => {
+    axios.get(`/api/user/fan/group/${slug}`).then(res => {
+      console.log("res ", res);
+      if (res.status === 200) {
+        setFanDetails(res.data.fanDetails);
+        
+        setMyStar(res.data.my_user_join);
+        
+        // setMyAnotherStar(res.data.fanDetails.another_user_join);
+      }
+
+    });
+  }, [slug]);
+
   return (
     <>
       <div className="MediaBG mt-3">
@@ -28,14 +53,15 @@ const FanMember = () => {
                 <div className="row justify-content-between mx-2 mt-3 mb-3">
                   <div className="col-md-6 px-2 MembersListFan">
                     <button className="btn w-100 ">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Salman Khan panel - 130
+                      <img src={`http://localhost:8000/${fanDetails.my_superstar?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.my_superstar?.first_name} {fanDetails.my_superstar?.last_name} - 130
+                       {/* - 130 */}
                     </button>
                   </div>
                   <div className="col-md-6 px-2 MembersListFanAdmin">
                     <button className="btn w-100 ">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Shahrukh Khan panel - 132
+                      <img src={`http://localhost:8000/${fanDetails.another_superstar?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.another_superstar?.first_name} {fanDetails.another_superstar?.last_name} - 132
                     </button>
                   </div>
                 </div>
@@ -46,46 +72,21 @@ const FanMember = () => {
                   <div className="col-md-6 px-2 MembersListFanUser mb-3">
 
                     {/*____________ Salman Khan Admin ____________ */}
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
-                    <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
-                    </button>
+                  
+                  
+
+                  {/* {console.log(typeof(myStar))}
+                   */}
+
+                  {
+                    myStar.map((fan, i)=>(
+                      <button className="btn w-100 text-light FaNMemBerList mb-3">
+                        <img src={StarSla} alt="" className="MemImgStar" />
+                        {fan}
+                      </button>
+                    ))
+                  }
+                   
 
                     
                   </div>
@@ -133,14 +134,14 @@ const FanMember = () => {
                 <div className="row justify-content-between mx-2 mt-3 mb-3">
                   <div className="col-md-6 px-2 MembersListFan">
                     <button className="btn w-100 MembersListFan ">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Salman Khan panel - 1
+                      <img src={`http://localhost:8000/${fanDetails.my_superstar?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.my_superstar?.first_name} {fanDetails.my_superstar?.last_name} - 1
                     </button>
                   </div>
                   <div className="col-md-6 px-2 MembersListFanAdmin">
                     <button className="btn w-100 ">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Shahrukh Khan panel - 1
+                      <img src={`http://localhost:8000/${fanDetails.another_superstar?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.another_superstar?.first_name} {fanDetails.another_superstar?.last_name} - 1
                     </button>
                   </div>
                 </div>
@@ -152,8 +153,8 @@ const FanMember = () => {
 
                     {/*____________ Salman Khan Admin ____________ */}
                     <button className="btn w-100 text-light FaNMemBerList mb-3">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
+                      <img src={`http://localhost:8000/${fanDetails.my_admin?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.my_admin?.first_name} {fanDetails.my_admin?.last_name}
                     </button>
                     
                   </div>
@@ -162,8 +163,8 @@ const FanMember = () => {
 
                     {/*____________ Shahrukh Khan Admin ____________ */}
                     <button className="btn w-100 text-light FaNMemBerList">
-                      <img src={StarSla} alt="" className="MemImgStar" />
-                      Afzal Karim
+                      <img src={`http://localhost:8000/${fanDetails.another_admin?.image}`} alt="" className="MemImgStar" />
+                      {fanDetails.another_admin?.first_name} {fanDetails.another_admin?.last_name}
                     </button>
 
                   </div>
