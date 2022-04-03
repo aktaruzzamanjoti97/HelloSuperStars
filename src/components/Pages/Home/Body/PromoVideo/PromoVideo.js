@@ -43,7 +43,7 @@ const PromoVideo = () => {
 
     return (
         <div className="mt-3 promoSlider">
-            <Slider className="" {...settings}>
+            {/* <Slider className="" {...settings}>
                 {Links.map((video, i) => (
                     <Card className="">
                         <Card.Body className={i === videoIndex ? "slide activeSlide videoCard" : "slide videoCard"}>
@@ -62,7 +62,7 @@ const PromoVideo = () => {
                 ))}
 
                
-            </Slider>
+            </Slider> */}
             <img src={jhakanaka} className="img-fluid" alt="" />
 
         </div>

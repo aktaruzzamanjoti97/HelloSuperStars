@@ -123,6 +123,9 @@ function App() {
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
 
+        {/* fan group */}
+        <Route exact path='/fan-group' component={FanHome} />
+        <Route exact path='/group/:slug' component={FanGroupBody} />
 
         {/* Souvenir */}
         <Route exact path='/souvenir/:product_id' component={Souvenir} />

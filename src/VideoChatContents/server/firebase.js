@@ -18,10 +18,8 @@ export const db = firebase;
 
 var firepadRef = firebase.database().ref();
 
-
+//export const userName = prompt("What's your name?");
 export const userName = 'user';
-
-
 const urlparams = new URLSearchParams(window.location.search);
 const roomId = urlparams.get("id");
 
