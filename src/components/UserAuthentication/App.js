@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 
 import {Route, Switch, BrowserRouter} from "react-router-dom";
 
+import MasterLayout from "../Pages/MasterLayout";
 import Login from "./components/UserAuthentication/Login";
 import Signup from "./components/UserAuthentication/Signup";
 import Otp from "./components/UserAuthentication/Otp";
@@ -79,9 +80,9 @@ function App() {
 
       <Switch>
         {/* Navbar */}
-        <Route exact path='/' component={Home} />
         
-        <Route exact path='/marketplace' component={Market} />
+        
+        {/* <Route exact path='/marketplace' component={Market} /> */}
 
         {/* Left Sidebar*/}
         <Route exact path='/category' component={CategoryBody} />
@@ -132,6 +133,8 @@ function App() {
           
       
         <Route exact path='/logo' component={HelloSuperStarDemo} />
+
+        <Route path='/' component={MasterLayout} />
 
         {/* Error */}
         <Route component={Error} />

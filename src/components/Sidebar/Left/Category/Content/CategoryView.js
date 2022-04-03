@@ -118,16 +118,8 @@ const CategoryView = (props) => {
   ])
 
   return (
-    <React.Fragment>
-      <Navigation />
-      <div className="homebody" style={{ background: "#000000" }}>
-        <div className="container-fluid  custom-container">
-          <div className="row">
-            <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
-              <LeftSidebar />
-            </div>
-
-            <div className="col-sm-6 justify-content-center postTab">
+    <>
+      <div className="justify-content-center postTab">
               <div
                 className="bg-dark my-4 d-flex justify-content-between"
                 style={headerStyle.BorderStyle}
@@ -206,14 +198,7 @@ const CategoryView = (props) => {
 
               <SuggestedCategory headerStyle={headerStyle} />
             </div>
-
-            <div className="col-md-3 justify-content-center container-fluid custom-container-left-Right  postRight">
-              <RightSidebar />
-            </div>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
+    </>
   );
 };
 

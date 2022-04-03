@@ -7,24 +7,17 @@ import './components/CSS/BodyColor.css';
 
 import VideoCall from './VideoCall'
 
+import MasterLayout from "./components/Pages/MasterLayout";
 // Category
 import CoreCategory from "./components/Pages/Category/CoreCategory";
 import StarSelection from "./components/Pages/Category/StarSelection";
 import SubCategory from "./components/Pages/Category/SubCategory";
-import AuditionsPost from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
-import LearnPost from './components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
-import LivePost from "./components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
-import MeetupPost from "./components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
-import UpLivePost from "./components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
 
 // Error
 import Error from "./components/Pages/Home/Error";
 
 // Home Page
 import Home from "./components/Pages/Home/HomePages";
-
-// Market Place Page
-import Market from "./components/Pages/Market/MarketPlace";
 import Profile from './components/Pages/Profile/Profile';
 import StarProfile from "./components/Pages/Profile/StarProfile";
 import SouvenirSignature from "./components/Pages/Souvenir/Content/SouvenirSignature/SouvenirSignature";
@@ -32,12 +25,7 @@ import GuestUserPage from "./components/Pages/User/GuestUser/GuestUserPage";
 import Packages from "./components/Pages/User/Packages/Packages";
 import SliderTutorial from "./components/Pages/User/TutorialSPage/SliderTutroial";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import ActivitiesBody from "./components/Sidebar/Left/Activities/ActivitiesBody";
-import VideoActivities from "./components/Sidebar/Left/Activities/Content/VideoActivities";
-import CategoryMain from "./components/Sidebar/Left/Category/CategoryMain";
-import CategoryView from "./components/Sidebar/Left/Category/Content/CategoryView";
-import ProfileCatBody from "./components/Sidebar/Left/Category/Content/ProfileCatBody";
-import EnrollBody from "./components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+
 
 // Left Sidebar 
 import FollowMain from "./components/Sidebar/Left/Following/FollowMain";
@@ -62,7 +50,6 @@ import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/S
 import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
 import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
 import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector/NestedSubCategoryBody";
-
 import LearningSessionLiveStream from "./VideoCall";
 import ParticipateGuitarChord from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/ParticipateGuitarChord";
 import AuditionGuitar from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditionGuitar";
@@ -94,46 +81,14 @@ function App() {
 
       <Switch>
         
-        {/* Navbar */}
-        <PrivateRoute exact path='/' component={Home} />
         <Route exact path='/guest' component={Home} />
-
-        <Route exact path='/marketplace' component={Market} />
-
         <Route exact path='/marketplace/shipping' component={Shipping} />
         <Route exact path='/videocall'  component={VideoCall} />
-
         <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
-        {/* Left Sidebar*/}
-        <Route exact path='/category' component={CategoryMain} />
-        <Route exact path='/category-view/:slug' component={CategoryView} />
-        <Route exact path='/category-profile' component={ProfileCatBody} />
-
-        <Route exact path='/following' component={FollowMain} />
-
-        <Route exact path='/fan-group' component={FanHome} />
-        <Route exact path='/your-group' component={FanGroupBody} />
-
         <PrivateRoute exact path='/wallet' component={WalletBody} />
-        <PrivateRoute exact path='/enrolled-auditions' component={EnrollBody} />
-        <PrivateRoute exact path='/activities' component={ActivitiesBody} />
-        <PrivateRoute exact path='/activities/video/:id' component={VideoActivities} />
-
-        <PrivateRoute exact path='/settings' component={SettingsBody} />
         
-        {/* Left Sidebar End*/}
-
-
-        {/* Right Sidebar   */}
-        <Route exact path='/live-now' component={LivePost} />
-        <Route exact path='/learning-sessions' component={LearnPost}/>
-        <Route exact path='/upcoming-live' component={UpLivePost} />
-        <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
-        <Route exact path='/participant-audition/:id' component={ParticipateGuitarChord}/>
-        <Route exact path='/participant-upload/:id' component={AuditionGuitar}/>
-        <Route exact path='/meetup-events' component={MeetupPost}/>
-        {/* Right Sidebar End */}
-
+        {/* <PrivateRoute exact path='/settings' component={SettingsBody} /> */}
+      
         {/* Selector */}
         <Route exact path='/selector-sub-category' component={SubCategorySelector} />
 
@@ -175,13 +130,21 @@ function App() {
         <Route exact path='/souvenir-apply' component={SouvenirSignature} />
         <Route exact path='/souvenir-applied' component={AcquiringProduct} />
 
+        <Route exact path='/participant-audition/:id' component={ParticipateGuitarChord}/>
+        <Route exact path='/participant-upload/:id' component={AuditionGuitar}/>
+
         {/* Learning Session */}
         <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
         <Route exact path="/learning-session/live_stream" component={LearningSessionLiveStream} />
-        
+
+      
+        <PrivateRoute path='/' component={MasterLayout} />
 
         {/* Error */}
-        <Route component={Error} />
+        <Route path='/404' component={Error} />
+        
+
+        
         
       </Switch>
     </BrowserRouter>
