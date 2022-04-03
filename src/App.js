@@ -48,7 +48,6 @@ import RegisterNow from "./components/Pages/Home/Body/SidebarComponent/Right/Rei
 import RegisterLearningDetails from "./components/Pages/Home/Body/SidebarComponent/RegisterLearningDetails/RegisterLearningDetails";
 import SubCategorySelector from "./components/Pages/Home/Body/CategorySelector/SubCategorySelectorBody";
 import FanGroupBody from "./components/Sidebar/Left/FanGroup/FanGroupBody";
-import FanHome from "./components/Sidebar/Left/FanGroup/FanHome";
 import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector/NestedSubCategoryBody";
 import LearningSessionLiveStream from "./VideoCall";
 import ParticipateGuitarChord from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/ParticipateGuitarChord";
@@ -124,8 +123,8 @@ function App() {
         <Route exact path='/logo' component={HelloSuperStarDemo} />
 
         {/* fan group */}
-        <Route exact path='/fan-group' component={FanHome} />
-        <Route exact path='/group/:slug' component={FanGroupBody} />
+        {/* <Route exact path='/fan-group' component={FanHome} /> */}
+        {/* <Route exact path='/group/:slug' component={FanGroupBody} /> */}
 
         {/* Souvenir */}
         <Route exact path='/souvenir/:product_id' component={Souvenir} />

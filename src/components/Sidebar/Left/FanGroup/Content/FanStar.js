@@ -43,7 +43,7 @@ const FanStar = () => {
 
   useEffect(() => {
     axios.get(`/api/user/fan/group/${slug}`).then(res => {
-      // console.log(res.data.category);
+      console.log('fan Group',res.data);
       if (res.status === 200) {
         setFanDetails(res.data.fanDetails);
         setMyStar(res.data.my_star);
