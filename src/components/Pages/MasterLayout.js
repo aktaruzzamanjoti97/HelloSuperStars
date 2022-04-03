@@ -26,6 +26,7 @@ import AuditionsPost from "../../components/Pages/Home/Body/SidebarComponent/Rig
 import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
 import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 
+
 import { io } from "socket.io-client";
 
 const Homepage = () => {
@@ -77,7 +78,7 @@ const Homepage = () => {
                 <Route exact path='/activities/video/:id' component={VideoActivities} />
 
                 <Route exact path='/fan-group' component={FanHome} />
-                <Route exact path='/your-group' component={FanGroupBody} />
+                <Route exact path='/group/:slug' component={FanGroupBody} />
 
                 {/* Right Sidebar   */}
                 <Route exact path='/live-now' component={LivePost} />
@@ -91,6 +92,7 @@ const Homepage = () => {
 
                 <Route exact path='/enrolled-auditions' component={EnrollBody} />
                 {/* Right Sidebar End */}
+
               </Switch>
             </div>
 
