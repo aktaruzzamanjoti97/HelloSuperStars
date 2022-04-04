@@ -9,14 +9,14 @@ const UpcomingAuditions = () => {
     const[Users, setUpcomingAuditions] = useState([]);
     useEffect(()=>{
 
-        // axios.get("/api/user/getUpcomingAuditions").then((res) => {
-        //     if (res.data.status === 200) {
-        //         //console.log('upcomingAuditions',res.data.upcomingAuditions)
-        //         setUpcomingAuditions(res.data.upcomingAuditions);
+        axios.get("/api/user/getUpcomingAuditions").then((res) => {
+            if (res.data.status === 200) {
+                //console.log('upcomingAuditions',res.data.upcomingAuditions)
+                setUpcomingAuditions(res.data.upcomingAuditions);
                 
-        //     }
+            }
   
-        // });
+        });
     },[])
 
     return (
