@@ -30,6 +30,7 @@ import { io } from "socket.io-client";
 
 const Homepage = () => {
   const [onlineUsers, setOnlineUsers] = useState([]);
+  const [totalNotification, setTotalNotification] = useState([]);
 
   const socket = useRef();
 
@@ -41,16 +42,17 @@ const Homepage = () => {
     console.log("cur_user_right", localStorage.getItem("auth_id"));
     socket.current.emit("addUser", localStorage.getItem("auth_id"));
     socket.current.on("getUsers", (users) => {
-      setOnlineUsers(
-        users
-        // user.followings?.filter((f) => users.some((u) => u.userId === f))
-      );
+      setOnlineUsers(users);
+    });
+    socket.current.on("getNotification", (data) => {
+      //console.log('Number of Notifications', data);
+      setTotalNotification(data);
     });
   }, []);
 
   return (
     <React.Fragment>
-      <Navigation />
+      <Navigation totalNotification={totalNotification}/>
       <div className="homebody ">
         <div className="container-fluid custom-container ">
           <div className="row">
