@@ -25,7 +25,7 @@ import StarOnlineMobile from './StarOnlineMobile';
 
 import LiveNowMenu from './Right/LiveNowMenu';
 
-const Navigation = () => {
+const Navigation = (props) => {
 
 const [notiDropdownShow, setNotiDropdownShow] = React.useState(false);
 const [isNavOpen, setIsNavOpen] = useState(false)
@@ -52,6 +52,7 @@ const history = useHistory();
 
 useEffect(() => {
 checkNotification()
+console.log('Total Notification in Navbar', props.totalNotification)
 
 },[])
 
@@ -290,7 +291,7 @@ return (
 
                         <div className="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <i className="fa fa-bell circle-icon" />
+                            {props.totalNotification} <i className="fa fa-bell circle-icon" /> 
                         </div>
 
                         <div className="container chatContainer dropdown-menu toggle"
@@ -584,7 +585,8 @@ return (
 
                                 <div className="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    <i className="fa fa-bell circle-icon" />
+                                    {props.totalNotification} <i className="fa fa-bell circle-icon" />
+                                    
                                 </div>
 
                                 <div className="container chatContainer dropdown-menu toggle"
