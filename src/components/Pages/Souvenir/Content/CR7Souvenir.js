@@ -1,50 +1,50 @@
 import React, { useEffect, useState, useRef } from "react";
-import ReactPlayer from "react-player";
 import "./CR7Souvenir.css";
 import UserPro from "../../../../images/Shakib/pro.jpg";
 import BGImg from "../../../../images/Souvenir/fundo-floral-preto-png-2.png";
 import Bid from "../../../../images/Souvenir/Icons/bid.png";
 import Confirm from "../../../../images/Souvenir/Icons/auction.png";
+import BiddingHistory from "../Content/RightSideSouvenir/BiddingHistory/BiddingHistory";
+import RemainingTimeSouvenir from "../Content/RightSideSouvenir/RemainingTimeSouvenir/RemainingTimeSouvenir";
+import SuperstarCard from "../Content/RightSideSouvenir/SuperstarCard/SuperstarCard";
 import CR7Modal from "./CR7Modal";
 import { Markup } from "interweave";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import { io } from "socket.io-client";
 
 const CR7Souvenir = ({ data }) => {
-  const history = useHistory();
   const socket = useRef();
-
   const [modalShow, setModalShow] = React.useState(false);
-
+  const [priceAlert, setPriceAlert] = React.useState(false);
+  const [passwordAlert, setPasswordAlert] = React.useState(false);
   const [liveBidding, setLiveBidding] = useState();
-  const [liveUpdate, setUpdate] = useState("");
+  const [bidHistory, setBidHistory] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get(`/api/user/liveBidding/auction/${data.id}`).then((res) => {
-  //     if (res.data.status === 200) {
-  //       console.log("data from laravel",res.data.bidding)
-  //       setLiveBidding(res.data.bidding);
-  //     }
-  //   });
-  // }, [liveUpdate]);
-
+  const bidingHistory = () => {
+    axios.get(`/api/user/liveBidding/history/${data.id}`).then((res) => {
+      if (res.data.status === 200) {
+        setBidHistory(res.data.bidHistory);
+        console.log("bid History", res.data.bidHistory);
+      }
+    });
+  };
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.emit("sendLiveBidding", data.id);
     socket.current.on("getLiveBidding", (data) => {
-      console.log("data from socket",data)
+      console.log("data from socket", data);
       setLiveBidding(data);
     });
-  },[]);
-
+    bidingHistory();
+  }, []);
 
   const [auctionInput, setAuctionInput] = useState({
     auction_id: data.id,
     amount: "",
     password: "",
+    error_list: [],
   });
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -55,23 +55,35 @@ const CR7Souvenir = ({ data }) => {
 
   const auctionSubmit = (e) => {
     e.preventDefault();
-    const fdata = {
-      auction_id: auctionInput.auction_id,
-      amount: auctionInput.amount,
-      password: auctionInput.password,
-    };
 
-    axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`/api/user/bidding/auction/product`, fdata).then((res) => {
-        if (res.data.status === 200) {
-          socket.current.emit("sendLiveBidding", data.id);
-          socket.current.on("getLiveBidding", (data) => {
-            console.log("data from socket",data)
-            setLiveBidding(data);
-          });
-        }
+    if (auctionInput.amount > data.base_price) {
+      const fdata = {
+        auction_id: auctionInput.auction_id,
+        amount: auctionInput.amount,
+        password: auctionInput.password,
+      };
+
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios.post(`/api/user/bidding/auction/product`, fdata).then((res) => {
+          if (res.data.status === 200) {
+            socket.current.emit("sendLiveBidding", data.id);
+            socket.current.on("getLiveBidding", (sdata) => {
+              console.log("data from socket", sdata);
+              setLiveBidding(sdata);
+            });
+            setPriceAlert(false);
+            setPasswordAlert(false);
+            bidingHistory();
+            console.log("200 alert", res.data);
+          }
+          if (res.data.status === 201) {
+            setPasswordAlert(true);
+          }
+        });
       });
-    });
+    } else {
+      setPriceAlert(true);
+    }
   };
 
   return (
@@ -82,6 +94,11 @@ const CR7Souvenir = ({ data }) => {
         <p className="text-white PText">
           <Markup content={data.details} /> <span>See more</span>
         </p>
+
+        <h4 className="text-warning">
+          Base Price: <small>{data.base_price}</small>
+        </h4>
+
         <div className="ReactCr7 bg-dark p-4 mb-3 ">
           <ReactImageMagnify
             {...{
@@ -132,25 +149,47 @@ const CR7Souvenir = ({ data }) => {
               <p className="text-light mt-3 fw-bold">Bid Now</p>
 
               <div className=" col-md-6 mb-3 ">
-                <input
-                  type="text"
-                  onChange={handleInput}
-                  value={auctionInput.amount}
-                  name="amount"
-                  className="p-3 mb-3 w-100 inputBgSA"
-                  placeholder="$ Enter amount"
-                />
-                <input
-                  type="password"
-                  onChange={handleInput}
-                  value={auctionInput.password}
-                  name="password"
-                  className="p-3 mb-3 w-100 inputBgSA"
-                  placeholder="Enter Password"
-                />
+                <div>
+                  <input
+                    type="text"
+                    onChange={handleInput}
+                    value={auctionInput.amount}
+                    name="amount"
+                    className="p-3 mb-3 w-100 inputBgSA"
+                    placeholder="$ Enter amount"
+                  />
+                </div>
+
+                <div>
+                  {passwordAlert ? (
+                    <span className="text-warning">Password is Invalid!</span>
+                  ) : (
+                    ""
+                  )}
+
+                  <input
+                    type="password"
+                    onChange={handleInput}
+                    value={auctionInput.password}
+                    name="password"
+                    className="p-3 mb-3 w-100 inputBgSA"
+                    placeholder="Enter Password"
+                  />
+                </div>
               </div>
 
               <div className=" col-md-4 mb-3 ">
+                {priceAlert ? (
+                  <div className="d-flex justify-content-end">
+                    <button className="btn Acquire fw-bold px-4 py-2 mb-3">
+                      <i class="fas fa-id-card-alt"> </i> &nbsp; Minimum Bidding
+                      Price {data.base_price} BDT
+                    </button>
+                  </div>
+                ) : (
+                  ""
+                )}
+
                 <img src={Bid} alt={Bid} className="img-fluid BibImg" />
               </div>
             </div>
@@ -177,6 +216,12 @@ const CR7Souvenir = ({ data }) => {
 
           <CR7Modal show={modalShow} onHide={() => setModalShow(false)} />
         </div>
+      </div>
+
+      <div className="col-md-4">
+        <RemainingTimeSouvenir AuctionData={data} />
+        <SuperstarCard AuctionData={data} />
+        <BiddingHistory AuctionData={bidHistory} />
       </div>
     </>
   );

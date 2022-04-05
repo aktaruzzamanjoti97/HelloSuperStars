@@ -1,18 +1,10 @@
-import axios from 'axios';
+import React from "react";
 import moment from 'moment';
-import React, { useEffect, useState } from 'react';
 import './BiddingHistory.css';
+import NumberFormat from "react-number-format";
 
 const BiddingHistory = ({AuctionData}) => {
 
-const [bidHistory, setBidHistory] = useState([]);
-useEffect(()=>{
-    axios.get(`/api/user/liveBidding/history/${AuctionData.id}`).then((res)=>{
-        if(res.data.status === 200){
-            setBidHistory(res.data.bidHistory);
-        }
-    })
-},[]);
 
     return (
         <div className='bg-dark py-4 pe-5'>
@@ -24,24 +16,22 @@ useEffect(()=>{
                     <div className="col-md-4">Amount</div>
                 </div>
                 <div className="row">
-                    {bidHistory?.map((myHistory)=>(
+                    {AuctionData?.map((myHistory)=>(
                         <>
                     <div className="col-md-4">
-                        {/* <li className="bgHead my-1">Date</li> */}
-                        <li className="my-1">{moment(myHistory.created_at).format('YYYY-MM-DD')}</li>
+                        <li className="my-1">{moment(myHistory.created_at).format('LL')}</li>
                     </div>
                     <div className="col-md-4">
-                        {/* <li className="bgHead my-1">Time</li> */}
                         <li  className="my-1">{moment(myHistory.created_at).format('h:mm:ss')}</li>
                     </div>
                     <div className="col-md-4">
-                        {/* <li className="bgHead my-1">Amount</li> */}
-                        <li className="my-1">$ {myHistory.amount}</li>
+                        <li className="my-1">
+                        {myHistory.amount} BDT
+                        </li>
                     </div>
                         </>
                     ))}
                 </div>
-
             </ul>
         </div>
     );
