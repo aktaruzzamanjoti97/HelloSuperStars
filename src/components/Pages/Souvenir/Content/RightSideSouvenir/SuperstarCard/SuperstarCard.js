@@ -17,8 +17,8 @@ const SuperstarCard = ({AuctionData}) => {
                     <div className="col-md-9">
                         <li  className="my-1">{AuctionData.star.first_name} {AuctionData.star.last_name}</li>
                         <li  className="my-1">Sports</li>
-                        <li  className="my-1">{moment(AuctionData.bid_from).format('YYYY-MM-DD')}</li>
-                        <li  className="my-1">{moment(AuctionData.bid_to).format('YYYY-MM-DD')}</li>
+                        <li  className="my-1">{moment(AuctionData.bid_from).format('LLL')}</li>
+                        <li  className="my-1">{moment(AuctionData.bid_to).format('LLL')}</li>
                     </div>
                 </div>
 
