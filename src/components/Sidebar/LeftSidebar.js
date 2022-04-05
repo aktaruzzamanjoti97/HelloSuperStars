@@ -15,6 +15,7 @@ import '../CSS/Sidebar/Left/Following.css'
 export const LeftSidebar = ({history, onlineUserProp}) => {
     const [activity, setCountActivity] = useState(0);
     const [onlineUsers, setOnlineUsers] = useState([]);
+    const [pendingAudtion, setPendingAudtion] = useState();
     
 
     useEffect(() => {
@@ -27,6 +28,13 @@ export const LeftSidebar = ({history, onlineUserProp}) => {
                 setCountActivity(res.data.activity);
             }   
         });
+        axios.get('api/user/pendingEnrollAudition').then(res =>{
+            if(res.data.status === 200)
+            {
+                setPendingAudtion(res.data.enrolledAuditionsPending)
+            }   
+        });
+
     }, [onlineUserProp]);
 
     return (
@@ -121,8 +129,8 @@ export const LeftSidebar = ({history, onlineUserProp}) => {
                                                 <i className="fas fa-id-card mx-2 profile-font-color fa-2x"></i>
                                             </span>
                                             <span className="mx-2 profile-font-color" >
-                                                Enrolled audition <br></br>
-                                                <small className="category-size-chat"> 1 pending</small>
+                                                Enrolled Auditions <br></br>
+                                                <small className="category-size-chat">{pendingAudtion} Pending </small>
                                             </span>
                                         </button>
 
