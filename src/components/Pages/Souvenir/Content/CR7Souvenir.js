@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import "./CR7Souvenir.css";
 import UserPro from "../../../../images/Shakib/pro.jpg";
 import BGImg from "../../../../images/Souvenir/fundo-floral-preto-png-2.png";
@@ -11,10 +11,12 @@ import CR7Modal from "./CR7Modal";
 import { Markup } from "interweave";
 import axios from "axios";
 import ReactImageMagnify from "react-image-magnify";
-import { io } from "socket.io-client";
+import { socketContext } from "../../../../App";
 
 const CR7Souvenir = ({ data }) => {
-  const socket = useRef();
+  const socketData = useContext(socketContext);
+
+
   const [modalShow, setModalShow] = React.useState(false);
   const [priceAlert, setPriceAlert] = React.useState(false);
   const [passwordAlert, setPasswordAlert] = React.useState(false);
@@ -31,9 +33,8 @@ const CR7Souvenir = ({ data }) => {
   };
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
-    socket.current.emit("sendLiveBidding", data.id);
-    socket.current.on("getLiveBidding", (data) => {
+    socketData.emit("sendLiveBidding", data.id);
+    socketData.on("getLiveBidding", (data) => {
       console.log("data from socket", data);
       setLiveBidding(data);
     });
@@ -66,8 +67,8 @@ const CR7Souvenir = ({ data }) => {
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.post(`/api/user/bidding/auction/product`, fdata).then((res) => {
           if (res.data.status === 200) {
-            socket.current.emit("sendLiveBidding", data.id);
-            socket.current.on("getLiveBidding", (sdata) => {
+            socketData.emit("sendLiveBidding", data.id);
+            socketData.on("getLiveBidding", (sdata) => {
               console.log("data from socket", sdata);
               setLiveBidding(sdata);
             });

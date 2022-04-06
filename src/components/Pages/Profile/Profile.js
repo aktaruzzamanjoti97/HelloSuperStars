@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "../../CSS/Profile/profile.css";
 import coverImg from "../../../images/Shakib/pro.jpg";
 import profileImg from "../../../images/Shakib/pro.jpg";
@@ -18,29 +18,27 @@ import raihanProfileImage from "../../../images/raihanProfile.jpg";
 import coverImage from "../../../images/coverImage.jpg";
 import sakibal from "../../../images/Profile/shakib-message.jpg";
 import ReactPlayer from "react-player";
-import { io } from 'socket.io-client';
+import { socketContext } from "../../../App";
 
 
 const Profile = () => {
+  const socketData = useContext(socketContext);
+
   const [messagenger, setMessenger] = useState(false);
   const history = useHistory();
   const [user, setUser] = useState([]);
   const [file, setFile] = useState("");
 
-  const socket = useRef();
-
-  useEffect(() => {
-    socket.current = io("ws://localhost:8900");
-  }, []);
-
 
   function handleClick() {
     setMessenger(!messagenger);
   }
+
+
   const logoutSubmit = (e) => {
     e.preventDefault();
 
-    socket.current.emit("logout", localStorage.getItem('auth_id'));
+    socketData.emit("logout", localStorage.getItem('auth_id'));
 
     axios.post(`/api/logout`).then((res) => {
       if (res.data.status === 200) {
