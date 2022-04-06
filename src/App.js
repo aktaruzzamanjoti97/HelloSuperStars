@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState, useEffect, useRef, createContext } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
@@ -52,11 +53,13 @@ import NestedSubCategoryBody from "./components/Pages/Home/Body/CategorySelector
 import LearningSessionLiveStream from "./VideoCall";
 import ParticipateGuitarChord from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/ParticipateGuitarChord";
 import AuditionGuitar from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditionGuitar";
+import reactSelect from "react-select";
+import { io } from "socket.io-client";
+
+export const socketContext=createContext();
 
 
 // Fan Group
-
-
 
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -74,12 +77,24 @@ axios.interceptors.request.use(function (config) {
 
 
 function App() {
+  const [socketData, setSocketData] = useState();
+
+  const socket = useRef();
+
+  useEffect(() => {
+    socket.current = io("ws://localhost:8900");
+    setSocketData(socket.current);
+  }, []);
+
+
   return (
     <>
+    <socketContext.Provider value={socketData}>
     <BrowserRouter>
 
       <Switch>
-        
+
+      
         <Route exact path='/guest' component={Home} />
         <Route exact path='/marketplace/shipping' component={Shipping} />
         <Route exact path='/videocall'  component={VideoCall} />
@@ -139,17 +154,18 @@ function App() {
         <Route exact path="/register-learning-details/:slug" component={RegisterLearningDetails} />
         <Route exact path="/learning-session/live_stream" component={LearningSessionLiveStream} />
 
-      
+        {/* Master Layout With Topbar + Leftbar + Rightbar */}
         <PrivateRoute path='/' component={MasterLayout} />
 
         {/* Error */}
         <Route path='/404' component={Error} />
         
-
+        
         
         
       </Switch>
     </BrowserRouter>
+    </socketContext.Provider>
     </>
   );
 }

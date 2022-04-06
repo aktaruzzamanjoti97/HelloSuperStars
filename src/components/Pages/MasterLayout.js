@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { Switch, Route } from "react-router-dom"
 import Navigation from "../Header/Navigation";
 import LeftSidebar from "../Sidebar/LeftSidebar";
@@ -25,27 +25,22 @@ import UpLivePost from "../../components/Pages/Home/Body/SidebarComponent/Right/
 import AuditionsPost from "../../components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
 import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
 import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+import { socketContext } from "../../App";
 
-
-import { io } from "socket.io-client";
 
 const Homepage = () => {
+
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [totalNotification, setTotalNotification] = useState([]);
-
-  const socket = useRef();
-
-  useEffect(() => {
-    socket.current = io("ws://localhost:8900");
-  }, []);
+  const socketData = useContext(socketContext);
 
   useEffect(() => {
     console.log("cur_user_right", localStorage.getItem("auth_id"));
-    socket.current.emit("addUser", localStorage.getItem("auth_id"));
-    socket.current.on("getUsers", (users) => {
+    socketData.emit("addUser", localStorage.getItem("auth_id"));
+    socketData.on("getUsers", (users) => {
       setOnlineUsers(users);
     });
-    socket.current.on("getNotification", (data) => {
+    socketData.on("getNotification", (data) => {
       //console.log('Number of Notifications', data);
       setTotalNotification(data);
     });
@@ -67,6 +62,7 @@ const Homepage = () => {
 
             <div className="col-sm-6 justify-content-center postTab ">
               <Switch>
+              
                 <Route exact path="/" component={Home} />
                 <Route exact path="/marketplace" component={Market}/>
 
