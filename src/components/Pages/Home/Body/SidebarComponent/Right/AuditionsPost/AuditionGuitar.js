@@ -21,7 +21,6 @@ import { Markup } from 'interweave';
 
 const AuditionGuitar = () => {
 
-
     const params = useParams();
 
     const [participateAudition,setParticipant] = useState([]);
