@@ -1,7 +1,7 @@
 import "./chatting.css";
 // import { format } from "timeago.js";
 
-export default function Message({ message, own }) {
+export default function Message({ message }) {
   return (
     <div className={message.sender_id == localStorage.getItem('auth_id') ? "message own" : "message"}>
       <div className="messageTop">

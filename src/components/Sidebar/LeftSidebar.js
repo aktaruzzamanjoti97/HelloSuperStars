@@ -208,7 +208,10 @@ export const LeftSidebar = ({history, onlineUserProp}) => {
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">
                             {onlineUsers.map((u) => (
-                              <OnlineUser key={u.userId} user={u.userId} />
+                                <Link to={`/chatting/${u.userId}`}>
+                                    <OnlineUser key={u.userId} user={u.userId} />
+                                </Link>
+                              
                             ))}
 
                             {Users.map((u) => (

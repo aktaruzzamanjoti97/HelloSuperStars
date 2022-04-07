@@ -3,6 +3,7 @@ import { socketContext } from "../../../App";
 import Message from "./Message";
 import "./chatting.css";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 import { io } from "socket.io-client";
 
 const Chatting = () => {
@@ -13,34 +14,36 @@ const Chatting = () => {
   const [messages, setMessages] = useState([]);
   const scrollRef = useRef();
   const socket = useRef();
+  const params = useParams();
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", (data) => {
       console.log('message data', data)
       setArrivalMessage({
-        sender: data.senderId,
+        sender_id: data.senderId,
+        receiver_id: data.receiverId,
         text: data.text,
         createdAt: Date.now(),
       });
     });
+  }, []);
 
-    axios.get(`/api/chatting/message`).then(res => {
+  useEffect(() => {
+    axios.get(`/api/chatting/message/${params.id}`).then(res => {
       if(res.data.status === 200)
         {
           console.log('response data', res.data.message)
           setMessages(res.data.message);
         }
     });
-
-
-  }, []);
+  },[params.id]);
 
   useEffect(() => {
-    arrivalMessage &&
+     arrivalMessage &&
       // currentChat?.members.includes(arrivalMessage.sender) &&
       setMessages((prev) => [...prev, arrivalMessage]);
-  }, [arrivalMessage, currentChat]);
+  }, [arrivalMessage, localStorage.getItem('auth_id')]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,46 +59,51 @@ const Chatting = () => {
 
     const receiverId = localStorage.getItem('auth_id');
 
-    const fData = new FormData();
-
-    fData.append('sender_id', localStorage.getItem('auth_id'));
-    fData.append('receiver_id', 12);
-    fData.append('conversationId', message.conversationId);
-    fData.append('text', newMessage);
-
-    
-
+  
     socket.current.emit("sendMessage", {
       senderId: localStorage.getItem('auth_id'),
       receiverId,
       text: newMessage,
     });
 
+    const fData = new FormData();
+
+    fData.append('sender_id', localStorage.getItem('auth_id'));
+    fData.append('receiver_id', 11);
+    fData.append('conversationId', message.conversationId);
+    fData.append('text', newMessage);
+
     try {
       // const res = await axios.post("/messages", message);
       axios.post(`/api/chatting/message`, fData).then(res => {
         if(res.data.status === 200)
           {
-            console.log('response data', res.data.message)
-            setMessages([...messages, res.data.message]);
+             setMessages([...messages, res.data.message]);
+            // setMessages((prev) => [...prev, arrivalMessage]);
+            //setMessages((prev) => [...prev, arrivalMessage]);
           }
       });
-
-      
-      console.log('message', messages)
+      console.log('message after res', messages)
       setNewMessage("");
     } catch (err) {
       console.log(err);
     }
   };
 
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <>
+    {/* <div className="bg-warning chat-header">
+      <h4 className="text-center text-light">Siam</h4>
+    </div> */}
       <div className="chatBoxTop">
       
         {messages.map((m) => (
           <div ref={scrollRef}>
-            <Message message={m} own={m.sender_id === localStorage.getItem('auth_id')} />
+            <Message message={m} />
           </div>
         ))}
       </div>

@@ -67,7 +67,7 @@ const Homepage = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/marketplace" component={Market}/>
 
-                <Route exact path="/chatting" component={Chatting}/>
+                <Route exact path="/chatting/:id" component={Chatting}/>
 
                 <Route exact path='/category' component={CategoryMain} />
                 <Route exact path='/category-view/:slug' component={CategoryView} />

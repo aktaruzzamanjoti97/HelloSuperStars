@@ -6,6 +6,13 @@
   .chatMenu {
     flex: 3.5;
   }
+
+  .chat-header{
+    padding: 10px 10px;
+    margin: 10px 0px;
+    position: sticky;
+    top: 90px;
+  }
   
   .chatMenuInput {
     width: 100%;
@@ -26,7 +33,7 @@
   }
   
   .chatBoxTop {
-    height: 76vh;
+    height: 100vh;
     overflow-y: scroll;
     padding-right: 10px;
   }

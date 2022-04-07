@@ -9,9 +9,9 @@ return (
         <div className="d-flex">
             <div className="containerOnline">
 
-                <img src={user.profilePicture} className=" SidebarStarListImage" alt="profilePicture" />
+                <img src={`/${user.profilePicture}`} className=" SidebarStarListImage" alt="profilePicture" />
 
-                <div class="onLineMo">🟢</div>
+                {/* <div class="onLineMo">🟢</div> */}
 
             </div>
             <div className="col-md-9  mt-2">
