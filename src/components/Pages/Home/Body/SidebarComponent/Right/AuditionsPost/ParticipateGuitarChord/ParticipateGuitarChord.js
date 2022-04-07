@@ -25,6 +25,8 @@ const ParticipateGuitarChord = () => {
   const [participateAudition,setParticipant] = useState([]);
   const [user,setUser] = useState([]);
   const [payment,setPayment] = useState([]);
+  const [goPayment,setPaymentPortal] = useState(0);
+  const [uploadVideo,setUploadVideo] = useState(0);
 
 
 const [participantData, setParticipantData] = useState({
@@ -67,7 +69,7 @@ const [cardInfo, setCardInfo] = useState({
      axios.post(`/api/user/payment/participate`, data).then(res => {
         if(res.data.status === 200)
         {
-          console.log("payment done")
+          setUploadVideo(1);
         }
         
     });
@@ -84,7 +86,7 @@ const [cardInfo, setCardInfo] = useState({
      axios.post(`/api/user/register/participate`, data).then(res => {
         if(res.data.status === 200)
         {
-          console.log("Registration done")
+          setPaymentPortal(1);
         }
         
     });
@@ -255,7 +257,7 @@ const [cardInfo, setCardInfo] = useState({
               </CardContent>
             </Card>
 
-            <Card
+            {goPayment == 1?<>       <Card
               className="my-4"
               style={{ backgroundColor: "#343434" }}
               sx={{ minWidth: 275 }}
@@ -377,9 +379,12 @@ const [cardInfo, setCardInfo] = useState({
                 </div>
               </CardContent>
             </Card>
-            {payment.map((auditionPayment)=>(
-  <>
-    {auditionPayment.status == 1?<>
+
+</>:null}
+
+     
+
+    {/* {uploadVideo == 1?<>
                   <Card
               className="my-4"
               style={{ backgroundColor: "#343434" }}
@@ -390,9 +395,9 @@ const [cardInfo, setCardInfo] = useState({
               </CardContent>
             </Card>
             
-    </>:null}
-  </>
-))}
+    </>:null} */}
+
+
 
           </div>
         </div>
