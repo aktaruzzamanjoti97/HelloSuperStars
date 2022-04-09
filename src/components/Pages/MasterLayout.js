@@ -10,6 +10,7 @@ import PromoVideo from "../Pages/Home/Body/PromoVideo/PromoVideo";
 
 import Home from "../../components/Pages/Home/HomePages";
 import Market from "../../components/Pages/Market/MarketPlace";
+import Chatting from "../../components/Pages/Chatting/Chatting";
 import CategoryMain from "../../components/Sidebar/Left/Category/CategoryMain";
 import CategoryView from "../../components/Sidebar/Left/Category/Content/CategoryView";
 import ProfileCatBody from "../../components/Sidebar/Left/Category/Content/ProfileCatBody";
@@ -65,6 +66,8 @@ const Homepage = () => {
               
                 <Route exact path="/" component={Home} />
                 <Route exact path="/marketplace" component={Market}/>
+
+                <Route exact path="/chatting/:id" component={Chatting}/>
 
                 <Route exact path='/category' component={CategoryMain} />
                 <Route exact path='/category-view/:slug' component={CategoryView} />

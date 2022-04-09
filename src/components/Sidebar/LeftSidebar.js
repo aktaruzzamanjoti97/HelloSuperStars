@@ -173,6 +173,21 @@ export const LeftSidebar = ({history, onlineUserProp}) => {
                             </div>
                         </Link>
 
+                        <Link className="teop-s" to='/chatting'>
+                            <div className="accordion-item mt-1 left-bottom-ap" >
+                                <h2 className="accordion-header" id="headingTwo">
+                                    <button className="accordion-button profile-accordion-button left-bottom-ap collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" 
+                                        aria-controls="collapseTwo" >
+                                        <span>
+                                            <i className="fas fa-cog mx-2 profile-font-color fa-2x"></i>
+                                        </span>
+                                        <span className="mx-2 profile-font-color" >Chatting</span>
+                                    </button>
+                                </h2>
+                            </div>
+                        </Link>
+
 
                     </div>
                     
@@ -193,7 +208,10 @@ export const LeftSidebar = ({history, onlineUserProp}) => {
                     <div class="ScrollStyle">
                         <div className="left-bottom-ap-chat">
                             {onlineUsers.map((u) => (
-                              <OnlineUser key={u.userId} user={u.userId} />
+                                <Link to={`/chatting/${u.userId}`}>
+                                    <OnlineUser key={u.userId} user={u.userId} />
+                                </Link>
+                              
                             ))}
 
                             {Users.map((u) => (
