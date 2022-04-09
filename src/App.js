@@ -55,6 +55,7 @@ import ParticipateGuitarChord from "./components/Pages/Home/Body/SidebarComponen
 import AuditionGuitar from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditionGuitar";
 import reactSelect from "react-select";
 import { io } from "socket.io-client";
+import VideoUploadAudition from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/VideoUploadAudition";
 
 export const socketContext=createContext();
 
@@ -148,6 +149,7 @@ function App() {
         <Route exact path='/souvenir-applied' component={AcquiringProduct} />
 
         <Route exact path='/participant-audition/:id' component={ParticipateGuitarChord}/>
+        <Route exact path='/participant-video-upload/:id' component={VideoUploadAudition}/>
         <Route exact path='/participant-upload/:id' component={AuditionGuitar}/>
 
         {/* Learning Session */}

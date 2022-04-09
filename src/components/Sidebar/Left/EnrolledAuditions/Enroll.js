@@ -24,8 +24,9 @@ const Enroll = () => {
 
     return (
         <>
+        
             {Users.map((e) => (
-                <EnrollContent key={e.id} user={e} />
+                <EnrollContent key={e.id} data={e} />
             ))}
         </>
     )
