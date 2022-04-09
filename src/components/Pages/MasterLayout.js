@@ -1,13 +1,9 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Switch, Route } from "react-router-dom"
 import Navigation from "../Header/Navigation";
 import LeftSidebar from "../Sidebar/LeftSidebar";
 import RightSidebar from "../Sidebar/RightSidebar";
-import CategorySelector from "../Pages/Home/Body/CategorySelector/CategorySelector";
-import Post from "../Pages/Home/Body/Post/Post";
-// import PostContent from "../Pages/Home/Body/Post/PostContent";
 import PromoVideo from "../Pages/Home/Body/PromoVideo/PromoVideo";
-
 import Home from "../../components/Pages/Home/HomePages";
 import Market from "../../components/Pages/Market/MarketPlace";
 import Chatting from "../../components/Pages/Chatting/Chatting";
@@ -18,7 +14,6 @@ import FollowMain from "../../components/Sidebar/Left/Following/FollowMain";
 import ActivitiesBody from "../../components/Sidebar/Left/Activities/ActivitiesBody";
 import VideoActivities from "../../components/Sidebar/Left/Activities/Content/VideoActivities";
 import FanHome from "../../components/Sidebar/Left/FanGroup/FanHome";
-import FanGroupBody from "../../components/Sidebar/Left/FanGroup/FanGroupBody";
 import LearnPost from '../../components/Pages/Home/Body/SidebarComponent/Right/LearnPost/LearnPost';
 import LivePost from "../../components/Pages/Home/Body/SidebarComponent/Right/LivePost/LivePost";
 import MeetupPost from "../../components/Pages/Home/Body/SidebarComponent/Right/MeetUpEvents/MeetupPost";
@@ -36,13 +31,11 @@ const Homepage = () => {
   const socketData = useContext(socketContext);
 
   useEffect(() => {
-    console.log("cur_user_right", localStorage.getItem("auth_id"));
     socketData.emit("addUser", localStorage.getItem("auth_id"));
     socketData.on("getUsers", (users) => {
       setOnlineUsers(users);
     });
     socketData.on("getNotification", (data) => {
-      //console.log('Number of Notifications', data);
       setTotalNotification(data);
     });
   }, []);
@@ -56,17 +49,14 @@ const Homepage = () => {
             <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
               <div className="promoVideoBorder">
                   <PromoVideo />
-                </div>
-
+              </div>
               <LeftSidebar onlineUserProp={onlineUsers} />
             </div>
 
             <div className="col-sm-6 justify-content-center postTab ">
               <Switch>
-              
                 <Route exact path="/" component={Home} />
                 <Route exact path="/marketplace" component={Market}/>
-
                 <Route exact path="/chatting/:id" component={Chatting}/>
 
                 <Route exact path='/category' component={CategoryMain} />
@@ -74,26 +64,19 @@ const Homepage = () => {
                 <Route exact path='/category-profile' component={ProfileCatBody} />
 
                 <Route exact path='/following' component={FollowMain} />
-
                 <Route exact path='/activities' component={ActivitiesBody} />
                 <Route exact path='/activities/video/:id' component={VideoActivities} />
-
                 <Route exact path='/fan-group' component={FanHome} />
-                <Route exact path='/group/:slug' component={FanGroupBody} />
-
+                
                 {/* Right Sidebar   */}
                 <Route exact path='/live-now' component={LivePost} />
                 <Route exact path='/learning-sessions' component={LearnPost}/>
                 <Route exact path='/upcoming-live' component={UpLivePost} />
                 <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
-                
                 <Route exact path='/meetup-events' component={MeetupPost}/>
-
                 <Route exact path='/settings' component={SettingsBody} />
-
                 <Route exact path='/enrolled-auditions' component={EnrollBody} />
                 {/* Right Sidebar End */}
-
               </Switch>
             </div>
 
