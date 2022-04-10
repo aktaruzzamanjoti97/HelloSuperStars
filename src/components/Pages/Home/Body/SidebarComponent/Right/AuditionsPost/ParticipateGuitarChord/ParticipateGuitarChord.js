@@ -5,7 +5,7 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { Card, Carousel, Form } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 // import avaterImage from "../../../../../../../../images/CreateAccount-page/Avater.png";
 import avaterImage from "../../../../../../../../images/avatarImage.webp";
 import guitarParticipant from "../../../../../../../../images/guitarParticipate.png";
@@ -20,6 +20,7 @@ import FileUpload from "./FileUpload";
 import "./ParticipateGuitarChord.css";
 
 const ParticipateGuitarChord = () => {
+  const history = useHistory();
 
   const params = useParams();
   const [participateAudition,setParticipant] = useState([]);
@@ -70,6 +71,7 @@ const [cardInfo, setCardInfo] = useState({
         if(res.data.status === 200)
         {
           setUploadVideo(1);
+          history.push('/');
         }
         
     });
