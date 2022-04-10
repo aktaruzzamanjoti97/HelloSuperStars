@@ -101,6 +101,8 @@ function App() {
         <Route exact path='/videocall'  component={VideoCall} />
         <Route exact path='/marketplace/shipping/:slug' component={Shipping} />
         <PrivateRoute exact path='/wallet' component={WalletBody} />
+
+        <Route exact path='/group/:slug' component={FanGroupBody} />
         
         {/* <PrivateRoute exact path='/settings' component={SettingsBody} /> */}
       

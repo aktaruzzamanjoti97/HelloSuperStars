@@ -10,6 +10,7 @@ import axios from "axios";
 import moment from "moment";
 import { Markup } from "interweave";
 import swal from "sweetalert";
+import ShowMoreText from "react-show-more-text";
 
 const BookNowEvent = (props) => {
   const [open, setOpen] = useState(false);
@@ -123,25 +124,28 @@ const BookNowEvent = (props) => {
                       <td className="BookNText">{meetup.fee} BDT</td>
                     </tr>
                   </table>
-                  {/* <div className="text-white">
-                                <h6>Star</h6>
-                                <h6>Date</h6>
-                                <h6>Time</h6>
-                                <h6>Fee</h6>
-                            </div>
-                            <div className="mx-3 BookNText">
-                                <h6>Mizanur Rahman Azhari</h6>
-                                <h6>12/08/2021</h6>
-                                <h6>10.00 PM to 11:00 PM</h6>
-                                <h6>999 BDT</h6>
-                            </div> */}
+
                 </div>
 
                 <div className="col-md-6">
                   <h5 className="text-white">Instructions</h5>
-                  <p className="BookNText">
-                    <Markup content={meetup.description} />
-                  </p>
+                  
+                    {/* <Markup content={meetup.description} /> */}
+
+                    <ShowMoreText
+                      lines={6}
+                      more={<span>See more</span>}
+                      less={<span>See less</span>}
+                      className="content-css my-2 Enroll-a Enroll-text py-2"
+                      anchorClass="my-anchor-css-class"
+                      //onClick={executeOnClick}
+                      expanded={false}
+                      truncatedEndingComponent={"... "}
+                    >
+
+                      <Markup content={meetup.description}></Markup>
+                    </ShowMoreText>
+                  
                 </div>
               </div>
             </div>

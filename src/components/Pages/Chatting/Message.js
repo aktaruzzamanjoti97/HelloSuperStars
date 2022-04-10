@@ -1,9 +1,16 @@
 import "./chatting.css";
+import TimeAgo from "timeago-react";
 // import { format } from "timeago.js";
 
 export default function Message({ message }) {
   return (
-    <div className={message.sender_id == localStorage.getItem('auth_id') ? "message own" : "message"}>
+    <div
+      className={
+        message.sender_id == localStorage.getItem("auth_id")
+          ? "message own"
+          : "message"
+      }
+    >
       <div className="messageTop">
         <img
           className="messageImg"
@@ -12,7 +19,9 @@ export default function Message({ message }) {
         />
         <p className="messageText">{message.text}</p>
       </div>
-      {/* <div className="messageBottom">{format(message.createdAt)}</div> */}
+      <div className="messageBottom">
+        <TimeAgo datetime={message.created_at} locale="vi" />
+      </div>
     </div>
   );
 }
