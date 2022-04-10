@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Media from '../../../../../images/vuiuru1u.png'
 import Media1 from '../../../../../images/tx40i2ib.png'
 import Media2 from '../../../../../images/bmsrbccp.png'
@@ -6,7 +6,24 @@ import Media3 from '../../../../../images/e3fyn0v1.png'
 import Media4 from '../../../../../images/1ukfvg1a.png'
 import Media5 from '../../../../../images/ltfqhym3.png'
 import '../Content/FanStar.css'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 const FanMedia = () => {
+
+    const { slug } = useParams();
+    console.log("slug ", slug);
+    const [fanMedia, setFanMedia] = useState([]);
+    console.log("fanMedia xxxxxxxxxxxxxxxx ", fanMedia);
+
+    useEffect(() => {
+        axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
+            console.log("fan Group", res.data);
+            if (res.status === 200) {
+                setFanMedia(res.data.fanMedia);
+            }
+        });
+    }, [slug]);
+
 return (
 <>
 
@@ -14,13 +31,9 @@ return (
 
         <div className="row ms-1 me-1">
 
-            <img src={Media} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-            <img src={Media1} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-            <img src={Media2} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-            <img src={Media3} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-            <img src={Media4} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-            <img src={Media5} className='img-fluid MediaImg col-md-4 m-2' alt="" />
-
+            {fanMedia.map((media, i) => ( 
+                <img src={`http://localhost:8000/${media.image}`} className='img-fluid MediaImg col-md-4 m-2' style={{height: '150px'}} alt="" />
+            ))}
         </div>
 
     </div>
