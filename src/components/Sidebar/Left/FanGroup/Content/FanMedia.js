@@ -42,7 +42,7 @@ return (
     <div className="MediaBG mt-3">
 
         <div className="row ms-1 me-1">
-                <ReactPlayer className='MediaVideos'
+                <ReactPlayer className='MediaVideosg'
                   url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
                   autoplay
                   controls="true"

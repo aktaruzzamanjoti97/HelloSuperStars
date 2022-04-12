@@ -92,11 +92,15 @@ const FanPost = () => {
                         </Link>
 
                         <div>
+                <div className="card PostCard">
+                <center>
                 <ReactPlayer
                   url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
                   autoplay
                   controls="true"
                 />
+                </center>
+                </div>
             </div>
 
                         {/* <div className="centered centered-meet">
