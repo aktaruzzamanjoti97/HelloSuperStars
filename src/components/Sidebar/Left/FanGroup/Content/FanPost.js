@@ -7,6 +7,7 @@ import ReactShowMoreText from 'react-show-more-text'
 import { Collapse } from 'react-bootstrap'
 import FanPostComment from './FanPostComment'
 import axios from 'axios'
+import ReactPlayer from "react-player";
 import moment from "moment";
 
 const FanPost = () => {
@@ -89,6 +90,14 @@ const FanPost = () => {
                         <Link className="link-starPorfile">
                             <img src={`http://localhost:8000/${post.image}`} alt="" />
                         </Link>
+
+                        <div>
+                <ReactPlayer
+                  url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
+                  autoplay
+                  controls="true"
+                />
+            </div>
 
                         {/* <div className="centered centered-meet">
 

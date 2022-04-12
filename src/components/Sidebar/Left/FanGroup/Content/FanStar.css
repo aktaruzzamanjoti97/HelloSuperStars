@@ -224,6 +224,9 @@
       .MediaImg{
         width: 13.65vw ;
     }
+    .MediaVideos{
+        width: 13.65vw ;
+    }
   
   }
 
@@ -233,6 +236,9 @@
        
       }
       .MediaImg{
+        width: 44.6% ;
+    }
+    .MediaVideos{
         width: 44.6% ;
     }
   
