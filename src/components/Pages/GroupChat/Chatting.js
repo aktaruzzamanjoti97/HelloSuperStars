@@ -19,7 +19,15 @@ const Chatting = () => {
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
-    socket.current.on("getMessage", (data) => {
+
+    socket.current.emit("joinRoom", {userId:10, room: params.slug});
+
+    // socket.current.on("getGroupMessage", (data) => {
+    //   console.log('group msg', data)
+    //   alert(data);
+    // });
+
+    socket.current.on("getGroupMessage", (data) => {
       console.log("message data", data);
       setArrivalMessage({
         sender_id: data.senderId,
@@ -28,7 +36,8 @@ const Chatting = () => {
         createdAt: Date.now(),
       });
     });
-  }, []);
+
+  }, [params]);
 
   useEffect(() => {
     axios.get(`/api/chatting/message/${params.id}`).then((res) => {
@@ -57,9 +66,9 @@ const Chatting = () => {
     //   (member) => member !== localStorage.getItem('auth_id')
     // );
 
-    const receiverId = localStorage.getItem("auth_id");
+    const receiverId = 0;
 
-    socket.current.emit("sendMessage", {
+    socket.current.emit("sendGroupMessage", {
       senderId: localStorage.getItem("auth_id"),
       receiverId,
       text: newMessage,
