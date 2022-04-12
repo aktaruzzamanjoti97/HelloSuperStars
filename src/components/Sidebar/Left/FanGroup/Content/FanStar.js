@@ -20,6 +20,7 @@ import moment from "moment";
 import swal from "sweetalert";
 import Navigation from "../../../../Header/Navigation";
 import { socketContext } from "../../../../../App";
+import Chatting from "../../../../Pages/GroupChat/Chatting";
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -298,7 +299,8 @@ const FanStar = () => {
                 </div>
               ) : (
                 <div className="col-sm-4 MessengerHead mb-2 ">
-                  <Salman />{" "}
+                  {/* <Salman />{" "} */}
+                  <Chatting></Chatting>
                 </div>
               )
             ) : (
