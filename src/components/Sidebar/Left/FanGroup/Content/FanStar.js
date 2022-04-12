@@ -176,7 +176,7 @@ const FanStar = () => {
                       }
                     >
                       <Dropdown.Item className="w-100">
-                      {(fanDetails.another_star === fanJoinDetails.star_id || fanDetails.my_star === fanJoinDetails.star_id)?'':
+                      {/* {(fanDetails.another_star === fanJoinDetails.star_id || fanDetails.my_star === fanJoinDetails.star_id)?'': */}
                         <p
                           onClick={() =>
                             selectStar(
@@ -189,12 +189,12 @@ const FanStar = () => {
                           {my_star.first_name} {my_star.last_name}
                         
                         </p>
-                        }
+                        {/* } */}
                         {/* <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} /> */}
                       </Dropdown.Item>
 
                       <Dropdown.Item>
-                      {(fanDetails.my_star === fanJoinDetails.star_id || fanDetails.another_star === fanJoinDetails.star_id)?'':
+                      {/* {(fanDetails.my_star === fanJoinDetails.star_id || fanDetails.another_star === fanJoinDetails.star_id)?'': */}
                         <p
                           onClick={() =>
                             selectStar(
@@ -207,7 +207,7 @@ const FanStar = () => {
                         >
                           {another_star.first_name} {another_star.last_name}
                         </p>
-                        }
+                        {/* } */}
                         {/* <ConfirmModalSa show={modalShowSa} onHide={() => setModalShowSa(false)} /> */}
                       </Dropdown.Item>
                     </DropdownButton>
