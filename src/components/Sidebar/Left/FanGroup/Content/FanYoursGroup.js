@@ -20,7 +20,7 @@ const FanYoursGroup = () => {
 
     useEffect(() => {
       axios.get(`/api/user/fan/group/list`).then(res => {
-        // console.log(res.data.category);
+        console.log('My res ',res.data);
         if (res.status === 200) {
           setFanUserGroup(res.data.useFanGroup)
         }

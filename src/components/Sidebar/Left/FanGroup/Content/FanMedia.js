@@ -14,6 +14,7 @@ const FanMedia = () => {
     const { slug } = useParams();
     console.log("slug ", slug);
     const [fanMedia, setFanMedia] = useState([]);
+    const [fanMediaVideo, setFanMediaVideo] = useState([]);
     console.log("fanMedia xxxxxxxxxxxxxxxx ", fanMedia);
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const FanMedia = () => {
             console.log("fan Group", res.data);
             if (res.status === 200) {
                 setFanMedia(res.data.fanMedia);
+                setFanMediaVideo(res.data.fanVideo);
             }
         });
     }, [slug]);
@@ -42,11 +44,14 @@ return (
     <div className="MediaBG mt-3">
 
         <div className="row ms-1 me-1">
-                <ReactPlayer className='MediaVideosg'
-                  url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
+        
+        {fanMediaVideo.map((media, i) => ( 
+                <ReactPlayer className='MediaVideosg mb-3'
+                  url={`http://localhost:8000/${media.video}`}
                   autoplay
                   controls="true"
                 />
+                ))}
         </div>
 
     </div>
