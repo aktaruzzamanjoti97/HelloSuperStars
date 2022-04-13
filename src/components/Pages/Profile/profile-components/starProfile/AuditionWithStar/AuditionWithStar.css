@@ -1,0 +1,72 @@
+.img-bg {
+  background-image: url("../../../../../../images/auditionWithStar/thirdBanner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageWidth {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.imageWidthTwo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.guitarBorder {
+  border-bottom: 1px solid gold;
+}
+
+.listStyle {
+  list-style: none;
+}
+
+.guitarBorder {
+  border: 1px solid gold;
+  border-radius: 10px;
+}
+
+.guitarBorderGold {
+  border-bottom: 1px solid gold;
+}
+
+.registrationDate {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  background-image: url("../../../../../../images/regiDateBg.png");
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.audioBanner {
+  border: 1px solid #0de1e1;
+  border-radius: 10px;
+}
+
+.videoBanner {
+  border: 2px solid gold;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photoRelative {
+  position: relative;
+}
+
+.withText {
+  font-size: 35px;
+}
+
+.img-bgImg {
+  background: linear-gradient(270deg, #490163 0%, #ffad00 100%);
+}
+
+.formLiner {
+  background: linear-gradient(270deg, #4a0263 0.08%, #502245 99.92%);
+  border: 1px solid #ffad00;
+}
+

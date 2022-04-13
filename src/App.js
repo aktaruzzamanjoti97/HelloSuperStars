@@ -56,6 +56,7 @@ import AuditionGuitar from "./components/Pages/Home/Body/SidebarComponent/Right/
 import reactSelect from "react-select";
 import { io } from "socket.io-client";
 import VideoUploadAudition from "./components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/ParticipateGuitarChord/VideoUploadAudition";
+import AuditionWithStar from "./components/Pages/Profile/profile-components/starProfile/AuditionWithStar/AuditionWithStar";
 
 export const socketContext=createContext();
 
@@ -111,6 +112,8 @@ function App() {
 
         {/* NestedSelector */}
         <Route exact path='/selector-nested-category' component={NestedSubCategoryBody} />
+
+        <Route exact path='/audition-with-star' component={AuditionWithStar} />
 
         {/* Account Section */}
         <Route exact path='/login' component={Login} />
