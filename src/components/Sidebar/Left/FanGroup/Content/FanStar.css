@@ -215,7 +215,11 @@
     height: 40px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.753));
   }
-
+.MediaVideosg{
+    width:265px !important;
+    height: 180px !important;
+    margin-left: 10px;
+}
   @media only screen and (max-width: 1400px) {
     .FanBg {
         width: 20.66vw;
@@ -223,6 +227,9 @@
       }
       .MediaImg{
         width: 13.65vw ;
+    }
+    .MediaVideos{
+        width: 16vw ;
     }
   
   }
@@ -233,6 +240,9 @@
        
       }
       .MediaImg{
+        width: 44.6% ;
+    }
+    .MediaVideos{
         width: 44.6% ;
     }
   
