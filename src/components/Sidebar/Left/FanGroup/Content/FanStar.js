@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Dropdown, DropdownButton, Nav, Tab } from "react-bootstrap";
-import StarCover from "../../../../../images/xuc3pamd.png";
 import "./FanStar.css";
 
 import FanPost from "./FanPost";
@@ -10,26 +9,22 @@ import FanMember from "./FanMember";
 import CreatePostModal from "./CreatePostModal";
 import ConfirmModalSh from "./MessageGroup/ConfirmModalSh";
 import ConfirmModalSa from "./MessageGroup/ConfirmModalSa";
-
 import Default from "./MessageGroup/Default";
-// import Shrukh from './MessageGroup/Shrukh';
-import Salman from "./MessageGroup/Salman";
-import { useParams, useHistory } from "react-router-dom";
+
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import swal from "sweetalert";
 import Navigation from "../../../../Header/Navigation";
-import { socketContext } from "../../../../../App";
 import Chatting from "../../../../Pages/GroupChat/Chatting";
+import { socketContext } from "../../../../../App";
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
-  const [totalNotification, setTotalNotification] = useState([]);
-  const history = useHistory();
-  const socketData = useContext(socketContext);
-
+  const [fanPost, setFanPost] = useState([]);
   const [title, setTitle] = React.useState("Joined Now");
-  const [starId, setStarId] = React.useState("");
+  const [starId] = React.useState("");
+  const socketData = useContext(socketContext);
 
   const { slug } = useParams();
   console.log("slug ", slug);
@@ -56,6 +51,13 @@ const FanStar = () => {
         setFanDetailsId(res.data.fanId);
       }
     });
+
+    // socketData.on("getFanGroupPost", (data) => {
+    //   console.log("fan group post data from socket", data);
+    //        setFanPost(data);
+    //   });
+
+    
   }, [slug]);
 
   const selectStar = (starName, starId) => {
@@ -177,7 +179,7 @@ const FanStar = () => {
                       }
                     >
                       <Dropdown.Item className="w-100">
-                      {(fanDetails.another_star === fanJoinDetails.star_id || fanDetails.my_star === fanJoinDetails.star_id)?'':
+                      {/* {(fanDetails.another_star === fanJoinDetails.star_id || fanDetails.my_star === fanJoinDetails.star_id)?'': */}
                         <p
                           onClick={() =>
                             selectStar(
@@ -190,12 +192,12 @@ const FanStar = () => {
                           {my_star.first_name} {my_star.last_name}
                         
                         </p>
-                        }
+                        {/* } */}
                         {/* <ConfirmModalSh show={modalShowSh} onHide={() => setModalShowSh(false)} /> */}
                       </Dropdown.Item>
 
                       <Dropdown.Item>
-                      {(fanDetails.my_star === fanJoinDetails.star_id || fanDetails.another_star === fanJoinDetails.star_id)?'':
+                      {/* {(fanDetails.my_star === fanJoinDetails.star_id || fanDetails.another_star === fanJoinDetails.star_id)?'': */}
                         <p
                           onClick={() =>
                             selectStar(
@@ -208,7 +210,7 @@ const FanStar = () => {
                         >
                           {another_star.first_name} {another_star.last_name}
                         </p>
-                        }
+                        {/* } */}
                         {/* <ConfirmModalSa show={modalShowSa} onHide={() => setModalShowSa(false)} /> */}
                       </Dropdown.Item>
                     </DropdownButton>
@@ -269,6 +271,8 @@ const FanStar = () => {
                       show={modalShow}
                       onHide={() => setModalShow(false)}
                       className="ModalXC"
+                      groupId={fanDetails.id}
+                      fanPost={fanPost} setFanPost={setFanPost}
                     />
                   </div>
                 ) : (
@@ -277,7 +281,7 @@ const FanStar = () => {
 
                 <Tab.Content>
                   <Tab.Pane eventKey="first" className="">
-                    {fanJoinDetails?.approveStatus === "1" ? <FanPost /> : ""}
+                    {fanJoinDetails?.approveStatus === "1" ? <FanPost fanPost={fanPost} setFanPost={setFanPost}/> : ""}
                   </Tab.Pane>
 
                   <Tab.Pane eventKey="second">
@@ -300,7 +304,7 @@ const FanStar = () => {
               ) : (
                 <div className="col-sm-4 MessengerHead mb-2 ">
                   {/* <Salman />{" "} */}
-                  <Chatting></Chatting>
+                  <Chatting group_id={fanDetails.id}></Chatting>
                 </div>
               )
             ) : (

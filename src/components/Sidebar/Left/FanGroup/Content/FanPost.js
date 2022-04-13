@@ -1,5 +1,5 @@
 import { DotsHorizontalIcon } from '@heroicons/react/solid'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import FanStar from '../../../../../images/apurbo.jpg'
 import FanImg from '../../../../../images/vsot3yic.png'
@@ -8,13 +8,16 @@ import { Collapse } from 'react-bootstrap'
 import FanPostComment from './FanPostComment'
 import axios from 'axios'
 import moment from "moment";
+import { socketContext } from '../../../../../App'
 
-const FanPost = () => {
+const FanPost = (props) => {
+    const {fanPost, setFanPost} = props;
     const [open, setOpen] = useState(false);
     const { slug } = useParams();
     console.log("slug ", slug);
-    const [fanPost, setFanPost] = useState([]);
-    console.log("fanPost xxxxxxxxxxxxxxxx ", fanPost);
+
+    const socketData = useContext(socketContext);
+    
 
     useEffect(() => {
         axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
@@ -22,6 +25,11 @@ const FanPost = () => {
             if (res.status === 200) {
                 setFanPost(res.data.fanPost);
             }
+        });
+
+        socketData.on("getFanGroupPost", (data) => {
+        console.log("fan group post data from socket", data);
+            setFanPost(data);
         });
     }, [slug]);
 

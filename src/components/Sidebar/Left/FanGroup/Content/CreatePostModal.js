@@ -1,12 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Modal } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Group from '../../../../../images/Group 485.png'
 import swal from "sweetalert";
+import { socketContext } from "../../../../../App";
 
 const CreatePostModal = (props) => {
+    const {groupId, fanPost, setFanPost} = props;
     const { slug } = useParams();
+    const socketData = useContext(socketContext);
     
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
@@ -37,10 +40,16 @@ const CreatePostModal = (props) => {
     await axios.post(`/api/user/fan/group/post/store`, formData).then(res =>{
         if (res.data.status === 200) {
             setDescription('');
-            console.log('Done');
             swal("Welcome", res.data.message, "success");
+            socketData.emit("postFanGroupPost", groupId);
+            socketData.on("getFanGroupPost", (data) => {
+            console.log("fan group post data from socket", data);
+                 setFanPost(data);
+            });
         }
-    })
+    });
+
+
   }
     
 return (
@@ -72,7 +81,6 @@ return (
                     <button className="btn fw-bold w-100 bg-info PostNow mt-3 mb-3" type='submit'>POST NOW</button>
                 </form>
             </Modal.Body>
-
         </Modal>
     </div>
 </>
