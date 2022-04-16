@@ -26,7 +26,7 @@ const BiddingHistory = ({AuctionData}) => {
                     </div>
                     <div className="col-md-4">
                         <li className="my-1">
-                        {myHistory.amount} BDT
+                        {myHistory.amount.toLocaleString('en-US')} BDT
                         </li>
                     </div>
                         </>

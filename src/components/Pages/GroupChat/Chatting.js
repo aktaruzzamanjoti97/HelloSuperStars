@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import PicMa from "../../../images/LiveChat/Live.png";
 import { io } from "socket.io-client";
 
-const Chatting = () => {
+const Chatting = ({group_id}) => {
   const socketData = useContext(socketContext);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [currentChat, setCurrentChat] = useState(null);
@@ -19,7 +19,15 @@ const Chatting = () => {
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
-    socket.current.on("getMessage", (data) => {
+
+    socket.current.emit("joinRoom", {userId:10, room: group_id});
+
+    // socket.current.on("getGroupMessage", (data) => {
+    //   console.log('group msg', data)
+    //   alert(data);
+    // });
+
+    socket.current.on("getGroupMessage", (data) => {
       console.log("message data", data);
       setArrivalMessage({
         sender_id: data.senderId,
@@ -28,16 +36,17 @@ const Chatting = () => {
         createdAt: Date.now(),
       });
     });
-  }, []);
+
+  }, [params]);
 
   useEffect(() => {
-    axios.get(`/api/chatting/message/${params.id}`).then((res) => {
+    axios.get(`/api/group/message/${group_id}`).then((res) => {
       if (res.data.status === 200) {
         console.log("response data", res.data.message);
         setMessages(res.data.message);
       }
     });
-  }, [params.id]);
+  }, [group_id]);
 
   useEffect(() => {
     arrivalMessage &&
@@ -57,9 +66,9 @@ const Chatting = () => {
     //   (member) => member !== localStorage.getItem('auth_id')
     // );
 
-    const receiverId = localStorage.getItem("auth_id");
+    const receiverId = 0;
 
-    socket.current.emit("sendMessage", {
+    socket.current.emit("sendGroupMessage", {
       senderId: localStorage.getItem("auth_id"),
       receiverId,
       text: newMessage,
@@ -68,13 +77,12 @@ const Chatting = () => {
     const fData = new FormData();
 
     fData.append("sender_id", localStorage.getItem("auth_id"));
-    fData.append("receiver_id", 11);
-    fData.append("conversationId", message.conversationId);
+    fData.append("group_id", group_id);
     fData.append("text", newMessage);
 
     try {
       // const res = await axios.post("/messages", message);
-      axios.post(`/api/chatting/message`, fData).then((res) => {
+      axios.post(`/api/group/message`, fData).then((res) => {
         if (res.data.status === 200) {
           setMessages([...messages, res.data.message]);
           // setMessages((prev) => [...prev, arrivalMessage]);
