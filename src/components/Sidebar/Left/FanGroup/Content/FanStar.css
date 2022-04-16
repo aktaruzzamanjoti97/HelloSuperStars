@@ -644,6 +644,18 @@ opacity: 1;
    text-align: justify;
 }
 
+.bg-gr
+{
+    background: transparent linear-gradient(103deg, #00DE7B 0%, #00AD8E 100%) 0% 0% no-repeat padding-box;
+    padding: 2px;
+}
+
+.bg-pr
+{
+    background: transparent linear-gradient(101deg, #F103F5 0%, #6F1FFD 100%) 0% 0% no-repeat padding-box;
+    padding: 2px;;
+}
+
 .ShahrukhFan .dropdown-toggle::after {
    position: absolute;
    top: 15px;

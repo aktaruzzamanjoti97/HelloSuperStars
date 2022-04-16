@@ -43,8 +43,12 @@ const CreatePostModal = (props) => {
             swal("Welcome", res.data.message, "success");
             socketData.emit("postFanGroupPost", groupId);
             socketData.on("getFanGroupPost", (data) => {
-            console.log("fan group post data from socket", data);
-                 setFanPost(data);
+                axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
+                    console.log("fan Group", res.data);
+                    if (res.status === 200) {
+                        setFanPost(res.data.fanPost);
+                    }
+                });
             });
         }
     });

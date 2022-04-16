@@ -1,30 +1,23 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Dropdown, DropdownButton, Nav, Tab } from "react-bootstrap";
-import "./FanStar.css";
-
 import FanPost from "./FanPost";
 import FanMedia from "./FanMedia";
 import FanMember from "./FanMember";
-
 import CreatePostModal from "./CreatePostModal";
-import ConfirmModalSh from "./MessageGroup/ConfirmModalSh";
-import ConfirmModalSa from "./MessageGroup/ConfirmModalSa";
 import Default from "./MessageGroup/Default";
-
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import swal from "sweetalert";
+import "./FanStar.css";
 import Navigation from "../../../../Header/Navigation";
 import Chatting from "../../../../Pages/GroupChat/Chatting";
-import { socketContext } from "../../../../../App";
 
 const FanStar = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [fanPost, setFanPost] = useState([]);
   const [title, setTitle] = React.useState("Joined Now");
   const [starId] = React.useState("");
-  const socketData = useContext(socketContext);
 
   const { slug } = useParams();
   console.log("slug ", slug);
@@ -51,19 +44,9 @@ const FanStar = () => {
         setFanDetailsId(res.data.fanId);
       }
     });
-
-    // socketData.on("getFanGroupPost", (data) => {
-    //   console.log("fan group post data from socket", data);
-    //        setFanPost(data);
-    //   });
-
-    
   }, [slug]);
 
   const selectStar = (starName, starId) => {
-    // setTitle(starName)
-
-    // e.preventDefault();
     const formData = new FormData();
 
     formData.append("fan_group_id", fanGroupId);
@@ -88,41 +71,6 @@ const FanStar = () => {
     });
   }, [fanGroupId]);
 
-  // const fanStatusChange = async () => {
-
-  //   console.log('Data Submit Check One', title);
-  //   console.log('Data Submit Check two', starId);
-
-  //   // e.preventDefault();
-  //   const formData = new FormData()
-
-  //   formData.append('fan_group_id', fanGroupId)
-  //   formData.append('star_name', title)
-  //   formData.append('star_id', starId)
-
-  //   // await axios.post(`api/user/fan/group/store`, formData).then(({ res }) => {
-  //   //   console.log('res', res);
-  //   //   if (res.data.status === 200) {
-  //   //     console.log('Protap Done');
-
-  //   //     swal("Welcome", res.data.message, "success");
-  //   //     // history.push('/superstar/fan-group-invitation');
-  //   //   }
-  //   // })
-
-  //   // axios.post(`/api/user/fan/group/store`, formData).then(res => {
-  //   //   if (res.data.status === 200) {
-  //   //     console.log('Done');
-  //   //     // history.push("/activities")
-  //   //     // setTitle('')
-  //   //     // setUnitprice('')
-  //   //     // setItems('')
-  //   //     // setKeywords('')
-
-  //   //     swal("Welcome", res.data.message, "success");
-  //   //   }
-  //   // });
-  // }
 
   return (
     <>
@@ -166,7 +114,12 @@ const FanStar = () => {
                   </Nav.Item>
 
                   <Nav.Item>
-                    {/* Desktop View */}
+
+                  {/* <select className="SelectFanDefault p-2" value={title}>
+                    <option className="SelectFanDefault bg-gr">{my_star.first_name} {my_star.last_name}</option>
+                    <option className="SelectFanDefault bg-pr">{another_star.first_name} {another_star.last_name}</option>
+                  </select> */}
+                    
                     <DropdownButton
                       id="dropdown-basic-button"
                       title={title}

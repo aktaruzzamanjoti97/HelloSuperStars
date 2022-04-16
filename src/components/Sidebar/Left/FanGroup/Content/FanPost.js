@@ -29,9 +29,14 @@ const FanPost = (props) => {
         });
 
         socketData.on("getFanGroupPost", (data) => {
-        console.log("fan group post data from socket", data);
-            setFanPost(data);
+            axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
+                console.log("fan Group", res.data);
+                if (res.status === 200) {
+                    setFanPost(res.data.fanPost);
+                }
+            });
         });
+        
     }, [slug]);
 
 
@@ -100,7 +105,7 @@ const FanPost = (props) => {
                         </Link>
 
                         <div>
-                <div className="card PostCard">
+                {/* <div className="card PostCard">
                 <center>
                 <ReactPlayer
                   url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
@@ -108,7 +113,7 @@ const FanPost = (props) => {
                   controls="true"
                 />
                 </center>
-                </div>
+                </div> */}
             </div>
 
                         {/* <div className="centered centered-meet">
