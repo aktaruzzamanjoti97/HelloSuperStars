@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap");
+
 .img-bg {
   background-image: url("../../../../../../images/auditionWithStar/thirdBanner.png");
   background-repeat: no-repeat;
@@ -18,6 +20,7 @@
 
 .guitarBorder {
   border-bottom: 1px solid gold;
+  background-color: #1b1b1b;
 }
 
 .listStyle {
@@ -42,6 +45,15 @@
   border-radius: 10px;
 }
 
+.registrationDateVideo {
+  position: absolute;
+  bottom: 3%;
+  left: 40%;
+  background-image: url("../../../../../../images/regiDateBg.png");
+  background-size: cover;
+  border-radius: 10px;
+}
+
 .audioBanner {
   border: 1px solid #0de1e1;
   border-radius: 10px;
@@ -59,6 +71,7 @@
 
 .withText {
   font-size: 35px;
+  font-family: "Bilbo Swash Caps", cursive;
 }
 
 .img-bgImg {
@@ -70,3 +83,54 @@
   border: 1px solid #ffad00;
 }
 
+.inputColorBorder {
+  border: 1px solid #ff0 !important;
+  background-color: #232222;
+}
+
+.registerBtn {
+  background: linear-gradient(
+    270deg,
+    #ffad00 0%,
+    #ffd273 18.7%,
+    #e19a04 42.13%,
+    #facf75 68.82%,
+    #e7a725 85.94%,
+    #ffad00 100%
+  );
+  width: 522px;
+  height: 69px;
+  border-radius: 12px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+  .registrationDate {
+    font-size: 10px;
+    top: 35%;
+    left: 25%;
+  }
+  .registrationDateVideo{
+    font-size: 10px;
+    left: 25%;
+  }
+  .withText {
+    font-size: 15px;
+  }
+  .imageWidth {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .imageWidthTwo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .registerBtn {
+    width: 200px;
+    font-size: 20px;
+    height: 40px;
+  }
+}
