@@ -40,8 +40,8 @@ return (
                 <p className='text-light JerseyAucHeP'>{user.desc} </p>
 
                 <span className="text-center JerseyAucDol">
-                    <small className="text-light "> $ </small> &nbsp;
-                    <span className='DollarPrice fw-bold'>{user.base_price}</span>
+                    <small className="text-light "> BDT </small> &nbsp;
+                    <span className='DollarPrice fw-bold'>{user.base_price.toLocaleString('en-US')}</span>
                 </span>
 
                 <div className="d-flex JerseyAucPro w-75">

@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import PicMa from "../../../images/LiveChat/Live.png";
 import { io } from "socket.io-client";
 
-const Chatting = () => {
+const Chatting = ({group_id}) => {
   const socketData = useContext(socketContext);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [currentChat, setCurrentChat] = useState(null);
@@ -20,7 +20,7 @@ const Chatting = () => {
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
 
-    socket.current.emit("joinRoom", {userId:10, room: params.slug});
+    socket.current.emit("joinRoom", {userId:10, room: group_id});
 
     // socket.current.on("getGroupMessage", (data) => {
     //   console.log('group msg', data)
@@ -40,13 +40,13 @@ const Chatting = () => {
   }, [params]);
 
   useEffect(() => {
-    axios.get(`/api/chatting/message/${params.id}`).then((res) => {
+    axios.get(`/api/group/message/${group_id}`).then((res) => {
       if (res.data.status === 200) {
         console.log("response data", res.data.message);
         setMessages(res.data.message);
       }
     });
-  }, [params.id]);
+  }, [group_id]);
 
   useEffect(() => {
     arrivalMessage &&
@@ -77,13 +77,12 @@ const Chatting = () => {
     const fData = new FormData();
 
     fData.append("sender_id", localStorage.getItem("auth_id"));
-    fData.append("receiver_id", 11);
-    fData.append("conversationId", message.conversationId);
+    fData.append("group_id", group_id);
     fData.append("text", newMessage);
 
     try {
       // const res = await axios.post("/messages", message);
-      axios.post(`/api/chatting/message`, fData).then((res) => {
+      axios.post(`/api/group/message`, fData).then((res) => {
         if (res.data.status === 200) {
           setMessages([...messages, res.data.message]);
           // setMessages((prev) => [...prev, arrivalMessage]);

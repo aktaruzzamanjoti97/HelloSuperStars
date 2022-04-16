@@ -1,5 +1,5 @@
 import { DotsHorizontalIcon } from '@heroicons/react/solid'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import FanStar from '../../../../../images/apurbo.jpg'
 import FanImg from '../../../../../images/vsot3yic.png'
@@ -9,13 +9,16 @@ import FanPostComment from './FanPostComment'
 import axios from 'axios'
 import ReactPlayer from "react-player";
 import moment from "moment";
+import { socketContext } from '../../../../../App'
 
-const FanPost = () => {
+const FanPost = (props) => {
+    const {fanPost, setFanPost} = props;
     const [open, setOpen] = useState(false);
     const { slug } = useParams();
     console.log("slug ", slug);
-    const [fanPost, setFanPost] = useState([]);
-    console.log("fanPost xxxxxxxxxxxxxxxx ", fanPost);
+
+    const socketData = useContext(socketContext);
+    
 
     useEffect(() => {
         axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
@@ -24,6 +27,16 @@ const FanPost = () => {
                 setFanPost(res.data.fanPost);
             }
         });
+
+        socketData.on("getFanGroupPost", (data) => {
+            axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
+                console.log("fan Group", res.data);
+                if (res.status === 200) {
+                    setFanPost(res.data.fanPost);
+                }
+            });
+        });
+        
     }, [slug]);
 
 
@@ -74,17 +87,37 @@ const FanPost = () => {
                         {/* <h5 className="my-2 Enroll-a Enroll-text text-justify "> Lorem ipsum dolor sit amet consectetur.</h5>
             */}
 
-                        <ReactShowMoreText lines={3} more={<span>See more</span>}
-                            less={<span>See less</span>}
-                            className="content-css my-2 Enroll-a Enroll-text py-2"
-                            anchorClass="my-anchor-css-class"
-                            //onClick={executeOnClick}
-                            expanded={false}
-                            truncatedEndingComponent={"... "}
-                        >
-                            {post.description}
+                    <ReactShowMoreText lines={3} more={<span>See more</span>}
+                        less={<span>See less</span>}
+                        className="content-css my-2 Enroll-a Enroll-text py-2"
+                        anchorClass="my-anchor-css-class"
+                        //onClick={executeOnClick}
+                        expanded={false}
+                        truncatedEndingComponent={"... "}
+                    >
+                        { post.description }
 
-                        </ReactShowMoreText>
+                    </ReactShowMoreText>
+
+                    <div className="card PostCard">
+                        <Link className="link-starPorfile">
+                            <img src={`http://localhost:8000/${post.image}`} alt="" />
+                        </Link>
+                    </div>
+
+                        <div>
+                    {/* <div className="card PostCard">
+                    <center>
+                    <ReactPlayer
+                    url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
+                    autoplay
+                    controls="true"
+                    />
+                    </center>
+                    </div> */}
+                    </div>
+
+                
 
                         <div className="card PostCard">
                             {

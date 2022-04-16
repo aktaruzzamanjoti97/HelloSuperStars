@@ -24,7 +24,7 @@ return (
   <div className="container mt-3">
     {AuctionProduct.map((product)=>(
       <>
-        <img src={`http://localhost:8000/${product.banner}`} className="img-fluid w-100 CR7Cover coverHeight " alt="" />
+        <img src={`http://localhost:8000/${product.banner}`} className="img-fluid w-100 CR7Cover coverHeight " alt="" style={{height: '200px'}}/>
         <div className="row justify-content-between">
           <CR7Souvenir key={product.id} data={product}/>
         </div>
