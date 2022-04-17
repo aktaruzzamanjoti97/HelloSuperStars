@@ -48,7 +48,7 @@ const Homepage = () => {
           <div className="row">
             <div className="col-sm-3 justify-content-center container-fluid custom-container-left-Right postLeft">
               <div className="promoVideoBorder">
-                  <PromoVideo />
+                  {/* <PromoVideo /> */}
               </div>
               <LeftSidebar onlineUserProp={onlineUsers} />
             </div>
