@@ -283,7 +283,7 @@ return (
             {/* <div className="my-2 Enroll-a Enroll-text">
                 {event.title}
             </div> */}
-            <div class="AudiNew mt-3">
+            <div class="AudiNew BannerAu mt-3">
                 <center>
                     <ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" autoplay="false" controls
                         className="img-fluid meetImgB" />
