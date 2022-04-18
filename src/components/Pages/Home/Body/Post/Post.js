@@ -8,6 +8,8 @@ const Post = () => {
     
     const [posts, setPosts] = useState([])
     const [status, setstatus] = useState(true)
+
+    console.log('posts ', posts);
     
     useEffect(() => {
         let isMounted = true;
