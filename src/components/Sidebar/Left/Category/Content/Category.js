@@ -16,6 +16,7 @@ const Category = () => {
       setLoading(false);
     });
   }, []);
+  
 
   var viewCategory = "";
 

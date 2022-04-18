@@ -1,5 +1,6 @@
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useHistory } from 'react-router-dom';
@@ -111,6 +112,19 @@ const CategorySelector = () => {
         )
     }
 
+  const [categorylist, setCategorylist] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/api/view-category`).then((res) => {
+      console.log(res.data.category);
+      if (res.status === 200) {
+        setCategorylist(res.data.category);
+      }
+    });
+  }, []);
+
+  
+
 
 
     const { selectedCheckboxes } = select;
@@ -120,12 +134,12 @@ const CategorySelector = () => {
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
-                    <small className="text-white mx-2"> Category </small>
+                    <small className="text-white mx-2"> Category ddd</small>
                 </div>
 
                 <Slider {...settings}>
                     {
-                        list.map((i, idx) => {
+                        categorylist.map((i, idx) => {
                             return (
                                 <>
                                     <div key={i.id} className="p-1">
