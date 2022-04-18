@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import ReactPlayer from "react-player";
@@ -9,6 +10,20 @@ const Links = ["https://www.youtube.com/watch?v=Ruv3VLFh5iM", "https://www.youtu
 
 
 const PromoVideo = () => {
+
+    const [promoVideos,setPromoVideos] = useState([]);
+
+    useEffect(()=>{
+
+        axios.get(`/api/user/PromoVideos`).then((res)=>{
+            
+            if(res.data.status == 200){
+                setPromoVideos(res.data.promoVideos);
+                console.log('video data', res.data.promoVideos);
+            }
+        })
+
+    },[])
 
     const NextArrow = ({ onClick }) => {
         return (
@@ -44,12 +59,12 @@ const PromoVideo = () => {
     return (
         <div className="mt-3 promoSlider">
             <Slider className="" {...settings}>
-                {Links.map((video, i) => (
+                {promoVideos.map((video, i) => (
+
                     <Card className="">
                         <Card.Body className={i === videoIndex ? "slide activeSlide videoCard" : "slide videoCard"}>
                             <ReactPlayer
-
-                                url={video}
+                                url={"http://localhost:8000/"+video.video_url}
                                 playing={i === videoIndex ? true : false}
                                 muted={true}
                                 controls={true}
@@ -57,11 +72,8 @@ const PromoVideo = () => {
                                 height="25vh"
                             />
                         </Card.Body>
-
-                    </Card>
+                    </Card>        
                 ))}
-
-               
             </Slider>
             <img src={jhakanaka} className="img-fluid" alt="" />
 
