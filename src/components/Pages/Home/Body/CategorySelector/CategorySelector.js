@@ -144,7 +144,7 @@ const CategorySelector = () => {
                                 <>
                                     <div key={i.id} className="p-1">
                                         <div>
-                                            <img onClick={() => handleSubCategory(i)} src={i.slider} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img onClick={() => handleSubCategory(i)} src={`http://localhost:8000/${i.image}`} alt="" className="img-fluid homePageCarouselImg" />
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
                                             <div className="mx-1">

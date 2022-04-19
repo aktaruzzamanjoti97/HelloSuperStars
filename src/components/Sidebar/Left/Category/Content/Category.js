@@ -8,10 +8,10 @@ const Category = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`/api/view-category`).then((res) => {
-      console.log(res.data.category);
+    axios.get(`/api/user/selected/category`).then((res) => {
+      console.log(res.data.userCategory);
       if (res.status === 200) {
-        setCategorylist(res.data.category);
+        setCategorylist(res.data.userCategory);
       }
       setLoading(false);
     });
