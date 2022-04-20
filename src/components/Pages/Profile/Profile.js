@@ -27,10 +27,9 @@ const Profile = () => {
   const history = useHistory();
   const [user, setUser] = useState([]);
   const [profileImage, setProfileImage] = useState("");
+  const [profilePhoto, setProfilePtoto] = useState("");
   const [coverPhoto, setCoverPhoto] = useState("");
-
-
-
+  const [coverImage, setCoverImage] = useState("");
 
   function handleClick() {
     setMessenger(!messagenger);
@@ -71,16 +70,45 @@ const Profile = () => {
   const filePro = useRef();
 
   const handleCoverChange = (e) => {
-    //const [file] = e.target.files;
+    // const [file] = e.target.files;
     // console.log(file);
+    setCoverImage(e.target.files[0]);
     setCoverPhoto(URL.createObjectURL(e.target.files[0]));
-
   };
 
   const handleProfileChange = (e) => {
     // const [file] = e.target.files;
     // console.log(file);
+    setProfilePtoto(e.target.files[0]);
     setProfileImage(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const coverSave = () => {
+    const fData = new FormData();
+
+    fData.append("cover_photo", coverImage);
+    console.log("coverPhoto", coverImage);
+
+    axios.post(`/api/user/coverUpdate/${user.id}`, fData).then((res) => {
+      if (res.data.status == 200) {
+        setCoverImage("")
+      } else {
+        console.log("something wrong!");
+      }
+    });
+  };
+  const profileSave = () => {
+    const fData = new FormData();
+
+    fData.append("image", profilePhoto);
+
+    axios.post(`/api/user/profileUpdate/${user.id}`, fData).then((res) => {
+      if (res.data.status == 200) {
+        setProfilePtoto("")
+      } else {
+        console.log("something wrong!");
+      }
+    });
   };
 
   return (
@@ -96,11 +124,18 @@ const Profile = () => {
                 alt="No image"
                 className="img-fluid profile-cover"
               />
-
+              <div>
+                {coverImage ? (
+                  <button className="bottomright" style={{ marginRight: 110 }} onClick={coverSave}>
+                    <i className="far fa-save mx-1"></i>
+                    Save
+                  </button>
+                ) : null}
+              </div>
               <div>
                 <button
                   className="bottomright"
-                  style={{marginRight : 70}}
+                  
                   onClick={() => fileRef.current.click()}
                 >
                   <i className="far fa-edit mx-1"></i>
@@ -114,12 +149,6 @@ const Profile = () => {
                   hidden
                 />
               </div>
-              <div>
-              <button className="bottomright">
-                <i className="far fa-save mx-1"></i>
-                Save
-              </button>
-              </div>
             </div>
           </div>
           <div className="profile-div mb-5">
@@ -130,34 +159,30 @@ const Profile = () => {
                 className="img-fluid profile-img"
               />
               <div className="bottomright-profile">
-
-              
-
                 <div>
-                <button
-                  className="profile-pic-button"
-                  onClick={() => filePro.current.click()}
-                >
-                  <i className="fas fa-pen"></i>
-                </button>
-                <input
-                  ref={filePro}
-                  onChange={handleProfileChange}
-                  multiple={false}
-                  type="file"
-                  hidden
-                />
+                  <button
+                    className="profile-pic-button"
+                    onClick={() => filePro.current.click()}
+                  >
+                    <i className="fas fa-pen"></i>
+                  </button>
+                  <input
+                    ref={filePro}
+                    onChange={handleProfileChange}
+                    multiple={false}
+                    type="file"
+                    hidden
+                  />
+                </div>
               </div>
-
               <div>
-              <button className="profile-pic-save">
-                <i className="far fa-save mx-1"></i>
-                Save
-              </button>
+                {profilePhoto ? (
+                  <button className="profile-pic-save" onClick={profileSave}>
+                    {/* <i className="far fa-save mx-1"></i> */}
+                    Save
+                  </button>
+                ) : null}
               </div>
-
-              </div>
-
               <div className="prodile-pic-info text-center">
                 <h5 className="profile-font-color">
                   {user.first_name} {user.last_name}
