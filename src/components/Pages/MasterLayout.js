@@ -77,8 +77,13 @@ const Homepage = () => {
                 <Route exact path='/meetup-events' component={MeetupPost}/>
                 <Route exact path='/settings' component={SettingsBody} />
                 <Route exact path='/enrolled-auditions' component={EnrollBody} />
-                <Route exact path='/enrolled-auditions-round' component={AuditionBody} />
+          
                 {/* Right Sidebar End */}
+
+{/* audition routes start */}
+
+                <Route exact path='/enrolled-auditions-round' component={AuditionBody} />
+                {/* audition routes end*/}
               </Switch>
             </div>
 
