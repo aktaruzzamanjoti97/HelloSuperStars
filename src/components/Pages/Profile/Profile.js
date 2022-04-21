@@ -30,6 +30,7 @@ const Profile = () => {
   const [profilePhoto, setProfilePtoto] = useState("");
   const [coverPhoto, setCoverPhoto] = useState("");
   const [coverImage, setCoverImage] = useState("");
+  const [userPhotos, setUserPhotos] = useState([]);
 
   function handleClick() {
     setMessenger(!messagenger);
@@ -63,6 +64,17 @@ const Profile = () => {
       }
 
       console.log("user info", res.data.users);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get(`/api/user/learningPhotos`).then((res) => {
+      if (res.status === 200) {
+
+        setUserPhotos(res.data.userPhotos);
+
+      }
+      console.log("photos", res.data.userPhotos);
     });
   }, []);
 
