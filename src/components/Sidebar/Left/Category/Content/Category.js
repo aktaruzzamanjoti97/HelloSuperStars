@@ -21,7 +21,7 @@ const Category = () => {
   var viewCategory = "";
 
   if (loading) {
-    //return <h5>Loading Category...</h5>
+    //return <h5>Loading Category...</h5>z
   } else {
     viewCategory = categorylist.map((item, index) => {
       return (
