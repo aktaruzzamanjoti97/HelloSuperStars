@@ -1,244 +1,331 @@
 .MeetupE {
-    position: absolute;
+position: absolute;
 }
 
 .container-meet {
-    position: relative;
-    text-align: center;
-    color: white;
+position: relative;
+text-align: center;
+color: white;
 
 }
 
 .centered-meet {
-    background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
-    width: 37.4vw;
-    position: absolute;
-    top: 88.7% !important;
-    transform: translate(-50%, -50%);
+background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
+width: 37.4vw;
+position: absolute;
+top: 88.7% !important;
+transform: translate(-50%, -50%);
 }
 
 .meetP {
 
-    padding-left: 30px;
-    padding: 10px;
+padding-left: 30px;
+padding: 10px;
 }
 
 .MeetupText {
-    font-size: 1.4rem;
-    padding-left: 15px;
-    margin-left: 10px;
+font-size: 1.4rem;
+padding-left: 15px;
+margin-left: 10px;
 }
 
 .Meetupbtn {}
 
 .meetImg {
-    height: 380px !important;
-    object-fit: cover;
+height: 380px !important;
+object-fit: cover;
 }
+
 
 @media only screen and (max-width: 510px) {
 
-    .centered-meet {
-        width: 88.9% !important;
-        position: absolute;
-        top: 80% !important;
-        transform: translate(-50%, -50%);
-    }
+.centered-meet {
+width: 88.9% !important;
+position: absolute;
+top: 80% !important;
+transform: translate(-50%, -50%);
+}
 
-    .meetP {
-        padding-left: 2px;
-        padding: 10px;
-    }
+.meetP {
+padding-left: 2px;
+padding: 10px;
+}
 
-    .MeetupText {
-        font-size: .8rem !important;
-        padding-left: 4px;
-        margin-left: 10px;
-    }
+.MeetupText {
+font-size: .8rem !important;
+padding-left: 4px;
+margin-left: 10px;
+}
 
-    .Meetupbtn {
-        width: 60%;
+.Meetupbtn {
+width: 60%;
 
-    }
-    .bmt {
-        font-size: 10px !important;
-    }
+}
+.bmt {
+font-size: 10px !important;
+}
 }
 
 @media only screen and (max-width: 375px) {
 
-    .meetImg {
-        height: 220px !important;
-        object-fit: cover;
-    }
-    .centered-meet {
-        background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
-        width: 37.4vw;
-        position: absolute;
-        top: 86.4% !important;
-        transform: translate(-50%, -50%);
-    }
-   
-    
+.meetImg {
+height: 220px !important;
+object-fit: cover;
+}
+.centered-meet {
+background-image: linear-gradient(rgba(5, 5, 5, 0), rgba(10, 10, 10, 0.836), rgba(0, 0, 0, 0.966));
+width: 37.4vw;
+position: absolute;
+top: 86.4% !important;
+transform: translate(-50%, -50%);
 }
 
-
+}
 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
 
-    .centered-meet {
-        width: 93%;
-        position: absolute;
-        top: 82% !important;
-        transform: translate(-50%, -50%);
-    }
+.centered-meet {
+width: 93%;
+position: absolute;
+top: 82% !important;
+transform: translate(-50%, -50%);
+}
 
-    .meetP {
-        padding-left: 2px;
-        padding: 10px;
-    }
+.meetP {
+padding-left: 2px;
+padding: 10px;
+}
 
-    .MeetupText {
-        font-size: 1.5rem;
-        padding-left: 4px;
-        margin-left: 10px;
-    }
+.MeetupText {
+font-size: 1.5rem;
+padding-left: 4px;
+margin-left: 10px;
+}
 
-    .Meetupbtn {
-        width: 40%;
+.Meetupbtn {
+width: 40%;
 
-    }
+}
 
-    .bmt {
-        font-size: 1rem;
-    }
+.bmt {
+font-size: 1rem;
+}
 
-    .meetImg {
-        height: 10rem !important;
-    }
+.meetImg {
+height: 10rem !important;
+}
 
-    
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1400px) {
 
-    .centered-meet {
-        width: 92.5%;
-        position: absolute;
-        top: 86% !important;
-        transform: translate(-50%, -50%);
-    }
-
-    .MeetupText {
-        font-size: 1rem;
-        padding-left: 4px;
-        margin-left: 10px;
-    }
-
-    .bmt {
-        font-size: .8rem;
-    }
-
-    .MeetCon-left {
-        left: 15px !important;
-      }
-
-    .colorMeet {
-        height: 150px;
-        position: absolute;
-        bottom: 0px;
-        width: 92.4% !important;
-        left: 3.8% !important;
-        right: 3.8% !important;
-        background: linear-gradient(#07020200,#000000da, #070202e7);
-    }
-    
+.centered-meet {
+width: 92.5%;
+position: absolute;
+top: 86% !important;
+transform: translate(-50%, -50%);
 }
 
+.MeetupText {
+font-size: 1rem;
+padding-left: 4px;
+margin-left: 10px;
+}
 
+.bmt {
+font-size: .8rem;
+}
+
+.MeetCon-left {
+left: 15px !important;
+}
+
+.colorMeet {
+height: 150px;
+position: absolute;
+bottom: 0px;
+width: 92.4% !important;
+left: 3.8% !important;
+right: 3.8% !important;
+background: linear-gradient(#07020200,#000000da, #070202e7);
+}
+
+}
 
 /* ------------------------------- */
 
-
 /* Container holding the image and the text */
 .MeetCon {
-    position: relative;
-  }
-  
-  /* Bottom left text */
-  .MeetCon-left {
-    position: absolute;
-    bottom: 15px;
-    width: 68%;
-    left: 50px;
-  }
-  
-  /* Bottom right text */
-  .MeetCon-right {
-    position: absolute;
-    bottom: 15px;
-    right: 50px;
-  }
-  
-  /* Centered text */
-  .MeetCon-centered {
-    position: absolute;
-    
-    left: 2.5%;
-    right: 2.5%;
-    height: 380px !important;
-    background: linear-gradient(#ffffff00,#e6646400, #000000);
-  }
+position: relative;
+}
 
+/* Bottom left text */
+.MeetCon-left {
+position: absolute;
+bottom: 15px;
+width: 68%;
+left: 50px;
+}
+
+/* Bottom right text */
+.MeetCon-right {
+position: absolute;
+bottom: 15px;
+right: 50px;
+}
+
+/* Centered text */
+.MeetCon-centered {
+position: absolute;
+
+left: 2.5%;
+right: 2.5%;
+height: 380px !important;
+background: linear-gradient(#ffffff00,#e6646400, #000000);
+}
 
 .colorMeet {
-    height: 100px;
+height: 100px;
+position: absolute;
+bottom: 0px;
+width: 95%;
+left: 2.5%;
+background: linear-gradient(#07020200,#000000da, #070202e7);
+}
+
+.PostCardMeet img {
+height: 0 auto;
+padding-left: 20px;
+padding-right: 20px;
+width: 100%;
+height: 40vh !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+.MeetCon-left {
+left: 0px !important;
+}
+
+.colorMeet {
+height: 150px;
+position: absolute;
+bottom: 0px;
+width: 90% !important;
+left: 4.9% !important;
+background: linear-gradient(#07020200,#000000da, #070202e7);
+}
+
+.PostCardMeet img {
+height: 0 auto;
+padding-left: 20px;
+padding-right: 20px;
+width: 100%;
+object-fit: cover;
+height: 30vh !important;
+}
+.MeetCon-right {
+
+right: 20px;
+}
+
+}
+
+.AudiNew{
+position: relative;
+}
+.AuditionDiv{
+position: absolute;
+font-family: 'Bilbo Swash Caps';
+background: #000000a1;
+border: 1px solid #16D5FF;
+box-sizing: border-box;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.AudiPor{
+width: 40px;
+height: 40px;
+margin-right: 5px;
+
+}
+.meetImgB {
+    margin-top: 20px;
+    border: 2px solid #FFF500;
+    box-sizing: border-box;
+    border-radius: 11px;
+    }
+.colorAud {
+    height: 60px;
     position: absolute;
     bottom: 0px;
-    width: 95%;
-    left: 2.5%;
+    width: 91.6%;
+    left: 4.2%;
     background: linear-gradient(#07020200,#000000da, #070202e7);
 }
 
 
-.PostCardMeet img {
-    height: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-    height: 40vh !important;
+.AuditionDivPlay{
+    position: absolute;
+    font-family: 'Bilbo Swash Caps';
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+.img-fluidf{
+    width: 70px;
 }
 
-
-
-@media only screen and (max-width: 600px) {
-    
-        .MeetCon-left {
-            left: 0px !important;
-          }
-    
-        .colorMeet {
-            height: 150px;
-            position: absolute;
-            bottom: 0px;
-            width: 90% !important;
-            left: 4.9% !important;
-            background: linear-gradient(#07020200,#000000da, #070202e7);
-        }
-
-        .PostCardMeet img {
-            height: 0 auto;
-            padding-left: 20px;
-            padding-right: 20px;
-            width: 100%;
-            object-fit: cover;
-            height: 30vh !important;
-        }
-        .MeetCon-right {
-            
-            right: 20px;
-          }
-   
-    
+.AudiFooter{
+    background: #1A1A1A;
+    border: 2px solid #FFF500;
+    box-sizing: border-box;
+    border-radius: 11px;
 }
 
+.AudiPorS{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    
+    }
+
+    .AuditionDivPlayR{
+        position: absolute;
+    font-family: 'Bilbo Swash Caps';
+    box-sizing: border-box;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    }
+
+    .AudiVide{
+        position: absolute;
+        font-family: 'Bilbo Swash Caps';
+        box-sizing: border-box;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 40px;
+}
+
+.ASIm{
+    position: relative;
+}
+
+.Auf{
+    position: absolute;
+    font-family: 'Bilbo Swash Caps';
+    box-sizing: border-box;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.BannerAu{
+    margin-bottom: 100px;
+}
