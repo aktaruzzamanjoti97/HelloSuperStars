@@ -15,7 +15,7 @@ const FanMedia = () => {
     console.log("slug ", slug);
     const [fanMedia, setFanMedia] = useState([]);
     const [fanMediaVideo, setFanMediaVideo] = useState([]);
-    console.log("fanMedia xxxxxxxxxxxxxxxx ", fanMedia);
+    console.log("fanMedia xxxxxxxxxxxxxxxx ", fanMediaVideo);
 
     useEffect(() => {
         axios.get(`/api/user/fan/group/post/show/${slug}`).then((res) => {
