@@ -22,6 +22,7 @@ import AuditionsPost from "../../components/Pages/Home/Body/SidebarComponent/Rig
 import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
 import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 import { socketContext } from "../../App";
+import AuditionBody from "./AuditionPages/AuditonBody/AuditionBody";
 
 
 const Homepage = () => {
@@ -76,6 +77,7 @@ const Homepage = () => {
                 <Route exact path='/meetup-events' component={MeetupPost}/>
                 <Route exact path='/settings' component={SettingsBody} />
                 <Route exact path='/enrolled-auditions' component={EnrollBody} />
+                <Route exact path='/enrolled-auditions-round' component={AuditionBody} />
                 {/* Right Sidebar End */}
               </Switch>
             </div>

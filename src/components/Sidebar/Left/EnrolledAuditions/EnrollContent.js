@@ -49,6 +49,8 @@ export default function EnrollContent({data}) {
             </div>
           </div>
 
+          <div className="text-warning">Hello enroll audition</div>
+
       
     </>
   );
