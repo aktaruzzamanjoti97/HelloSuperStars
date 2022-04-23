@@ -17,7 +17,7 @@ const Homepage = () => {
   return (
     <>
       {/* <CategorySelector /> */}
-      <AuditionDragAndDrop />
+      {/* <AuditionDragAndDrop /> */}
       {/* <AuditionRoundResult /> */}
       {/* <AuditionDescription /> */}
       {/* <AuditionPay /> */}

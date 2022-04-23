@@ -7,6 +7,9 @@ import markDistribution from "../../../../images/Rounds/markDistributin.png";
 import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
+import AuditionDragAndDrop from '../../../../components/Pages/Home/AuditionDragAndDrop'
+import AuditionRoundResult from "../../Home/Body/AuditionRoundResult/AuditionRoundResult";
+import AuditionDescription from "../../Home/AuditionDescription";
 export default function Round1com() {
   return (
     <div className="my-3">
@@ -98,10 +101,14 @@ export default function Round1com() {
         <div className="container-fluid my-2">
           <Tab.Content>
             <Tab.Pane eventKey="first" >
-             <Participant />
+             {/* <Participant /> */}
+             {/* <AuditionDragAndDrop /> */}
+                {/* <AuditionRoundResult /> */}
+                     {/* <AuditionDescription /> */}
             </Tab.Pane>
             <Tab.Pane eventKey="second" className="bg-warning">
               Content 2
+          
             </Tab.Pane>
             <Tab.Pane eventKey="third" className="bg-warning">
               Content 3
