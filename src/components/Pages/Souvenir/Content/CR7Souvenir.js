@@ -33,6 +33,7 @@ const CR7Souvenir = ({ data }) => {
   };
 
   useEffect(() => {
+    socketData.emit("joinBiddingRoom", {room: data.id});
     socketData.emit("sendLiveBidding", data.id);
     socketData.on("getLiveBidding", (data) => {
       console.log("data from socket", data);
@@ -67,6 +68,7 @@ const CR7Souvenir = ({ data }) => {
       axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.post(`/api/user/bidding/auction/product`, fdata).then((res) => {
           if (res.data.status === 200) {
+            socketData.emit("joinBiddingRoom", {room: data.id});
             socketData.emit("sendLiveBidding", data.id);
             socketData.on("getLiveBidding", (sdata) => {
               console.log("data from socket", sdata);
@@ -97,7 +99,7 @@ const CR7Souvenir = ({ data }) => {
         </p>
 
         <h4 className="text-warning">
-          Base Price: <small>{data.base_price}</small>
+          Base Price: <small>{data.base_price.toLocaleString('en-US')}</small> BDT
         </h4>
 
         <div className="ReactCr7 bg-dark p-4 mb-3 ">
@@ -133,7 +135,7 @@ const CR7Souvenir = ({ data }) => {
                     />
                     <div className="Cr7View"></div>
                     <h1 className="btn Cr7s py-1 text-warning fw-bold">
-                      {bid.amount}
+                      {bid.amount.toLocaleString('en-US')}
                     </h1>
                     <h5 className="btn Cr7ss py-1 text-light ">
                       {bid.first_name} {bid.last_name}

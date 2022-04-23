@@ -20,25 +20,26 @@ import sakibal from "../../../images/Profile/shakib-message.jpg";
 import ReactPlayer from "react-player";
 import { socketContext } from "../../../App";
 
-
 const Profile = () => {
   const socketData = useContext(socketContext);
 
   const [messagenger, setMessenger] = useState(false);
   const history = useHistory();
   const [user, setUser] = useState([]);
-  const [file, setFile] = useState("");
-
+  const [profileImage, setProfileImage] = useState("");
+  const [profilePhoto, setProfilePtoto] = useState("");
+  const [coverPhoto, setCoverPhoto] = useState("");
+  const [coverImage, setCoverImage] = useState("");
+  const [userPhotos, setUserPhotos] = useState([]);
 
   function handleClick() {
     setMessenger(!messagenger);
   }
 
-
   const logoutSubmit = (e) => {
     e.preventDefault();
 
-    socketData.emit("logout", localStorage.getItem('auth_id'));
+    socketData.emit("logout", localStorage.getItem("auth_id"));
 
     axios.post(`/api/logout`).then((res) => {
       if (res.data.status === 200) {
@@ -58,12 +59,69 @@ const Profile = () => {
     axios.get(`/api/user_info`).then((res) => {
       if (res.status === 200) {
         setUser(res.data.users);
-        setFile("http://localhost:8000/" + res.data.users.image);
+        setProfileImage("http://localhost:8000/" + res.data.users.image);
+        setCoverPhoto("http://localhost:8000/" + res.data.users.cover_photo);
       }
 
-      console.log(res.data.users);
+      console.log("user info", res.data.users);
     });
   }, []);
+
+  useEffect(() => {
+    axios.get(`/api/user/activitiesData`).then((res) => {
+      if (res.status === 200) {
+        // console.log("activities photos", res.data.userPhotos);
+        setUserPhotos(res.data.userPhotos);
+       
+      }
+     
+    });
+  }, []);
+
+  const fileRef = useRef();
+  const filePro = useRef();
+
+  const handleCoverChange = (e) => {
+    // const [file] = e.target.files;
+    // console.log(file);
+    setCoverImage(e.target.files[0]);
+    setCoverPhoto(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const handleProfileChange = (e) => {
+    // const [file] = e.target.files;
+    // console.log(file);
+    setProfilePtoto(e.target.files[0]);
+    setProfileImage(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const coverSave = () => {
+    const fData = new FormData();
+
+    fData.append("cover_photo", coverImage);
+    console.log("coverPhoto", coverImage);
+
+    axios.post(`/api/user/coverUpdate/${user.id}`, fData).then((res) => {
+      if (res.data.status == 200) {
+        setCoverImage("")
+      } else {
+        console.log("something wrong!");
+      }
+    });
+  };
+  const profileSave = () => {
+    const fData = new FormData();
+
+    fData.append("image", profilePhoto);
+
+    axios.post(`/api/user/profileUpdate/${user.id}`, fData).then((res) => {
+      if (res.data.status == 200) {
+        setProfilePtoto("")
+      } else {
+        console.log("something wrong!");
+      }
+    });
+  };
 
   return (
     <>
@@ -74,31 +132,73 @@ const Profile = () => {
           <div className="profile-img-cover ">
             <div className="profile-container">
               <img
-                src={coverImage}
-                alt="bg-img"
+                src={coverPhoto}
+                alt="No image"
                 className="img-fluid profile-cover"
               />
-              <button className="bottomright">
-                <i className="far fa-edit mx-1"></i>
-                Edit Cover photo
-              </button>
+              <div>
+                {coverImage ? (
+                  <button className="bottomright" style={{ marginRight: 110 }} onClick={coverSave}>
+                    <i className="far fa-save mx-1"></i>
+                    Save
+                  </button>
+                ) : null}
+              </div>
+              <div>
+                <button
+                  className="bottomright"
+                  
+                  onClick={() => fileRef.current.click()}
+                >
+                  <i className="far fa-edit mx-1"></i>
+                  Edit Cover
+                </button>
+                <input
+                  ref={fileRef}
+                  onChange={handleCoverChange}
+                  multiple={false}
+                  type="file"
+                  hidden
+                />
+              </div>
             </div>
           </div>
           <div className="profile-div mb-5">
             <div className="profile-photo">
               <img
-                src={raihanProfileImage}
+                src={profileImage}
                 alt={raihanProfileImage}
                 className="img-fluid profile-img"
               />
               <div className="bottomright-profile">
-                <button className="profile-pic-button">
-                  <i className="fas fa-pen"></i>
-                </button>
+                <div>
+                  <button
+                    className="profile-pic-button"
+                    onClick={() => filePro.current.click()}
+                  >
+                    <i className="fas fa-pen"></i>
+                  </button>
+                  <input
+                    ref={filePro}
+                    onChange={handleProfileChange}
+                    multiple={false}
+                    type="file"
+                    hidden
+                  />
+                </div>
               </div>
-
+              <div>
+                {profilePhoto ? (
+                  <button className="profile-pic-save" onClick={profileSave}>
+                    {/* <i className="far fa-save mx-1"></i> */}
+                    Save
+                  </button>
+                ) : null}
+              </div>
               <div className="prodile-pic-info text-center">
-                <h5 className="profile-font-color">Raihan Halim</h5>
+                <h5 className="profile-font-color">
+                  {user.first_name} {user.last_name}
+                </h5>
                 <h6 className="profile-font-color">Student</h6>
               </div>
             </div>
@@ -110,7 +210,7 @@ const Profile = () => {
             <div className="row">
               <div className="col-md-5 mb-2">
                 {/* phototos and videos components added */}
-                <LeftCard title="Photos" />
+                <LeftCard title="Photos" photos = {userPhotos}/>
                 <div className="mt-3">
                   <LeftCard title="Videos" />
                 </div>

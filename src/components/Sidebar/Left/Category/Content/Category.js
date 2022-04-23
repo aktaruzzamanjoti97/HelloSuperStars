@@ -8,19 +8,20 @@ const Category = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`/api/view-category`).then((res) => {
-      console.log(res.data.category);
+    axios.get(`/api/user/selected/category`).then((res) => {
+      console.log(res.data.userCategory);
       if (res.status === 200) {
-        setCategorylist(res.data.category);
+        setCategorylist(res.data.userCategory);
       }
       setLoading(false);
     });
   }, []);
+  
 
   var viewCategory = "";
 
   if (loading) {
-    //return <h5>Loading Category...</h5>
+    //return <h5>Loading Category...</h5>z
   } else {
     viewCategory = categorylist.map((item, index) => {
       return (

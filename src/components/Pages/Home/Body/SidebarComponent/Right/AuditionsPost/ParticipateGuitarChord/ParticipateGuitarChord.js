@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Carousel, Form } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
 import { Link, useHistory, useParams } from "react-router-dom";
+import swal from "sweetalert";
 // import avaterImage from "../../../../../../../../images/CreateAccount-page/Avater.png";
 import avaterImage from "../../../../../../../../images/avatarImage.webp";
 import guitarParticipant from "../../../../../../../../images/guitarParticipate.png";
@@ -89,6 +90,8 @@ const [cardInfo, setCardInfo] = useState({
         if(res.data.status === 200)
         {
           setPaymentPortal(1);
+        }else{
+          swal("Error",res.data.message,"error");
         }
         
     });

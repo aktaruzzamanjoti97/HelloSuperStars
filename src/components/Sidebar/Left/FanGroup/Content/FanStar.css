@@ -215,7 +215,11 @@
     height: 40px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.753));
   }
-
+.MediaVideosg{
+    width:265px !important;
+    height: 180px !important;
+    margin-left: 10px;
+}
   @media only screen and (max-width: 1400px) {
     .FanBg {
         width: 20.66vw;
@@ -223,6 +227,9 @@
       }
       .MediaImg{
         width: 13.65vw ;
+    }
+    .MediaVideos{
+        width: 16vw ;
     }
   
   }
@@ -233,6 +240,9 @@
        
       }
       .MediaImg{
+        width: 44.6% ;
+    }
+    .MediaVideos{
         width: 44.6% ;
     }
   
@@ -632,6 +642,18 @@ opacity: 1;
    opacity: 1;
    width: 100% ;
    text-align: justify;
+}
+
+.bg-gr
+{
+    background: transparent linear-gradient(103deg, #00DE7B 0%, #00AD8E 100%) 0% 0% no-repeat padding-box;
+    padding: 2px;
+}
+
+.bg-pr
+{
+    background: transparent linear-gradient(101deg, #F103F5 0%, #6F1FFD 100%) 0% 0% no-repeat padding-box;
+    padding: 2px;;
 }
 
 .ShahrukhFan .dropdown-toggle::after {
