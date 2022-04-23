@@ -33,8 +33,23 @@ const AuditionDragAndDrop = () => {
 
   return (
     <div>
-      <div>
-        <div className="container-fluid mt-5 mb-3">
+      <div className="dragAndDropBg">
+        <div className="p-3">
+          <div className="d-flex justify-content-between">
+            <ul>
+              <li className="listTitle listTitleText">Video Submission Date</li>
+              <li className="listTitle listTitleText">Video Submission Date</li>
+              <li className="listTitle listTitleText">Fee</li>
+            </ul>
+            <ul>
+              <li className="text-light listTitleText">15/06/2022</li>
+              <li className="text-light listTitleText">09:45</li>
+              <li className="text-light listTitleText">250 BDT</li>
+            </ul>
+          </div>
+        </div>
+        <div className="bottomLineGold"></div>
+        <div className="container-fluid py-4">
           <div className="row">
             <div className="col-md-3">
               <div className="CardBorder">
@@ -221,6 +236,9 @@ const AuditionDragAndDrop = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="text-center p-4">
+          <button className="appealBtn">Upload</button>
         </div>
       </div>
     </div>
