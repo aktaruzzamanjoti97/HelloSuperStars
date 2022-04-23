@@ -7,10 +7,10 @@ import Round1com from "../Round1Content/Round1com";
 export default function AuditionBody() {
   return (
     <div className="auditionMainContainer my-3">
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      <Tab.Container fluid id="left-tabs-example"  defaultActiveKey="first">
         <div className="audition">
           <Nav variant="pills">
-            <div className="container ">
+            <div className="container-fluid ">
               <div className="row">
                 <div className="col-md-4">
                   <div>
@@ -90,16 +90,22 @@ export default function AuditionBody() {
           </Nav>
         </div>
 
-        <div className="container my-2">
-          <Tab.Content>
-            <Tab.Pane eventKey="first">
+        {/* nav banner start here */}
+        {/* <div className="bg-warning container my-2">
+          hello banner
+        </div> */}
+           {/* nav banner end here */}
+
+        <div className="container-fluid auditonTabcontent my-2">
+          <Tab.Content >
+            <Tab.Pane eventKey="first" className="w-100">
               <Round1com />
             </Tab.Pane>
-            <Tab.Pane eventKey="second" className="bg-warning">
-              Content 2
+            <Tab.Pane eventKey="second" >
+              <Round1com />
             </Tab.Pane>
-            <Tab.Pane eventKey="third" className="bg-warning">
-              Content 3
+            <Tab.Pane eventKey="third" >
+              <Round1com />
             </Tab.Pane>
           </Tab.Content>
         </div>
