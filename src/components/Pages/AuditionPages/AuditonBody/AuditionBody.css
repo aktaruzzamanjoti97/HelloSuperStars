@@ -1,0 +1,38 @@
+.audition .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: rgb(0, 0, 0);
+    background-color: #161616 !important;
+    color: gold;
+    font-weight: bold;
+   
+
+  }
+  .audition .nav-pills .nav-link, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #161616 !important;
+  }
+.round-content{
+    position: absolute;
+    top: 43%;
+    right: 2%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.NavColorFan,
+.show > .NavAudition {
+  color: #fff;
+
+  /* background-color: #343434; */
+
+}
+.NavColorFan.active,
+.show > .NavAudition {
+  color: blue !important;
+  background-color: #161616 !important;
+  /* background: transparent
+    linear-gradient(115deg, #faed89 0%, #ffc000 69%, #ffc633 100%) 0% 0%
+    no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1; */
+
+}
