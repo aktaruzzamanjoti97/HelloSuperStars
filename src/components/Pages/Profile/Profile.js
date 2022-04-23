@@ -68,13 +68,13 @@ const Profile = () => {
   }, []);
 
   useEffect(() => {
-    axios.get(`/api/user/learningPhotos`).then((res) => {
+    axios.get(`/api/user/activitiesData`).then((res) => {
       if (res.status === 200) {
-
+        // console.log("activities photos", res.data.userPhotos);
         setUserPhotos(res.data.userPhotos);
-
+       
       }
-      console.log("photos", res.data.userPhotos);
+     
     });
   }, []);
 
@@ -210,7 +210,7 @@ const Profile = () => {
             <div className="row">
               <div className="col-md-5 mb-2">
                 {/* phototos and videos components added */}
-                <LeftCard title="Photos" />
+                <LeftCard title="Photos" photos = {userPhotos}/>
                 <div className="mt-3">
                   <LeftCard title="Videos" />
                 </div>
