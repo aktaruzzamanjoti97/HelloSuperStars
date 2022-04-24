@@ -7,6 +7,8 @@ import markDistribution from "../../../../images/Rounds/markDistributin.png";
 import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
+import JudgeCom from "../JudgeCom/JudgeCom";
+import PendingAuditionCard from "../PendingAuditionCard/PendingAuditionCard";
 export default function Round1com() {
   return (
     <div className="my-3">
@@ -53,7 +55,7 @@ export default function Round1com() {
                         <img src={judge} alt="" />
                       </div>
                       <Nav.Item>
-                        <Nav.Link eventKey="third" className="NavAudition subAudition">
+                        <Nav.Link eventKey="judge" className="NavAudition subAudition">
                           Judge
                         </Nav.Link>
                       </Nav.Item>
@@ -83,7 +85,7 @@ export default function Round1com() {
                         <img src={result} alt="" />
                       </div>
                       <Nav.Item>
-                        <Nav.Link eventKey="fifth" className="NavAudition subAudition">
+                        <Nav.Link eventKey="result" className="NavAudition subAudition">
                           Result
                         </Nav.Link>
                       </Nav.Item>
@@ -94,23 +96,27 @@ export default function Round1com() {
             </div>
           </Nav>
         </div>
+{/* pending banner start here */}
 
+{/* pending banner end here */}
         <div className="container-fluid my-2">
           <Tab.Content>
             <Tab.Pane eventKey="first" >
-             <Participant />
+             {/* <Participant /> */}
             </Tab.Pane>
             <Tab.Pane eventKey="second" className="bg-warning">
               Content 2
             </Tab.Pane>
-            <Tab.Pane eventKey="third" className="bg-warning">
-              Content 3
+            <Tab.Pane eventKey="judge">
+            {/* juge page start here */}
+             <JudgeCom />
+              {/* juge page end here */}
             </Tab.Pane>
             <Tab.Pane eventKey="fourth" className="bg-warning">
               Content 4
             </Tab.Pane>
-            <Tab.Pane eventKey="fifth" className="bg-warning">
-              Content 5
+            <Tab.Pane eventKey="result" >
+            <PendingAuditionCard />
             </Tab.Pane>
           </Tab.Content>
         </div>
