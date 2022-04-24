@@ -28,9 +28,6 @@
   padding: 8px;
   align-items: center;
 }
-.iconCustomized {
-  /* padding-left: 70px; */
-}
 
 .uploadBtn {
   margin-right: 16px;
@@ -74,4 +71,14 @@
 
 .dragAndDropBg {
   background-color: #1b1b1b;
+}
+
+@media only screen and (max-width: 600px) {
+  .appealBtn {
+    border-radius: 10px;
+    width: 150px;
+    color: black;
+    font-size: 15px;
+    font-weight: 800;
+  }
 }

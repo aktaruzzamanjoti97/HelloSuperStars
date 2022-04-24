@@ -3,11 +3,11 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel";
 import "./AuditionPay.css";
-import applePayLogo from "../../../../../images/Payment-img/Apple_Pay_logo.png";
-import bKashLogo from "../../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
-import payoneerLogo from "../../../../../images/Payment-img/Payoneer-Logo.wine.png";
-import payPalLogo from "../../../../../images/Payment-img/PayPal-Logo.wine.png";
-import visaLogo from "../../../../../images/Payment-img/Visa_Inc._logo.svg.png";
+import applePayLogo from "../../../../images/Payment-img/Apple_Pay_logo.png";
+import bKashLogo from "../../../../images/Payment-img/BKash-bKash-Logo.wine.png";
+import payoneerLogo from "../../../../images/Payment-img/Payoneer-Logo.wine.png";
+import payPalLogo from "../../../../images/Payment-img/PayPal-Logo.wine.png";
+import visaLogo from "../../../../images/Payment-img/Visa_Inc._logo.svg.png";
 
 const AuditionPay = () => {
   return (
@@ -116,7 +116,7 @@ const AuditionPay = () => {
                   type="submit"
                   className="my-3 btn btn-gold text-light fw-bold"
                 >
-                  Confirm
+                  Payment
                 </button>
               </div>
             </div>

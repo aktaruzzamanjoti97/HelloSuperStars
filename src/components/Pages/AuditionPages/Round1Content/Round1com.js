@@ -7,10 +7,16 @@ import markDistribution from "../../../../images/Rounds/markDistributin.png";
 import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
-import AuditionDragAndDrop from '../../../../components/Pages/Home/AuditionDragAndDrop'
-import AuditionRoundResult from "../../Home/Body/AuditionRoundResult/AuditionRoundResult";
-import AuditionDescription from "../../Home/AuditionDescription";
+
+import AuditionRoundResult from "../AuditionRoundResult/AuditionRoundResult";
+import AuditionDescription from "../AuditionDescription/AuditionDescription";
+import AuditionDragAndDrop from "../../AuditionPages/AuditionDragAndDrop/AuditionDragAndDrop";
+import { useState } from "react";
+import AuditionPay from "../AuditionPay/AuditionPay";
 export default function Round1com() {
+
+  const [showPayment, setShowPayment] = useState(false)
+
   return (
     <div className="my-3">
       <Tab.Container fluid id="left-tabs-example" defaultActiveKey="first">
@@ -102,7 +108,12 @@ export default function Round1com() {
           <Tab.Content>
             <Tab.Pane eventKey="first" >
              {/* <Participant /> */}
-             {/* <AuditionDragAndDrop /> */}
+            
+             {
+               showPayment ?  <AuditionPay /> :  <AuditionDragAndDrop showPayment={showPayment} setShowPayment={setShowPayment} />
+             }
+           
+             {/* {showPayment ? <AuditionPay /> } */}
                 {/* <AuditionRoundResult /> */}
                      {/* <AuditionDescription /> */}
             </Tab.Pane>

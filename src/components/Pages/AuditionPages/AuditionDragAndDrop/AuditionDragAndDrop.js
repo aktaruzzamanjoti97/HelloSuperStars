@@ -3,7 +3,7 @@ import { FileDrop } from "react-file-drop";
 import { AiOutlineCloseCircle, AiOutlineUpload } from "react-icons/ai";
 import "./AuditionDragAndDrop.css";
 
-const AuditionDragAndDrop = () => {
+const AuditionDragAndDrop = ({showPayment, setShowPayment}) => {
   const [selectFile, setSelectFile] = useState(null);
 
   const fileInputRef = useRef(null);
@@ -51,7 +51,7 @@ const AuditionDragAndDrop = () => {
         <div className="bottomLineGold"></div>
         <div className="container-fluid py-4">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3 my-2">
               <div className="CardBorder">
                 <div className="fileUploadCard">
                   <input
@@ -64,7 +64,7 @@ const AuditionDragAndDrop = () => {
                     <button onClick={onTargetClick} className="uploadBtn">
                       Upload File
                     </button>
-                    <p className="text-center">
+                    <p className="text-center text-white">
                       {selectFile !== null ? (
                         <>
                           {selectFile.name}
@@ -97,7 +97,7 @@ const AuditionDragAndDrop = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 my-2">
               <div className="CardBorder">
                 <div className="fileUploadCard">
                   <input
@@ -110,7 +110,7 @@ const AuditionDragAndDrop = () => {
                     <button onClick={onTargetClick} className="uploadBtn">
                       Upload File
                     </button>
-                    <p className="text-center">
+                    <p className="text-center text-white">
                       {selectFile !== null ? (
                         <>
                           {selectFile.name}
@@ -143,7 +143,7 @@ const AuditionDragAndDrop = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 my-2">
               <div className="CardBorder">
                 <div className="fileUploadCard">
                   <input
@@ -156,7 +156,7 @@ const AuditionDragAndDrop = () => {
                     <button onClick={onTargetClick} className="uploadBtn">
                       Upload File
                     </button>
-                    <p className="text-center">
+                    <p className="text-center text-white">
                       {selectFile !== null ? (
                         <>
                           {selectFile.name}
@@ -189,7 +189,7 @@ const AuditionDragAndDrop = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 my-2">
               <div className="CardBorder">
                 <div className="fileUploadCard">
                   <input
@@ -202,7 +202,7 @@ const AuditionDragAndDrop = () => {
                     <button onClick={onTargetClick} className="uploadBtn">
                       Upload File
                     </button>
-                    <p className="text-center">
+                    <p className="text-center text-white">
                       {selectFile !== null ? (
                         <>
                           {selectFile.name}
@@ -238,7 +238,7 @@ const AuditionDragAndDrop = () => {
           </div>
         </div>
         <div className="text-center p-4">
-          <button className="appealBtn">Upload</button>
+          <button onClick={() => setShowPayment(true)} className="appealBtn">Upload</button>
         </div>
       </div>
     </div>

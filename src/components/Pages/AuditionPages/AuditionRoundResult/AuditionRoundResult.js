@@ -2,10 +2,11 @@ import React from "react";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
 import "./AuditionRoundResult.css";
-import people from "../../../../../images/Audition-images/Group.png";
-import bar from "../../../../../images/Audition-images/Group1137.png";
-import star from "../../../../../images/Audition-images/Group1111.png";
-import dash from "../../../../../images/Audition-images/Group1176.png";
+
+import people from "../../../../images/Audition-images/Group.png";
+import bar from "../../../../images/Audition-images/Group1137.png";
+import star from "../../../../images/Audition-images/Group1111.png";
+import dash from "../../../../images/Audition-images/Group1176.png";
 
 const AuditionRoundResult = () => {
   var settings = {

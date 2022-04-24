@@ -1,15 +1,14 @@
 import React from "react";
-import "./AuditionDescription.css";
-import auditionDescriptionIcon from "../../../images/Audition-images/Group1177.png";
 import ReactPlayer from "react-player";
-import flag from "../../../images/Audition-images/flag.png";
-import ends from "../../../images/Audition-images/ends.png";
-import youtube from "../../../images/Audition-images/Group1178.png";
+import ends from "../../../../images/Audition-images/ends.png";
+import flag from "../../../../images/Audition-images/flag.png";
+import youtube from "../../../../images/Audition-images/Group1178.png";
+import auditionDescriptionIcon from "../../../../images/Audition-images/Group1177.png";
+import "./AuditionDescription.css";
 
 const AuditionDescription = () => {
   return (
     <div className="auditionDes">
-   
       <div className="p-3">
         <p className="titleInstruction">Audition Instruction</p>
       </div>
@@ -94,14 +93,14 @@ const AuditionDescription = () => {
           </div>
         </div>
         <div className="endDiv d-flex p-2">
-          <img height="40px" src={flag} alt="" />
+          <img height="40px" src={ends} alt="" />
           <div className="px-2">
             <span className="text-light">Ends</span>
             <h3 className="text-light fw-bold">16 April 2022</h3>
           </div>
         </div>
         <div className="startDiv d-flex p-2">
-          <img height="40px" src={flag} alt="" />
+          <img height="40px" src={youtube} alt="" />
           <div className="px-2">
             <span className="text-light">User upload slot</span>
             <h3 className="text-light fw-bold">4 Video</h3>
