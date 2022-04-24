@@ -1,17 +1,18 @@
 import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useHistory } from 'react-router-dom';
 import Slider from "react-slick";
 import './CategorySelector.css';
 import { fakeCategoryData } from './fakeCategoryData';
 
 
 
-const CategorySelector = () => {
+const CategorySelector = ({onSelect, setOnSelect, catId, setCatId}) => {
     // const [list, setList] = useState([]);
+    let history = useHistory()
 
     // const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheck, setIsCheck] = useState([]);
@@ -81,7 +82,7 @@ const CategorySelector = () => {
 
 
     const [imageInfo, setImageInfo] = useState([]);
-    const history = useHistory();
+
 
     const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
         // <img src={LeftArrow} alt="prevArrow" {...props} />
@@ -217,11 +218,17 @@ const CategorySelector = () => {
     //     })
     //   }
 
+    const handleSelect = (id) => {
+        setCatId(id)
+        setOnSelect(true)
+    } 
 
 
 
 
     // const { selectedCheckboxes } = select;
+
+
 
     return (
         <div className="bgCategory container containerCategorySelector mt-3">
@@ -238,7 +245,7 @@ const CategorySelector = () => {
                                 <>
                                     <div key={i.id} className="p-1">
                                         <div>
-                                            <img src={`http://localhost:8000/${i.image}`} alt="" className="img-fluid homePageCarouselImg" />
+                                            <img onClick={() => handleSelect(i.id)} src={`http://localhost:8000/${i.image}`} alt="" className="img-fluid homePageCarouselImg" />
                                             {/* <img onClick={() => handleSubCategory(i)} src={`http://localhost:8000/${i.image}`} alt="" className="img-fluid homePageCarouselImg" /> */}
                                         </div>
                                         <div className="d-flex justify-content-center socialMedia">
