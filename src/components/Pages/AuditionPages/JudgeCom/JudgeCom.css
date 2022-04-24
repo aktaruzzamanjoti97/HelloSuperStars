@@ -1,0 +1,15 @@
+.judge-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+@media only screen and (max-width: 600px) {
+ .star-title-judge{
+     font-size: 13px !important;
+ }
+ .star-title-name-judge{
+     font-size: 15px !important;
+ }
+  }

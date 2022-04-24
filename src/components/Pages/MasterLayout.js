@@ -20,9 +20,10 @@ import MeetupPost from "../../components/Pages/Home/Body/SidebarComponent/Right/
 import UpLivePost from "../../components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
 import AuditionsPost from "../../components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
 import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
-import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+import EnrollAudition from "../../components/Pages/AuditionPages/EnrollAudition/EnrollAudition";
 import { socketContext } from "../../App";
 import AuditionBody from "./AuditionPages/AuditonBody/AuditionBody";
+import axios from "axios";
 
 
 const Homepage = () => {
@@ -32,12 +33,18 @@ const Homepage = () => {
   const socketData = useContext(socketContext);
 
   useEffect(() => {
-    socketData.emit("addUser", localStorage.getItem("auth_id"));
+    const user_id = localStorage.getItem("auth_id");
+
+    socketData.emit("addUser", user_id);
     socketData.on("getUsers", (users) => {
       setOnlineUsers(users);
     });
     socketData.on("getNotification", (data) => {
-      setTotalNotification(data);
+      axios.get(`/api/user/total_notification_count`).then((res) => {
+        if (res.data.status === 200) {
+          setTotalNotification(res.data.totalNotification);
+        }
+      });
     });
   }, []);
 
@@ -76,7 +83,7 @@ const Homepage = () => {
                 <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
                 <Route exact path='/meetup-events' component={MeetupPost}/>
                 <Route exact path='/settings' component={SettingsBody} />
-                <Route exact path='/enrolled-auditions' component={EnrollBody} />
+                <Route exact path='/enrolled-auditions' component={EnrollAudition} />
           
                 {/* Right Sidebar End */}
 
