@@ -8,8 +8,6 @@ import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
 
-import AuditionRoundResult from "../AuditionRoundResult/AuditionRoundResult";
-import AuditionDescription from "../AuditionDescription/AuditionDescription";
 import AuditionDragAndDrop from "../../AuditionPages/AuditionDragAndDrop/AuditionDragAndDrop";
 import { useState } from "react";
 import AuditionPay from "../AuditionPay/AuditionPay";
