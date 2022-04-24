@@ -23,6 +23,7 @@ import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
 import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
 import { socketContext } from "../../App";
 import AuditionBody from "./AuditionPages/AuditonBody/AuditionBody";
+import axios from "axios";
 
 
 const Homepage = () => {
@@ -32,12 +33,18 @@ const Homepage = () => {
   const socketData = useContext(socketContext);
 
   useEffect(() => {
-    socketData.emit("addUser", localStorage.getItem("auth_id"));
+    const user_id = localStorage.getItem("auth_id");
+
+    socketData.emit("addUser", user_id);
     socketData.on("getUsers", (users) => {
       setOnlineUsers(users);
     });
     socketData.on("getNotification", (data) => {
-      setTotalNotification(data);
+      axios.get(`/api/user/total_notification_count`).then((res) => {
+        if (res.data.status === 200) {
+          setTotalNotification(res.data.totalNotification);
+        }
+      });
     });
   }, []);
 

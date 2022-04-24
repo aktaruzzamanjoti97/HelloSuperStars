@@ -228,7 +228,7 @@ const CategorySelector = () => {
             <div className="p-1 sliderCategory">
                 <div className="d-flex">
                     <button className="btn btn-warning btnAngleDouble">   <FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
-                    <small className="text-white mx-2"> Category ddd</small>
+                    <small className="text-white mx-2"> Category</small>
                 </div>
 
                 <Slider {...settings}>
