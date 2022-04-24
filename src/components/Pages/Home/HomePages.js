@@ -3,6 +3,10 @@ import CategorySelector from "./Body/CategorySelector/CategorySelector";
 import Post from "./Body/Post/Post";
 import { socketContext } from "../../../App";
 
+// import AuditionRoundResult from "./Body/AuditionRoundResult/AuditionRoundResult";
+// import AuditionDescription from "./AuditionDescription";
+// import AuditionPay from "./Body/AuditionPay/AuditionPay";
+
 const Homepage = () => {
   const socketData = useContext(socketContext);
 
@@ -12,7 +16,12 @@ const Homepage = () => {
 
   return (
     <>
-      <CategorySelector />
+      {/* <CategorySelector /> */}
+      {/* <AuditionDragAndDrop /> */}
+      {/* <AuditionRoundResult /> */}
+      {/* <AuditionDescription /> */}
+      {/* <AuditionPay /> */}
+      
       <Post />
     </>
   );

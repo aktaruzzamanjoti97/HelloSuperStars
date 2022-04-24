@@ -7,12 +7,19 @@ import markDistribution from "../../../../images/Rounds/markDistributin.png";
 import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
+import AuditionDragAndDrop from "../../AuditionPages/AuditionDragAndDrop/AuditionDragAndDrop";
+import { useState } from "react";
+import AuditionPay from "../AuditionPay/AuditionPay";
 import AuditionMarkDistribution from "../content/AuditionMarkDistribution";
 import AuditionResult from "../content/AuditionResult";
 import JudgeCom from "../JudgeCom/JudgeCom";
 import PendingAuditionCard from "../PendingAuditionCard/PendingAuditionCard";
 
+
 export default function Round1com() {
+
+  const [showPayment, setShowPayment] = useState(false)
+
   return (
     <div className="my-3">
       <Tab.Container fluid id="left-tabs-example" defaultActiveKey="first">
@@ -106,9 +113,20 @@ export default function Round1com() {
           <Tab.Content>
             <Tab.Pane eventKey="first" >
              {/* <Participant /> */}
+
+            
+             {
+               showPayment ?  <AuditionPay /> :  <AuditionDragAndDrop showPayment={showPayment} setShowPayment={setShowPayment} />
+             }
+           
+             {/* {showPayment ? <AuditionPay /> } */}
+                {/* <AuditionRoundResult /> */}
+                     {/* <AuditionDescription /> */}
+
             </Tab.Pane>
             <Tab.Pane eventKey="second" className="bg-warning">
               Content 2
+          
             </Tab.Pane>
             <Tab.Pane eventKey="judge">
             {/* juge page start here */}
