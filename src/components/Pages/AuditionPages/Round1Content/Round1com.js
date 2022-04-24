@@ -7,8 +7,11 @@ import markDistribution from "../../../../images/Rounds/markDistributin.png";
 import judge from "../../../../images/Rounds/judge.png";
 import result from "../../../../images/Rounds/result.png";
 import Participant from "../Participant/Participant";
+import AuditionMarkDistribution from "../content/AuditionMarkDistribution";
+import AuditionResult from "../content/AuditionResult";
 import JudgeCom from "../JudgeCom/JudgeCom";
 import PendingAuditionCard from "../PendingAuditionCard/PendingAuditionCard";
+
 export default function Round1com() {
   return (
     <div className="my-3">
@@ -112,11 +115,16 @@ export default function Round1com() {
              <JudgeCom />
               {/* juge page end here */}
             </Tab.Pane>
-            <Tab.Pane eventKey="fourth" className="bg-warning">
-              Content 4
+            <Tab.Pane eventKey="fourth" >
+              <AuditionMarkDistribution />
             </Tab.Pane>
+
+            <Tab.Pane eventKey="fifth">
+            <AuditionResult/>
+
             <Tab.Pane eventKey="result" >
             <PendingAuditionCard />
+
             </Tab.Pane>
           </Tab.Content>
         </div>
