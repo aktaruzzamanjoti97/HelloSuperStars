@@ -20,7 +20,7 @@ import MeetupPost from "../../components/Pages/Home/Body/SidebarComponent/Right/
 import UpLivePost from "../../components/Pages/Home/Body/SidebarComponent/Right/UpLivePost/UpLivePost";
 import AuditionsPost from "../../components/Pages/Home/Body/SidebarComponent/Right/AuditionsPost/AuditonsPost";
 import SettingsBody from "../../components/Sidebar/Left/Settings/SettingsBody";
-import EnrollBody from "../../components/Sidebar/Left/EnrolledAuditions/EnrollBody";
+import EnrollAudition from "../../components/Pages/AuditionPages/EnrollAudition/EnrollAudition";
 import { socketContext } from "../../App";
 import AuditionBody from "./AuditionPages/AuditonBody/AuditionBody";
 
@@ -76,7 +76,7 @@ const Homepage = () => {
                 <Route exact path='/upcoming-auditions' component={AuditionsPost}/>
                 <Route exact path='/meetup-events' component={MeetupPost}/>
                 <Route exact path='/settings' component={SettingsBody} />
-                <Route exact path='/enrolled-auditions' component={EnrollBody} />
+                <Route exact path='/enrolled-auditions' component={EnrollAudition} />
           
                 {/* Right Sidebar End */}
 
