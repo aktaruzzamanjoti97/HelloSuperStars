@@ -19,6 +19,8 @@ import coverImage from "../../../images/coverImage.jpg";
 import sakibal from "../../../images/Profile/shakib-message.jpg";
 import ReactPlayer from "react-player";
 import { socketContext } from "../../../App";
+import LeftCardPhotos from "./profile-components/LaftCardPhotos";
+import LeftCardVideos from "./profile-components/LaftCardVideos";
 
 const Profile = () => {
   const socketData = useContext(socketContext);
@@ -210,9 +212,9 @@ const Profile = () => {
             <div className="row">
               <div className="col-md-5 mb-2">
                 {/* phototos and videos components added */}
-                <LeftCard title="Photos" photos = {userPhotos}/>
+                <LeftCardPhotos title="Photos" photos = {userPhotos}/>
                 <div className="mt-3">
-                  <LeftCard title="Videos" />
+                  <LeftCardVideos title="Videos" photos = {userPhotos}/>
                 </div>
 
                 <div className="container left-col-box p-3 mt-3">
