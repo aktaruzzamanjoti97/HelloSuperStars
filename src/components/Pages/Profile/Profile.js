@@ -21,6 +21,7 @@ import ReactPlayer from "react-player";
 import { socketContext } from "../../../App";
 import LeftCardPhotos from "./profile-components/LaftCardPhotos";
 import LeftCardVideos from "./profile-components/LaftCardVideos";
+import moment from "moment";
 
 const Profile = () => {
   const socketData = useContext(socketContext);
@@ -32,7 +33,7 @@ const Profile = () => {
   const [profilePhoto, setProfilePtoto] = useState("");
   const [coverPhoto, setCoverPhoto] = useState("");
   const [coverImage, setCoverImage] = useState("");
-  const [userPhotos, setUserPhotos] = useState([]);
+  const [userActivites, setUserActivites] = useState([]);
 
   function handleClick() {
     setMessenger(!messagenger);
@@ -72,8 +73,8 @@ const Profile = () => {
   useEffect(() => {
     axios.get(`/api/user/activitiesData`).then((res) => {
       if (res.status === 200) {
-        // console.log("activities photos", res.data.userPhotos);
-        setUserPhotos(res.data.userPhotos);
+        console.log("activities data", res.data.userActivites);
+        setUserActivites(res.data.userActivites);
        
       }
      
@@ -212,9 +213,9 @@ const Profile = () => {
             <div className="row">
               <div className="col-md-5 mb-2">
                 {/* phototos and videos components added */}
-                <LeftCardPhotos title="Photos" photos = {userPhotos}/>
+                <LeftCardPhotos title="Photos" photos = {userActivites}/>
                 <div className="mt-3">
-                  <LeftCardVideos title="Videos" photos = {userPhotos}/>
+                  <LeftCardVideos title="Videos" videos = {userActivites}/>
                 </div>
 
                 <div className="container left-col-box p-3 mt-3">
@@ -362,30 +363,39 @@ const Profile = () => {
 
               <div className="col-md-5 right-card-profile">
                 {/* right side card start here */}
-                <RightSideCard
-                  Name="Shakib Al Hasan"
-                  Msg="Coming live at 9.00 pm tonight. See you there!"
-                  profileImg={Shakib}
+
+{userActivites.map((activity)=>(
+  <>
+  {activity?.type == "meetup"?
+    <RightSideCard
+                  Name={activity?.meetup?.star?.first_name + ' ' + activity?.meetup?.star?.last_name}
+                  Msg={moment(activity?.meetup?.start_time,"HH:mm").format("hh:mm A")}
+                  CreateTime={moment(activity?.meetup?.created_at).format("LL")}
+                  title={activity?.meetup?.title}
+                  profileImg={`http://localhost:8000/${activity?.meetup?.banner}`}
+                  profileLogo={`http://localhost:8000/${activity?.meetup?.star?.image}`}
+                />:activity?.type == "learningSession"?
+    <RightSideCard
+                  Name={activity?.learning_session?.star?.first_name + ' ' + activity?.learning_session?.star?.last_name}
+                  Msg={moment(activity?.learning_session?.start_time,"HH:mm").format("hh:mm A")}
+                  CreateTime={moment(activity?.learning_session?.created_at).format("LL")}
+                  title={activity?.learning_session?.title}
+                  profileImg={`http://localhost:8000/${activity?.learning_session?.banner}`}
+                  profileLogo={`http://localhost:8000/${activity?.learning_session?.star?.image}`}
+                />:activity?.type == "liveChat"?
+    <RightSideCard
+                  Name={activity?.livechat?.star?.first_name + ' ' + activity?.livechat?.star?.last_name}
+                  Msg={moment(activity?.livechat?.start_time,"HH:mm").format("hh:mm A")}
+                  CreateTime={moment(activity?.livechat?.created_at).format("LL")}
+                  title={activity?.livechat?.title}
+                  profileImg={`http://localhost:8000/${activity?.livechat?.banner}`}
                   profileLogo={ShakibProfile}
-                />
-                <RightSideCard
-                  Name="Mizanur Rahman Azharee"
-                  Msg="Assalamu Walaikum Brothers, Take greetings"
-                  profileImg={Azhari}
-                  profileLogo={AzhariProfile}
-                />
-                <RightSideCard
-                  Name="Ayman Sadiq"
-                  Msg="When i come to live ? This friday? let me know"
-                  profileImg={Ayman}
-                  profileLogo={AymanProfile}
-                />
-                <RightSideCard
-                  Name="Ayman Sadiq"
-                  Msg="When i come to live ? This friday? let me know"
-                  profileImg={Ayman}
-                  profileLogo={AymanProfile}
-                />
+                />:null
+                
+ }
+                
+  </>
+))}                
 
                 {/* Right side card end */}
               </div>
