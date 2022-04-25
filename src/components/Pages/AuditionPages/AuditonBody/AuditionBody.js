@@ -6,6 +6,9 @@ import Round1com from "../Round1Content/Round1com";
 import "./AuditionBody.css";
 import "./RoundBg.css";
 
+
+import Banner from "../../../../images/Group 1174.png";
+
 import {
 
   useParams,
@@ -71,15 +74,24 @@ export default function AuditionBody() {
             SEC
           </div>
         </div>
-      </div>:<><div className="text-warning">
-        running round 1 banner
-      </div></>}
+      </div>:<>
+      <div className="container text-warning">
+      <div className="ADMn mt-3 mb-3">
+        <img src={Banner} alt="" className="img-fluid ImgADM" />
+        <div className="AmdBanner">
+          <h3 className="amdHText fw-bold">audition title</h3>
+          <h4 className="fw-bold mt-5 Hts">audition Title name</h4>
+        </div>
+        <b className="bAmd">Round 1</b>
+      </div>
+      </div>
+      </>}
 
 
 
      
 
-      <div className="auditionMainContainer my-3">
+      <div className="auditionMainContainer my-3 ">
         <Tab.Container fluid id="left-tabs-example" defaultActiveKey="first">
           <div className="audition">
           {location.state.pending==='running'?null: <Nav variant="pills">
@@ -170,7 +182,7 @@ export default function AuditionBody() {
         </div> */}
           {/* nav banner end here */}
 
-          <div className="container-fluid auditonTabcontent my-2">
+          <div className="container-fluid auditonTabcontent my-2 p-0">
             <Tab.Content>
             {location.state.pending==='pending'?null:   <Tab.Pane eventKey="first" className="w-100">
                 <Round1com />

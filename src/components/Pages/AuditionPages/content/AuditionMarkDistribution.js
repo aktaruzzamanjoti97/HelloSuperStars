@@ -1,5 +1,4 @@
 import React from "react";
-import Banner from "../../../../images/Group 1174.png";
 import User1 from "../../../../images/Groupadm.png";
 import User2 from "../../../../images/Groupadmj.png";
 import User3 from "../../../../images/Groupadms.png";
@@ -9,16 +8,7 @@ const AuditionMarkDistribution = () => {
     <>
 
     {/* Page no 568  */}
-
-
-      <div className="ADMn mt-3 mb-3">
-        <img src={Banner} alt="" className="img-fluid ImgADM" />
-        <div className="AmdBanner">
-          <h3 className="amdHText fw-bold">audition title</h3>
-          <h4 className="fw-bold mt-5 Hts">audition Title name</h4>
-        </div>
-        <b className="bAmd">Round 1</b>
-      </div>
+    
 
       {/* <Round1com/> */}
 
