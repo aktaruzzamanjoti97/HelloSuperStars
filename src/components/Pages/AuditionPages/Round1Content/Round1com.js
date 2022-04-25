@@ -138,7 +138,7 @@ export default function Round1com() {
             </Tab.Pane>
 
             <Tab.Pane eventKey="result">
-            {/* <AuditionResult/> */}
+            <AuditionResult/>
             <PendingAuditionCard />
             </Tab.Pane>
 
