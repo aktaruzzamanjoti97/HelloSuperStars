@@ -7,6 +7,15 @@ import Round1com from "../Round1Content/Round1com";
 import "./AuditionBody.css";
 import "./RoundBg.css";
 
+
+import Banner from "../../../../images/Group 1174.png";
+
+import {
+
+  useParams,
+  useLocation
+} from "react-router-dom";
+
 export default function AuditionBody() {
   const location = useLocation();
 
@@ -76,13 +85,16 @@ export default function AuditionBody() {
             </div>
           </div>
         </div>
+
       ) : (
         <>
           <div className="text-warning">running round 1 banner</div>
         </>
       )}
 
-      <div className="auditionMainContainer my-3">
+
+
+      <div className="auditionMainContainer my-3 ">
         <Tab.Container fluid id="left-tabs-example" defaultActiveKey="first">
           <div className="audition">
             {location.state.pending === "running" ? null : (
@@ -178,7 +190,7 @@ export default function AuditionBody() {
         </div> */}
           {/* nav banner end here */}
 
-          <div className="container-fluid auditonTabcontent my-2">
+          <div className="container-fluid auditonTabcontent my-2 p-0">
             <Tab.Content>
               {location.state.pending === "pending" ? null : (
                 <Tab.Pane eventKey="first" className="w-100">
