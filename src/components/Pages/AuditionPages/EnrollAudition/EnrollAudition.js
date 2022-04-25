@@ -3,11 +3,14 @@ import React, {useState} from "react";
 import Img1 from "../../../../images/Group 1169.png";
 import Img2 from "../../../../images/Group 1170.png";
 import Img3 from "../../../../images/Group 1168.png";
-
+import { useHistory } from "react-router-dom";
 import "./EnrollAudition.css";
 import { Link } from "react-router-dom";
 import { setHours } from "date-fns";
+
 const EnrollAudition = () => {
+  // const location = useLocation();
+  let history = useHistory();
     const countDownDate = new Date().getTime();
     const [day, setDay] = useState('');
     const [hour, setHour] = useState('');
@@ -30,10 +33,23 @@ const EnrollAudition = () => {
 
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("demo").innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
   }, 1000);
-
+const handleClick=()=>{
+  history.push({
+    pathname: `/enrolled-auditions-round`,
+    state: {
+    pending:'pending'
+    },
+  });
+}
+const handleClick2=()=>{
+  history.push({
+    pathname: `/enrolled-auditions-round`,
+    state: {
+    pending:'running'
+    },
+  });
+}
   return (
     <>
 
@@ -43,13 +59,13 @@ const EnrollAudition = () => {
         <div className="row">
 
           <div className="col-md-6 mb-3">
-            <div className="card text-center CardEn ">
+            <div className="card text-center CardEn " onClick={handleClick}>
               <img src={Img1} alt="Img1" />
-              <Link to="/enrolled-auditions-round">
+              {/* <Link to="/enrolled-auditions-round"> */}
                 <h3 className="fw-bold pt-3 pb-1 EnHead">
-                  audition Title name
+                  audition Title name 
                 </h3>
-              </Link>
+              {/* </Link> */}
               <div className="PositionEn d-flex">
 
                   <div className="card ENtext py-1 px-3 mx-2">
@@ -71,13 +87,13 @@ const EnrollAudition = () => {
             </div>
           </div>
           <div className="col-md-6 mb-3">
-            <div className="card text-center CardEn ">
+            <div className="card text-center CardEn " onClick={handleClick}>
               <img src={Img2} alt="Img1" />
-              <Link to="/enrolled-auditions-round">
+              {/* <Link to="/enrolled-auditions-round"> */}
                 <h3 className="fw-bold pt-3 pb-1 EnHead">
                   audition Title name
                 </h3>
-              </Link>
+              {/* </Link> */}
               <div className="PositionEn d-flex">
 
                   <div className="card ENtext py-1 px-3 mx-2">
@@ -102,15 +118,17 @@ const EnrollAudition = () => {
           <div className="col-md-6 mb-3">
             <div className="card text-center CardEn ">
               <img src={Img3} alt="Img1" />
-              <Link to="/enrolled-auditions-round">
+             
                 <h3 className="fw-bold pt-3 pb-1 EnHead">
                   audition Title name
                 </h3>
-              </Link>
+          
               <div className="PositionEn d-flex">
 
-                  <div className="card ENtext1 px-4 py-2">
-                    <h3 className="fw-bold text-black mx-2">Running</h3>
+                  <div className="card ENtext1 px-4 py-2" onClick={handleClick2}>
+                  {/* <Link to="/enrolled-auditions-round"> */}
+                    <h3 className="fw-bold text-dark mx-2" style={{cursor:'pointer'}}>Running</h3>
+                    {/* </Link> */}
                   </div>
                   
               </div>
