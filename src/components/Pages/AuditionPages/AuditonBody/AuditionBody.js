@@ -5,8 +5,17 @@ import roundBg from "../../../../images/Rounds/Round.png";
 import Round1com from "../Round1Content/Round1com";
 import "./AuditionBody.css";
 import "./RoundBg.css";
-export default function AuditionBody() {
 
+import {
+
+  useParams,
+  useLocation
+} from "react-router-dom";
+export default function AuditionBody() {
+ 
+  const location = useLocation();
+
+// console.log('running working properly',running)
   const [day, setDay] = useState('')
   const [hour, setHour] = useState('')
   const [minute, setMinute] = useState('')
@@ -32,15 +41,15 @@ export default function AuditionBody() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     setSecond(seconds)
 
-    document.getElementById("demo").innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    // document.getElementById("demo").innerHTML =
+    //   days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
   }, 1000);
 
   return (
     <>
-      <div className="container-fluid">
+    {location.state.pending==='pending'? <div className="container-fluid">
         <div
-          className="d-flex justify-content-center align-items-center"
+          className="d-flex justify-content-center align-items-center my-2"
           style={{
             backgroundImage: `url(${roundBanner})`,
             backgroundRepeat: "no-repeat",
@@ -62,19 +71,25 @@ export default function AuditionBody() {
             SEC
           </div>
         </div>
-      </div>
+      </div>:<><div className="text-warning">
+        running round 1 banner
+      </div></>}
+
+
+
+     
 
       <div className="auditionMainContainer my-3">
         <Tab.Container fluid id="left-tabs-example" defaultActiveKey="first">
           <div className="audition">
-            <Nav variant="pills">
+          {location.state.pending==='running'?null: <Nav variant="pills">
               <div className="container-fluid ">
                 <div className="row">
                   <div className="col-md-4">
                     <div>
                       <Nav.Item>
                         <Nav.Link
-                          eventKey="first"
+                          eventKey={location.state.pending==='pending'?"pending":'first'}
                           className="NavAudition"
                           style={{ position: "relative" }}
                         >
@@ -145,7 +160,8 @@ export default function AuditionBody() {
                   </div>
                 </div>
               </div>
-            </Nav>
+            </Nav>}
+           
           </div>
 
           {/* nav banner start here */}
@@ -156,9 +172,17 @@ export default function AuditionBody() {
 
           <div className="container-fluid auditonTabcontent my-2">
             <Tab.Content>
-              <Tab.Pane eventKey="first" className="w-100">
+            {location.state.pending==='pending'?null:   <Tab.Pane eventKey="first" className="w-100">
+                <Round1com />
+              </Tab.Pane>}
+              
+              {/* <Tab.Pane eventKey="first" className="w-100">
+                <Round1com />
+              </Tab.Pane> */}
+              <Tab.Pane eventKey="pending">
                 <Round1com />
               </Tab.Pane>
+
               <Tab.Pane eventKey="second">
                 <Round1com />
               </Tab.Pane>

@@ -137,13 +137,15 @@ export default function Round1com() {
               <AuditionMarkDistribution />
             </Tab.Pane>
 
-            <Tab.Pane eventKey="fifth">
-            <AuditionResult/>
+            <Tab.Pane eventKey="result">
+            {/* <AuditionResult/> */}
+            <PendingAuditionCard />
+            </Tab.Pane>
 
-            <Tab.Pane eventKey="result" >
+            {/* <Tab.Pane eventKey="result" >
             <PendingAuditionCard />
 
-            </Tab.Pane>
+            </Tab.Pane> */}
           </Tab.Content>
         </div>
       </Tab.Container>
