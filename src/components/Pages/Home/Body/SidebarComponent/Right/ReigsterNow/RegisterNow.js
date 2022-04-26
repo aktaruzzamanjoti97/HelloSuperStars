@@ -140,7 +140,7 @@ const RegisterNow = ({ post }) => {
                           <button className="btn btn-warning  text-light fw-bold bmt">Book Now</button>
                         </Link> */}
 
-                                    <Link to={`/register-learning-details/jhsjfhsf`} className="link-starPorfile">
+                                    <Link to={`/register-learning-details/${post.id}`} className="link-starPorfile">
                                         <button className="btn btn-warning text-light fw-bold bmt w-100">Register Now</button>
                                     </Link>
 

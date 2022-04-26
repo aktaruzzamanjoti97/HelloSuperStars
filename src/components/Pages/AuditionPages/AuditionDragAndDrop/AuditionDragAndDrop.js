@@ -3,7 +3,7 @@ import { FileDrop } from "react-file-drop";
 import { AiOutlineCloseCircle, AiOutlineUpload } from "react-icons/ai";
 import "./AuditionDragAndDrop.css";
 
-const AuditionDragAndDrop = ({showPayment, setShowPayment}) => {
+const AuditionDragAndDrop = ({ showPayment, setShowPayment }) => {
   const [selectFile, setSelectFile] = useState(null);
 
   const fileInputRef = useRef(null);
@@ -238,7 +238,12 @@ const AuditionDragAndDrop = ({showPayment, setShowPayment}) => {
           </div>
         </div>
         <div className="text-center p-4">
-          <button onClick={() => setShowPayment(true)} className="appealBtn">Upload</button>
+          <button
+            onClick={() => setShowPayment(true)}
+            className="appealBtn btn btn-warning"
+          >
+            Upload
+          </button>
         </div>
       </div>
     </div>

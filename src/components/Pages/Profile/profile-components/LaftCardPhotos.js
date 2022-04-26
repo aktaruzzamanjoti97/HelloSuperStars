@@ -1,16 +1,17 @@
 import React from "react";
-import { Switch } from "react-router-dom";
 import blackBox from "../../../../images/Profile/blackbox.jpeg";
 
 const LeftCardPhotos = (props) => {
-  console.log("photo data", props.photos);
+  // console.log("photo data", props.photos);
 
   return (
     <>
       <div className="container left-col-box py-4">
         <h6 className="profile-font-color">{props.title}</h6>
         <div className="row">
-          {props?.photos?.map((data) => (
+          {props?.photos?.map((data,index) => (
+
+            index < 6 &&
             <>
               {data?.type == "learningSession" &&
               data?.learning_session?.banner != null ? (
@@ -40,21 +41,6 @@ const LeftCardPhotos = (props) => {
               ): null}
             </>
           ))}
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
         </div>
 
         <div className="see-all-text  ">

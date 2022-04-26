@@ -1,14 +1,15 @@
 import React from "react";
 import blackBox from "../../../../images/Profile/blackbox.jpeg";
 const LeftCardVideos = (props) => {
-  console.log("video data", props.photos);
+  // console.log("video data", props.videos);
 
   return (
     <>
       <div className="container left-col-box py-4">
         <h6 className="profile-font-color">{props.title}</h6>
         <div className="row">
-          {props?.photos?.map((data) => (
+          {props?.videos?.map((data,index) => (
+            index < 6 &&
             <>
               {data.type == "learningSession" &&
               data?.learning_session?.video != null ? (
@@ -23,8 +24,7 @@ const LeftCardVideos = (props) => {
                     />
                   </video>{" "}
                 </div>
-              ) : data.type == "meetup" &&
-                (data.type == data?.meetup?.video) != null ? (
+              ) : data.type == "meetup" && data?.meetup?.video != null ? (
                 <div className="col-4">
                   {" "}
                   <video width="150" controls>
@@ -38,8 +38,7 @@ const LeftCardVideos = (props) => {
                     />
                   </video>
                 </div>
-              ) : data.type == "liveChat" &&
-                (data.type == data?.livechat?.video) != null ? (
+              ) : data.type == "liveChat" && data?.livechat?.video != null ? (
                 <div className="col-4">
                   {" "}
                   <video width="150" controls>
@@ -54,21 +53,6 @@ const LeftCardVideos = (props) => {
               ):null}
             </>
           ))}
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
-          <div className="col-4">
-            <img src={blackBox} alt="" className="img-fluid profile-photos" />
-          </div>
         </div>
 
         <div className="see-all-text  ">

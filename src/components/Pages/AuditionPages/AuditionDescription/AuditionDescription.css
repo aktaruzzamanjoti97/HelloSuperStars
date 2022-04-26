@@ -21,7 +21,14 @@
   border-radius: 10px;
 }
 
-.endDiv{
-    background-color: #8d7a16;
-    border-radius: 10px;
+.endDiv {
+  background-color: #8d7a16;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mediaQueryDiv {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
