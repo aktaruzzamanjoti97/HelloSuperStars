@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./CR7Souvenir.css";
 import UserPro from "../../../../images/Shakib/pro.jpg";
 import BGImg from "../../../../images/Souvenir/fundo-floral-preto-png-2.png";

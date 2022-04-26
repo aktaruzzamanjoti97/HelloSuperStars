@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import "../../CSS/Profile/profile.css";
-import coverImg from "../../../images/Shakib/pro.jpg";
-import profileImg from "../../../images/Shakib/pro.jpg";
 import LeftCard from "./profile-components/LeftCard";
 import RightSideCard from "./profile-components/RightSideCard";
 import Azhari from "../../../images/Profile/Azhari.jpg";
@@ -15,14 +13,14 @@ import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
 import Navigation from "../../Header/Navigation";
 import raihanProfileImage from "../../../images/raihanProfile.jpg";
-import coverImage from "../../../images/coverImage.jpg";
 import sakibal from "../../../images/Profile/shakib-message.jpg";
 import ReactPlayer from "react-player";
 import { socketContext } from "../../../App";
+import LeftCardPhotos from "./profile-components/LaftCardPhotos";
+import LeftCardVideos from "./profile-components/LaftCardVideos";
 
 const Profile = () => {
   const socketData = useContext(socketContext);
-
   const [messagenger, setMessenger] = useState(false);
   const history = useHistory();
   const [user, setUser] = useState([]);
@@ -210,9 +208,9 @@ const Profile = () => {
             <div className="row">
               <div className="col-md-5 mb-2">
                 {/* phototos and videos components added */}
-                <LeftCard title="Photos" photos = {userPhotos}/>
+                <LeftCardPhotos title="Photos" photos = {userPhotos}/>
                 <div className="mt-3">
-                  <LeftCard title="Videos" />
+                  <LeftCardVideos title="Videos" photos = {userPhotos}/>
                 </div>
 
                 <div className="container left-col-box p-3 mt-3">

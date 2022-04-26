@@ -1,6 +1,7 @@
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
@@ -44,7 +45,10 @@ const sliderImageLink = [
   },
 ];
 
-const SubCategorySelector = () => {
+const SubCategorySelector = ({onSelect, setOnSelect, catId, setCatId}) => {
+
+  console.log(catId)
+
   let history = useHistory();
 
   const [select, setSelect] = useState({
@@ -148,6 +152,20 @@ const SubCategorySelector = () => {
           },
     }));
   };
+  
+
+  const [subCatList, setSubCatlist] = useState([]);
+
+  console.log('subCatList subCatList ', subCatList);
+
+  useEffect(() => {
+      axios.get(`/api/user/subcategory/${catId}`).then((res) => {
+          console.log(res.data.category);
+          if (res.status === 200) {
+            setSubCatlist(res.data.allSubCat);
+          }
+      });
+  }, []);
 
   const { selectedCheckboxes } = select;
 
@@ -155,25 +173,25 @@ const SubCategorySelector = () => {
     <div className="bgCategory container containerCategorySelector mt-3">
       <div className="p-1 sliderCategory">
         <div className="d-flex">
-          <Link to="/">
+          {/* <Link to="/"> */}
             {" "}
-            <button className="btn btn-warning btnAngleDouble">
+            <button onClick={ () => setOnSelect(false)} className="btn btn-warning btnAngleDouble">
               {" "}
               <FontAwesomeIcon icon={faAngleDoubleLeft} />
             </button>
-          </Link>
+          {/* </Link> */}
           <small className="text-white mx-2">Sub Category </small>
         </div>
 
         <Slider {...settings}>
-          {sliderImageLink.map((i, idx) => {
+          {subCatList.map((i, idx) => {
             return (
               <>
                 <div key={i.id} className="p-1">
                   <div>
                     <img
                       onClick={() => handleSubCategory(i)}
-                      src={i.slider}
+                      src={`http://localhost:8000/${i.image}`}
                       alt=""
                       className="img-fluid homePageCarouselImg btn"
                     />
@@ -191,7 +209,7 @@ const SubCategorySelector = () => {
                         </label>
                       </div>
                     </div>
-                    <small className="text-white mx-1">{i.categoryName}</small>
+                    <small className="text-white mx-1">{i.name}</small>
                   </div>
                 </div>
                 {}
