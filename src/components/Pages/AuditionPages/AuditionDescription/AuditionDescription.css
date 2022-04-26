@@ -1,0 +1,34 @@
+.auditionDes {
+  background-color: #1b1b1b;
+}
+
+.titleInstruction {
+  color: #cc8a00;
+  font-size: 25px;
+}
+
+.bottomLineGold {
+  border-bottom: 1px solid black;
+}
+
+.audiHeadTitle {
+  color: #efc100;
+  font-weight: 800 !important;
+}
+
+.startDiv {
+  background-color: #2a5587;
+  border-radius: 10px;
+}
+
+.endDiv {
+  background-color: #8d7a16;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mediaQueryDiv {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}

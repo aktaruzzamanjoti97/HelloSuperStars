@@ -1,0 +1,64 @@
+.auditionRoundBg {
+  background-color: #1b1b1b;
+}
+
+.bottomLineBlack {
+  border-bottom: 1px solid #000000;
+}
+.divBlackResult {
+  background-color: #000000;
+  border-radius: 20px;
+}
+
+.mark {
+  border: 1px solid gold;
+  background-color: #000000;
+  color: white;
+  width: 30px;
+}
+
+.totalMarkBg {
+  background-color: #262626;
+}
+
+.yourTotalMark {
+  background-color: #000000;
+}
+
+.qualifiedMessage {
+  background-color: #f51818;
+  border-radius: 10px;
+}
+
+.appealRequestBtn {
+  background-color: #1b1b1b;
+}
+
+.appealBtn {
+  background: linear-gradient(
+    270deg,
+    #ffad00 0%,
+    #ffd273 18.7%,
+    #e19a04 42.13%,
+    #facf75 68.82%,
+    #e7a725 85.94%,
+    #ffad00 100%
+  );
+  border-radius: 10px;
+  width: 300px;
+  color: black;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.colorTitle {
+  color: gold;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .appealBtn {
+    width: 150px;
+    font-size: 15px;
+  }
+}
