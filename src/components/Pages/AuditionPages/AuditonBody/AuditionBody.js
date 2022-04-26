@@ -43,6 +43,7 @@ setMinute(minutes);
 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 setSecond(seconds);
 
+
 // document.getElementById("demo").innerHTML =
 // days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 }, 1000);
