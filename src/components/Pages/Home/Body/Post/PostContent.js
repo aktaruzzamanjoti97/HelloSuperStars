@@ -10,6 +10,8 @@ import swal from "sweetalert";
 //import Lock from "../../../images/Normal-User/lock.png";
 import Lock from "../../../../../../src/images/Normal-User/lock.png";
 import "../../../../CSS/Home/Post.css";
+import "../../../../CSS/Sidebar/Left/Enroll.css"
+
 import PostComment from "./PostComment";
 import ReactPlayer from "react-player";
 import UpAuditonsComment from "../SidebarComponent/Right/AuditionsPost/UpAuditonsComment";
