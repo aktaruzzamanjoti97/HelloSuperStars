@@ -14,6 +14,7 @@ import AuditionMarkDistribution from "../content/AuditionMarkDistribution";
 import AuditionResult from "../content/AuditionResult";
 import JudgeCom from "../JudgeCom/JudgeCom";
 import PendingAuditionCard from "../PendingAuditionCard/PendingAuditionCard";
+import AuditionDescription from "../AuditionDescription/AuditionDescription";
 
 
 export default function Round1com() {
@@ -121,11 +122,11 @@ export default function Round1com() {
            
              {/* {showPayment ? <AuditionPay /> } */}
                 {/* <AuditionRoundResult /> */}
-                     {/* <AuditionDescription /> */}
+                   
 
             </Tab.Pane>
             <Tab.Pane eventKey="second" className="bg-warning">
-              Content 2
+            <AuditionDescription />
           
             </Tab.Pane>
             <Tab.Pane eventKey="judge">
@@ -139,7 +140,11 @@ export default function Round1com() {
 
             <Tab.Pane eventKey="result">
             <AuditionResult/>
+
+            {/* <PendingAuditionCard /> */}
+
             <PendingAuditionCard />
+
             </Tab.Pane>
 
             {/* <Tab.Pane eventKey="result" >

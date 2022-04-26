@@ -2,8 +2,8 @@ import React from "react";
 import ReactPlayer from "react-player";
 import ends from "../../../../images/Audition-images/ends.png";
 import flag from "../../../../images/Audition-images/flag.png";
-import youtube from "../../../../images/Audition-images/Group1178.png";
 import auditionDescriptionIcon from "../../../../images/Audition-images/Group1177.png";
+import youtube from "../../../../images/Audition-images/Group1178.png";
 import "./AuditionDescription.css";
 
 const AuditionDescription = () => {
@@ -84,22 +84,22 @@ const AuditionDescription = () => {
         />
       </div>
 
-      <div className="d-flex justify-content-between p-3">
-        <div className="startDiv d-flex p-2">
+      <div className="d-flex justify-content-between mediaQueryDiv p-3">
+        <div className="startDiv d-flex p-2 my-2">
           <img height="40px" src={flag} alt="" />
           <div className="px-2">
             <span className="text-light">Starts</span>
             <h3 className="text-light fw-bold">2 April 2022</h3>
           </div>
         </div>
-        <div className="endDiv d-flex p-2">
+        <div className="endDiv d-flex p-2 my-2">
           <img height="40px" src={ends} alt="" />
           <div className="px-2">
             <span className="text-light">Ends</span>
             <h3 className="text-light fw-bold">16 April 2022</h3>
           </div>
         </div>
-        <div className="startDiv d-flex p-2">
+        <div className="startDiv d-flex p-2 my-2">
           <img height="40px" src={youtube} alt="" />
           <div className="px-2">
             <span className="text-light">User upload slot</span>
