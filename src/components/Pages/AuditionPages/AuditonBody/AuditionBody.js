@@ -10,11 +10,7 @@ import "./RoundBg.css";
 
 import Banner from "../../../../images/Group 1174.png";
 
-import {
 
-  useParams,
-  useLocation
-} from "react-router-dom";
 
 export default function AuditionBody() {
   const location = useLocation();

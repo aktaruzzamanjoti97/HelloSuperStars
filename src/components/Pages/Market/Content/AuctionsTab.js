@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Pds from '../../../../images/Ayman_Sadiq.jpg'
-import Pro from "../../../../images/Shakib/14.jpg";
-
 import OwlCarousel from 'react-owl-carousel';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SouvinerModal from '../../Profile/profile-components/starProfile/StarChat/SouvinerModal';
 import Icon from '../../../../images/Souvenir/Icons/auction.png'
-
 
 const AuctionsTab = ({user}) => {
 const baseUrl = "http://localhost:8000/";
@@ -22,7 +17,6 @@ const openModal = (data) => {
 
 return (
 <>
-
     <div className="card m-3 AuctionsA ">
         <div className=" row TabMar">
             <div className="col-md-6">
